@@ -1,0 +1,365 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>生产厂家管理</title>
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    @*CSS样式(包含默认皮肤样式)*@
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    @*CSS皮肤(需引用于bsgrid.all.min.css之后)*@
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_bootstrap.min.css" rel="stylesheet" />
+</head>
+<body style="background:#f0edf1;">
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">生产厂家维护</div>
+            <div class="panel-body" style="background:#f0edf1;">
+                <div class="col-md-12">
+                    <div class="col-md-7">
+                        <div class="col-md-12" style="padding:20px 20px;">
+                            <form class="form-inline">
+                                <div class="form-group">
+                                    <label for="exampleInputName">代码</label>
+                                    <input type="text" class="form-control" id="ManufacturerCode" name="ManufacturerCode">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail2">邮政编码</label>
+                                    <input type="email" class="form-control" id="ManufacturerPC" name="ManufacturerPC">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-12" style="padding:20px 20px;">
+                            <form class="form-inline">
+                                <div class="form-group">
+                                    <label for="exampleInputName">名称</label>
+                                    <input type="text" class="form-control" id="ManufacturerName" name="ManufacturerName"style="width:420px;">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-12" style="padding:20px 20px;">
+                            <form class="form-inline">
+                                <div class="form-group">
+                                    <label for="exampleInputName">拼音码</label>
+                                    <input type="text" class="form-control" id="ManufacturerPYCode" name="ManufacturerPYCode"style="width:405px;">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-12" style="padding:20px 20px;">
+                            <form class="form-inline">
+                                <div class="form-group">
+                                    <label for="exampleInputName">简称</label>
+                                    <input type="text" class="form-control" id="ManufacturerJCName" name="ManufacturerJCName"style="width:420px;">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-12" style="padding:20px 20px;">
+                            <form class="form-inline">
+                                <div class="form-group">
+                                    <label for="exampleInputName">主要产品</label>
+                                    <input type="text" class="form-control" id="ManufacturerProduct" name="ManufacturerProduct"style="width:390px;">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-12" style="padding:20px 20px;">
+                            <form class="form-inline">
+                                <div class="form-group">
+                                    <label for="exampleInputName">地址</label>
+                                    <input type="text" class="form-control" id="ManufacturerAddress" name="ManufacturerAddress"style="width:420px;">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-12" style="padding:20px 20px;">
+                            <form class="form-inline">
+                                <div class="form-group">
+                                    <label for="exampleInputName">条形码</label>
+                                    <input type="text" class="form-control" id="ManufacturerBarCode" name="ManufacturerBarCode"style="width:405px;">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="panel" style="width: 100%; height: 250px; float: left;margin:0;">
+                            <div class="row examineeInfor" style="padding: 1px 15px;">
+                                <table id="tabAchievementAll" style="width: 100%; min-width: 416px;" class="bsgrid">
+                                    <thead>
+                                        <tr>
+                                            <th w_index="ManufacturerID">编号</th>
+                                            <th w_index="ManufacturerCode">代码</th>
+                                            <th w_index="ManufacturerName">简称</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin:0 auto;" >
+                    <button class="btn btn-success" id="Save" style="margin-bottom:5px;">                       
+                        添加
+                    </button>
+
+                    <button class="btn btn-primary" id="btnXuanZeShenHe" style="margin-bottom:5px">                        
+                        查询
+                    </button>
+                    <button class="btn btn-primary" style="margin-bottom:5px" id="selectExaminee">
+                        单条件查询
+                    </button>
+                    <button class="btn btn-warning" style="margin-bottom:5px" id="btnBaoCunXiuGai">                      
+                        修改
+                    </button>
+                    <button class="btn btn-primary" style="margin-bottom:5px" disabled="disabled">                       
+                        取消
+                    </button>
+
+                    <button class="btn btn-info" style="margin-bottom:5px" disabled="disabled">
+                      
+                        退出
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="ShangBiaoLaiYuan1">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:100%;height:250px;">
+                <div class="modal-header" style="background:#a8d7ef;">
+                    <span>生产厂家信息</span>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body" style="background:#eddddd;">
+                    <div class="" style="width:100%;height:300px; background:#f0edf1;">
+                        <div class="row" style="width:100%;height:240px;overflow:auto;margin-left:2px;">
+                            <table id="taAlternativeProject" style="width:100%;" class="table">
+                                <tr>
+                                    <th w_num="total_line">序号</th>
+                                    <th w_index="ManufacturerID" w_hidden="true"></th>
+                                    <th w_index="ManufacturerCode">代码</th>
+                                    <th w_index="ManufacturerPC">邮政编码</th>
+                                    <th w_index="ManufacturerName">名称</th>
+                                    <th w_index="ManufacturerPYCode">拼音码</th>
+                                    <th w_index="ManufacturerJCName">简称</th>
+                                    <th w_index="ManufacturerProduct">主要产品</th>
+                                    <th w_index="ManufacturerAddress">地址</th>
+                                    <th w_index="ManufacturerBarCode">条形码</th>
+
+
+
+                                </tr>
+                            </table>
+                        </div>
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group" style="margin-top:20px;">
+                                <div class="col-md-12 col-sm-12 col-xs-12 btngourp" style="padding:0px 170px;">
+                                    <button type="button" class="btn btn-success " id="PinPaiXuanZe1">
+                                        请选择厂家
+                                    </button>
+                                    <button type="button" class="btn btn-success " id="btnShangChu">
+                                        删除厂家信息
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--模态窗体-->
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    @*jquery.bsgrid*@
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>@*对话框*@
+    <script src="~/Content/js/customfunction.js"></script>@*封装js*@
+    <script src="~/Content/js/jquery.form.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap-table.js"></script>
+    <script>
+            var taAlternativeProject;
+            var tabAchievementAll;
+            $("#btnXuanZeShenHe").click(function () {
+                //初始化表格
+              
+                taAlternativeProject.refreshPage();
+                $("#ShangBiaoLaiYuan1").modal('show');
+            });
+            taAlternativeProject = $.fn.bsgrid.init('taAlternativeProject', {
+                url: '/AlternativeSupplier/Alternative/selectManufacturer',
+                autoLoad: true,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                pageSize: 10,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置
+            });
+
+            tabAchievementAll = $.fn.bsgrid.init('tabAchievementAll', {
+                url: '/AlternativeSupplier/Alternative/selectManufacturerList',
+                autoLoad: true,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                pageSize: 10,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置
+            });
+                $("#PinPaiXuanZe1").click(function () {
+                    //初始化表格
+                   
+                    searchStudent();
+                    $("#ShangBiaoLaiYuan1").modal('show');
+                });
+                function searchStudent() {
+                    //获取学号
+                    var code = $("#ManufacturerCode").val();
+                    if (code == undefined) {
+                        code = "";
+                    }
+                    //查询考生table数据：把数据序列化
+                    tabAchievementAll.search({ code: code });
+                }
+                //查看考生
+                $("#selectExaminee").click(function () {
+                    searchStudent();//多条件查询
+
+                })
+
+            $("#PinPaiXuanZe1").click(function () {
+                var rowIndex = taAlternativeProject.getSelectedRowIndex();
+                if (rowIndex > -1) {
+                    var ID = taAlternativeProject.getColumnValue(rowIndex, "ManufacturerID");
+
+                    $.getJSON("/AlternativeSupplier/Alternative/selectManufacturerID?id=" + ID, function (data) {
+                        if (data == "失败") {
+                            layer.alert('你没有选择信息！', { icon: 2, title: '提示' });
+                        }
+                        else {
+                            $("#ManufacturerID").val(data.ManufacturerID);//隐藏域
+                            $("#ManufacturerCode").val(data.ManufacturerCode);
+                            $("#ManufacturerPC").val(data.ManufacturerPC);
+
+                            $("#ManufacturerName").val(data.ManufacturerName);
+                            $("#ManufacturerPYCode").val(data.ManufacturerPYCode);
+                            $("#ManufacturerJCName").val(data.ManufacturerJCName);
+                            $("#ManufacturerProduct").val(data.ManufacturerProduct);
+                            $("#ManufacturerAddress").val(data.ManufacturerAddress);
+                            $("#ManufacturerBarCode").val(data.ManufacturerBarCode);
+
+
+
+                        }
+                        $("#ShangBiaoLaiYuan1").modal('hide'); //选择后自动关闭
+                    });
+                }
+                else {
+                    layer.alert('你没有选择信息！', { icon: 2, title: '提示' });
+                }
+            });
+
+
+            $("#insertML").click(function () {
+                $('#modNoticeType .modal-title').html('<span class="glyphicon glyphicon-th-list"></span>新增公告类型');
+                $('#formNoticeType input[type="reset"]').click();//重置表单
+                $("#modNoticeType").modal("show");//弹出公告类型模态窗体
+            });
+
+
+
+            $("#Save").click(function () {
+                var ManufacturerCode = $("#ManufacturerCode").val();
+                var ManufacturerPC = $("#ManufacturerPC").val();
+                var ManufacturerName = $("#ManufacturerName").val();
+                var ManufacturerPYCode = $("#ManufacturerPYCode").val();
+                var ManufacturerJCName = $("#ManufacturerJCName").val();
+                var ManufacturerProduct = $("#ManufacturerProduct").val();
+                var ManufacturerAddress = $("#ManufacturerAddress").val();
+                var ManufacturerBarCode = $("#ManufacturerBarCode").val();
+                $.post("/AlternativeSupplier/Alternative/SelectGoods", {
+                    ManufacturerCode: ManufacturerCode,
+                    ManufacturerPC: ManufacturerPC,
+                    ManufacturerName: ManufacturerName,
+                    ManufacturerPYCode: ManufacturerPYCode,
+                    ManufacturerJCName: ManufacturerJCName,
+                    ManufacturerProduct: ManufacturerProduct,
+                    ManufacturerAddress: ManufacturerAddress,
+                    ManufacturerBarCode: ManufacturerBarCode
+                }, function (data) {
+                    if (data == "success") {
+                        alert("新增成功");
+                    }
+                    else {
+                        alert("新增失败");
+                    }
+                });
+            });
+            $("#btnBaoCunXiuGai").click(function () {
+
+                var ManufacturerCode = $("#ManufacturerCode").val();
+                var ManufacturerPC = $("#ManufacturerPC").val();
+                var ManufacturerName = $("#ManufacturerName").val();
+                var ManufacturerPYCode = $("#ManufacturerPYCode").val();
+                var ManufacturerJCName = $("#ManufacturerJCName").val();
+                var ManufacturerProduct = $("#ManufacturerProduct").val();
+                var ManufacturerAddress = $("#ManufacturerAddress").val();
+                var ManufacturerBarCode = $("#ManufacturerBarCode").val();
+                if (ManufacturerID != "") {
+                    $.post("/AlternativeSupplier/Alternative/Update", {
+
+                        ManufacturerCode: ManufacturerCode,
+                        ManufacturerPC: ManufacturerPC,
+                        ManufacturerName: ManufacturerName,
+                        ManufacturerPYCode: ManufacturerPYCode,
+                        ManufacturerJCName: ManufacturerJCName,
+                        ManufacturerProduct: ManufacturerProduct,
+                        ManufacturerAddress: ManufacturerAddress,
+                        ManufacturerBarCode: ManufacturerBarCode
+                    }, function (data) {
+                        if (data == "success") {
+                            alert("修改成功");
+                        }
+                        else {
+                            alert("修改失败");
+                        }
+                    });
+                }
+                });
+
+    </script>
+    @*删除合同*@
+    <script>
+        var goodsId = 0;
+        $("#btnShangChu").click(function () {
+            var selectRowIndex = taAlternativeProject.getSelectedRowIndex();//获取选中行的索引值
+            if (selectRowIndex >= 0) {
+                if (window.confirm("您确定要删除？")) {
+                    var goodsId = taAlternativeProject.getColumnValue(selectRowIndex, "ManufacturerID");
+                    //查询修改
+                    $.post("/AlternativeSupplier/Alternative/DeleteHeTong",
+                        { goodsId: goodsId }, function (msg) {
+                            if (msg == "success") {
+                                layer.alert('删除成功', { icon: 1, title: '提示' });
+                                //刷新table
+                                taAlternativeProject.refreshPage();
+                            }
+                            else {
+                                layer.alert('删除失败', { icon: 2, title: '提示' });
+                            }
+                        });
+                }
+            }
+            else {
+                layer.alert('请选择需要删除的数据', { icon: 2, title: '提示' });
+            }
+        });
+
+    </script>
+</body>
+</html>

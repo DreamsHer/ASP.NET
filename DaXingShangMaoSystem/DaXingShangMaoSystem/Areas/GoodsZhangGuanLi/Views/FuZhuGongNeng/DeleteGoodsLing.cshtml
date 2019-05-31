@@ -1,0 +1,215 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DeleteGoodsLing</title>
+
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+
+
+    <style>
+        .container {
+            background: #fff;
+            width: 100%;
+        }
+
+        .reset-padding {
+            padding: 0 5px;
+        }
+
+        .reset {
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        label.Size {
+            font-size: 60px;
+        }
+
+        label {
+            font-weight: normal;
+        }
+    </style>
+
+</head>
+<body>
+   
+    <div class="container">
+
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading"><h4>删除零库存商品</h4></div>
+                <div class="panel-body" style="background:#f0edf1;">
+                    <div class="row">
+                        <div class="col-md-11 col-sm-11 col-xs-11" style="padding-left:2px;">
+                            <form class="form-horizontal" role="form">
+                                <div class="row">
+                                    <div class="col-lg-1"></div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <div class="col-md-3">
+                                                <label class="control-label" style="padding-left:20px;">部 门：</label>
+                                            </div>
+
+                                            <div class="col-md-5" style="padding-left:15px;">
+                                                <select class="form-control" id="SpouseBRanchID"></select>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div style="border-bottom: #000 1px solid; width: 170px;">
+                                                    <input readonly="readonly" id="bumen" style="width: 170px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="row" style="overflow:auto;width:100%; margin-left:2px;">
+                        <table id="WarserHouseTable" style="margin-top:2px;background:#74a4e8;width:100%;">
+                            <tr>
+                                <th w_num="total_line">序号</th>
+                                <th w_index="GoodsIDs" w_hidden="true">商品ID</th>
+
+                                <th w_index="GoodsCodes">商品代码</th>
+                                <th w_index="GoodsTiaoMas">商品条码</th>
+                                <th w_index="GoodsNames">商品名称</th>
+                                <th w_index="EstimateUnitNames">计量单位</th>
+                                <th w_index="ArtNos">商品货号</th>
+                                <th w_index="SpecificationsModels">规格</th>
+                                <th w_index="RetailMonovalents">零售单价</th>
+                            </tr>
+                        </table>
+                    </div>
+
+
+                    <div class="row" style="margin-top:20px;">
+                        <div class="form-group">
+                            <div class="col-md-1 col-lg-offset-4">
+                                <button class="form-control btn btn-success" type="button" id="BaoCun"><span class="glyphicon glyphicon-search">查 询</span></button>
+                            </div>
+                            <div class="col-md-1">
+                                <button class="form-control btn btn-warning" type="button" id="DeLete"><span class="glyphicon glyphicon-remove">删 除</span></button>
+                            </div>
+                            <div class="col-md-1">
+                                <button class="form-control btn btn-primary" type="button" id="Fan">关 闭</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script><!--bootstrap-->
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.2.min.js"></script><!--bootstrap-->
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script><!--bootstrap-->
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+
+
+    <script>
+        var spouseBRanchID;
+        var WarserHousefdTable;
+
+        $(document).ready(function () {
+
+            WarserHouseTable = $.fn.bsgrid.init('WarserHouseTable', {
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                rowSelectedColor: true,
+                pageSize: 9,
+                pageSizeSelect: true,//
+                pagingLittleToolbar: true,//
+                pagingToolbarAlign: "left",//
+
+            });
+
+            //部门
+            $.post("/GoodsZhangGuanLi/FuZhuGongNeng/CaiGouXiaLa", function (data) {
+                selectLoadData("SpouseBRanchID", data);
+            });
+        });
+
+        //点击关闭
+        $("#Fan").click(function () {
+            $('body').remove();
+        });
+        //部门改变
+        $("#SpouseBRanchID").change(function () {
+            spouseBRanchID = $("#SpouseBRanchID").val();
+            if (spouseBRanchID > 0) {
+                $.post("/GoodsZhangGuanLi/FuZhuGongNeng/CaiGouXiaLaName?spouseBRanchID=" + spouseBRanchID, function (data) {
+                    $("#bumen").val(data[0].SpouseBRanchName);
+                });
+            }
+        });
+
+        //查询
+        WarserHousefdTable = $.fn.bsgrid.init('WarserHouseTable', {
+            url: '/GoodsZhangGuanLi/FuZhuGongNeng/SelectBangDingShangPin',
+            autoLoad: false,
+            stripeRows: true,
+            rowHoverColor: true,
+            rowSelectedColor: true,
+            pageSize: 9,
+            pageSizeSelect: true,//
+            pagingLittleToolbar: true,//
+            pagingToolbarAlign: "left",//
+
+        });
+        $("#BaoCun").click(function () {
+            if (spouseBRanchID > 0) {
+                WarserHousefdTable.search({ spousBRanchID: spouseBRanchID });
+            }
+            else {
+                alert("No");
+            }
+        });
+
+        $("#DeLete").click(function () {
+            var rowIndex = WarserHouseTable.getSelectedRowIndex();//
+            var GoodsIDs = WarserHouseTable.getColumnValue(rowIndex, "GoodsIDs");//获取ID
+           if (GoodsIDs > 0) {
+               layer.confirm("是否删除？", {
+                   icon: 3,
+                   btn: ['确定', '取消']
+               }, function (layerIndex) {
+                   layer.close(layerIndex);//关闭提示框
+                   layer.alert("删除成功！", { icon: 6, title: '温馨小提示：' });
+                   document.location.href = "/GoodsZhangGuanLi/FuZhuGongNeng/DeleteGoodsLing";
+               });
+
+            }
+            else {
+                layer.alert("请选择数据", { icon: 6, title: '温馨小提示：' });
+            }
+        });
+
+
+    </script>
+
+
+
+</body>
+</html>

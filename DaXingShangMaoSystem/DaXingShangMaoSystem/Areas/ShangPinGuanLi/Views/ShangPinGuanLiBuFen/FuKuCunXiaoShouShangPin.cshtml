@@ -1,0 +1,190 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />  
+    <title>以销定进/负库存销售商品定义</title>
+    <style type="text/css">
+        .container {
+            width: 98%;
+            padding-top: 4px;
+        }
+
+        .panel-heading {
+            font-size: 16px;
+        }
+
+        .panel-body {
+            padding: 0;
+            border-left: 3px solid #377ab7;
+            border-bottom: 3px solid #377ab7;
+            border-right: 3px solid #377ab7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="FuKuCunXiaoSouJieMian">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <span style="padding-left:14px;">设置允许负库存销售商品</span>                      
+                    </div>
+                </div>
+                <div class="panel-body" style="width:100%;height:550px;background:#f0edf1">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group" style="margin-top:10px;">
+                            <label class="col-md-2 col-sm-1 control-label reset">请选择允许负库存销售：</label>
+                            <div class="col-md-2 col-sm-1 reset" style="color:#ff0000;margin-top:7px;">
+                                <input type="radio" name="GoodsStatusName" value="允许限量负库存销售" /><label class="setSex">允许限量负库存销售</label>
+                            </div>
+                            <div class="col-md-2 col-sm-1 reset" style="color:#ff0000;margin-top:7px;">
+                                <input type="radio" name="GoodsStatusName" value="不允许负库存销售" /><label class="setSex">不允许负库存销售</label>
+                            </div>
+                            <div class="col-md-2 col-sm-1 reset" style="color:#ff0000;margin-top:7px;">
+                                <input type="radio" name="GoodsStatusName" value="以销定进销售" /><label class="setSex">以销定进销售</label>
+                            </div>
+                            <div class="col-md-2 col-sm-1 reset" style="color:#ff0000;margin-top:7px;">
+                                <input type="radio" name="GoodsStatusName" value="商品溢余销售" /><label class="setSex">尚品溢余销售</label>
+                            </div>
+                            <div class="col-md-2 col-sm-1 reset" style="color:#ff0000;margin-top:7px;">
+                                <input type="radio" name="GoodsStatusName" value="允许负库存销售" /><label class="setSex">允许负库存销售</label>
+                            </div>
+                        </div>
+                        <table id="tabFuKuCunXiaoSou" style="width:100%">
+                            <tr>
+                                <th w_check="true"></th>
+                                <th w_index="GoodsCode">商品代码</th>
+                                <th w_index="GoodsTiaoMa">商品条码</th>
+                                <th w_index="BurdenStockSellStatusName">负库存销售标记</th>
+                                <th w_index="SupplierName">供货单位</th>
+                                <th w_index="ContractNumber">合同号</th>
+                                <th w_index="GoodsChopName">商标品牌</th>
+                                <th w_index="BurdenStockDataNumber" w_render="crearViewinput" width="150px;">负库存销售天数/数量</th>
+                            </tr>
+                        </table>
+                        <div class="form-group" style="margin-top:30px;">
+                            <div class="col-sm-1 col-sm-offset-5">
+                                <button type="button" class="btn btn-info form-control" id="btnQueDing">
+                                    <span class="glyphicon glyphicon-ok"></span> 确认
+                                </button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-warning form-control" id="btnQuXiao">
+                                    <span class="glyphicon glyphicon-remove"></span> 取消
+                                </button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-danger form-control" id="btnTuiChu">
+                                    <span class="glyphicon glyphicon-off"></span> 退出
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    @*页面数据*@
+    <script type="text/javascript">
+        var tabFuKuCunXiaoSou;        
+        $(function () {
+            tabFuKuCunXiaoSou = $.fn.bsgrid.init('tabFuKuCunXiaoSou', {
+                url: '/ShangPinGuanLi/ShangPinGuanLiBuFen/SelectFuKuCunXiaoSou',
+                autoLoad: false,//自动加载数据
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                rowSelectedColor: true,//是否显示选中行背景色
+                pageSize: 8,//默认页面大小
+                pageSizeSelect: true,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置               
+            });
+            tabFuKuCunXiaoSou.search();
+        })
+        
+
+        //自定义负库存销售天数/数量
+        function crearViewinput(record, rowIndex, colIndex, options) {
+            return '<input type="text" class="form-control" name="Auditor" id="Auditor">'
+        }
+
+        //便利循环选中的check
+        function getCheckedRecords() {
+            var records = new Array();
+            $("#tabFuKuCunXiaoSou tr").each(function () {
+                //判断获取选中当前点击的行
+                if ($(this).find('td:eq(0)>input:checked').length == 1) {
+                    //把选中的行保存到数组中
+                    records[records.length] = tabFuKuCunXiaoSou.getRowRecord($(this));//getRowRecord()根据行dom对象获取行记录值
+                }
+            });
+            //返回数组
+            return records;
+        }
+
+        //确定按钮
+        $("#btnQueDing").click(function () {
+            var records = getCheckedRecords();//调用便利循环选中的check
+            var Returns = 0;//声明一个变量
+            if (records.length > 0) {
+                layer.confirm("是否要设置当前选择的数据？", {
+                    icon: 3,
+                    btn: ['确定', '取消']
+                }, function (layerIndex) {
+                    layer.close(layerIndex);//关闭提示框
+                    //循环选中数组
+                    for (var i = 0; i < records.length; i++) {
+                        //获取选中单元格的值PortID
+                        var GoodsID = tabFuKuCunXiaoSou.getRecordIndexValue(records[i], 'GoodsID');//变量获取ID
+                        $.post("/ShangPinGuanLi/ShangPinGuanLiBuFen/GoodsXiuGaiBianGeng", { GoodsID: GoodsID }, function (msg) {
+                            if (msg == "success") {
+                                Returns = Returns + 1;//变量自增
+                                if (Returns == records.length) {//选中的行数是否与变更行数对应
+
+                                    tabFuKuCunXiaoSou.refreshPage(); //刷新table
+                                    layer.alert("设置成功", { icon: 1, title: "提示" });
+                                }
+                            }
+                            else {
+                                layer.alert('设置失败', { icon: 2, title: '提示' });
+                            }
+                        });
+                    }
+                });
+            } else {
+                layer.alert('请选择需要设置的数据', { icon: 0, title: '提示' });
+            }
+        });
+
+        //放弃按钮
+        $("#btnQuXiao").click(function () {
+            document.location.href = "/ShangPinGuanLi/ShangPinGuanLiBuFen/FuKuCunXiaoShouShangPin";
+        });
+
+        //页面关闭按钮
+        $(function () {          
+            $("#btnTuiChu").click(function () {
+                $("#FuKuCunXiaoSouJieMian").hide();
+            });
+        });
+
+    </script>
+</body>
+</html>

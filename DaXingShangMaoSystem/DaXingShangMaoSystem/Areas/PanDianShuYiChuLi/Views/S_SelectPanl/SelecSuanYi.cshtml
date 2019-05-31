@@ -1,0 +1,177 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SelecSuanYi</title>
+
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+
+
+    <style>
+        .container {
+            background: #fff;
+            width: 100%;
+        }
+
+        .reset-padding {
+            padding: 0 5px;
+        }
+
+        .reset {
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        label.Size {
+            font-size: 60px;
+        }
+
+        label {
+            font-weight: normal;
+        }
+    </style>
+
+</head>
+<body>
+   
+
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="h4">查询损溢单</span>
+                    <div class="pull-right">
+                        <button class="form-control btn-xs btn btn-info" id="Colse"><span class="glyphicon glyphicon-remove">关闭</span></button>
+                    </div>
+                </div>
+                <div class="panel-body">
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <span>数据列表</span>
+                            <div class="pull-right">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-5">
+                                            <button class="btn btn-success" type="button" onclick="window.print();return false;"><span class="glyphicon glyphicon-print"></span> 打印页面</button>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <button class="btn btn-primary" type="button" id="goHome"><span class="glyphicon glyphicon-share-alt"></span>返回主页</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body" style="padding-left:15px;background:#eee9e9;">
+                            <div class="h4"><b>损益单据</b></div>
+                            <table id="ShangPin" style="background:#74a4e8">
+                                <tr>
+                                    <th w_index="IncreaseID" w_hidden="true"></th><!--损益ID-->
+                                    <th w_index="Remember">损益编号</th>
+                                    <th w_index="DrugType">部 门</th>
+                                    <th w_index="StockPlaceName">库存地点</th>
+                                    <th w_index="IncreaseCause">备 注</th>
+                                    <th w_index="RegisterName">制单人</th>
+                                    <th w_index="RegisterTime">制单时间</th>
+                                    <th w_index="ExamineName">审核人</th>
+                                    <th w_index="ExamineTime">审核时间</th>
+                                </tr>
+                            </table>
+
+                            <div class="h4"><b>损益商品信息</b></div>
+
+                            <table id="ShangPinDetail">
+                                <tr>
+                                    <th w_index="IncreaseDetailID" w_hidden="true"></th><!--损益明细ID-->
+                                    <th w_index="GoodsCodes">商品代码</th>
+                                    <th w_index="GoodsNames">商品名称</th>
+                                    <th w_index="EstimateUnitNames">计量单位</th>
+                                    <th w_index="MumberOfPackages">盈余件数</th>
+                                    <th w_index="Subdivision">盈余细数</th>
+                                    <th w_index="Number">批次号</th>
+                                    <th w_index="RetailMonovalents">销售单价</th>
+                                    <th w_index="TaxBids">含税进价</th>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script><!--bootstrap-->
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.2.min.js"></script><!--bootstrap-->
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script><!--bootstrap-->
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+
+
+    <script>
+        var ShangPinghg;
+
+        $(document).ready(function () {
+
+            ShangPin = $.fn.bsgrid.init('ShangPin', {
+                url: '/PanDianShuYiChuLi/S_SelectPanl/SelectInsfdr',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                pageSize: 9,
+                pageSizeSelect: false,
+                pagingLittleToolbar: true,
+                pagingToolbarAlign: "left",
+                event: {//事件
+                    customRowEvents: {
+                        click: function (record, rowIndex, trObj, options) {//点击事件
+                            ShangPinDetail.search("increaseID=" + record.IncreaseID);
+                        }
+                    }
+                }
+            });
+            ShangPin.search();
+            
+            ShangPinDetail = $.fn.bsgrid.init('ShangPinDetail', {
+                url: '/PanDianShuYiChuLi/S_SelectPanl/BangCheckewsffGoodsj',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                pageSize: 5,
+                pageSizeSelect: false,
+                pagingLittleToolbar: true,
+                pagingToolbarAlign: "left"
+            });
+
+          
+
+        });
+
+      
+
+        $("#Colse").click(function () {
+            $('body').remove();
+        });
+        $("#goHome").click(function () {
+            $('body').remove();
+        });
+
+    </script>
+
+</body>
+</html>

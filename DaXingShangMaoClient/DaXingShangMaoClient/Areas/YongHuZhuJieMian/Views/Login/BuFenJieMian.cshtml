@@ -1,0 +1,583 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GouWuCheJieMian</title>
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+    <style>
+        .one {
+            width: 1449px;
+            background: #f7f1f1;
+            border: 2px solid #000;
+            margin-left: 20px;
+            margin: 0 auto;
+        }
+
+        .head-left {
+            width: 450px;
+            height: 30px;
+        }
+
+            .head-left ul li {
+                float: left;
+                list-style: none;
+                margin-left: 20px;
+            }
+
+                .head-left ul li a {
+                    font-size: 15px;
+                    color: #000;
+                    padding: 4px;
+                    text-decoration: none;
+                }
+
+        .head-right {
+            width: 750px;
+            height: 30px;
+            position: absolute;
+            margin-left: 800px;
+            margin-top: -30px;
+        }
+
+            .head-right ul li {
+                float: left;
+                list-style: none;
+                position: relative;
+            }
+
+                .head-right ul li a {
+                    font-size: 15px;
+                    color: #000;
+                    padding: 10px;
+                    text-decoration: none;
+                }
+
+        .head a:hover {
+            color: #F00;
+        }
+
+
+        .JieSuan-left {
+            width: 500px;
+            height: 30px;
+        }
+
+            .JieSuan-left ul li {
+                float: left;
+                list-style: none;
+                font-size: 16px;
+                margin-top: 15px;
+            }
+
+                .JieSuan-left ul li a {
+                    color: #000;
+                    padding: 4px;
+                    text-decoration: none;
+                }
+
+        .JieSuan-right {
+            width: 550px;
+            height: 30px;
+            position: absolute;
+            margin-left: 1000px;
+            margin-top: -30px;
+        }
+
+            .JieSuan-right ul li {
+                float: left;
+                list-style: none;
+                position: relative;
+                margin-top: 15px;
+            }
+
+                .JieSuan-right ul li a {
+                    font-size: 16px;
+                    color: #000;
+                    padding: 10px;
+                    text-decoration: none;
+                }
+
+        .JieSuan a:hover {
+            color: #ff6a00;
+        }
+
+
+        .search {
+            width: 700px;
+            height: 40px;
+            position: absolute;
+            margin-top: -150px;
+            margin-left: 400px;
+        }
+
+            .search input {
+                width: 600px;
+                height: 40px;
+                border: 3px solid #aa1414;
+                border-right: none;
+                font-size: 20px;
+            }
+
+            .search a {
+                float: right;
+                width: 100px;
+                height: 40px;
+                background: #aa1414;
+                text-decoration: none;
+                color: #fff;
+                font-size: 24px;
+                text-align: center;
+                line-height: 40px;
+            }
+
+            .search .bginput {
+                background: url(../imges/search.png) no-repeat left center;
+            }
+
+
+        .LeiSiSouSuo {
+            width: 750px;
+            height: 30px;
+            position: absolute;
+            margin-left: 350px;
+            margin-top: -100px;
+        }
+
+            .LeiSiSouSuo ul li {
+                float: left;
+                list-style: none;
+                position: relative;
+            }
+
+                .LeiSiSouSuo ul li a {
+                    font-size: 15px;
+                    color: #000;
+                    padding: 10px;
+                    text-decoration: none;
+                }
+
+            .LeiSiSouSuo a:hover {
+                color: #F00;
+            }
+
+
+
+        .JiBenXinXi {
+            position: absolute;
+            margin-top: 15px;
+        }
+
+            .JiBenXinXi ul li {
+                float: left;
+                list-style: none;
+                position: relative;
+                color:#aa1414;
+            }
+
+                .JiBenXinXi ul li a {
+                    font-size: 15px;
+                    color: #000;
+                    padding: 10px;
+                    text-decoration: none;
+                }
+
+            .JiBenXinXi a:hover {
+                color: #ff6a00;
+            }
+
+
+
+
+
+
+        .ShangPinXinXi {
+            position: absolute;
+            margin-top: 30px;
+        }
+
+            .ShangPinXinXi ul li {
+                float: left;
+                list-style: none;
+                position: relative;
+            }
+
+                .ShangPinXinXi ul li a {
+                    font-size: 15px;
+                    color: #000;
+                    padding: 50px;
+                    text-decoration: none;
+                }
+
+            .ShangPinXinXi a:hover {
+                color: #ff6a00;
+            }
+
+
+        .LeiSi {
+            position: absolute;
+            margin-top: 10px;
+        }
+
+            .LeiSi ul li {
+                float: left;
+                list-style: none;
+                position: relative;
+            }
+
+                .LeiSi ul li a {
+                    font-size: 15px;
+                    color: #000;
+                    padding: 10px;
+                    text-decoration: none;
+                }
+
+            .LeiSi a:hover {
+                color: #ff6a00;
+            }
+    </style>
+
+</head>
+<body>
+
+    <div class="one">
+
+        <!--头部信息-->
+        <div class="head" style="background:#f6eded;">
+            <div class="head-left">
+                <ul>
+                    <li><a href="http://localhost:5785/">商贸首页</a></li>
+                    <li><p style="font-size:15px;">欢迎来商贸</p></li>
+                    <li><a href="http://localhost:5785/YongHuZhuJieMian/Login/Login">请登录</a></li>
+                    <li><a href="http://localhost:5785/UserLog/Userlog/UserLogIndex">免费注册</a></li>
+                </ul>
+            </div>
+            <div class="head-right">
+                <ul>
+                    <li><a href="http://localhost:5785/">我的淘宝</a></li>
+                    <li><p style="font-size:15px;"> | </p></li>
+                    <li><a href=""> 购物车</a></li>
+                    <li><p style="font-size:15px;"> | </p></li>
+                    <li><a href=""> 收藏夹</a></li>
+                    <li><p style="font-size:15px;"> | </p></li>
+                    <li><a href="#"> 淘宝网</a></li>
+                    <li><p style="font-size:15px;"> | </p></li>
+                    <li><a href="#"> 商家支持</a></li>
+                    <li><p style="font-size:15px;"> | </p></li>
+                    <li><a href="#"> 网站导航</a></li>
+                </ul>
+            </div>
+        </div>
+
+        @*搜索框信息*@
+        <div class="BiaoSechen">
+
+            <div id="logo" class="logo" style="margin-left:50px;width:200px;">
+                <h1 class="logo_tit"><img src="~/ImaginPho/QX/008.jpg" style="width:200px;height:100px;" /></h1>
+                <h3 class="logo_subtit" style="width:200px;height:100px;">商贸,便捷好省</h3>
+            </div>
+
+            <div class="search">
+                <input type="text" class="bginput" id="txtSearch" placeholder="搜索 商品/品牌/店铺" style="color:#000;font-size:15px;" /> 
+                <a href="#">搜索</a>
+            </div>
+
+            <div class="ShoppingCartf" style="position:absolute;margin-left:1160px;margin-top:-220px;width:200px;">
+                <h1 class="logo_tit"><img src="~/ImaginPho/QX/009.png" style="width:200px;height:150px;" /></h1>
+            </div>
+
+            <div class="LeiSiSouSuo">
+                <ul>
+                    <li><a href="#">冲锋衣</a></li>
+                    <li><a href="#"> 外套</a></li>
+                    <li><a href="#"> 夹克</a></li>
+                    <li><a href="#"> 卫衣</a></li>
+                    <li><a href="#"> 毛衣</a></li>
+                    <li><a href="#"> 衬衫</a></li>
+                    <li><a href="#"> T恤</a></li>
+                    <li><a href="#"> 牛仔裤</a></li>
+                    <li><a href="#"> 休闲裤</a></li>
+                    <li><a href="#"> 连衣裙</a></li>
+                    <li><a href="#"> 短裤</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        @*商品类似查询*@
+        <div class="FenLeiBiaoTi">
+            <div class="row" style="background:#c7dcdb;height:45px;width:100%;margin-left:1px;">
+                <div class="LeiSi">
+                    <ul>
+                        <li><p style="font-size:15px;">你是不是想找： </p></li>
+                        <li><a href="#">冲锋衣</a></li>
+                        <li><p style="font-size:15px;"> | </p></li>
+                        <li><a href="#"> 外套</a></li>
+                        <li><p style="font-size:15px;"> | </p></li>
+                        <li><a href="#"> 夹克</a></li>
+                        <li><p style="font-size:15px;"> | </p></li>
+                        <li><a href="#"> 卫衣</a></li>
+                        <li><p style="font-size:15px;"> | </p></li>
+                        <li><a href="#"> 毛衣</a></li>
+                        <li><p style="font-size:15px;"> | </p></li>
+                        <li><a href="#"> 衬衫</a></li>
+                        <li><p style="font-size:15px;"> | </p></li>
+                        <li><a href="#"> T恤</a></li>
+                        <li><p style="font-size:15px;"> | </p></li>
+                        <li><a href="#"> 牛仔裤</a></li>
+                        <li><p style="font-size:15px;"> | </p></li>
+                        <li><a href="#"> 休闲裤</a></li>
+                        <li><p style="font-size:15px;"> | </p></li>
+                        <li><a href="#"> 连衣裙</a></li>
+                        <li><p style="font-size:15px;"> | </p></li>
+                        <li><a href="#"> 短裤</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        @*加入购物车的商品信息*@
+        <div class="DianXinXi" style="height:1000px;">
+
+            <div class="row" style="width:100%;height:30px;">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <p>=======================<a style="color:#000000;font-size:18px;">你想要找的</a>==========================</p>
+                </div>
+            </div>
+
+            <div class="row" style="width:100%;height:430px;">
+                <div class="col-lg-3" id="GouWu_fritbox">
+                    <div class="" style="height:410px;background:#fff;border:solid 1px #999;">
+                        <a href="http://localhost:5785/YongHuZhuJieMian/GoodesUIL/DanYiShangPinJieMian">
+                            <input type="hidden" id="GouWu_fritId" />
+                            <div class="img-box text-center" style="width:100%; height:310px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:100%" id="one" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="one_sizi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input readonly="readonly" id="one_sizitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />￥
+                                <input readonly="readonly" id="one_sizijiage" style="width: 100%; border: none; background:#fff; font-size: 20px; color:red;" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3" id="GouWu_fritbox">
+                    <div class="" style="height:410px;background:#fff;border:solid 1px #999;">
+                        <a href="http://localhost:5785/YongHuZhuJieMian/GoodesUIL/DanYiShangPinJieMian">
+                            <input type="hidden" id="GouWu_fritId" />
+                            <div class="img-box text-center" style="width:100%; height:310px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:100%" id="two" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="two_sizi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input readonly="readonly" id="two_sizitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />￥
+                                <input readonly="readonly" id="two_sizijiage" style="width: 100%; border: none; background:#fff; font-size: 20px; color:red;" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3" id="GouWu_fritbox">
+                    <div class="" style="height:410px;background:#fff;border:solid 1px #999;">
+                        <a href="http://localhost:5785/YongHuZhuJieMian/GoodesUIL/DanYiShangPinJieMian">
+                            <input type="hidden" id="GouWu_fritId" />
+                            <div class="img-box text-center" style="width:100%; height:310px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:100%" id="frtie" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="frtie_sizi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input readonly="readonly" id="frtie_sizitwo" style="width: 100%; border: none; background:#fff; font-size: 18px;" />￥
+                                <input readonly="readonly" id="frtie_sizijiage" style="width: 100%; border: none; background:#fff; font-size: 20px; color:red;" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3" id="GouWu_fritbox">
+                    <div class="" style="height:410px;background:#fff;border:solid 1px #999;">
+                        <a href="http://localhost:5785/YongHuZhuJieMian/GoodesUIL/DanYiShangPinJieMian">
+                            <input type="hidden" id="GouWu_fritId" />
+                            <div class="img-box text-center" style="width:100%; height:310px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:100%" id="four" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="four_sizi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input readonly="readonly" id="four_sizitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />￥
+                                <input readonly="readonly" id="four_sizijiage" style="width: 100%; border: none; background:#fff; font-size: 20px; color:red;" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="row" style="width:100%;height:430px;">
+                <div class="col-lg-3" id="GouWu_fritbox">
+                    <div class="" style="height:410px;background:#fff;border:solid 1px #999;">
+                        <a href="http://localhost:5785/YongHuZhuJieMian/GoodesUIL/DanYiShangPinJieMian">
+                            <input type="hidden" id="GouWu_fritId" />
+                            <div class="img-box text-center" style="width:100%; height:310px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:100%" id="frtit" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="frtit_sizi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input readonly="readonly" id="frtit_sizitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />￥
+                                <input readonly="readonly" id="frtit_sizijiage" style="width: 100%; border: none; background:#fff; font-size: 16px; color:red;" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3" id="GouWu_fritbox">
+                    <div class="" style="height:410px;background:#fff;border:solid 1px #999;">
+                        <a href="http://localhost:5785/YongHuZhuJieMian/GoodesUIL/DanYiShangPinJieMian">
+                            <input type="hidden" id="GouWu_fritId" />
+                            <div class="img-box text-center" style="width:100%; height:310px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:100%" id="six" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="six_sizi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input readonly="readonly" id="six_sizitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />￥
+                                <input readonly="readonly" id="six_sizijiage" style="width: 100%; border: none; background:#fff; font-size: 20px; color:red;" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3" id="GouWu_fritbox">
+                    <div class="" style="height:410px;background:#fff;border:solid 1px #999;">
+                        <a href="http://localhost:5785/YongHuZhuJieMian/GoodesUIL/DanYiShangPinJieMian">
+                            <input type="hidden" id="GouWu_fritId" />
+                            <div class="img-box text-center" style="width:100%; height:310px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:100%" id="sevent" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="sevent_sizi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input readonly="readonly" id="sevent_sizitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />￥
+                                <input readonly="readonly" id="sevent_sizijiage" style="width: 100%; border: none; background:#fff; font-size: 20px; color:red;" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3" id="GouWu_fritbox">
+                    <div class="" style="height:410px;background:#fff;border:solid 1px #999;">
+                        <a href="http://localhost:5785/YongHuZhuJieMian/GoodesUIL/DanYiShangPinJieMian">
+                            <input type="hidden" id="GouWu_fritId" />
+                            <div class="img-box text-center" style="width:100%; height:310px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:100%" id="eight" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="eight_sizi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input readonly="readonly" id="eight_sizitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />￥
+                                <input readonly="readonly" id="eight_sizijiage" style="width: 100%; border: none; background:#fff; font-size: 20px; color:red;" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            @*底部网页说明*@
+            <div class="row" style="width:100%;height:110px;font-size:16px;color:#c3c1c1;">
+
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="" style="width:100%;border-top:2px solid #808080;"></div>
+
+                    <div class="JiBenXinXi">
+                        <ul>
+                            <li><a href="#">关于电商</a></li>
+                            <li><a href="#">合作伙伴</a></li>
+                            <li><a href="#">廉政举报</a></li>
+                            <li><a href="#">联系客户</a></li>
+                            <li><a href="#">开放平台</a></li>
+                            <li><a href="#">诚征英才</a></li>
+                            <li><a href="#">联系我们</a></li>
+                            <li><a href="#">网站地图</a></li>
+                            <li><a href="#">发力声明</a></li>
+                            <li><a href="#">1997—2017 DianShang.com </a>版权所有</li>
+                        </ul>
+                        <br />
+                        <ul>
+                            <li>网络文化经营许可证书：<a href="#">粤网文[2003]0268-027号</a></li>
+                            <li>增值电信业务经营许可证书：<a href="#">粤B2-20080224-1</a></li>
+                            <li>信息网络传播视听节目许可证：<a href="#">1109364号</a></li>
+                            <li>互联网不良信息举报联系电话：<a href="#">0571-81683733</a></li>
+                        </ul>
+                    </div>
+                </div>
+               
+
+                
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+
+        $(function () {
+            //liang
+            $.post("/YongHuZhuJieMian/Login/SelectGoodeseiltliang", function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    if ($("#one_sizi").val() == '') {
+                        $("#one_sizi").val(data[i].GoodsName);
+                        $("#one_sizitwo").val(data[i].Remember);
+                        $("#one_sizijiage").val(data[i].TaxBid);
+                        $("#one").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    } else if ($("#two_sizi").val() == '') {
+                        $("#two_sizi").val(data[i].GoodsName);
+                        $("#two_sizitwo").val(data[i].Remember);
+                        $("#two_sizijiage").val(data[i].TaxBid);
+                        $("#two").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    } else if ($("#frtie_sizi").val() == '') {
+                        $("#frtie_sizi").val(data[i].GoodsName);
+                        $("#frtie_sizitwo").val(data[i].Remember);
+                        $("#frtie_sizijiage").val(data[i].TaxBid);
+                        $("#frtie").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    } else if ($("#four_sizi").val() == '') {
+                        $("#four_sizi").val(data[i].GoodsName);
+                        $("#four_sizitwo").val(data[i].Remember);
+                        $("#four_sizijiage").val(data[i].TaxBid);
+                        $("#four").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    } else if ($("#frtit_sizi").val() == '') {
+                        $("#frtit_sizi").val(data[i].GoodsName);
+                        $("#frtit_sizitwo").val(data[i].Remember);
+                        $("#frtit_sizijiage").val(data[i].TaxBid);
+                        $("#frtit").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    } else if ($("#six_sizi").val() == '') {
+                        $("#six_sizi").val(data[i].GoodsName);
+                        $("#six_sizitwo").val(data[i].Remember);
+                        $("#six_sizijiage").val(data[i].TaxBid);
+                        $("#six").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    } else if ($("#sevent_sizi").val() == '') {
+                        $("#sevent_sizi").val(data[i].GoodsName);
+                        $("#sevent_sizitwo").val(data[i].Remember);
+                        $("#sevent_sizijiage").val(data[i].TaxBid);
+                        $("#sevent").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    } else if ($("#eight_sizi").val() == '') {
+                        $("#eight_sizi").val(data[i].GoodsName);
+                        $("#eight_sizijiage").val(data[i].TaxBid);
+                        $("#eight_sizitwo").val(data[i].Remember);
+                        $("#eight").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    }
+
+                }
+
+
+            });
+        });
+
+
+    </script>
+
+</body>
+</html>

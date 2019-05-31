@@ -1,0 +1,628 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ZuLinXiaoShou</title>
+
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+
+
+    <style>
+        .container {
+            background: #f0edf1;
+            width: 100%;
+        }
+
+        .reset-padding {
+            padding: 0 5px;
+        }
+
+        .reset {
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        label.Size {
+            font-size: 60px;
+        }
+
+        label {
+            font-weight: normal;
+        }
+    </style>
+
+
+</head>
+<body>
+   
+    <div class="container">
+
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="h4">租赁商品销售查询</span>
+                    <div class="pull-right">
+                        <button class="form-control btn-sm btn btn-info" id="Colse"><span class="glyphicon glyphicon-remove">关闭</span></button>
+                    </div>
+                </div>
+                <div class="panel-body" style="background:#f0edf1;">
+
+                    <div class="row container">
+                        <ul id="myTab" class="nav nav-tabs">
+                            <li class="active" data-toggle="tab"><a href="#bulletin" data-toggle="tab">查询条件</a></li>
+                            <li><a href="#rule" data-toggle="tab">查询结果</a></li>
+
+                        </ul>
+
+
+                        <div id="myMianBanZu" class="tab-content">
+                            <!--查询条件-->
+                            <div class="tab-pane active" id="bulletin">
+                                <div class="col-lg-3"></div>
+
+                                <div class="col-lg-6">
+
+
+                                    <div class="row" style="margin-top:30px;">
+                                        <div class="col-lg-10" style="border: 3px solid #d8cddc;">
+                                            <br />
+                                            <div class="row" style="margin-top:15px;">
+                                                <div class="form-group">
+                                                    <div class="col-md-3">
+                                                        <label class="control-label" style="margin-left:20px;margin-top:8px;">销售部门：</label>
+                                                    </div>
+
+                                                    <div class="col-md-4" style="padding-left:15px;">
+                                                        <select class="form-control" id="SpouseBRanchID"></select>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div style="border-bottom: #000 1px solid; width: 170px;">
+                                                            <input readonly="readonly" id="SellBuMen" style="width: 170px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row" style="margin-top:10px;">
+                                                <div class="form-group">
+                                                    <div class="col-md-3">
+                                                        <button class="btn btn-block" type="button" id="GoosdCode">商品代码</button>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <input class="form-control" id="GoodsCode" type="text" />
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div style="border-bottom: #000 1px solid; width: 170px;">
+                                                            <input readonly="readonly" id="GoodsName" style="width: 170px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row" style="margin-top:10px;">
+                                                <div class="form-group">
+                                                    <div class="col-md-3">
+                                                        <button class="btn btn-block" type="button" id="GongHuoDanWei">供货单位</button>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <input class="form-control" id="SuppDanMei" type="text" />
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div style="border-bottom: #000 1px solid; width: 170px;">
+                                                            <input readonly="readonly" id="DanWeiName" style="width: 170px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row" style="margin-top:10px;">
+                                                <div class="form-group">
+                                                    <div class="col-md-3">
+                                                        <button class="btn btn-block" type="button" id="HeTongfd">合同号</button>
+                                                    </div>
+                                                    <div class="col-md-4" style="padding-left:15px;">
+                                                        <input class="form-control" id="HeTongte" type="text"/>
+                                                    </div>
+                                                   
+                                                </div>
+                                            </div>
+
+
+                                            <div class="row" style="margin-top:20px;">
+                                                <div class="form-group">
+                                                    <div class="col-md-3">
+                                                        <label class="control-label" style="padding-left:40px;">日 期：</label>
+                                                    </div>
+
+                                                    <div class="col-md-4">
+                                                        <input id="QiDay" class="form-control" type="date" />
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <input id="ZhiDay" class="form-control" type="date" />
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <br />
+                                        </div>
+                                    </div>
+
+
+                                 
+                                    <div class="row" style="margin-top:20px;">
+                                        <div class="col-lg-10" style="border: 3px solid #d8cddc;">
+                                            <br />
+                                            <div class="form-group">
+                                                <div class="col-md-5">
+                                                    <input type="checkbox" id="CommodityTypea" name="CommodityTypea" value="一般列表" /><label class="ZiYingPanl">一般列表</label>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <input type="checkbox" id="CommodityTypea" name="CommodityTypea" value="期间列表" /><label class="ZiYingPanl">期间列表</label>
+                                                </div>
+
+                                            </div>
+                                            <br />
+                                        </div>
+
+                                    </div>
+
+                                  
+
+                                    <div class="row" style="margin-top:50px;">
+                                        <div class="form-group">
+                                            <div class="col-md-2 col-lg-offset-1">
+                                                <button class="form-control btn btn-success" type="button" id="Select"><span class="glyphicon glyphicon-search">查 询</span></button>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <button class="form-control btn btn-warning" type="button" id="DeLete"><span class="glyphicon glyphicon-remove">取 消</span></button>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <button class="btn btn-block" type="button" id="ChongZhi">重 置</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                            <!--查询结果-->
+                            <div class="tab-pane" id="rule">
+
+                                <div class="row" style="margin-left:2px;">
+                                    <div class="row">
+                                        <div class="panel panel-default">
+                                            <div class="panel panel-body" style="padding-left:15px;">
+                                                <div class="h6"><b>租赁销售信息</b></div>
+                                                <table id="WarserHouseTable" style="margin-top:2px;">
+                                                    <tr>
+                                                        <th w_num="total_line">序号</th>
+                                                        <th w_index="" w_hidden="true">要货ID</th>
+                                                        <th w_index="Remember">租赁编号</th>
+                                                        <th w_index="SupplierCHName">供货商单位</th>
+                                                        <th w_index="ContractNumber">合同号</th>
+                                                        <th w_index="SpouseBRanchName">销售部门</th>
+                                                        <th w_index="StaffName">执行人</th>
+                                                        <th w_index="RegisterTime">日 期</th>
+                                                    </tr>
+                                                </table>
+
+                                                <div class="h6"><b>商品信息</b></div>
+
+                                                <table id="ShangPin">
+                                                    <tr>
+                                                        <th w_num="total_line" width="5%">序号</th>
+                                                        <th w_index="GoodsCodes">商品代码</th>
+                                                        <th w_index="GoodsTiaoMas">商品条码</th>
+                                                        <th w_index="GoodsNames">商品名称</th>
+                                                        <th w_index="ArtNos">货号</th>
+                                                        <th w_index="SpecificationsModels">规格</th>
+                                                        <th w_index="PackContents">包装含量</th>
+
+                                                        <th w_index="MumberOfPackages">销售件数</th>
+                                                        <th w_index="EstimateUnitNames">计量单位</th>
+                                                        <th w_index="TaxBids">含税进价</th>
+                                                        <th w_index="RetailMonovalents">零售单格</th>
+
+                                                    </tr>
+                                                </table>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                    @*<div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-1">
+                                                <label class="control-label reset">交易次数:</label>
+                                            </div>
+
+                                            <div class="col-md-3">
+                                                <div style="border-bottom: #000 1px solid; width: 170px;">
+                                                    <input readonly="readonly" id="JiaoYiCiShu" style="width: 170px; border: none; color: #0000FF;background:#f0edf1; font-size: 25px;" />
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-1">
+                                                <label class="control-label reset" style="margin-left:10px;margin-top:10px;">退货次数:</label>
+                                            </div>
+
+                                            <div class="col-md-3">
+                                                <div style="border-bottom: #000 1px solid; width: 170px;">
+                                                    <input readonly="readonly" id="TuiHuoCiShu" style="width: 170px; border: none; color: #0000FF;background:#f0edf1; font-size: 25px;" />
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-1">
+                                                <label class="control-label reset" style="margin-left:10px;margin-top:10px;">退货金额:</label>
+                                            </div>
+
+                                            <div class="col-md-3">
+                                                <div style="border-bottom: #000 1px solid; width: 170px;">
+                                                    <input readonly="readonly" id="TuiHuoJinE" style="width: 170px; border: none; color: #0000FF;background:#f0edf1; font-size: 25px;" />
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>*@
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!--商品代码查询窗口-->
+    <div class="modal bs-example-modal-sm" id="modGoodsCode">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background:#74a4e8;">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">供货商代码查询窗口</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row examineeInfor" style="overflow:auto;height:260px;width:590px;">
+                        <table id="GoodsCodseTa">
+                            <tr>
+                                <th w_num="total_line" width="10%">序号</th>
+                                <th w_index="GoodsIDs" w_hidden="true"></th>
+                                <th w_index="GoodsCode">代码</th>
+                                <th w_index="GoodsName">商品名称</th>
+
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row" style="margin-top:10px;">
+                        <div class="form-group">
+                            <div class="col-md-2 col-lg-offset-4">
+                                <button class="form-control btn btn-primary" type="button" id="btnGoods">确 定</button>
+                            </div>
+                            <div class="col-md-2">
+                                <button class="form-control btn btn-primary" type="button" id="btnQuXiaodg">返 回</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--供货商代码查询窗口-->
+    <div class="modal bs-example-modal-sm" id="modSuppkd">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background:#74a4e8;">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">商品代码查询窗口</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row examineeInfor" style="overflow:auto;height:260px;width:590px;">
+                        <table id="SuppkTa">
+                            <tr>
+                                <th w_num="total_line" width="10%">序号</th>
+                                <th w_index="GoodsIDs" w_hidden="true"></th>
+                                <th w_index="GoodsCode">代码</th>
+                                <th w_index="GoodsName">供货商名称</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row" style="margin-top:10px;">
+                        <div class="form-group">
+                            <div class="col-md-2 col-lg-offset-4">
+                                <button class="form-control btn btn-primary" type="button" id="btnQueDingd">确 定</button>
+                            </div>
+                            <div class="col-md-2">
+                                <button class="form-control btn btn-primary" type="button" id="btnQuXiaodg">返 回</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--合同查询窗口-->
+    <div class="modal bs-example-modal-sm" id="modHeTong">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background:#74a4e8;">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">合同查询窗口</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row examineeInfor" style="overflow:auto;height:260px;width:590px;">
+                        <table id="HeTongTa">
+                            <tr>
+                                <th w_num="total_line" width="10%">序号</th>
+                                <th w_index="GoodsIDs" w_hidden="true"></th>
+                                <th w_index="GoodsCode">合同号</th>
+                          
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row" style="margin-top:10px;">
+                        <div class="form-group">
+                            <div class="col-md-2 col-lg-offset-4">
+                                <button class="form-control btn btn-primary" type="button" id="btnHeTong">确 定</button>
+                            </div>
+                            <div class="col-md-2">
+                                <button class="form-control btn btn-primary" type="button" id="btnQuXiaodg">返 回</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.2.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+
+
+
+
+    <script>
+        var WarserHoudsseTable;
+        var gpouseBRanchID;
+
+        $(document).ready(function () {
+
+            //主界面商品
+            ShangPin = $.fn.bsgrid.init('ShangPin', {
+                url: '/ShangPinJinCang/SelectWaretF/ChaXunShangPin',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                pageSize: 4,
+                pageSizeSelect: false,
+                pagingLittleToolbar: true,
+                pagingToolbarAlign: "left",
+            });
+
+            WarserHouseTable = $.fn.bsgrid.init('WarserHouseTable', {
+                url: '/GoodsZhangGuanLi/TianQi/ChaXunJinCang',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                rowSelectedColor: true,
+                pageSize: 6,
+                pageSizeSelect: true,//
+                pagingLittleToolbar: true,//
+                pagingToolbarAlign: "left",
+                event: {//事件
+                    customRowEvents: {//自定义行事件
+                        click: function (record, rowIndex, trObj, options) {//点击事件
+                            ShangPin.search("wareHouseID=" + record.WareHouseID);
+                        }
+                    }
+                }
+            });
+            WarserHouseTable.search();
+            
+            GoodsCodseTa = $.fn.bsgrid.init('GoodsCodseTa', {
+                url: '/GoodsZhangGuanLi/TianQi/BangFanChangGoodel',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                rowSelectedColor: true,
+                pageSize: 9,
+                pageSizeSelect: true,//
+                pagingLittleToolbar: true,//
+                pagingToolbarAlign: "left",//
+
+            });
+            GoodsCodseTa.search();
+            
+
+            SuppkTa = $.fn.bsgrid.init('SuppkTa', {
+                url: '/GoodsZhangGuanLi/TianQi/SelectSuppoc',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                rowSelectedColor: true,
+                pageSize: 9,
+                pageSizeSelect: true,//
+                pagingLittleToolbar: true,//
+                pagingToolbarAlign: "left",//
+
+            });
+            SuppkTa.search();
+
+
+            HeTongTa = $.fn.bsgrid.init('HeTongTa', {
+                url: '/GoodsZhangGuanLi/TianQi/SelectHeTong',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                rowSelectedColor: true,
+                pageSize: 9,
+                pageSizeSelect: true,//
+                pagingLittleToolbar: true,//
+                pagingToolbarAlign: "left",//
+
+            });
+            HeTongTa.search();
+
+
+            //部门
+            $.post("/GoodsZhangGuanLi/FuZhuGongNeng/CaiGouXiaLa", function (data) {
+                selectLoadData("SpouseBRanchID", data);
+            });
+
+        });
+        //部门改变
+        $("#SpouseBRanchID").change(function () {
+            var spouseBRanchID = $("#SpouseBRanchID").val();
+            if (spouseBRanchID > 0) {
+                $.post("/GoodsZhangGuanLi/FuZhuGongNeng/CaiGouXiaLaName?spouseBRanchID=" + spouseBRanchID, function (data) {
+                    $("#SellBuMen").val(data[0].SpouseBRanchName);
+                });
+            }
+        });
+
+
+        //查询
+        WarserHoudsseTable = $.fn.bsgrid.init('WarserHouseTable', {
+            url: '/GoodsZhangGuanLi/TianQi/ChaXunJinCang',
+            autoLoad: false,
+            stripeRows: true,
+            rowHoverColor: true,
+            rowSelectedColor: true,
+            pageSize: 9,
+            pageSizeSelect: true,//
+            pagingLittleToolbar: true,//
+            pagingToolbarAlign: "left",//
+        });
+        $("#Select").click(function () {
+             gpouseBRanchID = $("#SpouseBRanchID").val();
+
+            if (gpouseBRanchID > 0) {
+                WarserHoudsseTable.search();
+                layer.alert("查询成功！请点击查看查询结果!", { icon: 6, title: '温馨小提示：' });
+            }
+            else {
+                layer.alert("请选择查询条件!", { icon: 6, title: '温馨小提示：' });
+            }
+
+        });
+
+        //点击关闭
+        $("#Colse").click(function () {
+            $('body').remove();
+        });
+
+        $("#ChongZhi").click(function () {
+            document.location.href = "/GoodsZhangGuanLi/TianQi/ZuLinXiaoShou";
+        });
+
+        //弹出商品
+        $("#GoosdCode").click(function () {
+            $("#modGoodsCode").modal('show');
+        });
+
+        //绑定商品
+        $("#btnGoods").click(function () {
+            var rowIndex = GoodsCodseTa.getSelectedRowIndex();
+            if (rowIndex > -1) {
+              var GoodsIDs = GoodsCodseTa.getColumnValue(rowIndex, "GoodsIDs");//获取ID
+              $.post("/GoodsZhangGuanLi/TianQi/BanggGoodel", { GoodsIDs: GoodsIDs }, function (data) {
+
+                
+                  $("#GoodsCode").val(data[0].GoodsCode);//
+                  $("#GoodsName").val(data[0].GoodsName);//
+
+                }); $("#modGoodsCode").modal('hide');
+            }
+            else {
+                layer.alert("请选择数据", { icon: 6, title: '温馨小提示：' });
+            }
+           
+        });
+
+        //弹出供货商
+        $("#GongHuoDanWei").click(function () {
+            $("#modSuppkd").modal('show');
+        });
+
+        //绑定供货商
+        $("#btnQueDingd").click(function () {
+            var rowIndex = SuppkTa.getSelectedRowIndex();
+            if (rowIndex > -1) {
+                var GoodsIDs = SuppkTa.getColumnValue(rowIndex, "GoodsIDs");//获取ID
+                $.post("/GoodsZhangGuanLi/TianQi/BangDingSuppoc", { SupplierID: GoodsIDs }, function (data) {
+
+
+                    $("#SuppDanMei").val(data[0].GoodsCode);//
+                    $("#DanWeiName").val(data[0].GoodsName);//
+
+                }); $("#modSuppkd").modal('hide');
+            }
+            else {
+                layer.alert("请选择数据", { icon: 6, title: '温馨小提示：' });
+            }
+
+        });
+
+        //弹出合同
+        $("#HeTongfd").click(function () {
+            $("#modHeTong").modal('show');
+        });
+
+        //绑定合同
+        $("#btnHeTong").click(function () {
+            var rowIndex = HeTongTa.getSelectedRowIndex();
+            if (rowIndex > -1) {
+                var GoodsIDs = HeTongTa.getColumnValue(rowIndex, "GoodsIDs");//获取ID
+                $.post("/GoodsZhangGuanLi/TianQi/BangDingtHeTong", { OrderFormPactID: GoodsIDs }, function (data) {
+
+
+                    $("#HeTongte").val(data[0].GoodsCode);//
+                 
+
+                });
+                $("#modHeTong").modal('hide');
+            }
+            else {
+                layer.alert("请选择数据", { icon: 6, title: '温馨小提示：' });
+            }
+
+        });
+
+
+    </script>
+
+
+</body>
+</html>

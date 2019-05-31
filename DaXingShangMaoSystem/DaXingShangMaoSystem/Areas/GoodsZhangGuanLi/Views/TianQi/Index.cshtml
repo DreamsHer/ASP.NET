@@ -1,0 +1,145 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+   
+    <div class="container">
+
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="h4">天气录入</span>
+                    <div class="pull-right">
+                        <button class="form-control btn-sm btn btn-info" id="Colse"><span class="glyphicon glyphicon-remove">关闭</span></button>
+                    </div>
+                </div>
+                <div class="panel-body" style="background:#f0edf1;">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-6">
+
+                        <div class="row" style="margin-top:50px;">
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label class="control-label" style="margin-left:40px;">年月日：</label>
+                                </div>
+                                <div class="col-md-5">
+                                    <input type="date" class="form-control" name="YearMotherDay" id="YearMotherDay" />
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top:50px;">
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label class="control-label" style="margin-left:30px;">天气情况：</label>
+                                </div>
+                                <div class="col-md-5">
+                                    <input type="text" class="form-control" id="TianQingKuan" placeholder="例如：晴天/阴天/雨天"/>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top:50px;">
+                            <div class="form-group">
+                                <div class="col-md-3 col-lg-offset-2">
+                                    <button class="form-control btn btn-success" type="button" id="Select"><span class="glyphicon glyphicon-ok">确 定</span></button>
+                                </div>
+                                <div class="col-md-3">
+                                    <button class="form-control btn btn-warning" type="button" id="ChongZhi"><span class="glyphicon glyphicon-remove">取 消</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                   
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.2.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+
+
+
+
+    <script>
+        //保存
+        $("#Select").click(function () {
+            var Data = $("#YearMotherDay").val();
+            var WeatherCondition = $("#TianQingKuan").val();
+
+            if (Data != '' && WeatherCondition!='') {
+                layer.confirm("是否录入？", {
+                    icon: 3,
+                    btn: ['确定', '取消']
+                    //按钮
+                }, function (layerIndex) {
+                    layer.close(layerIndex);//关闭提示框
+                    $.post("/GoodsZhangGuanLi/TianQi/InsectJingCangDan", {
+                        Data: Data,
+                        WeatherCondition: WeatherCondition,
+                     
+                    }, function (data) {
+                        if (data == "succsee") {
+                            layer.alert("录入成功！", { icon: 6, title: '温馨小提示：' });
+                            document.location.href = "/GoodsZhangGuanLi/TianQi/Index";
+                        }
+                        else {
+                            layer.alert("今天已录入！", { icon: 5, title: '温馨小提示：' });
+                        }
+                    });
+                });
+            }
+            else {
+                layer.msg("请填写完整天气信息！", { icon: 0, skin: "layui-layer-molv" });
+            }
+
+        });
+
+
+       
+
+
+        //点击关闭
+        $("#Colse").click(function () {
+            $('body').remove();
+        });
+
+        $("#ChongZhi").click(function () {
+            document.location.href = "/GoodsZhangGuanLi/TianQi/Index";
+        });
+
+    </script>
+
+
+
+
+
+
+</body>
+</html>

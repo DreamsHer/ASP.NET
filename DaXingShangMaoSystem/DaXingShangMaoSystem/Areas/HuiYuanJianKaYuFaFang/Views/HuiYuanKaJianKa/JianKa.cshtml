@@ -1,0 +1,446 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" />
+    <title>JianKa</title>
+    <style>
+        .container {
+            width: 800px;
+            padding: 0;
+            border: 1px solid blue;
+            margin-top: 20px;
+            background-color:#f0edf1;
+        }
+
+        .zongkuang {
+            border: 1px solid gainsboro;
+            margin-top: 1px;
+        }
+
+        .zuokuan {
+            width: 460px;
+            height: 360px;
+            border: 1px solid darkgray;
+            float: left;
+        }
+
+        .JLBH {
+            width: 48%;
+            margin-top: 5px;
+            margin-left: 10px;
+            float: left;
+            height:100px;
+        }
+
+        .huiyuankaleixing {
+            margin-top: 5px;
+        }
+
+        .baoguandidian {
+            width: 38%;
+            float: left;
+            margin-top: 5px;
+            margin-left: 10px;
+        }
+
+        .shangkuan {
+            height: 30px;
+        }
+
+        .SK {
+            width: 495px;
+            height: 120px;
+        }
+
+        .XK {
+            width: 100%;
+            height: 250px;
+        }
+
+        .baoguaren {
+            width: 100%;
+            height: 50px;
+        }
+
+        .kahao {
+            margin-left: 39px;
+            margin-top: 10px;
+        }
+
+        .jiankashuliang {
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+        .youxiaoqi {
+            margin-left: 23px;
+            margin-top: 10px;
+        }
+
+        .xiekashuliang {
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+        .beizhu {
+            margin-left: 38px;
+            margin-top: 10px;
+        }
+
+        .youbiankuan {
+            width: 296px;
+            height: 360px;
+            background-color: white;
+            border: 1px solid darkgray;
+            margin-left: 460px;
+            overflow: scroll;
+        }
+        .dikuan {
+            height:30px;
+            margin-top:15px;
+            margin-left:20px;
+        }
+        .AnJian {
+            height:40px;
+            margin-top:10px;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class=" panel-heading">会员卡建卡</div>
+        </div>
+        <div class="zongkuang">
+            <div class="zuokuan">
+                <div class="SK">
+                    <div class="JLBH">
+                        <div>
+                            <button>记录编号</button>
+                            <input style="width:120px" id="JiLuBianHao" name="JiLuBianHao"/>
+                        </div>
+                        <div class="huiyuankaleixing">
+                            <div>会员卡类型</div>
+                            <div style="float:left">
+                                <select data-rule-required="true" name="KaFengLei" style="width:112px" id="KaFengLei">
+                                    <option></option>
+                                </select>
+                            </div>
+                                <div style="float:left">
+                                <select data-rule-required="true" name="KaZhongLei" style="width:112px"id="KaZhongLei">
+                                    <option></option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="baoguandidian">
+                        保管地点
+                        <div class="shangkuan">
+                            <select data-rule-required="true" name="ZhiKaBuMeng" style="width:112px"id="ZhiKaBuMeng">
+                                <option></option>
+                            </select>
+                        </div>
+                        <div>
+                            <select data-rule-required="true" name="ZhiKaMingCheng" style="width:112px"id="ZhiKaMingCheng">
+                                <option></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="XK">
+                    <div class="baoguaren">
+                        <button id="btnXuanZeHeTong">保管人</button>
+                        <input style="background-color:aliceblue" id="Ccustodian"name="Ccustodian"/>
+                    </div>
+                    <div class="kahao">
+                        卡号
+                        <input id="Kahao" name="Kahao"/> —
+                        <input id="KaHao" name="KaHao"/>
+                    </div>
+                    <div class="jiankashuliang">
+                        建卡数量
+                        <input id="TheCardsNumber"name="TheCardsNumber"/>
+                    </div>
+                    <div class="youxiaoqi">
+                        有效期
+                        <input id="CardPeriodOfValidity"name="CardPeriodOfValidity"/>
+                    </div>
+                    <div class="xiekashuliang">
+                        写卡数量
+                        <input id="CardPersonalizationNumber"name="CardPersonalizationNumber"/>
+                    </div>
+                    <div class="beizhu">
+                        备注
+                        <input />
+                    </div>
+                </div>
+            </div>
+            <div class="youbiankuan">
+                <div>
+                    <table id="JianKaBiao" class="table table-hover table-bordered table-striped table-condensed">
+                            <tr>
+                                <th w_num="total_line">序号</th>
+                                <th w_index="TheCardsID" w_hidden="true">TheCardsID</th>
+                                <th w_index="Kahao">卡号</th>
+                                <th w_index="CardPersonalizationStatus">写卡状态</th>
+                                <th w_index="CardPersonalizationNumber">写卡数量</th>
+                                <th w_index="CardPeriodOfValidity">卡有效期</th>
+                            </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="dikuan">
+            <div style="float:left ">
+                登记人
+                <a class="btn btn-link" href="#">
+                    <i class="icon-plus-sign bigger-120 green"></i>
+                    林永好
+                </a>
+            </div>
+            <div style="float:left;margin-left:30px">
+                登记时间
+                <a class="btn btn-link" href="#">
+                    <i class="icon-plus-sign bigger-120 green"></i>
+                    2016.16.16 11:34:21
+                </a>
+            </div>
+            <div style="float:left;margin-left:30px">
+                审核人
+                <a class="btn btn-link" href="#">
+                    <i class="icon-plus-sign bigger-120 green"></i>
+                    林永好
+                </a>
+            </div>
+            <div style="float:left;margin-left:30px">
+                审核时间
+                <a class="btn btn-link" href="#">
+                    <i class="icon-plus-sign bigger-120 green"></i>
+                    2016.2.13 15:35:38
+                </a>
+            </div>
+        </div>
+        <div class=" AnJian">
+            <button onclick="Tianjian()"class="btn-danger">
+            <span class="glyphicon glyphicon-alert"></span>添加</button>
+            <button style="color:gainsboro">
+            <span class="glyphicon glyphicon-barcode"></span>修改</button>
+            <button style="color:gainsboro">
+            <span class="glyphicon glyphicon-trash"></span>删除</button>
+            <button style="color:gainsboro">
+            <span class="glyphicon glyphicon-check"></span>保存</button>
+            <button style="color:gainsboro">
+            <span class="glyphicon glyphicon-download"></span>放弃</button>
+            <button style="color:gainsboro">
+            <span class="glyphicon glyphicon-film"></span>审核</button>
+            <button>
+            <span class="glyphicon glyphicon-globe"></span>制作磁卡</button>
+            <button class="btn-info">
+            <span class="glyphicon glyphicon-header"></span>退出</button>
+        </div>
+        <div class="row">
+            @*新增会员卡号信息信息 模态窗体*@
+            <div class="modal bs-example-modal-sm" id="modBaseInfor">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title"><span class="glyphicon glyphicon-th-list"></span>新增会员信息</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label class="control-label">卡号</label>
+                                <input id="TJMemberAgeA" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">写卡状态</label>
+                                <input id="TJMemberAgeB" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">写卡数量</label>
+                                <input id="TJMemberAgeC" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">卡有效期</label>
+                                <input id="TJMemberAgeD" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group btn-group">
+                                <button id="BtnAdd" type="button" class="btn btn-primary" style="display:block" onclick="BaoCun()">保存</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+                            </div>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+        </div>
+    </div>
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="tianxiehetongxinxi">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:760px;height:350px;">
+                <div class="modal-header" style="background:#a8d7ef;">
+                    <span>会员建卡信息</span>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body" style="background:#eddddd;">
+                    <div class="" style="width:100%;height:330px; background:#f0edf1;">
+                        <div class="" style="width:100%;height:280px;overflow:auto;">
+                            <table id="tabHeTongXinXi" style="margin-top:2px;width:100%;" class="table">
+                                <tr>
+                                    <th w_index="Ccustodian">保管人</th>
+                                    <th w_index="Kahao">卡号</th>
+                                    <th w_index="Kahao">卡号</th>
+                                    <th w_index="TheCardsNumber">建卡数量</th>
+                                    <th w_index="CardPeriodOfValidity">有效期</th>
+                                    <th w_index="CardPersonalizationNumber">写卡数量</th>
+                                    <th w_index="Recordnumber">记录编号</th>
+                                </tr>
+                            </table>
+                        </div>
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group" style="margin-top:15px;">
+                                <div class="col-sm-2 col-sm-offset-5">
+                                    <button type="button" class="btn btn-success form-control" id="btnHeTongXuanZe">
+                                        选择信息
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <script src="~/Content/js/jquery.form.js"></script>
+    <script>
+        var JianKaBiao; //建卡表
+        var TheCardsId;//ID
+        $(document).ready(function () {
+            MemberAge = $.fn.bsgrid.init("JianKaBiao", {
+                url: '/HuiYuanJianKaYuFaFang/HuiYuanKaJianKa/SelectJianka',
+                autoLoad: true,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                displayBlankRows: false,//是否显示空白行，默认值false
+                pageSize: 10,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条               
+                event: {
+                    customRowEvents: {
+                        click: function (record, rowIndex, trObj, options) {
+                            if (record != null) {
+                                TheCardsId = record.TheCardsID;
+                            }
+                        }
+                    }
+                }
+            });
+        });
+        $(function () {
+            $.post("/HuiYuanJianKaYuFaFang/HuiYuanKaJianKa/SelectHuiLeiXi", function (data) {
+                selectLoadData("KaFengLei", data)
+            });
+            $.post("/HuiYuanJianKaYuFaFang/HuiYuanKaJianKa/SelectHuiKaZhong", function (data) {
+                selectLoadData("KaZhongLei", data)
+            });
+            $.post("/HuiYuanJianKaYuFaFang/HuiYuanKaJianKa/SelectZhiKaBuMeng", function (data) {
+                selectLoadData("ZhiKaBuMeng", data)
+            });
+            $.post("/HuiYuanJianKaYuFaFang/HuiYuanKaJianKa/SelectZhiKaMingCheng", function (data) {
+                selectLoadData("ZhiKaMingCheng", data)
+            });
+        });
+        //点击按钮弹出新增窗体
+        function Tianjian() {
+            document.getElementById("BtnAdd").style.display = "block";//控制按钮显示
+            document.getElementById("TJMemberAgeA").value = "";//清空文本数据
+            document.getElementById("TJMemberAgeB").value = "";
+            document.getElementById("TJMemberAgeC").value = "";
+            document.getElementById("TJMemberAgeD").value = "";
+            $("#modBaseInfor").modal("show");//弹出新增窗体
+        }
+        //新增保存按钮
+        function BaoCun() {
+            encodeURI();//不过滤￥%
+            var A = encodeURI(document.getElementById("TJMemberAgeA").value.trim());//
+            var B = document.getElementById("TJMemberAgeB").value.trim();
+            var C = document.getElementById("TJMemberAgeC").value.trim();
+            var D = document.getElementById("TJMemberAgeD").value.trim();
+            $.getJSON("/HuiYuanJianKaYuFaFang/HuiYuanKaJianKa/InsertTGE?Kahao=" + A + "&CardPersonalizationStatus=" + B + "&CardPersonalizationNumber=" + C + "&CardPeriodOfValidity=" + D, function (data) {
+                if (data == "ok") {
+                    location.reload();//刷新页面
+                }
+            });
+        }
+        $(function () {
+            //商品的选择
+            $("#btnXuanZeHeTong").click(function () {
+                tabHeTongXinXi = $.fn.bsgrid.init('tabHeTongXinXi', {
+                    url: '/HuiYuanJianKaYuFaFang/HuiYuanKaJianKa/SelectHeTheCard',
+                    autoLoad: false,
+                    stripeRows: true,//隔行变色
+                    rowHoverColor: true,//划过行变色
+                    pageSize: 20,
+                    pageSizeSelect: false,//是否选择分页页数下拉框
+                    pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                    pagingToolbarAlign: "left",//分页工具条的显示位置
+                    displayPagingToolbarOnlyMultiPages: true,//仅当多页时才显示分页工具条
+                    event: {
+                        customRowEvents: { //record 记录记载  options 选项
+                            click: function (record, rowIndex, trObj, options) {
+                                if (record != null) {
+                                    TheCardsID = record.TheCardsID;
+                                }
+                            }
+                        }
+                    }
+                });
+                tabHeTongXinXi.refreshPage();
+                $("#tianxiehetongxinxi").modal('show');
+            });
+            //获取合同信息
+            $("#btnHeTongXuanZe").click(function () {
+                var rowIndex = tabHeTongXinXi.getSelectedRowIndex();
+                if (rowIndex > -1) {
+                    var TheCardsID = tabHeTongXinXi.getColumnValue(rowIndex, "TheCardsID");
+                    $.getJSON("/HuiYuanJianKaYuFaFang/HuiYuanKaJianKa/SelectHuoQuKaXinXi?HTID=" + TheCardsID, function (data) {
+                        if (data == "失败") {
+                            alert("你没有选择信息");
+                        }
+                        else {
+                            $("#TheCardsID").val(data.TheCardsID);//隐藏域
+                            $("#Ccustodian").val(data.Ccustodian);
+                            $("#Kahao").val(data.Kahao);
+                            $("#KaHao").val(data.Kahao);
+                            $("#TheCardsNumber").val(data.TheCardsNumber);
+                            $("#CardPeriodOfValidity").val(data.CardPeriodOfValidity);
+                            $("#CardPersonalizationNumber").val(data.CardPersonalizationNumber);
+                            $("#JiLuBianHao").val(data.Recordnumber);
+                        }
+                        $("#tianxiehetongxinxi").modal('hide');
+                    });
+                }
+                else {
+                    alert("请选择一条的信息");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

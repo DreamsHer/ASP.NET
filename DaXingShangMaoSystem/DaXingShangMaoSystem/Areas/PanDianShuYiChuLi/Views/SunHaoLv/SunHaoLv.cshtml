@@ -1,0 +1,331 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SunHaoLv</title>
+
+
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+
+
+    <style>
+        .container {
+            background: #fff;
+            width: 100%;
+        }
+
+        .reset-padding {
+            padding: 0 5px;
+        }
+
+        .reset {
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        label.Size {
+            font-size: 60px;
+        }
+
+        label {
+            font-weight: normal;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="form-group">
+
+                        <span class="h4">设置部门盘点损耗率</span>
+                        <div class="pull-right">
+                            <button class="form-control btn-sm btn btn-info" id="Colse"><span class="glyphicon glyphicon-remove">关闭</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-body">
+
+                    <div class="container" style="background:#f0edf1;">
+                        
+
+                        <div class="row" style="margin-top:10px;margin-left:1px;">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-10" style="border: 2px solid #d8cddc;">
+                                <div class="row" style="margin-left:10px;">请选择部门</div>
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-2">
+                                            <select class="form-control" id="SpouseBRancfdhID"></select>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <select class="form-control" id="BuMenO"></select>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <select class="form-control" id="BuMenOn"></select>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <select class="form-control" id="BuMenOnegh"></select>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <div class="col-md-4">
+                                                    <button class="form-control btn-block btn btn-primary" type="button" id="SaiXuan"><span class="glyphicon glyphicon-search"></span> 查询</button>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <button class="form-control btn-block btn btn-success" type="button" id="QueRens"><span class="glyphicon glyphicon-ok">保存</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                      
+                                        
+                                    </div>
+                                </div>
+                                <div class="row" style="border: 1px solid #d8cddc;margin-top:25px;">
+                                    <div style="margin-top:20px;margin-left:10px;overflow:auto;width:100%;height:405px;">
+                                        <table id="ShangPin">
+                                            <tr>
+                                                <th w_num="total_line" width="10%">序号</th>
+                                                <th w_index="departmentID" w_hidden="true">部门ID</th>
+                                                <th w_index="departmentCodes">部门代码</th>
+                                                <th w_index="departmentName">部门名称</th>
+
+                                                <th w_index="MumberOfPackages" w_render="crearViewButton">耗损率</th>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                      
+                        <br />
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div><!--大row-->
+
+
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.2.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+
+
+    <script>
+        var ShangPinhg;
+        var JiLuIdShuZu = new Array();
+        var JieShouShuZhi = new Array();
+        var ShangPinhg;
+
+        var JieId = new Array();
+        var JiePanlId = new Array();
+        var JieSpatckId = new Array();
+        var JieDaiMa = new Array();
+        var JieMingCheng = new Array();
+        var JieHaoSunLv = new Array();
+        
+        $(document).ready(function () {
+            ShangPin = $.fn.bsgrid.init('ShangPin', {
+                url: '/PanDianShuYiChuLi/SunHaoLv/SelectStudentA',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                pageSize: 10,
+                pageSizeSelect: false,
+                pagingLittleToolbar: true,
+                pagingToolbarAlign: "left",
+            });
+            ShangPin.search();
+
+            $.post("/PanDianShuYiChuLi/SunHaoLv/CaiGouXiaLa", function (data) {
+                selectLoadData("SpouseBRancfdhID", data);
+            });
+        });
+
+        $("#SpouseBRancfdhID").change(function () {
+            var academeId = $("#SpouseBRancfdhID").val();
+        
+            $.post("/PanDianShuYiChuLi/SunHaoLv/SelectGrade?academeId=" + academeId, function (data) {
+                selectLoadData("BuMenO", data);
+            });
+        });
+
+        ShangPinhg = $.fn.bsgrid.init('ShangPin', {
+            url: '/PanDianShuYiChuLi/SunHaoLv/SelectStudentAll',
+            autoLoad: false,
+            stripeRows: true,
+            rowHoverColor: true,
+            pageSize: 10,
+            pageSizeSelect: false,
+            pagingLittleToolbar: true,
+            pagingToolbarAlign: "left",
+        });
+        function searchBuMen() {
+          
+            var academeId = $("#SpouseBRancfdhID").val();
+            if (academeId == "" || academeId == undefined) {
+                academeId = 0;
+            }
+
+            var gradeId = $("#BuMenO").val();
+            if (gradeId == "" || gradeId == undefined) {
+                gradeId = 0;
+            }
+           
+            ShangPinhg.search({ academeId: academeId, gradeId: gradeId });
+        }
+
+        //查询
+        $("#SaiXuan").click(function () {
+            for (var i = 0; i < JiLuIdShuZu.length; i++) {
+                var l = JiLuIdShuZu[i][0];
+                if (l > 0 || l == 0) {
+                    JiLuIdShuZu.splice(i, 1);
+                }
+                JiLuIdShuZu.splice(i, 1);//
+            }
+            if (JiLuIdShuZu.length > 0) {
+                for (var i = 0; i < JiLuIdShuZu.length; i++) {
+                    var l = JiLuIdShuZu[i][0];
+                    if (l > 0 || l == 0) {
+                        JiLuIdShuZu.splice(i, 1);
+                    }
+                    JiLuIdShuZu.splice(i, 1);//
+                }
+            }
+
+            searchBuMen();
+        });
+
+        //确定
+        $("#QueRens").click(function () {
+            for (var i = 0; i < JieShouShuZhi.length; i++) {
+                var l = JieShouShuZhi[i][0];
+                if (l > 0 || l == 0) {
+                    JieShouShuZhi.splice(i, 1);
+                }
+                JieShouShuZhi.splice(i, 1);//
+            }
+            if (JieShouShuZhi.length > 0) {
+                for (var i = 0; i < JieShouShuZhi.length; i++) {
+                    var l = JieShouShuZhi[i][0];
+                    if (l > 0 || l == 0) {
+                        JieShouShuZhi.splice(i, 1);
+                    }
+                    JieShouShuZhi.splice(i, 1);//
+                }
+            }
+
+
+
+            for (var i = 0; i < JiLuIdShuZu.length; i++) {
+                var HuoQuID = JiLuIdShuZu[i][0];
+                var Q = JiLuIdShuZu[i][1];
+                var W = JiLuIdShuZu[i][2];
+                var E = JiLuIdShuZu[i][3];
+                var R = JiLuIdShuZu[i][4];
+
+                JieShouShuZhi.push([HuoQuID,Q,W,E,R, $("#HaoSunShuLv" + HuoQuID).val()]);
+            }
+            if (JieShouShuZhi.length>0) {
+                 
+                for (var i = 0; i < JieShouShuZhi.length; i++) {
+                    var HuoQuID = JieShouShuZhi[i][0];
+                    var Q = JieShouShuZhi[i][1];
+                    var W = JieShouShuZhi[i][2];
+                    var E = JieShouShuZhi[i][3];
+                    var R = JieShouShuZhi[i][4];
+                    var T = JieShouShuZhi[i][5];
+
+                    if (T!="") {
+                        JieId.push(HuoQuID);
+                        JiePanlId.push(Q);
+                        JieSpatckId.push(W);
+                        JieDaiMa.push(E);
+                        JieMingCheng.push(R);
+                        JieHaoSunLv.push(T);
+                    }
+                    else {
+                        JieId.push(HuoQuID);
+                        JiePanlId.push(Q);
+                        JieSpatckId.push(W);
+                        JieDaiMa.push(E);
+                        JieMingCheng.push(R);
+                        JieHaoSunLv.push("0");
+                        
+                    }
+                }
+
+                if (JieId.length > 0 && JiePanlId.length > 0) {
+                    layer.confirm("是否保存？", {
+                        icon: 3,
+                        btn: ['确定', '取消']
+                    }, function (layerIndex) {
+                        layer.close(layerIndex);//关闭提示框
+                        $.post("/PanDianShuYiChuLi/SunHaoLv/UnpticoIncrea?JieId=" + JieId + "&JiePanlId=" + JiePanlId + "&JieSpatckId=" + JieSpatckId
+                            + "&JieDaiMa=" + JieDaiMa + "&JieMingCheng=" + JieMingCheng + "&JieHaoSunLv=" + JieHaoSunLv, function (mess) {
+                                if (mess == "succsee") {
+                                    layer.alert("保存成功", { icon: 6, title: '温馨小提示：' });
+                                    document.location.href = "/PanDianShuYiChuLi/SunHaoLv/SunHaoLv";
+                                }
+
+                            });
+
+                    });
+                }
+
+            }
+           
+          
+        });
+
+        function crearViewButton(record, rowIndex, colIndex, options) {
+            var L = record.departmentID;
+            var Z = record.DfrugTypeID;
+            var X = record.SpouseBRancfdhID;
+            var C = record.departmentCodes;
+            var V = record.departmentName;
+            var SunLv = record.HaoSunLv;
+            JiLuIdShuZu.push([L, Z, X, C, V]);
+
+            if (SunLv != undefined) {
+                return ' <input class="easyui-combotree" value="' + record.HaoSunLv + '" style="width: 100px;color: #0000FF;font-size: 20px;" id="HaoSunShuLv' + record.departmentID + '" data-options="onChange:onConsignmentDepartmentCodeSelect;" placeholder="请输入..."/>';
+
+            }
+            return ' <input class="easyui-combotree" style="width: 100px;color: #0000FF;font-size: 20px;" id="HaoSunShuLv' + record.departmentID + '" data-options="onChange:onConsignmentDepartmentCodeSelect;" placeholder="请输入..."/>';
+
+        }
+
+        $("#Colse").click(function () {
+            $('body').remove();
+        });
+
+        $("#SelOutBtn").click(function () {
+            $('body').remove();
+        });
+
+    </script>
+
+</body>
+</html>

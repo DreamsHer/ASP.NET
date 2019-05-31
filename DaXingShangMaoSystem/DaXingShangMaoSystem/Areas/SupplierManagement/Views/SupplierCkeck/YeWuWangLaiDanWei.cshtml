@@ -1,0 +1,159 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>业务往来单位查询</title>
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    @*CSS样式(包含默认皮肤样式)*@
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    @*CSS皮肤(需引用于bsgrid.all.min.css之后)*@
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css">
+        .container {
+            width: 100%;
+            padding: 0;
+            display:block;
+            width:100%;
+            border:none;
+            height:850px;
+        }
+
+        .panel-heading {
+            font-size: 16px;
+        }
+
+        .panel-body {
+            padding-top: 0;
+        }
+
+            .panel-body label {
+                font-weight: normal;
+                font-size: 16px;
+            }
+
+        #MethodOfSettlingAccounts {
+            width: 550px;
+            border: 1px solid #999;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">业务往来单位查询</div>
+            <div class="panel-body">
+                <div class="table">
+                    <ul class="nav nav-tabs tab-color-blue background-blue" id="myTab4">
+                        <li class="active">
+                            <a id="tbnavB" href="#tpB" data-toggle="tab" aria-expanded="true">业务往来单位查询</a>
+                        </li>
+
+                    </ul>
+                    <div class="tab-content  padding-0" id="InEmployeeForm">
+                        <div class="tab-pane active" id="tpB">
+                            <div id="chartL" style="width: 100%; height: 500px; float: left;">
+
+                                <div class="modal-body" style="background:#eddddd;">
+                                    <div class="row table-responsive" style="height:400px;overflow:auto;margin-top:-15px">
+                                        <table class="table" id="tabXiuGaiShenHe" style="margin-top:2px;width:2900px">
+                                            <tr>
+                                                <th w_num="total_line">序号</th>
+                                                <th w_index="SupplierID" w_hidden="true"></th>
+                                                <th w_index="SupplierName">供货商名称</th>
+                                                <th w_index="SupplierNumber">供货商代码</th>
+                                                <th w_index="SupplierCHName">供货商中文名称</th>
+
+                                                <th w_index="SupplierAbbreviation">供货商简称</th>
+                                                <th w_index="SupplierEnglishName">供应商英文名称</th>
+                                                <th w_index="SupplierPTCode">拼音简码</th>
+                                                <th w_index="SupplierDependency">所属地</th>
+                                                <th w_index="SupplierRegisteredAddress">注册地址</th>
+                                                <th w_index="UnitCharacterID" w_hidden="true"></th>
+                                                <th w_index="UnitCharacterName">单位性质</th>
+                                                <th w_index="SupplierReturnTypeID" w_hidden="true"></th>
+                                                <th w_index="PaymentID" w_hidden="true"></th>
+                                                <th w_index="PaymentMC">付款方式</th>
+                                                <th w_index="CompanyID" w_hidden="true"></th>
+                                                <th w_index="CompanyMC">所属公司</th>
+                                                <th w_index="SupplierRegisteredEnglish">注册地址英文</th>
+                                                <th w_index="SupplierRankID" w_hidden="true"></th>
+                                                <th w_index="SupplierRankName">级别名称</th>
+                                                <th w_index="AgreementStateID" w_hidden="true"></th>
+                                                <th w_index="AgreementState">合同状态</th>
+                                                <th w_index="AgreementTypeID" w_hidden="true"></th>
+                                                <th w_index="AgreementTypeName">核算方式</th>
+                                                <th w_index="Registrant">登记人</th>
+                                                <th w_index="Auditor">审核人</th>
+                                                <th w_index="Executor">修改人</th>
+                                                <th w_index="ReleaseTimeStrrr">审核时间</th>
+                                                <th w_index="ReleaseTimeStr">登记时间</th>
+                                                <th w_index="ReleaseTimeStrr">修改时间</th>
+                                                <th w_index="SupplierInformationName">供货商法人</th>
+                                                <th w_index="SupplierTelephone">电话</th>
+                                                <th w_index="SupplierContacts">联系人</th>
+                                                <th w_index="SupplierPost">职务</th>
+                                                <th w_index="SupplierEmail">电子信箱</th>
+                                                <th w_index="SupplierZipCode">邮政编码</th>
+                                                <th w_index="SupplierPortraiture">传真</th>
+
+                                                <th w_index="SupplierAddress">通讯地址</th>
+                                                <th w_index="SupplierURL">网址</th>
+                                                <th w_index="EnterpriseBank">开户银行</th>
+                                                <th w_index="EnterpriseNumber">企业账号</th>
+                                                <th w_index="LocalTaxNumber">地税号</th>
+                                                <th w_index="EnterprisePassword">密码</th>
+
+                                            </tr>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    @*jquery.bsgrid*@
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>@*对话框*@
+    <script src="~/Content/js/customfunction.js"></script>@*封装js*@
+    <script src="~/Content/js/jquery.form.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap-table.js"></script>
+    <script>
+        var tabXiuGaiShenHe;
+     
+        $(function(){
+            tabXiuGaiShenHe = $.fn.bsgrid.init('tabXiuGaiShenHe', {
+                url: '/SupplierManagement/OperationControl/selectA',
+                autoLoad: false,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                pageSize: 50,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置
+                displayPagingToolbarOnlyMultiPages: true, //仅当多页时才显示分页工具条
+
+            });
+            tabXiuGaiShenHe.refreshPage();
+           
+      
+        })
+            
+    </script>
+</body>
+</html>

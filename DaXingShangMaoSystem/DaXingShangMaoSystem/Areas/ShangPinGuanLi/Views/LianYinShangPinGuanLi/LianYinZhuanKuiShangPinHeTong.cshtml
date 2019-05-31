@@ -1,0 +1,389 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <title>修改专柜商品合同信息</title>
+    <style type="text/css">
+        .container {
+            width: 98%;
+            padding-top: 4px;
+        }
+
+        .panel-heading {
+            font-size: 16px;
+        }
+
+        .panel-body {
+            padding: 0;
+            border-left: 3px solid #377ab7;
+            border-bottom: 3px solid #377ab7;
+            border-right: 3px solid #377ab7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="xiugaishangpinhetong">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <span style="padding-left:14px;">修改专柜商品合同信息</span>                       
+                    </div>
+                </div>
+                <div class="panel-body" style="width:100%;height:550px;background:#f0edf1;">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group" style="margin-top:15px;">
+                            <input type="hidden" id="GoodsID" name="GoodsID" />
+                            <input type="hidden" id="OrderFormPactID" name="OrderFormPactID" />
+                            <div class="col-sm-1" style="margin-top:15px;left:18px;">
+                                <button type="button" class="btn btn-primary form-control" id="XuanZeHeTongAnNiu">
+                                    原合同号
+                                </button>
+                            </div>
+                            <div class="col-md-2 col-sm-1 reset" style="margin-top:15px;">
+                                <input type="text" class="form-control" name="HostContractNumber" id="HostContractNumber">
+                            </div>
+                            <label class="col-md-1 col-sm-1 control-label reset" style="margin-top:15px;">往来单位</label>
+                            <div class="col-md-2 col-sm-1 reset" style="margin-top:15px;">
+                                <input type="text" class="form-control" name="SupplierName" id="SupplierName">
+                            </div>
+                            <div class="col-md-1 reset">
+                                <button type="button" class="btn btn-info form-control" style="margin-top:15px;" id="btnQueRen">
+                                    修改保存
+                                </button>
+                            </div>
+                            <div class="col-md-1 reset">
+                                <button type="button" class="btn btn-danger form-control" style="margin-top:15px;" id="btnTuiChu">
+                                    退出按钮
+                                </button>
+                            </div>
+                        </div>
+                        <table id="tabXiuGaiHeTong" style="width:100%;margin-top:15px;">
+                            <tr>
+                                <th w_index="GoodsID" w_hidden="true">GoodsID</th>
+                                <th w_index="GoodsCode">商品代码</th>
+                                <th w_index="GoodsName">商品名称</th>
+                                <th w_index="RetailMonovalent">零售单价</th>
+                                <th w_index="OrderFormPactID" w_hidden="true">OrderFormPactID</th>
+                                <th w_index="HostContractNumber">合同号</th>
+                                <th w_index="SupplierNumber">单位代码</th>
+                                <th w_index="RateSale">结算扣率(%)</th>
+                                <th w_index="NewRateSale">新结算扣率(%)</th>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*选择合同*@
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="tianxiehetongxinxi">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:800px;height:410px;">
+                <div class="modal-header" style="background:#a8d7ef;">
+                    <span>合同选择窗体</span>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body">
+                    <table id="tabHeTongXinXi" style="width:100%">
+                        <tr>
+                            <th w_index="GoodsID" w_hidden="true">GoodsID</th>
+                            <th w_index="OrderFormPactID" w_hidden="true">OrderFormPactID</th>
+                            <th w_index="HostContractNumber">合同号</th>
+                            <th w_index="SupplierName">供货单位</th>
+                            <th w_index="GoodsCode">商品代码</th>
+                            <th w_index="GoodsName">商品名称</th>
+                            <th w_index="RetailMonovalent">零售单价</th>
+                            <th w_index="SupplierNumber">单位代码</th>
+                            <th w_index="RateSale">结算扣率(%)</th>
+                        </tr>
+                    </table>
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group" style="margin-top:15px;">
+                            <div class="col-sm-2 col-sm-offset-5">
+                                <button type="button" class="btn btn-success form-control" id="btnHeTongXuanZe">
+                                    选择合同
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    @*页面数据*@
+    <script type="text/javascript">
+        var tabXiuGaiHeTong;
+        var goodsID = 0;
+        $(document).ready(function () {
+            tabXiuGaiHeTong = $.fn.bsgrid.init('tabXiuGaiHeTong', {
+                url: '/ShangPinGuanLi/LianYinShangPinGuanLi/SelectHeTongXinXi',
+                autoLoad: false,//自动加载数据
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                rowSelectedColor: true,//是否显示选中行背景色
+                pageSize: 10,//默认页面大小
+                pageSizeSelect: true,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置               
+            });            
+        });
+       
+        //选择合同
+        $(function () {          
+            $("#XuanZeHeTongAnNiu").click(function () {
+                tabHeTongXinXi = $.fn.bsgrid.init('tabHeTongXinXi', {
+                    url: '/ShangPinGuanLi/LianYinShangPinGuanLi/SelectHeTongXinXiXuanZe',
+                    autoLoad: false,
+                    stripeRows: true,//隔行变色
+                    rowHoverColor: true,//划过行变色
+                    pageSize: 8,
+                    pageSizeSelect: false,//是否选择分页页数下拉框
+                    pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                    pagingToolbarAlign: "left",//分页工具条的显示位置
+                    displayPagingToolbarOnlyMultiPages: true,//仅当多页时才显示分页工具条                   
+                    event: {//事件
+                        customRowEvents: {//自定义行事件
+                            click: function (record, rowIndex, trObj, options) {//点击事件
+                                tabXiuGaiHeTong.search("goodsID=" + record.GoodsID);
+                            }
+                        }
+                    }
+                });
+                tabHeTongXinXi.search();
+                $("#tianxiehetongxinxi").modal('show');
+            });
+            //获取合同信息
+            $("#btnHeTongXuanZe").click(function () {
+                var rowIndex = tabHeTongXinXi.getSelectedRowIndex();
+                if (rowIndex > -1) {
+                    var goodsId = tabHeTongXinXi.getColumnValue(rowIndex, "GoodsID");
+                    $.getJSON("/ShangPinGuanLi/LianYinShangPinGuanLi/SelectHuoQuHeTongXinXi?HTID=" + goodsId, function (data) {
+                        if (data == "失败") {
+                            alert("你没有选择信息");
+                        }
+                        else {
+                            $("#GoodsID").val(data.GoodsID);//隐藏域
+                            $("#OrderFormPactID").val(data.OrderFormPactID);
+                            $("#HostContractNumber").val(data.HostContractNumber);
+                            $("#SupplierName").val(data.SupplierName);
+                            $("#GoodsCode").val(data.GoodsCode);
+                            $("#GoodsName").val(data.GoodsName); 
+                            $("#RetailMonovalent").val(data.RetailMonovalent); 
+                            $("SupplierNumber").val(data.SupplierNumber);
+                            $("#RateSale").val(data.RateSale);
+                            $("#NewRateSale").val(data.NewRateSale);
+                        }
+                        $("#tianxiehetongxinxi").modal('hide');
+                    });
+                }
+                else {
+                    alert("请选择一条的信息");
+                }
+            });
+        });
+
+        //保存修改后的数据
+        $("#btnQueRen").click(function () {
+            var GoodsID = $("#GoodsID").val();//隐藏域
+            var OrderFormPactID = $("#OrderFormPactID").val();
+            var HostContractNumber = $("#HostContractNumber").val();
+            var GoodsCode = $("#GoodsCode").val();
+            var GoodsName = $("#GoodsName").val();
+            var GoodsAbbreviation = $("#GoodsAbbreviation").val();
+            var GoodsStampID = $("#GoodsStampID").val();
+            var AdvanceCess = $("#AdvanceCess").val();
+            var AllowGoodsXiaoShu = $("#AllowGoodsXiaoShu").val();
+            var ApplyTargetID = $("#ApplyTargetID").val();
+            var ArtNo = $("#ArtNo").val();
+            var AuditingBit = $("#AuditingBit").val();
+            var Auditor = $("#Auditor").val();
+            var BarCodTypeID = $("#BarCodTypeID").val();
+            var BurdenStockSellStatusID = $("#BurdenStockSellStatusID").val();
+            var Checktime = $("#Checktime").val();
+            var CommodityTypeID = $("#CommodityTypeID").val();
+            var CountersellID = $("#CountersellID").val();
+            var EstimateUnitID = $("#EstimateUnitID").val();
+            var ExecuteTime = $("#ExecuteTime").val();
+            var Executor = $("#Executor").val();
+            var GoodsChopID = $("#GoodsChopID").val();
+            var GoodsClassifyID = $("#GoodsClassifyID").val();
+            var GoodsColours = $("#GoodsColours").val();
+            var GoodsPurchasemoneyStatusID = $("#GoodsPurchasemoneyStatusID").val();
+            var GoodsPurchasemoneyTypeID = $("#GoodsPurchasemoneyTypeID").val();
+            var GoodsSeasonID = $("#GoodsSeasonID").val();
+            var GoodsStatusID = $("#GoodsStatusID").val();
+            var GoodsTiaoMa = $("#GoodsTiaoMa").val();
+            var ManufacturerID = $("#ManufacturerID").val();           
+            var ProducingArea = $("#ProducingArea").val();
+            var PurchaseSectionID = $("#PurchaseSectionID").val();
+            var QualityContent = $("#QualityContent").val();
+            var QualityGrade = $("#QualityGrade").val();
+            var QualityGuaranteePeriod = $("#QualityGuaranteePeriod").val();
+            var RegisterTime = $("#RegisterTime").val();
+            var Registrant = $("#Registrant").val();
+            var Remarks = $("#Remarks").val();
+            var SellCess = $("#SellCess").val();
+            var SourceID = $("#SourceID").val();
+            var SpecificationsModel = $("#SpecificationsModel").val();
+            var SpellCod = $("#SpellCod").val();
+            var StaffID = $("#StaffID").val();
+            var StatisticsScale = $("#StatisticsScale").val();
+            var SupplierID = $("#SupplierID").val();
+            var StatisticsScale = $("#StatisticsScale").val();
+            var ZhuanGuiCommodityTypeID = $("#ZhuanGuiCommodityTypeID").val();
+            //商品明细表
+            var RetailMonovalent = $("#RetailMonovalent").val();
+            var RateSale = $("#RateSale").val();
+            //var NewRateSale = $("#NewRateSale").val();
+            //合同表
+            var AgreementTypeID = $("#AgreementTypeID").val();
+            var AccountData = $("#AccountData").val();
+            var AdjustAccountsFashionID = $("#AdjustAccountsFashionID").val();
+            var AdvancedSettleAccounts = $("#AdvancedSettleAccounts").val();
+            var AdvanceMarketData = $("#AdvanceMarketData").val();
+            var AgreementID = $("#AgreementID").val();
+            var AgreementManagerID = $("#AgreementManagerID").val();
+            var AgreementStatusID = $("#AgreementStatusID").val();
+            var ConclusionSite = $("#ConclusionSite").val();
+            var ConclusionTime = $("#ConclusionTime").val();
+            var ContractNumber = $("#ContractNumber").val();
+            var Firingdata = $("#Firingdata").val();
+            //var GoodsID = $("#GoodsID").val();
+            var HandworkContractNumber = $("#HandworkContractNumber").val();
+            var MethodOfSettlingAccountsID = $("#MethodOfSettlingAccountsID").val();
+            var QualityGuaranteePeriod = $("#QualityGuaranteePeriod").val();
+            var PlanFiringData = $("#PlanFiringData").val();
+            var PurchasingAgent = $("#PurchasingAgent").val();           
+            var RetreatMarketData = $("#RetreatMarketData").val();
+            var SpouseBRanchID = $("#SpouseBRanchID").val();
+            //var StaffID = $("#StaffID").val();
+            //var SupplierID = $("#SupplierID").val();
+            var TryPaymentData = $("#TryPaymentData").val();
+            var ValidBegin = $("#ValidBegin").val();
+            var ValidTip = $("#ValidTip").val();
+            var WritData = $("#WritData").val();          
+
+            if (HostContractNumber !='') {
+                $.post("/ShangPinGuanLi/LianYinShangPinGuanLi/UpdateHeTongXinXi", {
+                    GoodsID: GoodsID,//隐藏域
+                    OrderFormPactID: OrderFormPactID,
+                    HostContractNumber: HostContractNumber,
+                    GoodsCode: GoodsCode,
+                    GoodsName: GoodsName,
+                    GoodsAbbreviation: GoodsAbbreviation,
+                    GoodsStampID: GoodsStampID,
+                    AdvanceCess:AdvanceCess,
+                    AllowGoodsXiaoShu: AllowGoodsXiaoShu,                    
+                    ApplyTargetID: ApplyTargetID,
+                    ArtNo: ArtNo,
+                    AuditingBit: AuditingBit,
+                    Auditor: Auditor,
+                    BurdenStockSellStatusID: BurdenStockSellStatusID,
+                    Checktime: Checktime,
+                    CommodityTypeID: CommodityTypeID,
+                    CountersellID: CountersellID,
+                    EstimateUnitID: EstimateUnitID,
+                    ExecuteTime: ExecuteTime,
+                    Executor: Executor,
+                    GoodsChopID: GoodsChopID,
+                    GoodsClassifyID: GoodsClassifyID,
+                    GoodsColours: GoodsColours,
+                    GoodsPurchasemoneyStatusID: GoodsPurchasemoneyStatusID,
+                    GoodsPurchasemoneyTypeID: GoodsPurchasemoneyTypeID,
+                    GoodsSeasonID: GoodsSeasonID,
+                    GoodsStatusID: GoodsStatusID,
+                    GoodsTiaoMa: GoodsTiaoMa,
+                    ManufacturerID: ManufacturerID,
+                    ProducingArea: ProducingArea,
+                    PurchaseSectionID: PurchaseSectionID,
+                    QualityContent: QualityContent,
+                    QualityGrade: QualityGrade,
+                    QualityGuaranteePeriod: QualityGuaranteePeriod,
+                    RegisterTime: RegisterTime,
+                    Registrant: Registrant,
+                    Remarks: Remarks,
+                    SellCess: SellCess,
+                    SourceID: SourceID,
+                    SpecificationsModel: SpecificationsModel,
+                    SpellCod: SpellCod,
+                    StaffID: StaffID,
+                    StatisticsScale: StatisticsScale,
+                    SupplierID: SupplierID,
+                    StatisticsScale: StatisticsScale,
+                    ZhuanGuiCommodityTypeID:ZhuanGuiCommodityTypeID,
+                    //商品明细表
+                    RetailMonovalent: RetailMonovalent,
+                    RateSale: RateSale,
+                    //NewRateSale:NewRateSale,
+                    //合同表
+                    AgreementTypeID: AgreementTypeID,
+                    AccountData: AccountData,
+                    AdjustAccountsFashionID: AdjustAccountsFashionID,
+                    AdvancedSettleAccounts: AdvancedSettleAccounts,
+                    AdvanceMarketData: AdvanceMarketData,
+                    AgreementID: AgreementID,
+                    AgreementManagerID: AgreementManagerID,
+                    AgreementStatusID: AgreementStatusID,
+                    ConclusionSite: ConclusionSite,
+                    ConclusionTime: ConclusionTime,
+                    ContractNumber:ContractNumber,
+                    Firingdata: Firingdata,
+                    //GoodsID:GoodsID,
+                    HandworkContractNumber: HandworkContractNumber,
+                    MethodOfSettlingAccountsID: MethodOfSettlingAccountsID,
+                    QualityGuaranteePeriod: QualityGuaranteePeriod,
+                    PlanFiringData: PlanFiringData,
+                    PurchasingAgent: PurchasingAgent,
+                    RetreatMarketData: RetreatMarketData,
+                    SpouseBRanchID: SpouseBRanchID,
+                    //StaffID: StaffID,                                     
+                    //SupplierID: SupplierID,
+                    TryPaymentData: TryPaymentData,
+                    ValidBegin: ValidBegin,
+                    ValidTip: ValidTip,
+                    WritData: WritData,
+
+                }, function (data) {
+                    if (data == "success") {
+                        layer.alert("修改成功", { icon: 1, title: "提示" });                       
+                        tabXiuGaiHeTong.refreshPage();                       
+                    }
+                    else {
+                        layer.alert('修改失败', { icon: 2, title: '提示' });
+                    }
+                });             
+            }
+            else {
+                layer.alert('请填写需要修改的内容', { icon: 0, title: '提示' });
+            }   
+        });
+
+        //页面关闭按钮
+        $(function () {          
+            $("#btnTuiChu").click(function () {
+                $("#xiugaishangpinhetong").hide();
+            });
+        });
+
+    </script>
+</body>
+</html>

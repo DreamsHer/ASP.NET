@@ -1,0 +1,102 @@
+﻿@*操作实体*@
+@model IEnumerable<DaXingShangMaoSystem.LY.PeiHuoDan>
+
+<style type="text/css">
+    .c {
+        width: 100%;
+        border: 1px solid green;
+        border-collapse: collapse;
+    }
+
+        .c th, .c td {
+            border-color: #99bce8;
+            color: black;
+            line-height: 1.8em;
+            border: 1px solid #99bce8;
+        }
+
+        .c td {
+            padding: 2px;
+        }
+
+    /*.c th {
+            background: url(../images/skins/default/bg.gif) repeat-x #f4f4f4;
+        }*/
+
+    button {
+        color: #fff;
+        background-color: #337ab7;
+        border-color: #2e6da4;
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+</style>
+<style>
+    /* 打印的时候让打印按钮隐藏 */
+    @@media only print {
+        button {
+            display: none;
+        }
+    }
+</style>
+
+<button href="#" onclick="window.print();return false;">打印表格</button>
+
+<table class="c">
+    <thead>
+        <tr>
+            <th width="9%">调拨单编号</th>
+            <th width="9%">实物付货人</th>
+            <th width="9%">实物收货人</th>
+            <th width="10%">发货部门</th>
+            <th width="9%">收货部门</th>
+            <th width="9%">制单人</th>
+
+            <th width="9%">制单时间</th>
+            <th width="9%">审核人</th>
+            <th width="9%">审核时间</th>
+
+            <th width="9%">备注</th>
+            <th width="9%">审核状态</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var WareHouseDeitaLL in Model)
+            {
+            <tr>
+                <td>@WareHouseDeitaLL.Remember</td><!--StudentNumber，是点出来的(如果手动，则要和服务器对应)-->
+                <td>@WareHouseDeitaLL.payName</td>
+                <td>@WareHouseDeitaLL.furlName</td>
+                <td>@WareHouseDeitaLL.SpouseBRanchName</td>
+                <td>@WareHouseDeitaLL.SpouseBRanchNsame</td>
+                
+                <td>@WareHouseDeitaLL.RegisterName</td>
+                <td>@WareHouseDeitaLL.registerTime</td>
+                <td>@WareHouseDeitaLL.ExamineName</td>
+                <td>@WareHouseDeitaLL.examineTime</td>
+                <td>@WareHouseDeitaLL.Remarks</td>
+                <td>@WareHouseDeitaLL.ExamineNots</td>
+            </tr>
+        }
+    </tbody>
+
+    <!--启动前，先将服务端写好（查询表数据）再运行-->
+</table>

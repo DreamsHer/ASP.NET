@@ -1,0 +1,311 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>BaoGuanDiDian</title>
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/easyui/themes/default/easyui.css" rel="stylesheet" />
+    <link href="~/Content/easyui/themes/icon.css" rel="stylesheet" />
+    <script src="~/Content/easyui/jquery.min.js"></script>
+    <script src="~/Content/easyui/jquery.easyui.min.js"></script>
+    <script src="~/Scripts/jquery.form.js"></script>
+    <style>
+        .container {
+        width:100%;
+        padding:0;
+        background-color:#f0edf1;
+        }
+
+        .DK {
+        width:100%;
+        height:500px;
+        border:1px solid darkgrey;
+        }
+
+        .neibiankuan {
+        width:595px;
+        height:360px;
+        background-color:white;
+        margin-left:20px;
+        border:1px solid darkgrey;
+        margin-top:10px;
+        background-color:#f0edf1;
+        }
+        .youbiankuan {
+        width:299px;
+        height:360px;
+        margin-left:699px;
+        margin-top:20px;
+        background-color:#f0edf1;
+        }
+        .Aniu {
+        width:100%;
+        height:30px;
+        text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="DK">
+            <div class="panel panel-primary"style="background-color:#f0edf1;">
+                <div class="panel-heading">定义保管地点</div>
+                <div class="neibiankuan" style=" float:left;">
+                    <div class="panel-body" style="width:100%;float:left">
+                        <div class="col-md-12 col-sm-12 col-xs-12" style="border:1px solid white">
+                            <div class="col-md-5 col-sm-5 col-xs-5" style="margin-top:10px;">
+                                <div>
+                                    <div class="easyui-panel" title="" style="width:100%;height:350px;padding:10px;">
+                                        <ul id="treeQvYv" class="easyui-tree" data-options="url:'/HuiYuanKaJiChuXinXi/DiYiBaoGuanDiDian/ChaXunShuXing',method:'get',dnd:true"></ul>
+                                    </div>
+                                </div>
+                                <div id="treeShuXing" class="easyui-menu" style="width:100%;">
+                                    <div onclick="expandAll()" data-options="iconCls:'icon-add'">展开所有节点</div>
+                                    <div onclick="collapseAll()" data-options="iconCls:'icon-remove'">缩起所有节点</div>
+                                    <div class="menu-sep"></div>
+                                    <div onclick="append()" data-options="iconCls:'icon-add'">添加子节点</div>
+                                    <div onclick="removeit()" data-options="iconCls:'icon-remove'">删除该节点</div>
+                                    <div class="menu-sep"></div>
+                                    <div onclick="expand()" data-options="iconCls:'icon-add'">展开该节点</div>
+                                    <div onclick="collapse()" data-options="iconCls:'icon-remove'">缩起该节点</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="youbiankuan">
+                    <div>
+                        <h4>
+                            编码规则
+                            <input style="width:120px;background-color:aliceblue"id="CodeRule"name="CodeRule">
+                        </h4>
+                    </div>
+                    <div class="controls">
+                        <h4>
+                            门店
+                            <select data-rule-required="true" id="MengDian" name="MengDian" style="width:150px">
+                                <option></option>
+                            </select>
+                        </h4>
+                    </div>
+                    <div>
+                        <h4>
+                            代码
+                            <input style="width:150px" id="Code"name="Code"/>
+                        </h4>
+                    </div>
+                    <div>
+                        <h4>
+                            名称
+                            <input style="width:150px" id="TheCardsbranchMC"name="TheCardsbranchMC"/>
+                        </h4>
+                    </div>
+                    <div class="sylx" style=" width:150px;height:100px">
+                        <h4>使用类型</h4>
+                        <div>
+                            <label>
+                                <input name="form-field-checkbox" type="checkbox">
+                                <span>制卡标记</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input name="form-field-checkbox" type="checkbox">
+                                <span>销售标记</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="X" style=" width:150px;height:60px">
+                        <div>
+                            <label>
+                                <input name="form-field-chekbox" type="checkbox">
+                                <span>末级标记</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input name="form-field-chekbox" type="checkbox">
+                                <span>复制标记</span>
+                            </label>
+                        </div>
+                        <div style=" margin-bottom:15px">
+                            <a class=" btn btn-primary" href="#"id="btnXuanZeHeTong">查找</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Aniu">
+                <a class="btn btn-danger" href="#" type="button"id="BtnInsert">
+                    <span class="glyphicon glyphicon-align-justify"></span>加下级
+                </a>
+                <a class="btn btn-default" href="#" type="button" style="color:gainsboro">
+                    <span class="glyphicon glyphicon-bishop"></span>加同级
+                </a>
+                <a class="btn btn-default" href="#" type="button"style="color:gainsboro">
+                    <span class="glyphicon glyphicon-certificate"></span>修改
+                </a>
+                <a class="btn btn-default" href="#" type="button"style="color:gainsboro">
+                    <span class="glyphicon glyphicon-cloud-download"></span>删除
+                </a>
+                <a class="btn btn-default" href="#" type="button"style="color:gainsboro">
+                    <span class="glyphicon glyphicon-envelope"></span>保存
+                </a>
+                <a class="btn btn-default" href="#" type="button"style="color:gainsboro">
+                    <span class="glyphicon glyphicon-film"></span>放弃
+                </a>
+                <a class="btn btn-warning" href="#" type="button">
+                    <span class="glyphicon glyphicon-glass"></span>退出
+                </a>
+            </div>
+        </div> 
+    </div>
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="tianxiehetongxinxi">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:760px;height:350px;">
+                <div class="modal-header" style="background:#a8d7ef;">
+                    <span>会员信息</span>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body" style="background:#eddddd;">
+                    <div class="" style="width:100%;height:330px; background:#f0edf1;">
+                        <div class="" style="width:100%;height:280px;overflow:auto;">
+                            <table id="tabHeTongXinXi" style="margin-top:2px;width:100%;" class="table">
+                                <tr>
+                                    <th w_index="TheCardsbranchMC">制卡名称</th>
+                                    <th w_index="CodeRule">编码规则</th>
+                                    <th w_index="Code">代码</th>
+                                </tr>
+                            </table>
+                        </div>
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group" style="margin-top:15px;">
+                                <div class="col-sm-2 col-sm-offset-5">
+                                    <button type="button" class="btn btn-success form-control" id="btnHeTongXuanZe">
+                                        选择信息
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <script>
+        $(function () {
+            $.post("/HuiYuanKaJiChuXinXi/DiYiBaoGuanDiDian/SelectHuiZhiKa", function (data) {
+                selectLoadData("MengDian", data)
+            });
+        });
+    </script>
+    <script type="text/javascript">
+
+        //右键触发事件
+        $("#treeQvYv").tree({
+            formatter: function (node) {
+                var childlength = node.children ? node.children.length : 0;
+                return node.text + "<span style='color:white'>(" + childlength + ")</span>";
+            },
+            onContextMenu: function (e, node) {
+                e.preventDefault();//右键禁止浏览器弹出的菜单
+                $(this).tree('select', node.target);
+                $("#treeShuXing").menu("show", {
+                    top: e.pageY,
+                    left:e.pageX
+                });
+            },
+        });
+
+
+    </script>
+    <script>
+        $(function () {
+            //信息的选择
+            $("#btnXuanZeHeTong").click(function () {
+                tabHeTongXinXi = $.fn.bsgrid.init('tabHeTongXinXi', {
+                    url: '/HuiYuanKaJiChuXinXi/DiYiBaoGuanDiDian/SelectTheCardsbranch',
+                    autoLoad: false,
+                    stripeRows: true,//隔行变色
+                    rowHoverColor: true,//划过行变色
+                    pageSize: 20,
+                    pageSizeSelect: false,//是否选择分页页数下拉框
+                    pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                    pagingToolbarAlign: "left",//分页工具条的显示位置
+                    displayPagingToolbarOnlyMultiPages: true,//仅当多页时才显示分页工具条
+                    event: {
+                        customRowEvents: { //record 记录记载  options 选项
+                            click: function (record, rowIndex, trObj, options) {
+                                if (record != null) {
+                                    TheCardsbranchID = record.TheCardsbranchID;
+                                }
+                            }
+                        }
+                    }
+                });
+                tabHeTongXinXi.refreshPage();
+                $("#tianxiehetongxinxi").modal('show');
+            });
+            //获取信息
+            $("#btnHeTongXuanZe").click(function () {
+                var rowIndex = tabHeTongXinXi.getSelectedRowIndex();
+                if (rowIndex > -1) {
+                    var TheCardsbranchID = tabHeTongXinXi.getColumnValue(rowIndex, "TheCardsbranchID");
+                    $.getJSON("/HuiYuanKaJiChuXinXi/DiYiBaoGuanDiDian/SelectHuoQuKaXinXi?HTID=" + TheCardsbranchID, function (data) {
+                        if (data == "失败") {
+                            alert("你没有选择信息");
+                        }
+                        else {
+                            $("#TheCardsbranchID").val(data.TheCardsbranchID);//隐藏域
+                            $("#TheCardsbranchMC").val(data.TheCardsbranchMC);
+                            $("#CodeRule").val(data.CodeRule);
+                            $("#Code").val(data.Code);
+                        }
+                        $("#tianxiehetongxinxi").modal('hide');
+                    });
+                }
+                else {
+                    alert("请选择一条的信息");
+                }
+            });
+        });
+        $("#BtnInsert").click(function () {
+            var TheCardsbranchMC = $("#TheCardsbranchMC").val();
+            var Code = $("#Code").val();
+            var CodeRule = $("#CodeRule").val();
+            if (TheCardsbranchMC != '' && Code != '' && CodeRule != '') {
+                $.post("/HuiYuanKaJiChuXinXi/DiYiBaoGuanDiDian/BtnInsert", {
+                    TheCardsbranchMC: TheCardsbranchMC,
+                    Code: Code,
+                    CodeRule: CodeRule,
+                }, function (data) {
+                    if (data == "success") {
+                        layer.alert('成功'), { icon: 1, title: '提示' };
+                    }
+                    else {
+                        layer.alert('失败'), { icon: 1, title: '提示' };
+                    }
+                });
+            } else {
+                layer.alert('请输入数据', { icon: 3, title: '提示' });
+            }
+        });
+    </script>
+</body>
+</html>

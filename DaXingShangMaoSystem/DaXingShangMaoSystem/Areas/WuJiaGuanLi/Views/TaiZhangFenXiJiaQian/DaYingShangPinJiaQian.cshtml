@@ -1,0 +1,304 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <title>打印商品价签</title>
+    <style type="text/css">
+        .container {
+            width: 98%;
+            padding-top: 4px;
+        }
+
+        .panel-heading {
+            font-size: 16px;
+        }
+
+        .panel-body {
+            padding: 0;
+            border-left: 3px solid #377ab7;
+            border-bottom: 3px solid #377ab7;
+            border-right: 3px solid #377ab7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="dayingshangpinjiaqian">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <span style="padding-left:14px;">打印商品价签</span>                       
+                    </div>
+                </div>
+                <div class="panel-body" style="width:100%;height:655px;">
+                    <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top:8px;">
+                        @*界面左边信息*@
+                        <div class="col-md-3 col-sm-3 col-xs-3" style="height:580px;background-color:#f0edf1;border:2px solid #b9b4b4;">
+                            <div class="" style="height:290px;background:#f0edf1;border:2px solid #b9b4b4;margin-top:8px;">
+                                <div class="row" style="width:99%;height:280px;background:#f0edf1;margin-left:2px; overflow:auto;">
+                                    <table class="table" id="tabDaYinJiaQian" style="margin-top:2px;">
+                                        <tr>
+                                            <th w_index="GoodsSignID" w_hidden="true">GoodsSignID</th>
+                                            <th w_index="JiaQianCode">价签代码</th>
+                                            <th w_index="GoodsSignName">价签名称</th>
+                                            <th w_index="SignTypeID" w_hidden="true">SignTypeID</th>
+                                            <th w_index="SignTypeName">价签类型</th>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="" style="height:50px;background:#f0edf1;border:2px solid #b9b4b4;margin-top:8px;">
+                                <form class="form-horizontal" role="form">
+                                    <div class="form-group" style="margin-top:5px;">
+                                        <div class="col-sm-5">
+                                            <button type="button" class="btn btn-primary form-control" id="btnJiaQianXuanZe">
+                                                选择价签
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <button type="button" class="btn btn-info form-control" id="btnTianJia">
+                                                定义价签格式
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="" style="height:220px;background:#f0edf1;border:2px solid #b9b4b4;margin-top:8px;">
+                                <form class="form-horizontal" role="form">
+                                    <div class="form-group" style="margin-top:5px;">
+                                        <label class="col-md-4 col-sm-1 control-label reset">售价组别</label>
+                                        <div class="col-md-7 col-sm-1 reset">                                          
+                                            <select class="form-control" name="SellAssembleID" id="SellAssembleID"></select>
+                                        </div>
+                                    </div>
+                                </form>
+                                <form class="form-horizontal" role="form">
+                                    <p style="color:#ff0000;font-size:17px;">价格信息:</p>
+                                    <div class="form-group" style="margin-top:5px;">
+                                        <div class="col-md-6 col-sm-1 reset">
+                                            <input type="radio" name="GoodsStatusName" value="商品当前价格" /><label class="setSex">商品当前价格</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" style="margin-top:5px;">
+                                        <div class="col-md-6 col-sm-1 reset">
+                                            <input type="radio" name="GoodsStatusName" value="商品计划价格" /><label class="setSex">商品计划价格</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" style="margin-top:5px;">
+                                        <div class="col-md-6 col-sm-1 reset">
+                                            <input type="radio" name="GoodsStatusName" value="手工录入" /><label class="setSex">手工录入</label>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        @*界面右边信息*@
+                        <div class="col-md-9 col-sm-9 col-xs-9" style="height:580px;background-color:#f0edf1;border:2px solid #b9b4b4;">
+                            <div class="" style="height:130px; background:#f0edf1;border:2px solid #b9b4b4;margin-top:8px;">
+                                <form class="form-horizontal" role="form">
+                                    打印参数
+                                    <div class="form-group" style="margin-top:10px;">
+                                        <label class="col-md-2 col-sm-1 control-label reset">价签尺数</label>                                       
+                                        <div class="col-md-4" style="padding-left:15px;">
+                                            <div style="border-bottom: #000 1px solid; width: 200px;">
+                                                <input id="Width" name="Width" 
+                                                       style="width: 100px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                                @*<input id="Height" name="Height"
+                                                       style="width: 100px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />*@
+                                            </div>
+                                        </div>
+                                        <label class="col-md-2 col-sm-1 control-label reset">每页价签数</label>
+                                        <div class="col-md-4" style="padding-left:15px;">
+                                            <div style="border-bottom: #000 1px solid; width: 200px;">
+                                                <input id="EveryRow" name="EveryRow"
+                                                       style="width: 200px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" style="margin-top:10px;">
+                                        <label class="col-md-2 col-sm-1 control-label reset">价签顶点位置</label>
+                                        <div class="col-md-4" style="padding-left:15px;">
+                                            <div style="border-bottom: #000 1px solid; width: 200px;">
+                                                <input id="Broadwise" name="Broadwise"
+                                                       style="width: 200px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            价签样式
+                            <div class="" style="height:420px; background:#f0edf1;border:2px solid #b9b4b4;">
+                                <form class="form-horizontal" role="form">
+                                    <div class="form-group" style="margin-top:5px;">
+                                        <div class="col-md-2 col-sm-1 reset">
+                                            <input id="AuditingBit" name="AuditingBit" type="checkbox" />显示背景图片
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="" style="height:60px; background:#f0edf1;border:2px solid #b9b4b4;">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group" style="margin-top:15px;">
+                                    <div class="col-sm-1 col-lg-offset-3">
+                                        <button type="button" class="btn btn-info form-control" id="btnJiaQianNeiRong">
+                                            上一步
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <button type="button" class="btn btn-warning form-control" id="btnTianJia">
+                                            下一步
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <button type="button" class="btn btn-primary form-control" id="btnXiuGai">
+                                            设置打印机
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <button type="button" class="btn btn-success form-control" onclick="window.print(); return false;">
+                                            打印
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <button type="button" class="btn btn-danger form-control"  id="btnTuiChu">
+                                            退出
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*选择打印价签类型*@
+    <div class="modal" id="xuanzedayingjiaqian">
+        <div class="modal-dialog" style="width:400px;height:350px;">
+            <div class="modal-header" style="background:#a8d7ef;">
+                <span>选择打印价签类型</span>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body" style="background:#f0edf1;height:260px;width:400px;">
+                <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top:8px;">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group" style="margin-top:10px;">
+                            <div class="col-sm-5 col-lg-offset-3">
+                                <button type="button" class="btn form-control" style="background:#c4bcbc;" id="btnJiaQianNeiRong">
+                                    打印普通价签
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:10px;">
+                            <div class="col-sm-5 col-lg-offset-3">
+                                <button type="button" class="btn form-control" style="background:#c4bcbc;" id="btnJiaQianNeiRong">
+                                    打印折扣价签
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:10px;">
+                            <div class="col-sm-5 col-lg-offset-3">
+                                <button type="button" class="btn form-control" style="background:#c4bcbc;" id="btnJiaQianNeiRong">
+                                    打印促销价签
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    @*页面加载及查询*@
+    <script type="text/javascript">
+        var tabDaYinJiaQian;
+        $(document).ready(function () {
+            tabDaYinJiaQian = $.fn.bsgrid.init('tabDaYinJiaQian', {
+                url: '/WuJiaGuanLi/TaiZhangFenXiJiaQian/ChaXunJiaQianXinXi',
+                autoLoad: false,//自动加载数据
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                rowSelectedColor: true,//是否显示选中行背景色
+                pageSize: 5,//默认页面大小
+                pageSizeSelect: true,//是否选择分页页数下拉框                                  ；
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置
+                event: {
+                    customRowEvents: { //record 记录记载  options 选项
+                        click: function (record, rowIndex, trObj, options) {
+                            if (record != null) {
+                                //tabShangPinMingXi.search("goodsID=" + record.PackGoodsID);
+                                GoodsSignID = record.GoodsSignID;                              
+                                Width = record.Width;
+                                $("#Width").val(Width);
+                                Height = record.Height;
+                                $("#Height").val(Height);
+                                Broadwise = record.Broadwise;
+                                $("#Broadwise").val(Broadwise);
+                                Ordinate = record.Ordinate;
+                                $("#Ordinate").val(Ordinate);
+                                EveryRow = record.EveryRow;
+                                $("#EveryRow").val(EveryRow);                               
+                                EveryRank = record.EveryRank;
+                                $("#EveryRank").val(EveryRank);                                                        
+                            }
+                        }
+                    }
+                }
+            });
+            tabDaYinJiaQian.refreshPage();
+
+            //售价组别
+            $.post("/WuJiaGuanLi/TaiZhangFenXiJiaQian/SelectSellAssembleName", function (data) {
+                selectLoadData("SellAssembleID", data);
+            });
+
+            //价签类型 回填
+            $.post("/WuJiaGuanLi/TaiZhangFenXiJiaQian/SelectSignTypeName1", function (data) {
+                selectLoadData("SignTypeID", data);
+            });
+
+        });
+
+        
+        //选择打印价签类型      
+        $(function () {          
+            $("#btnJiaQianXuanZe").click(function () {
+                $("#xuanzedayingjiaqian").modal('show');
+
+
+            });
+        });
+
+        //页面关闭按钮
+        $(function () {            
+            $("#btnTuiChu").click(function () {
+                $("#dayingshangpinjiaqian").hide();
+            });
+        });
+
+    </script>
+
+</body>
+</html>

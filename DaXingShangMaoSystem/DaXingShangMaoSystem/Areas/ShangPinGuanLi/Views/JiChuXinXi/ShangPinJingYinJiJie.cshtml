@@ -1,0 +1,247 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <title>定义商品经营季节属性</title>
+    <style type="text/css">
+        .container {
+            width: 98%;
+            padding-top: 4px;
+        }
+
+        .panel-heading {
+            font-size: 16px;
+        }
+
+        .panel-body {
+            padding: 0;
+            border-left: 3px solid #377ab7;
+            border-bottom: 3px solid #377ab7;
+            border-right: 3px solid #377ab7;           
+        }
+
+        .modal-header {
+            background: #337ab7;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            color: #fff;
+        }
+
+        h4 span {
+            margin-right: 5px;
+        }
+
+        .form-group {
+            margin-left: 30%;
+            margin-right: 30%;
+        }
+
+        label {
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="danweiheshuxingdingYi">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <span style="padding-left:14px;">定义商品经营季节属性</span>                       
+                    </div>
+                </div>
+                <div class="panel-body" style="width:100%;height:550px;background:#f0edf1;">
+                    <table id="tabGoodsSeason" style="width:100%;">
+                        <tr>
+                            <th w_num="total_line">显示顺序</th>
+                            <th w_index="GoodsSeasonID" w_hidden="true">GoodsSeasonID</th>
+                            <th w_index="GoodsSeasonName">季节名称</th>
+                            <th w_index="KaiShiYue">开始月1</th>
+                            <th w_index="KaiShiRi">开始日1</th>
+                            <th w_index="JieShuYue">结束月1</th>
+                            <th w_index="jieShuRi">结束日1</th>
+                        </tr>
+                    </table>
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group" style="margin-top:40px;">
+                            <div class="col-sm-1 col-sm-offset-4">
+                                <button type="button" class="btn btn-success form-control" id="XinZeng">
+                                    <span class="glyphicon glyphicon-plus"></span> 新增
+                                </button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-danger form-control" id="ShanChu">
+                                    <span class="glyphicon glyphicon-trash"></span> 删除
+                                </button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-primary form-control" id="TuiChu">
+                                    <span class="glyphicon glyphicon-off"></span> 退出
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*新增模态窗体*@
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="XinZengChaungTi">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:680px;height:228px;">
+                <div class="modal-header" style="background:#337ab7;">
+                    <span style="padding-left:300px;">新增界面</span>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group" style="margin-top:5px;">
+                            <label class="col-md-2 col-sm-1 control-label reset">季节名称</label>
+                            <div class="col-md-3 col-sm-1 reset">
+                                <input type="text" class="form-control" name="GoodsSeasonName" id="GoodsSeasonName" placeholder="例如：春天">
+                            </div>
+                            <label class="col-md-2 col-sm-1 control-label reset">开始月1</label>
+                            <div class="col-md-3 col-sm-1 reset">
+                                <input type="text" class="form-control" name="KaiShiYue" id="KaiShiYue"
+                                       onKeyUp="value=value.replace(/\D/g,'')" onafterpaste="value=value.replace(/\D/g,'')" placeholder="只能输入月份">
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:5px;">
+                            <label class="col-md-2 col-sm-1 control-label reset">开始日1</label>
+                            <div class="col-md-3 col-sm-1 reset">
+                                <input type="text" class="form-control" name="KaiShiRi" id="KaiShiRi"
+                                       onKeyUp="value=value.replace(/\D/g,'')" onafterpaste="value=value.replace(/\D/g,'')" placeholder="只能输入日期">
+                            </div>
+                            <label class="col-md-2 col-sm-1 control-label reset">结束月1</label>
+                            <div class="col-md-3 col-sm-1 reset">
+                                <input type="text" class="form-control" name="JieShuYue" id="JieShuYue"
+                                       onKeyUp="value=value.replace(/\D/g,'')" onafterpaste="value=value.replace(/\D/g,'')" placeholder="只能输入月份">
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:5px;">
+                            <label class="col-md-2 col-sm-1 control-label reset">结束日1</label>
+                            <div class="col-md-3 col-sm-1 reset">
+                                <input type="text" class="form-control" name="jieShuRi" id="jieShuRi"
+                                       onKeyUp="value=value.replace(/\D/g,'')" onafterpaste="value=value.replace(/\D/g,'')" placeholder="只能输入日期">
+                            </div>
+                            <div class="col-md-2 col-sm-offset-1 reset">
+                                <button type="button" class="btn btn-info form-control" id="BaoCun">
+                                    <span class="glyphicon glyphicon-download-alt"></span> 保存
+                                </button>                                 
+                            </div>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <button type="button" class="btn btn-danger form-control" data-dismiss="modal">
+                                    <span class="glyphicon glyphicon-remove"></span> 关闭
+                                </button>                                 
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <script type="text/javascript">
+        var tabGoodsSeason;
+        var estimateUnitID;
+        //加载页面数据
+        $(document).ready(function () {
+            tabGoodsSeason = $.fn.bsgrid.init('tabGoodsSeason', {
+                url: '/ShangPinGuanLi/JiChuXinXi/SelectGoodsSeasonID',
+                autoLoad: true,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                pageSize: 10,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置               
+            });
+        });
+
+        //新增窗体
+        $("#XinZeng").click(function () {
+            $("#XinZengChaungTi").modal('show');
+        });
+
+        //新增保存
+        $("#BaoCun").click(function () {
+            var GoodsSeasonName = $("#GoodsSeasonName").val();
+            var KaiShiYue = $("#KaiShiYue").val();
+            var KaiShiRi = $("#KaiShiRi").val();
+            var JieShuYue = $("#JieShuYue").val();
+            var jieShuRi = $("#jieShuRi").val();
+            if (GoodsSeasonName != '' && KaiShiYue != '' && KaiShiRi != '' && JieShuYue != '' && jieShuRi != '') {
+                $.post("/ShangPinGuanLi/JiChuXinXi/InsertGoodsSeason", {
+                    GoodsSeasonName: GoodsSeasonName,
+                    KaiShiYue: KaiShiYue,
+                    KaiShiRi: KaiShiRi,
+                    JieShuYue: JieShuYue,
+                    jieShuRi: jieShuRi,
+                }, function (mess) {
+                    if (mess == "success") {
+                        layer.alert('新增成功', { icon: 1, title: '提示' });                       
+                        $("#XinZengChaungTi").modal('hide');
+                        tabGoodsSeason.refreshPage();
+                    }
+                    else {                        
+                        layer.alert('新增失败', { icon: 2, title: '提示' });
+                    }
+                });
+            } else {                
+                layer.alert('请填写需要新增的内容', { icon: 0, title: '提示' });
+            }
+        });
+
+        //删除
+        $("#ShanChu").click(function () {
+            var selectRowIndex = tabGoodsSeason.getSelectedRowIndex();//获取选中行的索引值
+            if (selectRowIndex >= 0) {
+                if (window.confirm("您确定要删除？")) {
+                    var goodsSeasonId = tabGoodsSeason.getColumnValue(selectRowIndex, "GoodsSeasonID");//获取选中行的公告类型明细id
+                    //查询修改的公告类型
+                    $.post("/ShangPinGuanLi/JiChuXinXi/DeleteGoodsSeason",
+                        { goodsSeasonId: goodsSeasonId }, function (msg) {
+                            if (msg == "success") {
+                                layer.alert('删除成功', { icon: 1, title: '提示' });                               
+                                //刷新table
+                                tabGoodsSeason.refreshPage();
+                            }
+                            else {
+                                layer.alert('删除失败', { icon: 2, title: '提示' });                               
+                            }
+                        });
+                }
+            }
+            else {               
+                layer.alert('请选择需要删除的数据', { icon: 0, title: '提示' });
+            }
+        });
+
+        //关闭按钮
+        $(function () {          
+            $("#TuiChu").click(function () {
+                $("#danweiheshuxingdingYi").hide();
+            });
+        });
+
+    </script>
+
+</body>
+</html>

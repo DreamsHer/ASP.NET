@@ -1,0 +1,442 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>|租赁合同|终止处理</title>
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    @*CSS样式(包含默认皮肤样式)*@
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    @*CSS皮肤(需引用于bsgrid.all.min.css之后)*@
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css">
+        .container {
+            width: 1000px;
+            padding: 0;
+        }
+
+        .panel-heading {
+            font-size: 16px;
+        }
+
+        .panel-body {
+            padding-top: 0;
+        }
+    </style>
+</head>
+<body style="background:#f0edf1;">
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">|租赁合同|终止处理</div>
+            <div class="panel-body" style="background:#f0edf1;">
+                <div class="table">
+                    <ul class="nav nav-tabs tab-color-blue background-blue" id="myTab4">
+                        <li class="active">
+                            <a id="tbnavB" href="#tpB" data-toggle="tab" aria-expanded="true">条件查询</a>
+                        </li>
+                        <li class="">
+                            <a id="tbnavZ" href="#tpZ" data-toggle="tab" aria-expanded="false">处理</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content  padding-0" id="InEmployeeForm">
+                        <div class="tab-pane active" id="tpB">
+                            <div id="chartL" style="width: 100%; height: 500px; float: left;">
+                                <div class="col-lg-12 col-md-12 col-sm-12 reset-padding" style="height:200px; margin:0;padding:0;border: 3px solid #d8cddc;">
+                                    <div class="panel-default" style="height:100%; margin:0;">
+                                        <div class="row" style="margin-top:8px;">
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                     <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label">合&nbsp;&nbsp;同&nbsp;&nbsp;号</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="text" class="form-control" name="ContractNumber" id="ContractNumber">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                     <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label">合同组号</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="text" class="form-control" id="HostContractNumber" name="HostContractNumber">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                     <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label">签订时间</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="text" class="form-control" id="ReleaseTimeStr" name="ReleaseTimeStr">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row" style="margin-top:8px;">
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                     <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label">手工合同号</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="text" class="form-control" name="exampleInputName2" id="exampleInputName2">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                     <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label">签订地点</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="text" class="form-control" id="ConclusionSite" name="ConclusionSite">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                     <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label resr">登记时间</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="text" class="form-control" id="Registranttimea" name="Registranttimea">
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row" style="margin-top:8px;">
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                     <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label">有效期起</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="text" class="form-control" name="ReleaseTimeStrr" id="ReleaseTimeStrr">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                     <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;止&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="text" class="form-control" id="ReleaseTimeStrrr" name="ReleaseTimeStrrr">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                     <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label">结算方式</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <select class="form-control" id="MethodOfSettlingAccountsID" name="MethodOfSettlingAccountsID"></select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 reset-padding" style="height:250px; margin:0;padding:0;border: 3px solid #d8cddc;">
+                                    <div class="panel-default" style="height:100%; margin:0;">
+                                        <form class="form-inline col-md-6" style="padding:5px 30px; margin:0;border:1px solid #ddd;height:180px;">
+                                            <div class="form-group col-md-12" style="padding:5px 20px;">
+                                                <label for="supplierCHName">商品商标</label>
+                                                <input type="text" class="form-control" id="GoodsChopID" name="GoodsChopID" style="width:100px">
+                                                <input type="text" class="form-control" id="GoodsChopName" name="GoodsChopName">
+                                            </div>
+                                            <div class="form-group col-md-12" style="padding:5px 20px;">
+                                                <label for="supplierCHName">供货单位</label>
+                                                <input type="text" class="form-control" id="SupplierID" name="SupplierID" style="width:100px">
+                                                <input type="text" class="form-control" id="AgreementTypeName" name="AgreementTypeName">
+                                            </div>
+                                            <div class="form-group col-md-12" style="padding:5px 20px;">
+                                                <label for="supplierCHName">签订人：</label>
+                                                @*<input type="text" class="form-control" id="Regis1trant" name="Registrant" style="width:100px">*@
+                                                <input type="text" class="form-control" id="Executor" name="Executor">
+                                            </div>
+
+                                            <div class="form-group col-md-12" style="padding:5px 20px;">
+                                                <label for="supplierCHName">审核人：</label>
+                                                @*<input type="text" class="form-control" id="SpouseBRanchIDq" name="SpouseBRanchIDq" style="width:100px">*@
+                                                <input type="text" class="form-control" id="Auditor" name="Auditor">
+                                            </div>
+                                        </form>
+                                        <form class="form-inline col-md-6" style="padding:5px 30px; margin:0;border:1px solid #ddd;height:180px;">
+                                            <div class="form-group col-md-12" style="padding:5px 20px;">
+                                                <label for="supplierCHName">采购部门</label>
+                                                <input type="text" class="form-control" id="SpouseBRanchID" name="SpouseBRanchID" style="width:100px">
+                                                <input type="text" class="form-control" id="SpouseBRanchName" name="SpouseBRanchName">
+                                            </div>
+                                            <div class="form-group col-md-12" style="padding:5px 20px;">
+                                                <label for="supplierCHName">分类代码</label>
+                                                <input type="text" class="form-control" id="GoodsGenreID" name="GoodsGenreID" style="width:100px">
+                                                <input type="text" class="form-control" id="GoodsGenreName" name="GoodsGenreName">
+                                            </div>
+                                            <div class="form-group col-md-12" style="padding:5px 20px;">
+                                                <label for="supplierCHName">登记人：</label>
+                                                @*<input type="text" class="form-control" id="Registrant1" name="Regis1trant" style="width:100px">*@
+                                                <input type="text" class="form-control" id="Registrant" name="Registrant">
+                                            </div>
+
+                                        </form>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tpZ">
+                            <div class="col-md-12">
+                                <div id="chartL" style="width: 100%; height: 400px; float: left;">
+                                    <div class="modal-body" style="background:#eddddd;">
+                                        <div class="" style="width:100%;height:500px; background:#f0edf1;">
+                                            <div class="row" style="width:100%;height:400px;overflow:auto;margin-left:2px;">
+                                                <table id="tabShangBiaoXinXi1" style="width:100%;" class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th w_num="total_line">序号</th>
+                                                            <th w_index="OrderFormPactID" w_hidden="true"></th>
+                                                            <th w_index="SpouseBRanchID" w_hidden="true"></th>
+                                                            <th w_index="ContractNumber">合同号</th>
+                                                            <th w_index="SpouseBRanchName">采购部门</th>
+                                                            <th w_index="SupplierID" w_hidden="true"></th>
+                                                            <th w_index="AgreementTypeID" w_hidden="true"></th>
+                                                            <th w_index="AgreementTypeName">供货单位</th>
+                                                            <th w_render="bsgridSetSate">状态</th>
+                                                            <th w_index="UseOf" w_hidden="true">状态</th>
+                                                            <th w_index="ReleaseTimeStrr">合同有效期（起）</th>
+                                                            <th w_index="ReleaseTimeStrrr">合同有效期（止）</th>
+                                                            <th w_index="ReleaseTimejinchangtime">进场日期</th>
+                                                            <th w_index="ReleaseTimetuichangchangtime">退场日期</th>
+                                                            <th w_index="MethodOfSettlingAccountsID" w_hidden="true"></th>
+                                                            <th w_index="MethodOfSettlingAccounts">结算方式</th>
+                                                            <th w_index="ReleaseTimepiaoqitime">票期天数</th>
+                                                            <th w_index="ReleaseTimezhangqitime">账期天数</th>
+                                                            <th w_index="AgreementManagerID" w_hidden="true"></th>
+                                                            <th w_index="AgreementManagerName">经理</th>
+                                                            <th w_index="AgreementManagerZong">总经理</th>
+                                                            <th w_index="AgreementManagerGaoJi">高级经理</th>
+                                                            <th w_index="AgreementStatusID" w_hidden="true"></th>
+                                                            <th w_index="AgreementState">当前状态</th>
+                                                            <th w_index="PurchasingAgent">采购员</th>
+                                                            <th w_index="ConclusionSite">签订地点</th>
+                                                            <th w_index="ReleaseTimeStr">签订时间</th>
+                                                            <th w_index="TryPaymentData">账期付款天数</th>
+                                                            <th w_index="TryPaymentShiXiaoData">试销期天数</th>
+                                                            <th w_index="GoodsID" w_hidden="true"></th>
+                                                            <th w_index="Registrant">登记人</th>
+                                                            <th w_index="Auditor">审核人</th>
+                                                            <th w_index="Executor">注销人</th>
+                                                            <th w_index="Registranttimea">登记时间</th>
+                                                            <th w_index="RegistrantAuditortime">审核时间</th>
+                                                            <th w_index="RegistrantExecutortime">注销时间</th>
+                                                            <th w_index="HostContractNumber">合同组号</th>
+
+                                                            <th w_index="GoodsChopID" w_hidden="true"></th>
+                                                            <th w_index="GoodsChopName">商品商标</th>
+                                                            <th w_index="GoodsGenreID" w_hidden="true"></th>
+                                                            <th w_index="GoodsGenreName">分类类别</th>
+
+                                                        </tr>
+                                                    </thead>
+                                                </table>
+                                            </div>
+                                            <form class="form-horizontal" role="form">
+                                                <div class="form-group" style="margin-top:20px;">
+                                                    <div class="col-md-12 col-sm-12 col-xs-12 btngourp" style="padding:0px 370px;">
+                                                        <button type="button" class="btn btn-success " id="PinPaiXuanZe1">
+                                                            执行
+                                                        </button>
+                                                        <button type="button" class="btn btn-primary" id="enable" onclick="saveTitleState(true)">终止</button>
+                                                        <button type="button" class="btn btn-primary" id="toVoid" onclick="saveTitleState(false)">取消终止</button>
+
+                                                    </div>
+
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tpL">
+                                <div id="chartL" style="width: 100%; height: 500px; float: left;">
+                                </div>
+                            </div>
+
+                            <div class="tab-pane" id="tpG">
+                                <div id="chartG" style="width: 100%; height: 313px; float: left;">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    @*jquery.bsgrid*@
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>@*对话框*@
+    <script src="~/Content/js/customfunction.js"></script>@*封装js*@
+    <script src="~/Content/js/jquery.form.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap-table.js"></script>
+    <script type="text/javascript">
+        var tabShangBiaoXinXi1;
+
+        $.post("/OrderFormPactment/OrderFormPact/selectMethodOfSettlingAccount", function (data) {
+                selectLoadData("MethodOfSettlingAccountsID", data)
+            });
+        //设置状态
+        function bsgridSetSate(record, rowIndex, colIndex, options) {
+            var UseOf = tabShangBiaoXinXi1.getRecordIndexValue(record, "UseOf");
+            UseOf = record.UseOf;
+            if (UseOf == true || UseOf == "true") {
+                return '<span style="color:cornflowerblue">已终止</span>';
+            } else {
+                return '<span style="color:red">未终止</span>';
+            }
+        }
+        //修改审核状态
+        function saveTitleState(state) {
+            var rowIndex = tabShangBiaoXinXi1.getSelectedRowIndex();
+            if (rowIndex > -1) {
+                var titleId = tabShangBiaoXinXi1.getColumnValue(rowIndex, "OrderFormPactID");
+                var oldState = tabShangBiaoXinXi1.getColumnValue(rowIndex, "UseOf");
+                if (oldState == state.toString() && state == false) {
+                    layer.msg("该经销合同已经清退，无需重复操作", { icon: 0, skin: "layui-layer-molv" });
+                }
+                else if (oldState == state.toString() && state == false) {
+                    layer.msg("该经销合同未清退，无需重复操作", { icon: 0, skin: "layui-layer-molv" });
+                } else {
+                    $.getJSON("/OrderFormPactment/OrderFormPact/UpdateTitleState",
+                        { titleId: titleId, state: state },
+                        function (message) {
+                            if (message.State == true || message.State == "true") {
+                                tabShangBiaoXinXi1.refreshPage();
+                            }
+                        });
+                }
+            } else {
+                layer.msg("请选择需要操作的合同", { icon: 0, skin: "layui-layer-molv" });
+            }
+        }
+        $(function () {
+
+
+            tabShangBiaoXinXi1 = $.fn.bsgrid.init('tabShangBiaoXinXi1', {
+                url: '/OrderFormPactment/OrderFormPact/SelectJingXiaoHeTongZhongZhi3',
+                autoLoad: false,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                rowSelectedColor: true,//是否显示选中行背景色
+                pageSize: 5,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left"//分页工具条的显示位置
+
+            });
+            tabShangBiaoXinXi1.refreshPage();
+
+
+        });
+        $("#PinPaiXuanZe1").click(function () {
+            var rowIndex = tabShangBiaoXinXi1.getSelectedRowIndex();
+            if (rowIndex > -1) {
+                var ID = tabShangBiaoXinXi1.getColumnValue(rowIndex, "OrderFormPactID");
+
+                $.getJSON("/OrderFormPactment/OrderFormPact/selectHETONGID?id=" + ID, function (data) {
+                    if (data == "失败") {
+                        layer.alert('你没有选择信息！', { icon: 2, title: '提示' });
+                    }
+                    else {
+                        $("#OrderFormPactID").val(data.OrderFormPactID);//隐藏域
+                        $("#SpouseBRanchID").val(data.SpouseBRanchID);
+                        $("#ContractNumber").val(data.ContractNumber);
+
+                        $("#SpouseBRanchName").val(data.SpouseBRanchName);
+                        $("#SupplierID").val(data.SupplierID);
+                        $("#AgreementTypeID").val(data.AgreementTypeID);
+                        $("#AgreementTypeName").val(data.AgreementTypeName);
+                        $("#ReleaseTimeStrr").val(data.ReleaseTimeStrr);
+                        $("#ReleaseTimeStrrr").val(data.ReleaseTimeStrrr);
+                        $("#ReleaseTimejinchangtime").val(data.ReleaseTimejinchangtime);
+                        $("#ReleaseTimetuichangchangtime").val(data.ReleaseTimetuichangchangtime);
+                        $("#MethodOfSettlingAccountsID").val(data.MethodOfSettlingAccountsID);
+                        if (data.MethodOfSettlingAccountsID) {
+                            $("#MethodOfSettlingAccountsID").attr("checked", 'true');
+                        }
+                        else {
+                            $("#MethodOfSettlingAccountsID").removeAttr("checked");
+                        }
+                        //$("#MethodOfSettlingAccounts").val(data.MethodOfSettlingAccounts);
+                        $("#ReleaseTimepiaoqitime").val(data.ReleaseTimepiaoqitime);
+                        $("#ReleaseTimezhangqitime").val(data.ReleaseTimezhangqitime);
+                        $("#AgreementManagerID").val(data.AgreementManagerID);
+                        $("#AgreementManagerName").val(data.AgreementManagerName);
+                        $("#AgreementManagerZong").val(data.AgreementManagerZong);
+                        $("#AgreementManagerGaoJi").val(data.AgreementManagerGaoJi);
+                        $("#AgreementStatusID").val(data.AgreementStatusID);
+                        $("#AgreementState").val(data.AgreementState);
+                        $("#PurchasingAgent").val(data.PurchasingAgent);
+                        $("#ConclusionSite").val(data.ConclusionSite);
+                        $("#ReleaseTimeStr").val(data.ReleaseTimeStr);
+                        $("#TryPaymentData").val(data.TryPaymentData);
+                        $("#TryPaymentShiXiaoData").val(data.TryPaymentShiXiaoData);
+                        $("#GoodsID").val(data.GoodsID);
+                        $("#Registrant").val(data.Registrant);
+                        $("#Auditor").val(data.Auditor);
+                        $("#Executor").val(data.Executor);
+                        $("#Registranttimea").val(data.Registranttimea);
+                        $("#RegistrantAuditortime").val(data.RegistrantAuditortime);
+                        $("#RegistrantExecutortime").val(data.RegistrantExecutortime);
+
+                        $("#HostContractNumber").val(data.HostContractNumber);
+                        $("#GoodsChopID").val(data.GoodsChopID);
+                        $("#GoodsChopName").val(data.GoodsChopName);
+                        $("#GoodsGenreID").val(data.GoodsGenreID);
+                        $("#GoodsGenreName").val(data.GoodsGenreName);
+
+                    }
+                    $("#ShangBiaoLaiYuan1").modal('hide'); //选择后自动关闭
+
+                });
+
+            }
+            else {
+                layer.alert('你没有选择信息！', { icon: 2, title: '提示' });
+            }
+        });
+
+
+
+
+
+
+    </script>
+</body>
+</html>

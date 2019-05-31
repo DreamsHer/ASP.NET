@@ -1,0 +1,385 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GoodsShangShi</title>
+
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+
+    <style>
+        .container { /*作用不让缩小放大时走形*/
+            width: 100%;
+            margin: 0;
+        }
+
+        .panel-heading span {
+            font-size: 18px;
+        }
+
+        .form-horizontal label {
+            font-weight: normal;
+        }
+
+        .reset {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .panel-body {
+            padding-left: 0;
+        }
+
+        a {
+            font-size: 17px;
+            margin-right: 8px;
+        }
+
+            a, a:hover, a:active, a:visited, a:link {
+                color: white;
+                text-decoration: none;
+            }
+
+        td a {
+            color: blue !important;
+        }
+
+        .h4 {
+            margin: 0 0 4px 0;
+        }
+
+        th {
+            font-weight: normal;
+        }
+
+        .h4, td, th {
+            text-align: center;
+        }
+
+        .table tbody tr td {
+            padding: 4px;
+        }
+
+            .table tbody tr td button {
+                height: 24px;
+                padding: 2px 12px;
+            }
+
+        #noticeInfor {
+            height: 100px;
+            overflow: auto;
+            border: 1px solid #eee;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="h4">查询及管理上市单</span>
+                    <div class="pull-right">
+                        <button class="form-control btn-sm btn btn-info" id="Colse"><span class="glyphicon glyphicon-remove">关闭</span></button>
+                    </div>
+                </div>
+                <div class="panel-body">
+
+                   
+                    <div class="row">
+                        <div class="col-md-11 col-sm-11 col-xs-11" style="padding-left:2px;">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+
+                                    <label class="col-md-1 col-sm-1 control-label reset">审核时间</label>
+                                    <div class="col-md-2 reset">
+                                        <input type="date" class="form-control" id="SReleaseTime">
+                                    </div>
+                                    <label class="col-md-1 col-sm-1 control-label reset">商品售卖优惠</label>
+                                    <div class="col-md-2 reset">
+                                        <select class="form-control" id="GoodsDingYiQuID"></select>
+                                    </div>
+                                    <label class="col-md-1 col-sm-1 control-label reset">单据编号：</label>
+                                    <div class="col-md-1 reset">
+                                        <input class="form-control" id="Retemr" type="text" placeholder="00000001"/>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-4">
+                                        <button type="button" class="btn btn-primary" id="btnSelect"><span class="glyphicon glyphicon-search"></span>查 询</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <span>数据列表</span>
+                            <div class="pull-right">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-4">
+                                            <button class="btn btn-success" type="button" onclick="saveShenHeBtnStoop(false)"><span class="glyphicon glyphicon-ok"></span>启动销售</button>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <button class="btn btn-danger" type="button" onclick="saveShenHeBtn(true)"><span class="glyphicon glyphicon-remove"></span>停止销售</button>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <button class="btn btn-info" type="button" id="WprintAchievement"><span class="glyphicon glyphicon-print"></span> 浏览器打印</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body" style="padding-left:15px; background:#eee;">
+                            <div class="h4"><b>上市单据</b></div>
+                            <table id="ConvterTable" style="margin-top:2px;">
+                                <tr>
+                                    <th w_num="total_line">序号</th>
+                                    <th w_index="WareHouseID" w_hidden="true">上市ID</th>
+                                    <th w_index="P_Remember">上市单编号</th>
+                                    <th w_index="SpouseBRanchName">发货部门</th>
+                                    <th w_index="payName">付货人</th>
+                                    <th w_index="furlName">收货人</th>
+                                    <th w_index="StockPlaceName">店家名称</th>
+                                    <th w_index="SupplierCHName">供货单位</th>
+                                    <th w_index="QiDongName">商品售卖优惠</th>
+                                    <th w_index="RegisterName">登记人</th>
+                                    <th w_index="registerTime">登记时间</th>
+                                    <th w_index="ExamineName">审核人</th>
+                                    <th w_index="examineTime">审核时间</th>
+
+                                    <th w_render="bsgridSetCre">销售状态</th>
+                                    <th w_index="ExamineNot" w_hidden="true">销售状态</th>
+
+                                </tr>
+                            </table>
+
+                            <div class="h4"><b>商品信息</b></div>
+
+                            <table id="ShangPin">
+                                <tr>
+                                    <th w_num="total_line" width="5%">序号</th>
+                                    <th w_index="GoodsCodes">商品代码</th>
+                                    <th w_index="GoodsTiaoMas">商品条码</th>
+                                    <th w_index="GoodsNames">商品名称</th>
+                                    <th w_index="ArtNos">货号</th>
+                                    <th w_index="SpecificationsModels">规格</th>
+                                    <th w_index="EstimateUnitNames">计量单位</th>
+                                    <th w_index="YuanMumberOfPack">在售件数</th>
+                                    <th w_index="TaxBids">含税进价</th>
+                                    <th w_index="RetailMonovalents">零售单格</th>
+
+                                    <th w_index="UnotMumberOfPa">已售出量</th>
+
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.2.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <script src="~/Content/js/jquery.form.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+
+    <script>
+
+        var ConvterTable;
+        var ShangPin;
+        var GoodsListedID;
+
+        $(document).ready(function () {
+
+
+            //查询上市单
+            ConvterTable = $.fn.bsgrid.init('ConvterTable', {
+                url: '/P_PeiHuo/SelectGoodsShangShi/SelectGoodsedrList',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                rowSelectedColor: true,
+                pageSize: 7,
+                pageSizeSelect: true,
+                pagingLittleToolbar: true,
+                pagingToolbarAlign: "left",
+
+                event: {//事件
+                    customRowEvents: {//自定义行事件
+                        click: function (record, rowIndex, trObj, options) {//点击事件
+                            ShangPin.search("goodsListedID=" + record.WareHouseID);
+                        }
+                    }
+                }
+            });
+
+            //售卖优惠
+            $.post("/P_PeiHuo/GoodesShangShi/ShouMaiYouHui", function (data) {
+                selectLoadData("GoodsDingYiQuID", data);
+            });
+
+            //主界面商品
+            ShangPin = $.fn.bsgrid.init('ShangPin', {
+                url: '/P_PeiHuo/SelectGoodsShangShi/BangDingPiGoodelsedrlis',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                pageSize: 4,
+                pageSizeSelect: false,
+                pagingLittleToolbar: true,
+                pagingToolbarAlign: "left",
+            });
+
+            tabNoticeSearch();//调用,作用（刷新）
+        });
+
+
+        //表格条件查询
+        function tabNoticeSearch() {
+            var goodsCode = $("#Retemr").val();
+            var quFenLeiXingID = $("#GoodsDingYiQuID").val();
+            if (quFenLeiXingID == undefined || quFenLeiXingID == "") {
+                quFenLeiXingID = 0;
+            }
+            ConvterTable.search("goodsCode=" + goodsCode + "&quFenLeiXingID=" + quFenLeiXingID);
+        }
+        //查询按钮
+        $("#btnSelect").click(function () {
+            tabNoticeSearch();
+            ShangPin.clearGridBodyData();
+        });
+
+       
+        function saveShenHeBtn(state) {
+            var rowIndex = ConvterTable.getSelectedRowIndex();
+            
+            if (rowIndex > -1 || GoodsListedID > 0) {
+                GoodsListedID = ConvterTable.getColumnValue(rowIndex, "WareHouseID");//获取ID
+                layer.confirm("是否停止销售？", {
+                    icon: 3,
+                    btn: ['确定', '取消']
+                    //按钮
+                }, function (layerIndex) {
+                    layer.close(layerIndex);//关闭提示框
+
+                    $.getJSON("/P_PeiHuo/SelectGoodsShangShi/UpdateExamineNotStoop", { goodsListedID: GoodsListedID, state: state }, function (message) {
+                        document.location.href = "/P_PeiHuo/SelectGoodsShangShi/GoodsShangShi";
+                        if (message.returnJson == "修改成功") {
+                            if (message.State == true || message.State == "true") {
+                            }
+                        }
+                    });
+                });
+            }
+            else {
+                layer.alert("请先从表中选择数据", { icon: 5, title: '温馨小提示：' });
+            }
+        }
+        //qi
+        function saveShenHeBtnStoop(state) {
+            var rowIndex = ConvterTable.getSelectedRowIndex(); 
+           
+            if (rowIndex > -1 || GoodsListedID > 0) {
+                GoodsListedID = ConvterTable.getColumnValue(rowIndex, "WareHouseID");//获取ID
+
+                layer.confirm("是否启动销售？", {
+                    icon: 3,
+                    btn: ['确定', '取消']
+                    //按钮
+                }, function (layerIndex) {
+                    layer.close(layerIndex);//关闭提示框
+                    $.getJSON("/P_PeiHuo/SelectGoodsShangShi/UpdateExamineNot", { goodsListedID: GoodsListedID, state: state }, function (message) {
+                        document.location.href = "/P_PeiHuo/SelectGoodsShangShi/GoodsShangShi";
+                        if (message.returnJson == "修改成功") {
+                            if (message.State == true || message.State == "true") {
+                            }
+                        }
+                    });
+                });
+            }
+            else {
+                layer.alert("请先从表中选择数据", { icon: 5, title: '温馨小提示：' });
+            }
+        }
+
+
+        //设置生效状态
+        function bsgridSetCre(record, rowIndex, colIndex, options) {//自定义列的代码（二）
+            var toVoidNow = ConvterTable.getRecordIndexValue(record, "ExamineNot");
+            toVoidNow = record.ExamineNot;
+            if (toVoidNow == true || toVoidNow == "true") {
+                return '<span style="color:red">已停售</span>';
+            } else {
+                return '<span style="color:cornflowerblue">销售中</span>';
+            }
+        }
+
+
+        //点击关闭
+        $("#Colse").click(function () {
+            $('body').remove();
+        });
+
+
+    </script>
+
+    <!--浏览器打印-->
+    <script>
+
+        //点击打印按钮
+        $("#WprintAchievement").click(function () {
+            $.ajax({
+                url: '@Url.Action("WidowesDaYin", "SelectGoodsShangShi")',
+                success: function (data) {
+                    if (judgePopupBlocked) {//判断
+                        layer.alert("浏览器禁用弹出窗口了，请允许弹出窗口");
+                    }
+                    //打开浏览器窗口
+                    var popUpWindow = window.open();
+                    if (popUpWindow) {//判断是否允许了
+                        $(popUpWindow.document.body).html(data);
+                    }
+                    else {
+                        layer.alert("浏览器禁用弹出窗口了，请允许弹出窗口");
+                    }
+                }
+            });
+        });
+        //判断浏览器是否阻止了弹出窗口
+        function judgePopupBlocked() {
+            var w = window.open(null, "", "width=1,height=1");
+            try {
+                w.close();
+                return false;
+
+            } catch (e) {
+                return true;
+
+            }
+        }
+
+    </script>
+
+
+
+</body>
+</html>

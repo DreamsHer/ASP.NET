@@ -1,0 +1,1580 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FanChang</title>
+
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+
+    <style>
+        .container {
+            width: 100%;
+            padding-top: 4px;
+            background: #fff;
+        }
+
+        label {
+            font-weight: normal;
+        }
+
+    </style>
+
+
+
+</head>
+<body>
+   
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-primary">
+
+                <div class="panel-heading">
+                    <div class="form-group">
+                        <span class="h4">商品返厂单</span>
+                        <div class="pull-right">
+                            <button class="form-control btn-sm btn btn-info" id="Colse"><span class="glyphicon glyphicon-remove">关闭</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-body">
+                    <form class="form-horizontal" role="form" id="formInsertExamineert" method="post">
+                        <div class="container" style="background:#f0edf1;">
+
+                            
+                            <!--隐藏域-->
+                            <input type="hidden" id="ConverID" /><!--配货ID-->
+                            <input type="hidden" id="dgtMumberOfPackages" /><!--入库件数ID-->
+                            <input type="hidden" id="RetureFactoryID" /><!--返厂ID-->
+                            <input type="hidden" id="HuoQuPiHao" /><!--批号-->
+
+                            <div class="row" style="padding-top:10px;">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <div class="col-md-2">
+                                            <label class="control-label"style="margin-left:10px;">记录编号</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" name="Remember" id="Remember" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <div class="col-md-2" style="padding-left: 25px;">
+                                            <label class="control-label">供货单位</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div style="border-bottom: #000 1px solid; width: 180px;">
+                                                <input readonly="readonly" id="SupplierCHName" name="SupplierCHName" style="width: 180px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3"></div>
+                                        <div class="col-md-2">
+                                            <button class="btn btn-primary" style="margin-left:30px;" type="button" id="DaYinBtn" onclick="window.print();return false;"><span class="glyphicon glyphicon-print"></span> 打印页面</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <div class="col-md-2">
+                                            <label class="control-label" style="padding-left:10px;">退货部门</label>
+                                        </div>
+
+                                        <div class="col-md-3" style="padding-left:15px;">
+                                            <div style="border-bottom: #000 1px solid; width: 180px;">
+                                                <input readonly="readonly" id="TuiHuoBuMen" style="width: 180px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <div class="col-md-2" style="padding-left: 35px;">
+                                            <label class="control-label">合同号</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div style="border-bottom: #000 1px solid; width: 180px;">
+                                                <input readonly="readonly" id="ContractNumber" name="ContractNumber" style="width: 180px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <div class="col-md-2">
+                                            <label class="control-label" style="padding-left:10px;">库存地点</label>
+                                        </div>
+                                        <div class="col-md-3" style="padding-left:15px;margin-top:5px;">
+                                            <div style="border-bottom: #000 1px solid; width: 180px;">
+                                                <input readonly="readonly" id="KuCunDi" style="width: 180px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <div class="col-md-2">
+                                            <label class="control-label" style="padding-left:10px;">可算方式</label>
+                                        </div>
+                                        <div class="col-md-4" style="padding-left:14px;border-left-width:20px;">
+                                            <div style="border-bottom: #000 1px solid; width: 180px;">
+                                                <input readonly="readonly" id="AdjustAccountsFashion" name="AdjustAccountsFashion" style="width: 180px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <div class="col-md-3"style="padding-left:30px;">
+                                            <label class="control-label">退货原因</label>
+                                        </div>
+                                        <div class="col-md-6" style="padding-left:15px;">
+                                            <select class="form-control" id="ReturnofID" ></select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <div class="col-md-3">
+                                            <label class="control-label">解决方法</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <input type="text" class="form-control" id="Settlement" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <div class="col-md-5">
+                                            <button type="button" id="PiLianGoods" class="btn btn-block" style="margin-left:120px;">批量增加商品</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <div class="col-md-2">
+                                            <label class="control-label">附 件</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input type="text" class="form-control" id="Appendix" />
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label class="control-label">张</label>
+                                        </div>
+
+                                        <div class="col-md-1">
+                                            <label class="control-label">同</label>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <input type="text" class="form-control" id="Evidences" />
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label class="control-label">返厂单</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                       
+                          <div class="row" style="background:#f0edf1;">
+                              <div class="col-lg-12">
+                                  <div class="col-lg-7 col-md-7 col-sm-7 left">
+                                      <div class="row left-titles" id="textContent" style="overflow:auto;">
+                                          <div class="stem" id="stem">
+                                              <table id="YiaoZhengTableLeft" style="margin-top:2px;width:1000px;">
+                                                  <tr>
+                                                      <th w_num="total_line">序号</th>
+                                                      <th w_index="ConverID" w_hidden="true">配货ID</th>
+                                                      <th w_index="GoodsIDs" w_hidden="true">商品ID</th>
+
+                                                      <th w_index="RetureFactoryID" w_hidden="true">返厂ID</th>
+                                                      <th w_index="RetureFactoryDeTailID" w_hidden="true">返厂明细ID</th>
+
+                                                      <th w_index="GoodsNames">商品代码</th>
+                                                      <th w_index="GoodsTiaoMas">商品条码</th>
+                                                      <th w_index="GoodsNames">商品名称</th>
+
+                                                      <th w_index="ReMumberOfPackages" w_render="crearViewButton">退货细数</th>
+
+                                                      <th w_index="MumberOfPackages">库存数量</th>
+                                                      <th w_index="TaxBids">含税进价</th>
+                                                      <th w_index="RetailMonovalents">零售单价</th>
+                                                      <th w_index="SpecificationsModels">规格</th>
+                                                      <th w_index="EstimateUnitNames">计量单位</th>
+                                                      <th w_index="ArtNos">商品货号</th>
+
+                                                  </tr>
+                                              </table>
+                                          </div>
+                                      </div>
+
+                                  </div>
+
+                                  <div class="col-lg-5 col-md-5 col-sm-5 right">
+                                      <div class="row left-titles" id="textContent" style="overflow:auto;margin-left:1px;">
+                                          <div class="stem" id="stem">
+                                              <table id="YiaoZhengTablerihgt" style="margin-top:2px;width:800px;">
+                                                  <tr>
+                                                      <th w_index="ConverID" w_hidden="true">配货ID</th>
+                                                      <th w_index="GoodsIDs" w_hidden="true">商品ID</th>
+                                                      <th w_index="ConverDeTaiID" w_hidden="true">配货明细ID</th>
+
+                                                      <th w_index="RetureFactoryID" w_hidden="true">返厂ID</th>
+                                                      <th w_index="RetureFactoryDeTailID" w_hidden="true">返厂明细ID</th>
+
+                                                      <th w_index="Number">库存批次</th>
+                                                      <th w_index="TaxBids">不含税进价</th>
+                                                      <th w_index="TaxBids">含税进价</th>
+                                                      <th w_index="ReMumberOfPackages" w_render="crearViePeiZaiShuLiang">退货数量</th>
+
+                                                      <th w_index="MumberOfPackages">结存数量</th>
+                                                      <th w_index="RetailMonovalents">零售单价</th>
+                                                
+                                                      <th w_index="StockPlaceName">发出部门</th>
+                                                    
+                                                  </tr>
+                                              </table>
+                                          </div>
+                                          <div class="option" id="option">
+                                              <div id="tTitleOptional" class="col-sm-12"></div>
+                                          </div>
+                                      </div>
+
+                                  </div>
+                              </div>
+                          </div>
+
+
+                            <div class="row" style="margin-top:10px;">
+                                <div class="form-group">
+
+                                    <div class="col-md-3">
+                                        <div class="col-md-4">
+                                            <button class="btn btn-block" type="button" id="DengJiRen">登记人</button>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" name="RegisterName" id="RegisterName" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="col-md-4">
+                                            <label class="control-label">登记时间:</label>
+                                        </div>
+                                        <div class="col-sm-8 ">
+                                            <input type="date" class="form-control" name="RegisterTime" id="RegisterTime" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="col-md-4">
+                                            <button class="btn btn-block" type="button" id="ShenHeRen">审核人</button>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="text" class="form-control" name="ExamineName" id="ExamineName" />
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-3">
+                                        <div class="col-md-4">
+                                            <label class="control-label" id="ShenHeTimea">审核时间:</label>
+                                        </div>
+                                        <div class="col-sm-8 ">
+                                            <input type="date" id="ExamineTime" class="form-control" name="ExamineTime" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row" style="margin-top:10px;">
+                                <div class="form-group">
+                                    <div class="col-sm-1 col-lg-offset-3">
+                                        <button class="form-control btn-block btn btn-primary" type="button" id="TianJia"><span class="glyphicon glyphicon-plus"></span> 添 加</button>
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <button class="form-control btn-block btn btn-primary" type="button" id="UpauteBtn"><span class="glyphicon glyphicon-search"></span> 查 询</button>
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <button class="form-control btn-block btn btn-success" type="button" id="BaoCunBtn" onclick="savebaoCunBtnt(true)"><span class="glyphicon glyphicon-download-alt"></span> 保 存</button>
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <button class="form-control btn-block btn btn-danger" type="button" id="DeleteBtn"><span class="glyphicon glyphicon-trash"></span> 删 除</button>
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <button class="form-control btn-block btn btn-success" type="button" id="ShenHeBtn" onclick="saveShenHeBtn(true)"><span class="glyphicon glyphicon-ok"></span> 审 核</button>
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <button class="form-control btn-block btn btn-warning" type="button" id="FangQiBtn"><span class="glyphicon glyphicon-remove"></span> 放 弃</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div><!--大row-->
+    </div><!--container-->
+
+
+
+    <!--制单_员工查询窗口-->
+    <div class="modal bs-example-modal-sm" id="modZhiDanYuanGong">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header" style="background:#74a4e8;">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">员工查询窗口</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row examineeInfor" style="overflow:auto;height:200px;width:590px;">
+                        <table id="ZhiDanYuanGongTable">
+                            <tr>
+                                <th w_num="total_line" width="10%">序号</th>
+                                <th w_index="StaffID" w_hidden="true"></th>
+                                <th w_index="StaffCode">编码</th>
+                                <th w_index="StaffName">员工姓名</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row" style="margin-top:10px;">
+                        <div class="form-group">
+                            <div class="col-md-2 col-lg-offset-4">
+                                <button class="form-control btn btn-primary" type="button" id="btnQueDingZhD">确 定</button>
+                            </div>
+                            <div class="col-md-2">
+                                <button class="form-control btn btn-primary" type="button" id="btnQuXiao">返 回</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--执行人_员工查询窗口-->
+    <div class="modal bs-example-modal-sm" id="modYuanGongZhiXing">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background:#74a4e8;">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">员工查询窗口</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row examineeInfor" style="overflow:auto;height:200px;width:590px;">
+                        <table id="YuanGongTableZhiXing">
+                            <tr>
+                                <th w_num="total_line" width="10%">序号</th>
+                                <th w_index="StaffID" w_hidden="true"></th>
+                                <th w_index="StaffCode">编码</th>
+                                <th w_index="StaffName">员工姓名</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row" style="margin-top:10px;">
+                        <div class="form-group">
+                            <div class="col-md-2 col-lg-offset-4">
+                                <button class="form-control btn btn-primary" type="button" id="btnQueDingdZX">确 定</button>
+                            </div>
+                            <div class="col-md-2">
+                                <button class="form-control btn btn-primary" type="button" id="btnQuXiaod">返 回</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--添加''查询窗口-->
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modPeiHuo">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background:#74a4e8;">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">选择退货部门及往来单位</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container" style="background:#f0edf1;">
+
+                        <div class="row" style="margin-top:30px;">
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                    <div class="col-md-3">
+                                        <label class="control-label" style="padding-left:25px;">供货商:</label>
+                                    </div>
+                                    <div class="col-sm-4 ">
+                                        <div style="border-bottom: #000 1px solid; width: 200px;">
+                                            <input readonly="readonly" id="GongHuoJ" name="GongHuoJ" style="width: 100px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top:30px;">
+                            <div class="col-lg-8">
+                                <div class="form-group">
+                                    <div class="col-md-3">
+                                        <button type="button" id="SleHeTong" class="btn btn-block">合同号</button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div style="border-bottom: #000 1px solid; width: 200px;">
+                                            <input readonly="readonly" id="HeTongJ" name="HeTongJ" style="width: 200px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top:30px;">
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                    <div class="col-md-3">
+                                        <label class="control-label" style="padding-left:25px;">核算方式:</label>
+                                    </div>
+                                    <div class="col-sm-4 ">
+                                        <div style="border-bottom: #000 1px solid; width: 200px;">
+                                            <input readonly="readonly" id="HeSuanJ" name="HeSuanJ" style="width: 100px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top:30px;">
+                            <div class="col-lg-8">
+                                <div class="form-group">
+                                    <div class="col-md-3">
+                                        <label class="control-label" style="padding-left:20px;">退货部门</label>
+                                    </div>
+
+                                    <div class="col-md-4" style="padding-left:15px;">
+                                        <select class="form-control" id="SpouseBRanchID" name="SpouseBRanchID"></select>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top:30px;">
+                            <div class="col-lg-8">
+                                <div class="form-group">
+                                    <div class="col-md-3">
+                                        <label class="control-label" style="padding-left:20px;">库存地点</label>
+                                    </div>
+
+                                    <div class="col-md-4" style="padding-left:15px;">
+                                        <select class="form-control" id="StockPlaceID" name="StockPlaceIDf"></select>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="row" style="margin-top:90px;">
+                            <div class="form-group">
+                                <div class="col-md-2 col-lg-offset-4">
+                                    <button class="form-control btn btn-success" type="button" id="btnQueDingV"><span class="glyphicon glyphicon-ok">选 择</span></button>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <button class="form-control btn btn-primary" type="button" id="btnQuXiaodJ">返 回</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--合同查询窗口-->
+    <div class="modal bs-example-modal-sm" id="modHeTong">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background:#74a4e8;">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">合同查询窗口</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row examineeInfor" style="overflow:auto;height:220px;width:590px;">
+                        <table id="HeTongTable">
+                            <tr>
+                                <th w_num="total_line" width="10%">序号</th>
+                                <th w_index="ConverID" w_hidden="true"></th>
+                                <th w_index="ContractNumber">合同编号</th>
+                                <th w_index="SupplierCHName">供货商单位</th>
+                                <th w_index="AdjustAccountsFashion">核算方式</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row" style="margin-top:10px;">
+                        <div class="form-group">
+                            <div class="col-md-2 col-lg-offset-4">
+                                <button class="form-control btn btn-primary" type="button" id="btnQHeTong">确 定</button>
+                            </div>
+                            <div class="col-md-2">
+                                <button class="form-control btn btn-primary" type="button" id="btnQuXiaod">返 回</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--批量选商品''查询窗口-->
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modPiLiangGoods">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background:#74a4e8;">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">商品查询窗口</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row table-responsive" style="overflow:auto;height:400px;">
+                        <table id="PiLiangGoodsTable" style="margin-top:2px;width:1100px;">
+                            <tr>
+                                <th w_num="total_line">序号</th>
+                                <th w_index="GoodsIDs" w_hidden="true">商品ID</th>
+
+                                <th w_index="GoodsCodes">商品代码</th>
+                                <th w_index="GoodsTiaoMas">商品条码</th>
+                                <th w_index="GoodsNames">商品名称</th>
+                                <th w_index="ArtNos">货号</th>
+                                <th w_index="SpecificationsModels">规格</th>
+                                <th w_index="PackContents">包装含量</th>
+
+                                <th w_index="MumberOfPackages">入库件数</th>
+                                <th w_index="Subdivision">入库细数</th>
+
+                                <th w_index="EstimateUnitNames">计量单位</th>
+                                <th w_index="TaxBids">含税进价</th>
+                                <th w_index="RetailMonovalents">零售单格</th>
+
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row" style="margin-top:10px;">
+                        <div class="form-group">
+                            <div class="col-md-2 col-lg-offset-4">
+                                <button class="form-control btn btn-success" type="button" id="btnXuanGoodelsh"><span class="glyphicon glyphicon-pencil">选 择</span></button>
+                            </div>
+
+                            <div class="col-md-2">
+                                <button class="form-control btn btn-primary" type="button" id="btnQuXiaodJ">返 回</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--返厂单查询窗口-->
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modFanChang">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background:#74a4e8;">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">返厂单查询窗口</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row table-responsive" style="overflow:auto;height:370px;">
+                        <table id="FanChangTable" style="margin-top:2px;width:1700px;">
+                            <tr>
+                                <th w_num="total_line" width="7%">序号</th>
+                                <th w_index="RetureFactoryID" w_hidden="true">返厂ID</th>
+                                <th w_index="ConverID" w_hidden="true">配货ID</th>
+                                <th w_index="Remember">返厂编号</th>
+                                <th w_index="SpouseBRanchName">退货部门</th>
+                                <th w_index="StockPlaceName">库存地点</th>
+                                <th w_index="Returnof">退货原因</th>
+                                <th w_index="SupplierCHName">供货商名称</th>
+                                <th w_index="ContractNumber">合同号</th>
+                                <th w_index="AdjustAccountsFashion">核算方式</th>
+                                <th w_index="RegisterName">登记人</th>
+                                <th w_index="registerTime">登记时间</th>
+                                <th w_index="Settlement">解决方法</th>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div class="row" style="margin-top:10px;">
+                        <div class="form-group">
+                            <div class="col-md-2 col-lg-offset-3">
+                                <button class="form-control btn btn-primary" type="button" id="btnQHeTongFa">修 改</button>
+                            </div>
+                            <div class="col-md-2">
+                                <button class="form-control btn btn-primary" type="button" id="btnShenHe">审 核</button>
+                            </div>
+                            <div class="col-md-2">
+                                <button class="form-control btn btn-primary" type="button" id="btnQuXiaod">返 回</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.2.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <script src="~/Content/js/jquery.form.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+
+
+    <script>
+        var JiSuanShuZu = new Array();
+        var ConverDeTailIDQuan;
+        var FanChanJiSuanShuLiangZu = new Array();
+        var JiShangPiID = new Array();
+        var JiRuJianShu = new Array();
+        var FanChangJieID = new Array();
+        var FanChangShuZu = new Array();
+        var Ban_TableLeft;
+        var RetureFactoryID;
+
+        $(document).ready(function () {
+            //左
+            YiaoZhengTableLeft = $.fn.bsgrid.init('YiaoZhengTableLeft', {
+               // url: '/P_PeiHuo/PeiHuoDan/PiPeiGoodel',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                pageSize: 4,
+                pageSizeSelect: false,
+                pagingLittleToolbar: true,
+                pagingToolbarAlign: "left",
+            });
+            //右
+            YiaoZhengTablerihgt = $.fn.bsgrid.init('YiaoZhengTablerihgt', {
+                // url: '/P_PeiHuo/PeiHuoDan/PiPeiGoodel',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                pageSize: 4,
+                pageSizeSelect: false,
+                pagingLittleToolbar: true,
+                pagingToolbarAlign: "left",
+            });
+
+
+            //退货部门
+            $.post("/P_PeiHuo/FanChang/TuiHuoBuMen", function (data) {
+                selectLoadData("SpouseBRanchID", data);
+            });
+
+            //收货部门
+            $.post("/ShangPinJinCang/LianYingJinCang/KuCunDiDian", function (data) {
+                selectLoadData("StockPlaceID", data);
+            });
+
+            //退货原因
+            $.post("/P_PeiHuo/FanChang/TuiHuoYuanYin", function (data) {
+                selectLoadData("ReturnofID", data);
+            });
+
+            //记录编号
+            $.getJSON("/P_PeiHuo/FanChang/getEmpCodef", function (data) {
+                $("#Remember").val(data);
+            });
+
+
+        });
+
+        //计算
+        function fangfa()
+        {
+            
+                var rowIndex = YiaoZhengTablerihgt.getSelectedRowIndex();
+                var GoodsIDs;
+                var ShuRuDeShuLiang;
+                var RetureFactoryDeTailID;//返厂明细ID
+                if (rowIndex > -1) {
+
+                    GoodsIDs = YiaoZhengTablerihgt.getColumnValue(rowIndex, "GoodsIDs");//商品ID
+                    RetureFactoryDeTailID = YiaoZhengTablerihgt.getColumnValue(rowIndex, "RetureFactoryDeTailID");//商品ID
+
+                    ConverDeTailIDQuan = YiaoZhengTablerihgt.getColumnValue(rowIndex, "ConverDeTaiID");//配货明细ID
+                    ShuRuDeShuLiang = $("#RuKuJianShuRight" + GoodsIDs).val();//右边输入件数
+
+                    if (RetureFactoryID > 0) {
+                        $.post("/P_PeiHuo/FanChang/FanYuanJianShu", { wanHofDeailid: RetureFactoryID }, function (data) {
+
+                            $("#dgtMumberOfPackages").val(data[0].MumberOfPackages);//入库件数
+                            $("#HuoQuPiHao").val(data[0].Number);//批号
+                        });
+                    }
+                    else {
+                        $.post("/P_PeiHuo/FanChang/YuanJianShu", { wanHofDeailid: ConverDeTailIDQuan }, function (data) {
+
+                            $("#dgtMumberOfPackages").val(data[0].MumberOfPackages);//入库件数
+                            $("#HuoQuPiHao").val(data[0].Number);//批号
+                        });
+                    }
+
+                }
+
+                var YuanLaiJianShu = $("#dgtMumberOfPackages").val();
+
+            //if (ShuRuDeShuLiang > YuanLaiJianShu) {
+            //    layer.alert("输入不能大于结库数", { icon: 6, title: '温馨小提示：' });
+            //}else {
+                
+                $("#RuKuXiShu" + GoodsIDs).val(ShuRuDeShuLiang);//左边显示
+
+                if (RetureFactoryID > 0) {
+                    FanChangShuZu.push(([GoodsIDs, ShuRuDeShuLiang, RetureFactoryDeTailID]));
+
+                    var L;
+                    var ShuZi;
+                    for (var i = 0; i < FanChangShuZu.length; i++) {
+                        L = FanChangShuZu[i][0];
+
+                        ShuZi = FanChangShuZu[i][1];
+                        if (L == GoodsIDs) {
+                            if (L == undefined || L == "" || ShuZi != ShuRuDeShuLiang) {
+                                FanChangShuZu.splice(i, 1);
+                            }
+                        }
+                    }
+
+                }
+                else {
+                    FanChanJiSuanShuLiangZu.push(([GoodsIDs, ShuRuDeShuLiang]));
+                    var L;
+                    var ShuZi;
+                    for (var i = 0; i < FanChanJiSuanShuLiangZu.length; i++) {
+                        L = FanChanJiSuanShuLiangZu[i][0];
+
+                        ShuZi = FanChanJiSuanShuLiangZu[i][1];
+                        if (L == GoodsIDs) {
+                            if (L == undefined || L == "" || ShuZi != ShuRuDeShuLiang) {
+                                FanChanJiSuanShuLiangZu.splice(i, 1);
+                            }
+                        }
+                    }
+                }
+            //}
+        }
+
+        //点击 保 存()
+        function savebaoCunBtnt(state) {
+
+            var RetureFactoryID = $("#RetureFactoryID").val();//返厂ID
+            var ConverID = $("#ConverID").val();//配货ID
+            var Remember = $("#Remember").val();//记录编号
+            var SpouseBRanchID = $("#SpouseBRanchID").val();//退货部门
+            var StockPlaceID = $("#StockPlaceID").val();//库存地点
+            var ReturnofID = $("#ReturnofID").val();//退货原因
+            var Settlement = $("#Settlement").val();//解决方法
+
+            var Appendix = $("#Appendix").val();//附件
+            var Evidences = $("#Evidences").val();//同返厂单
+            var RegisterName = $("#RegisterName").val();//制单人
+            var RegisterTime = $("#RegisterTime").val();//制单时间  
+
+            var MumberOfPackages = $("#dgtMumberOfPackages").val();//配货件数
+            var Number = $("#HuoQuPiHao").val();//批号  
+
+            if (Remember != '' && ConverID > 0 && SpouseBRanchID > 0 && StockPlaceID > 0 && ReturnofID > 0 &&
+                Settlement != '' && RegisterName != '' && RegisterTime != '') {
+
+                //判断( 计算 )数组
+                if (FanChanJiSuanShuLiangZu.length > 0) {
+                    for (var i = 0; i < FanChanJiSuanShuLiangZu.length; i++) {
+                        var A = FanChanJiSuanShuLiangZu[i][0];//商品ID
+                        var B = FanChanJiSuanShuLiangZu[i][1];//数量
+
+                        JiShangPiID.push(A);
+                        JiRuJianShu.push(B);
+                    }
+                }
+                else {
+                    for (var i = 0; i < FanChangShuZu.length; i++) {
+                        var A = FanChangShuZu[i][0];//商品ID
+                        var B = FanChangShuZu[i][1];//数量
+                        var C = FanChangShuZu[i][2];//数量
+
+                        JiShangPiID.push(A);
+                        JiRuJianShu.push(B);
+                        FanChangJieID.push(C);
+                    }
+                }
+
+
+                if (RetureFactoryID > 0) {
+                    layer.confirm("是否修改返厂单？", {
+                        icon: 3,
+                        btn: ['确定', '取消']
+                        //按钮
+                    }, function (layerIndex) {
+                        layer.close(layerIndex);//关闭提示框
+                        $.post("/P_PeiHuo/FanChang/UptuarPeiZaiDan?JiShangPiID=" + JiShangPiID + "&JiRuJianShu=" + JiRuJianShu + "&FanChangJieID=" + FanChangJieID, {
+                            RetureFactoryID: RetureFactoryID,
+                            ConverID: ConverID,
+                            Remember: Remember,
+                            SpouseBRanchID: SpouseBRanchID,
+                            StockPlaceID: StockPlaceID,
+                            ReturnofID: ReturnofID,
+                            Settlement: Settlement,
+                            Appendix: Appendix,
+                            Evidences: Evidences,
+                            RegisterName: RegisterName,
+                            RegisterTime: RegisterTime,
+                            MumberOfPackages: MumberOfPackages,
+                            Number: Number
+                        }, function (mess) {
+                            if (mess == "succsee") {
+                                layer.alert("修改成功", { icon: 6, title: '温馨小提示：' });
+                                document.location.href = "/P_PeiHuo/FanChang/FanChang";
+                            }
+
+                        });
+
+                    });
+
+                }
+                else {
+                    if (FanChanJiSuanShuLiangZu.length > 0) {
+                        layer.confirm("新增返厂单？", {
+                            icon: 3,
+                            btn: ['确定', '取消']
+                            //按钮
+                        }, function (layerIndex) {
+                            layer.close(layerIndex);//关闭提示框
+                            $.post("/P_PeiHuo/FanChang/InsectPeiZaiDan?JiShangPiID=" + JiShangPiID + "&JiRuJianShu=" + JiRuJianShu, {
+                                ConverID: ConverID,
+                                Remember: Remember,
+                                SpouseBRanchID: SpouseBRanchID,
+                                StockPlaceID: StockPlaceID,
+                                ReturnofID: ReturnofID,
+                                Settlement: Settlement,
+                                Appendix: Appendix,
+                                Evidences: Evidences,
+                                RegisterName: RegisterName,
+                                RegisterTime: RegisterTime,
+                                MumberOfPackages: MumberOfPackages,
+                                Number: Number
+                            }, function (mess) {
+                                if (mess == "succsee") {
+                                    layer.alert("新增成功", { icon: 6, title: '温馨小提示：' });
+                                    document.location.href = "/P_PeiHuo/FanChang/FanChang";
+                                }
+
+                            });
+
+                        });
+
+
+
+                    }
+                    else {
+                        layer.msg("请输入退货数量！", { icon: 0, skin: "layui-layer-molv" });
+                    }
+                }
+
+            }
+            else {
+                layer.msg("请填写完整的数据！", { icon: 5, skin: "layui-layer-molv" });
+            }
+        }
+
+        //绑定反厂单(修改)
+        //左
+        Ban_TableLeft = $.fn.bsgrid.init('YiaoZhengTableLeft', {
+            url: '/P_PeiHuo/FanChang/BangFanChangGoodel',
+            autoLoad: false,
+            stripeRows: true,
+            rowHoverColor: true,
+            pageSize: 4,
+            pageSizeSelect: false,
+            pagingLittleToolbar: true,
+            pagingToolbarAlign: "left",
+            event: {//事件
+                customRowEvents: {
+                    click: function (record, rowIndex, trObj, options) {//点击事件
+                        Ban_Tablerihgt.search("retureFactoryDeTailID=" + record.RetureFactoryDeTailID);
+                    }
+                }
+            }
+
+        });
+        //右
+        Ban_Tablerihgt = $.fn.bsgrid.init('YiaoZhengTablerihgt', {
+            url: '/P_PeiHuo/FanChang/BangDingGoodelright',
+            autoLoad: false,
+            stripeRows: true,
+            rowHoverColor: true,
+            pageSize: 4,
+            pageSizeSelect: false,
+            pagingLittleToolbar: true,
+            pagingToolbarAlign: "left",
+        });
+
+        $("#btnQHeTongFa").click(function () {
+            var rowIndex = FanChangTable.getSelectedRowIndex();
+         
+            if (rowIndex > -1) {
+                 RetureFactoryID = FanChangTable.getColumnValue(rowIndex, "RetureFactoryID");//返厂ID
+            
+
+               $.post("/P_PeiHuo/FanChang/BangDingRetlre", { retureFactoryID: RetureFactoryID }, function (data) {
+
+                   $("#RetureFactoryID").val(data[0].RetureFactoryID);//
+                   $("#ConverID").val(data[0].ConverID);//
+                   $("#Remember").val(data[0].Remember);//
+                   $("#TuiHuoBuMen").val(data[0].SpouseBRanchName);//
+                   $("#KuCunDi").val(data[0].StockPlaceName);//
+
+                   $("#SpouseBRanchID").val(data[0].SpouseBRanchID);//
+                   $("#StockPlaceID").val(data[0].StockPlaceID);//
+
+                   $("#ReturnofID").val(data[0].ReturnofID);//
+                   $("#SupplierCHName").val(data[0].SupplierCHName);//
+                   $("#ContractNumber").val(data[0].ContractNumber);//
+                   $("#AdjustAccountsFashion").val(data[0].AdjustAccountsFashion);//
+                   $("#RegisterName").val(data[0].RegisterName);//
+                   $("#RegisterTime").val(data[0].registerTime);//
+                   $("#Settlement").val(data[0].Settlement);//
+                   $("#Appendix").val(data[0].Appendix);//
+
+                   $("#dgtMumberOfPackages").val(data[0].MumberOfPackages);//
+                   $("#HuoQuPiHao").val(data[0].Number);//
+
+               });
+               Ban_TableLeft.search({ retureFactoryID: RetureFactoryID });
+               $("#modFanChang").modal('hide');
+               $("#BaoCunBtn").removeAttr("disabled");//保存按钮
+               $("#FangQiBtn").removeAttr("disabled");//保存按钮
+            }
+            else {
+                layer.alert("请选择数据", { icon: 5, title: '温馨小提示：' });
+            }
+        });
+
+
+
+
+        //绑定反厂单(审核)
+        //左
+        Ban_TableLeft = $.fn.bsgrid.init('YiaoZhengTableLeft', {
+            url: '/P_PeiHuo/FanChang/BangFanChangGoodel',
+            autoLoad: false,
+            stripeRows: true,
+            rowHoverColor: true,
+            pageSize: 4,
+            pageSizeSelect: false,
+            pagingLittleToolbar: true,
+            pagingToolbarAlign: "left",
+            event: {//事件
+                customRowEvents: {
+                    click: function (record, rowIndex, trObj, options) {//点击事件
+                        Ban_Tablerihgt.search("retureFactoryDeTailID=" + record.RetureFactoryDeTailID);
+                    }
+                }
+            }
+
+        });
+        //右
+        Ban_Tablerihgt = $.fn.bsgrid.init('YiaoZhengTablerihgt', {
+            url: '/P_PeiHuo/FanChang/BangDingGoodelright',
+            autoLoad: false,
+            stripeRows: true,
+            rowHoverColor: true,
+            pageSize: 4,
+            pageSizeSelect: false,
+            pagingLittleToolbar: true,
+            pagingToolbarAlign: "left",
+        });
+
+        $("#btnShenHe").click(function () {
+            var rowIndex = FanChangTable.getSelectedRowIndex();
+
+            if (rowIndex > -1) {
+                RetureFactoryID = FanChangTable.getColumnValue(rowIndex, "RetureFactoryID");//返厂ID
+
+
+                $.post("/P_PeiHuo/FanChang/BangDingRetlre", { retureFactoryID: RetureFactoryID }, function (data) {
+
+                    $("#RetureFactoryID").val(data[0].RetureFactoryID);//
+                    $("#ConverID").val(data[0].ConverID);//
+                    $("#Remember").val(data[0].Remember);//
+                    $("#TuiHuoBuMen").val(data[0].SpouseBRanchName);//
+                    $("#KuCunDi").val(data[0].StockPlaceName);//
+
+                    $("#SpouseBRanchID").val(data[0].SpouseBRanchID);//
+                    $("#StockPlaceID").val(data[0].StockPlaceID);//
+
+                    $("#ReturnofID").val(data[0].ReturnofID);//
+                    $("#SupplierCHName").val(data[0].SupplierCHName);//
+                    $("#ContractNumber").val(data[0].ContractNumber);//
+                    $("#AdjustAccountsFashion").val(data[0].AdjustAccountsFashion);//
+                    $("#RegisterName").val(data[0].RegisterName);//
+                    $("#RegisterTime").val(data[0].registerTime);//
+                    $("#Settlement").val(data[0].Settlement);//
+                    $("#Appendix").val(data[0].Appendix);//
+
+                    $("#dgtMumberOfPackages").val(data[0].MumberOfPackages);//
+                    $("#HuoQuPiHao").val(data[0].Number);//
+
+                });
+                Ban_TableLeft.search({ retureFactoryID: RetureFactoryID });
+                $("#modFanChang").modal('hide');
+                $("#ShenHeBtn").removeAttr("disabled");//审核按钮
+                $("#FangQiBtn").removeAttr("disabled");//取消按钮
+
+                $("#ShenHeRen").show();//审核按钮
+                $("#ExamineName").show();//审核时间
+                $("#ShenHeTimea").show();//
+                $("#ExamineTime").show();//
+
+            }
+            else {
+                layer.alert("请选择数据", { icon: 5, title: '温馨小提示：' });
+            }
+        });
+
+
+        //点击 审核()
+        function saveShenHeBtn(state) {
+            var RetureFactoryID = $("#RetureFactoryID").val();//返厂ID
+            var ConverID = $("#ConverID").val();//配货ID
+            var Remember = $("#Remember").val();//记录编号
+            var SpouseBRanchID = $("#SpouseBRanchID").val();//退货部门
+            var StockPlaceID = $("#StockPlaceID").val();//库存地点
+            var ReturnofID = $("#ReturnofID").val();//退货原因
+            var Settlement = $("#Settlement").val();//解决方法
+
+            var Appendix = $("#Appendix").val();//附件
+            var Evidences = $("#Evidences").val();//同返厂单
+            var RegisterName = $("#RegisterName").val();//制单人
+            var RegisterTime = $("#RegisterTime").val();//制单时间  
+
+            var ExamineName = $("#ExamineName").val();//审核人
+            var ExamineTime = $("#ExamineTime").val();//审核时间  
+
+            var MumberOfPackages = $("#dgtMumberOfPackages").val();//配货件数
+            var Number = $("#HuoQuPiHao").val();//批号  
+
+            if (RetureFactoryID > 0) {
+                if (RetureFactoryID > 0 && Remember != '' && ConverID > 0 && SpouseBRanchID > 0 && StockPlaceID > 0 && ReturnofID > 0 &&
+                Settlement != '' && RegisterName != '' && RegisterTime != '' && ExamineName != '' && ExamineTime!='') {
+                    layer.confirm("是否审核？", {
+                        icon: 3,
+                        btn: ['确定', '取消']
+                        //按钮
+                    }, function (layerIndex) {
+                        layer.close(layerIndex);//关闭提示框
+                        $.post("/P_PeiHuo/FanChang/ShenHePeiZaiDan?state=" + state, {
+                            RetureFactoryID: RetureFactoryID,
+                            ConverID: ConverID,
+                            Remember: Remember,
+                            SpouseBRanchID: SpouseBRanchID,
+                            StockPlaceID: StockPlaceID,
+                            ReturnofID: ReturnofID,
+                            Settlement: Settlement,
+                            Appendix: Appendix,
+                            Evidences: Evidences,
+                            RegisterName: RegisterName,
+                            RegisterTime: RegisterTime,
+                            MumberOfPackages: MumberOfPackages,
+                            Number: Number,
+                            ExamineName: ExamineName,
+                            ExamineTime: ExamineTime
+                        }, function (mess) {
+                            layer.alert("审核成功", { icon: 6, title: '温馨小提示：' });
+                            if (mess == "succsee") {
+                                if (mess.returnJson) {
+                                    if (data.State == true || data.State == "true") {
+                                    }
+                                }
+                            }
+                          
+                            document.location.href = "/P_PeiHuo/FanChang/FanChang";
+                        });
+
+                    });
+                }
+                else {
+                    layer.msg("请填写完整的数据！", { icon: 5, skin: "layui-layer-molv" });
+                }
+            }
+        }
+
+
+        //删除
+        $("#DeleteBtn").click(function () {
+           
+            var RetureFactoryID = $("#RetureFactoryID").val();//配货ID
+            if (RetureFactoryID > 0) {
+                layer.confirm("是否删除此单数据？", {
+                    icon: 3,
+                    btn: ['确定', '取消']
+                    //按钮
+                }, function (layerIndex) {
+                    layer.close(layerIndex);//关闭提示框
+
+                    $.post("/P_PeiHuo/FanChang/DeleteWareHert", { retureFactoryID: RetureFactoryID }, function (msg) {
+                        if (msg == "success") {
+                            layer.alert("删除成功", { icon: 6, title: '温馨小提示：' });
+                            document.location.href = "/P_PeiHuo/FanChang/FanChang";
+                        }
+                        else {
+                            layer.alert("删除失败", { icon: 5, title: '温馨小提示：' });
+                        }
+                    });
+
+                });
+            }
+            else {
+                layer.alert("请选择已保存的数据进行删除", { icon: 5, title: '温馨小提示：' });
+            }
+           
+
+        });
+
+    </script>
+
+    <!--查询内容-->
+    <script>
+        var Tab_ShangPin;
+        var ConverIDQuanf;//全
+        var GoodsIDsQuan;
+        var JieShouGoodelShuZu = new Array();
+        var JieShouID = new Array();
+        var JieWarhou = new Array();
+        var YiaoZhengTablerihgtg;
+        var DuiYingID;
+    
+
+        //添加
+        $("#TianJia").click(function () {
+            $("#modPeiHuo").modal('show');
+        });
+
+        //查询合同
+        $("#SleHeTong").click(function () {
+            $("#modHeTong").modal('show');
+        });
+
+        //绑定合同
+        $("#btnQHeTong").click(function () {
+           
+            var rowIndex = HeTongTable.getSelectedRowIndex();
+            if (rowIndex > -1) {
+                ConverID = HeTongTable.getColumnValue(rowIndex, "ConverID");//获取ID
+                $.post("/P_PeiHuo/FanChang/BangDingHeTong", { converID: ConverID }, function (data) {
+
+                    $("#ConverID").val(data[0].ConverID);//订单ID.
+                    
+                    $("#HeTongJ").val(data[0].ContractNumber);//合同
+                    $("#GongHuoJ").val(data[0].SupplierCHName);//供货商
+                    $("#HeSuanJ").val(data[0].AdjustAccountsFashion);//供货商
+                });
+            }
+            else {
+                layer.alert("请选择数据", { icon: 6, title: '温馨小提示：' });
+            }
+            $("#modHeTong").modal('hide');
+
+        });
+       
+        //关闭（添加）
+        $("#btnQueDingV").click(function () {
+            var SpouseBRanchID = $("#SpouseBRanchID").val();
+            var StockPlaceID = $("#StockPlaceID").val();
+             ConverIDQuanf = $("#ConverID").val();
+
+             $.post("/P_PeiHuo/FanChang/BangDTuiHuoBuMen", { spouseBRanchID: SpouseBRanchID }, function (data) {
+                $("#TuiHuoBuMen").val(data[0].SpouseBRanchName);//退货部门
+            });
+
+            $.post("/P_PeiHuo/FanChang/BangDKuCun", { stockPlaceID: StockPlaceID }, function (data) {
+                $("#KuCunDi").val(data[0].StockPlaceName);//库存部门
+            });
+
+
+            $.post("/P_PeiHuo/FanChang/BangDingHeTong", { converID: ConverIDQuanf }, function (data) {
+                $("#SupplierCHName").val(data[0].SupplierCHName);//供货商
+                $("#ContractNumber").val(data[0].ContractNumber);//
+                $("#AdjustAccountsFashion").val(data[0].AdjustAccountsFashion);//
+            });
+
+            $("#UpauteBtn").prop("disabled", "true");//查询按钮
+            $("#modPeiHuo").modal('hide');
+        });
+
+        
+        //批量商品
+        PiLiangGoodsTable = $.fn.bsgrid.init('PiLiangGoodsTable', {
+            url: '/P_PeiHuo/FanChang/SelectPiGoodel',
+            autoLoad: false,
+            stripeRows: true,//隔行变色
+            rowHoverColor: true,//划过变色
+            pageSize: 7,
+            pageSizeSelect: false,//是否选择分页页数下拉框
+            pagingLittleToolbar: true,//精简的图标按钮分页工具条
+            pagingToolbarAlign: "left",//分页工具条的显示位置
+        });
+        $("#PiLianGoods").click(function () {
+            if (ConverIDQuanf>0) {
+                //批量选商品
+               
+                PiLiangGoodsTable.search({ converID: ConverIDQuanf });
+
+                $("#modPiLiangGoods").modal('show');
+            }
+            else {
+                layer.alert("请先选择添加退货相关信息", { icon: 6, title: '温馨小提示：' });
+            }
+
+            //$("#modHeTong").modal('show');
+        });
+
+
+        //批量选商品 选择商品（绑定）
+
+        //右边
+        YiaoZhengTablerihgtg = $.fn.bsgrid.init('YiaoZhengTablerihgt', {
+            url: '/P_PeiHuo/FanChang/PiPeiGoodelright',
+            autoLoad: false,
+            stripeRows: true,//隔行变色
+            rowHoverColor: true,//划过变色
+            pageSize: 4,
+            pageSizeSelect: false,//是否选择分页页数下拉框
+            pagingLittleToolbar: true,//精简的图标按钮分页工具条
+            pagingToolbarAlign: "left",//分页工具条的显示位置
+        });
+        //（左）
+        Tab_ShangPin = $.fn.bsgrid.init('YiaoZhengTableLeft', {
+            url: '/P_PeiHuo/FanChang/BangDingPiGoodel',
+            autoLoad: false,
+            stripeRows: true,//隔行变色
+            rowHoverColor: true,//划过变色
+            pageSize: 4,
+            pageSizeSelect: false,//是否选择分页页数下拉框
+            pagingLittleToolbar: true,//精简的图标按钮分页工具条
+            pagingToolbarAlign: "left",//分页工具条的显示位置
+            event: {//事件
+                customRowEvents: {
+                    click: function (record, rowIndex, trObj, options) {//点击事件
+                        YiaoZhengTablerihgtg.search("converID=" + record.ConverID + "&goodsIDs=" + record.GoodsIDs);
+                        DuiYingID = record.GoodsIDs;
+                    }
+                }
+            }
+        });
+
+        $("#btnXuanGoodelsh").click(function () {
+            var rowIndex = PiLiangGoodsTable.getSelectedRowIndex();
+            if (rowIndex > -1) {
+                GoodsIDsQuan = PiLiangGoodsTable.getColumnValue(rowIndex, "GoodsIDs");//获取ID
+                JieShouGoodelShuZu.push(([GoodsIDsQuan, ConverIDQuanf]));
+
+                for (var i = 0; i < JieShouID.length; i++) {
+                    var K = JieShouID[i][0];
+
+                    if (K > 0) {
+                        JieShouID.splice(i, 1);
+                    }
+                }
+                for (var T = 0; T < JieWarhou.length; T++) {
+                    var X = JieWarhou[T][0];
+                    if (X > 0) {
+                        JieWarhou.splice(T, 1);
+                    }
+                }
+                for (var i = 0; i < JieShouGoodelShuZu.length;) {
+                    var A = JieShouGoodelShuZu[i][0];
+                    var N = JieShouGoodelShuZu[i][1];
+                    JieShouID.push(A);
+                    JieWarhou.push(N);
+                    i++;
+                }
+
+                Tab_ShangPin.search({ JieShouID: JieShouID, JieWarhou: JieWarhou });
+            }
+            else {
+                layer.alert("请选择数据", { icon: 6, title: '温馨小提示：' });
+            }
+            $("#modPiLiangGoods").modal('hide');
+            $("#BaoCunBtn").removeAttr("disabled");//保存按钮
+            $("#FangQiBtn").removeAttr("disabled");//保存按钮
+        });
+
+
+        //主界面商品表_左（一）
+        //自定义table文本框
+        function crearViewButton(record, rowIndex, colIndex, options) {
+            if (RetureFactoryID > 0) {
+                return ' <input class="easyui-combotree" style="width: 100px; color: #0000FF;font-size: 20px;" value="' + record.ReMumberOfPackages + '" id="RuKuXiShu' + record.GoodsIDs + '" data-options="onChange:onConsignmentDepartmentCodeSelect;" />';
+
+            }
+            else
+            {
+                 return ' <input class="easyui-combotree" style="width: 100px; color: #0000FF;font-size: 20px;" disabled id="RuKuXiShu' + record.GoodsIDs + '" data-options="onChange:onConsignmentDepartmentCodeSelect;" />';
+            }
+
+        }
+
+        //右 
+        function crearViePeiZaiShuLiang(record, rowIndex, colIndex, options) {
+
+            if (RetureFactoryID > 0) {
+                return ' <input class="easyui-combotree" style="width: 100px; color: #0000FF;font-size: 20px;" value="' + record.ReMumberOfPackages + '" id="RuKuJianShuRight' + record.GoodsIDs + '" data-options="onChange:onConsignmentDepartmentCodeSelect;" onblur="fangfa()" placeholder="请输入..."/>';
+            }
+            else {
+                if (FanChanJiSuanShuLiangZu.length > 0) {
+                    for (var i = 0; i < FanChanJiSuanShuLiangZu.length; i++) {
+                        var K = FanChanJiSuanShuLiangZu[i][0];
+                        var L = FanChanJiSuanShuLiangZu[i][1];
+
+                        if (K == DuiYingID) {
+                            return ' <input class="easyui-combotree" style="width: 100px; color: #0000FF;font-size: 20px;" value="' + L + '" id="RuKuJianShu' + record.GoodsIDs + '" data-options="onChange:onConsignmentDepartmentCodeSelect;" onblur="fangfa()" placeholder="请输入..."/>';
+                        }
+
+                    }
+                    return ' <input class="easyui-combotree" style="width: 100px; color: #0000FF;font-size: 20px;" id="RuKuJianShuRight' + record.GoodsIDs + '" data-options="onChange:onConsignmentDepartmentCodeSelect;" onblur="fangfa()" placeholder="请输入..."/>';
+
+                }
+                else {
+                    return ' <input class="easyui-combotree" style="width: 100px; color: #0000FF;font-size: 20px;" id="RuKuJianShuRight' + record.GoodsIDs + '" data-options="onChange:onConsignmentDepartmentCodeSelect;" onblur="fangfa()" placeholder="请输入..."/>';
+                }
+            }
+
+        }
+
+      
+        //查询返厂单
+        $("#UpauteBtn").click(function () {
+            $("#modFanChang").modal('show');
+        });
+
+
+    </script>
+
+    <!--员工部分-->
+    <script>
+        var YuanFuHuoGongTable;//付货人
+        var ShouHuoYuanGongTabl;//收货人
+        var ZhiDanYuanGongTable;//制单人
+        var YuanGongTableZhiXing;//执行人
+        var ShouHuoStallctID;
+
+        $(document).ready(function () {
+
+            //查询返厂单
+            FanChangTable = $.fn.bsgrid.init('FanChangTable', {
+                url: '/P_PeiHuo/FanChang/SelectRetlre',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                pageSize: 7,
+                pageSizeSelect: false,
+                pagingLittleToolbar: true,
+                pagingToolbarAlign: "left",
+                event: {//事件
+                    customRowEvents: {//自定义行事件
+                        dblclick: function (record, rowIndex, trObj, options) {//点击事件
+                            var ShouHuoStallctdID = record.RetureFactoryID;
+                            if (ShouHuoStallctdID > 0) {
+                                layer.alert("不作双击选择，请单击选择修改或审核！", { icon: 5, title: '温馨小提示：' });
+                            }
+                        }
+                    }
+                }
+
+
+            });
+            FanChangTable.search();
+
+
+            //查询合同
+            HeTongTable = $.fn.bsgrid.init('HeTongTable', {
+                url: '/P_PeiHuo/FanChang/SeleHeTong',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                pageSize: 4,
+                pageSizeSelect: false,
+                pagingLittleToolbar: true,
+                pagingToolbarAlign: "left",
+            });
+            HeTongTable.search();
+
+            //查询员工table（制单人）三
+            ZhiDanYuanGongTable = $.fn.bsgrid.init('ZhiDanYuanGongTable', {
+                url: '/ShangPinJinCang/JingCang/SelectYuanGong',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                rowSelectedColor: true,
+                pageSize: 4,
+                pageSizeSelect: true,
+                pagingLittleToolbar: true,
+                pagingToolbarAlign: "left",
+                event: {//事件
+                    customRowEvents: {//自定义行事件
+                        dblclick: function (record, rowIndex, trObj, options) {//点击事件
+                            ShouHuoStallctID = record.StaffID;
+                            if (ShouHuoStallctID > 0) {
+                                $.post("/ShangPinJinCang/JingCang/XuanZeYuanGong", { StaffID: ShouHuoStallctID }, function (data) {
+                                    $("#RegisterName").val(data.StaffName);//员工姓名
+                                    $("#modZhiDanYuanGong").modal('hide');
+                                });
+                            }
+                        }
+                    }
+                }
+               
+
+            });
+            ZhiDanYuanGongTable.search();
+
+            //查询员工table（执行人）四
+            YuanGongTableZhiXing = $.fn.bsgrid.init('YuanGongTableZhiXing', {
+                url: '/ShangPinJinCang/JingCang/SelectYuanGong',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                rowSelectedColor: true,
+                pageSize: 4,
+                pageSizeSelect: true,
+                pagingLittleToolbar: true,
+                pagingToolbarAlign: "left",
+                event: {//事件
+                    customRowEvents: {//自定义行事件
+                        dblclick: function (record, rowIndex, trObj, options) {//点击事件
+                            ShouHuoStallctID = record.StaffID;
+                            if (ShouHuoStallctID > 0) {
+                                $.post("/ShangPinJinCang/JingCang/XuanZeYuanGong", { StaffID: ShouHuoStallctID }, function (data) {
+                                    $("#ExamineName").val(data.StaffName);//员工姓名
+                                    $("#modYuanGongZhiXing").modal('hide');
+                                });
+                            }
+                        }
+                    }
+                }
+
+            });
+            YuanGongTableZhiXing.search();
+
+            //按钮
+            $("#ShenHeBtn").prop("disabled", "true");//审核按钮
+            $("#FangQiBtn").prop("disabled", "true");//放弃按钮
+            $("#BaoCunBtn").prop("disabled", "true");//保存按钮
+            $("#ShenHeRen").hide();//审核按钮
+            $("#ExamineName").hide();//审核时间
+            $("#ShenHeTimea").hide();//
+            $("#ExamineTime").hide();//
+
+        });
+
+      
+
+        //制单人点击(查看) 三
+        $("#DengJiRen").click(function () {
+            $("#modZhiDanYuanGong").modal('show');
+        });
+        ///制单人窗口"确定"关闭model
+        $("#btnQueDingZhD").click(function () {
+            var rowIndex = ZhiDanYuanGongTable.getSelectedRowIndex();//获取选中的行  注：修改模态窗 一定要加 <intpt id=OrderFormID ,hihe>
+            if (rowIndex > -1) {
+                var StaffID = ZhiDanYuanGongTable.getColumnValue(rowIndex, "StaffID");//获取ID
+                $.post("/ShangPinJinCang/JingCang/XuanZeYuanGong", { StaffID: StaffID }, function (data) {
+                    $("#RegisterName").val(data.StaffName);//员工姓名
+                    $("#modZhiDanYuanGong").modal('hide');
+                });
+            }
+            else {
+                layer.alert("请选择数据", { icon: 5, title: '温馨小提示：' });
+            }
+        });
+
+
+        //执行人点击(查看) 四
+        $("#ShenHeRen").click(function () {
+            $("#modYuanGongZhiXing").modal('show');
+        });
+        //执行人 确定"关闭model
+        $("#btnQueDingdZX").click(function () {
+            var rowIndex = YuanGongTableZhiXing.getSelectedRowIndex();//获取选中的行  注：修改模态窗 一定要加 <intpt id=OrderFormID ,hihe>
+            if (rowIndex > -1) {
+                var StaffID = YuanGongTableZhiXing.getColumnValue(rowIndex, "StaffID");//获取ID
+                $.post("/ShangPinJinCang/JingCang/XuanZeYuanGong", { StaffID: StaffID }, function (data) {
+                    $("#ExamineName").val(data.StaffName);//员工姓名
+                    $("#modYuanGongZhiXing").modal('hide');
+                });
+            }
+            else {
+                layer.alert("请选择数据", { icon: 5, title: '温馨小提示：' });
+            }
+        });
+
+        //放弃
+        $("#FangQiBtn").click(function () {
+            document.location.href = "/P_PeiHuo/FanChang/FanChang";
+        });
+
+        //点击关闭
+        $("#Colse").click(function () {
+            $('body').remove();
+        });
+
+      
+    </script>
+
+
+
+
+
+</body>
+</html>

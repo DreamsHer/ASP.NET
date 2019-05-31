@@ -1,0 +1,673 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>用户注册</title>
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css">
+        * > ul li {
+            list-style-type: none;
+        }
+
+        body {
+            background-color: #F2F2F2;
+            margin: 0;
+            list-style-type: none;
+        }
+
+        #daohang {
+            width: 100%;
+            height: 28px;
+            background-color: #FAFAFA;
+        }
+
+        .x {
+            margin-left: 180px;
+        }
+
+        #xingxing:hover .x {
+            transform: rotate(360deg);
+            transition: transform 0.3s linear;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 13px;
+            color: #333333;
+            font-family: "宋体";
+        }
+
+        .odiv {
+            position: absolute;
+            height: 10px;
+            outline: 1px solid #DDDDDD;
+            margin-top: 8px;
+        }
+
+        #ospan {
+            margin-left: 470px;
+            position: absolute;
+            margin-top: 2px;
+            width: 550px;
+            height: 30px;
+        }
+
+        a:hover {
+            color: red;
+            text-decoration: underline;
+        }
+
+        .xiabiao {
+            margin-top: 3px;
+        }
+
+        #KHFW:hover .xiabiao {
+            transform: rotate(180deg);
+            transition: transform 0.15s linear;
+        }
+
+        #KHFW {
+            text-decoration: none;
+        }
+
+        #WZDH:hover .xiabiaoY {
+            transform: rotate(180deg);
+            transition: transform 0.15s linear;
+        }
+
+        #WZDH {
+            text-decoration: none;
+        }
+        /*二级菜单事件*/
+        #erjicaidan:hover #caidan1 {
+            display: block;
+        }
+
+        #erjicaidan1:hover #erjicaidan2 {
+            display: block;
+        }
+        /*================================*/
+        #logo {
+            margin-left: 180px;
+            margin-top: 20px;
+            position: absolute;
+        }
+        /*tab导航*/
+        .yhbtu {
+            margin-left: -15px;
+            position: absolute;
+            margin-top: 70px;
+            font-size: 17px;
+            font-family: "宋体";
+            outline: 1px solid #DDDDDD;
+            background-color: white;
+            color: red;
+            display: inline-block;
+            width: 85px;
+            height: 30px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 4px -3px 3px #DDE;
+            line-height: 32px;
+        }
+
+        .yhbtu1 {
+            margin-left: 375px;
+            position: absolute;
+            margin-top: 9px;
+            font-size: 17px;
+            font-family: "宋体";
+            outline: 1px solid #DDDDDD;
+            background-color: #F7F7F7;
+            display: inline-block;
+            width: 85px;
+            height: 27px;
+            text-align: center;
+            cursor: pointer;
+            line-height: 32px;
+        }
+
+        .yhbtu2 {
+            margin-left: 477px;
+            position: absolute;
+            margin-top: 9px;
+            font-size: 17px;
+            font-family: "宋体";
+            outline: 1px solid #DDDDDD;
+            background-color: #F7F7F7;
+            display: inline-block;
+            width: 230px;
+            height: 27px;
+            text-align: center;
+            cursor: pointer;
+            line-height: 32px;
+        }
+
+        #DL {
+            margin-left: 745px;
+            position: absolute;
+            margin-top: 15px;
+            width: 255px;
+            font-family: "宋体";
+        }
+
+        #ZC {
+            font-size: 12px;
+        }
+
+        .denglu {
+            color: #005AA0;
+        }
+        /*导航事件*/
+        .yhbtu1:hover {
+            margin-top: 6px;
+            height: 31px;
+            color: red;
+        }
+
+        .yhbtu2:hover {
+            margin-top: 6px;
+            color: red;
+            height: 31px;
+        }
+        /*========表单*/
+        #teb {
+            width: 985px;
+            height: 630px;
+            margin-left: 180px;
+            margin-top: 121px;
+            outline: 1px solid #DDDDDD;
+            background-color: white;
+        }
+
+        #axx {
+            position: absolute;
+            margin-top: 30px;
+            width: 200px;
+            height: 350px;
+            line-height: 60px;
+            text-align: right;
+        }
+
+        .ored {
+            color: red;
+        }
+
+        .ziti {
+            color: #999999;
+        }
+
+        #otext {
+            position: absolute;
+            width: 539px;
+            height: 500px;
+            margin-left: 210px;
+            margin-top: 42px;
+        }
+
+        .otext {
+            width: 230px;
+            height: 30px;
+        }
+
+        .textSize {
+            color: #999999;
+            font-size: 12px;
+        }
+
+        #textImg {
+            position: absolute;
+            margin-top: -603px;
+            margin-left: 602px;
+            line-height: 60px;
+        }
+
+        .ott {
+            height: 30px;
+            width: 105px;
+        }
+
+        #YZM {
+            width: 40px;
+            height: 20px;
+        }
+
+        #SJZC {
+            margin-left: 750px;
+            margin-top: 35px;
+        }
+
+        .DXYZM {
+            outline: 8px solid #DDDDDD;
+            cursor: pointer;
+            background-color: #DDDDDD;
+            font-size: 15px;
+        }
+
+        #DXYZM:hover {
+            color: red;
+        }
+        /*最下面的字体*/
+        #XMZT {
+            position: absolute;
+            width: 780px;
+            margin-left: 275px;
+            word-spacing: 20px;
+        }
+
+        #shuxian {
+            width: 710px;
+            margin-left: 335px;
+            margin-top: -1px;
+            letter-spacing: 74px;
+            color: grey;
+        }
+
+        #banquan {
+            font-size: 13px;
+            width: 280px;
+            height: 30px;
+            margin-left: 515px;
+        }
+
+        #zhiding {
+            border: 1px solid #DDDDDD;
+            width: 21px;
+            height: 77px;
+            position: fixed;
+            left: 1180px;
+            top: 315px;
+            cursor: pointer; /*手指*/
+            background-color: #F7F7F7;
+            text-align: center;
+            font-family: "微软雅黑";
+            line-height: 12px;
+            border-radius: 15px;
+        }
+
+        #ZD {
+            border: 1px solid #DDDDDD;
+            width: 21px;
+            height: 77px;
+            position: fixed;
+            left: 1180px;
+            top: 400px;
+            cursor: pointer;
+            background-color: #F7F7F7;
+            text-align: center;
+            font-family: "微软雅黑";
+            line-height: 12px;
+            border-radius: 15px;
+        }
+
+        #ZCbtu:hover {
+            text-shadow: 0px 0px 10px black;
+            cursor: pointer;
+        }
+        /*页面置顶标签*/
+        #biaoqian, #WJDC {
+            text-decoration: none; /*a标签取消下划线*/
+        }
+
+        #zhiding:hover {
+            background-color: #FFF7D5;
+        }
+
+        #ZD:hover {
+            background-color: #FFF7D5;
+        }
+        /*二级菜单第一块*/
+        #erjicaidan {
+            position: absolute;
+            width: 80px;
+            left: 1022px;
+            top: 3px;
+            z-index: 5;
+        }
+
+        #caidan1 {
+            width: 70px;
+            height: 117px;
+            margin-left: -43px;
+            margin-top: 4px;
+            background-color: white;
+            display: none;
+            text-align: center;
+            box-shadow: 1px 0px 7px #DDDDDD;
+        }
+        /*二级菜单第二块*/
+        #erjicaidan1 {
+            width: 75px;
+            height: 111px;
+            position: absolute;
+            z-index: 5;
+            margin-left: 1065px;
+            margin-top: -35px;
+            text-align: left;
+        }
+
+        #caidan2 {
+            width: 60px;
+            height: 175px;
+            float: left;
+            margin-left: -30px;
+            display: inline-block;
+        }
+
+        #caidan3 {
+            display: inline-block;
+            width: 66px;
+            height: 100px;
+            margin-left: 6px;
+            margin-top: 0px;
+        }
+
+        #caidan4 {
+            float: right;
+            display: inline-block;
+            width: 57px;
+            height: 123px;
+            margin-left: 0px;
+            margin-right: 6px;
+        }
+
+        #erjicaidan2 {
+            display: none;
+            background-color: #FFFFFF;
+            width: 181px;
+            height: 180px;
+            margin-left: -163px;
+            box-shadow: 1px -1px 10px #DDDDDD;
+        }
+
+        .daohangSizi {
+            font-weight: bold;
+        }
+        /*js文本操作*/
+        .sp {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="daohang">
+        <span></span>
+        <a href="#" id="xingxing">收藏京东</a>
+        <span id="ospan">
+            <a href="#">您好，请登录</a>&nbsp;&nbsp;
+            <a href="#">免费注册</a>&nbsp;
+            <span class="odiv"></span>&nbsp;
+            <a href="#">我的订单</a>&nbsp;
+            <span class="odiv"></span>&nbsp;
+            <a href="#">手机京东</a>&nbsp;
+            &nbsp;
+        </span>
+
+        <div>
+            <ul>
+                <li id="erjicaidan">
+                    <a href="#" id="KHFW">
+                        客户服务&nbsp;<span class="odiv"></span>
+                        <ul>
+                            <li id="caidan1">
+                                <a href="#">常见问题</a><br />
+                                <a href="#">售后服务</a><br />
+                                <a href="#">在线客服</a><br />
+                                <a href="#">投诉中心</a><br />
+                                <a href="#">客服邮箱</a>
+                            </li>
+
+                        </ul>
+                    </a>&nbsp;
+                </li>
+            </ul>
+            <ul>
+                <li id="erjicaidan1">
+                    <a href="#" id="WZDH">网站导航</a>&nbsp;
+                    <ul id="erjicaidan2">
+                        <li id="caidan2">
+                            <a href="#" class="daohangSizi">特色栏目</a>
+                            <a href="#">为我推荐</a>
+                            <a href="#">视频购物</a>
+                            <a href="#">京东社区</a>
+                            <a href="#">校园频道</a>
+                            <a href="#">在线读书</a>
+                            <a href="#">装机大师</a>
+                            <a href="#">礼品卡</a>
+                        </li>
+                        <li id="caidan3">
+                            <a href="#" class="daohangSizi">企业服务</a>
+                            <a href="#">企业客户</a>
+                            <a href="#">办公直通车</a>
+                        </li>
+                        <li id="caidan4">
+                            <a href="#" class="daohangSizi">旗下网站</a>
+                            <a href="#">360TOP</a>
+                            <a href="#">迷你挑</a>
+                            <a href="#">English Site</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--   <div id="erjicaidan">
+
+
+       </div>-->
+    <div id="logo">
+        <a href="#>"></a>
+        <span class="yhbtu">个人用户</span>
+        <span class="yhbtu1">企业用户</span>
+        <span class="yhbtu2">International Customers</span>
+
+        <span id="DL"><span id="ZC">我已注册，现在就</span>&nbsp;<a class="denglu" href="#">登录</a>&nbsp;&nbsp;&nbsp;<a class="denglu" href="#">English</a> </span>
+    </div>
+    <div id="teb">
+        <p id="axx">
+            <span class="ored">*</span>
+            <span class="ziti">用户名：</span><br />
+            <span class="ored">*</span>
+            <span class="ziti">请设置密码：</span><br />
+            <span class="ored">*</span>
+            <span class="ziti">请确认密码：</span><br />
+            <span class="ored">*</span>
+            <span class="ziti">验证手机：</span><br />
+            <span class="ored">*</span>
+            <span class="ziti">短信验证码:</span><br />
+            <span class="ored">*</span>
+            <span class="ziti">验证码：</span>
+        </p>
+        <p id="otext">
+            <input id="otext1" class="otext" type="text" onkeyup="yonghuming(this)" onblur="sqjd()">&nbsp;<span class="sp" id="xianshi" style="font-size:12px"></span><br /><br />
+
+            <input id="otext2" class="otext" type="text" onkeyup="shezhimima(this)">&nbsp;<span class="sp" id="xianshi1" style="font-size:12px"></span><br /><br />
+
+            <input id="otext3" class="otext" type="text" onkeyup="querenmima(this)">&nbsp;<span class="sp" id="xianshi2" style="font-size:12px"></span><br /><br />
+
+            <input id="otext4" class="otext" type="text" onkeyup="yanzhengshouji(this)">&nbsp;<span id="textSize" class="textSize">或</span>&nbsp;
+            <a id="denglu" class="denglu" href="#">验证邮箱</a>&nbsp;<span class="sp" id="xianshi3" style="font-size:12px"></span><br /><br />
+
+            <input class="ott" type="text">&nbsp;&nbsp;
+            <span class="DXYZM">
+                <a id="DXYZM" href="#">获取短信验证码</a>
+            </span>
+            <br /><br />
+
+            <input class="ott" type="text">&nbsp;&nbsp;
+            <img id="YZM" src="验证码.png">&nbsp;&nbsp;<span class="textSize">看不清？</span>
+            <a class="denglu" href="#">换一张</a><br /><br />
+
+            <input type="checkbox">我已阅读并同意
+            <a class="denglu" href="#">《京东用户注册协议》</a><br /><br />
+            <input id="ZCbtu" type="button" value="立即注册" style="border: none;height: 40px;width: 230px;background-color: red;color: white;border-radius:3px;font-size: 17px">
+        </p>
+        <img id="SJZC" src="手机快速注册.png">
+    </div>
+   
+    <div id="XMZT">
+        <a href="#">关于我们</a>
+        <a href="#">联系我们</a>
+        <a href="#">人才招聘</a>
+        <a href="#">商家入驻</a>
+        <a href="#">广告服务</a>
+        <a href="#">手机京东</a>
+        <a href="#">友情链接</a>
+        <a href="#">销售联盟</a>
+        <a href="#">京东社区</a>
+        <a href="#">京东公益</a>
+    </div>
+    <div id="shuxian">|||||||||</div>
+    <div>
+        <p id="banquan">Copyright©2004-2015  京东JD.com 版权所有</p>
+    </div>
+    <div>
+        <div id="zhiding">
+            <a href="#" onclick="window.scrollTo(0,0)" id="WJDC" >问卷调查</a>
+        </div>
+        <div id="ZD">
+            <a href="#" onclick="window.scrollTo(0,0)" id="biaoqian">点击置顶</a>
+        </div>
+    </div>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.2.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <script src="~/Content/js/jquery.form.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script type="text/javascript">
+    //用户名文本框
+    function yonghuming(oEvent) {
+        var reg = /^.{4,20}$/;
+        var eventObj = window.event || arguments[0];
+        var spanEle = document.getElementById("xianshi");
+        spanEle.innerHTML = "";
+
+        if (reg.test(oEvent.value)==0) {
+            spanEle.style.color = "red";
+            spanEle.innerHTML = "用户名长度只能在4-20位字符之间";
+            spanEle.style.width = "290px";
+            spanEle.style.lineHeight = "34px";
+            spanEle.style.outline = "1px solid #FFBDBE";
+            spanEle.style.backgroundColor = "#FFEBEB";
+        }
+        if (reg.test(oEvent.value)==1) {
+            spanEle.style.color = "black";
+            spanEle.innerHTML = "4-20位字符，支持汉字、拼音、数字及"+ "\"-\""+"、"+"\"_\""+"组合" ;
+            spanEle.style.width = "290px";
+            spanEle.style.lineHeight = "34px";
+            spanEle.style.outline = "1px solid #DDDDDD";
+            spanEle.style.backgroundColor = "#CCCCCC";
+        }
+        if (eventObj.keyCode === 13) {
+            var inputEle = document.getElementById("otext2");
+            inputEle.focus();
+        }
+    }
+    //设置密码文本框
+    function shezhimima(oEvent) {
+        var reg1 = /^.{6,20}$/;
+        var eventObj = window.event || arguments[0];
+        var spanEle = document.getElementById("xianshi1");
+        spanEle.style.color = "transparent";
+        spanEle.innerHTML = "";
+        if (reg1.test(oEvent.value)==0) {
+            spanEle.style.color = "red";
+            spanEle.innerHTML = "密码长度只能在6-20位字符之间";
+            spanEle.style.width = "290px";
+            spanEle.style.lineHeight = "34px";
+            spanEle.style.outline = "1px solid #FFBDBE";
+            spanEle.style.backgroundColor = "#FFEBEB";
+        }
+        if (reg1.test(oEvent.value)==1) {
+            spanEle.style.color = "black";
+            spanEle.innerHTML = "6-20位字符，建议由字母，数字和符号两总以上组合";
+            spanEle.style.width = "290px";
+            spanEle.style.lineHeight = "34px";
+            spanEle.style.outline = "1px solid #DDDDDD";
+            spanEle.style.backgroundColor = "#CCCCCC";
+        }
+        if (eventObj.keyCode === 13) {
+            var inputEle = document.getElementById("otext3");
+            inputEle.focus();
+        }
+    }
+    //确认密码文本框
+    function querenmima(oEvent) {
+        var reg1 = /^.{4,20}$/;
+        var eventObj = window.event || arguments[0];
+        var spanEle = document.getElementById("xianshi2");
+        spanEle.style.color = "transparent";
+        spanEle.innerHTML = "";
+        if (reg1.test(oEvent.value)==0) {
+            spanEle.style.color = "red";
+            spanEle.innerHTML = "密码长度只能在6-20位字符之间";
+            spanEle.style.width = "290px";
+            spanEle.style.lineHeight = "34px";
+            spanEle.style.outline = "1px solid #FFBDBE";
+            spanEle.style.backgroundColor = "#FFEBEB";
+        }
+        if (reg1.test(oEvent.value)==1) {
+            spanEle.style.color = "black";
+            spanEle.innerHTML = "请输入密码";
+            spanEle.style.width = "290px";
+            spanEle.style.lineHeight = "34px";
+            spanEle.style.outline = "1px solid #DDDDDD";
+            spanEle.style.backgroundColor = "#CCCCCC";
+        }
+        if (eventObj.keyCode === 13) {
+            var inputEle = document.getElementById("otext1");
+            inputEle.focus();
+        }
+    }
+    //验证手机文本框
+    function yanzhengshouji(oEvent) {
+        var reg1 = /^[0-9]{11}$/;
+        var eventObj = window.event || arguments[0];
+        var spanEle = document.getElementById("xianshi3");
+        var spanNone = document.getElementById("textSize");
+        var spanNoneA = document.getElementById("denglu");
+        spanEle.style.color = "transparent";
+        spanEle.innerHTML = "";
+        if (reg1.test(oEvent.value)==0) {
+            spanEle.style.color = "red";
+            spanEle.innerHTML = "手机号码格式有误，请输入真确的手机号";
+            spanEle.style.width = "290px";
+            spanEle.style.lineHeight = "34px";
+            spanEle.style.outline = "1px solid #FFBDBE";
+            spanEle.style.backgroundColor = "#FFEBEB";
+            spanEle.style.position = "absolute";
+            spanEle.style.marginLeft = "-15px";
+            spanNone.style.display = "none";
+            spanNoneA.style.display = "none";
+        }
+        if (reg1.test(oEvent.value)==1) {
+            spanEle.style.color = "black";
+            spanEle.innerHTML = "完成验证后，您可以用该手机号登录和找回密码";
+            spanEle.style.width = "290px";
+            spanEle.style.lineHeight = "34px";
+            spanEle.style.outline = "1px solid #DDDDDD";
+            spanEle.style.backgroundColor = "#CCCCCC";
+            spanEle.style.position = "absolute";
+            spanEle.style.marginLeft = "-15px";
+            spanNone.style.display = "none";
+            spanNoneA.style.display = "none";
+        }
+        if (eventObj.keyCode === 13) {
+            var inputEle = document.getElementById("otext4");
+            inputEle.focus();
+        }
+    }
+    </script>
+</body>
+</html>

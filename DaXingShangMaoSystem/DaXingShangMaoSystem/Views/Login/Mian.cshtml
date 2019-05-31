@@ -1,0 +1,2786 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <title>Mian</title>
+
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/assets/css/ace.min.css" />
+    <link rel="stylesheet" href="~/assets/css/ace-responsive.min.css" />
+    <link rel="stylesheet" href="~/assets/css/ace-skins.min.css" />
+    <style type="text/css">
+        label.Size {
+            font-size: 60px;
+        }
+        .HeiBackgroud {
+            background-image: url('../../Content/ImaginPho/photo (157).jpg');
+            background-attachment: fixed !important;
+            background-size: 100% !important;
+           
+        }      
+
+        label {
+            font-weight: normal;
+        }
+        a,li,span{
+            font-size:15px;
+        }
+               
+    </style>
+
+</head>
+
+<body class="no-skin">
+
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="container-fluid HeiBackgroud" style="height:60px;">
+                <a href="#" class="brand">
+                    <small>
+                        <span style="margin-left:620px;color:#000000;font-size:30px;">大型商务子系统</span>
+                    </small>
+                </a><!--标题-->
+              
+                <!--用户信息-->
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container container-fluid">
+        <a class="menu-toggler" id="menu-toggler" href="#">
+            <span class="menu-text"></span>
+        </a>
+        <div class="sidebar" id="sidebar">
+            <h3 style="margin-top:5px;margin-left:25px;color:#000000;">登 陆 成 功</h3>
+            <ul class="nav nav-list" style="margin-top:10px;">
+
+                <!--首页-->
+                <li class="">
+                    <a href="#;" class="dropdown-toggle" id="ShuoYe">
+                        <i class="icon-list"></i>
+                        <span class="menu-text">首页 </span>
+                    </a>
+                </li>
+
+                <!--供货商、合同部分-->
+                <li>
+                    <a href="#;" class="dropdown-toggle" id="GongHuoShangGuanLi">
+                        <i class="icon-user"></i>
+                        <span class="menu-text">供应商管理 </span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-double-angle-right"></i>供应商维护
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" id="Rubbish">
+                                        <i class="icon-leaf"></i>业务往来单位管理
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#:;" id="Code">
+                                        <i class="icon-leaf"></i>业务往来单位清退
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a href="#:;" id="YeWuWangLaiDanWei">
+                                        <i class="icon-leaf"></i>业务往来单位查询
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#:;" id="YeWuWangLaiDanWeiGuoQiZhengShu">
+                                        <i class="icon-leaf"></i>业务往来单位过期证书查询
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-double-angle-right"></i>备选供应商
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" id="AlternativeSupplier">
+                                        <i class="icon-leaf"></i>备选供货商综合评审项目定义
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#:;" id="AddProjectDetail">
+                                        <i class="icon-leaf"></i>备选供货商转为正式供货商
+                                    </a>
+                                </li>
+                               
+                            </ul>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <!--生产厂家管理-->
+                <li>
+                    <a href="#;" class="dropdown-toggle" id="ShengChangChanJia">
+                        <i class="icon-edit"></i>
+                        <span class="menu-text">生产厂家管理 </span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#" id="ManufacturerManage">
+                                <i class="icon-leaf"></i>生产厂家
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-double-angle-right"></i>定义属性
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" id="FoundationManage">
+                                        <i class="icon-leaf"></i>定义统计属性
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" id="WangLaiJiTUAN">
+                                        <i class="icon-leaf"></i>往来集团定义
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" id="WangLaiDanWeiSXDY">
+                                        <i class="icon-leaf"></i>往来单位属性定义
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" id="WangLaiDanWeiDWMB">
+                                        <i class="icon-leaf"></i>往来单位证书模板定义
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+                    </ul>
+
+
+
+                </li>
+                <!--合同-->
+                <li class="">
+                    <a href="#" class="dropdown-toggle" id="HeTongGuanLi">
+                        <i class="icon-desktop"></i>
+                        <span class="menu-text"> 合同信息管理 </span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+                    <ul class="submenu">
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-double-angle-right"></i>合同建档
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" id="Index">
+                                        <i class="icon-leaf"></i>经销合同处理
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#:;" id="DaiXiaoHeTong">
+                                        <i class="icon-leaf"></i>代销合同处理
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a href="#:;" id="LianYingHeTong">
+                                        <i class="icon-leaf"></i>联营合同处理
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#:;" id="ZuLinHeTongChuLI">
+                                        <i class="icon-leaf"></i>租赁合同处理
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-double-angle-right"></i>合同变更
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" id="JingXiaoHeTongChuLI">
+                                        <i class="icon-leaf"></i>经销合同变更处理
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#:;" id="DaiXiaoXiaoHeTongChuLI">
+                                        <i class="icon-leaf"></i>代销合同变更处理
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a href="#:;" id="LianYingHeTongChuLI">
+                                        <i class="icon-leaf"></i>联营合同变更处理
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#:;" id="ZuLinHeTongBianGengChuLI">
+                                        <i class="icon-leaf"></i>租赁合同变更处理
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-double-angle-right"></i>合同续签
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" id="JingXiaoXuQianHeTongChuLI">
+                                        <i class="icon-leaf"></i>经销续签处理
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#:;" id="DaiXiaoXiaoXuQianHeTongChuLI">
+                                        <i class="icon-leaf"></i>代销续签处理
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a href="#:;" id="LianYingXuQianHeTongChuLI">
+                                        <i class="icon-leaf"></i>联营续签处理
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#:;" id="ZuLinXuQianHeTongChuLI">
+                                        <i class="icon-leaf"></i>租赁续签处理
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-double-angle-right"></i>合同清退
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" id="JingXiaoHeTongChuTuiChuLI">
+                                        <i class="icon-leaf"></i>经销合同清退处理
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#:;" id="JingXiaoHeTongChuTuiChuLI1">
+                                        <i class="icon-leaf"></i>代销合同清退处理
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a href="#:;" id="JingXiaoHeTongChuTuiChuLI2">
+                                        <i class="icon-leaf"></i>联营合同清退处理
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#:;" id="JingXiaoHeTongChuTuiChuLI3">
+                                        <i class="icon-leaf"></i>租赁合同清退处理
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-double-angle-right"></i>合同终止
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" id="JingXiaoHeTongZhongZhiChuTuiChuLI">
+                                        <i class="icon-leaf"></i>经销合同终止处理
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#:;" id="JingXiaoHeTongZhongZhiChuTuiChuLI1">
+                                        <i class="icon-leaf"></i>代销合同终止处理
+                                    </a>
+                                </li>
+
+
+                                <li>
+                                    <a href="#:;" id="JingXiaoHeTongZhongZhiChuTuiChuLI2">
+                                        <i class="icon-leaf"></i>联营合同终止处理
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#:;" id="JingXiaoHeTongZhongZhiChuTuiChuLI3">
+                                        <i class="icon-leaf"></i>租赁合同终止处理
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-double-angle-right"></i>合同结算扣款项
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" id="DingYiHeTongKouKuanXianMu">
+                                        <i class="icon-leaf"></i>定义合同扣款项目对照表
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#:;" id="GuDingKouKuanXiangMuDuiZhaoBiao">
+                                        <i class="icon-leaf"></i>定义固定扣款项目对照表
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="">
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-double-angle-right"></i>进场费用管理
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" id="DingYiJinChangFeiYongXianMu">
+                                        <i class="icon-leaf"></i>定义进场费用项目
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#:;" id="HongTongJinChangChuLi">
+                                        <i class="icon-leaf"></i>合同进场处理
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#:;" id="HongTongTuiChangChuLi">
+                                        <i class="icon-leaf"></i>合同退场处理
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                    </ul>
+
+
+                </li>
+
+                <!--自营商品管理-->
+                <li>
+                    <a href="#;" class="dropdown-toggle" id="ZiYinShangPinGuanLi">
+                        <i class="icon-cut"></i>
+                        <span class="menu-text">自营商品管理 </span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#" id="ZiYinShangPinXinXiDingYi">
+                                <i class="icon-leaf"></i>自营商品信息定义
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" id="ShangPinZhuangTaiBianGeng">
+                                <i class="icon-leaf"></i>自营商品状态变更
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" id="ZiYinShangPinQingTui">
+                                <i class="icon-leaf"></i>自营商品清退
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="javascript:;" id="XinShangPinXiaoShouGuiTai">
+                                <i class="menu-icon fa fa-caret-right"></i>设置新商品销售柜台
+                            </a>
+                            <b class=""></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="FuKuCunXiaoShouShangPin">
+                                <i class="menu-icon fa fa-caret-right"></i>以销定进/负库存销售商品
+                            </a>
+                            <b class=""></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="ShangPinJingYinHeTong">
+                                <i class="menu-icon fa fa-caret-right"></i>自营商品经营合同定义
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="HeTongJingYinShangPin">
+                                <i class="menu-icon fa fa-caret-right"></i>自营合同经营商品定义
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <!--联营商品管理-->
+                <li>
+                    <a href="#;" class="dropdown-toggle" id="LianYinShangPinGuanLi">
+                        <i class="icon-edit"></i>
+                        <span class="menu-text">联营商品管理 </span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+                    <ul class="submenu">
+                        <li class="active">
+                            <a href="javascript:;" id="LianYinShangPinXinXi">
+                                <i class="menu-icon fa fa-caret-right"></i>联营商品信息定义
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="LianYinShangPinZhuangTaiBianGeng">
+                                <i class="menu-icon fa fa-caret-right"></i>联营商品状态变更
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="LianYinShangPinQingTui">
+                                <i class="menu-icon fa fa-caret-right"></i>联营商品清退
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="LianYinZhuanKuiShangPinHeTong">
+                                <i class="menu-icon fa fa-caret-right"></i>修改专柜商品合同信息
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <!--租赁商品管理-->
+                <li>
+                    <a href="#;" class="dropdown-toggle" id="ZuPinShangPinGuanLi">
+                        <i class="icon-edit"></i>
+                        <span class="menu-text">租赁商品管理 </span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+                    <ul class="submenu">
+                        <li class="active">
+                            <a href="javascript:;" id="ZuPinShangPinXinXi">
+                                <i class="menu-icon fa fa-caret-right"></i> 租赁商品信息定义
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="ZuPinShangPinZhuangTaiBianGeng">
+                                <i class="menu-icon fa fa-caret-right"></i>租赁商品状态变更
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="ZuPinShangPinQingTui">
+                                <i class="menu-icon fa fa-caret-right"></i>租赁商品清退
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+
+                    </ul>
+                </li>    
+
+                <!--基础信息管理-->
+                <li>
+                    <a href="#;" class="dropdown-toggle" id="JiChuXinXiGuanLi">
+                        <i class="icon-save"></i>
+                        <span class="menu-text">基础信息管理 </span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+                    <ul class="submenu">
+                        <li class="active">
+                            <a href="javascript:;" id="ShangPinFeiLei">
+                                <i class="menu-icon fa fa-caret-right"></i>定义商品分类
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="ShangPinShangBiao">
+                                <i class="menu-icon fa fa-caret-right"></i>定义商品商标
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="DanWeiHeShuXingDingYi">
+                                <i class="menu-icon fa fa-caret-right"></i>定义计量单位和使用对象
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="ShangPinJingYinJiJie">
+                                <i class="menu-icon fa fa-caret-right"></i>定义商品经营季节属性
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="ShangPinFenLeiJingYinShuJu">
+                                <i class="menu-icon fa fa-caret-right"></i>定义商品分类经营数据
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="DingYiDaBaoShangPin">
+                                <i class="menu-icon fa fa-caret-right"></i>定义打包商品并修改查询
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+
+                    </ul>
+                </li>   
+
+                <!--订单信息管理-->
+                <li>
+                    <a href="#;" class="dropdown-toggle" id="OrderHoutGuanLi">
+                        <i class="icon-download"></i>
+                        <span class="menu-text">订单信息管理 </span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+                    <ul class="submenu">
+                        <li class="active">
+                            <a href="javascript:;" id="PuTongDingDanChuLi">
+                                <i class="menu-icon fa fa-caret-right"></i>普通订货清单处理
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="ZiDongDingHuoChuLi">
+                                <i class="menu-icon fa fa-caret-right"></i>自动订货清单处理
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="ChaXunDaYingQingDan">
+                                <i class="menu-icon fa fa-caret-right"></i>查询打印订货清单
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                    </ul>
+                </li> 
+
+                <!--商品定价管理-->
+                <li>
+                    <a href="#;" class="dropdown-toggle" id="ShangPinDingJiaGuanLi">
+                        <i class="icon-picture"></i>
+                        <span class="menu-text">商品定价管理 </span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+                    <ul class="submenu">
+                        <li class="active">
+                            <a href="javascript:;" id="DaBaoShangPinDingJia">
+                                <i class="menu-icon fa fa-caret-right"></i>打包商品定价
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="ShangPinDingJiaGuiZe">
+                                <i class="menu-icon fa fa-caret-right"></i>定义商品定价规则
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="ShangPinZuiDiShouJia">
+                                <i class="menu-icon fa fa-caret-right"></i>设定商品最低售价
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                    </ul>
+                </li> 
+
+                <!--售进变价管理-->
+                <li>
+                    <a href="#;" class="dropdown-toggle" id="ShouJiaBianJiaGuanLi">
+                        <i class="icon-edit"></i>
+                        <span class="menu-text">售进变价管理 </span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+                    <ul class="submenu">
+                        <li class="">
+                            <a href="javascript:;" id="BianJiaYuanYin">
+                                <i class="menu-icon fa fa-caret-right"></i>变价原因定义
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="BianShouJiaShenQing">
+                                <i class="menu-icon fa fa-caret-right"></i>售价变价单处理
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="BianJinJiaShenQing">
+                                <i class="menu-icon fa fa-caret-right"></i>进价变价单处理
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="CaiGouJiaBianJia">
+                                <i class="menu-icon fa fa-caret-right"></i>采购价变价单处理
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                    </ul>
+                </li> 
+                   
+                <!--台账分析价签-->
+                <li>
+                    <a href="#;" class="dropdown-toggle" id="TaiZhangFenXiJiaQian">
+                        <i class="icon-search"></i>
+                        <span class="menu-text">台账分析价签 </span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+                    <ul class="submenu">
+                        <li class="active">
+                            <a href="javascript:;" id="WuJiaBianDongQuXian">
+                                <i class="menu-icon fa fa-caret-right"></i>物价变动曲线
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="KouLvDiaoZhengDan">
+                                <i class="menu-icon fa fa-caret-right"></i>联营租赁扣率调整单
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="JingZhengDuiShou">
+                                <i class="menu-icon fa fa-caret-right"></i>竞争对手定义
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="CaiJiaFenXi">
+                                <i class="menu-icon fa fa-caret-right"></i>采价分析_录入
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="JiaQianLeiXing">
+                                <i class="menu-icon fa fa-caret-right"></i>定义价签类型
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="DaYingShangPinJiaQian">
+                                <i class="menu-icon fa fa-caret-right"></i>打印商品价签
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                    </ul>
+                </li> 
+
+
+
+
+                <!--进销存部分-->
+                <li>
+                    <a href="#;" class="dropdown-toggle" id="GoodsRuKu">
+                        <i class="icon-download"></i>
+                        <span class="menu-text">商 品 入 库 </span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-double-angle-right"></i>进仓单制作
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" id="ZiYingJingCang">
+                                        <i class="icon-leaf"></i>自营进仓单
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" id="ZiYingWuDingDan">
+                                        <i class="icon-leaf"></i>无订单进仓单
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" id="LianYingJinCang">
+                                        <i class="icon-leaf"></i>联营进仓单
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" id="ZuLinJinCang">
+                                        <i class="icon-leaf"></i>租赁进仓单
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-double-angle-right"></i>进仓单抵消冲红
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" id="ZiYingJinCangChongHong">
+                                        <i class="icon-leaf"></i>自营进仓单冲红
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" id="ZiYingWuDingDanChongHong">
+                                        <i class="icon-leaf"></i>无订单冲红
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" id="LianYingChongHong">
+                                        <i class="icon-leaf"></i>联营进仓单冲红
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" id="ZuLinChongHong">
+                                        <i class="icon-leaf"></i>租赁进仓单冲红
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#" id="SelestJingCang">
+                                <i class="icon-leaf"></i>综合查询进仓单
+                            </a>
+                        </li>
+
+                    </ul>
+
+
+
+                </li>
+
+                <!--商品管理部分-->
+                <li>
+                    <a href="#;" class="dropdown-toggle" id="GoodsYunZhuan">
+                        <i class="icon-edit"></i>
+                        <span class="menu-text">商 品 管 理</span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+                    <ul class="submenu">
+
+                        <li>
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-double-angle-right"></i>配 货 单
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" id="PeiHuoChuLi">
+                                        <i class="icon-leaf"></i>配货单制作
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" id="SelectPeiHuo">
+                                        <i class="icon-leaf"></i>查询及打印配货单
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </li>
+
+
+                        
+
+                        <li>
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-double-angle-right"></i>上 市 单
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" id="ShangShiDan">
+                                        <i class="icon-leaf"></i>上市单制作
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" id="gffsfg">
+                                        <i class="icon-leaf"></i>查询及管理上市单
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </li>
+
+
+                        <li>
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-double-angle-right"></i>上市销售查询
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" id="QianTaiXiaoShouChaXunDan">
+                                        <i class="icon-leaf"></i>前台销售查询单
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" id="ChaXunShenHeGuoXinXi">
+                                        <i class="icon-leaf"></i>已审核销售单
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </li>
+
+
+                        <li>
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-double-angle-right"></i>调 拨 单
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" id="DiaoBaDan">
+                                        <i class="icon-leaf"></i>调拨单制作
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" id="SelectDiaoBa">
+                                        <i class="icon-leaf"></i>查询及打印调拨单
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </li>
+
+                        <li>
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-double-angle-right"></i>销售部门调整单
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" id="Sellctid">
+                                        <i class="icon-leaf"></i>销售部门调整制作
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" id="selectSell">
+                                        <i class="icon-leaf"></i>销售部门调整查询打印
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </li>
+
+
+                        <li>
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-double-angle-right"></i>返 厂 单
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" id="FanChangChuLi">
+                                        <i class="icon-leaf"></i>返厂单制作
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" id="SelectFanChang">
+                                        <i class="icon-leaf"></i>查询及打印返厂单
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </li>
+
+                        <li>
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-double-angle-right"></i>返 仓 单
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" id="FanCangDan">
+                                        <i class="icon-leaf"></i>返仓单制作
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" id="SelectFanCang">
+                                        <i class="icon-leaf"></i>查询/打印返仓单
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </li>
+
+                        <li>
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-double-angle-right"></i>转 库 单
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" id="ZhuanKuDan">
+                                        <i class="icon-leaf"></i>转库单制作
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" id="SelectZhuanKuDan">
+                                        <i class="icon-leaf"></i>查询/打印转库单
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+
+
+
+                </li>
+
+                <!--盘点处理-->
+                <li>
+                    <a href="#;" class="dropdown-toggle" id="PanlBiaoChuLi">
+                        <i class="icon-dashboard"></i>
+                        <span class="menu-text">盘 点 管 理</span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-double-angle-right"></i>盘 点 制 作
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" id="panl">
+                                        <i class="icon-leaf"></i>盘点计划设置
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" id="LuRuPanl">
+                                        <i class="icon-leaf"></i>录入盘点表
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" id="BianJiPanl">
+                                        <i class="icon-leaf"></i>编辑盘点表
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" id="SheZhiPanlBiaoZhi">
+                                        <i class="icon-leaf"></i>盘点录入完成标记
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-double-angle-right"></i>盘 点 处 理
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" id="YuShenChuLigh">
+                                        <i class="icon-leaf"></i>盘点表预审处理
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" id="ShenHePanla">
+                                        <i class="icon-leaf"></i>盘点表审核
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" id="DelectPanl">
+                                        <i class="icon-leaf"></i>删除盘点表
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-double-angle-right"></i>盘 点 维 护
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" id="SheZhiBuMenSunHaoLv">
+                                        <i class="icon-leaf"></i>维护部门盘点损耗率
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" id="PanlHuiZong">
+                                        <i class="icon-leaf"></i>盘点汇总表
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" id="SelectPanls">
+                                        <i class="icon-leaf"></i>查阅盘点表
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" id="GoodsPanlSex">
+                                        <i class="icon-leaf"></i>商品盘点属性设置
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                    </ul>
+
+
+
+                </li>
+
+                <!--损益要货单管理-->
+                <li>
+                    <a href="#;" class="dropdown-toggle" id="SunYiWantChuLi">
+                        <i class="icon-list"></i>
+                        <span class="menu-text">损溢单/要货单</span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-double-angle-right"></i>损益单处理
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" id="SunYiDan">
+                                        <i class="icon-leaf"></i>损溢单制作
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" id="SeleddSunYis">
+                                        <i class="icon-leaf"></i>查询损溢单及打印
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-double-angle-right"></i>要货单处理
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" id="WantYaoHuoDan">
+                                        <i class="icon-leaf"></i>要货单制作
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" id="SelectWantGoods">
+                                        <i class="icon-leaf"></i>查询要货单及打印
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+
+
+                    </ul>
+
+
+
+                </li>
+
+                <!--商品库存帐管理-->
+                <li>
+                    <a href="#;" class="dropdown-toggle" id="GoodsCunZhangChuLi">
+                        <i class="icon-text-width"></i>
+                        <span class="menu-text">商品帐单管理</span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-double-angle-right"></i>商品余额帐查询
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" id="SelectZhangGoodsGuanLi">
+                                        <i class="icon-leaf"></i>库存商品批次帐(日处理)
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" id="SelectSuppYuE">
+                                        <i class="icon-leaf"></i>供货单位库存余额帐(日处理)
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" id="SelectKuCunGoodsYuE">
+                                        <i class="icon-leaf"></i>库存商品总帐
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-double-angle-right"></i>保管帐管理
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" id="SelectZongHeKuCun">
+                                        <i class="icon-leaf"></i>综合查询库存商品
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" id="SelectGuiTaiGoods">
+                                        <i class="icon-leaf"></i>查询柜台商品列表
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                    </ul>
+
+
+
+                </li>
+
+                <!--辅助管理-->
+                <li>
+                    <a href="#;" class="dropdown-toggle" id="FuZhuChuLi">
+                        <i class="icon-save"></i>
+                        <span class="menu-text">辅 助 管 理</span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#" id="SexKuCun">
+                                <i class="icon-leaf"></i>设定库存限量
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" id="DelectLingKuCun">
+                                <i class="icon-leaf"></i>删除零库存商品
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" id="LuRuSanJIzHANG">
+                                <i class="icon-leaf"></i>录入三级帐初始化数据
+                            </a>
+                        </li>
+                    </ul>
+
+
+
+                </li>
+
+                <!--进销数据-->
+                <li>
+                    <a href="#;" class="dropdown-toggle" id="JinXiaoCunChuLi">
+                        <i class="icon-search"></i>
+                        <span class="menu-text">进 销 管 理</span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-double-angle-right"></i>进 货 数 据
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" id="GoodsXiaoCun">
+                                        <i class="icon-leaf"></i>商品进单数据
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" id="BuMenXiaoCun">
+                                        <i class="icon-leaf"></i>部门进单数据
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" id="ZuLiSellSelec">
+                                        <i class="icon-leaf"></i>租赁商品销售查询
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#" class="dropdown-toggle">
+                                <i class="icon-double-angle-right"></i>销 售 数 据
+                                <b class="arrow icon-angle-down"></b>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#" id="YingYeYuan">
+                                        <i class="icon-leaf"></i>营业员销售数据
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#" id="AchievementStaAndAnalysis">
+                                        <i class="icon-leaf"></i>收款员销售数据
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" id="">
+                                        <i class="icon-leaf"></i>商品销售数据
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+
+
+
+                </li>
+
+                <!--商品销售调整-->
+                <li>
+                    <a href="#;" class="dropdown-toggle" id="GoodsSellTiaoZheng">
+                        <i class="icon-desktop"></i>
+                        <span class="menu-text">商品销售调整</span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="#" id="XiaoShouLusRu">
+                                <i class="icon-leaf"></i>商品销售批次调整制作
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" id="ChaXunXiao">
+                                <i class="icon-leaf"></i>查询销售批次调整单
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" id="BunMenJing">
+                                <i class="icon-leaf"></i>部门经营打印
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" id="TianQi">
+                                <i class="icon-leaf"></i>天气情况
+                            </a>
+                        </li>
+                      
+
+                    </ul>
+                </li>
+
+
+
+                <!--会员管理-->
+                <li>
+                    <a href="#;" class="dropdown-toggle" id="Hui_JiChuDingYi">
+                        <i class="icon-user"></i>
+                        <span class="menu-text">会员基础信息</span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+                    <ul class="submenu">
+                        <li class="active">
+                            <a href="javascript:;" id="KaZhongDongYi">
+                                <i class="menu-icon fa fa-caret-right"></i> 会员卡卡种定义
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="KaLeiXinDinYi">
+                                <i class="menu-icon fa fa-caret-right"></i>会员卡类型定义
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="KaHuiYuanNianLinDuan">
+                                <i class="menu-icon fa fa-caret-right"></i>会员卡年龄段
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="KaBaoGuanDiDian">
+                                <i class="menu-icon fa fa-caret-right"></i>会员卡保管地点
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="KaXinXiShuXin">
+                                <i class="menu-icon fa fa-caret-right"></i>会员卡信息属性定义
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="kaHuiYuanNianLinDuan">
+                                <i class="menu-icon fa fa-caret-right"></i>定义会员卡年龄段
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="HuiYuanDiQu">
+                                <i class="menu-icon fa fa-caret-right"></i>会员地区
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#;" class="dropdown-toggle" id="Hui_JianKaFaFang">
+                        <i class="icon-edit"></i>
+                        <span class="menu-text">建卡与发放管理 </span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+                    <ul class="submenu">
+                        <li class="active">
+                            <a href="javascript:;" id="KaJianKa">
+                                <i class="menu-icon fa fa-caret-right"></i> 会员卡建卡
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="KaLinQu">
+                                <i class="menu-icon fa fa-caret-right"></i>会员卡领取
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+
+                        <li class="">
+                            <a href="javascript:;" id="KaPiLianFaFang">
+                                <i class="menu-icon fa fa-caret-right"></i>会员卡批量发放
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#;" class="dropdown-toggle" id="Hui_KuCunKaGuanLi">
+                        <i class="icon-save"></i>
+                        <span class="menu-text">库存卡管理</span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+                    <ul class="submenu">
+                        <li class="active">
+                            <a href="javascript:;" id="KuCunYanKa">
+                                <i class="menu-icon fa fa-caret-right"></i> 库存卡信息验卡
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="KuCunFeiKa">
+                                <i class="menu-icon fa fa-caret-right"></i>库存卡作废
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="KuCunYouXiaoQi">
+                                <i class="menu-icon fa fa-caret-right"></i>库存卡有效期变更
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#;" class="dropdown-toggle" id="Hui_HuiYuanXinXiGuanLi">
+                        <i class="icon-search"></i>
+                        <span class="menu-text">会员信息管理</span>
+                        <b class="arrow icon-angle-down"></b>
+                    </a>
+                    <ul class="submenu">
+                        <li class="active">
+                            <a href="javascript:;" id="KaHuanKa">
+                                <i class="menu-icon fa fa-caret-right"></i> 会员卡换卡
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="active">
+                            <a href="javascript:;" id="KaGuaShi">
+                                <i class="menu-icon fa fa-caret-right"></i>会员卡挂失
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="active">
+                            <a href="javascript:;" id="KaZuoFei">
+                                <i class="menu-icon fa fa-caret-right"></i>会员卡作废
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="KaDangAnLuRu">
+                                <i class="menu-icon fa fa-caret-right"></i>会员档案录入
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="KaYouXiaoQi">
+                                <i class="menu-icon fa fa-caret-right"></i>会员卡有效期更改
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" id="KaGuanoLiCaoZuoTai">
+                                <i class="menu-icon fa fa-caret-right"></i>会员卡管理操作台
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="active">
+                            <a href="javascript:;" id="KaZhuanTaiBianDon">
+                                <i class="menu-icon fa fa-caret-right"></i>会员卡状态变动
+                            </a>
+                            <b class="arrow"></b>
+                        </li>
+                    </ul>
+                </li>  
+
+
+
+                <!--退出-->
+                <li>
+                    <a href="#" id="Quit">
+                        <i class="icon-off"></i>退出系统
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="sidebar-collapse" id="sidebar-collapse">
+                <i class="icon-double-angle-left"></i>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="breadcrumbs" id="breadcrumbs">
+                <ul class="breadcrumb" style="float:right">
+                    <li><span>欢迎您：</span><span id="StudentName">@ViewBag.UserName</span><span>&nbsp;</span></li>
+                    <li><span id="DataTime">@ViewBag.serverTime</span><span>&nbsp;</span></li>
+                    <li><span>登录：</span><span id="LoginTime"></span></li>
+                    <li><a href="javascript:;" id="loginOut">注销</a></li>
+                </ul>
+
+
+            </div>
+
+            <div class="page-content">
+
+                <iframe id="content" class="fgf" style="width:100%;height:780px;border:none;"></iframe>
+            </div>
+           
+            <div class="ace-settings-container" id="ace-settings-container">
+                <div class="btn btn-app btn-mini btn-warning ace-settings-btn" id="ace-settings-btn">
+                    <i class="icon-cog bigger-150"></i>
+                </div>
+                <div class="ace-settings-box" id="ace-settings-box">
+                    <div>
+                        <div class="pull-left">
+                            <select id="skin-colorpicker" class="hide">
+                                <option data-class="default" value="#438EB9" />#438EB9
+                                <option data-class="skin-1" value="#222A2D" />#222A2D
+                                <option data-class="skin-2" value="#C6487E" />#C6487E
+                                <option data-class="skin-3" value="#D0D0D0" />#D0D0D0
+                            </select>
+                        </div>
+                        <span>&nbsp; 选择皮肤</span>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" class="ace-checkbox-2" id="ace-settings-header" />
+                        <label class="lbl" for="ace-settings-header">固定头部</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" class="ace-checkbox-2" id="ace-settings-sidebar" />
+                        <label class="lbl" for="ace-settings-sidebar">固定侧栏</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" class="ace-checkbox-2" id="ace-settings-breadcrumbs" />
+                        <label class="lbl" for="ace-settings-breadcrumbs">固定面包屑</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" class="ace-checkbox-2" id="ace-settings-rtl" />
+                        <label class="lbl" for="ace-settings-rtl">左右互换</label>
+                    </div>
+                </div>
+            </div><!--/#ace-settings-container-->
+        </div><!--/.main-content-->
+    </div>
+
+    <script src="~/assets/js/jquery-2.0.3.min.js"></script>
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="~/assets/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="~/assets/js/jquery.slimscroll.min.js"></script>
+    <script src="~/assets/js/jquery.easy-pie-chart.min.js"></script>
+    <script src="~/assets/js/jquery.sparkline.min.js"></script>
+    <script src="~/assets/js/ace-elements.min.js"></script>
+    <script src="~/assets/js/ace.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+
+    @*登录界面内容*@
+    <script type="text/javascript">
+        //获得登录时间
+        function time() {
+            $.ajax({
+                type: "post",
+                url: "/Login/GetLoginTime",
+                dataType: "json",
+                success: function (data) {
+                    document.getElementById("LoginTime").innerHTML = data + "分钟";
+                }
+            });
+            setTimeout("time()", 5000);
+
+            //$("#sidebar").fadeTo("slow", 0.66);
+        }
+       
+        //注销当前用户
+        $("#loginOut").click(function () {
+            layer.confirm("确定要注销退出？", {
+                icon: 3,
+                btn: ['确定', '取消']
+            }, function (layerIndex) {
+                layer.close(layerIndex);//关闭提示框
+               
+                $.post("/Login/LoginOut", function (msg) {
+                    location.reload();
+                });
+            });
+        });
+
+        $("#Quit").click(function () {
+            layer.confirm("确定要退出？", {
+                icon: 3,
+                btn: ['确定', '取消']
+            }, function (layerIndex) {
+                layer.close(layerIndex);//关闭提示框
+               
+                $.post("/Login/LoginOut", function (msg) {
+                    location.reload();
+                });
+            });
+        });
+      
+        $("#OutStaff").click(function () {
+            layer.confirm("确定要退出？", {
+                icon: 3,
+                btn: ['确定', '取消']
+            }, function (layerIndex) {
+                layer.close(layerIndex);//关闭提示框
+               
+                $.post("/Login/LoginOut", function (msg) {
+                    location.reload();
+                });
+            });
+        });
+
+
+
+    </script>
+
+    @*权限管理*@
+    <script>
+        $(function () {
+            var UserID = @Session["StaffID"];
+            $.getJSON("/Login/MoKuaiQuanXianSelect?UserId=" + UserID + "&time=" + (new Date()).getTime(), function (data){
+
+                //会员的
+                $("#Hui_JiChuDingYi").hide();
+                $("#Hui_JianKaFaFang").hide();
+                $("#Hui_KuCunKaGuanLi").hide();
+                $("#Hui_HuiYuanXinXiGuanLi").hide();
+
+
+
+                //供货商
+                $("#HeTongGuanLi").hide();
+                $("#ShengChangChanJia").hide();
+                $("#GongHuoShangGuanLi").hide();
+
+                //商品的
+                $("#ZiYinShangPinGuanLi").hide();
+                $("#LianYinShangPinGuanLi").hide();
+                $("#ZuPinShangPinGuanLi").hide();
+                $("#JiChuXinXiGuanLi").hide();
+                $("#OrderHoutGuanLi").hide();
+                $("#ShangPinDingJiaGuanLi").hide();
+                $("#ShouJiaBianJiaGuanLi").hide();
+                $("#TaiZhangFenXiJiaQian").hide();               
+
+
+                //进仓的
+                $("#GoodsRuKu").hide();
+                $("#GoodsYunZhuan").hide();
+                $("#PanlBiaoChuLi").hide();
+                $("#SunYiWantChuLi").hide();
+                $("#GoodsCunZhangChuLi").hide();
+                $("#FuZhuChuLi").hide();
+                $("#JinXiaoCunChuLi").hide();
+                $("#GoodsSellTiaoZheng").hide();
+
+
+
+                $.each(data, function (i) {
+                    switch (data[i].Name) {
+                        //会员的
+                        case"会员基础信息":
+                            $("#Hui_JiChuDingYi").show();
+                            break;
+
+                        case "建卡与发放管理":
+                            $("#Hui_JianKaFaFang").show();
+                            break;
+                        case "库存卡管理":
+                            $("#Hui_KuCunKaGuanLi").show();
+                            break;
+                        case "会员信息管理":
+                            $("#Hui_HuiYuanXinXiGuanLi").show();
+                            break;
+                       //供货商的
+                        case "合同信息管理":
+                            $("#HeTongGuanLi").show();
+                            break;
+                        case "生产厂家管理":
+                            $("#ShengChangChanJia").show();
+                            break;
+                        case "供应商管理":
+                            $("#GongHuoShangGuanLi").show();
+                            break;
+
+                        //商品的
+                        case "自营商品管理":
+                            $("#ZiYinShangPinGuanLi").show();
+                            break;
+                        case "联营商品管理":
+                            $("#LianYinShangPinGuanLi").show();
+                            break;
+                        case "租赁商品管理":
+                            $("#ZuPinShangPinGuanLi").show();
+                            break;
+                        case "基础信息管理":
+                            $("#JiChuXinXiGuanLi").show();
+                            break;
+                        case "订单信息管理":
+                            $("#OrderHoutGuanLi").show();
+                            break;
+                        case "商品定价管理":
+                            $("#ShangPinDingJiaGuanLi").show();
+                            break;
+                        case "售进变价管理":
+                            $("#ShouJiaBianJiaGuanLi").show();
+                            break;
+                        case "台账分析价签":
+                            $("#TaiZhangFenXiJiaQian").show();
+                            break;
+
+                        //进仓的
+                        case "商品入库":
+                            $("#GoodsRuKu").show();
+                            break;
+                        case "商品管理":
+                            $("#GoodsYunZhuan").show();
+                            break;
+                        case "盘点管理":
+                            $("#PanlBiaoChuLi").show();
+                            break;
+                        case "损溢单/要货单":
+                            $("#SunYiWantChuLi").show();
+                            break;
+                        case "商品帐单管理":
+                            $("#GoodsCunZhangChuLi").show();
+                            break;
+
+                        case "辅助管理":
+                            $("#FuZhuChuLi").show();
+                            break;
+                        case "进销管理":
+                            $("#JinXiaoCunChuLi").show();
+                            break;
+
+                        case "商品销售调整":
+                            $("#GoodsSellTiaoZheng").show();
+                            break;
+
+                    }
+                });
+
+            });
+
+
+        });
+
+    </script>
+
+    <!--会员管理-->
+    <script type="text/javascript">
+        $(function () {       
+            //基础信息定义-->会员卡卡种定义
+            $("#KaZhongDongYi").click(function () {
+                select($(this));
+                $("#content").attr("src", "/HuiYuanKaJiChuXinXi/HuiYuanKaZhong/KaZhongDinYi");//会员卡卡种定义
+            });
+            //基础信息定义-->会员卡类型定义
+            $("#KaLeiXinDinYi").click(function () {
+                select($(this));
+                $("#content").attr("src", "/HuiYuanKaJiChuXinXi/HuiYuanKaLei/KaZhongXuanZhe");//会员卡类型定义
+            });
+            //基础信息定义-->会员卡年龄段
+            $("#KaHuiYuanNianLinDuan").click(function () {
+                select($(this));
+                $("#content").attr("src", "/HuiYuanKaJiChuXinXi/HuiYuanNianLingDuang/DiYiHuiYuanNianLin");//会员卡年龄段
+            });
+            //基础信息定义-->会员卡保管地点  
+            $("#KaBaoGuanDiDian").click(function () {
+                select($(this));
+                $("#content").attr("src", "/HuiYuanKaJiChuXinXi/DiYiBaoGuanDiDian/BaoGuanDiDian");//会员卡保管地点
+            });
+            //基础信息定义-->会员卡信息属性定义
+            $("#KaXinXiShuXin").click(function () {
+                select($(this));
+                $("#content").attr("src", "/HuiYuanKaJiChuXinXi/HuiYuanXinXiXianMu/HuiYuanXinXiShuXin");//会员卡保管地点
+            });
+            //基础信息定义-->定义会员卡年龄段
+            $("#kaHuiYuanNianLinDuan").click(function () {
+                select($(this));
+                $("#content").attr("src", "/HuiYuanKaJiChuXinXi/HuiYuanNianLingDuang/DiYiHuiYuanNianLin");//会员卡年龄段定义
+            });
+            //基础信息定义-->会员地区定义 
+            $("#HuiYuanDiQu").click(function () {
+                select($(this));
+                $("#content").attr("src", "/HuiYuanKaJiChuXinXi/HuiYuanQuYvDaiMaDingYi/QuYvDaiMa");//会员地区定义
+            });
+            //建卡与发放-->会员卡建卡
+            $("#KaJianKa").click(function () {
+                select($(this));
+                $("#content").attr("src", "/HuiYuanJianKaYuFaFang/HuiYuanKaJianKa/JianKa");//会员卡建卡
+            });
+            //建卡与发放-->会员卡领取
+            $("#KaLinQu").click(function () {
+                select($(this));
+                $("#content").attr("src", "/HuiYuanJianKaYuFaFang/HuiYuanKaLinYon/LinYon");//会员卡领用
+            });
+            //建卡与发放-->会员卡批量发放
+            $("#KaPiLianFaFang").click(function () {
+                select($(this));
+                $("#content").attr("src", "/HuiYuanJianKaYuFaFang/HuiYuanPiLiangFaFang/PiLiangFaFang");//会员卡批量发放
+            });
+           
+            //库存卡管理-->库存卡信息验证
+            $("#KuCunYanKa").click(function () {
+                select($(this));
+                $("#content").attr("src", "/HuiYuanKaKuCunKaGuanLi/KuCunKaXinXiYanZheng/XinXiYanZheng");//库存卡信息验证
+            });
+            //库存卡管理-->库存卡作废
+            $("#KuCunFeiKa").click(function () {
+                select($(this));
+                $("#content").attr("src", "/HuiYuanKaKuCunKaGuanLi/HuiYuanKuCunKaZuoFei/ZuoFei");//库存卡作废
+            });
+            //库存卡管理-->库存卡有效期变更
+            $("#KuCunYouXiaoQi").click(function () {
+                select($(this));
+                $("#content").attr("src", "/HuiYuanKaKuCunKaGuanLi/KuCunKaYouXiaoQiBianGeng/YouXiaoQiGengGai");//库存卡有效期变更
+            });
+            //会员信息管理-->会员卡换卡
+            $("#KaHuanKa").click(function () {
+                select($(this));
+                $("#content").attr("src", "/HuiYuanKaXinXiGuanLi/HuiYuanKaHuanKa/HuanKa");//会员卡换卡
+            });
+            //会员信息管理-->会员卡挂失
+            $("#KaGuaShi").click(function () {
+                select($(this));
+                $("#content").attr("src", "/HuiYuanKaXinXiGuanLi/HuiYuanKaGuaShiChuLi/HuiYuanKaGuaShiChuLi");//会员卡挂失 
+            });
+            //会员信息管理-->会员卡作废
+            $("#KaZuoFei").click(function () {
+                select($(this));
+                $("#content").attr("src", "/HuiYuanKaXinXiGuanLi/HuiYuanKaZuoFei/HuiYuanKaZuoFei");//会员卡作废
+            });
+            //会员信息管理-->会员档案录入
+            $("#KaDangAnLuRu").click(function () {               
+                select($(this));
+                $("#content").attr("src", "/HuiYuanKaXinXiGuanLi/HuiYuanDangAnLuRu/XuanZheKa");//会员档案录入
+            });
+            //会员信息管理-->会员卡有效期更改
+            $("#KaYouXiaoQi").click(function () {
+                select($(this));
+                $("#content").attr("src", "/HuiYuanKaXinXiGuanLi/HuiYuanKaYouXiaoQiGengGai/YouXiaoQiGengGai");//会员卡有效期更改
+            });
+            //会员信息管理-->会员卡综合操作
+            $("#KaGuanoLiCaoZuoTai").click(function () {
+                select($(this));
+                $("#content").attr("src", "/HuiYuanKaXinXiGuanLi/HuiYuanKaGuanLiCaoZuoTai/CaoZuoTai");//会员卡综合操作
+            });
+            //会员信息管理-->会员卡状态变动
+            $("#KaZhuanTaiBianDon").click(function () {
+                select($(this));
+                $("#content").attr("src", "/HuiYuanKaXinXiGuanLi/HuiYuanKaZhuangTaiBianDong/ZhuangTaiBianDong");//会员卡状态变动
+            });          
+        });
+    </script>
+
+    @*供货商、合同管理*@
+    <script type="text/javascript">
+        $(function () {
+            time();
+
+            $(function () {
+                $("#Rubbish").click(function () {
+                    $("#content").attr("src", "/SupplierManagement/OperationControl/Index");
+                });
+            });
+
+            $(function () {
+                $("#Code").click(function () {
+
+                    $("#content").attr("src", "/SupplierManagement/SupplierCkeck/SupplierCkeck");
+                });
+            });
+
+            $(function () {
+                $("#YeWuWangLaiDanWei").click(function () {
+
+                    $("#content").attr("src", "/SupplierManagement/SupplierCkeck/YeWuWangLaiDanWei");
+                });
+            });
+
+            $(function () {
+                $("#YeWuWangLaiDanWeiGuoQiZhengShu").click(function () {
+
+                    $("#content").attr("src", "/SupplierManagement/SupplierCkeck/YeWuWangLaiDanWeiGuoQiZhengShu");
+                });
+            });
+
+            $(function () {
+                $("#KaZhongDongYi").click(function () {
+
+                    $("#content").attr("src", "/HuiYuanKaJiChuXinXi/HuiYuanKaZhong/KaZhongDinYi");
+                });
+            });
+
+            $(function () {
+                $("#KaLeiXinDinYi").click(function () {
+
+                    $("#content").attr("src", "/HuiYuanKaJiChuXinXi/HuiYuanKaLei/KaZhongXuanZhe");
+                });
+            });
+
+            $(function () {
+                $("#KaHuiYuanNianLinDuan").click(function () {
+
+                    $("#content").attr("src", "/HuiYuanKaJiChuXinXi/HuiYuanNianLingDuang/DiYiHuiYuanNianLin");
+                });
+            });
+
+            $(function () {
+                $("#AlternativeSupplier").click(function () {
+
+                    $("#content").attr("src", "/AlternativeSupplier/Alternative/Index");
+                });
+            });
+
+            $(function () {
+                $("#UpdateProject").click(function () {
+
+                    $("#content").attr("src", "/AlternativeSupplier/Alternative/alternative");
+                });
+            });
+
+            $(function () {
+                $("#AddProjectDetail").click(function () {
+
+                    $("#content").attr("src", "/AlternativeSupplier/Alternative/alternativeSupplier");
+                });
+            });
+
+            $(function () {
+                $("#FoundationManage").click(function () {
+
+                    $("#content").attr("src", "/AlternativeSupplier/Alternative/Index");
+                });
+            });
+
+            $(function () {
+                $("#ManufacturerManage").click(function () {
+
+                    $("#content").attr("src", "/AlternativeSupplier/Alternative/manufacturer");
+                });
+            });
+
+            $(function () {
+                $("#FoundationManage").click(function () {
+
+                    $("#content").attr("src", "/AlternativeSupplier/Alternative/DingYiShuXing");
+                });
+            });
+
+            $(function () {
+                $("#WangLaiJiTUAN").click(function () {
+
+                    $("#content").attr("src", "/AlternativeSupplier/Alternative/WangLaiJiTuanDingYi");
+                });
+            });
+
+            $(function () {
+                $("#WangLaiDanWeiSXDY").click(function () {
+
+                    $("#content").attr("src", "/AlternativeSupplier/Alternative/WangLaiDanWeiShuXingDingYi");
+                });
+            });
+
+            $(function () {
+                $("#WangLaiDanWeiDWMB").click(function () {
+                    $("#content").attr("src", "/AlternativeSupplier/Alternative/WangLaiDanWeiDanWeiMuBanDingYi");
+                });
+            });
+
+            $(function () {
+                $("#Index").click(function () {
+
+                    $("#content").attr("src", "/OrderFormPactment/OrderFormPact/Index");
+                });
+            });
+
+            $(function () {
+                $("#DaiXiaoHeTong").click(function () {
+
+                    $("#content").attr("src", "/OrderFormPactment/OrderFormPact/DaiXiaoHeTong");
+                });
+            });
+
+            $(function () {
+                $("#LianYingHeTong").click(function () {
+                    $("#content").attr("src", "/OrderFormPactment/OrderFormPact/LianYingHeTong");
+                });
+            });
+
+            $(function () {
+                $("#ZuLinHeTongChuLI").click(function () {
+
+                    $("#content").attr("src", "/OrderFormPactment/OrderFormPact/ZuLinHeTongChuLI");
+                });
+            });
+
+            $(function () {
+
+
+
+                ///合同变更
+                $("#JingXiaoHeTongChuLI").click(function () {
+
+                    $("#content").attr("src", "/OrderFormPactment/OrderFormPact/JingXiaoHeTongChuLI");
+                });
+            });
+
+            $(function () {
+                $("#DaiXiaoXiaoHeTongChuLI").click(function () {
+
+                    $("#content").attr("src", "/OrderFormPactment/OrderFormPact/DaiXiaoXiaoHeTongChuLI");
+                });
+            });
+
+            $(function () {
+                $("#LianYingHeTongChuLI").click(function () {
+
+                    $("#content").attr("src", "/OrderFormPactment/OrderFormPact/LianYingHeTongChuLI");
+                });
+            });
+
+            $(function () {
+                $("#ZuLinHeTongBianGengChuLI").click(function () {
+
+                    $("#content").attr("src", "/OrderFormPactment/OrderFormPact/ZuLinHeTongBianGengChuLI");
+                });
+
+            });
+
+            $(function () {
+                ////合同续签
+                $("#JingXiaoXuQianHeTongChuLI").click(function () {
+
+                    $("#content").attr("src", "/OrderFormPactment/OrderFormPact/JingXiaoXuQianHeTongChuLI");
+                });
+            });
+
+            $(function () {
+                $("#DaiXiaoXiaoXuQianHeTongChuLI").click(function () {
+
+                    $("#content").attr("src", "/OrderFormPactment/OrderFormPact/DaiXiaoXiaoXuQianHeTongChuLI");
+                });
+            });
+
+            $(function () {
+                $("#LianYingXuQianHeTongChuLI").click(function () {
+
+                    $("#content").attr("src", "/OrderFormPactment/OrderFormPact/LianYingXuQianHeTongChuLI");
+                });
+            });
+
+            $(function () {
+                $("#ZuLinXuQianHeTongChuLI").click(function () {
+
+                    $("#content").attr("src", "/OrderFormPactment/OrderFormPact/ZuLinXuQianHeTongChuLI");
+                });
+
+            });
+
+            $(function () {
+                ///合同清退
+                $("#JingXiaoHeTongChuTuiChuLI").click(function () {
+
+                    $("#content").attr("src", "/OrderFormPactment/OrderFormPact/JingXiaoHeTongChuTuiChuLI");
+                });
+            });
+
+            $(function () {
+                ///合同清退
+                $("#JingXiaoHeTongChuTuiChuLI1").click(function () {
+
+                    $("#content").attr("src", "/OrderFormPactment/OrderFormPact/JingXiaoHeTongChuTuiChuLI1");
+                });
+            });
+
+            $(function () {
+                ///合同清退
+                $("#JingXiaoHeTongChuTuiChuLI2").click(function () {
+
+                    $("#content").attr("src", "/OrderFormPactment/OrderFormPact/JingXiaoHeTongChuTuiChuLI2");
+                });
+            });
+
+            $(function () {
+                ///合同清退
+                $("#JingXiaoHeTongChuTuiChuLI3").click(function () {
+
+                    $("#content").attr("src", "/OrderFormPactment/OrderFormPact/JingXiaoHeTongChuTuiChuLI3");
+                });
+
+            });
+
+            $(function () {
+                ///合同终止
+                $("#JingXiaoHeTongZhongZhiChuTuiChuLI").click(function () {
+
+                    $("#content").attr("src", "/OrderFormPactment/OrderFormPact/JingXiaoHeTongZhongZhiChuTuiChuLI");
+                });
+
+            });
+
+            $(function () {
+                ///合同终止
+                $("#JingXiaoHeTongZhongZhiChuTuiChuLI1").click(function () {
+
+                    $("#content").attr("src", "/OrderFormPactment/OrderFormPact/JingXiaoHeTongZhongZhiChuTuiChuLI1");
+                });
+            });
+
+            $(function () {
+                ///合同终止
+                $("#JingXiaoHeTongZhongZhiChuTuiChuLI2").click(function () {
+
+                    $("#content").attr("src", "/OrderFormPactment/OrderFormPact/JingXiaoHeTongZhongZhiChuTuiChuLI2");
+                });
+            });
+
+            $(function () {
+                ///合同终止
+                $("#JingXiaoHeTongZhongZhiChuTuiChuLI3").click(function () {
+
+                    $("#content").attr("src", "/OrderFormPactment/OrderFormPact/JingXiaoHeTongZhongZhiChuTuiChuLI3");
+                });
+
+            });
+
+            $(function () {
+                ///合同结算扣款项定义
+                $("#DingYiHeTongKouKuanXianMu").click(function () {
+
+                    $("#content").attr("src", "/OrderFormPactment/OrderFormPact/DingYiHeTongKouKuanXianMu");
+                });
+            });
+
+            $(function () {
+                $("#GuDingKouKuanXiangMuDuiZhaoBiao").click(function () {
+
+                    $("#content").attr("src", "/OrderFormPactment/OrderFormPact/GuDingKouKuanXiangMuDuiZhaoBiao");
+                });
+            });
+
+            $(function () {
+                ///进场费用管理
+                $("#DingYiJinChangFeiYongXianMu").click(function () {
+
+                    $("#content").attr("src", "/OrderFormPactment/OrderFormPact/DingYiJinChangFeiYongXianMu");
+                });
+            });
+
+            $(function () {
+                $("#HongTongJinChangChuLi").click(function () {
+
+                    $("#content").attr("src", "/OrderFormPactment/OrderFormPact/HongTongJinChangChuLi");
+                });
+            });
+
+            $(function () {
+                $("#HongTongTuiChangChuLi").click(function () {
+
+                    $("#content").attr("src", "/OrderFormPactment/OrderFormPact/HongTongTuiChangChuLi");
+                });
+            });
+
+        });
+    </script>
+
+    @*商品、订单、物价管理*@
+    <script type="text/javascript">
+
+        $(function () {
+            time();
+            //$("#content").attr("src", "/Login/ShuoYe"); 
+
+            //首页
+            $(function () {
+                $("#ShuoYe").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/Login/ShuoYe");
+                });
+            });
+
+            //自营商品信息定义
+            $(function () {
+                $("#ZiYinShangPinXinXiDingYi").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/ShangPinGuanLi/ShangPinGuanLiBuFen/ZiYinShangPinXinXi");
+                });
+            });
+            //自营商品状态变更
+            $(function () {
+                $("#ShangPinZhuangTaiBianGeng").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/ShangPinGuanLi/ShangPinGuanLiBuFen/ShangPinZhuangTaiBianGeng");
+                });
+            });
+            //自营商品清退
+            $(function () {
+                $("#ZiYinShangPinQingTui").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/ShangPinGuanLi/ShangPinGuanLiBuFen/ZiYinShangPinQingTui");
+                });
+            });
+            //新商品销售柜台
+            $(function () {
+                $("#XinShangPinXiaoShouGuiTai").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/ShangPinGuanLi/ShangPinGuanLiBuFen/XinShangPinXiaoShouGuiTai");
+                });
+            });
+            //以销定进/负库存销售商品定义
+            $(function () {
+                $("#FuKuCunXiaoShouShangPin").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/ShangPinGuanLi/ShangPinGuanLiBuFen/FuKuCunXiaoShouShangPin/");
+                });
+            });
+            //自营商品经营合同定义
+            $(function () {
+                $("#ShangPinJingYinHeTong").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/ShangPinGuanLi/ShangPinGuanLiBuFen/ShangPinJingYinHeTong");
+                });
+            });
+            //自营合同经营商品定义
+            $(function () {
+                $("#HeTongJingYinShangPin").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/ShangPinGuanLi/ShangPinGuanLiBuFen/HeTongJingYinShangPin");
+                });
+            });
+
+            //联营商品信息定义
+            $(function () {
+                $("#LianYinShangPinXinXi").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/ShangPinGuanLi/LianYinShangPinGuanLi/LianYinShangPinXinXi");
+                });
+            });
+            //联营商品状态变更
+            $(function () {
+                $("#LianYinShangPinZhuangTaiBianGeng").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/ShangPinGuanLi/LianYinShangPinGuanLi/LianYinShangPinZhuangTaiBianGeng");
+                });
+            });
+            //联营商品清退
+            $(function () {
+                $("#LianYinShangPinQingTui").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/ShangPinGuanLi/LianYinShangPinGuanLi/LianYinShangPinQingTui");
+                });
+            });
+            //修改专柜商品合同信息
+            $(function () {
+                $("#LianYinZhuanKuiShangPinHeTong").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/ShangPinGuanLi/LianYinShangPinGuanLi/LianYinZhuanKuiShangPinHeTong");
+                });
+            });
+
+            //租赁商品信息定义
+            $(function () {
+                $("#ZuPinShangPinXinXi").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/ShangPinGuanLi/ZuPinShangPinGuanLi/ZuPinShangPinXinXi");
+                });
+            });
+            //租赁商品状态变更
+            $(function () {
+                $("#ZuPinShangPinZhuangTaiBianGeng").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/ShangPinGuanLi/ZuPinShangPinGuanLi/ZuPinShangPinZhuangTaiBianGeng");
+                });
+            });
+            //核算库存专柜商品清退
+            $(function () {
+                $("#ZuPinShangPinQingTui").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/ShangPinGuanLi/ZuPinShangPinGuanLi/ZuPinShangPinQingTui");
+                });
+            });
+
+            //定义商品分类
+            $(function () {
+                $("#ShangPinFeiLei").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/ShangPinGuanLi/JiChuXinXi/ShangPinFeiLei");
+                });
+            });
+            //定义商品商标
+            $(function () {
+                $("#ShangPinShangBiao").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/ShangPinGuanLi/JiChuXinXi/ShangPinShangBiao");
+                });
+            });
+            //定义商品计量单位和使用对象
+            $(function () {
+                $("#DanWeiHeShuXingDingYi").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/ShangPinGuanLi/JiChuXinXi/DanWeiHeShuXingDingYi");
+                });
+            });
+            //定义商品分类经营数据
+            $(function () {
+                $("#ShangPinFenLeiJingYinShuJu").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/ShangPinGuanLi/JiChuXinXi/ShangPinFenLeiJingYinShuJu");
+                });
+            });
+            //定义商品经营季节属性
+            $(function () {
+                $("#ShangPinJingYinJiJie").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/ShangPinGuanLi/JiChuXinXi/ShangPinJingYinJiJie");
+                });
+            });
+            //定义修改查询打包商品
+            $(function () {
+                $("#DingYiDaBaoShangPin").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/ShangPinGuanLi/JiChuXinXi/DingYiDaBaoShangPin");
+                });
+            });
+
+            //定义普通订单处理
+            $(function () {
+                $("#PuTongDingDanChuLi").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/DingDanGuanLi/PuTongDingDan/PuTongDingDanChuLi");
+                });
+            });
+            //定义自动订货清单处理
+            $(function () {
+                $("#ZiDongDingHuoChuLi").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/DingDanGuanLi/ZiDongDingHuo/ZiDongDingHuoChuLi");
+                });
+            });
+            //查询打印订货清单
+            $(function () {
+                $("#ChaXunDaYingQingDan").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/DingDanGuanLi/ChaXunDaYing/ChaXunDaYingQingDan");
+                });
+            });
+
+            //打包商品定价
+            $(function () {
+                $("#DaBaoShangPinDingJia").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/WuJiaGuanLi/ShangPinDingJiaGuanLi/DaBaoShangPinDingJia");
+                });
+            });
+            //定义商品定价规则
+            $(function () {
+                $("#ShangPinDingJiaGuiZe").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/WuJiaGuanLi/ShangPinDingJiaGuanLi/ShangPinDingJiaGuiZe");
+                });
+            });
+            //设定商品最低售价
+            $(function () {
+                $("#ShangPinZuiDiShouJia").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/WuJiaGuanLi/ShangPinDingJiaGuanLi/ShangPinZuiDiShouJia");
+                });
+            });
+
+            //变价原因定义
+            $(function () {
+                $("#BianJiaYuanYin").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/WuJiaGuanLi/ShouJinBianJiaGuanLi/BianJiaYuanYin");
+                });
+            });
+            //变售价申请处理
+            $(function () {
+                $("#BianShouJiaShenQing").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/WuJiaGuanLi/ShouJinBianJiaGuanLi/BianShouJiaShenQing");
+                });
+            });
+            //进价变价单处理
+            $(function () {
+                $("#BianJinJiaShenQing").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/WuJiaGuanLi/ShouJinBianJiaGuanLi/BianJinJiaShenQing");
+                });
+            });
+            //采购价变价单处理
+            $(function () {
+                $("#CaiGouJiaBianJia").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/WuJiaGuanLi/ShouJinBianJiaGuanLi/CaiGouJiaBianJia");
+                });
+            });
+
+            //物价变动曲线
+            $(function () {
+                $("#WuJiaBianDongQuXian").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/WuJiaGuanLi/TaiZhangFenXiJiaQian/WuJiaBianDongQuXian");
+                });
+            });
+            //联营租赁扣率调整单
+            $(function () {
+                $("#KouLvDiaoZhengDan").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/WuJiaGuanLi/TaiZhangFenXiJiaQian/KouLvDiaoZhengDan");
+                });
+            });
+            //竞争对手定义
+            $(function () {
+                $("#JingZhengDuiShou").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/WuJiaGuanLi/TaiZhangFenXiJiaQian/JingZhengDuiShou");
+                });
+            });
+            //采价分析_录入
+            $(function () {
+                $("#CaiJiaFenXi").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/WuJiaGuanLi/TaiZhangFenXiJiaQian/CaiJiaFenXi");
+                });
+            });
+            //定义价签类型
+            $(function () {
+                $("#JiaQianLeiXing").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/WuJiaGuanLi/TaiZhangFenXiJiaQian/JiaQianLeiXing");
+                });
+            });
+            //打印商品价签
+            $(function () {
+                $("#DaYingShangPinJiaQian").click(function () {
+                    select($(this));
+                    $("#content").attr("src", "/WuJiaGuanLi/TaiZhangFenXiJiaQian/DaYingShangPinJiaQian");
+                });
+            });
+           
+        });
+        function select(e) {
+            $('.nav-list li').removeClass('active');//移除 li标签上的active类
+            e.parents("li").addClass("active");//给选中的li标签添加active类
+        }
+    </script>
+
+    @*进销存管理*@
+    <script>
+        $(function () {
+            //Time();
+            //点击弹出进仓单
+            $("#ZiYingJingCang").click(function () {
+                $("#content").attr("src", "/ShangPinJinCang/JingCang/ZiYingJinCang");
+            });
+
+            //点击弹出进仓单冲红
+            $("#ZiYingJinCangChongHong").click(function () {
+                $("#content").attr("src", "/JinCangChongHong/JinCangChongHong/JinCangDanChongHong");
+            });
+
+            //点击无订单
+            $("#ZiYingWuDingDan").click(function () {
+                $("#content").attr("src", "/ShangPinJinCang/WuDingDan/WuDingDan");
+            });
+
+            //点击无订单冲红
+            $("#ZiYingWuDingDanChongHong").click(function () {
+                $("#content").attr("src", "/JinCangChongHong/WuDingChongHong/WuDingDanChongHong");
+            });
+
+
+            //点击联营进仓单
+            $("#LianYingJinCang").click(function () {
+                $("#content").attr("src", "/ShangPinJinCang/LianYingJinCang/LianYingJinCang");
+            });
+
+            //点击联营进仓单冲红
+            $("#LianYingChongHong").click(function () {
+                $("#content").attr("src", "/JinCangChongHong/LianYing/LianYingLogin");
+            });
+
+
+            //点击租赁进仓单
+            $("#ZuLinJinCang").click(function () {
+                $("#content").attr("src", "/ShangPinJinCang/ZuLinJingCang/ZuLinJingCang");
+            });
+
+            //点击租赁进仓单冲红
+            $("#ZuLinChongHong").click(function () {
+                $("#content").attr("src", "/JinCangChongHong/ZuLin/ZuLin");
+            });
+
+            //点击查询仓单
+            $("#SelestJingCang").click(function () {
+                $("#content").attr("src", "/ShangPinJinCang/SelectWaretF/SelectWarent");
+            });
+
+            //配货单
+            $("#PeiHuoChuLi").click(function () {
+                $("#content").attr("src", "/P_PeiHuo/PeiHuoDan/PeiHuoChuLi");
+            });
+
+            //上市单
+            $("#ShangShiDan").click(function () {
+                $("#content").attr("src", "/P_PeiHuo/GoodesShangShi/GoodesShangShi");
+            });
+            
+            //查询及管理
+            $("#gffsfg").click(function () {
+                $("#content").attr("src", "/P_PeiHuo/SelectGoodsShangShi/GoodsShangShi");
+            });
+
+            //查询及打印配货单
+            $("#SelectPeiHuo").click(function () {
+                $("#content").attr("src", "/P_PeiHuo/SelectPeiHuo/SelectPeiHuo");
+            });
+
+            //查询及打印返厂单
+            $("#SelectFanChang").click(function () {
+                $("#content").attr("src", "/P_PeiHuo/SelectFanChang/SelectFanChang");
+            });
+
+            //返厂单
+            $("#FanChangChuLi").click(function () {
+                $("#content").attr("src", "/P_PeiHuo/FanChang/FanChang");
+            });
+
+            //调拨单
+            $("#DiaoBaDan").click(function () {
+                $("#content").attr("src", "/DiaoBaDan/DiaoBaDanChuLi/DiaoBaDan");
+            });
+
+            //查询打印调拨单
+            $("#SelectDiaoBa").click(function () {
+                $("#content").attr("src", "/DiaoBaDan/SectleDiaoBas/SelectDianBa");
+            });
+
+
+            //销售单
+            $("#Sellctid").click(function () {
+                $("#content").attr("src", "/DiaoBaDan/XiaoShouChuLi/XiaoShouDan");
+            });
+
+            //查询及打印销售单
+            $("#selectSell").click(function () {
+                $("#content").attr("src", "/DiaoBaDan/SelectXiaoShou/SelectXiaoShou");
+            });
+
+
+
+            //返仓单
+            $("#FanCangDan").click(function () {
+                $("#content").attr("src", "/FanCangDan/FanCangDan/FanCang");
+            });
+
+            //查询及打印返仓单
+            $("#SelectFanCang").click(function () {
+                $("#content").attr("src", "/FanCangDan/SelectFanCang/SelectFanCangDan");
+            });
+
+            //转库单
+            $("#ZhuanKuDan").click(function () {
+                $("#content").attr("src", "/FanCangDan/ZhuanKuDan/ZhuanKu");
+            });
+
+            //查询及打印转库单
+            $("#SelectZhuanKuDan").click(function () {
+                $("#content").attr("src", "/FanCangDan/SelectChangh/Changht");
+            });
+
+            //营业员销售数据
+            $("#YingYeYuan").click(function () {
+                $("#content").attr("src", "/GoodsZhangGuanLi/XiaoShouShuJU/YingYeYuan");
+            });
+
+
+            //租赁销售查询
+            $("#ZuLiSellSelec").click(function () {
+                $("#content").attr("src", "/GoodsZhangGuanLi/TianQi/ZuLinXiaoShou");
+            });
+
+            //天气录入
+            $("#TianQi").click(function () {
+                $("#content").attr("src", "/GoodsZhangGuanLi/TianQi/Index");
+            });
+            //前台销售查询单
+            $("#QianTaiXiaoShouChaXunDan").click(function () {
+                $("#content").attr("src", "/GoodsZhangGuanLi/QianTaiXiaoShouChaXun/QianTaiXiaoShouChaXunDan");
+            });
+            //前台已审核销售单
+            $("#ChaXunShenHeGuoXinXi").click(function () {
+                $("#content").attr("src", "/GoodsZhangGuanLi/QianTaiXiaoShouChaXun/ChaXunShenHeGuoXinXi");
+            });
+
+
+            //查询商品销售批次调整单（调整单）
+            $("#ChaXunXiao").click(function () {
+                $("#content").attr("src", "/GoodsZhangGuanLi/GoodsSellTiaoZheng/TiaoZhengSellJieMian");
+            });
+            //商品销售批次调整单录入（调整单）
+            $("#XiaoShouLusRu").click(function () {
+                $("#content").attr("src", "/GoodsZhangGuanLi/GoodsSellTiaoZheng/TiaoZhengSell");
+            });
+
+            //部门经营报表
+            $("#BunMenJing").click(function () {
+                $("#content").attr("src", "/GoodsZhangGuanLi/DaYinBuMenBiao/BuMneJingYing");
+            });
+
+            //盘点计划
+            $("#panl").click(function () {
+                $("#content").attr("src", "/PanDianShuYiChuLi/PanDianPanl/Panl");
+            });
+            //录入盘点
+            $("#LuRuPanl").click(function () {
+                $("#content").attr("src", "/PanDianShuYiChuLi/GoodsWeiHu/XuanPanlShiTu");
+            });
+
+            //编辑盘点
+            $("#BianJiPanl").click(function () {
+                $("#content").attr("src", "/PanDianShuYiChuLi/BianJiPanl/XuanZePanl");
+            });
+
+
+            //设定盘点标志
+            $("#SheZhiPanlBiaoZhi").click(function () {
+                $("#content").attr("src", "/PanDianShuYiChuLi/LuRuBiaoZhi/XuanZeBaoGao");
+            });
+
+
+            //预审盘点处理
+            $("#YuShenChuLigh").click(function () {
+                $("#content").attr("src", "/PanDianShuYiChuLi/PanlYuShen/YuShenChuLi");
+            });
+
+            //审核盘点
+            $("#ShenHePanla").click(function () {
+                $("#content").attr("src", "/PanDianShuYiChuLi/PanlYuShen/ShenHePanl");
+            });
+
+            //删除盘点
+            $("#DelectPanl").click(function () {
+                $("#content").attr("src", "/PanDianShuYiChuLi/PanlYuShen/DelectShenHePanl");
+            });
+
+
+            //损益单
+            $("#SunYiDan").click(function () {
+                $("#content").attr("src", "/FanCangDan/SunYiDan/SunYin");
+            });
+
+
+            //损耗率
+            $("#SheZhiBuMenSunHaoLv").click(function () {
+                $("#content").attr("src", "/PanDianShuYiChuLi/SunHaoLv/SunHaoLv");
+            });
+
+            //盘点汇总
+            $("#PanlHuiZong").click(function () {
+                $("#content").attr("src", "/PanDianShuYiChuLi/SunHaoLv/PanlHuiZong");
+            });
+
+            //商品属性设置
+            $("#GoodsPanlSex").click(function () {
+                $("#content").attr("src", "/PanDianShuYiChuLi/SunHaoLv/GoodsPanlSex");
+            });
+
+            //查阅盘点表
+            $("#SelectPanls").click(function () {
+                $("#content").attr("src", "/PanDianShuYiChuLi/S_SelectPanl/SelectPanl");
+            });
+
+            //查询损益单
+            $("#SeleddSunYis").click(function () {
+                $("#content").attr("src", "/PanDianShuYiChuLi/S_SelectPanl/SelecSuanYi");
+            });
+
+
+            //要货单
+            $("#WantYaoHuoDan").click(function () {
+                $("#content").attr("src", "/DiaoBaDan/YaoHuoDan/WantGoods");
+            });
+            //查询要货单
+            $("#SelectWantGoods").click(function () {
+                $("#content").attr("src", "/FanCangDan/SelectChangh/YaoHuoDan");
+            });
+
+
+            //查询库存商品分批次帐
+            $("#SelectZhangGoodsGuanLi").click(function () {
+                $("#content").attr("src", "/GoodsZhangGuanLi/KuCunFenPiZhang/ZhangFenPiGuanLi");
+            });
+
+
+            //查询部门库存余额帐
+            //$("#selectKuCunYUz").click(function () {
+            //    $("#content").attr("src", "/PanDianShuYiChuLi/S_SelectPanl/SelectBuMenYuE");
+            //});
+
+
+
+            //查询供货单位库存余额帐
+            $("#SelectSuppYuE").click(function () {
+                $("#content").attr("src", "/GoodsZhangGuanLi/KuCunFenPiZhang/SelectSupptYuE");
+            });
+
+            //查询库存商品总帐
+            $("#SelectKuCunGoodsYuE").click(function () {
+                $("#content").attr("src", "/GoodsZhangGuanLi/KuCunFenPiZhang/SelectGoodsuE");
+            });
+
+
+            //综合查询库存商品
+            $("#SelectZongHeKuCun").click(function () {
+                $("#content").attr("src", "/GoodsZhangGuanLi/KuCunFenPiZhang/ZongHeSelectKuCun");
+            });
+
+            //柜台商品列表
+            $("#SelectGuiTaiGoods").click(function () {
+                $("#content").attr("src", "/GoodsZhangGuanLi/KuCunFenPiZhang/GuiTaiGoods");
+            });
+
+
+            //设置商品库存限量
+            $("#SexKuCun").click(function () {
+                $("#content").attr("src", "/GoodsZhangGuanLi/FuZhuGongNeng/SheDingKuCunXianLiang");
+            });
+
+            //删除商品零库存
+            $("#DelectLingKuCun").click(function () {
+                $("#content").attr("src", "/GoodsZhangGuanLi/FuZhuGongNeng/DeleteGoodsLing");
+            });
+
+            //录入三级帐数据
+            $("#LuRuSanJIzHANG").click(function () {
+                $("#content").attr("src", "/GoodsZhangGuanLi/FuZhuGongNeng/LuRuZhangShi");
+            });
+
+            //部门进销存
+            $("#BuMenXiaoCun").click(function () {
+                $("#content").attr("src", "/GoodsZhangGuanLi/JinXiaoCunShuJu/GoodsPiCiXiao");
+            });
+
+            //商品进销存数据
+            $("#GoodsXiaoCun").click(function () {
+                $("#content").attr("src", "/GoodsZhangGuanLi/JinXiaoCunShuJu/JinXiaoSelect");
+            });
+        });    
+    </script>
+   
+</body>
+</html>

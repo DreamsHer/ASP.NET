@@ -1,0 +1,184 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DelectShenHePanl</title>
+
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+
+
+    <style>
+        .container {
+            background: #fff;
+            width: 100%;
+        }
+
+        .reset-padding {
+            padding: 0 5px;
+        }
+
+        .reset {
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        label.Size {
+            font-size: 60px;
+        }
+
+        label {
+            font-weight: normal;
+        }
+    </style>
+
+</head>
+<body>
+
+  
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+
+                    <span class="h4">删除盘点</span>
+                    <div class="pull-right">
+                        <button class="form-control btn-xs btn btn-info" id="Colse"><span class="glyphicon glyphicon-remove">关闭</span></button>
+                    </div>
+                </div>
+                <div class="panel-body" style="background:#efeded;">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <span>数据列表</span>
+                            <div class="pull-right">
+                                <div class="form-group">
+                                    <div class="col-md-4">
+                                        <button class="btn btn-danger" type="button" id="Delects"><span class="glyphicon glyphicon-trash"></span> 删 除</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button class="btn btn-primary" type="button" id="TuiChus"><span class="glyphicon glyphicon-share-alt"></span>返回主页</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body" style="padding-left:15px;">
+                            <div class="h5">请选择下列需要删除的数据</div>
+
+                            <div style="margin:5px;padding:2px;margin-left:10px;overflow:auto;width:100%;height:340px;">
+                                <table id="ShangPin">
+                                    <tr>
+                                        <th w_num="total_line" width="5%">序号</th>
+                                        <th w_index="CheckRermeberID" w_hidden="true">盘点计划ID</th>
+                                        <th w_index="StockPlaceID" w_hidden="true">库存ID</th>
+                                        <th w_index="OrderFormPactID" w_hidden="true">合同</th>
+                                        <th w_index="GoodsClassifyID" w_hidden="true">商品分类</th>
+                                        <th w_index="GoodsChopID" w_hidden="true">商标</th>
+
+                                        <th w_index="Remember">编号</th>
+                                        <th w_index="PablData">盘点日期</th>
+                                        <th w_index="CommodityType">部门类型</th>
+                                        <th w_index="StockPlaceName">库存地点</th>
+                                        <th w_index="DrugType">部门</th>
+                                        <th w_index="EnteringTime">录入完成时间</th>
+                                        <th w_index="ExamineName">登记人</th>
+                                        <th w_index="ExamineTime">登记时间</th>
+                                        <th w_index="RegisterName">审核人</th>
+                                        <th w_index="" w_render="DeleteGoods">移 除</th>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script><!--bootstrap-->
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.2.min.js"></script><!--bootstrap-->
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script><!--bootstrap-->
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+
+
+    <script>
+        var CheckRermeberIDQuan;
+
+        $(document).ready(function () {
+            //主界面商品
+            ShangPin = $.fn.bsgrid.init('ShangPin', {
+                url: '/PanDianShuYiChuLi/PanlYuShen/SelectCheckghShen',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                pageSize: 9,
+                pageSizeSelect: false,
+                pagingLittleToolbar: true,
+                pagingToolbarAlign: "left",
+            });
+            ShangPin.search();
+          
+        });
+
+
+        //删除
+        $("#Delects").click(function () {
+            var rowIndex = ShangPin.getSelectedRowIndex();
+            CheckRermeberIDQuan = ShangPin.getColumnValue(rowIndex, "CheckRermeberID");//获取ID
+            if (CheckRermeberIDQuan > 0) {
+               
+                layer.confirm("是否删除盘点数据？", {
+                    icon: 3,
+                    btn: ['确定', '取消']
+                    //按钮
+                }, function (layerIndex) {
+                    layer.close(layerIndex);//关闭提示框
+
+                    $.post("/PanDianShuYiChuLi/PanlYuShen/DeleteWareHert", { checkRermeberIDQuan: CheckRermeberIDQuan }, function (msg) {
+                        if (msg == "success") {
+                            layer.alert("删除成功", { icon: 6, title: '温馨小提示：' });
+                            document.location.href = "/PanDianShuYiChuLi/PanlYuShen/DelectShenHePanl";
+                        }
+                        else {
+                            layer.alert("删除失败", { icon: 6, title: '温馨小提示：' });
+                        }
+                    });
+
+                });
+            }
+            else {
+                layer.alert("请选择数据", { icon: 6, title: '温馨小提示：' });
+            }
+
+        });
+
+        $("#Colse").click(function () {
+            $('body').remove();
+        });
+        
+        $("#TuiChus").click(function () {
+            $('body').remove();
+        });
+
+        function DeleteGoods(record, rowIndex, colIndex, options) {
+            return ' <button class="easyui-combotree btn-block btn btn-danger" style="width: 70px; margin-left:20px;" type="button" id="deleteGoodes' + record.CheckRermeberID + '" data-options="onChange:onConsignmentDepartmentCodeSelect;"><span class="glyphicon glyphicon-trash"></span> 移 除</button>';
+
+        }
+
+    </script>
+
+</body>
+</html>

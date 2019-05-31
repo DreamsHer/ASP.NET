@@ -1,0 +1,1632 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>代销合同处理</title>
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        label {
+            font-size: 16px;
+            font-weight: normal;
+            /*font-family: '华文新魏';*/
+        }
+
+        .resr {
+            margin-left: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="row" style="display:block;width:100%;border:none;height:850px;">
+        <div class="panel panel-primary">
+
+            <div class="panel-heading">
+                <div class="form-group">
+                    <span class="h4">代销合同处理（续签合同）</span>
+                    <div class="pull-right">
+                        <button class="form-control btn-sm btn btn-info" id="Colse"><span class="glyphicon glyphicon-remove">关闭</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-body" style="background:#f0edf1;">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <div class="col-md-5">
+                                <label class="control-label" style="margin-top:5px;">合同号</label>
+                            </div>
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" id="ContractNumber" name="ContractNumber">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <div class="col-md-5">
+                                <label class="control-label" style="margin-top:5px;">手工合同号</label>
+                            </div>
+                            <div class="col-md-7">
+                                <input type="email" class="form-control" id="HostContractNumber" name="HostContractNumber">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table" style="margin-top:10px;">
+                    <ul class="nav nav-tabs tab-color-blue background-blue" id="myTab4">
+                        <li class="active">
+                            <a id="tbnavA" href="#tpA" data-toggle="tab" aria-expanded="true">A合同基本信息</a>
+                        </li>
+                        <li class="">
+                            <a id="tbnavB" href="#tpB" data-toggle="tab" aria-expanded="false">B合同详细内容</a>
+                        </li>
+                        <li class="">
+                            <a id="tbnavC" href="#tpC" data-toggle="tab" aria-expanded="false">C结算扣款</a>
+                        </li>
+                        <li class="">
+                            <a id="tbnavD" href="#tpD" data-toggle="tab" aria-expanded="false">D供需单位信息</a>
+                        </li>
+                        <li class="">
+                            <a id="tbnavE" href="#tpE" data-toggle="tab" aria-expanded="false">E其他信息</a>
+                        </li>
+                        <li class="">
+                            <a id="tbnavF" href="#tpF" data-toggle="tab" aria-expanded="false">F折扣分摊</a>
+                        </li>
+                        <li class="">
+                            <a id="tbnavG" href="#tpG" data-toggle="tab" aria-expanded="false">G设置订货部门</a>
+                        </li>
+                        <li class="">
+                            <a id="tbnavH" href="#tpH" data-toggle="tab" aria-expanded="false">H进退费用</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content  padding-0" id="InEmployeeForm">
+                        <div class="tab-pane active" id="tpA">
+
+                            <div id="chartA" style="width: 100%;float: left;">
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 reset-padding" style="height:90px; margin:0;padding:0;">
+                                    <div class="panel-default" style="height:100%; margin:0;">
+                                        <div class="row" style="margin-top:8px;">
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <div class="col-md-4">
+                                                        <button type="button" class="btn btn-block" style="background:#d1cccc;" id="CaiGouBuMenAnNiu">采购部门</button>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <input type="text" class="form-control" id="SpouseBRanchID" name="SpouseBRanchID" placeholder="请点击按钮。。。">
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <input type="text" class="form-control" id="SpouseBRanchName" name="SpouseBRanchName">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <div class="col-md-4">
+                                                        <button class="btn btn-block" id="btnInsert2" name="SupplierName">合同员</button>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <input type="text" class="form-control" id="SupplierCHName" name="SupplierCHName" placeholder="可不填">
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <input type="text" class="form-control" id="AgreementRen1" name="AgreementRen1" placeholder="可不填">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row" style="margin-top:8px;">
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <div class="col-md-4">
+                                                        <button type="button" class="btn btn-block" id="GongHuoShangAnNiu">供货单位</button>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <input type="text" class="form-control" id="SupplierID" name="SupplierID" placeholder="请点击按钮。。。">
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <input type="text" class="form-control" id="AgreementTypeName" name="AgreementTypeName">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <div class="col-md-4">
+                                                        <button type="button" class="btn btn-block" id="ShangBiaoAnNiu">采购员</button>
+
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <input type="text" class="form-control" id="OrderFormPactID" name="OrderFormPactID">
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <input type="text" class="form-control" id="PurchasingAgent" name="PurchasingAgent">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 reset-padding" style="height:130px; margin:0;padding:0;border: 3px solid #d8cddc;">
+                                    <div class="panel-default" style="height:100%; margin:0;">
+                                        <div class="row" style="margin-top:8px;">
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <div class="col-md-5">
+                                                        <label class="control-label">合同有效期（起）</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="date" class="form-control" name="ReleaseTimeStrr" id="ReleaseTimeStrr">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <div class="col-md-5">
+                                                        <label class="control-label">签订地点</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="text" class="form-control" id="ConclusionSite" name="ConclusionSite">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <div class="col-md-4">
+                                                        <input type="checkbox" value="" />预付贷款
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <input type="checkbox" value="" />账期付款
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <input type="checkbox" value="" />月账期付款
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row" style="margin-top:8px;">
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <div class="col-md-5">
+                                                        <label class="control-label">合同有效期（止）</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="date" class="form-control" name="ReleaseTimeStrrr" id="ReleaseTimeStrrr">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <div class="col-md-5">
+                                                        <label class="control-label">签订时间</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="date" class="form-control" id="ReleaseTimeStr" name="ReleaseTimeStr">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <div class="col-md-5">
+                                                        <label class="control-label">账期付款天数</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="text" class="form-control" id="TryPaymentData" name="TryPaymentData" placeholder="请您输入天数"onmouseout="funOnmouseout()">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 reset-padding" style="margin:0;padding:0;">
+                                    <div class="panel-default" style="height:100%; margin:0;">
+                                        <div class="row" style="margin-top:8px;">
+
+                                            <div class="col-lg-4">
+                                                <div class="row" style="margin-left:20px;">
+                                                    <div class="form-group">
+                                                        <div class="col-md-4">
+                                                            <button class="btn" onclick="SetInsert()"><i class="glyphicon glyphicon-file"></i>添加商品品牌</button>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <button class="btn" id="btnDelete"><i class="glyphicon glyphicon-file"></i>删除商品品牌</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="border: 3px solid #d8cddc;margin-left:20px;">
+                                                    <div class="row" style="margin-left:2px;margin-right:1px;overflow:auto;">
+                                                        <table id="tbGoodsBrand" class="table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th w_num="total_line" width="10%">序号</th>
+                                                                    <th w_index="GoodsBrandID" class="">代码</th>
+                                                                    <th w_index="GoodsBrandName">品牌名称</th>
+                                                                    <th w_index="GoodsBrandZhuPinPai">主品牌</th>
+                                                                </tr>
+                                                            </thead>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-lg-4">
+                                                <div class="row">
+                                                    <div class="form-group">
+                                                        <div class="col-md-4">
+                                                            <button class="btn " id="btnInsert1"><i class="glyphicon glyphicon-file"></i>商品分类</button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="border: 3px solid #d8cddc;">
+                                                    <div class="row" style="margin-left:2px;margin-right:1px;overflow:auto;">
+                                                        <table id="tabGoodsGenre" class="table">
+                                                            <tr>
+                                                                <th w_index="GoodsGenreID" class="">代码</th>
+                                                                <th w_index="GoodsGenreName">分类名称</th>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-4">
+                                                <div class="row">
+                                                    <div class="col-md-5">
+                                                        <label class="control-label resr">试销期天数</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="text" class="form-control" id="TryPaymentShiXiaoData" name="TryPaymentShiXiaoData" placeholder="请您输入天数"onmouseout="funOnmouseouts()">
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="margin-top:8px;">
+                                                    <div class="col-md-5">
+                                                        <label class="control-label resr">进场日期：</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="date" class="form-control" name="ReleaseTimejinchangtime" id="ReleaseTimejinchangtime">
+                                                    </div>
+                                                </div>
+
+                                                <div class="row" style="margin-top:8px;">
+                                                    <div class="col-md-5">
+                                                        <label class="control-label resr">退场日期：</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="date" class="form-control" name="ReleaseTimetuichangchangtime" id="ReleaseTimetuichangchangtime">
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="margin-top:8px;">
+                                                    <div class="col-md-5">
+                                                        <label class="control-label resr">票期天数：</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="date" class="form-control" name="ReleaseTimepiaoqitime" id="ReleaseTimepiaoqitime">
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="margin-top:8px;">
+                                                    <div class="col-md-5">
+                                                        <label class="control-label resr">账期天数：</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="date" class="form-control" name="ReleaseTimezhangqitime" id="ReleaseTimezhangqitime">
+                                                    </div>
+                                                </div>
+
+                                                <div class="row" style="margin-top:8px;">
+
+                                                    <div class="col-md-5">
+                                                        <button type="button" class="btn btn-block" id="JingLiAnNiu">经 理</button>
+                                                    </div>
+
+                                                    <div class="col-md-7">
+                                                        <input type="email" class="form-control" id="AgreementManagerName" name="AgreementManagerName" placeholder="请点击按钮。。。">
+                                                        <input type="text" class="hidden" id="AgreementManagerID" name="AgreementManagerID" />
+                                                    </div>
+
+                                                </div>
+
+
+                                                <div class="row" style="margin-top:8px;">
+                                                    <div class="col-md-5">
+                                                        <label class="control-label resr">高级经理：</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="email" class="form-control" id="AgreementManagerGaoJi" name="AgreementManagerGaoJi">
+                                                    </div>
+                                                </div>
+
+                                                <div class="row" style="margin-top:8px;">
+                                                    <div class="col-md-5">
+                                                        <label class="control-label resr">总 经 理：</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="email" class="form-control" id="AgreementManagerZong" name="AgreementManagerZong">
+                                                    </div>
+                                                </div>
+
+                                                <div class="row" style="margin-top:8px;">
+                                                    <div class="col-md-5">
+                                                        <label class="control-label resr">当前状态：</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="email" class="form-control" id="AgreementState" name="AgreementState">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                @*<div class="col-lg-12 col-md-12 col-sm-12 reset-padding" style="margin:0;padding:0;">
+                                        <div class="panel-default" style="height:100%; margin:0;">
+                                            <div class="row" style="margin-top:8px;">
+
+                                                <div class="col-lg-4">
+                                                    <div class="row" style="margin-left:20px;">
+                                                        <div class="form-group">
+                                                            <div class="col-md-4">
+                                                                <button class="btn" onclick="SetInsert()"><i class="glyphicon glyphicon-file"></i>添加商品品牌</button>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <button class="btn" id="btnDelete"><i class="glyphicon glyphicon-file"></i>删除商品品牌</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" style="border: 3px solid #d8cddc;margin-left:10px;height:280px">
+                                                        <div class="row" >
+                                                            <table id="tbGoodsBrand" class="bsgrid" >
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th w_index="GoodsBrandID" class="">代码</th>
+                                                                        <th w_index="GoodsBrandName">品牌名称</th>
+                                                                        <th w_index="GoodsBrandZhuPinPai">主品牌</th>
+                                                                    </tr>
+                                                                </thead>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-lg-3">
+                                                    <div class="row">
+                                                        <div class="form-group">
+                                                            <div class="col-md-4">
+                                                                <button class="btn " id="btnInsert1"><i class="glyphicon glyphicon-file"></i>商品分类</button>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" style="border: 3px solid #d8cddc;">
+                                                        <div class="row" style="margin-left:2px;margin-right:1px;overflow:auto;">
+                                                            <table id="tabGoodsGenre" class="table">
+                                                                <tr>
+                                                                    <th w_index="GoodsGenreID" class="">代码</th>
+                                                                    <th w_index="GoodsGenreName">分类名称</th>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-4" style="margin-left:18px;">
+                                                    <div class="row">
+                                                        <div class="col-md-5">
+                                                            <label class="control-label resr">试销期天数</label>
+                                                        </div>
+                                                        <div class="col-md-7">
+                                                            <input type="text" class="form-control" id="TryPaymentShiXiaoData" name="TryPaymentShiXiaoData">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" style="margin-top:8px;">
+                                                        <div class="col-md-5">
+                                                            <label class="control-label resr">进场日期：</label>
+                                                        </div>
+                                                        <div class="col-md-7">
+                                                            <input type="date" class="form-control" name="ReleaseTimejinchangtime" id="ReleaseTimejinchangtime">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row" style="margin-top:8px;">
+                                                        <div class="col-md-5">
+                                                            <label class="control-label resr">退场日期：</label>
+                                                        </div>
+                                                        <div class="col-md-7">
+                                                            <input type="date" class="form-control" name="ReleaseTimetuichangchangtime" id="ReleaseTimetuichangchangtime">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" style="margin-top:8px;">
+                                                        <div class="col-md-5">
+                                                            <label class="control-label resr">票期天数：</label>
+                                                        </div>
+                                                        <div class="col-md-7">
+                                                            <input type="date" class="form-control" name="ReleaseTimepiaoqitime" id="ReleaseTimepiaoqitime">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" style="margin-top:8px;">
+                                                        <div class="col-md-5">
+                                                            <label class="control-label resr">账期天数：</label>
+                                                        </div>
+                                                        <div class="col-md-7">
+                                                            <input type="date" class="form-control" name="ReleaseTimezhangqitime" id="ReleaseTimezhangqitime">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row" style="margin-top:8px;">
+
+                                                        <div class="col-md-5">
+                                                            <button type="button" class="btn btn-block" id="JingLiAnNiu">经 理</button>
+                                                        </div>
+
+                                                        <div class="col-md-7">
+                                                            <input type="email" class="form-control" id="AgreementManagerName" name="AgreementManagerName" placeholder="请点击按钮。。。">
+                                                            <input type="text" class="hidden" id="AgreementManagerID" name="AgreementManagerID" />
+                                                        </div>
+
+                                                    </div>
+
+
+                                                    <div class="row" style="margin-top:8px;">
+                                                        <div class="col-md-5">
+                                                            <label class="control-label resr">高级经理：</label>
+                                                        </div>
+                                                        <div class="col-md-7">
+                                                            <input type="email" class="form-control" id="AgreementManagerGaoJi" name="AgreementManagerGaoJi">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row" style="margin-top:8px;">
+                                                        <div class="col-md-5">
+                                                            <label class="control-label resr">总 经 理：</label>
+                                                        </div>
+                                                        <div class="col-md-7">
+                                                            <input type="email" class="form-control" id="AgreementManagerZong" name="AgreementManagerZong">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row" style="margin-top:8px;">
+                                                        <div class="col-md-5">
+                                                            <label class="control-label resr">当前状态：</label>
+                                                        </div>
+                                                        <div class="col-md-7">
+                                                            <input type="email" class="form-control" id="AgreementState" name="AgreementState">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>*@
+                                <div class="col-lg-12 col-md-12 col-sm-12 reset-padding" style="height:100px; margin:0;padding:0;border: 3px solid #d8cddc;margin-top:10px;">
+                                    <div class="panel-default" style="height:100%; margin:0;">
+                                        <label class="control-label resr">计划启动人信息：</label>
+
+
+                                        <div class="row" style="margin-top:8px;">
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <div class="col-md-5">
+                                                        <label class="control-label resr">计划启动日期</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="date" class="form-control" id="RegistrantPlanFiringData" name="RegistrantPlanFiringData">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <div class="col-md-5">
+                                                        <label class="control-label resr">启&nbsp;&nbsp;动&nbsp;&nbsp;人</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="text" class="form-control" id="AgreementRen" name="AgreementRen">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <div class="col-md-5">
+                                                        <label class="control-label resr">启动时间</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="date" class="form-control" id="RegistrantFiringdata" name="RegistrantFiringdata">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 reset-padding" style="height:130px; margin:0;padding:0;border: 3px solid #d8cddc;margin-top:10px;">
+                                    <div class="panel-default" style="height:100%; margin:0;">
+                                        <label class="control-label resr">制单人信息：</label>
+                                        <div class="row" style="margin-top:8px;">
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <div class="col-md-5">
+                                                        <label class="control-label resr">登 记 人</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="text" class="form-control" id="Registrant" name="Registrant" placeholder="必填项。。。">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <div class="col-md-5">
+                                                        <label class="control-label resr">审 核 人</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="email" class="form-control" id="Auditor" name="Auditor" placeholder="必填项。。。">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <div class="col-md-5">
+                                                        <label class="control-label resr">注 销 人</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="email" class="form-control" id="Executor" name="Executor" placeholder="必填项。。。">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row" style="margin-top:8px;">
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <div class="col-md-5">
+                                                        <label class="control-label resr">登记时间</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="date" class="form-control" id="Registranttimea" name="Registranttimea">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <div class="col-md-5">
+                                                        <label class="control-label resr">审核时间</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="date" class="form-control" id="RegistrantAuditortime" name="RegistrantAuditortime">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="form-group">
+                                                    <div class="col-md-5">
+                                                        <label class="control-label resr">注销时间</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="date" class="form-control" id="RegistrantExecutortime" name="RegistrantExecutortime">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="form-group">
+
+                                        <div class="col-sm-1 col-lg-offset-3">
+                                            <button class="form-control btn-block btn btn-danger" type="button" id="btnXuanZeShenHe"><span class="glyphicon glyphicon-search">查询</span></button>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <button class="form-control btn-block btn btn-primary" type="button" id="Insert"><span class="glyphicon glyphicon-download-alt">保存</span></button>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <button class="form-control btn-block btn btn-primary" type="button" id="btnBaoCunXiuGai"><span class="glyphicon glyphicon-download-alt">修改</span></button>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <button class="form-control btn-block btn btn-primary" type="button" id="FangQiBtn"><span class="glyphicon glyphicon-remove">放弃</span></button>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <button class="form-control btn-block btn btn-success" type="button" id="ShenHeBtn" onclick="saveShenHeBtn(true)"><span class="glyphicon glyphicon-ok">审核</span></button>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <button class="form-control btn-block btn btn-primary" type="button" id="DaYinBtn">状态变动</button>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <button class="form-control btn-block btn btn-info" type="button" id="SelOutBtn"><span class="glyphicon glyphicon-off">退出</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    @*新增/修改学院基础信息 模态窗体*@
+                                    <div class="modal bs-example-modal-sm" id="modBaseInfor">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                    <h4 class="modal-title" id="XinZeng"><span class="glyphicon glyphicon-th-list"></span>新增品牌</h4>
+                                                    <h4 class="modal-title" id="XiuGai"><span class="glyphicon glyphicon-th-list"></span>修改 </h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="form-group">
+                                                        <label class="control-label">品牌名称</label>
+                                                        <input id="TJAcademeName" type="text" class="form-control" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label">主品牌</label>
+                                                        <input id="TJAcademeCode" type="text" class="form-control" />
+                                                    </div>
+                                                    <div class="form-group btn-group">
+                                                        <button id="BtnAdd" type="button" class="btn btn-primary" style="display:block" onclick="doAdd()">保存</button>
+                                                        <button id="BtnEdit" type="button" class="btn btn-warning" style="display:none" onclick="doEdit()">修改</button>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="ShangBiaoLaiYuan">
+                            <div class="modal-dialog">
+                                <div class="modal-content" style="width:600px;height:250px;">
+                                    <div class="modal-header" style="background:#a8d7ef;">
+                                        <span>采购员名单</span>
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                    </div>
+                                    <div class="modal-body" style="background:#eddddd;">
+                                        <div class="" style="width:100%;height:300px; background:#f0edf1;">
+                                            <div class="row" style="width:100%;height:240px;overflow:auto;margin-left:2px;">
+                                                <table id="tabShangBiaoXinXi" style="margin-top:2px;width:100%;" class="table">
+                                                    <tr>
+                                                        <th w_num="total_line">序号</th>
+                                                        <th w_index="OrderFormPactID" w_hidden="true">GoodsChopID</th>
+                                                        <th w_index="PurchasingAgent">采购员</th>
+
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <form class="form-horizontal" role="form">
+                                                <div class="form-group" style="margin-top:20px;">
+                                                    <div class="col-sm-3 col-sm-offset-4">
+                                                        <button type="button" class="btn btn-success form-control" id="PinPaiXuanZe">
+                                                            请选择员工
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="ShangBiaoLaiYuan5">
+                            <div class="modal-dialog">
+                                <div class="modal-content" style="width:600px;height:250px;">
+                                    <div class="modal-header" style="background:#a8d7ef;">
+                                        <span>供货单位</span>
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                    </div>
+                                    <div class="modal-body" style="background:#eddddd;">
+                                        <div class="" style="width:100%;height:300px; background:#f0edf1;">
+                                            <div class="row" style="width:100%;height:240px;overflow:auto;margin-left:2px;">
+                                                <table id="tabShangBiaoXinXi5" style="margin-top:2px;width:100%;" class="table">
+                                                    <tr>
+
+                                                        <th w_index="SupplierID">供货商代码</th>
+                                                        <th w_index="AgreementTypeName">合同类型</th>
+
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <form class="form-horizontal" role="form">
+                                                <div class="form-group" style="margin-top:20px;">
+                                                    <div class="col-sm-3 col-sm-offset-4">
+                                                        <button type="button" class="btn btn-success form-control" id="PinPaiXuanZe2">
+                                                            请选择员工
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="ShangBiaoLaiYuan3">
+                            <div class="modal-dialog">
+                                <div class="modal-content" style="width:600px;height:250px;">
+                                    <div class="modal-header" style="background:#a8d7ef;">
+                                        <span>采购部门</span>
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                    </div>
+                                    <div class="modal-body" style="background:#eddddd;">
+                                        <div class="" style="width:100%;height:300px; background:#f0edf1;">
+                                            <div class="row" style="width:100%;height:240px;overflow:auto;margin-left:2px;">
+                                                <table id="tabShangBiaoXinXi3" style="margin-top:2px;width:100%;" class="table">
+                                                    <tr>
+                                                        <th w_num="total_line">序号</th>
+                                                        <th w_index="SpouseBRanchID">采购部门</th>
+                                                        <th w_index="SpouseBRanchName">采购部门名称</th>
+
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <form class="form-horizontal" role="form">
+                                                <div class="form-group" style="margin-top:20px;">
+                                                    <div class="col-sm-3 col-sm-offset-4">
+                                                        <button type="button" class="btn btn-success form-control" id="PinPaiXuanZe3">
+                                                            请选择员工
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="ShangBiaoLaiYuan4">
+                            <div class="modal-dialog">
+                                <div class="modal-content" style="width:600px;height:250px;">
+                                    <div class="modal-header" style="background:#a8d7ef;">
+                                        <span>经理信息表</span>
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                    </div>
+                                    <div class="modal-body" style="background:#eddddd;">
+                                        <div class="" style="width:100%;height:300px; background:#f0edf1;">
+                                            <div class="row" style="width:100%;height:240px;overflow:auto;margin-left:2px;">
+                                                <table id="tabShangBiaoXinXi4" style="margin-top:2px;width:100%;" class="table">
+                                                    <tr>
+
+                                                        <th w_index="AgreementManagerID">经理编码</th>
+                                                        <th w_index="AgreementManagerGaoJi">高级经理</th>
+                                                        <th w_index="AgreementManagerName">经理</th>
+                                                        <th w_index="AgreementManagerZong">总经理</th>
+
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <form class="form-horizontal" role="form">
+                                                <div class="form-group" style="margin-top:20px;">
+                                                    <div class="col-sm-3 col-sm-offset-4">
+                                                        <button type="button" class="btn btn-success form-control" id="PinPaiXuanZe4">
+                                                            请选择员工
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="tab-pane" id="tpB">
+                            <div class="col-md-12">
+                                <div id="chartB" style="width: 100%; height: 500px; float: left;">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tpC">
+                            <div class="col-md-12">
+                                <div id="chartC" style="width: 100%; height: 500px; float: left;">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tpD">
+                            <div class="col-md-12">
+                                <div id="chartD" style="width: 100%; height: 500px; float: left;">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tpE">
+                            <div class="col-md-12">
+                                <div id="chartE" style="width: 100%; height: 500px; float: left;">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tpF">
+                            <div id="chartF" style="width: 100%; height: 500px; float: left;">
+
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="tpG">
+                            <div id="chartG" style="width: 100%; height: 313px; float: left;">
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--查询合同-->
+
+
+
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="ShangBiaoLaiYuan1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background:#74a4e8;">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">合同详细信息窗口</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row table-responsive" style="overflow:auto;height:500px;">
+                        <table id="tabShangBiaoXinXi1" style="width:2900px;" class="table">
+                            <tr>
+                                <th w_num="total_line">序号</th>
+                                <th w_index="OrderFormPactID" w_hidden="true">OrderFormPactID</th>
+                                <th w_index="SpouseBRanchID" w_hidden="true">SpouseBRanchID</th>
+                                <th w_index="ContractNumber">合同号</th>
+
+                                <th w_index="SpouseBRanchName">采购部门</th>
+                                <th w_index="SupplierID" w_hidden="true"></th>
+                                <th w_index="AgreementTypeID" w_hidden="true"></th>
+                                <th w_index="AgreementTypeName">供货单位</th>
+                                <th w_index="ReleaseTimeStrr">合同有效期（起）</th>
+                                <th w_index="ReleaseTimeStrrr">合同有效期（止）</th>
+                                <th w_index="ReleaseTimejinchangtime">进场日期</th>
+                                <th w_index="ReleaseTimetuichangchangtime">退场日期</th>
+                                <th w_index="MethodOfSettlingAccountsID" w_hidden="true"></th>
+                                <th w_index="MethodOfSettlingAccounts">结算方式</th>
+                                <th w_index="ReleaseTimepiaoqitime">票期天数</th>
+                                <th w_index="ReleaseTimezhangqitime">账期天数</th>
+                                <th w_index="AgreementManagerID" w_hidden="true"></th>
+                                <th w_index="AgreementManagerName">经理</th>
+                                <th w_index="AgreementManagerZong">总经理</th>
+                                <th w_index="AgreementManagerGaoJi">高级经理</th>
+                                <th w_index="AgreementStatusID" w_hidden="true"></th>
+                                <th w_index="AgreementState">当前状态</th>
+                                <th w_index="PurchasingAgent">采购员</th>
+                                <th w_index="ConclusionSite">签订地点</th>
+                                <th w_index="ReleaseTimeStr">签订时间</th>
+                                <th w_index="TryPaymentData">账期付款天数</th>
+                                <th w_index="TryPaymentShiXiaoData">试销期天数</th>
+                                <th w_index="GoodsID" w_hidden="true"></th>
+                                <th w_index="Registrant">登记人</th>
+                                <th w_index="Auditor">审核人</th>
+                                <th w_index="Executor">注销人</th>
+                                <th w_index="Registranttimea">登记时间</th>
+                                <th w_index="RegistrantAuditortime">审核时间</th>
+                                <th w_index="RegistrantExecutortime">注销时间</th>
+                                <th w_render="bsgridSetSate">状态</th>
+                                <th w_index="UseOf" w_hidden="true">状态</th>
+
+                                <th w_index="RegistrantPlanFiringData">计划启动日期</th>
+                                <th w_index="RegistrantFiringdata">启动时间</th>
+                                <th w_index="AgreementRen">启动人</th>
+
+                            </tr>
+                        </table>
+
+                    </div>
+
+                    <div class="row" style="margin-top:10px;">
+                        <div class="form-group">
+                            <div class="col-md-2 col-lg-offset-3">
+                                <button class="form-control btn btn-primary" type="button" id="PinPaiXuanZe1" onclick="openUpdateTitle()">选 择</button>
+                            </div>
+                            <div class="col-md-2">
+                                <button class="form-control btn btn-success" type="button" id="enable" onclick="saveTitleState(true)">审 核</button>
+                            </div>
+                            <div class="col-md-2">
+                                <button class="form-control btn btn-warning" type="button" id="toVoid" onclick="saveTitleState(false)">取消审核</button>
+                            </div>
+                            <div class="col-md-2">
+                                <button class="form-control btn btn-danger" type="button" id="btnShangChu">删 除</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.2.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <script src="~/Content/js/jquery.form.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script type="text/javascript">
+        var empyloyeeId = 0;
+        var goodsID = 0;
+        var tabShangBiaoXinXi1;
+        function funOnmouseout() {
+            var x = document.getElementById("TryPaymentData").value;
+            if (x == "" || x >= 367 || x <= -1) {
+                alert("请您输入的天数不能小于0或不设置天数，或者大于366天")
+            }
+
+        }
+        function funOnmouseouts() {
+            var x = document.getElementById("TryPaymentShiXiaoData").value;
+            if (x == "" || x >= 367 || x <= -1) {
+                alert("试销天数不能小于0或不设置天数，或者大于366天")
+            }
+        }
+        $(document).ready(function () {
+
+            tbGoodsBrand = $.fn.bsgrid.init('tbGoodsBrand', {
+                url: '/OrderFormPactment/OrderFormPact/selectGoodsBrandList',
+                autoLoad: false,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                pageSize: 5,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置
+                displayPagingToolbarOnlyMultiPages: true, //仅当多页时才显示分页工具条
+            });
+            tbGoodsBrand.search();
+            tabGoodsGenre = $.fn.bsgrid.init('tabGoodsGenre', {
+                url: '/OrderFormPactment/OrderFormPact/selectGoodsGenre',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                pageSize: 5,
+                pageSizeSelect: false,
+                pagingLittleToolbar: true,
+                pagingToolbarAlign: "left",
+            });
+            tabGoodsGenre.search();
+        });
+        //设置状态
+        function bsgridSetSate(record, rowIndex, colIndex, options) {
+            var UseOf = tabShangBiaoXinXi1.getRecordIndexValue(record, "UseOf");
+            UseOf = record.UseOf;
+            if (UseOf == true || UseOf == "true") {
+                return '<span style="color:cornflowerblue">已审核</span>';
+            } else {
+                return '<span style="color:red">未审核</span>';
+            }
+        }
+        //修改审核状态
+        function saveTitleState(state) {
+            var rowIndex = tabShangBiaoXinXi1.getSelectedRowIndex();
+            if (rowIndex > -1) {
+                var titleId = tabShangBiaoXinXi1.getColumnValue(rowIndex, "OrderFormPactID");
+                var oldState = tabShangBiaoXinXi1.getColumnValue(rowIndex, "UseOf");
+                if (oldState == state.toString() && state == false) {
+                    layer.msg("该合同已经审核，无需重复操作", { icon: 0, skin: "layui-layer-molv" });
+                }
+                else if (oldState == state.toString() && state == false) {
+                    layer.msg("该合同未审核，无需重复操作", { icon: 0, skin: "layui-layer-molv" });
+                } else {
+                    $.getJSON("/OrderFormPactment/OrderFormPact/UpdateTitleState",
+                        { titleId: titleId, state: state },
+                        function (message) {
+                            if (message.State == true || message.State == "true") {
+                                tabShangBiaoXinXi1.refreshPage();
+                            }
+                        });
+                }
+            } else {
+                layer.msg("请选择需要操作的题目", { icon: 0, skin: "layui-layer-molv" });
+            }
+        }
+
+        $(function () {
+            $.getJSON("/OrderFormPactment/OrderFormPact/HeTongDaiXiao", function (data) {
+                $("#ContractNumber").val(data);
+
+                //采购员
+                $("#ShangBiaoAnNiu").click(function () {
+                    tabShangBiaoXinXi = $.fn.bsgrid.init('tabShangBiaoXinXi', {
+                        url: '/OrderFormPactment/OrderFormPact/selectOrderFormPactList',
+                        autoLoad: false,
+                        stripeRows: true,//隔行变色
+                        rowHoverColor: true,//划过行变色
+                        pageSize: 8,
+                        pageSizeSelect: false,//是否选择分页页数下拉框
+                        pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                        pagingToolbarAlign: "left",//分页工具条的显示位置
+                        displayPagingToolbarOnlyMultiPages: true,//仅当多页时才显示分页工具条
+
+                    });
+                    tabShangBiaoXinXi.refreshPage();
+                    $("#ShangBiaoLaiYuan").modal('show');
+                });
+                ///供货商单位
+                $("#GongHuoShangAnNiu").click(function () {
+                    tabShangBiaoXinXi5 = $.fn.bsgrid.init('tabShangBiaoXinXi5', {
+                        url: '/OrderFormPactment/OrderFormPact/selectOrderFormPactList1',
+                        autoLoad: false,
+                        stripeRows: true,//隔行变色
+                        rowHoverColor: true,//划过行变色
+                        pageSize: 8,
+                        pageSizeSelect: false,//是否选择分页页数下拉框
+                        pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                        pagingToolbarAlign: "left",//分页工具条的显示位置
+                        displayPagingToolbarOnlyMultiPages: true,//仅当多页时才显示分页工具条
+
+                    });
+                    tabShangBiaoXinXi5.refreshPage();
+                    $("#ShangBiaoLaiYuan5").modal('show');
+                });
+                ///采购部门
+                $("#CaiGouBuMenAnNiu").click(function () {
+                    tabShangBiaoXinXi3 = $.fn.bsgrid.init('tabShangBiaoXinXi3', {
+                        url: '/OrderFormPactment/OrderFormPact/selectOrderFormPactList2',
+                        autoLoad: false,
+                        stripeRows: true,//隔行变色
+                        rowHoverColor: true,//划过行变色
+                        pageSize: 8,
+                        pageSizeSelect: false,//是否选择分页页数下拉框
+                        pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                        pagingToolbarAlign: "left",//分页工具条的显示位置
+                        displayPagingToolbarOnlyMultiPages: true,//仅当多页时才显示分页工具条
+
+                    });
+                    tabShangBiaoXinXi3.refreshPage();
+                    $("#ShangBiaoLaiYuan3").modal('show');
+                });
+                ///经理
+                $("#JingLiAnNiu").click(function () {
+                    tabShangBiaoXinXi4 = $.fn.bsgrid.init('tabShangBiaoXinXi4', {
+                        url: '/OrderFormPactment/OrderFormPact/selectOrderFormPactList3',
+                        autoLoad: false,
+                        stripeRows: true,//隔行变色
+                        rowHoverColor: true,//划过行变色
+                        pageSize: 8,
+                        pageSizeSelect: false,//是否选择分页页数下拉框
+                        pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                        pagingToolbarAlign: "left",//分页工具条的显示位置
+                        displayPagingToolbarOnlyMultiPages: true,//仅当多页时才显示分页工具条
+
+                    });
+                    tabShangBiaoXinXi4.refreshPage();
+                    $("#ShangBiaoLaiYuan4").modal('show');
+                });
+
+                ///查询经销合同数据
+                $("#btnXuanZeShenHe").click(function () {
+                    tabShangBiaoXinXi1 = $.fn.bsgrid.init('tabShangBiaoXinXi1', {
+                        url: '/OrderFormPactment/OrderFormPact/SelectXiuGaiShenHeFou1',
+                        autoLoad: false,
+                        stripeRows: true,//隔行变色
+                        rowHoverColor: true,//划过行变色
+                        rowSelectedColor: true,//是否显示选中行背景色
+                        pageSize: 10,
+                        pageSizeSelect: false,//是否选择分页页数下拉框
+                        pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                        pagingToolbarAlign: "left"//分页工具条的显示位置
+
+                    });
+                    tabShangBiaoXinXi1.refreshPage();
+                    $("#ShangBiaoLaiYuan1").modal('show');
+                });
+
+            });
+            $("#PinPaiXuanZe").click(function () {
+                var rowIndex = tabShangBiaoXinXi.getSelectedRowIndex();
+                if (rowIndex > -1) {
+                    var goodsChopID = tabShangBiaoXinXi.getColumnValue(rowIndex, "OrderFormPactID");
+
+                    $.getJSON("/OrderFormPactment/OrderFormPact/HuoQuShangBiaoMingCheng?OrderFormPactId=" + goodsChopID, function (data) {
+                        if (data == "失败") {
+                            layer.alert('你没有选择信息！', { icon: 2, title: '提示' });
+                        }
+                        else {
+                            $("#OrderFormPactID").val(data.OrderFormPactID);//隐藏域
+                            $("#PurchasingAgent").val(data.PurchasingAgent);
+                        }
+                        $("#ShangBiaoLaiYuan").modal('hide'); //选择后自动关闭
+                    });
+                }
+                else {
+                    layer.alert('你没有选择信息！', { icon: 2, title: '提示' });
+                }
+            });
+            ///选择当前行数据绑定text
+            $("#PinPaiXuanZe2").click(function () {
+                var rowIndex = tabShangBiaoXinXi5.getSelectedRowIndex();
+                if (rowIndex > -1) {
+                    var goodsChopID = tabShangBiaoXinXi5.getColumnValue(rowIndex, "SupplierID");
+
+                    $.getJSON("/OrderFormPactment/OrderFormPact/HuoQuShangBiaoMingCheng1?SupplierId=" + goodsChopID, function (data) {
+                        if (data == "失败") {
+                            layer.alert('你没有选择信息！', { icon: 2, title: '提示' });
+                        }
+                        else {
+                            $("#SupplierID").val(data.SupplierID);//隐藏域
+                            $("#AgreementTypeName").val(data.AgreementTypeName);
+                        }
+                        $("#ShangBiaoLaiYuan5").modal('hide'); //选择后自动关闭
+                    });
+                }
+                else {
+                    layer.alert('你没有选择信息！', { icon: 2, title: '提示' });
+                }
+            });
+            ///选择当前行数据绑定text
+            $("#PinPaiXuanZe3").click(function () {
+                var rowIndex = tabShangBiaoXinXi3.getSelectedRowIndex();
+                if (rowIndex > -1) {
+                    var goodsChopID = tabShangBiaoXinXi3.getColumnValue(rowIndex, "SpouseBRanchID");
+
+                    $.getJSON("/OrderFormPactment/OrderFormPact/HuoQuShangBiaoMingCheng2?SpouseBRanchId=" + goodsChopID, function (data) {
+                        if (data == "失败") {
+                            layer.alert('你没有选择信息！', { icon: 2, title: '提示' });
+                        }
+                        else {
+                            $("#SpouseBRanchID").val(data.SpouseBRanchID);//隐藏域
+                            $("#SpouseBRanchName").val(data.SpouseBRanchName);
+                        }
+                        $("#ShangBiaoLaiYuan3").modal('hide'); //选择后自动关闭
+                    });
+                }
+                else {
+                    layer.alert('你没有选择信息！', { icon: 2, title: '提示' });
+                }
+            });
+            ///选择当前行数据绑定text
+            $("#PinPaiXuanZe4").click(function () {
+                var rowIndex = tabShangBiaoXinXi4.getSelectedRowIndex();
+                if (rowIndex > -1) {
+                    var goodsChopID = tabShangBiaoXinXi4.getColumnValue(rowIndex, "AgreementManagerID");
+
+                    $.getJSON("/OrderFormPactment/OrderFormPact/HuoQuShangBiaoMingCheng3?AgreementManagerId=" + goodsChopID, function (data) {
+                        if (data == "失败") {
+                            layer.alert('你没有选择信息！', { icon: 2, title: '提示' });
+                        }
+                        else {
+                            $("#AgreementManagerID").val(data.AgreementManagerID);//隐藏域
+                            $("#AgreementManagerGaoJi").val(data.AgreementManagerGaoJi);
+                            $("#AgreementManagerName").val(data.AgreementManagerName);
+                            $("#AgreementManagerZong").val(data.AgreementManagerZong);
+                        }
+                        $("#ShangBiaoLaiYuan4").modal('hide'); //选择后自动关闭
+                    });
+                }
+                else {
+                    layer.alert('你没有选择信息！', { icon: 2, title: '提示' });
+                }
+            });
+
+            $("#PinPaiXuanZe1").click(function () {
+                var rowIndex = tabShangBiaoXinXi1.getSelectedRowIndex();
+                if (rowIndex > -1) {
+                    var ID = tabShangBiaoXinXi1.getColumnValue(rowIndex, "OrderFormPactID");
+
+                    $.getJSON("/OrderFormPactment/OrderFormPact/selectID?id=" + ID, function (data) {
+                        if (data == "失败") {
+                            layer.alert('你没有选择信息！', { icon: 2, title: '提示' });
+                        }
+                        else {
+                            $("#OrderFormPactID").val(data.OrderFormPactID);//隐藏域
+                            $("#SpouseBRanchID").val(data.SpouseBRanchID);
+                            $("#ContractNumber").val(data.ContractNumber);
+
+                            $("#SpouseBRanchName").val(data.SpouseBRanchName);
+                            $("#SupplierID").val(data.SupplierID);
+                            $("#AgreementTypeID").val(data.AgreementTypeID);
+                            $("#AgreementTypeName").val(data.AgreementTypeName);
+                            $("#ReleaseTimeStrr").val(data.ReleaseTimeStrr);
+                            $("#ReleaseTimeStrrr").val(data.ReleaseTimeStrrr);
+                            $("#ReleaseTimejinchangtime").val(data.ReleaseTimejinchangtime);
+                            $("#ReleaseTimetuichangchangtime").val(data.ReleaseTimetuichangchangtime);
+                            $("#MethodOfSettlingAccountsID").val(data.MethodOfSettlingAccountsID);
+                            if (data.MethodOfSettlingAccountsID) {
+                                $("#MethodOfSettlingAccountsID").attr("checked", 'true');
+                            }
+                            else {
+                                $("#MethodOfSettlingAccountsID").removeAttr("checked");
+                            }
+                            //$("#MethodOfSettlingAccounts").val(data.MethodOfSettlingAccounts);
+                            $("#ReleaseTimepiaoqitime").val(data.ReleaseTimepiaoqitime);
+                            $("#ReleaseTimezhangqitime").val(data.ReleaseTimezhangqitime);
+                            $("#AgreementManagerID").val(data.AgreementManagerID);
+                            $("#AgreementManagerName").val(data.AgreementManagerName);
+                            $("#AgreementManagerZong").val(data.AgreementManagerZong);
+                            $("#AgreementManagerGaoJi").val(data.AgreementManagerGaoJi);
+                            $("#AgreementStatusID").val(data.AgreementStatusID);
+                            $("#AgreementState").val(data.AgreementState);
+                            $("#PurchasingAgent").val(data.PurchasingAgent);
+                            $("#ConclusionSite").val(data.ConclusionSite);
+                            $("#ReleaseTimeStr").val(data.ReleaseTimeStr);
+                            $("#TryPaymentData").val(data.TryPaymentData);
+                            $("#TryPaymentShiXiaoData").val(data.TryPaymentShiXiaoData);
+                            $("#GoodsID").val(data.GoodsID);
+                            $("#Registrant").val(data.Registrant);
+                            $("#Auditor").val(data.Auditor);
+                            $("#Executor").val(data.Executor);
+                            $("#Registranttimea").val(data.Registranttimea);
+                            $("#RegistrantAuditortime").val(data.RegistrantAuditortime);
+                            $("#RegistrantExecutortime").val(data.RegistrantExecutortime);
+
+                            $("#RegistrantPlanFiringData").val(data.RegistrantPlanFiringData);
+                            $("#RegistrantFiringdata").val(data.RegistrantFiringdata);
+                            $("#AgreementRen").val(data.AgreementRen);
+
+                        }
+                        $("#ShangBiaoLaiYuan1").modal('hide'); //选择后自动关闭
+                    });
+                }
+                else {
+                    layer.alert('你没有选择信息！', { icon: 2, title: '提示' });
+                }
+            });
+
+        });
+
+        //$.getJSON("/OrderFormPactment/OrderFormPact/selectGoodsBrandList", function (data) {
+        //    console.log(data);
+        //    $("#tbGoodsBrand").bootstrapTable({
+        //        data: data,//table绑定数据
+        //        onClickRow: function (row) {//单击行事件
+        //            console.log(row.GoodsBrandID);
+        //            empyloyeeId = row.GoodsBrandID;
+        //        }
+        //    });
+        //});
+        //$.getJSON("/OrderFormPactment/OrderFormPact/selectGoodsGenre", function (data) {
+        //    //console.log(data);
+        //    $("#tabGoodsGenre").bootstrapTable({
+        //        data: data,//table绑定数据
+        //        onClickRow: function (row) {//单击行事件
+        //            console.log(row.GoodsGenreID);
+        //            empyloyeeId = row.GoodsGenreID;
+        //        }
+        //    });
+        //});
+        //点击新增按钮弹出模态框
+        function SetInsert() {
+            document.getElementById("BtnAdd").style.display = "block";//控制按钮显示
+            document.getElementById("BtnEdit").style.display = "none";
+            document.getElementById("XinZeng").style.display = "block";//控制按钮显示
+            document.getElementById("XiuGai").style.display = "none";
+
+            document.getElementById("TJAcademeName").value = "";//清空文本
+            $("#modBaseInfor").modal("show");//弹出学院模态窗体
+        }
+
+        //新增保存按钮
+        function doAdd() {
+            var Name = encodeURI(document.getElementById("TJAcademeName").value.trim());
+            var Code = document.getElementById("TJAcademeCode").value.trim();
+            $.getJSON("/OrderFormPactment/OrderFormPact/selectSupplierGroup?GoodsBrandName=" + Name + "&GoodsBrandZhuPinPai=" + Code, function (data) {
+                if (data == "success") {
+                    location.reload();//刷新页面
+                }
+            });
+        }
+        //删除按钮
+        $("#btnDelete").click(function () {
+            //alert(empyloyeeId);
+            if (empyloyeeId > 0) {
+                if (confirm("确认要删除该品牌信息吗？")) {
+                    $.getJSON("/OrderFormPactment/OrderFormPact/DelateEmployee?GoodsBrandId=" + empyloyeeId, function (message) {
+                        if (message == "success") {
+                            alert("删除成功");
+                            RefreshTable();//删除成功之后刷新table的数据
+                        } else {
+                            alert("删除失败");
+                        }
+                    });
+                }
+            } else {
+                alert("请选择需要删除的品牌");
+            }
+        });
+        //3-4 为刷新table
+        function RefreshTable() {
+            $.getJSON("/OrderFormPactment/OrderFormPact/selectGoodsBrandList", function (data) {
+                //console.log(data);
+                $("#tbEmployee").bootstrapTable('load', data);
+            });
+        }
+          //新增
+        $("#Insert").click(function () {
+            var OrderFormPactID = $("#OrderFormPactID").val();
+            var SpouseBRanchID = $("#SpouseBRanchID").val();
+            var ContractNumber = $("#ContractNumber").val();
+            var SupplierID = $("#SupplierID").val();
+            var AgreementTypeID = $("#AgreementTypeID").val();
+            var ValidTip = $("#ReleaseTimeStrrr").val();
+            var ValidBegin = $("#ReleaseTimeStrr").val();
+            var AdvanceMarketData = $("#ReleaseTimejinchangtime").val();
+            var RetreatMarketData = $("#ReleaseTimetuichangchangtime").val();
+            var MethodOfSettlingAccountsID = $("#MethodOfSettlingAccountsID").val();
+            var MethodOfSettlingAccountsID = $("#MethodOfSettlingAccountsID").val();
+            var WritData = $("#ReleaseTimepiaoqitime").val();
+            var AccountData = $("#ReleaseTimezhangqitime").val();
+            var AgreementManagerID = $("#AgreementManagerID").val();
+            var AgreementStatusID = $("#AgreementStatusID").val();
+            var PurchasingAgent = $("#PurchasingAgent").val();
+            var ConclusionSite = $("#ConclusionSite").val();
+            var ConclusionTime = $("#ReleaseTimeStr").val();
+
+            var TryPaymentData = $("#TryPaymentData").val();
+
+            var TryPaymentShiXiaoData = $("#TryPaymentShiXiaoData").val();
+            var GoodsID = $("#GoodsID").val();
+            var Registrant = $("#Registrant").val();
+            var Auditor = $("#Auditor").val();
+            var Executor = $("#Executor").val();
+            var Registranttime = $("#Registranttimea").val();
+            var Auditortime = $("#RegistrantAuditortime").val();
+            var Executortime = $("#RegistrantExecutortime").val();
+            var UseOf = $("#UseOf").val();
+            var GoodsGenreID = $("#GoodsGenreID").val();
+
+
+            var GoodsChopID = $("#GoodsChopID").val();
+            var HostContractNumber = $("#HostContractNumber").val();
+            var HandworkContractNumber = $("#HandworkContractNumber").val();
+
+            var StaffID = $("#StaffID").val();
+            var AgreementID = $("#AgreementID").val();
+            var AdjustAccountsFashionID = $("#AdjustAccountsFashionID").val();
+
+            var PlanFiringData = $("#RegistrantPlanFiringData").val();
+            var Firingdata = $("#RegistrantFiringdata").val();
+            var AgreementRen = $("#AgreementRen").val();
+
+            $.post("/OrderFormPactment/OrderFormPact/InsertDaiXiao", {
+                OrderFormPactID: OrderFormPactID,
+                SpouseBRanchID: SpouseBRanchID,
+                ContractNumber: ContractNumber,
+                SupplierID: SupplierID,
+                AgreementTypeID: AgreementTypeID,
+                ValidTip: ValidTip,
+                ValidBegin: ValidBegin,
+                AdvanceMarketData: AdvanceMarketData,
+                RetreatMarketData: RetreatMarketData,
+                MethodOfSettlingAccountsID: MethodOfSettlingAccountsID,
+                WritData: WritData,
+                AccountData: AccountData,
+                AgreementManagerID: AgreementManagerID,
+                AgreementStatusID: AgreementStatusID,
+                PurchasingAgent: PurchasingAgent,
+                ConclusionSite: ConclusionSite,
+                ConclusionTime: ConclusionTime,
+                TryPaymentData: TryPaymentData,
+                TryPaymentShiXiaoData: TryPaymentShiXiaoData,
+                GoodsID: GoodsID,
+                Registrant: Registrant,
+                Auditor: Auditor,
+                Executor: Executor,
+                Registranttime: Registranttime,
+                Auditortime: Auditortime,
+                Executortime: Executortime,
+                UseOf: UseOf,
+                GoodsGenreID: GoodsGenreID,
+                GoodsChopID: GoodsChopID,
+
+                HostContractNumber: HostContractNumber,
+
+                HandworkContractNumber: HandworkContractNumber,
+
+                StaffID: StaffID,
+                AgreementID: AgreementID,
+                AdjustAccountsFashionID: AdjustAccountsFashionID,
+
+                PlanFiringData: PlanFiringData,
+                Firingdata: Firingdata,
+                AgreementRen: AgreementRen,
+
+            }, function (data) {
+                if (data == "success") {
+                    alert("新增成功");
+                }
+                else {
+                    alert("新增失败");
+                }
+            });
+        });
+    </script>
+    @*删除合同*@
+    <script>
+        var goodsId = 0;
+        $("#btnShangChu").click(function () {
+            var selectRowIndex = tabShangBiaoXinXi1.getSelectedRowIndex();//获取选中行的索引值
+            if (selectRowIndex >= 0) {
+                if (window.confirm("您确定要删除？")) {
+                    var goodsId = tabShangBiaoXinXi1.getColumnValue(selectRowIndex, "OrderFormPactID");
+                    //查询修改
+                    $.post("/OrderFormPactment/OrderFormPact/DeleteHeTong",
+                        { goodsId: goodsId }, function (msg) {
+                            if (msg == "success") {
+                                layer.alert('删除成功', { icon: 1, title: '提示' });
+                                //刷新table
+                                tabShangBiaoXinXi1.refreshPage();
+                            }
+                            else {
+                                layer.alert('删除失败', { icon: 2, title: '提示' });
+                            }
+                        });
+                }
+            }
+            else {
+                layer.alert('请选择需要删除的数据', { icon: 2, title: '提示' });
+            }
+        });
+        ///修改合同
+        $("#btnBaoCunXiuGai").click(function () {
+            var OrderFormPactID = $("#OrderFormPactID").val();
+            var SpouseBRanchID = $("#SpouseBRanchID").val();
+            var ContractNumber = $("#ContractNumber").val();
+            var SupplierID = $("#SupplierID").val();
+            var AgreementTypeID = $("#AgreementTypeID").val();
+            var ValidTip = $("#ReleaseTimeStrrr").val();
+            var ValidBegin = $("#ReleaseTimeStrr").val();
+            var AdvanceMarketData = $("#ReleaseTimejinchangtime").val();
+            var RetreatMarketData = $("#ReleaseTimetuichangchangtime").val();
+            var MethodOfSettlingAccountsID = $("#MethodOfSettlingAccountsID").val();
+            var MethodOfSettlingAccountsID = $("#MethodOfSettlingAccountsID").val();
+            var WritData = $("#ReleaseTimepiaoqitime").val();
+            var AccountData = $("#ReleaseTimezhangqitime").val();
+            var AgreementManagerID = $("#AgreementManagerID").val();
+            var AgreementStatusID = $("#AgreementStatusID").val();
+            var PurchasingAgent = $("#PurchasingAgent").val();
+            var ConclusionSite = $("#ConclusionSite").val();
+            var ConclusionTime = $("#ReleaseTimeStr").val();
+            var TryPaymentData = $("#TryPaymentData").val();
+            var TryPaymentShiXiaoData = $("#TryPaymentShiXiaoData").val();
+            var GoodsID = $("#GoodsID").val();
+            var Registrant = $("#Registrant").val();
+            var Auditor = $("#Auditor").val();
+            var Executor = $("#Executor").val();
+            var Registranttime = $("#Registranttimea").val();
+            var Auditortime = $("#RegistrantAuditortime").val();
+            var Executortime = $("#RegistrantExecutortime").val();
+            var UseOf = $("#UseOf").val();
+            var GoodsGenreID = $("#GoodsGenreID").val();
+
+
+            var GoodsChopID = $("#GoodsChopID").val();
+            var HostContractNumber = $("#HostContractNumber").val();
+            var HandworkContractNumber = $("#HandworkContractNumber").val();
+
+            var StaffID = $("#StaffID").val();
+            var AgreementID = $("#AgreementID").val();
+            var AdjustAccountsFashionID = $("#AdjustAccountsFashionID").val();
+
+            var PlanFiringData = $("#RegistrantPlanFiringData").val();
+            var Firingdata = $("#RegistrantFiringdata").val();
+            var AgreementRen = $("#AgreementRen").val();
+
+
+            if (OrderFormPactID != "") {
+                $.post("/OrderFormPactment/OrderFormPact/UpdateJingXiao2", {
+                    OrderFormPactID: OrderFormPactID,
+                    SpouseBRanchID: SpouseBRanchID,
+                    ContractNumber: ContractNumber,
+                    SupplierID: SupplierID,
+                    AgreementTypeID: AgreementTypeID,
+                    ValidTip: ValidTip,
+                    ValidBegin: ValidBegin,
+                    AdvanceMarketData: AdvanceMarketData,
+                    RetreatMarketData: RetreatMarketData,
+                    MethodOfSettlingAccountsID: MethodOfSettlingAccountsID,
+                    WritData: WritData,
+                    AccountData: AccountData,
+                    AgreementManagerID: AgreementManagerID,
+                    AgreementStatusID: AgreementStatusID,
+                    PurchasingAgent: PurchasingAgent,
+                    ConclusionSite: ConclusionSite,
+                    ConclusionTime: ConclusionTime,
+                    TryPaymentData: TryPaymentData,
+                    TryPaymentShiXiaoData: TryPaymentShiXiaoData,
+                    GoodsID: GoodsID,
+                    Registrant: Registrant,
+                    Auditor: Auditor,
+                    Executor: Executor,
+                    Registranttime: Registranttime,
+                    Auditortime: Auditortime,
+                    Executortime: Executortime,
+                    UseOf: UseOf,
+                    GoodsGenreID: GoodsGenreID,
+                    GoodsChopID: GoodsChopID,
+
+                    HostContractNumber: HostContractNumber,
+
+                    HandworkContractNumber: HandworkContractNumber,
+
+                    StaffID: StaffID,
+                    AgreementID: AgreementID,
+                    AdjustAccountsFashionID: AdjustAccountsFashionID,
+
+                    PlanFiringData: PlanFiringData,
+                    Firingdata: Firingdata,
+                    AgreementRen: AgreementRen,
+                }, function (data) {
+                    if (data == "success") {
+                        alert("修改成功");
+                    }
+                    else {
+                        alert("修改失败");
+                    }
+                });
+            }
+        });
+        $("#tbnavB").click(function () {
+
+            window.confirm("请您先确定合同信息！");
+            layer.msg("请您录入合同信息再进行下一步！", { icon: 2, title: '提示' });
+        });
+        $("#tbnavC").click(function () {
+            window.confirm("请您先确定合同信息！");
+            layer.msg("请您录入合同信息再进行下一步！", { icon: 2, title: '提示' });
+        });
+        $("#tbnavD").click(function () {
+            window.confirm("请您先确定合同信息！");
+            layer.msg("请您录入合同信息再进行下一步！", { icon: 2, title: '提示' });
+        });
+        $("#tbnavE").click(function () {
+            window.confirm("请您先确定合同信息！");
+            layer.msg("请您录入合同信息再进行下一步！", { icon: 2, title: '提示' });
+        });
+        $("#tbnavF").click(function () {
+            window.confirm("请您先确定合同信息！");
+            layer.msg("请您录入合同信息再进行下一步！", { icon: 2, title: '提示' });
+        });
+        $("#tbnavG").click(function () {
+            window.confirm("请您先确定合同信息！");
+            layer.msg("请您录入合同信息再进行下一步！", { icon: 2, title: '提示' });
+        });
+        $("#tbnavH").click(function () {
+            window.confirm("请您先确定合同信息！");
+            layer.msg("请您录入合同信息再进行下一步！", { icon: 2, title: '提示' });
+        });
+
+    </script>
+</body>
+</html>
+

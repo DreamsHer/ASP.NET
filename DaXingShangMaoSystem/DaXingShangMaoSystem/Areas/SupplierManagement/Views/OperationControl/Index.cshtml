@@ -1,0 +1,1669 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" />
+
+    <title>业务往来单位管理</title>
+    <style>
+        /*label {
+            font-size: 16px;
+            font-weight: normal;
+            font-family: '华文新魏';
+        }*/
+
+        /*.resr {
+            margin-left: 30px;
+        }*/
+    </style>
+
+
+</head>
+<body>
+    <div class="row"style="display:block;width:100%;border:none;">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="form-group">
+                    <span class="h4">供货单位维护</span>
+                    <div class="pull-right">
+                        <button class="form-control btn-sm btn btn-info" id="Colse"><span class="glyphicon glyphicon-remove">关闭</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-body" style="background:#f0edf1;">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                          <div class="col-md-5"style="padding:5px 20px;">
+                                <label class="control-label" style="margin-top:5px;">代&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+                            </div>
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" id="SupplierNumber" name="SupplierNumber"style="width:140px">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="form-group">
+                            <div class="col-sm-4">
+                                <button class="btn btn-block" type="button" id="DaYinBthjn">名 称</button>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="email" class="form-control" id="SupplierName" name="SupplierName" placeholder="请点击按钮。。。"style="width:140px">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table" style="margin-top:10px;">
+                    <ul class="nav nav-tabs tab-color-blue background-blue" id="myTab4">
+                        <li class="active">
+                            <a id="tbnavB" href="#tpB" data-toggle="tab" aria-expanded="true">基本信息</a>
+                        </li>
+                        <li class="">
+                            <a id="tbnavZ" href="#tpZ" data-toggle="tab" aria-expanded="false">其他信息</a>
+                        </li>
+                        <li class="">
+                            <a id="tbnavL" href="#tpL" data-toggle="tab" aria-expanded="false">应提供的证书</a>
+                        </li>
+                        <li class="">
+                            <a id="tbnavM" href="#tpM" data-toggle="tab" aria-expanded="false">业务员评述</a>
+                        </li>
+                        <li class="">
+                            <a id="tbnavN" href="#tpN" data-toggle="tab" aria-expanded="false">往来单位业绩描述</a>
+                        </li>
+                        <li class="">
+                            <a id="tbnavO" href="#tpO" data-toggle="tab" aria-expanded="false">往来单位市场调查</a>
+                        </li>
+                        <li class="">
+                            <a id="tbnavP" href="#tpP" data-toggle="tab" aria-expanded="false">往来单位综合评审</a>
+                        </li>
+                        <li class="">
+                            <a id="tbnavG" href="#tpG" data-toggle="tab" aria-expanded="false">关联属性</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content  padding-0" id="InEmployeeForm">
+                        <div class="tab-pane active" id="tpB">
+
+                            <div id="chartL" style="width: 100%; height: 770px; float: left;">
+                                <div class="col-lg-12 col-md-12 col-sm-12 reset-padding" style=" height:120px; margin:0;padding:0;">
+                                    <!--线-->
+
+                                   <div class="panel panel-default" style="height:100%;width:1197px; margin:0;">
+                                        <label style=" font-weight: normal;">1、企业名称:</label>
+                                        <input type="text" class="hidden" id="SupplierID" name="SupplierID" />
+                                        <div class="row">
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                    <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label resr">中&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="text" class="form-control" id="SupplierCHName" name="SupplierCHName" style="width:140px" placeholder="长度不超过25个字符">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                  <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label resr">英&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="email" class="form-control" id="SupplierEnglishName" name="SupplierEnglishName" style="width:140px"placeholder="请输入企业英文名称">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                  <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label resr">简&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="text" class="form-control" id="SupplierAbbreviation" name="SupplierAbbreviation" style="width:140px"placeholder="请输入企业简称">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                  <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label">拼音简码</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="email" class="form-control" id="SupplierPTCode" name="SupplierPTCode" style="width:140px"placeholder="请输入企业拼音简码">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                  <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label">国家地区</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="text" class="form-control" id="SupplierDependency" name="SupplierDependency"style="width:140px" placeholder="请输入企业所在国家">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                  <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label">统计属性</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="email" class="form-control" id="TJSX" name="TJSX"style="width:140px"placeholder="可不填">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 reset-padding" style="height:80px; margin:0;padding:0;">
+                                   <div class="panel panel-default" style="height:100%;width:1197px; margin:0;">
+                                        <label style=" font-weight: normal;">2、注册地址:</label>
+
+                                        <div class="row">
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                  <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label resr" >中&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="text" class="form-control" id="SupplierRegisteredAddress" name="SupplierRegisteredAddress"style="width:140px"placeholder="请输入企业注册地址">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                  <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label resr">英&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="email" class="form-control" id="SupplierRegisteredEnglish" name="SupplierRegisteredEnglish"style="width:140px"placeholder="请输入企业注册地址英文">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 reset-padding" style="height:195px; margin:0;padding:0;">
+                                   <div class="panel panel-default" style="height:100%;width:1197px; margin:0;">
+                                        <label style=" font-weight: normal;">3、法人信息:</label>
+                                        <div class="row">
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                  <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label">法人姓名</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="text" class="form-control" id="SupplierInformationName" name="SupplierInformationName" style="width:140px"placeholder="必填项">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                @*<form class="form" method="post" id="form" onsubmit="return checkForm(this)" action="">
+                                                    <div class="col-md-5" style="padding:5px 20px;">
+                                                        <input type="submit" value="电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话 " />
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="text" class="form-control" id="SupplierTelephone" name="SupplierTelephone" style="width:140px" maxlength="11">
+                                                    </div>
+                                                    
+                                                </form>*@
+                                                <div class="form-group">
+                                                  <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label resr">电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="email" class="form-control" id="SupplierTelephone" name="SupplierTelephone" style="width:140px"placeholder="建议用常用手机">
+                                                    </div>
+                                                    <div class="input-tip">
+                                                        <span id="phone_error"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                  <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label resr">联&nbsp;&nbsp;系&nbsp;&nbsp;人</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="text" class="form-control" id="SupplierContacts" name="SupplierContacts" style="width:140px"placeholder="必填项">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                  <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label resr">职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;务</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="email" class="form-control" id="SupplierPost" name="SupplierPost" style="width:140px"placeholder="输入个人职位">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                  <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label for="exampleInputName2">电子信箱</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="text" class="form-control" id="SupplierEmail" name="SupplierEmail"style="width:140px"placeholder="不详填写000000">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                  <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label">邮政编码</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="email" class="form-control" id="SupplierZipCode" name="SupplierZipCode"style="width:140px" placeholder="不详填写000000">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                  <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label resr">传&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;真</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="text" class="form-control" id="SupplierPortraiture" name="SupplierPortraiture" style="width:140px"placeholder="必填项">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                  <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label">通信地址</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="text" class="form-control" id="SupplierAddress" name="SupplierAddress" style="width:140px"placeholder="必填项">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                  <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label resr">网&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="email" class="form-control" id="SupplierURL" name="SupplierURL"style="width:140px"placeholder="必填项">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                  <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label resr">级&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <select class="form-control" id="SupplierRankID" name="SupplierRankID"style="width:140px"></select>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 reset-padding" style="height:260px; margin:0;padding:0;">
+                                   <div class="panel panel-default" style="height:100%;width:1197px; margin:0;">
+                                        <label style=" font-weight: normal;">4、企业信息:</label>
+
+                                        <div class="row">
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                  <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label">开户银行</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="text" class="form-control" id="EnterpriseBank" name="EnterpriseBank" style="width:140px"placeholder="必填项">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                  <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label resr">账&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="email" class="form-control" id="EnterpriseNumber" name="EnterpriseNumber" style="width:140px"placeholder="填写个人开户账号">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                  <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label for="exampleInputEmail2">国&nbsp;&nbsp;税&nbsp;&nbsp;号</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="email" class="form-control" id="NationalTaxNumber" name="NationalTaxNumber" style="width:140px"placeholder="两个税号是相同的">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                  <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label for="exampleInputEmail2">地&nbsp;&nbsp;税&nbsp;&nbsp;号</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="email" class="form-control" id="LocalTaxNumber" name="LocalTaxNumber" style="width:140px"placeholder="两个税号是相同的">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                  <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label">企业性质</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <select class="form-control" id="EnterpriseNatureID" name="EnterpriseNatureID"style="width:140px"></select>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                  <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label">企业类型</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <select class="form-control" id="EnterpriseTypeID" name="EnterpriseTypeID"style="width:140px"></select>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                  <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label">单位性质</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <select class="form-control" id="UnitCharacterID" name="UnitCharacterID"style="width:140px"></select>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                  <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label for="exampleInputEmail2">合作方式</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <select class="form-control" id="AgreementTypeID" name="AgreementTypeID"style="width:140px"></select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br />
+
+                                        <div class="row">
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                  <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label">选择集团</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="text" class="form-control" id="exampleInputName2" name="SupplierName" style="width:140px"placeholder="可不填">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                  <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label for="exampleInputEmail2">付款方式</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <select class="form-control" id="PaymentID" name="PaymentID" style="width:140px"></select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                  <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label for="exampleInputEmail2">所属公司</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <select class="form-control" id="CompanyID" name="CompanyID"style="width:140px"></select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="form-group">
+                                                  <div class="col-md-5"style="padding:5px 20px;">
+                                                        <label class="control-label resr">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                        <input type="email" class="form-control" id="EnterprisePassword" name="EnterprisePassword"style="width:140px"placeholder="使用两种字符组合">
+                                                    </div>
+                                                    <div class="input-tip">
+                                                        <span id="pwd_error"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <br />
+
+
+                                        <div class="col-lg-12 col-md-12 col-sm-12 reset-padding" style="height:130px; margin:0;padding:0;">
+                                           <div class="panel panel-default" style="height:100%;width:1197px; margin:0;">
+                                                <label style=" font-weight: normal;">5、制单人信息:</label>
+                                                <div class="row">
+                                                    <div class="col-lg-3">
+                                                        <div class="form-group">
+                                                          <div class="col-md-5"style="padding:5px 20px;">
+                                                                <label class="control-label">登&nbsp;&nbsp;记&nbsp;&nbsp;人</label>
+                                                            </div>
+                                                            <div class="col-md-7">
+                                                                <input type="text" class="form-control" id="Registrant" name="Registrant" style="width:140px">
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <div class="form-group">
+                                                          <div class="col-md-5"style="padding:5px 20px;">
+                                                                <label class="control-label">登记时间</label>
+                                                            </div>
+                                                            <div class="col-md-7">
+                                                                <input type="date" class="form-control" id="Registranttime" name="Registranttime" style="width:140px">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <div class="form-group">
+                                                          <div class="col-md-5"style="padding:5px 20px;">
+                                                                <label class="control-label">审&nbsp;&nbsp;核&nbsp;&nbsp;人</label>
+                                                            </div>
+                                                            <div class="col-md-7">
+                                                                <input type="email" class="form-control" id="Auditor" name="Auditor" style="width:140px">
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <div class="form-group">
+                                                          <div class="col-md-5"style="padding:5px 20px;">
+                                                                <label class="control-label">审核时间</label>
+                                                            </div>
+                                                            <div class="col-md-7">
+                                                                <input type="date" class="form-control" id="Auditortime" name="Auditortime" style="width:140px">
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row" style="margin-top:8px;">
+                                                    <div class="col-lg-3">
+                                                        <div class="form-group">
+                                                          <div class="col-md-5"style="padding:5px 20px;">
+                                                                <label class="control-label">修&nbsp;&nbsp;改&nbsp;&nbsp;人</label>
+                                                            </div>
+                                                            <div class="col-md-7">
+                                                                <input type="email" class="form-control" id="Executor" name="Executor" style="width:140px">
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-3">
+                                                        <div class="form-group">
+                                                          <div class="col-md-5"style="padding:5px 20px;">
+                                                                <label class="control-label">修改时间</label>
+                                                            </div>
+                                                            <div class="col-md-7">
+                                                                <input type="date" class="form-control" id="Executortime" name="Executortime"style="width:140px">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <div class="form-group">
+                                                          <div class="col-md-5"style="padding:5px 20px;">
+                                                                <label class="control-label resr">状&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;态</label>
+                                                            </div>
+                                                            <div class="col-md-7">
+                                                                <select class="form-control" id="AgreementStateID" name="AgreementStateID"style="width:140px"></select>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <div class="col-md-1 col-lg-offset-3">
+                                                    <button class="form-control btn btn-success" type="button" id="shenhry" onclick="saveShenHeBtntfgj(true)"><span class="glyphicon glyphicon-pencil">审核</span></button>
+                                                </div>
+                                                <div class="col-sm-1">
+                                                    <button class="form-control btn-block btn btn-danger" type="button" id="btnXuanZeShenHe"><span class="glyphicon glyphicon-search">查询</span></button>
+                                                </div>
+                                                <div class="col-sm-1">
+                                                    <button class="form-control btn-block btn btn-primary" type="button" id="btnBaoCunXiuGai" onclick="saveShenHeBtnt(true)"><span class="glyphicon glyphicon-download-alt">保存</span></button>
+                                                </div>
+
+                                                <div class="col-sm-1">
+                                                    <button class="form-control btn-block btn btn-primary" type="button" id="FangQiBtn"><span class="glyphicon glyphicon-remove">放弃</span></button>
+                                                </div>
+                                                <div class="col-sm-1">
+                                                    <button class="form-control btn-block btn btn-primary" type="button" id="DaYinBtn" onclick="window.print();return false;"><span class="glyphicon glyphicon-print">打印</span></button>
+                                                </div>
+                                                <div class="col-sm-1">
+                                                    <button class="form-control btn-block btn btn-info" type="button" id="SelOutBtn"><span class="glyphicon glyphicon-off">退出</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="tpZ">
+                            <div id="chartL" style="width: 100%; height: 500px; float: left;">
+                                <div class="panel" style="width: 1215px; height: 250px; float: left;margin:0;">
+                                    <div class="row examineeInfor" style="padding: 1px 15px;">
+                                        <table id="tabShangBiaoXinXi3" style="width: 100%; min-width: 456px;" class="bsgrid">
+                                            <thead>
+                                                <tr>
+                                                    <th w_index="GoodsID">商品代码</th>
+                                                    <th w_index="GoodsName">商品名称</th>
+                                                    <th w_index="GoodsChopName">商品商标</th>
+                                                    <th w_index="ReleaseTimeStrr">订货日期</th>
+                                                    <th w_index="ReleaseTimeStr">送货日期</th>
+                                                    <th w_index="GoodsClassifyName">商品分类</th>
+
+                                                </tr>
+                                            </thead>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane" id="tpL">
+                            <div id="chartL" style="width: 100%; height: 500px; float: left;">
+                                <div class="panel" style="width: 1215px; height: 250px; float: left;margin:0;">
+                                    <div class="row examineeInfor" style="padding: 1px 15px;">
+                                        <table id="tabShangBiaoXinXi4" style="width: 100%; min-width: 456px;" class="bsgrid">
+                                            <thead>
+                                                <tr>
+                                                    <th w_num="total_line">序号</th>
+                                                    <th w_index="ContactCertificateID" w_hidden="true"></th>
+                                                    <th w_index="ContactCertificateName">证书名称</th>
+                                                    <th w_index="ContactCertificateHM">号码</th>
+                                                    <th w_index="ReleaseTimeStr">登记时间</th>
+                                                    <th w_index="ReleaseTimeStrr">到期时间</th>
+
+                                                </tr>
+                                            </thead>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tpM">
+                            <div id="chartM" style="width: 100%; height: 500px; float: left;"></div>
+                        </div>
+                        <div class="tab-pane" id="tpN">
+                            <div id="chartN" style="width: 100%; height: 500px; float: left;"></div>
+                        </div>
+                        <div class="tab-pane" id="tpO">
+                            <div id="chartO" style="width: 100%; height: 500px; float: left;"></div>
+                        </div>
+                        <div class="tab-pane" id="tpP">
+                            <div id="chartP" style="width: 100%; height: 500px; float: left;"></div>
+                        </div>
+                        <div class="tab-pane" id="tpG">
+                            <div id="chartG" style="width: 100%; height: 500px; float: left;">
+                                <div class="panel" style="width: 1215px; height: 250px; float: left;margin:0;">
+                                    <div class="row examineeInfor" style="padding: 1px 15px;">
+                                        <table id="tabShangBiaoXinXi1" style="width: 100%; min-width: 446px;" class="bsgrid">
+                                            <thead>
+                                                <tr>
+
+                                                    <th w_index="GoodsID">合同代码</th>
+                                                    <th w_index="AgreementTypeName">核算方式</th>
+                                                    <th w_index="ReleaseTimeStrrr">合同起始日期</th>
+                                                    <th w_index="ReleaseTimeStrr">合同结束日期</th>
+                                                    <th w_index="AgreementTypeID" w_hidden="true"></th>
+                                                    <th w_index="AgreementStatusID" w_hidden="true">合同号</th>
+                                                    <th w_index="SupplierID" w_hidden="true"></th>
+                                                    <th w_index="AgreementState">状态</th>
+                                                    <th w_index="ReleaseTimeStr">签订时间</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="panel" style="width: 1215px; height: 250px; float: left;margin:0;">
+                                    <div class="row examineeInfor" style="padding: 15px 15px;">
+                                        <table id="tabShangBiaoXinXi2" style="width: 100%; min-width: 446px;" class="bsgrid">
+                                            <thead>
+                                                <tr>
+
+                                                    <th w_index="GoodsID">商品代码</th>
+                                                    <th w_index="GoodsName">商品名称</th>
+                                                    <th w_index="ArtNo">货号</th>
+                                                    <th w_index="SpecificationsModel">规格</th>
+                                                    <th w_index="EstimateUnitName">商品单位</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*修改审核窗体*@
+    <div class="modal" id="XiuGaiShenHeChuangTi">
+        <div class="modal-dialog" style="width:1200px;height:700px;">
+            <div class="modal-header" style="background:#a8d7ef;">
+                <span>查询修改审核</span>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body" style="background:#eddddd;">
+                <div class="row table-responsive" style="overflow:auto;height:500px;">
+                    <table id="tabXiuGaiShenHe" style="margin-top:2px;width:3600px;">
+                        <tr>
+                            <th w_num="total_line" width="2%">序号</th>
+                            <th w_index="SupplierID" w_hidden="true"></th>
+                            <th w_index="SupplierName">供货商名称</th>
+                            <th w_index="SupplierNumber">代 码</th>
+                            <th w_index="SupplierCHName">供货商中文名称</th>
+
+                            <th w_index="SupplierAbbreviation">供货商简称</th>
+                            <th w_index="SupplierEnglishName">英文名称</th>
+                            <th w_index="SupplierPTCode">拼音简码</th>
+                            <th w_index="SupplierDependency">所属地</th>
+                            <th w_index="SupplierRegisteredAddress">注册地址</th>
+                            <th w_index="UnitCharacterID" w_hidden="true"></th>
+                            <th w_index="UnitCharacterName">单位性质</th>
+                            <th w_index="SupplierReturnTypeID" w_hidden="true"></th>
+                            <th w_index="PaymentID" w_hidden="true"></th>
+                            <th w_index="PaymentMC">付款方式</th>
+                            <th w_index="CompanyID" w_hidden="true"></th>
+                            <th w_index="CompanyMC">所属公司</th>
+                            <th w_index="SupplierRegisteredEnglish">注册地址英文</th>
+                            <th w_index="SupplierRankID" w_hidden="true"></th>
+                            <th w_index="SupplierRankName">级别名称</th>
+                            <th w_index="AgreementStateID" w_hidden="true"></th>
+                            <th w_index="AgreementState">合同状态</th>
+                            <th w_index="AgreementTypeID" w_hidden="true"></th>
+                            <th w_index="AgreementTypeName">核算方式</th>
+                            <th w_index="Registrant">登记人</th>
+                            <th w_index="Auditor">审核人</th>
+                            <th w_index="Executor">修改人</th>
+                            <th w_index="ReleaseTimeStrrr">审核时间</th>
+                            <th w_index="ReleaseTimeStr">登记时间</th>
+                            <th w_index="ReleaseTimeStrr">修改时间</th>
+                            <th w_index="SupplierInformationName">供货商法人</th>
+                            <th w_index="SupplierTelephone">电话</th>
+                            <th w_index="SupplierContacts">联系人</th>
+                            <th w_index="SupplierPost">职务</th>
+                            <th w_index="SupplierEmail">电子信箱</th>
+                            <th w_index="SupplierZipCode">邮政编码</th>
+                            <th w_index="SupplierPortraiture">传真</th>
+
+                            <th w_index="SupplierAddress">通讯地址</th>
+                            <th w_index="SupplierURL">网址</th>
+                            <th w_index="EnterpriseBank">开户银行</th>
+                            <th w_index="EnterpriseNumber">企业账号</th>
+                            <th w_index="LocalTaxNumber">地税号</th>
+                            <th w_index="EnterprisePassword">密码</th>
+
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="row" style="margin-top:10px;">
+                    <div class="form-group">
+                        <div class="col-md-1 col-lg-offset-4">
+                            <button class="form-control btn btn-warning" type="button" id="PinPaiXuanZe1"><span class="glyphicon glyphicon-pencil">修改</span></button>
+                        </div>
+                        <div class="col-md-1" >
+                            <button class="form-control btn btn-danger" type="button" id="btnShangChu"><span class="glyphicon glyphicon-remove">删除</span></button>
+                        </div>
+
+                        <div class="col-md-1" >
+                            <button class="form-control btn btn-success" type="button" id="btnShenHe"><span class="glyphicon glyphicon-pencil">审核</span></button>
+                        </div>
+                        <div class="col-md-1">
+                            <button class="form-control btn btn-primary" type="button" id="btnQuXiaodkJ">返回</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--生产厂家''查询窗口-->
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modWarserHouse">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background:#74a4e8;">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">生产厂家查询窗口</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row table-responsive" style="overflow:auto;height:500px;">
+                        <table id="WarserHouseTable" style="margin-top:2px;width:1000px;">
+                            <tr>
+                                <th w_num="total_line">序号</th>
+                                <th w_index="ManufacturerID" w_hidden="true"></th>
+                                <th w_index="ManufacturerCode">代码</th>
+                                <th w_index="ManufacturerPC">邮政编码</th>
+                                <th w_index="ManufacturerName">名称</th>
+                                <th w_index="ManufacturerPYCode">拼音码</th>
+                                <th w_index="ManufacturerJCName">简称</th>
+                                <th w_index="ManufacturerProduct">主要产品</th>
+                                <th w_index="ManufacturerAddress">地址</th>
+                                <th w_index="ManufacturerBarCode">条形码</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row" style="margin-top:10px;">
+                        <div class="form-group">
+                            <div class="col-md-2 col-lg-offset-3">
+                                <button class="form-control btn btn-success" type="button" id="Btn_Xuan"><span class="glyphicon glyphicon-ok">选 择</span></button>
+                            </div>
+                            <div class="col-md-2">
+                                <button class="form-control btn btn-primary" type="button" id="btnQuXiaodkJ">返 回</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.2.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <script src="~/Content/js/jquery.form.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+
+    <script>
+        // 手机号码输入框获取焦点  
+        var phone_reg = /^1[3|4|5|7|8]\d{9}$/;
+        var phone_ok = false;
+        $("#SupplierTelephone").focus(function () {
+            $(this).css("outline", "none");
+            $(this).attr("placeholder", "");
+            $(this).parent().css("border-color", "#999");
+            $("#phone_error").css("color", "#c5c5c5");
+            //$("#phone_error").html("验证完成后, 可以使用该手机登录和找回密码");
+        });
+        $("#SupplierTelephone").blur(function () {
+            if ($(this).val() == "") {
+                $(this).attr("placeholder", "建议使用常用手机");
+                $("#phone_error").html("");
+                phone_ok = false;
+            } else if ($(this).val().length != 11) {
+                // 长度不对  
+                alert('请您输入正确的手机号码。');
+                //$("#phone_error").html("格式有错");
+                $("#phone_error").css("color", "red");
+                $(this).parent().css("border-color", "red");
+                phone_ok = false;
+            } else if (!$(this).val().match(phone_reg)) {
+                // 输入的不是手机号码  
+                alert('请您输入正确的手机号码。');
+                $("#phone_error").css("color", "red");
+                $(this).parent().css("border-color", "red");
+                phone_ok = false;
+            } else {
+                phone_ok = true;
+                alert('您输入的是正确的手机号码。');
+            }
+        });
+
+        var pwd_reg = /^(?![A-Z]+$)(?![a-z]+$)(?!\d+$)(?![\W_]+$)\S{6,20}$/;
+        var pwd_ok = false;
+        // 密码输入框获取焦点  
+        $("#EnterprisePassword").focus(function () {
+            $(this).css("outline", "none");
+            $(this).attr("placeholder", "");
+            $(this).parent().css("border-color", "#999");
+            $("#pwd_error").css("color", "#c5c5c5");
+            //alert('建议使用字母, 数字和符号两种及以上的组合, 6-20个字符。');
+            //$("#pwd_error").html("建议使用字母, 数字和符号两种及以上的组合, 6-20个字符");
+        });
+        $("#EnterprisePassword").blur(function () {
+            if ($(this).val() == "") {
+                $(this).attr("placeholder", "建议至少使用两种字符组合");
+                $("#pwd_error").html("");
+                pwd_ok = false;
+            } else if ($(this).val().length < 6 || $(this).val().length > 20) {
+                // 长度不对  
+                alert('密码长度只能在6-20个字符之间。');
+                //$("#pwd_error").html("长度只能在6-20个字符之间");
+                $("#pwd_error").css("color", "red");
+                $(this).parent().css("border-color", "red");
+                pwd_ok = false;
+            } else if (!$(this).val().match(pwd_reg)) {
+                // 不是两种及以上的组合  
+                alert('有被盗风险, 建议使用字母, 数字和符号两种及以上组合。');
+                //$("#pwd_error").html("有被盗风险, 建议使用字母, 数字和符号两种及以上组合");
+                $("#pwd_error").css("color", "red");
+                $(this).parent().css("border-color", "red");
+                pwd_ok = false;
+            } else {
+            }
+        });
+
+
+        var tabXiuGaiShenHe;
+        var tabShangBiaoXinXi1;
+        var tabShangBiaoXinXi2;
+        var tabShangBiaoXinXi3;
+        var tabShangBiaoXinXi4;
+
+        var WarserHouseTable;
+
+        var SupplierQuanID;//供货
+        var ManufacturerIDQuan;//生产ID
+
+
+        //function checkForm(v) {
+        //    var re = /^(13[0-9]{9})|(15[89][0-9]{8})$/;
+        //    if (!re.test(v.SupplierTelephone.value)) {
+        //        alert('请输入正确的手机号码。');
+        //        return false;
+        //    }
+        //    else {
+                   
+        //            alert('你的手机号码输入正确。');
+                  
+        //    }
+                        
+        //}
+
+        //查询
+        tabXiuGaiShenHe = $.fn.bsgrid.init('tabXiuGaiShenHe', {
+            url: '/SupplierManagement/OperationControl/selectA',
+            autoLoad: false,
+            stripeRows: true,
+            rowHoverColor: true,
+            pageSize: 15,
+            pageSizeSelect: false,
+            pagingLittleToolbar: true,
+            pagingToolbarAlign: "left",
+            displayPagingToolbarOnlyMultiPages: true,
+
+        });
+        $("#btnXuanZeShenHe").click(function () {
+
+            tabXiuGaiShenHe.search();
+            $("#XiuGaiShenHeChuangTi").modal('show');
+        });
+
+        //相关合同信息
+        $(function () {
+
+            $("#Executor").prop("disabled", "true");//修改人
+            $("#Executortime").prop("disabled", "true");//修改时间
+            $("#Auditor").prop("disabled", "true");//审核人
+            $("#Auditortime").prop("disabled", "true");//审核时间
+            $("#AgreementStateID").prop("disabled", "true");//状态
+            $("#shenhry").hide();
+            //生产产家
+            WarserHouseTable = $.fn.bsgrid.init('WarserHouseTable', {
+                url: '/AlternativeSupplier/Alternative/selectManufacturer',
+                autoLoad: true,
+                stripeRows: true,
+                rowHoverColor: true,
+                pageSize: 10,
+                pageSizeSelect: false,
+                pagingLittleToolbar: true,
+                pagingToolbarAlign: "left",
+            });
+            WarserHouseTable.refreshPage();
+
+            //代码绑定
+            $.getJSON("/SupplierManagement/OperationControl/getEmpCode", function (data) {
+                $("#SupplierNumber").val(data);
+            });
+            //级别下拉框
+            $.post("/SupplierManagement/OperationControl/selectSupplierRank", function (data) {
+                selectLoadData("SupplierRankID", data)
+            });
+            $.post("/SupplierManagement/OperationControl/selectEnterpriseType", function (data) {
+                                                                  
+                selectLoadData("EnterpriseTypeID", data)
+            });
+            $.post("/SupplierManagement/OperationControl/selectEnterpriseNature", function (data) {
+                selectLoadData("EnterpriseNatureID", data)
+            });
+            $.post("/SupplierManagement/OperationControl/selectPayment", function (data) {
+                selectLoadData("PaymentID", data)
+            });
+            $.post("/SupplierManagement/OperationControl/selectCompany", function (data) {
+                selectLoadData("CompanyID", data)
+            });
+            ///单位性质
+            $.post("/SupplierManagement/OperationControl/selectUnitCharacterName", function (data) {
+                selectLoadData("UnitCharacterID", data)
+            });
+            ///合同类型
+            $.post("/SupplierManagement/OperationControl/selectAdjustAccountsFashion", function (data) {
+                selectLoadData("AgreementTypeID", data)
+            });
+            ///状态类型
+            $.post("/SupplierManagement/OperationControl/selectAgreementState", function (data) {
+                selectLoadData("AgreementStateID", data)
+            });
+        });
+      
+     
+        $("#tbnavM").click(function () {
+            window.confirm("请您先确定合同信息！");
+            layer.msg("请您录入合同信息再进行下一步！", { icon: 2, title: '提示' });
+        });
+        $("#tbnavN").click(function () {
+            window.confirm("请您先确定合同信息！");
+            layer.msg("请您录入合同信息再进行下一步！", { icon: 2, title: '提示' });
+        });
+        $("#tbnavO").click(function () {
+            window.confirm("请您先确定合同信息！");
+            layer.msg("请您录入合同信息再进行下一步！", { icon: 2, title: '提示' });
+        });
+        $("#tbnavP").click(function () {
+            window.confirm("请您先确定合同信息！");
+            layer.msg("请您录入合同信息再进行下一步！", { icon: 2, title: '提示' });
+        });
+
+        //生产厂家
+        $("#DaYinBthjn").click(function () {
+
+            $("#modWarserHouse").modal('show');
+        });
+        //选择生产家
+        $("#Btn_Xuan").click(function () {
+            var rowIndex = WarserHouseTable.getSelectedRowIndex();
+            ManufacturerIDQuan = WarserHouseTable.getColumnValue(rowIndex, "ManufacturerID");
+            if (ManufacturerIDQuan > -1) {
+                $.getJSON("/AlternativeSupplier/Alternative/selectManufacturerID?id=" + ManufacturerIDQuan, function (data) {
+                    if (data == "失败") {
+                        layer.alert('你没有选择信息！', { icon: 2, title: '提示' });
+                    }
+                    else {
+
+                        $("#SupplierCHName").val(data.ManufacturerName);
+                        $("#SupplierName").val(data.ManufacturerName);
+                        $("#SupplierAbbreviation").val(data.ManufacturerJCName);//简称
+                        $("#SupplierPTCode").val(data.ManufacturerPYCode);//拼音码
+                        $("#SupplierRegisteredAddress").val(data.ManufacturerAddress);
+                        $("#SupplierZipCode").val(data.ManufacturerPC);
+                    }
+                    $("#modWarserHouse").modal('hide'); //选择后自动关闭
+
+
+                });
+            }
+            else {
+                layer.alert('你没有选择信息！', { icon: 2, title: '提示' });
+            }
+            $("#modWarserHouse").modal('hide');
+        });
+
+        //保存供货商
+        function saveShenHeBtnt(state) {
+
+            var SupplierNumber = $("#SupplierNumber").val();
+            var SupplierName = $("#SupplierName").val();
+            var SupplierAbbreviation = $("#SupplierAbbreviation").val();
+            var SupplierCHName = $("#SupplierCHName").val();
+            var SupplierDependency = $("#SupplierDependency").val();
+            var SupplierEnglishName = $("#SupplierEnglishName").val();
+            var SupplierPTCode = $("#SupplierPTCode").val();
+            var SupplierRegisteredEnglish = $("#SupplierRegisteredEnglish").val();
+            var SupplierInformationName = $("#SupplierInformationName").val();
+            var SupplierRegisteredAddress = $("#SupplierRegisteredAddress").val();
+            var SupplierTelephone = $("#SupplierTelephone").val();
+            var SupplierPost = $("#SupplierPost").val();
+            var SupplierEmail = $("#SupplierEmail").val();
+            var SupplierZipCode = $("#SupplierZipCode").val();
+            var SupplierPortraiture = $("#SupplierPortraiture").val();
+            var SupplierAddress = $("#SupplierAddress").val();
+            var SupplierURL = $("#SupplierURL").val();
+
+            var SupplierRankID = $("#SupplierRankID").val();
+
+            var EnterpriseBank = $("#EnterpriseBank").val();
+            var EnterpriseNatureID = $("#EnterpriseNatureID").val();
+            var NationalTaxNumber = $("#NationalTaxNumber").val();
+            var EnterpriseTypeID = $("#EnterpriseTypeID").val();
+            var PaymentID = $("#PaymentID").val();
+            var CompanyID = $("#CompanyID").val();
+            var EnterprisePassword = $("#EnterprisePassword").val();
+            var SupplierContacts = $("#SupplierContacts").val();
+            var EnterpriseNumber = $("#EnterpriseNumber").val();
+            var LocalTaxNumber = $("#LocalTaxNumber").val();
+
+
+            var UnitCharacterID = $("#UnitCharacterID").val();
+            var AgreementTypeID = $("#AgreementTypeID").val();
+            var AgreementStateID = $("#AgreementStateID").val();
+
+            var Registrant = $("#Registrant").val();
+            var Auditor = $("#Auditor").val();
+            var Executor = $("#Executor").val();
+            var Registranttime = $("#Registranttime").val();
+            var Auditortime = $("#Auditortime").val();
+            var Executortime = $("#Executortime").val();
+            var ManufacturerID = ManufacturerIDQuan;
+
+
+            var SupplierID = SupplierQuanID;
+            if (SupplierQuanID > 0) {
+                if (SupplierCHName != "" && SupplierName != "" && SupplierNumber != "" && SupplierAbbreviation != "" && SupplierPTCode != "" && SupplierDependency != "" &&
+                                  SupplierInformationName != "" && SupplierTelephone != "" && SupplierContacts != "" && SupplierPost != "" && SupplierZipCode != "" && SupplierAddress != ""
+                                  && SupplierRankID > 0 && EnterpriseBank != "" && EnterpriseNumber != "" && NationalTaxNumber != "" && EnterpriseNatureID > 0 && EnterpriseTypeID > 0 &&
+                                  UnitCharacterID > 0 && AgreementTypeID > 0 && exampleInputName2 != "" && PaymentID > 0 && CompanyID > 0 && Registrant != ""
+                                  && Registranttime != "" && AgreementStateID > 0 && Executor != "" && Executortime != ""
+                                 ) {
+                    // && Auditor != "" && Auditortime != ""
+
+                    layer.confirm("是否修改？", {
+                        icon: 3,
+                        btn: ['确定', '取消']
+                    }, function (layerIndex) {
+                        layer.close(layerIndex);//关闭提示框
+                        $.post("/SupplierManagement/OperationControl/UpdateJingXiao", {
+                            SupplierID: SupplierID,
+                            SupplierRegisteredAddress: SupplierRegisteredAddress,
+                            SupplierNumber: SupplierNumber,
+                            SupplierName: SupplierName,
+                            SupplierAbbreviation: SupplierAbbreviation,
+                            SupplierCHName: SupplierCHName,
+                            SupplierContacts: SupplierContacts,
+                            SupplierDependency: SupplierDependency,
+                            SupplierEnglishName: SupplierEnglishName,
+                            SupplierPTCode: SupplierPTCode,
+                            SupplierRegisteredEnglish: SupplierRegisteredEnglish,
+                            SupplierInformationName: SupplierInformationName,
+                            SupplierTelephone: SupplierTelephone,
+                            SupplierPost: SupplierPost,
+                            SupplierEmail: SupplierEmail,
+                            SupplierZipCode: SupplierZipCode,
+                            SupplierPortraiture: SupplierPortraiture,
+                            SupplierAddress: SupplierAddress,
+                            SupplierURL: SupplierURL,
+                            SupplierRankID: SupplierRankID,
+                            EnterpriseBank: EnterpriseBank,
+                            EnterpriseNatureID: EnterpriseNatureID,
+                            NationalTaxNumber: NationalTaxNumber,
+                            EnterpriseTypeID: EnterpriseTypeID,
+                            PaymentID: PaymentID,
+                            CompanyID: CompanyID,
+                            EnterprisePassword: EnterprisePassword,
+                            EnterpriseNumber: EnterpriseNumber,
+                            LocalTaxNumber: LocalTaxNumber,
+                            UnitCharacterID: UnitCharacterID,
+                            AgreementTypeID: AgreementTypeID,
+                            AgreementStateID: AgreementStateID,
+
+                            Registrant: Registrant,
+                            Registranttime: Registranttime,
+
+                            Executor: Executor,
+                            Executortime: Executortime,
+                            //Auditor: Auditor,
+                            //Auditortime: Auditortime,
+
+                        },
+                        function (data) {
+                            if (data == "success") {
+                                layer.alert("修改成功", { icon: 6, title: '温馨小提示：' });
+                                document.location.href = "/SupplierManagement/OperationControl/Index";
+                            }
+                            else {
+                                layer.alert("修改失败！请检查。。。", { icon: 6, title: '温馨小提示：' });
+                            }
+
+                        });
+
+                    });
+                }
+                else {
+                    layer.alert("请填写完整信息。。。", { icon: 6, title: '温馨小提示：' });
+                }
+            }
+
+            else {
+                
+
+                if (SupplierCHName!=""&&SupplierName!=""&&SupplierNumber!=""&&SupplierAbbreviation!=""&&SupplierPTCode!=""&&SupplierDependency!=""&&
+                    SupplierInformationName != "" && SupplierTelephone != "" && SupplierContacts != "" && SupplierPost != "" && SupplierZipCode != "" && SupplierAddress != ""
+                    && SupplierRankID > 0 && EnterpriseBank != "" && EnterpriseNumber != "" && NationalTaxNumber != "" && EnterpriseNatureID > 0 && EnterpriseTypeID >0 &&
+                    UnitCharacterID > 0 && AgreementTypeID > 0 && exampleInputName2 != "" && PaymentID > 0 && CompanyID > 0 && Registrant != ""
+                    && Registranttime != "" && AgreementStateID > 0
+                   ) {
+                    layer.confirm("是否新增？", {
+                        icon: 3,
+                        btn: ['确定', '取消']
+                    }, function (layerIndex) {
+
+                        layer.close(layerIndex);//关闭提示框
+
+                        $.post("/SupplierManagement/OperationControl/SelectGoods", {
+                            //ManufacturerID: ManufacturerID,生产
+                            SupplierRegisteredAddress: SupplierRegisteredAddress,
+                            SupplierNumber: SupplierNumber,
+                            SupplierName: SupplierName,
+                            SupplierAbbreviation: SupplierAbbreviation,
+                            SupplierCHName: SupplierCHName,
+                            SupplierContacts: SupplierContacts,
+                            SupplierDependency: SupplierDependency,
+                            SupplierEnglishName: SupplierEnglishName,
+                            SupplierPTCode: SupplierPTCode,
+                            SupplierRegisteredEnglish: SupplierRegisteredEnglish,
+                            SupplierInformationName: SupplierInformationName,
+                            SupplierTelephone: SupplierTelephone,
+                            SupplierPost: SupplierPost,
+                            SupplierEmail: SupplierEmail,
+                            SupplierZipCode: SupplierZipCode,
+                            SupplierPortraiture: SupplierPortraiture,
+                            SupplierAddress: SupplierAddress,
+                            SupplierURL: SupplierURL,
+                            SupplierRankID: SupplierRankID,
+                            EnterpriseBank: EnterpriseBank,
+                            EnterpriseNatureID: EnterpriseNatureID,
+                            NationalTaxNumber: NationalTaxNumber,
+                            EnterpriseTypeID: EnterpriseTypeID,
+                            PaymentID: PaymentID,
+                            CompanyID: CompanyID,
+                            EnterprisePassword: EnterprisePassword,
+                            EnterpriseNumber: EnterpriseNumber,
+                            LocalTaxNumber: LocalTaxNumber,
+                            UnitCharacterID: UnitCharacterID,
+                            AgreementTypeID: AgreementTypeID,
+                            AgreementStateID: AgreementStateID,
+                            //GoodsStatusID: GoodsStatusID,
+                            Registrant: Registrant,
+                            Registranttime: Registranttime,
+                            //Auditor: Auditor,
+                            //Executor: Executor,
+                            //Auditortime: Auditortime,
+                            //Executortime: Executortime,
+
+                        },
+                        function (data) {
+                            if (data== "success") {
+                                layer.alert("新增成功", { icon: 6, title: '温馨小提示：' });
+                                document.location.href = "/SupplierManagement/OperationControl/Index";
+
+                                //if (data.returnJson == "修改成功") {
+                                //    if (data.State == true || data.State == "true") {
+                                //    }
+                                //}
+                            }
+                            else {
+                                layer.alert("新增失败！请检查。。。", { icon: 6, title: '温馨小提示：' });
+                            }
+
+                        });
+
+                    });
+                }
+                else {
+                    layer.alert("请填写完整信息。。。", { icon: 6, title: '温馨小提示：' });
+                }
+
+            }
+
+
+        }
+
+        //选择修改
+        $("#PinPaiXuanZe1").click(function () {
+            var rowIndex = tabXiuGaiShenHe.getSelectedRowIndex();
+            if (rowIndex > -1) {
+                 SupplierQuanID = tabXiuGaiShenHe.getColumnValue(rowIndex, "SupplierID");
+
+                 $.getJSON("/SupplierManagement/OperationControl/selectID?id=" + SupplierQuanID, function (data) {
+                    if (data == "失败") {
+                        layer.alert('你没有选择信息！', { icon: 2, title: '提示' });
+                    }
+                    else {
+                        $("#SupplierRegisteredAddress").val(data.SupplierRegisteredAddress);//隐藏域
+                        $("#SupplierNumber").val(data.SupplierNumber);
+                        $("#SupplierName").val(data.SupplierName);
+
+                        $("#SpouseBRanchName").val(data.SpouseBRanchName);
+                        $("#SupplierID").val(data.SupplierID);
+                        $("#AgreementTypeID").val(data.AgreementTypeID);
+                        $("#AgreementTypeName").val(data.AgreementTypeName);
+                        $("#SupplierAbbreviation").val(data.SupplierAbbreviation);
+                        $("#SupplierCHName").val(data.SupplierCHName);
+                        $("#SupplierContacts").val(data.SupplierContacts);
+                        $("#SupplierDependency").val(data.SupplierDependency);
+                        $("#SupplierEnglishName").val(data.SupplierEnglishName);
+
+
+                        $("#SupplierPTCode").val(data.SupplierPTCode);
+                        $("#SupplierRegisteredEnglish").val(data.SupplierRegisteredEnglish);
+                        $("#SupplierInformationName").val(data.SupplierInformationName);
+                        $("#SupplierTelephone").val(data.SupplierTelephone);
+                        $("#SupplierPost").val(data.SupplierPost);
+                        $("#SupplierEmail").val(data.SupplierEmail);
+                        $("#SupplierZipCode").val(data.SupplierZipCode);
+                        $("#SupplierPortraiture").val(data.SupplierPortraiture);
+                        $("#SupplierAddress").val(data.SupplierAddress);
+                        $("#SupplierURL").val(data.SupplierURL);
+                        $("#SupplierRankID").val(data.SupplierRankID);
+                        $("#EnterpriseBank").val(data.EnterpriseBank);
+                        $("#EnterpriseNatureID").val(data.EnterpriseNatureID);
+                        $("#NationalTaxNumber").val(data.NationalTaxNumber);
+                        $("#PaymentID").val(data.PaymentID);
+                        $("#CompanyID").val(data.CompanyID);
+                        $("#EnterprisePassword").val(data.EnterprisePassword);
+                        $("#EnterpriseNumber").val(data.EnterpriseNumber);
+                        $("#LocalTaxNumber").val(data.LocalTaxNumber);
+                        $("#UnitCharacterID").val(data.UnitCharacterID);
+
+
+                        $("#AgreementTypeID").val(data.AgreementTypeID);
+                        $("#AgreementStateID").val(data.AgreementStateID);
+
+                        $("#Registrant").val(data.Registrant);
+                        $("#Auditor").val(data.Auditor);
+                        $("#Executor").val(data.Executor);
+                        $("#EnterpriseNumber").val(data.EnterpriseNumber);
+
+                        $("#Registranttime").val(data.ReleaseTimeStr);
+                        $("#Auditortime").val(data.ReleaseTimeStrr);
+                        $("#Executortime").val(data.ReleaseTimeStrrr);
+                    }
+                    $("#XiuGaiShenHeChuangTi").modal('hide'); //选择后自动关闭
+                    $("#Executor").removeAttr("disabled","true");//修改人
+
+                    $("#Executortime").removeAttr("disabled", "true");//修改时间
+                });
+            }
+            else {
+                layer.alert('你没有选择信息！', { icon: 2, title: '提示' });
+            }
+        });
+
+
+        //选择审核
+        $("#btnShenHe").click(function () {
+            var rowIndex = tabXiuGaiShenHe.getSelectedRowIndex();
+            if (rowIndex > -1) {
+                SupplierQuanID = tabXiuGaiShenHe.getColumnValue(rowIndex, "SupplierID");
+
+                $.getJSON("/SupplierManagement/OperationControl/selectID?id=" + SupplierQuanID, function (data) {
+                    if (data == "失败") {
+                        layer.alert('你没有选择信息！', { icon: 2, title: '提示' });
+                    }
+                    else {
+                        $("#SupplierRegisteredAddress").val(data.SupplierRegisteredAddress);//隐藏域
+                        $("#SupplierNumber").val(data.SupplierNumber);
+                        $("#SupplierName").val(data.SupplierName);
+
+                        $("#SpouseBRanchName").val(data.SpouseBRanchName);
+                        $("#SupplierID").val(data.SupplierID);
+                        $("#AgreementTypeID").val(data.AgreementTypeID);
+                        $("#AgreementTypeName").val(data.AgreementTypeName);
+                        $("#SupplierAbbreviation").val(data.SupplierAbbreviation);
+                        $("#SupplierCHName").val(data.SupplierCHName);
+                        $("#SupplierContacts").val(data.SupplierContacts);
+                        $("#SupplierDependency").val(data.SupplierDependency);
+                        $("#SupplierEnglishName").val(data.SupplierEnglishName);
+
+
+                        $("#SupplierPTCode").val(data.SupplierPTCode);
+                        $("#SupplierRegisteredEnglish").val(data.SupplierRegisteredEnglish);
+                        $("#SupplierInformationName").val(data.SupplierInformationName);
+                        $("#SupplierTelephone").val(data.SupplierTelephone);
+                        $("#SupplierPost").val(data.SupplierPost);
+                        $("#SupplierEmail").val(data.SupplierEmail);
+                        $("#SupplierZipCode").val(data.SupplierZipCode);
+                        $("#SupplierPortraiture").val(data.SupplierPortraiture);
+                        $("#SupplierAddress").val(data.SupplierAddress);
+                        $("#SupplierURL").val(data.SupplierURL);
+                        $("#SupplierRankID").val(data.SupplierRankID);
+                        $("#EnterpriseBank").val(data.EnterpriseBank);
+                        $("#EnterpriseNatureID").val(data.EnterpriseNatureID);
+                        $("#NationalTaxNumber").val(data.NationalTaxNumber);
+                        $("#PaymentID").val(data.PaymentID);
+                        $("#CompanyID").val(data.CompanyID);
+                        $("#EnterprisePassword").val(data.EnterprisePassword);
+                        $("#EnterpriseNumber").val(data.EnterpriseNumber);
+                        $("#LocalTaxNumber").val(data.LocalTaxNumber);
+                        $("#UnitCharacterID").val(data.UnitCharacterID);
+
+
+                        $("#AgreementTypeID").val(data.AgreementTypeID);
+                        $("#AgreementStateID").val(data.AgreementStateID);
+
+                        $("#Registrant").val(data.Registrant);
+                        $("#Auditor").val(data.Auditor);
+                        $("#Executor").val(data.Executor);
+                        $("#EnterpriseNumber").val(data.EnterpriseNumber);
+
+                        $("#Registranttime").val(data.ReleaseTimeStr);
+                        $("#Auditortime").val(data.ReleaseTimeStrr);
+                        $("#Executortime").val(data.ReleaseTimeStrrr);
+
+                        $("#XiuGaiShenHeChuangTi").modal('hide'); //选择后自动关闭
+
+                        $("#Auditor").removeAttr("disabled", "true");//审核人
+                        $("#Auditortime").removeAttr("disabled", "true");//审核时间
+                        $("#AgreementStateID").removeAttr("disabled", "true");//状态
+                        $("#btnBaoCunXiuGai").prop("disabled","true");
+                        $("#shenhry").show();
+                        ///状态类型
+                        $.post("/SupplierManagement/OperationControl/selectAgreementStatedf", function (data) {
+                            selectLoadData("AgreementStateID", data)
+                        });
+                    }
+
+                });
+            }
+            else {
+                layer.alert('你没有选择信息！', { icon: 2, title: '提示' });
+            }
+        });
+
+
+        //审核供货商
+        $("#shenhry").click(function () {
+
+            var SupplierNumber = $("#SupplierNumber").val();
+            var SupplierName = $("#SupplierName").val();
+            var SupplierAbbreviation = $("#SupplierAbbreviation").val();
+            var SupplierCHName = $("#SupplierCHName").val();
+            var SupplierDependency = $("#SupplierDependency").val();
+            var SupplierEnglishName = $("#SupplierEnglishName").val();
+            var SupplierPTCode = $("#SupplierPTCode").val();
+            var SupplierRegisteredEnglish = $("#SupplierRegisteredEnglish").val();
+            var SupplierInformationName = $("#SupplierInformationName").val();
+            var SupplierRegisteredAddress = $("#SupplierRegisteredAddress").val();
+            var SupplierTelephone = $("#SupplierTelephone").val();
+            var SupplierPost = $("#SupplierPost").val();
+            var SupplierEmail = $("#SupplierEmail").val();
+            var SupplierZipCode = $("#SupplierZipCode").val();
+            var SupplierPortraiture = $("#SupplierPortraiture").val();
+            var SupplierAddress = $("#SupplierAddress").val();
+            var SupplierURL = $("#SupplierURL").val();
+
+            var SupplierRankID = $("#SupplierRankID").val();
+
+            var EnterpriseBank = $("#EnterpriseBank").val();
+            var EnterpriseNatureID = $("#EnterpriseNatureID").val();
+            var NationalTaxNumber = $("#NationalTaxNumber").val();
+            var EnterpriseTypeID = $("#EnterpriseTypeID").val();
+            var PaymentID = $("#PaymentID").val();
+            var CompanyID = $("#CompanyID").val();
+            var EnterprisePassword = $("#EnterprisePassword").val();
+            var SupplierContacts = $("#SupplierContacts").val();
+            var EnterpriseNumber = $("#EnterpriseNumber").val();
+            var LocalTaxNumber = $("#LocalTaxNumber").val();
+
+
+            var UnitCharacterID = $("#UnitCharacterID").val();
+            var AgreementTypeID = $("#AgreementTypeID").val();
+            var AgreementStateID = $("#AgreementStateID").val();
+
+            var Registrant = $("#Registrant").val();
+            var Auditor = $("#Auditor").val();
+            var Executor = $("#Executor").val();
+            var Registranttime = $("#Registranttime").val();
+            var Auditortime = $("#Auditortime").val();
+            var Executortime = $("#Executortime").val();
+            var ManufacturerID = ManufacturerIDQuan;
+            var GoodsStatusID = $("#AgreementStateID").val();
+
+            var SupplierID = SupplierQuanID;
+            if (SupplierQuanID > 0) {
+                if (SupplierCHName != "" && SupplierName != "" && SupplierNumber != "" && SupplierAbbreviation != "" && SupplierPTCode != "" && SupplierDependency != "" &&
+                                  SupplierInformationName != "" && SupplierTelephone != "" && SupplierContacts != "" && SupplierPost != "" && SupplierZipCode != "" && SupplierAddress != ""
+                                  && SupplierRankID > 0 && EnterpriseBank != "" && EnterpriseNumber != "" && NationalTaxNumber != "" && EnterpriseNatureID > 0 && EnterpriseTypeID > 0 &&
+                                  UnitCharacterID > 0 && AgreementTypeID > 0 && exampleInputName2 != "" && PaymentID > 0 && CompanyID > 0 && Registrant != ""
+                                  && Registranttime != "" && AgreementStateID > 0 && Auditor != "" && Auditortime != ""
+                                 ) {
+
+                    layer.confirm("是否审核？", {
+                        icon: 3,
+                        btn: ['确定', '取消']
+                    }, function (layerIndex) {
+                        layer.close(layerIndex);//关闭提示框
+                        $.post("/SupplierManagement/OperationControl/ShenheJingXiao", {
+                            SupplierID: SupplierID,
+                            GoodsStatusID: GoodsStatusID,
+
+                            SupplierRegisteredAddress: SupplierRegisteredAddress,
+                            SupplierNumber: SupplierNumber,
+                            SupplierName: SupplierName,
+                            SupplierAbbreviation: SupplierAbbreviation,
+                            SupplierCHName: SupplierCHName,
+                            SupplierContacts: SupplierContacts,
+                            SupplierDependency: SupplierDependency,
+                            SupplierEnglishName: SupplierEnglishName,
+                            SupplierPTCode: SupplierPTCode,
+                            SupplierRegisteredEnglish: SupplierRegisteredEnglish,
+                            SupplierInformationName: SupplierInformationName,
+                            SupplierTelephone: SupplierTelephone,
+                            SupplierPost: SupplierPost,
+                            SupplierEmail: SupplierEmail,
+                            SupplierZipCode: SupplierZipCode,
+                            SupplierPortraiture: SupplierPortraiture,
+                            SupplierAddress: SupplierAddress,
+                            SupplierURL: SupplierURL,
+                            SupplierRankID: SupplierRankID,
+                            EnterpriseBank: EnterpriseBank,
+                            EnterpriseNatureID: EnterpriseNatureID,
+                            NationalTaxNumber: NationalTaxNumber,
+                            EnterpriseTypeID: EnterpriseTypeID,
+                            PaymentID: PaymentID,
+                            CompanyID: CompanyID,
+                            EnterprisePassword: EnterprisePassword,
+                            EnterpriseNumber: EnterpriseNumber,
+                            LocalTaxNumber: LocalTaxNumber,
+                            UnitCharacterID: UnitCharacterID,
+                            AgreementTypeID: AgreementTypeID,
+                            AgreementStateID: AgreementStateID,
+                            GoodsStatusID: GoodsStatusID,
+                            Registrant: Registrant,
+                            Registranttime: Registranttime,
+                            Auditor: Auditor,
+                            Auditortime: Auditortime,
+                            Executor: Executor,
+                            Executortime: Executortime,
+
+                        },
+                        function (data) {
+                            if (data == "success") {
+                                layer.alert("审核成功", { icon: 6, title: '温馨小提示：' });
+                                document.location.href = "/SupplierManagement/OperationControl/Index";
+                            }
+                            else {
+                                layer.alert("审核失败！请检查。。。", { icon: 5, title: '温馨小提示：' });
+                            }
+
+                        });
+
+                    });
+                }
+                else {
+                    layer.alert("请填写完整信息。。。", { icon:5, title: '温馨小提示：' });
+                }
+            }
+
+
+
+
+        });
+
+
+        $(function () {
+
+
+            tabShangBiaoXinXi1 = $.fn.bsgrid.init('tabShangBiaoXinXi1', {
+                url: '/SupplierManagement/OperationControl/SelectHeTongChuLi',
+                autoLoad: false,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                rowSelectedColor: true,//是否显示选中行背景色
+                pageSize: 6,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left"//分页工具条的显示位置
+
+            });
+            tabShangBiaoXinXi1.refreshPage();
+
+            tabShangBiaoXinXi2 = $.fn.bsgrid.init('tabShangBiaoXinXi2', {
+                url: '/SupplierManagement/OperationControl/SelectNoticeTypeDetailByNoticeTypeId',
+                autoLoad: false,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                pageSize: 5,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置
+                displayPagingToolbarOnlyMultiPages: true, //仅当多页时才显示分页工具条
+
+            });
+            tabShangBiaoXinXi2.refreshPage();
+
+            tabShangBiaoXinXi3 = $.fn.bsgrid.init('tabShangBiaoXinXi3', {
+                url: '/SupplierManagement/OperationControl/Selectaa',
+                autoLoad: false,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                pageSize: 5,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置
+                displayPagingToolbarOnlyMultiPages: true, //仅当多页时才显示分页工具条
+
+            });
+            tabShangBiaoXinXi3.refreshPage();
+            tabShangBiaoXinXi4 = $.fn.bsgrid.init('tabShangBiaoXinXi4', {
+                url: '/SupplierManagement/OperationControl/Selectzhengshu',
+                autoLoad: false,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                rowSelectedColor: true,//是否显示选中行背景色
+                pageSize: 6,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left"//分页工具条的显示位置
+
+            });
+            tabShangBiaoXinXi4.refreshPage();
+        });
+        //放弃
+        $("#FangQiBtn").click(function () {
+            document.location.href = "/SupplierManagement/OperationControl/Index";
+        });
+
+        //点击关闭
+        $("#Colse").click(function () {
+            $('body').remove();
+        });
+        //点击退出body
+        $("#SelOutBtn").click(function () {
+            $('body').remove();
+        });
+    </script>
+    @*删除供货商*@
+    <script>
+        var goodsId = 0;
+        $("#btnShangChu").click(function () {
+            var rowIndex = tabXiuGaiShenHe.getSelectedRowIndex();//获取选中的行
+            var goodsId = tabXiuGaiShenHe.getColumnValue(rowIndex, "SupplierID");
+            if (goodsId >0) {
+
+                layer.confirm("是否删除此单数据？", {
+                    icon: 3,
+                    btn: ['确定', '取消']
+                    //按钮
+                }, function (layerIndex) {
+                    layer.close(layerIndex);//关闭提示框
+
+                    $.post("/SupplierManagement/OperationControl/DeleteHeTong", { goodsId: goodsId }, function (msg) {
+                        if (msg == "success") {
+                            layer.alert("删除成功", { icon: 6, title: '温馨小提示：' });
+                            tabXiuGaiShenHe.search();
+                        }
+                        else {
+                            layer.alert("删除失败", { icon: 6, title: '温馨小提示：' });
+                        }
+                    });
+
+                });
+            }
+            else {
+                layer.alert('请选择需要删除的数据', { icon: 2, title: '提示' });
+            }
+        });
+
+    </script>
+</body>
+</html>

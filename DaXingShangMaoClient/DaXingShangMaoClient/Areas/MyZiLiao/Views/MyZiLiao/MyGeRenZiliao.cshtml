@@ -1,0 +1,734 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <title>WuLiu</title>
+    <style>
+        .one {
+            width: 1449px;
+            background: #f7f1f1;
+            border: 1px solid #000;
+            margin-left: 20px;
+            margin: 0 auto;
+        }
+
+        .head-left {
+            width: 450px;
+            height: 30px;
+        }
+
+            .head-left ul li {
+                float: left;
+                list-style: none;
+                margin-left: 20px;
+            }
+
+                .head-left ul li a {
+                    font-size: 12px;
+                    color: #000;
+                    padding: 4px;
+                    text-decoration: none;
+                }
+
+        .head-right {
+            width: 800px;
+            height: 30px;
+            position: absolute;
+            margin-left: 550px;
+            margin-top: -30px;
+        }
+
+            .head-right ul li {
+                float: left;
+                list-style: none;
+                position: relative;
+            }
+
+                .head-right ul li a {
+                    font-size: 15px;
+                    color: #000;
+                    padding: 10px;
+                    text-decoration: none;
+                }
+
+        .head a:hover {
+            color: #F00;
+        }
+
+
+        .page-header {
+            width: 99%;
+            background-color: white;
+            margin-left: 2px;
+            margin-top: -5px;
+            font-size: 15px;
+        }
+
+
+        .TAB {
+            border: 1px solid darkgray;
+            width: 100%;
+            height: 550px;
+            overflow: scroll;
+            background-color: #f0edf1;
+        }
+
+         .JiBenXinXi {
+            position: absolute;
+            margin-top: 15px;
+        }
+
+            .JiBenXinXi ul li {
+                float: left;
+                list-style: none;
+                position: relative;
+            }
+
+                .JiBenXinXi ul li a {
+                    font-size: 15px;
+                    color: #000;
+                    padding: 10px;
+                    text-decoration: none;
+                }
+
+            .JiBenXinXi a:hover {
+                color: #ff6a00;
+            }
+
+    </style>
+</head>
+<body>
+    <div class="one">
+        <div class="head" style="background:#f6eded;">
+            <div class="head-left">
+                <ul>
+                    <li><a href="#">欢迎来商贸系统</a></li>
+                    <li><a href="http://localhost:5785/YongHuZhuJieMian/GoodesUIL/DengLuJieMian">亲，请登录</a></li>
+                    <li><a href="http://localhost:5785/UserLog/Userlog/UserLogIndex" style="color:#F00;">免费注册</a></li>
+                </ul>
+            </div>
+            <div class="head-right">
+                <ul>
+                    <li><a href="http://localhost:5785/">首页</a></li>
+                    <li><a href="#"> | </a></li>
+                    <li><a href="http://localhost:5785/YongHuZhuJieMian/GoodesUIL/GouWuCheJieMian"> 我的购物车</a></li>
+                    <li><a href="#"> | </a></li>
+                    <li><a href="#"> 商品分类</a></li>
+                    <li><a href="#"> | </a></li>
+                    <li><a href="#"> 卖家中心</a></li>
+                    <li><a href="#"> | </a></li>
+                    <li><a href="#"> 联系客服</a></li>
+                    <li><a href="#"> | </a></li>
+                    <li><a href="#"> 网站导航</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class=" page-header">
+            <ul class="nav nav-tabs">
+                <li class=""><a href="#WoDeZiLiao" data-toggle="tab">我的资料</a></li>
+                <li><a href=" #tab2" data-toggle="tab">所有订单</a></li>
+                <li><a href=" #tab3" data-toggle="tab">待发货</a></li>
+                <li><a href=" #tab4" data-toggle="tab">待付款</a></li> 
+                <li><a href=" #tab5" data-toggle="tab">待收货</a></li>
+                <li><a href=" #tab6" data-toggle="tab">待评价</a></li>
+            </ul>
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="WoDeZiLiao">
+
+                    <div class="row">
+
+                        <div class="col-lg-2" style="margin-top:10px;">
+                            <div class="form-group" style=" width:120px; height:150px ; margin-left:50px;">
+                                <div class="img-box text-center" style="background:#f0edf1;width:120px; height:120px">
+                                    <img src="" alt="" width="120" height="120" id="imgPictures" name="fileImage" />
+                                    <input type="file" style="margin-top:5px;" name="fileImage" id="idGoodsPicture" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-lg-6" style="margin-top:30px;">
+                                <div class="form-group">
+                                    <div class="col-lg-2">
+                                        <label class="control-label" style="">用户名:</label>
+                                    </div>
+                                    <div class="col-lg-4" style="padding-left:15px;margin-top:5px;">
+                                        <div style="border-bottom: #000 1px solid; width: 180px;">
+                                            <input readonly="readonly" id="ContractnAME" name="ContractnAME" style="width: 180px; border: none; color: #0000FF; font-size: 16px;" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6" style="margin-top:30px;">
+                               
+                                <div class="form-group">
+                                    <div class="col-md-2" style="margin-top:-10px;">
+                                        <label class="control-label" >注册日期：</label>
+                                    </div>
+                                    <div class="col-md-4" style="padding-left:15px;margin-top:-10px;">
+                                        <div style="border-bottom: #000 1px solid; width: 180px;">
+                                            <input readonly="readonly" id="ContractNumber" name="ContractNumber" style="width: 180px; border: none; color: #0000FF; font-size: 16px;" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div style=" border:2px solid #f0edf1;"></div>
+
+                    <div class="row">
+                        <div class="col-lg-6" style="margin-top:10px;">
+                            <div class="form-group">
+                                <div class="col-md-2">
+                                    <label class="control-label" style="">会员积分:</label>
+                                </div>
+                                <div class="col-md-4" style="padding-left:15px;margin-top:5px;">
+                                    <div style="border-bottom: #000 1px solid; width: 180px;">
+                                        <input readonly="readonly" id="ContractNumber" name="ContractNumber" style="width: 180px; border: none; color: #0000FF; font-size: 16px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6" style="margin-top:10px;">
+                            <div class="form-group">
+                                <div class="col-md-2">
+                                    <label class="control-label" style="">会员次数:</label>
+                                </div>
+                                <div class="col-md-4" style="padding-left:15px;margin-top:5px;">
+                                    <div style="border-bottom: #000 1px solid; width: 180px;">
+                                        <input readonly="readonly" id="ContractNumber" name="ContractNumber" style="width: 180px; border: none; color: #0000FF; font-size: 16px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6" style="margin-top:10px;">
+                            <div class="form-group">
+                                <div class="col-md-2">
+                                    <label class="control-label" style="">会员客户:</label>
+                                </div>
+                                <div class="col-md-4" style="padding-left:15px;margin-top:5px;">
+                                    <div style="border-bottom: #000 1px solid; width: 180px;">
+                                        <input readonly="readonly" id="ContractNumber" name="ContractNumber" style="width: 180px; border: none; color: #0000FF; font-size: 16px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3" style="margin-top:10px;">
+                            <div class="col-sm-3">
+                                <button class="btn btn-success" type="button" id="BaoCunBtn" onclick="saveShenHeBtnt(true)">会员申请</button>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3" style="margin-top:10px;">
+                            <div class="col-sm-3">
+                                <button class="btn btn-success" type="button" id="BaoCunBtn" onclick="saveShenHeBtnt(true)">已收藏店家</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div style=" border:2px solid #f0edf1;"></div>
+
+                    <div class="row">
+
+                        <div id="chartA" style="width: 100%; height: 600px;float: left;">
+                            <div id="content" style="position: relative; overflow: hidden;">
+                                <div class="col-main">
+                                    <div class="main-wrap" style="z-index: 4;">
+
+                                        <h3 class="h2-single"><span class="entity">新增收货地址，注意：电话号码、手机号选填一项, 其余均为必填项</span></h3>
+
+                                        <div class="form-box" id="J_FormBox">
+
+                                            <form id="J_FormDeliver" action="" method="post">
+
+                                                <div class="item item-devision" id="J_ItemDivision">
+                                                    <span class="item-label tsl" data-phase-id="d_p_location">所在地区：</span>
+                                                    <div id="J_CitySelect" class="ks-clear clearfix">
+
+                                                        <select class="J_Country" aria-label="请选择" name="Location" id="Location">
+                                                            <option class="tsl" data-phase-id="d_p_chooseStation" value="">请选择</option>
+                                                            <option class="tsl" data-phase-id="d_p_chinaInland" value="中国大陆" selected>中国大陆</option>
+                                                            <option class="tsl" data-phase-id="d_p_taiWan" value="台湾">台湾</option>
+                                                            <option class="tsl" data-phase-id="d_p_gangAoTai" value="港澳">港澳</option>
+                                                            <option class="tsl" data-phase-id="d_p_malaysia" value="马来西亚">马来西亚</option>
+                                                            <option class="tsl" data-phase-id="d_p_foreignCountry" value="海外其他">海外其他</option>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="item item-street" id="J_ItemStreet">
+                                                    <span class="item-label tsl" data-phase-id="d_p_addressDetail">详细地址：</span>
+                                                    <div class="ks-combobox" id="J_ComboboxStreet" aria-pressed="true">
+                                                        <div class="ks-combobox-input-wrap">
+                                                            <textarea class="ks-combobox-input i-ta disabled tsl" autocomplete="off" type="text" name="Detailedaddress" id="Detailedaddress"
+                                                                      placeholder="建议您如实填写详细收货地址" data-pattern="^[\s\S]{5,120}$"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="item item-postcode" id="J_ItemPostCode">
+                                                    <span class="item-label tsl" data-phase-id="d_p_postCode">邮政编码：</span>
+                                                    <div class="item-warp">
+                                                        <input name="Zipcode" id="Zipcode" maxlength=16 data-item="postcode" placeholder="例如：000000" data-pattern="^.{0,16}$" data-msg="d_p_postCode_msg" class="i-text tsl" type="text" value="">
+                                                    </div>
+                                                </div>
+
+                                                <div class="item item-name" id="J_ItemName">
+                                                    <span class="item-label tsl" data-phase-id="d_p_receiverName">收货人姓名：</span>
+                                                    <div class="item-warp">
+                                                        <input name="Consignee" id="Consignee" class="i-text tsl" aria-label="收货人姓名" type="text" placeholder="长度不超过25个字符" data-pattern="^.{2,25}$" data-ph="长度不超过25个字符" value="">
+                                                    </div>
+
+                                                </div>
+                                                <div class="item item-mobile" id="J_ItemMobile">
+
+                                                    <span class="item-label tsl" data-phase-id="d_p_mobileNumber">手机号码：</span>
+
+                                                    <div class="item-warp">
+                                                        <input name="Phone" type="text" id="Phone" class="i-text tsl" aria-label="手机号码" placeholder="电话号码、手机号码必须填一项" autocomplete="off" data-pattern="^\d{6,20}$" value="">
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="item item-phone" id="J_ItemPhone">
+
+                                                    <span class="item-label tsl" data-phase-id="d_p_phoneNumber">电话号码：</span>
+
+
+                                                    <div class="item-warp">
+                                                        <input name="Phonecode" id="Phonecode" maxlength="10" class="i-text i-text-short tsl" placeholder="电话号码" type="text" value="">
+                                                    </div>
+
+
+                                                </div>
+
+                                                <div class="item item-set-default" id="j_ItemSetDefault">
+
+                                                    <input type="checkbox" class="i-chk" name="defaultAddress" id="J_SetDefault"> <label for="J_SetDefault" class="tsl" data-phase-id="d_p_saveAsDefaultAddress">设置为默认收货地址</label>
+
+                                                </div>
+
+                                                <div class="item">
+                                                    <button class="btn  tsl" id="btnXinZeng">保存</button>
+                                                </div>
+
+                                            </form>
+
+                                        </div>
+
+                                        <div class="tbl-deliver-address">
+                                            <table border="0" cellspacing="0" cellpadding="0" class="tbl-main">
+                                                <colgroup>
+                                                    <col class="col-man">
+                                                    <col class="col-area">
+                                                    <col class="col-address">
+                                                    <col class="col-postcode">
+                                                    <col class="col-phone">
+                                                    <col class="col-actions">
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr class="thead-tbl-grade">
+                                                        <th>收货人</th>
+                                                        <th>详细地址</th>
+                                                        <th>邮编</th>
+                                                        <th>电话/手机</th>
+                                                        <th>操作</th>
+                                                        <th></th>
+                                                    </tr>
+
+                                                    <tr class="thead-tbl-address  address-default ">
+                                                        <td>张三</td>
+                                                        <td> 广东省广州市南沙区南沙街道九王庙管理区兴业路8号</td>
+                                                        <td>510000</td>
+                                                        <td>18*******63</td>
+                                                        <td>
+                                                            <button class="btn">修改</button> |
+                                                            <button class="btn">删除</button>
+                                                        </td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-sub">
+                                    <style>
+                                        #Content .main-wrap,
+                                        #content .main-wrap {
+                                            margin-left: 139px;
+                                        }
+
+                                        #Content .col-sub,
+                                        #content .col-sub {
+                                            width: 139px;
+                                            margin-left: -100%;
+                                            *display: inline;
+                                        }
+                                    </style>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="tab-pane" id="tab2">
+                    @*//suo*@
+                    <div class="DianXinXi" style="position:relative;">
+
+                        <div class="GoodsXinXi" style="width:100%;height:780px;background:#fff;">
+                            <div class="row">
+                                <div class="" id="CeShiAdd"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+               
+                <div class="tab-pane" id="tab3">
+                    <div class="row">
+                        @*//daifa*@
+                        <div class="" id="CeShgdfdiAdd"></div>
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="tab4">
+                    <div class="row">
+                        @*//daifu*@
+                        <div class="" id="CdaifuAdd"></div>
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="tab5">
+                    <div class="row">
+                        @*//daishou*@
+                        <div class="" id="daishouAdd"></div>
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="tab6">
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.2.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <script src="~/Content/js/jquery.form.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="//webapi.amap.com/maps?v=1.3&key=4e84b3fa70fbdc218a1f944fafc129e7" language="javascript"></script>
+    <script src="//g.alicdn.com//vip/address/6.0.14/index-min.js" charset="UTF-8"></script>
+    <script src="//g.alicdn.com//vip/mbis/0.4.24/address/js/??taobao.js,address.js,index.js?t=20150910"></script>
+
+    <script type="text/javascript">
+
+	    window.CONSTANT = {
+		    "ERROR_FORBIDDEN_WORD": "您的输入包含非法字符，请重新输入",
+		    "ERROR_HAS_NO_DIVISION_CODE_ERR": "该收货地址信息不完整，请删除后重新输入",
+		    "ERROR_ENCODING_INPUT": "您的输入字符编码错误，请重新输入",
+		    "ERROR_ILLEGAL_PARAM": "错误的参数",
+		    "ERROR_MAX_DELIVER_ADDR_NUMBER": "您的收货地址数已经达到最大允许的数量",
+		    "ERROR_ILLEGAL_PARAM_ADDRESS": "<font color='red'>详细地址</font>最少5个字，最多不能超过120个字",
+		    "ERROR_DELIVER_ADDRESS_REQUIRE_MOBILE_OR_PHONE": "手机号码和电话号码至少需要一个",
+		    "ERROR_ILLEGAL_FULLNAME": "<font color='red'>收货人姓名</font>不能少于2个字，不能超过25个字",
+		    "ERROR_ILLEGAL_PARAM_MOBILEPHONE": "<font color='red'>手机号码</font>格式不正确",
+		    "ERROR_ILLEGAL_POSTCODE": "收货地址需要6位的<font color='red'>邮政编码</font>",
+		    "ERROR_ILLEGAL_PHONESECTION": "<font color='red'>电话区号</font>必须由3到6个数字组成",
+		    "ERROR_ILLEGAL_PHONECODE": "<font color='red'>电话号码</font>必须由5到10个数字组成",
+		    "ERROR_ILLEGAL_PHONEEXT": "<font color='red'>电话分机</font>必须少于6个数字"
+	    };
+
+	    TRLang = {
+	        "d_p_detailAddress_msg": "5-120个字符，一个汉字为两个字符",
+	        "d_p_postCode_msg": "请输入邮编",
+	        "d_p_fullName_msg": "收货人姓名应为2-25个字符，一个汉字为两个字符",
+	        "d_p_mobile_msg": "6-20个数字",
+	        "d_p_wrongFormat": "区号或电话号码格式不正确",
+	        "d_p_pleaseChooseCountry": "请选择国家或地区",
+	        "d_p_pleaseChooseCity": "请选择城市",
+	        "d_p_pleaseChoosedetail": "请选择详细的行政区划",
+	        "d_p_pleaseChooseProv_city_street": "请选择省市区",
+	        "d_p_completeTown": "请补充乡镇街道地址",
+	        "d_p_chooseProv": "省份",
+	        "d_p_chooseCity": "城市",
+	        "d_p_chooseTown": "县区",
+	        "d_p_chooseStreet": "街道",
+	        "d_p_fillDetailFirst": "先填详细地址，稍后再获取街道地址",
+	        "d_p_fillLater": "稍后再说",
+	        "d_p_virtralAddress": "如您无法找到原地址所属的区域，可能该区已被合并或属于虚拟&#10;行政区（地方经济开发区，非国家三级行政区），请根&#10;据提示选择正确的区县",
+	        "d_p_others": "其他",
+	        "d_p_state": "州",
+	        "d_p_city": "市",
+	        "d_p_pleaseChoose": "请选择",
+
+	        "d_p_location_haiwai": "国家 <i>*</i>",
+	        "d_p_address_haiwai": "详细地址 <i>*</i>",
+	        "d_p_city_haiwai": "城市 <i>*</i>",
+	        "d_p_regin_haiwai": "地区 <i>*</i>",
+	        "d_p_postCode_haiwai": "邮政编码",
+	        "d_p_receiverName_haiwai": "姓名 <i>*</i>",
+	        "d_p_phone_haiwai": "手机 <i>*</i>",
+	        "d_p_input_inner_postCode_haiwai": "请正确填写邮编 (Zip Code)",
+	        "d_p_input_inner_fullName_haiwai": "长度不超过25个字符",
+	        "d_p_input_inner_mobile_haiwai": "手机号码必须填一项6-20个数字",
+	        "d_p_add_haiwai": "新增国际地址",
+	        "d_p_default_haiwai": "设置默认地址",
+	        "d_p_save_haiwai": "保存"
+	    };
+
+    </script>
+
+
+    <script>
+        var JieGoodsListedDetailIDid = 1; //上市明细ID
+        var JieShoppingID = 2;//购物ID
+        var GouWu_One = 3;//图片
+        var GoodsMingXi = 4;//明细名称
+        var GoodColrdfd = 5;//颜色
+        var LeiXingChiMaHao = 6;//尺码
+        var TaxeJiaE = 7;//单价额
+
+        var Mormy = 8;//dan购买共计金额
+        var GouWuClickHangIdQuan;
+        var XuanShuLiang = 10;//数量
+        $(document).ready(function () {
+
+            $.post("/MyZiLiao/MyZiLiao/SelectUaneZiLiao", function (data) {
+                $("#ContractnAME").val(data[0].Remarks);//
+            });
+
+            //suo
+            $.post("/MyZiLiao/MyZiLiao/SelectShooppingOrderFountId", function (mess) {
+                var Ki = 1;
+                for (var i = 0; i < mess.length; i++) {
+
+                    $("#CeShiAdd").append('<div class="row" style="margin-top:10px;margin-left:2px;" onclick="Insewrtr(this.id)"><div class="" style="border:1px solid #808080;height:150px;width:95%;margin-left:35px;"> <input type="hidden" id="' + JieGoodsListedDetailIDid + i + '" /> <div class="col-lg-2"><div class="img-box text-center" style="width:100%; height:145px;background:#e7f7f5"><img src="" alt="" style="width:100%;height:100%" id="' + GouWu_One + i + '" /></div></div><div class="col-lg-2"><label style="margin-top:10px;"></label><br /><span id="' + GoodsMingXi + i + '">&nbsp;</span></div><div class="col-lg-2"><label class="control-label" style="margin-top:10px;">颜色：</label><span id="' + GoodColrdfd + i + '">&nbsp;</span><br /><label class="control-label" style="margin-top:10px;">尺码：</label><label class="control-label" id="' + LeiXingChiMaHao + i + '"></label></div><div class="col-lg-1"><label style="margin-top:10px;"></label><br /><label">单价</label><span id="' + TaxeJiaE + i + '">&nbsp;￥</span><br /></div><div class="col-lg-2"><div class="" style="margin-top:20px;"><label">数量为：</label><input type="text" style="width:80px;margin-left:48px;margin-top:-28px;position:absolute;" id="' + XuanShuLiang + i + '" class="form-control"/> </div></div><div class="col-lg-2"><label style="margin-top:10px;"></label><br /><label">已付金额：</label><span id="' + Mormy + i + '" style="color:#F00">&nbsp;￥</span></div><div class="col-lg-1"><button type="button" class="btn btn-sm btn-primary" style="margin-top:10px;" id="' + mess[i].WareHouseID + '" onclick="fangfa(this.id)">查看</button></div></div></div>');
+                    $('#' + JieGoodsListedDetailIDid + i + '').val(mess[i].GoodsListedDetailID);
+                    $('#' + JieShoppingID + i + '').val(mess[i].WareHouseID);
+                    ShoppingID = mess[i].WareHouseID
+                    $('#' + GoodsMingXi + i + '').append(mess[i].GoodsDetailName);//明细名称
+                    $('#' + GoodColrdfd + i + '').append(mess[i].StockPlaceName);//颜色
+                    $('#' + TaxeJiaE + i + '').append(mess[i].TaxBid);//单价
+                    $('#' + Mormy + i + '').append(mess[i].Subdivision);//金额
+                    $("#ShiFuKuan").val(mess[i].Subdivision);//付款
+                    $('#' + XuanShuLiang + i + '').val(mess[i].MumberOfPackages);//件数
+                    $('#' + GouWu_One + i + '').attr("src", "/ShooppingCart/ShooppingCar/SelectGoffodeseilt?goodsListedID=" + mess[i].RetureFactoryID);//图
+
+                    Ki = Ki + 1;
+
+                    JieGoodsListedDetailIDid = JieGoodsListedDetailIDid + 1;
+                    JieShoppingID = JieShoppingID + 1;
+                    ShoppingID = ShoppingID + 1;
+                    GoodsMingXi = GoodsMingXi + 1;
+                    GoodColrdfd = GoodColrdfd + 1;
+                    GoodColrdfd = GoodColrdfd + 1;
+                    TaxeJiaE = TaxeJiaE + 1;
+                    Mormy = Mormy + 1;
+                    XuanShuLiang = XuanShuLiang + 1;
+                    GouWu_One = GouWu_One + 1;
+
+                }
+            });
+
+        });
+
+
+        $(function () {
+            //daishou
+            $.post("/MyZiLiao/MyZiLiao/SelectSDaiShouuntId", function (mess) {
+                var Ki = 1;
+                for (var i = 0; i < mess.length; i++) {
+
+                    $("#daishouAdd").append('<div class="row" style="margin-top:10px;margin-left:2px;" onclick="Insewrtr(this.id)"><div class="" style="border:1px solid #808080;height:150px;width:95%;margin-left:35px;"> <input type="hidden" id="' + JieGoodsListedDetailIDid + i + '" /> <div class="col-lg-2"><div class="img-box text-center" style="width:100%; height:145px;background:#e7f7f5"><img src="" alt="" style="width:100%;height:100%" id="' + GouWu_One + i + '" /></div></div><div class="col-lg-2"><label style="margin-top:10px;"></label><br /><span id="' + GoodsMingXi + i + '">&nbsp;</span></div><div class="col-lg-2"><label class="control-label" style="margin-top:10px;">颜色：</label><span id="' + GoodColrdfd + i + '">&nbsp;</span><br /><label class="control-label" style="margin-top:10px;">尺码：</label><label class="control-label" id="' + LeiXingChiMaHao + i + '"></label></div><div class="col-lg-1"><label style="margin-top:10px;"></label><br /><label">单价</label><span id="' + TaxeJiaE + i + '">&nbsp;￥</span><br /></div><div class="col-lg-2"><div class="" style="margin-top:20px;"><label">数量为：</label><input type="text" style="width:80px;margin-left:48px;margin-top:-28px;position:absolute;" id="' + XuanShuLiang + i + '" class="form-control"/> </div></div><div class="col-lg-2"><label style="margin-top:10px;"></label><br /><label">已付金额：</label><span id="' + Mormy + i + '" style="color:#F00">&nbsp;￥</span></div><div class="col-lg-1"><button type="button" class="btn btn-sm btn-primary" style="margin-top:10px;" id="' + mess[i].WareHouseID + '" onclick="fangfa(this.id)">查看</button></div></div></div>');
+                    $('#' + JieGoodsListedDetailIDid + i + '').val(mess[i].GoodsListedDetailID);
+                    $('#' + JieShoppingID + i + '').val(mess[i].WareHouseID);
+                    ShoppingID = mess[i].WareHouseID
+                    $('#' + GoodsMingXi + i + '').append(mess[i].GoodsDetailName);//明细名称
+                    $('#' + GoodColrdfd + i + '').append(mess[i].StockPlaceName);//颜色
+                    $('#' + TaxeJiaE + i + '').append(mess[i].TaxBid);//单价
+                    $('#' + Mormy + i + '').append(mess[i].Subdivision);//金额
+                    $("#ShiFuKuan").val(mess[i].Subdivision);//付款
+                    $('#' + XuanShuLiang + i + '').val(mess[i].MumberOfPackages);//件数
+                    $('#' + GouWu_One + i + '').attr("src", "/ShooppingCart/ShooppingCar/SelectGoffodeseilt?goodsListedID=" + mess[i].RetureFactoryID);//图
+
+                    Ki = Ki + 1;
+                }
+            });
+        });
+
+
+        //新增地址
+        $("#btnXinZeng").click(function () {
+            var Location = $("#Location").val();
+            var Detailedaddress = $("#Detailedaddress").val();
+            var Zipcode = $("#Zipcode").val();
+            var Consignee = $("#Consignee").val();
+            var Phone = $("#Phone").val();
+            var Phonecode = $("#Phonecode").val();
+
+            if (Location != '' && Detailedaddress != '' && Zipcode != '' && Consignee != '' && Phone != '' && Phonecode != '') {
+                $.post("/MyZiLiao/MyZiLiao/XinZengDiZhi", {
+                    Location: Location,
+                    Detailedaddress: Detailedaddress,
+                    Zipcode: Zipcode,
+                    Consignee: Consignee,
+                    Phone: Phone,
+                    Phonecode: Phonecode,
+                }, function (mess) {
+                    if (mess == "success") {
+                        layer.alert('新增成功', { icon: 1, title: '提示' });
+                    }
+                    else {
+                        layer.alert('新增失败', { icon: 0, title: '提示' });
+                    }
+                });
+            } else {
+                layer.alert('请输入完必填数据', { icon: 2, title: '提示' });
+            }
+        });
+
+
+        //选择照片
+        var imgReaderI = new FileReader();
+        regexImageFilter = /^(?:image\/bmp|image\/png|image\/jpeg|image\/jpg)$/i;
+        //文件读取 onload事件
+        imgReaderI.onload = function (evt) {
+            $("#imgPictures").attr("src", evt.target.result);
+        }
+        $("#idGoodsPicture").change(function () {
+            //选取选择图片
+            var imgfFile = $("#idGoodsPicture").prop('files')[0];
+            //加载image标签中
+            if (!regexImageFilter.test(imgfFile.type)) {
+                layer.msg('选择的不是一个有效的图片文件', { icon: 0 });
+            }
+            imgReaderI.readAsDataURL(imgfFile);
+        });
+
+
+
+    </script>
+
+
+
+    <script>
+
+        var eJieGoodsListedDetailIDid = 1; //上市明细ID
+        var eJieShoppingID = 2;//购物ID
+        var eGouWu_One = 3;//图片
+        var eGoodsMingXi = 4;//明细名称
+        var eGoodColrdfd = 5;//颜色
+        var eLeiXingChiMaHao = 6;//尺码
+        var eTaxeJiaE = 7;//单价额
+
+        var eMormy = 8;//dan购买共计金额
+        //var eGouWuClickHangIdQuan;
+        var eXuanShuLiang = 10;//数量
+
+
+        $(function () {
+            //daifu
+            $.post("/ShooppingCart/ShooppingCar/SelectShooppingCart", function (mess) {
+                var Ki = 1;
+                for (var i = 0; i < mess.length; i++) {
+
+                    $("#CdaifuAdd").append('<div class="row" style="margin-top:10px;margin-left:2px;" onclick="Insewrtr(this.id)"><div class="" style="border:1px solid #808080;height:150px;width:95%;margin-left:35px;"> <input type="hidden" id="' + eJieGoodsListedDetailIDid + i + '" /> <div class="col-lg-2"><div class="img-box text-center" style="width:100%; height:145px;background:#e7f7f5"><img src="" alt="" style="width:100%;height:100%" id="' + eGouWu_One + i + '" /></div></div><div class="col-lg-2"><label style="margin-top:10px;"></label><br /><span id="' + eGoodsMingXi + i + '">&nbsp;</span></div><div class="col-lg-2"><label class="control-label" style="margin-top:10px;">颜色：</label><span id="' + eGoodColrdfd + i + '">&nbsp;</span><br /><label class="control-label" style="margin-top:10px;">尺码：</label><label class="control-label" id="' + eLeiXingChiMaHao + i + '"></label></div><div class="col-lg-1"><label style="margin-top:10px;"></label><br /><label">单价</label><span id="' + eTaxeJiaE + i + '">&nbsp;￥</span><br /></div><div class="col-lg-2"><div class="" style="margin-top:20px;"><label">数量为：</label><input type="text" style="width:80px;margin-left:48px;margin-top:-28px;position:absolute;" id="' + eXuanShuLiang + i + '" class="form-control"/> </div></div><div class="col-lg-2"><label style="margin-top:10px;"></label><br /><label">已付金额：</label><span id="' + eMormy + i + '" style="color:#F00">&nbsp;￥</span></div><div class="col-lg-1"><button type="button" class="btn btn-sm btn-primary" style="margin-top:10px;" id="' + mess[i].WareHouseID + '" onclick="fangfa(this.id)">去付款</button></div></div></div>');
+                    $('#' + eJieGoodsListedDetailIDid + i + '').val(mess[i].GoodsListedDetailID);
+                    $('#' + eJieShoppingID + i + '').val(mess[i].WareHouseID);
+                    ShoppingID = mess[i].WareHouseID
+                    $('#' + eGoodsMingXi + i + '').append(mess[i].GoodsDetailName);//明细名称
+                    $('#' + eGoodColrdfd + i + '').append(mess[i].StockPlaceName);//颜色
+                    $('#' + eTaxeJiaE + i + '').append(mess[i].TaxBid);//单价
+                    $('#' + eMormy + i + '').append(mess[i].Subdivision);//金额
+                    $("#ShiFuKuan").val(mess[i].Subdivision);//付款
+                    $('#' + eXuanShuLiang + i + '').val(mess[i].MumberOfPackages);//件数
+                    $('#' + eGouWu_One + i + '').attr("src", "/ShooppingCart/ShooppingCar/SelectGoffodeseilt?goodsListedID=" + mess[i].RetureFactoryID);//图
+
+                    Ki = Ki + 1;
+                }
+            });
+
+          
+
+        });
+
+    </script>
+
+    <script>
+
+        var FAJieGoodsListedDetailIDid = 1; //上市明细ID
+        var FAJieShoppingID = 2;//购物ID
+        var FAGouWu_One = 3;//图片
+        var FAGoodsMingXi = 4;//明细名称
+        var FAGoodColrdfd = 5;//颜色
+        var FALeiXingChiMaHao = 6;//尺码
+        var FATaxeJiaE = 7;//单价额
+
+        var FAMormy = 8;//dan购买共计金额
+        var FAXuanShuLiang = 10;//数量
+
+
+        $(function () {
+            //daifa
+
+            $.post("/MyZiLiao/MyZiLiao/SelectShooppinhgfrFountId", function (mess) {
+                var Ki = 1;
+                for (var i = 0; i < mess.length; i++) {
+
+                    $("#CeShgdfdiAdd").append('<div class="row" style="margin-top:10px;margin-left:2px;" onclick="Insewrtr(this.id)"><div class="" style="border:1px solid #808080;height:150px;width:95%;margin-left:35px;"> <input type="hidden" id="' + FAJieGoodsListedDetailIDid + i + '" /> <div class="col-lg-2"><div class="img-box text-center" style="width:100%; height:145px;background:#e7f7f5"><img src="" alt="" style="width:100%;height:100%" id="' + FAJieShoppingID + i + '" /></div></div><div class="col-lg-2"><label style="margin-top:10px;"></label><br /><span id="' + FAGoodsMingXi + i + '">&nbsp;</span></div><div class="col-lg-2"><label class="control-label" style="margin-top:10px;">颜色：</label><span id="' + FAGoodColrdfd + i + '">&nbsp;</span><br /><label class="control-label" style="margin-top:10px;">尺码：</label><label class="control-label" id="' + FALeiXingChiMaHao + i + '"></label></div><div class="col-lg-1"><label style="margin-top:10px;"></label><br /><label">单价</label><span id="' + FATaxeJiaE + i + '">&nbsp;￥</span><br /></div><div class="col-lg-2"><div class="" style="margin-top:20px;"><label">数量为：</label><input type="text" style="width:80px;margin-left:48px;margin-top:-28px;position:absolute;" id="' + FAXuanShuLiang + i + '" class="form-control"/> </div></div><div class="col-lg-2"><label style="margin-top:10px;"></label><br /><label">已付金额：</label><span id="' + FAMormy + i + '" style="color:#F00">&nbsp;￥</span></div><div class="col-lg-1"><button type="button" class="btn btn-sm btn-primary" style="margin-top:10px;" id="' + mess[i].WareHouseID + '" onclick="fangfa(this.id)">去付款</button></div></div></div>');
+                    $('#' + FAJieGoodsListedDetailIDid + i + '').val(mess[i].GoodsListedDetailID);
+                    $('#' + FAJieShoppingID + i + '').val(mess[i].WareHouseID);
+                    ShoppingID = mess[i].WareHouseID
+                    $('#' + FAGoodsMingXi + i + '').append(mess[i].GoodsDetailName);//明细名称
+                    $('#' + FAGoodColrdfd + i + '').append(mess[i].StockPlaceName);//颜色
+                    $('#' + FATaxeJiaE + i + '').append(mess[i].TaxBid);//单价
+                    $('#' + FAMormy + i + '').append(mess[i].Subdivision);//金额
+                    $("#ShiFuKuan").val(mess[i].Subdivision);//付款
+                    $('#' + FAXuanShuLiang + i + '').val(mess[i].MumberOfPackages);//件数
+                    $('#' + FAJieShoppingID + i + '').attr("src", "/ShooppingCart/ShooppingCar/SelectGoffodeseilt?goodsListedID=" + mess[i].RetureFactoryID);//图
+
+                    Ki = Ki + 1;
+                }
+            });
+
+
+        });
+
+    </script>
+
+</body>
+</html>

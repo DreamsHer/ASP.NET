@@ -1,0 +1,103 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <title>XuanZheKa</title>
+    <style>
+       .container {
+        width:300px;
+        margin-top:20px;
+        padding:0;
+        border:1px solid #1621a5;
+        background-color:#f0edf1;
+        }
+        .panel-heading {
+        font-size: 16px;
+        }
+        .DK {
+        width:100%;
+        height:300px;
+        }
+        .ZK {
+        overflow:scroll;
+        width:45%;
+        height:299px;
+        float:left;
+        border:1px solid #c5dcf3;
+        background-color:rgba(255, 255, 255, 0.82);
+        margin-left:10px;
+        margin-top:-10px;
+        }
+        .YK {
+        width:45%;
+        height:299px;
+        float:left;
+        text-align:center;
+        }
+        .queren {
+        margin-top:100px;
+        }
+        .quxiao {
+        margin-top:80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                选 择 卡
+            </div>
+        </div>
+        <div class="DK">
+            <div class="ZK">
+                <table id="tabkalei" class="">
+                    <tr>
+                        <th></th>
+                    </tr>
+                </table>
+            </div>
+            <div class="YK">
+                <div class="queren">
+                    <button id="QueRen">
+                    <span class="glyphicon glyphicon-saved"></span>确 认</button>
+                </div>
+                <div class="quxiao">
+                    <button>
+                    <span class="glyphicon glyphicon-fire"></span>取 消</button>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <script>
+        $(function () {
+            $("#QueRen").click(function () {
+                window.location.href = "/HuiYuanKaXinXiGuanLi/HuiYuanDangAnLuRu/DangAn";
+            });
+        });
+        $(function () {
+            $.getJSON("/HuiYuanKaXinXiGuanLi/HuiYuanDangAnLuRu/SelectKaLei", function (data) {
+                $.each(data, function (i) {
+                    $("#tabkalei").append("<tr onclick='Check(this)'><td>" + data[i].Name);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

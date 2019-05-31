@@ -1,0 +1,279 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <title>进价变价单处理</title>
+    <style type="text/css">
+        .container {
+            width: 98%;
+            padding-top: 4px;
+        }
+
+        .panel-heading {
+            font-size: 16px;
+        }
+
+        .panel-body {
+            padding: 0;
+            border-left: 3px solid #377ab7;
+            border-bottom: 3px solid #377ab7;
+            border-right: 3px solid #377ab7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="jinjiabianjiadan">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <span style="padding-left:14px;">录入进价变价单</span>                      
+                    </div>
+                </div>
+                <div class="panel-body" style="width:100%;height:550px;background:#f0edf1">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group" style="margin-top:10px;">
+                            <label class="col-md-1 control-label reset">记录编号</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="BianJiaBianHao" id="BianJiaBianHao" readonly>
+                            </div>
+                            <label class="col-md-1 control-label reset">合同号</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="HostContractNumber" id="HostContractNumber" readonly />
+                            </div>
+                            <label class="col-md-1 control-label reset">往来单位</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="SupplierName" id="SupplierName" readonly />
+                            </div>
+                            <label class="col-md-1 control-label reset">结算方法</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="MethodOfSettlingAccounts" id="MethodOfSettlingAccounts" readonly />
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:5px;">
+                            <label class="col-md-1 control-label reset">商品代码</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="GoodsCode" id="GoodsCode">
+                            </div>
+                            <label class="col-md-1 control-label reset">变价原因</label>
+                            <div class="col-md-2 reset">
+                                <select class="form-control" name="ChangeWhyID" id="ChangeWhyID"></select>
+                            </div>
+                            <label class="col-md-1 control-label reset">部门</label>
+                            <div class="col-md-2 reset">
+                                <select class="form-control" name="SpouseBRanchID" id="SpouseBRanchID"></select>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-primary form-control" id="btnXuanZeShangPin">
+                                    选择商品
+                                </button>
+                            </div>
+                            <div class="col-md-2 content reset">
+                                <input id="AuditingBit" name="AuditingBit" type="checkbox" />更新采购价
+                            </div>
+                        </div>
+                        <table id="tabShangPin" style="width:100%;">
+                            <tr>
+                                <th w_check="true"></th>
+                                <th w_index="GoodsID" w_hidden="true">GoodsID</th>
+                                <th w_index="GoodsCode">商品代码</th>
+                                <th w_index="GoodsName">部门</th>
+                                <th w_index="GoodsName">部门名称</th>
+                                <th w_index="GoodsCode">商品代码</th>
+                                <th w_index="GoodsName">库存批次号</th>
+                                <th w_index="GoodsName">原进货价(不含税)</th>
+                                <th w_index="GoodsName">原进货价(含税)</th>
+                                <th w_index="GoodsCode">新进货价(不含税)</th>
+                                <th w_index="GoodsName">新进货价(含税)</th>
+                            </tr>
+                        </table>
+                        <div class="form-group" style="margin-top:20px;">
+                            <label class="col-md-1 control-label reset">登记人</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="GoodsCode" id="GoodsCode">
+                            </div>
+                            <label class="col-md-1 control-label reset">登记时间</label>
+                            <div class="col-md-2 reset">
+                                <input type="date" class="form-control" name="GoodsCode" id="GoodsCode">
+                            </div>
+                            <label class="col-md-1 control-label reset">审核人</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="GoodsCode" id="GoodsCode">
+                            </div>
+                            <label class="col-md-1 control-label reset">审核时间</label>
+                            <div class="col-md-2 reset">
+                                <input type="date" class="form-control" name="GoodsCode" id="GoodsCode">
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:25px;">
+                            <div class="col-sm-1 col-sm-offset-3">
+                                <button type="button" class="btn btn-success form-control" id="btnaTianJia">
+                                    <span class="glyphicon glyphicon-plus"></span> 添加
+                                </button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-danger form-control" id="btnShanChu">
+                                    <span class="glyphicon glyphicon-trash"></span> 删除
+                                </button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-info form-control" id="btnXiuGai">
+                                    <span class="glyphicon glyphicon-pencil"></span> 修改
+                                </button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-primary form-control" id="btnShenHe">
+                                    <span class="glyphicon glyphicon-ok"></span> 审核
+                                </button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-warning form-control" id="btnTuiChu">
+                                    <span class="glyphicon glyphicon-off"></span> 退出
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*选择合同信息*@
+    <div class="modal" id="XuanZeHeTongXinXi">
+        <div class="modal-dialog" style="width:700px;height:600px;">
+            <div class="modal-header" style="background:#a8d7ef;">
+                <span>选择合同信息</span>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body" style="background:#eddddd;">
+                <table id="tabHeTongXinXi" style="width:100%;">
+                    <tr>
+                        <th w_num="total_line">序号</th>
+                        <th w_index="OrderFormPactID" w_hidden="true">OrderFormPactID</th>
+                        <th w_index="HostContractNumber">合同号</th>
+                        <th w_index="SupplierID" w_hidden="true">SupplierID</th>
+                        <th w_index="SupplierName">往来单位</th>
+                        <th w_index="MethodOfSettlingAccountsID" w_hidden="true">MethodOfSettlingAccountsID</th>
+                        <th w_index="MethodOfSettlingAccounts">结算方法</th>
+                    </tr>
+                </table>
+                <form class="form-horizontal" role="form">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="col-sm-2 col-sm-offset-4">
+                            <button type="button" class="btn btn-primary form-control" id="btnXuanZeAnNiu">选择</button>
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="button" class="btn btn-danger form-control"  data-dismiss="modal">退出</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    @*页面加载及查询*@
+    <script type="text/javascript">
+        var tabShangPin;
+        $(document).ready(function () {
+            tabShangPin = $.fn.bsgrid.init('tabShangPin', {
+                url: '/SystemManagement/IssuanceNotice/SelectNoticeAll',
+                autoLoad: false,//自动加载数据
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                rowSelectedColor: true,//是否显示选中行背景色
+                pageSize: 8,//默认页面大小
+                pageSizeSelect: true,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置
+                event: {//事件
+                    customRowEvents: {//自定义行事件
+                        click: function (record, rowIndex, trObj, options) {//点击事件
+                            tabFiles.search("noticeId=" + record.NoticeID);
+                        }
+                    }
+                }
+            });
+            //tabShangPin.refreshPage();
+
+            //记录编码          
+            $.getJSON("/WuJiaGuanLi/ShouJinBianJiaGuanLi/SelectBianJiaBianHao", function (data) {
+                $("#BianJiaBianHao").val(data);
+            });
+            //变价原因
+            $.post("/WuJiaGuanLi/ShouJinBianJiaGuanLi/SelectChangeWhyID1", function (data) {
+                selectLoadData("ChangeWhyID", data);
+            });
+            //选择部门
+            $.post("/WuJiaGuanLi/ShouJinBianJiaGuanLi/SelectSpouseBRanchID", function (data) {
+                selectLoadData("SpouseBRanchID", data);
+            });
+        });
+
+        //合同号选择
+        $(function () {
+            //合同的选择
+            tabHeTongXinXi = $.fn.bsgrid.init('tabHeTongXinXi', {
+                url: '/WuJiaGuanLi/ShouJinBianJiaGuanLi/SelectOrderFormPactID',
+                autoLoad: false,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                pageSize: 8,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置
+            });
+            $("#btnaTianJia").click(function () {
+                tabHeTongXinXi.refreshPage();
+                $("#XuanZeHeTongXinXi").modal('show');
+            });
+            //获取合同名称
+            $("#btnXuanZeAnNiu").click(function () {
+                var rowIndex = tabHeTongXinXi.getSelectedRowIndex();
+                if (rowIndex > -1) {
+                    var orderFormPactID = tabHeTongXinXi.getColumnValue(rowIndex, "OrderFormPactID");
+                    $.getJSON("/WuJiaGuanLi/ShouJinBianJiaGuanLi/HuoQuHeTongMingCheng?HeTongID=" + orderFormPactID, function (data) {
+                        if (data == "失败") {
+                            layer.alert('你没有选择信息！', { icon: 2, title: '提示' });
+                        }
+                        else {
+                            $("#OrderFormPactID").val(data.OrderFormPactID);//隐藏域
+                            $("#HostContractNumber").val(data.HostContractNumber);
+                            $("#SupplierName").val(data.SupplierName);
+                            $("#MethodOfSettlingAccounts").val(data.MethodOfSettlingAccounts);
+                        }
+                        $("#XuanZeHeTongXinXi").modal('hide'); //选择后自动关闭
+                    });
+                }
+                else {
+                    layer.alert('请选择一条的信息！', { icon: 2, title: '提示' });
+                }
+            });
+        });
+
+        //页面关闭按钮
+        $(function () {          
+            $("#btnTuiChu").click(function () {
+                $("#jinjiabianjiadan").hide();
+            });
+        });
+
+    </script>
+
+</body>
+</html>

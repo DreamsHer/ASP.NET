@@ -1,0 +1,363 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SelectPanl</title>
+
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+
+
+    <style>
+        .container {
+            background: #fff;
+            width: 100%;
+        }
+
+        .reset-padding {
+            padding: 0 5px;
+        }
+
+        .reset {
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        label.Size {
+            font-size: 60px;
+        }
+
+        label {
+            font-weight: normal;
+        }
+    </style>
+
+
+</head>
+<body>
+   
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="form-group">
+
+                        <span class="h4"><b>查询盘点表</b></span>
+                        <div class="pull-right">
+                            <button class="form-control btn-sm btn btn-info" id="Colse"><span class="glyphicon glyphicon-remove">关闭</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-body" style="background:#f0edf1;">
+                  
+                   
+                    <div class="col-lg-5">
+                        <div class="h4"><b>查询条件</b></div>
+                        <div class="row" style="margin-top:10px;">
+                           
+                            <div class="col-lg-3">
+                                <div class="row" style="border: 2px solid #d8cddc;">
+                                    <div class="row" style="margin-top:30px;">
+                                        <div class="form-group">
+                                            <div class="col-md-7 reset" style="margin-left:20px;">
+                                                <input type="radio" id="Goods" name="Goods" value="全部商品" checked/><label class="ZiYingPanl">全部商品</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-7 reset" style="margin-left:20px;">
+                                                <input type="radio" id="Goods" name="Goods" value="盘亏商品" /><label class="ZiYingPanl">盘亏商品</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-7 reset" style="margin-left:20px;">
+                                                <input type="radio" id="Goods" name="Goods" value="盘盈商品" /><label class="ZiYingPanl">盘盈商品</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-7 reset" style="margin-left:20px;">
+                                                <input type="radio" id="Goods" name="Goods" value="盈亏商品" /><label class="ZiYingPanl">盈亏商品</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="row" style="margin-top:10px;">
+                                    <div class="form-group">
+                                        <div class="col-md-5">
+                                            <label class="control-label">计划盘点日期</label>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <input type="date" class="form-control" id="Chertempatd" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:10px;">
+                                    <div class="form-group">
+                                        <div class="col-md-5">
+                                            <label class="control-label" style="margin-left:25px;">盘点日期</label>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <input type="date" class="form-control" id="Panlpatd" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+
+                                <div class="row" style="margin-top:20px;">
+                                    <div class="form-group">
+                                        <div class="col-md-4 reset" style="margin-left:30px;">
+                                            <input type="radio" checked id="CommodityTypea" name="CommodityTypea" value="已审核" /><label class="ZiYingPanl">已审核</label>
+                                        </div>
+                                        <div class="col-md-4 reset" style="margin-left:10px;">
+                                            <input type="radio" id="CommodityTypea" name="CommodityTypea" value="未审核" /><label class="ZiYingPanl">未审核</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+
+                            </div>
+
+                        </div>
+
+                        <div class="row" style="margin-top:10px;">
+                            <div class="row" style="margin-top:10px;">
+                                <div class="col-md-2">
+                                    <label class="control-label reset" style="margin-left:15px;">部门:</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <select class="form-control" id="DrugTypeCods"></select>
+                                </div>
+                                <div class="col-md-2">
+                                    <div style="border-bottom: #000 1px solid; width: 180px;">
+                                        <input readonly="readonly" id="DrugType" style="background:#f0edf1; width: 180px; border: none; color: #0000FF; font-size: 15px;" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top:10px;">
+                                <div class="form-group">
+                                    <div class="col-md-2">
+                                        <label class="control-label">供货单位</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" id="patd" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row" style="margin-top:20px;">
+                            <div class="form-group">
+                                <div class="col-md-3 col-lg-offset-3">
+                                    <button class="btn btn-primary" type="button" id="SelectChaXun"><span class="glyphicon glyphicon-search">查 询</span></button>
+                                </div>
+                                <div class="col-md-3">
+                                    <button class="btn btn-warning" type="button" id="SetOut"><span class="glyphicon glyphicon-off">退 出</span></button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                   
+                    <div class="col-lg-7" style="border: 3px solid #d8cddc;">
+                        <div class="h4" style="background:#f0edf1;">查询结果</div>
+                        <div class="row table-responsive" style="margin-left:1px; overflow:auto;height:210px;">
+                            <table id="ShangPin" style="width:700px;">
+                                <tr>
+                                    <th w_index="CheckRermeberID" w_hidden="true"></th><!--盘点记录ID-->
+
+                                    <th w_index="Remter">盘点表编号</th>
+                                    <th w_index="EnteringTime">盘点日期</th>
+                                    <th w_index="RegisterTime">审核日期</th>
+                                    <th w_index="departmentCodes">部 门</th>
+                                
+                                    <th w_index="departmentName">部门名称</th>                                    
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="row" style="background:#f0edf1;">
+                            <div class="h5 text-center">盘点数量和金额</div>
+                            <div class="col-lg-6">
+                                <div class="row" style="margin-top:20px;overflow:auto;height:210px;">
+                                    <table id="ShangPinLeft" style="width:400px;">
+                                        <tr>
+                                            <th w_index="CheckRermeberID" w_hidden="true"></th><!--盘点记录ID-->
+                                          
+                                            <th w_index="GoodsTiaoMas">商品条码</th>
+                                            <th w_index="GoodsNames">商品名称</th>
+                                            <th w_index="GoodsChopName">商标</th>
+                                            <th w_index="GoodsClassifyName">商品分类</th>
+                                            <th w_index="EstimateUnitName">计量单位</th>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="row" style="margin-top:20px;overflow:auto;height:210px;margin-left:1px;">
+                                    <table id="ShangPinright" style="width:700px;">
+                                        <tr>
+                                            <th w_index="CheckRermeberID" w_hidden="true"></th><!--盘点记录ID-->
+                                            <th w_index="FactPrice">帐面金额</th>
+                                            <th w_index="ShiJiHaoSunLv">益余金额</th>
+                                            <th w_index="HeLiHaoSunLv">盘点金额</th>
+                                            <th w_index="GoodsNames">商品名称</th>
+                                            <th w_index="GoodsClassifyName">商品分类</th>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div><!--大row-->
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script><!--bootstrap-->
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.2.min.js"></script><!--bootstrap-->
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script><!--bootstrap-->
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+
+
+
+    <script>
+        var ShangPinghg;
+        $(document).ready(function () {
+
+            ShangPin = $.fn.bsgrid.init('ShangPin', {
+                url: '/PanDianShuYiChuLi/S_SelectPanl/SelectHoaSun',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                pageSize: 4,
+                pageSizeSelect: false,
+                pagingLittleToolbar: true,
+                pagingToolbarAlign: "left",
+                event: {//事件
+                    customRowEvents: {
+                        click: function (record, rowIndex, trObj, options) {//点击事件
+                            ShangPinLeft.search("checkRermeberID=" + record.CheckRermeberID);
+                            ShangPinright.search("checkRermeberID=" + record.CheckRermeberID);
+                        }
+                    }
+                }
+
+            });
+            ShangPin.search();
+
+            ShangPinLeft = $.fn.bsgrid.init('ShangPinLeft', {
+                url: '/PanDianShuYiChuLi/S_SelectPanl/SelectGoods',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                pageSize: 4,
+                pageSizeSelect: false,
+                pagingLittleToolbar: true,
+                pagingToolbarAlign: "left",
+            });
+         
+
+            ShangPinright = $.fn.bsgrid.init('ShangPinright', {
+                url: '/PanDianShuYiChuLi/S_SelectPanl/SelectZhangMian',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                pageSize:4,
+                pageSizeSelect: false,
+                pagingLittleToolbar: true,
+                pagingToolbarAlign: "left",
+            });
+          
+
+            //部门
+            $.post("/PanDianShuYiChuLi/SunHaoLv/SelectDernrtBuMen", function (data) {
+                selectLoadData("DrugTypeCods", data);
+            });
+
+        });
+
+        $("#DrugTypeCods").change(function () {
+            var deparngtCodes = $("#DrugTypeCods").val();
+            if (deparngtCodes > 0) {
+                $.post("/PanDianShuYiChuLi/SunHaoLv/SelectDernrtName?deparntCodes=" + deparngtCodes, function (data) {
+
+                    $("#DrugType").val(data[0].departmentName);
+                    frugTypefID = data[0].DrugTypefID;
+
+                });
+            }
+            else {
+                document.location.href = "/PanDianShuYiChuLi/SunHaoLv/GoodsPanlSex";
+            }
+
+        });
+
+        //条件查询
+        ShangPinghg = $.fn.bsgrid.init('ShangPin', {
+            url: '/PanDianShuYiChuLi/S_SelectPanl/TiaoSelectHoaSun',
+            autoLoad: false,
+            stripeRows: true,
+            rowHoverColor: true,
+            pageSize: 4,
+            pageSizeSelect: false,
+            pagingLittleToolbar: true,
+            pagingToolbarAlign: "left",
+            event: {//事件
+                customRowEvents: {
+                    click: function (record, rowIndex, trObj, options) {//点击事件
+                        ShangPinLeft.search("checkRermeberID=" + record.CheckRermeberID);
+                        ShangPinright.search("checkRermeberID=" + record.CheckRermeberID);
+                    }
+                }
+            }
+
+        });
+        $("#SelectChaXun").click(function () {
+            var Chertempatd = $("#Chertempatd").val();
+           
+            if (Chertempatd != '') {
+                ShangPinghg.search({ chertempatd: Chertempatd});
+            }
+            else {
+                layer.alert("请输入或选择计划日期查询", { icon: 6, title: '温馨小提示：' });
+            }
+           
+
+        });
+
+
+    </script>
+
+
+</body>
+</html>

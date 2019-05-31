@@ -1,0 +1,746 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <title>DangAn</title>
+    <style>
+        .container {
+        width:100%;
+        height:650px;
+        background-color:#f0edf1;
+        }
+        .ShangK {
+        width:100%;
+        height:30px;
+        }
+        .Hykh {
+        float:left;
+        margin-left:10px;
+        }
+        .Klx {
+        float:left;
+        margin-left:50px;
+        }
+        .Kzt {
+        float:left;
+        margin-left:200px;
+        }
+        .Dk {
+        width:100%;
+        height:460px;
+        }
+        .ZK {
+        width:76%;
+        height:450px;
+        float:left;
+        margin-left:4%;
+        }
+        .xingming {
+        margin-left:20px;
+        }
+        .YK {
+        width:20%;
+        height:450px;
+        float:left;
+        }
+        .ZX {
+        width:100%;
+        height:20px;
+        margin-top:10px; 
+        }
+        .zjlx {
+        float:left;
+        margin-left:12px;
+        }
+        .XingBie {
+        float:left;
+        margin-left:200px;
+        margin-top:-30px;
+        width:100px;
+        height:45px;
+        }
+        .Nan {
+        float:left;
+        }
+        .Nv {
+        float:left;
+        margin-left:25px;
+        }
+        .ZS {
+        width:100%;
+        height:30px;
+        margin-top:10px; 
+        }
+        .zhengjianhaoma {
+        float:left;
+        }
+        .chusengriqi {
+        float:left;
+        margin-left:150px;
+        }
+        .tonxundizhi {
+        width:100%;
+        height:30px;
+        margin-top:10px;
+        }
+        .SY {
+        width:100%;
+        height:35px;
+        margin-top:5px;
+        }
+        .suozaiquyu {
+        float:left;
+        margin-left:11px;
+        }
+        .youbian {
+        float:left;
+        margin-left:218px;
+        }
+        .EZ {
+        width:100%;
+        height:35px;
+        }
+        .em {
+        float:left;
+        margin-left:20px;
+        }
+        .zhiye {
+        float:left;
+        margin-left:191px;
+        }
+        .BS {
+        width:100%;
+        height:35px;
+        }
+        .bangongdianhua {
+        float:left;
+        margin-left:10px;
+        }
+        .sirendianhua {
+        float:left;
+        margin-left:164px;
+        }
+        .SZ {
+        width:100%;
+        height:35px;
+        }
+        .shouji {
+        float:left;
+        margin-left:38px;
+        }
+        .zhishangchangshijiang {
+        float:left;
+        margin-left:150px;
+        }
+        .JJ {
+        width:100%;
+        height:35px;
+        }
+        .jiaoyuchengdu {
+        float:left;
+        margin-left:10px;
+        }
+        .jiatingshouru {
+        float:left;
+        margin-left:195px;
+        }
+        .TJ {
+        width:100%;
+        height:35px;
+        }
+        .jiaotonggongju {
+        float:left;
+        margin-left:10px;
+        }
+        .jitingchengyuan {
+        float:left;
+        margin-left:195px;
+        }
+        .kahaobiangeng {
+        width:100%;
+        height:30px;
+        }
+        .beizu {
+        width:100%;
+        height:30px;
+        margin-top:5px;
+        }
+        .kayouxiaoqi {
+        width:100%;
+        height:30px;
+        margin-top:10px;
+        }
+        .xiaofeijinE {
+        margin-top:20px;
+        }
+        .weichulijifeng{
+        margin-top:20px;
+        }
+        .dyhysxnr{
+        margin-top:10px;
+        }
+        .XQAH {
+        width:80%;
+        height:275px;
+        background-color:#faf7fb;
+        border:1px solid #ebc1eb;
+        margin-left:20px;
+        }
+        .XinXi {
+        width:100%;
+        height:35px;
+        margin-left:325px;
+        }
+        .dengjiren {
+        float:left;
+        }
+        .dengjishijian {
+        float:left;
+        margin-left:50px;
+        }
+        .gengxingren {
+        float:left;
+        margin-left:60px;
+        margin-top:5px;
+        }
+        .gengxingshijan {
+        float:left;
+        margin-left:60px;
+        margin-top:5px;
+        }
+        .anniu {
+        width:100%;
+        height:35px;
+        margin-top:10px;
+        margin-left:35px;
+        text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                会 员 档 案
+            </div>
+        </div> 
+        <div class="ShangK">
+            <div class="Hykh">
+                <button>会 员 卡 号</button>
+                <input style="width:100px"/>
+            </div>
+            <div class="Klx">
+                卡 类 型
+                <input style="width:100px"/>
+            </div>
+            <div class="Kzt">
+                卡 状 态
+                <input style="width:100px"/>
+            </div>
+        </div>
+        <div class="Dk">
+            <div class="ZK">
+                <div class="xingming">
+                    姓 名 ：
+                    <input id="XingMing"name="XingMing"/>
+                </div>
+                <div class="ZX">
+                    <div class="zjlx">
+                        证件类型
+                        <select data-rule-required="true" id="CredentialsType" name="CredentialsType" style="width:150px">
+                            <option></option>
+                        </select>
+                    </div>
+                    <div class="XingBie">
+                        <div>性 别</div>
+                        <div class="Nan">
+                            <label>
+                                <input name="form-field-radio" type="radio" />
+                                <span>男</span>
+                            </label>
+                        </div>
+                        <div class="Nv">
+                            <label>
+                                <input name="form-field-radio" type="radio" />
+                                <span>女</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="ZS">
+                    <div class="zhengjianhaoma">
+                        证 件 号 码
+                        <input id="CredentialsNumber"name="CredentialsNumber"/>
+                    </div>
+                    <div class="chusengriqi">
+                        出 生 日 期
+                        <input type="date"/>
+                    </div>
+                </div>
+                <div class="tonxundizhi">
+                    通 讯 地 址
+                    <input style="width:580px"id="PostalAddress"name="PostalAddress"/>
+                </div>
+                <div class="SY">
+                    <div class="suozaiquyu">
+                        所在区域
+                        <select data-rule-required="true" id="Location" name="Location" style="width:150px">
+                            <option></option>
+                        </select>
+                    </div>
+                    <div class="youbian">
+                        邮 编
+                        <input id="Postalcode"name="Postalcode"/>
+                    </div>
+                </div>
+                <div class="EZ">
+                    <div class="em">
+                        E-MAIL
+                        <input id="dianziyoujian"name="dianziyoujian"/>
+                    </div>
+                    <div class="zhiye">
+                        职业
+                        <select data-rule-required="true" id="Profession" name="Profession" style="width:150px">
+                            <option></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="BS">
+                    <div class=" bangongdianhua">
+                        办公电话
+                        <input id="OfficePhone"name="OfficePhone"/>
+                    </div>
+                    <div class="sirendianhua">
+                        私人电话
+                        <input id="PrivateTelephone"name="PrivateTelephone"/>
+                    </div>
+                </div>
+                <div class="SZ">
+                   <div class="shouji">
+                       手机号码
+                       <input id="CellphoneNumber"name="CellphoneNumber"/>
+                   </div>
+                    <div class="zhishangchangshijiang">
+                        至商场时间
+                        <select data-rule-required="true" id="TimeToMall" name="TimeToMall" style="width:150px">
+                            <option></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="JJ">
+                    <div class="jiaoyuchengdu">
+                        教育程度
+                        <select data-rule-required="true" id="MemberEd" name="MemberEd" style="width:150px">
+                            <option></option>
+                        </select>
+                    </div>
+                    <div class=" jiatingshouru">
+                        家庭收入
+                        <select data-rule-required="true" id="MemberFamilyIncome" name="MemberFamilyIncome" style="width:150px">
+                            <option></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="TJ">
+                    <div class="jiaotonggongju">
+                        交通工具
+                        <select data-rule-required="true" id="Vehicle" name="Vehicle" style="width:150px">
+                            <option></option>
+                        </select>
+                    </div>
+                    <div class="jitingchengyuan">
+                        家庭成员
+                        <select data-rule-required="true" id="FamilyMember" name="FamilyMember" style="width:150px">
+                            <option></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="kahaobiangeng">
+                    卡 号 变 更
+                    <input style="width:580px"id="CardNumberChange"name="CardNumberChange"/>
+                </div>
+                <div class="beizu">
+                    备 注
+                    <input style="width:580px;margin-left:36px;" id="CommentsOnAForm" name="CommentsOnAForm" />
+                </div>
+                <div class="kayouxiaoqi">
+                    卡 有 效 期
+                    <input type="date"/>
+                </div>
+            </div>
+            <div class="YK">
+            <div class="xiaofeijinE">
+               消 费 金 额：
+               <input style="width:90px"/>
+            </div>
+           <div class="weichulijifeng">
+              未处理积分：
+               <input style="width:80px"/>
+           </div>
+                <div class="dyhysxnr">
+                    <button id="btnXuanZeHeTong"> 定 义 会 员 属 性 内 容 </button>
+                </div>
+                <div>
+                    <h5> 兴 趣 爱 好 </h5>
+                </div>
+                <div class="XQAH">
+                    <div>
+                        <label>
+                            <input name="form-flield-checkbox" type="checkbox" />
+                            <span>购 物</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input name="form-flield-checkbox" type="checkbox" />
+                            <span>运 动 健 身</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input name="form-flield-checkbox" type="checkbox" />
+                            <span>旅 游</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input name="form-flield-checkbox" type="checkbox" />
+                            <span>音 乐</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input name="form-flield-checkbox" type="checkbox" />
+                            <span>摄 影</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input name="form-flield-checkbox" type="checkbox" />
+                            <span>上 网</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input name="form-flield-checkbox" type="checkbox" />
+                            <span>绘 画</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input name="form-flield-checkbox" type="checkbox" />
+                            <span>看 书</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input name="form-flield-checkbox" type="checkbox" />
+                            <span>酒 吧</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input name="form-flield-checkbox" type="checkbox" />
+                            <span>看 电 影</span>
+                        </label> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="XinXi">
+            <div class="dengjiren">
+                登记人
+                <a class="btn btn-link" href="#">
+                    <i class="icon-plus-sign bigger-120 green"></i>
+                    林永好
+                </a>
+            </div>
+            <div class="dengjishijian">
+                登记时间
+                <a class="btn btn-link" href="#">
+                    <i class="icon-plus-sign bigger-120 green"></i>
+                    2016.05.15 15:25:15
+                </a>
+            </div>
+            <div class="gengxingren">
+                更新人
+                <a class="btn btn-link" href="#">
+                    <i class="icon-plus-sign bigger-120 green"></i>
+                    林永好
+                </a>
+            </div>
+            <div class="gengxingshijan">
+                更新时间
+                <a class="btn btn-link" href="#">
+                    <i class="icon-plus-sign bigger-120 green"></i>
+                    2017.05.16 16:25:15
+                </a>
+            </div>
+        </div>
+        <div class="anniu">
+            <button type="button" id="btnInsert"class="btn-primary">
+                <span class="glyphicon glyphicon-paste"></span> 修 改
+            </button>
+            <button class="btn-danger">
+                <span class="glyphicon glyphicon-trash"></span> 删 除
+            </button>
+            <button style="color:gainsboro">
+                <span class="glyphicon glyphicon-ok"></span> 确 认
+            </button>
+            <button  style="color:gainsboro">
+                <span class="glyphicon glyphicon-remove"></span> 取 消
+            </button>
+            <button>
+                <span class="glyphicon glyphicon-print"></span> 退 出
+            </button>
+            <button> 会 员 卡 验 卡 </button>
+        </div>
+    </div>
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="tianxiehetongxinxi">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:760px;height:350px;">
+                <div class="modal-header" style="background:#a8d7ef;">
+                    <span>会员批量发放信息</span>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body" style="background:#eddddd;">
+                    <div class="" style="width:100%;height:330px; background:#f0edf1;">
+                        <div class="" style="width:100%;height:280px;overflow:auto;">
+                            <table id="tabHeTongXinXi" style="margin-top:2px;width:100%;" class="table">
+                                <tr>
+                                    <th w_index="XingMing">姓名</th>
+                                    <th w_index="CredentialsType">证件类型</th>
+                                    <th w_index="CredentialsNumber">证件号码</th>
+                                    <th w_index="PostalAddress">通讯地址</th>
+                                    <th w_index="Location">所在区域</th>
+                                    <th w_index="Postalcode">邮政编码</th>
+                                    <th w_index="dianziyoujian">电子邮件</th>
+                                    <th w_index="Profession">职业</th>
+                                    <th w_index="OfficePhone">办公电话</th>
+                                    <th w_index="PrivateTelephone">私人电话</th>
+                                    <th w_index="CellphoneNumber">手机号码</th>
+                                    <th w_index="TimeToMall">至商场时间</th>
+                                    <th w_index="MemberEd">教育程度</th>
+                                    <th w_index="MemberFamilyIncome">家庭收入</th>
+                                    <th w_index="Vehicle">交通工具</th>
+                                    <th w_index="FamilyMember">家庭成员</th>
+                                    <th w_index="CardNumberChange">卡号变更</th>
+                                    <th w_index="CommentsOnAForm">备注</th>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="text-align:center">
+                            <button type="button" class="btn btn-danger" id="btnHeTongXuanZe">
+                                选择信息
+                            </button>
+                            <button type="button" class="btn btn-primary" id="btnDetlete">
+                                删 除
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <script>
+        $(function () {
+            //证件类型
+            $.post("/HuiYuanKaXinXiGuanLi/HuiYuanDangAnLuRu/SelectZhengjianleixing", function (data) {
+                selectLoadData("CredentialsType", data)
+            });
+            //所在区域
+            $.post("/HuiYuanKaXinXiGuanLi/HuiYuanDangAnLuRu/SelectLocation", function (data) {
+                selectLoadData("Location", data)
+            });
+            //职业
+            $.post("/HuiYuanKaXinXiGuanLi/HuiYuanDangAnLuRu/SelectProfession", function (data) {
+                selectLoadData("Profession", data)
+            });
+            //至商场时间
+            $.post("/HuiYuanKaXinXiGuanLi/HuiYuanDangAnLuRu/SelectTimeToMall", function (data) {
+                selectLoadData("TimeToMall", data)
+            });
+            //教育程度
+            $.post("/HuiYuanKaXinXiGuanLi/HuiYuanDangAnLuRu/SelectMemberEd", function (data) {
+                selectLoadData("MemberEd", data)
+            });
+            //家庭收入
+            $.post("/HuiYuanKaXinXiGuanLi/HuiYuanDangAnLuRu/SelectMemberFamilyIncome", function (data) {
+                selectLoadData("MemberFamilyIncome", data)
+            });
+            //交通工具
+            $.post("/HuiYuanKaXinXiGuanLi/HuiYuanDangAnLuRu/SelectVehicle", function (data) {
+                selectLoadData("Vehicle", data)
+            });
+            //家庭成员
+            $.post("/HuiYuanKaXinXiGuanLi/HuiYuanDangAnLuRu/SelectFamilyMember", function (data) {
+                selectLoadData("FamilyMember", data)
+            });
+        });
+        $(function () {
+            $("#btnXuanZeHeTong").click(function () {
+                tabHeTongXinXi = $.fn.bsgrid.init('tabHeTongXinXi', {
+                    url: '/HuiYuanKaXinXiGuanLi/HuiYuanDangAnLuRu/SelectHeellingInfo',
+                    autoLoad: false,
+                    stripeRows: true,//隔行变色
+                    rowHoverColor: true,//划过行变色
+                    pageSize: 20,
+                    pageSizeSelect: false,//是否选择分页页数下拉框
+                    pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                    pagingToolbarAlign: "left",//分页工具条的显示位置
+                    displayPagingToolbarOnlyMultiPages: true,//仅当多页时才显示分页工具条
+                    event: {
+                        customRowEvents: { //record 记录记载  options 选项
+                            click: function (record, rowIndex, trObj, options) {
+                                if (record != null) {
+                                    MemberID = record.MemberID;
+                                }
+                            }
+                        }
+                    }
+                });
+                tabHeTongXinXi.refreshPage();
+                $("#tianxiehetongxinxi").modal('show');
+            });
+            //获取信息
+            $("#btnHeTongXuanZe").click(function () {
+                var rowIndex = tabHeTongXinXi.getSelectedRowIndex();
+                if (rowIndex > -1) {
+                    var MemberID = tabHeTongXinXi.getColumnValue(rowIndex, "MemberID");
+                    $.getJSON("/HuiYuanKaXinXiGuanLi/HuiYuanDangAnLuRu/SelectHuoQuKaXinXi?HTID=" + MemberID, function (data) {
+                        if (data == "失败") {
+                            alert("你没有选择信息");
+                        }
+                        else {
+                            $("#MemberID").val(data.MemberID);//隐藏域
+                            $("#XingMing").val(data.XingMing);
+                            $("#CredentialsType").val(data.CredentialsType);
+                            $("#CredentialsNumber").val(data.CredentialsNumber);
+                            $("#PostalAddress").val(data.PostalAddress);
+                            $("#Location").val(data.Location);
+                            $("#Postalcode").val(data.Postalcode);
+                            $("#dianziyoujian").val(data.dianziyoujian);
+                            $("#Profession").val(data.Profession);
+                            $("#OfficePhone").val(data.OfficePhone);
+                            $("#PrivateTelephone").val(data.PrivateTelephone);
+                            $("#CellphoneNumber").val(data.CellphoneNumber);
+                            $("#TimeToMall").val(data.TimeToMall);
+                            $("#MemberEd").val(data.MemberEd);
+                            $("#MemberFamilyIncome").val(data.MemberFamilyIncome);
+                            $("#Vehicle").val(data.Vehicle);
+                            $("#FamilyMember").val(data.FamilyMember);
+                            $("#CardNumberChange").val(data.CardNumberChange);
+                            $("#CommentsOnAForm").val(data.CommentsOnAForm);
+                        }
+                        $("#tianxiehetongxinxi").modal('hide');
+                    });
+                }
+                else {
+                    alert("请选择一条的信息");
+                }
+            });
+        });
+        $("#btnInsert").click(function () {
+            var XingMing = $("#XingMing").val();
+            var CredentialsType = $("#CredentialsType").val();
+            var CredentialsNumber = $("#CredentialsNumber").val();
+            var PostalAddress = $("#PostalAddress").val();
+            var Location = $("#Location").val();
+            var Postalcode = $("#Postalcode").val();
+            var dianziyoujian = $("#dianziyoujian").val();
+            var Profession = $("#Profession").val();
+            var OfficePhone = $("#OfficePhone").val();
+            var PrivateTelephone = $("#PrivateTelephone").val();
+            var CellphoneNumber = $("#CellphoneNumber").val();
+            var TimeToMall = $("#TimeToMall").val();
+            var MemberEd = $("#MemberEd").val();
+            var MemberFamilyIncome = $("#MemberFamilyIncome").val();
+            var Vehicle = $("#Vehicle").val();
+            var FamilyMember = $("#FamilyMember").val();
+            var CardNumberChange = $("#CardNumberChange").val();
+            var CommentsOnAForm = $("#CommentsOnAForm").val();
+            if (XingMing != '' && CredentialsType != '' && CredentialsNumber != '' && PostalAddress != ''&&
+                Location != '' && Postalcode != '' && dianziyoujian != '' && Profession!=''&&
+                OfficePhone != '' && PrivateTelephone != '' && CellphoneNumber != '' && TimeToMall !=''&&
+                MemberEd != '' && MemberFamilyIncome != '' && Vehicle != '' && FamilyMember !=''&&
+                CardNumberChange !=''&& CommentsOnAForm != '') {
+                $.post("/HuiYuanKaXinXiGuanLi/HuiYuanDangAnLuRu/btnInsert", {
+                    XingMing: XingMing,
+                    CredentialsType: CredentialsType,
+                    CredentialsNumber: CredentialsNumber,
+                    PostalAddress: PostalAddress,
+                    Location: Location,
+                    Postalcode: Postalcode,
+                    dianziyoujian: dianziyoujian,
+                    Profession: Profession,
+                    OfficePhone: OfficePhone,
+                    PrivateTelephone: PrivateTelephone,
+                    CellphoneNumber: CellphoneNumber,
+                    TimeToMall: TimeToMall,
+                    MemberEd: MemberEd,
+                    MemberFamilyIncome: MemberFamilyIncome,
+                    Vehicle: Vehicle,
+                    FamilyMember: FamilyMember,
+                    CardNumberChange: CardNumberChange,
+                    CardNumberChange:CardNumberChange,
+                    CommentsOnAForm: CommentsOnAForm
+                }, function (data) {
+                    if (data == "success") {
+                        layer.alert('修改成功'), { icon: 1, title: '提示' };
+                    }
+                    else {
+                        layer.alert('修改失败'), { icon: 1, title: '提示' };
+                    }
+                });
+            } else {
+                layer.alert('请输入数据', { icon: 3, title: '提示' });
+            }
+        });
+        //删除信息
+        $("#btnDetlete").click(function () {
+            var selectRowIndex = tabHeTongXinXi.getSelectedRowIndex();//获取选中行的索引值
+            if (selectRowIndex >= 0) {
+                layer.confirm("您确定到删除该信息？", {
+                    icon: 3,
+                    btn: ['确定', '取消']
+                    //按钮
+                }, function (layerIndex) {
+                    layer.close(layerIndex);//关闭提示框
+                    var MemberId = tabHeTongXinXi.getColumnValue(selectRowIndex, "MemberID");//获取选中行的id
+                    //删除年龄表
+                    $.post("/HuiYuanKaXinXiGuanLi/HuiYuanDangAnLuRu/DeleteMember",
+                        { MemberId: MemberId }, function (msg) {
+                            if (msg == "success") {
+                                layer.alert("删除成功！", { icon: 1, title: '提示' });
+                                //刷新table
+                                tabHeTongXinXi.refreshPage();
+                            }
+                            else {
+                                layer.alert("删除失败", { icon: 2, title: '提示' });
+                            }
+                        });
+                });
+            }
+            else {
+                layer.alert("请选择需要删除的数据", { icon: 0, title: '提示' });
+            }
+        });
+    </script>
+</body>
+</html>

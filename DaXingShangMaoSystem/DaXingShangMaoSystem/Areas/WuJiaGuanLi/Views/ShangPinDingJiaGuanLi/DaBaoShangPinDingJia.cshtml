@@ -1,0 +1,311 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <title>打包商品定价</title>
+    <style type="text/css">
+        .container {
+            width: 98%;
+            padding-top: 4px;
+        }
+
+        .panel-heading {
+            font-size: 16px;
+        }
+
+        .panel-body {
+            padding: 0;
+            border-left: 3px solid #377ab7;
+            border-bottom: 3px solid #377ab7;
+            border-right: 3px solid #377ab7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="dabaoshangpindingjia">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <span style="padding-left:14px;">打包商品定价</span>                       
+                    </div>
+                </div>
+                <div class="panel-body" style="width:100%;height:550px;background:#f0edf1">
+                    @*界面左边信息*@
+                    <div class="col-md-5 col-sm-5 col-xs-5" style="height:500px;margin-top:5px;">
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group" style="margin-top:5px;">
+                                <label class="col-md-2 control-label reset">定价状态</label>
+                                <div class="col-md-3 reset">
+                                    <select class="form-control" name="GoodsPurchasemoneyStatusID" id="SGoodsPurchasemoneyStatusID"></select>
+                                </div>
+                                <label class="col-md-2 control-label reset">商品代码</label>
+                                <div class="col-md-3 reset">
+                                    <input type="text" class="form-control" name="GoodsCode" id="SGoodsCode">
+                                </div>
+                                <div class="col-sm-2">
+                                    <button type="button" class="btn btn-primary form-control" id="btnChaXun">查询</button>
+                                </div>
+                            </div>
+                            <table id="tabChaXunShangPin" style="width:100%">
+                                <tr>
+                                    <th w_num="total_line">序号</th>
+                                    <th w_index="PackGoodsID" w_hidden="true">PackGoodsID</th>
+                                    <th w_index="PackCode">商品代码</th>
+                                    <th w_index="PackName">商品名称</th>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    @*界面右边信息*@
+                    <div class="col-md-7 col-sm-7 col-xs-7" style="height:500px;margin-top:5px;">
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group" style="margin-top:5px;">
+                                <label class="col-md-2 col-sm-1 control-label reset">商品代码</label>
+                                <div class="col-md-4 col-sm-1 reset">
+                                    <input type="text" class="form-control" name="PackCode" id="PackCode" readonly>
+                                </div>
+                                <label class="col-md-2 col-sm-1 control-label reset">商品条码</label>
+                                <div class="col-md-4 col-sm-1 reset">
+                                    <input type="text" class="form-control" name="PackTiaoMa" id="PackTiaoMa" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-top:20px;">
+                                <label class="col-md-2 col-sm-1 control-label reset">商品名称</label>
+                                <div class="col-md-4 col-sm-1 reset">
+                                    <input type="text" class="form-control" name="PackName" id="PackName" readonly>
+                                </div>
+                                <label class="col-md-2 col-sm-1 control-label reset">零售单价</label>
+                                <div class="col-md-4 col-sm-1 reset">
+                                    <input type="text" class="form-control" name="RetailMonovalent" id="RetailMonovalent">
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-top:20px;">
+                                <label class="col-md-2 col-sm-1 control-label reset">实际零售单价</label>
+                                <div class="col-md-4 col-sm-1 reset">
+                                    <input type="text" class="form-control" name="FactPrice" id="FactPrice" readonly>
+                                </div>
+                                <label class="col-md-2 col-sm-1 control-label reset">参与零售单价</label>
+                                <div class="col-md-4 col-sm-1 reset">
+                                    <input type="text" class="form-control" name="ReferencePrice" id="ReferencePrice" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-top:20px;">
+                                <label class="col-md-2 col-sm-1 control-label reset">计量单位</label>
+                                <div class="col-md-4 col-sm-1 reset">
+                                    <input type="text" class="form-control" name="EstimateUnitName" id="EstimateUnitName" readonly>
+                                </div>
+                                <label class="col-md-2 col-sm-1 control-label reset">商品规格</label>
+                                <div class="col-md-4 col-sm-1 reset">
+                                    <input type="text" class="form-control" name="SpecificationsModel" id="SpecificationsModel" readonly>
+                                </div>
+                            </div>
+                            打包商品明细
+                            <table id="tabShangPinMingXi" style="width:100%;">
+                                <tr>
+                                    <th w_num="total_line">序号</th>
+                                    <th w_index="PackGoodsID" w_hidden="true">PackGoodsID</th>
+                                    <th w_index="GoodsCode">商品代码</th>
+                                    <th w_index="GoodsName">商品名称</th>
+                                    <th w_index="RetailMonovalent" w_render="crearViewinput" width="150px;">零售单价</th>
+                                    @*<th w_index="RetailMonovalent"></th>*@
+                                    <th w_index="ReferencePrice">参考零售单价</th>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group" style="margin-top:15px;">
+                            <div class="col-sm-1 col-sm-offset-4">
+                                <button type="button" class="btn btn-info form-control" id="btnXiuGai">
+                                    <span class="glyphicon glyphicon-tags"></span> 修改
+                                </button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-success form-control" id="btnQueDing">
+                                    <span class="glyphicon glyphicon-ok"></span> 确认
+                                </button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-warning form-control" id="btnQuXiao">
+                                    <span class="glyphicon glyphicon-remove"></span> 取消
+                                </button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-danger form-control" id="btnTuiChu">
+                                    <span class="glyphicon glyphicon-off"></span> 退出
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*修改窗体*@
+    <div class="modal" id="XiuGaiChuangTi">
+        <div class="modal-dialog" style="width:900px;height:500px;">
+            <div class="modal-header" style="background:#a8d7ef;">
+                <span>查询修改</span>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body" style="background:#eddddd;">
+                <div class="row" style="height:400px;overflow:auto;margin-top:-15px">
+                    <table class="table" id="tabXiuGai" style="margin-top:2px;">
+                        <tr>
+                            <th w_num="total_line">序号</th>                                                       
+                            <th w_index="PackGoodsID">打包信息</th>
+                            <th w_index="GoodsID">商品信息</th>
+                            <th w_index="GoodsDetailID">商品明细</th>                          
+                            <th w_index="RetailMonovalent">零售单价</th>                         
+                        </tr>
+                    </table>
+                </div>
+                <form class="form-horizontal" role="form">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="col-sm-2 col-sm-offset-4">
+                            <button type="button" class="btn btn-info form-control" id="btnShenHe">修改</button>
+                        </div>                        
+                        <div class="col-sm-2">
+                            <button type="button" class="btn btn-danger form-control" data-dismiss="modal">退出</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    @*页面加载及查询*@
+    <script type="text/javascript">
+        var tabChaXunShangPin;
+        var goodsID = 0;
+        $(document).ready(function () {
+            //左边表格
+            tabChaXunShangPin = $.fn.bsgrid.init('tabChaXunShangPin', {
+                url: '/WuJiaGuanLi/ShangPinDingJiaGuanLi/ChaXunXuDingJiaShangPin',
+                autoLoad: false,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                rowSelectedColor: true,//是否显示选中行背景色
+                pageSize: 12,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置
+                event: {
+                    customRowEvents: { //record 记录记载  options 选项
+                        click: function (record, rowIndex, trObj, options) {
+                            if (record != null) {
+                                //tabShangPinMingXi.search("goodsID=" + record.PackGoodsID);
+                                goodsID = record.PackGoodsID;
+                                PackCode = record.PackCode;
+                                $("#PackCode").val(PackCode);
+                                PackTiaoMa = record.PackTiaoMa;
+                                $("#PackTiaoMa").val(PackTiaoMa);
+                                PackName = record.PackName;
+                                $("#PackName").val(PackName);
+                                RetailMonovalent = record.RetailMonovalent;
+                                $("#RetailMonovalent").val(RetailMonovalent);
+                                EstimateUnitName = record.EstimateUnitName;
+                                $("#EstimateUnitName").val(EstimateUnitName);
+                                SpecificationsModel = record.SpecificationsModel;
+                                $("#SpecificationsModel").val(SpecificationsModel);
+                                FactPrice = record.FactPrice;
+                                $("#FactPrice").val(FactPrice);
+                                ReferencePrice = record.ReferencePrice;
+                                $("#ReferencePrice").val(ReferencePrice);
+                            }
+                        }
+                    }
+                }
+            });
+            tabHuoQuGengGaiShuJu();           
+
+            //右边表格
+            tabShangPinMingXi = $.fn.bsgrid.init('tabShangPinMingXi', {
+                url: '/WuJiaGuanLi/ShangPinDingJiaGuanLi/HuoQuShangPinXinXi',
+                autoLoad: false,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                pageSize: 7,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置              
+            });
+            //tabShangPinMingXi.search();
+        });
+
+        //零售单价
+        function crearViewinput(record, rowIndex, colIndex, options) {
+            return '<input type="text" class="form-control" name="RetailMonovalent" id="RetailMonovalent">'
+        }
+
+        //商品定价状态
+        $.post("/WuJiaGuanLi/ShangPinDingJiaGuanLi/SelectGoodsPurchasemoneyStatusID", function (data) {
+            selectLoadData("SGoodsPurchasemoneyStatusID", data);
+        });
+
+        //左边查询按钮
+        $("#btnChaXun").click(function () {
+            tabHuoQuGengGaiShuJu();
+        });
+
+        //左边表格条件查询
+        function tabHuoQuGengGaiShuJu() {
+            var goodsCode = $("#SGoodsCode").val();
+            var goodsPurchasemoneyStatusID = $("#SGoodsPurchasemoneyStatusID").val();
+            if (goodsPurchasemoneyStatusID == undefined || goodsPurchasemoneyStatusID == "") {
+                goodsPurchasemoneyStatusID = 0;
+            }                     
+
+            tabChaXunShangPin.search("goodsCode=" + goodsCode + "&goodsPurchasemoneyStatusID=" + goodsPurchasemoneyStatusID);
+        }
+      
+        //修改窗体
+        tabXiuGai = $.fn.bsgrid.init('tabXiuGai', {
+            url: '/WuJiaGuanLi/ShangPinDingJiaGuanLi/XiuGaiDingJiaXinXi',
+            autoLoad: false,
+            stripeRows: true,//隔行变色
+            rowHoverColor: true,//划过行变色
+            pageSize: 8,
+            pageSizeSelect: false,//是否选择分页页数下拉框
+            pagingLittleToolbar: true,//精简的图标按钮分页工具条
+            pagingToolbarAlign: "left",//分页工具条的显示位置
+        });
+        $("#btnXiuGai").click(function () {
+            tabXiuGai.search();
+            $("#XiuGaiChuangTi").modal('show');
+        });
+
+        //取消按钮
+        $("#btnQuXiao").click(function () {
+            document.location.href = "/WuJiaGuanLi/ShangPinDingJiaGuanLi/DaBaoShangPinDingJia";
+        });
+
+        //页面关闭按钮
+        $(function () {          
+            $("#btnTuiChu").click(function () {
+                $("#dabaoshangpindingjia").hide();
+            });
+        });
+
+    </script>  
+
+</body>
+</html>

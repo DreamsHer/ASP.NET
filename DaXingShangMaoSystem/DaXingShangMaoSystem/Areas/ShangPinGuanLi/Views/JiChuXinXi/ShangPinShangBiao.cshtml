@@ -1,0 +1,360 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <title>定义商品商标</title>
+    <style type="text/css">
+        .container {
+            width: 98%;
+            padding-top: 4px;
+        }
+
+        .panel-heading {
+            font-size: 16px;
+        }
+
+        .panel-body {
+            padding: 0;
+            border-left: 3px solid #377ab7;
+            border-bottom: 3px solid #377ab7;
+            border-right: 3px solid #377ab7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="shangbiaojiemian">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <span style="padding-left:14px;">定义商品商标</span>                      
+                    </div>
+                </div>
+                <div class="panel-body" style="width:100%;height:550px;background:#f0edf1">
+                    <form class="form-horizontal" role="form" id="ChongZhiBiaoDan">
+                        <div class="form-group" style="margin-top:10px;">
+                            <label class="col-md-1 col-sm-1 control-label reset">商标代码</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="text" class="form-control" name="GoodsChopCode" id="GoodsChopCode" readonly>
+                            </div>
+                            <label class="col-md-1 col-sm-1 control-label reset">商标名称</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="text" class="form-control" name="GoodsChopName" id="GoodsChopName">
+                            </div>
+                            <label class="col-md-1 col-sm-1 control-label reset">拼音码</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="text" class="form-control" name="SpellCod" id="SpellCod"
+                                       onkeyup="value=value.replace(/[^\a-\z\A-\Z]/g,'')" placeholder="只能输入拼音">
+                            </div>
+                            <label class="col-md-1 col-sm-1 control-label reset">注册地</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="text" class="form-control" name="RegisteredAddress" id="RegisteredAddress">
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:10px;">
+                            <label class="col-md-1 col-sm-1 control-label reset">注册证书</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="text" class="form-control" name="RegisteredDiploma" id="RegisteredDiploma">
+                            </div>
+                            <label class="col-md-1 col-sm-1 control-label reset">证书有效期</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="date" class="form-control" name="ReleaseTimeStr" id="ReleaseTimeStr">
+                            </div>
+                            <label class="col-md-1 col-sm-1 control-label reset">所有者</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="text" class="form-control" name="Proprietor" id="Proprietor">
+                            </div>
+                            <label class="col-md-1 col-sm-1 control-label reset">级别</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <select class="form-control" name="TrademarkRankID" id="TrademarkRankID"></select>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:10px;">
+                            <label class="col-md-1 col-sm-1 control-label reset">商标状态</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <select class="form-control" name="TrademarkStatusID" id="TrademarkStatusID"></select>
+                            </div>
+                            <label class="col-md-1 col-sm-1 control-label reset">商标地域</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <select class="form-control" name="TrademarkLocalID" id="TrademarkLocalID"></select>
+                            </div>
+                            <label class="col-md-1 col-sm-1 control-label reset">代理情况</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="text" class="form-control" name="AgentCondition" id="AgentCondition">
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-success form-control" id="btnXinZeng">
+                                    <span class="glyphicon glyphicon-plus"></span> 新增
+                                </button>
+                            </div>
+                        </div>
+                        <table id="tabShangBiaoXinXi" style="width:100%;">
+                            <tr>
+                                <th w_num="total_line">序号</th>
+                                <th w_index="GoodsChopID" w_hidden="true">GoodsChopID</th>
+                                <th w_index="GoodsChopCode">代码</th>
+                                <th w_index="GoodsChopName">商标名称</th>
+                                <th w_index="SpellCod">拼音码</th>
+                                <th w_index="RegisteredAddress">注册地</th>
+                                <th w_index="RegisteredDiploma">注册证书</th>
+                                <th w_index="ReleaseTimeStr">证书有效期</th>
+                            </tr>
+                        </table>
+                        <div class="form-group" style="margin-top:30px;">
+                            <div class="col-sm-1 col-sm-offset-5">
+                                <button type="button" class="btn btn-info form-control" id="btnXiuGai">
+                                    <span class="glyphicon glyphicon-pencil"></span> 修改
+                                </button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-warning form-control" id="btnFangQi">
+                                    <span class="glyphicon glyphicon-remove"></span> 取消
+                                </button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-danger form-control" id="btnTuiChu">
+                                    <span class="glyphicon glyphicon-off"></span> 退出
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*修改模态窗体*@
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="XiuGaiChaungTi">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:660px;height:320px;">
+                <div class="modal-header" style="background:#a8d7ef;">
+                    <span style="left:8px;">修改商标</span>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group" style="margin-top:10px;">
+                            <input type="text" class="hidden" name="GoodsChopID" id="GoodsChopID" />
+                            <label class="col-md-2 col-sm-1 reset">商标代码</label>
+                            <div class="col-md-4 col-sm-1 reset">
+                                <input type="text" class="form-control" name="GoodsChopCode1" id="GoodsChopCode1">
+                            </div>
+                            <label class="col-md-2 col-sm-1 control-label reset">商标名称</label>
+                            <div class="col-md-4 col-sm-1 reset">
+                                <input type="text" class="form-control" name="GoodsChopName1" id="GoodsChopName1">
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:10px;">
+                            <label class="col-md-2 col-sm-1 reset">拼音码</label>
+                            <div class="col-md-4 col-sm-1 reset">
+                                <input type="text" class="form-control" name="SpellCod1" id="SpellCod1">
+                            </div>
+                            <label class="col-md-2 col-sm-1 control-label reset">注册地</label>
+                            <div class="col-md-4 col-sm-1 reset">
+                                <input type="text" class="form-control" name="RegisteredAddress1" id="RegisteredAddress1">
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:10px;">
+                            <label class="col-md-2 col-sm-1 reset">注册证书</label>
+                            <div class="col-md-4 col-sm-1 reset">
+                                <input type="text" class="form-control" name="RegisteredDiploma1" id="RegisteredDiploma1">
+                            </div>
+                            <label class="col-md-2 col-sm-1 control-label reset">证书有效期</label>
+                            <div class="col-md-4 col-sm-1 reset">
+                                <input type="date" class="form-control" name="ReleaseTimeStr1" id="ReleaseTimeStr1">
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-sm-offset-4" style="margin-top:15px;">
+                            <button type="button" class="btn btn-info form-control" id="XiuGaiBaoCun">
+                                <span class="glyphicon glyphicon-download-alt"></span> 保存
+                            </button>                         
+                        </div>
+                        <div class="col-sm-2" style="margin-top:15px;">
+                            <button type="button" class="btn btn-warning form-control" data-dismiss="modal">
+                                <span class="glyphicon glyphicon-remove"></span> 取消
+                            </button>                               
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>    
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap-table.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    @*加载页面数据*@
+    <script type="text/javascript">
+        var goodsChopID = 0;
+        var tabShangBiaoXinXi;        
+        $(document).ready(function () {
+            tabShangBiaoXinXi = $.fn.bsgrid.init('tabShangBiaoXinXi', {
+                url: '/ShangPinGuanLi/JiChuXinXi/SelectGoodsChopID',
+                autoLoad: false,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                rowSelectedColor: true,
+                pageSize: 8,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置               
+            });
+            tabShangBiaoXinXi.search();
+            //商标状态
+            $.getJSON("/ShangPinGuanLi/JiChuXinXi/SelectTrademarkStatusID", function (data) {
+                $.each(data, function (i) {
+                    $('<option></option>').val(data[i].id).text(data[i].text).appendTo($("#TrademarkStatusID"));
+                });
+            });
+
+            //商标级别
+            $.getJSON("/ShangPinGuanLi/JiChuXinXi/SelectTrademarkRankID", function (data) {
+                $.each(data, function (i) {
+                    $('<option></option>').val(data[i].id).text(data[i].text).appendTo($("#TrademarkRankID"));
+                });
+            });
+
+            //商标地域
+            $.getJSON("/ShangPinGuanLi/JiChuXinXi/SelectTrademarkLocalID", function (data) {
+                $.each(data, function (i) {
+                    $('<option></option>').val(data[i].id).text(data[i].text).appendTo($("#TrademarkLocalID"));
+                });
+            });
+
+            //生成商品代码
+            $.getJSON("/ShangPinGuanLi/JiChuXinXi/SelectGoodsChopCode", function (data) {
+                $("#GoodsChopCode").val(data);
+            });
+        });
+
+        //新增
+        $("#btnXinZeng").click(function () {           
+            var GoodsChopName = $("#GoodsChopName").val();
+            var SpellCod = $("#SpellCod").val();
+            var GoodsChopCode = $("#GoodsChopCode").val();
+            var RegisteredAddress = $("#RegisteredAddress").val();
+            var RegisteredDiploma = $("#RegisteredDiploma").val();
+            var ReleaseTimeStr = $("#ReleaseTimeStr").val();
+            var Proprietor = $("#Proprietor").val();
+            var TrademarkRankID = $("#TrademarkRankID").val();
+            var TrademarkStatusID = $("#TrademarkStatusID").val();
+            var AgentCondition = $("#AgentCondition").val();
+            var TrademarkLocalID = $("#TrademarkLocalID").val();
+            if (GoodsChopName != '' && SpellCod != '' && GoodsChopCode != '' && RegisteredAddress != '' && RegisteredDiploma != ''
+                && ReleaseTimeStr != '' && Proprietor != '' && TrademarkRankID > 0 && TrademarkStatusID > 0 && AgentCondition != ''
+                && TrademarkLocalID > 0) {
+                $.post("/ShangPinGuanLi/JiChuXinXi/btnInsert", {
+                    GoodsChopName: GoodsChopName,
+                    SpellCod: SpellCod,
+                    GoodsChopCode: GoodsChopCode,
+                    RegisteredAddress: RegisteredAddress,
+                    RegisteredDiploma: RegisteredDiploma,
+                    DiplomaValid: ReleaseTimeStr,
+                    Proprietor: Proprietor,
+                    TrademarkRankID: TrademarkRankID,
+                    TrademarkStatusID: TrademarkStatusID,
+                    AgentCondition: AgentCondition,
+                    TrademarkLocalID: TrademarkLocalID,
+                }, function (mess) {
+                    if (mess == "success") {
+                        layer.alert('新增成功', { icon: 1, title: '提示' });                        
+                    }
+                    else {
+                        layer.alert('新增失败', { icon: 0, title: '提示' });                       
+                    }
+                });
+            } else {
+                layer.alert('请输入完必填数据', { icon: 2, title: '提示' });
+            }
+        });
+
+        //修改点击获取数据
+        $("#btnXiuGai").click(function () {
+            var rowIndex = tabShangBiaoXinXi.getSelectedRowIndex();
+            if (rowIndex > -1) {
+                var goodsChopID = tabShangBiaoXinXi.getColumnValue(rowIndex, "GoodsChopID");
+                $.getJSON("/ShangPinGuanLi/JiChuXinXi/BangDingGoodsChop?GPID=" + goodsChopID, function (data) {
+                    if (data == "失败") {
+                        layer.alert('请选择修改信息', { icon: 3, title: '提示' });                        
+                    }
+                    else {
+                        $("#GoodsChopID").val(data.GoodsChopID);//隐藏域
+                        $("#GoodsChopName1").val(data.GoodsChopName);
+                        $("#SpellCod1").val(data.SpellCod);
+                        $("#GoodsChopCode1").val(data.GoodsChopCode);
+                        $("#RegisteredAddress1").val(data.RegisteredAddress);
+                        $("#ReleaseTimeStr1").val(data.ReleaseTimeStr);
+                        $("#RegisteredDiploma1").val(data.RegisteredDiploma);
+                    }
+                    $("#XiuGaiChaungTi").modal('show');
+                });
+            }
+            else {
+                layer.alert('请选择需要修改的信息', { icon: 0, title: '提示' });                
+            }
+        });
+
+        //修改保存
+        $("#XiuGaiBaoCun").click(function () {
+            var GoodsChopID = $("#GoodsChopID").val();//隐藏域
+            var GoodsChopName = $("#GoodsChopName1").val();
+            var SpellCod = $("#SpellCod1").val();
+            var GoodsChopCode = $("#GoodsChopCode1").val();
+            var RegisteredAddress = $("#RegisteredAddress1").val();
+            var DiplomaValid = $("#ReleaseTimeStr1").val();
+            var RegisteredDiploma = $("#RegisteredDiploma1").val();
+            if (GoodsChopName != '' && SpellCod != '' && GoodsChopCode != '' && DiplomaValid != '' && RegisteredAddress != ''
+                && RegisteredDiploma != '') {
+                $.post("/ShangPinGuanLi/JiChuXinXi/UpdateGoodsChop", {
+                GoodsChopID: GoodsChopID,//隐藏域
+                GoodsChopName: GoodsChopName,
+                SpellCod: SpellCod,
+                GoodsChopCode: GoodsChopCode,
+                RegisteredAddress: RegisteredAddress,
+                DiplomaValid: DiplomaValid,
+                RegisteredDiploma: RegisteredDiploma,
+            }, function (data) {
+                if (data == "success") {
+                    layer.alert('修改成功', { icon: 1, title: '提示' });                   
+                    $("#XiuGaiChaungTi").modal('hide');
+                    tabShangBiaoXinXi.refreshPage();
+                }
+                else {
+                    layer.alert('修改失败', { icon: 2, title: '提示' });                   
+                }
+            });
+            }
+            else {                
+                layer.alert('请填写需要修改的内容', { icon: 0, title: '提示' });
+            }
+        });
+
+        //取消
+        $("#btnFangQi").click(function () {
+            document.location.href = "/ShangPinGuanLi/JiChuXinXi/ShangPinShangBiao"
+        })
+
+        //关闭按钮
+        $(function () {          
+            $("#btnTuiChu").click(function () {
+                $("#shangbiaojiemian").hide();
+            });
+        });
+
+    </script>
+</body>
+</html>

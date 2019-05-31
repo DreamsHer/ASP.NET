@@ -1,0 +1,366 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GoodsPiCiXiao</title>
+
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+
+
+    <style>
+        .container {
+            background: #f0edf1;
+            width: 100%;
+        }
+
+        .reset-padding {
+            padding: 0 5px;
+        }
+
+        .reset {
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        label.Size {
+            font-size: 60px;
+        }
+
+        label {
+            font-weight: normal;
+        }
+    </style>
+
+
+</head>
+<body>
+    
+    <div class="container">
+
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading"><h4>部门进销存数据</h4></div>
+                <div class="panel-body" style="background:#f0edf1;">
+
+                    <div class="row container">
+                        <ul id="myTab" class="nav nav-tabs">
+                            <li class="active" data-toggle="tab"><a href="#bulletin" data-toggle="tab">查询条件</a></li>
+                            <li><a href="#rule" data-toggle="tab">查询结果</a></li>
+
+                        </ul>
+
+
+                        <div id="myMianBanZu" class="tab-content">
+                            <!--查询条件-->
+                            <div class="tab-pane active" id="bulletin">
+                                <div class="col-lg-3"></div>
+
+                                <div class="col-lg-6">
+                                    <div class="row" style="margin-top:20px;">
+                                        <div class="col-lg-10" style="border: 3px solid #d8cddc;">
+                                            数据类型：
+                                            <div class="form-group">
+                                                <div class="col-md-4">
+                                                    <input type="checkbox" id="CommodityTypea" name="CommodityTypea" value="日数据" /><label class="ZiYingPanl">日数据</label>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input type="checkbox" id="CommodityTypea" name="CommodityTypea" value="月数据" /><label class="ZiYingPanl">月数据</label>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input type="checkbox" id="CommodityTypea" name="CommodityTypea" value="年数据" /><label class="ZiYingPanl">年数据</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br />
+                                    </div>
+                                   
+
+                                    <div class="row" style="margin-top:80px;">
+                                        <div class="col-lg-10" style="border: 3px solid #d8cddc;">
+                                            <div class="row" style="margin-top:10px;">
+                                                <div class="form-group">
+                                                    <div class="col-md-3">
+                                                        <label class="control-label" style="margin-left:30px;">部 门：</label>
+                                                    </div>
+
+                                                    <div class="col-md-4">
+                                                        <select class="form-control" id="SpouseBRanchID"></select>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div style="border-bottom: #000 1px solid; width: 170px;">
+                                                            <input readonly="readonly" id="bumen" style="width: 170px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row" style="margin-top:15px;">
+                                                <div class="form-group">
+                                                    <div class="col-md-3">
+                                                        <label class="control-label" style="margin-left:15px;">进货部门</label>
+                                                    </div>
+
+                                                    <div class="col-md-4">
+                                                        <select class="form-control" id="GoodsFenLei"></select>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div style="border-bottom: #000 1px solid; width: 170px;">
+                                                            <input readonly="readonly" id="FenLei" style="width: 170px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="row" style="margin-top:20px;">
+                                                <div class="form-group">
+                                                    <div class="col-md-3">
+                                                        <label class="control-label" style="padding-left:30px;">日 期：</label>
+                                                    </div>
+
+                                                    <div class="col-md-4">
+                                                        <input id="QiDay" class="form-control" type="date" />
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <input id="ZhiDay" class="form-control" type="date" />
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="row" style="margin-top:50px;">
+                                        <div class="form-group">
+                                            <div class="col-md-2 col-lg-offset-1">
+                                                <button class="form-control btn btn-success" type="button" id="Select"><span class="glyphicon glyphicon-search">查 询</span></button>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <button class="form-control btn btn-warning" type="button" id="DeLete"><span class="glyphicon glyphicon-remove">取 消</span></button>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <button class="btn btn-block" type="button" id="ChongZhi">重 置</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                               
+                            </div>
+
+                            <!--查询结果-->
+                            <div class="tab-pane" id="rule">
+
+                                <div class="row" style="margin-left:2px;">
+                                    <div class="row">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+
+                                            </div>
+                                            <div class="panel-body" style="padding-left:15px;">
+                                                <div class="h4"><b>基础单据</b></div>
+                                                <table id="WarserHouseTable" style="margin-top:2px;">
+                                                    <tr>
+                                                        <th w_num="total_line">序号</th>
+                                                        <th w_index="IncreaseID" w_hidden="true">销售ID</th>
+                                                       
+                                                        <th w_index="Remember">销售编号</th>
+                                                        <th w_index="SpouseBRanchName">新部门</th>
+                                                        <th w_index="MethodOfSettlingAccounts">结算方式</th>
+                                                        <th w_index="SupplierNumber">供货商编号</th>
+                                                        <th w_index="SupplierCHName">供货商名称</th>
+                                                        <th w_index="AdjustAccountsFashion">核算方式</th>
+                                                        <th w_index="ContractNumber">合同编号</th>
+                                                        <th w_index="RegisterName">制单人</th>
+                                                        <th w_index="RegisterTime">制单时间</th>
+                                                        <th w_index="ExamineName">审核人</th>
+                                                        <th w_index="PablData">审核时间</th>
+                                                       
+                                                    </tr>
+                                                </table>
+
+                                                <div class="h4"><b>商品信息</b></div>
+
+                                                <table id="ShangPin">
+                                                    <tr>
+                                                        <th w_num="total_line" width="5%">序号</th>
+                                                        <th w_index="GoodsCodes">商品代码</th>
+                                                        <th w_index="GoodsNames">商品名称</th>
+                                                        <th w_index="ArtNos">货号</th>
+                                                        <th w_index="SpecificationsModels">规格</th>
+                                                        <th w_index="PackContents">包装含量</th>
+                                                        <th w_index="EstimateUnitNames">计量单位</th>
+                                                        <th w_index="RetailMonovalents">零售单格</th>
+                                                        <th w_index="MumberOfPackages">入库件数</th>
+                                                        <th w_index="HaoSunLv">入库件数金额</th>
+                                                        <th w_index="Subdivision">配货件数</th>
+                                                        <th w_index="HeLiHaoSunLv">配货金额</th>
+
+
+                                                    </tr>
+                                                </table>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.2.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    
+
+    <script>
+        var WarserdsHouseTable;
+        var ShangPidsn;
+        $(document).ready(function () {
+
+            WarserHouseTablety = $.fn.bsgrid.init('WarserHouseTable', {
+                url: '/GoodsZhangGuanLi/JinXiaoCunShuJu/QiDongSelectBSellHuo',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                rowSelectedColor: true,
+                pageSize: 9,
+                pageSizeSelect: true,//
+                pagingLittleToolbar: true,//
+                pagingToolbarAlign: "left",
+                event: {//事件
+                    customRowEvents: {//自定义行事件
+                        click: function (record, rowIndex, trObj, options) {//点击事件
+                            ShangPidsn.search("SellID=" + record.IncreaseID);
+                        }
+                    }
+                }
+
+            });
+            WarserHouseTablety.search();
+
+
+            ShangPin = $.fn.bsgrid.init('ShangPin', {
+                //url: '/GoodsZhangGuanLi/KuCunFenPiZhang/ChaXunWareFonf',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                rowSelectedColor: true,
+                pageSize: 6,
+                pageSizeSelect: true,//
+                pagingLittleToolbar: true,//
+                pagingToolbarAlign: "left",//
+
+            });
+
+            //部门
+            $.post("/ShangPinJinCang/JingCang/CaiGouXiaLa", function (data) {
+                selectLoadData("SpouseBRanchID", data);
+            });
+
+
+            //进货部门
+            $.post("/ShangPinJinCang/LianYingJinCang/CaiGouXiaLa", function (data) {
+                selectLoadData("GoodsFenLei", data);
+            });
+
+        });
+
+        //部门改变
+        $("#SpouseBRanchID").change(function () {
+            var spouseBRanchID = $("#SpouseBRanchID").val();
+            if (spouseBRanchID > 0) {
+                $.post("/GoodsZhangGuanLi/JinXiaoCunShuJu/CaiGouXiadLa?spouseBRanchID=" + spouseBRanchID, function (data) {
+                    $("#bumen").val(data[0].SpouseBRanchName);
+                });
+            }
+        });
+
+        //进货部门改变
+        $("#GoodsFenLei").change(function () {
+           var goodsChopID = $("#GoodsFenLei").val();
+            if (goodsChopID > 0) {
+                $.post("/GoodsZhangGuanLi/JinXiaoCunShuJu/CaiGouXiafffLa?goodsChopID=" + goodsChopID, function (data) {
+                    $("#FenLei").val(data[0].StockPlaceName);
+                });
+            }
+        });
+
+        //查询
+        WarserdsHouseTable = $.fn.bsgrid.init('WarserHouseTable', {
+            url: '/GoodsZhangGuanLi/JinXiaoCunShuJu/SelectBSellHuo',
+            autoLoad: false,
+            stripeRows: true,
+            rowHoverColor: true,
+            rowSelectedColor: true,
+            pageSize: 9,
+            pageSizeSelect: true,//
+            pagingLittleToolbar: true,//
+            pagingToolbarAlign: "left",//
+            event: {//事件
+                customRowEvents: {//自定义行事件
+                    click: function (record, rowIndex, trObj, options) {//点击事件
+                        ShangPidsn.search("SellID=" + record.IncreaseID);
+                    }
+                }
+            }
+        });
+        ShangPidsn = $.fn.bsgrid.init('ShangPin', {
+            url: '/GoodsZhangGuanLi/JinXiaoCunShuJu/SelectGoodso',
+            autoLoad: false,
+            stripeRows: true,
+            rowHoverColor: true,
+            rowSelectedColor: true,
+            pageSize: 6,
+            pageSizeSelect: true,//
+            pagingLittleToolbar: true,//
+            pagingToolbarAlign: "left",//
+
+        });
+        $("#Select").click(function () {
+            var gfd = $("#GoodsFenLei").val();
+
+            if (gfd>0) {
+                WarserdsHouseTable.search({ spouseBRanchID: gfd });
+                layer.alert("查询成功！请点击查询结果查看", { icon: 6, title: '温馨小提示：' });
+            }
+            else {
+                layer.alert("请选择查询条件", { icon: 5, title: '温馨小提示：' });
+            }
+            
+        });
+
+        $("#ChongZhi").click(function () {
+            document.location.href = "/GoodsZhangGuanLi/JinXiaoCunShuJu/GoodsPiCiXiao";
+        });
+
+    </script>
+
+
+</body>
+</html>

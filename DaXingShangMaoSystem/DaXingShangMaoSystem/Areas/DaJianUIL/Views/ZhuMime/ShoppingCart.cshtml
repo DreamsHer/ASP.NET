@@ -1,0 +1,345 @@
+﻿ 
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShoppingCart</title>
+
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+    <style>
+        .one{
+            width:1549px;
+            background:#d8d5d5;
+            border:2px solid #000;
+	        margin-left:20px;
+	        margin:0 auto;
+        }
+
+        .head-left {
+            width: 450px;
+            height: 30px;
+          
+        }
+        .head-left ul li {
+	        float:left;
+	        list-style:none;
+	        margin-left:20px;
+        }
+    .head-left ul li a{
+	    font-size:12px;
+	    color:#000;
+	    padding:4px;
+	    text-decoration:none;	
+    }
+
+    .head-right {
+         width: 800px;
+         height: 30px;
+         position: absolute;
+         margin-left: 550px;
+         margin-top:-30px;
+    }
+    .head-right ul li {
+         float: left;
+         list-style: none;
+         position: relative;
+     }
+    .head-right ul li a {
+         font-size: 15px;
+         color: #000;
+         padding: 10px;
+         text-decoration: none;
+     }
+   .head a:hover {
+      color: #F00;
+    }
+
+   
+    .ZhongGeXian {
+         width: 1549px;
+         height: 40px;
+         margin-left:450px;
+         /*position: absolute;*/
+         /*margin-left: 550px;
+         margin-top:-30px;*/
+    }
+    .ZhongGeXian_lice li {
+         float: left;
+         list-style: none;
+         
+         /*position: relative;*/
+      
+     }
+    .ZhongGeXian_lice li a {
+         font-size: 25px;
+         color: #000;
+         padding: 40px;
+         text-decoration: none;
+     }
+   .ZhongGeXian_lice a:hover {
+      color: #F00;
+    }
+
+        .search {
+            width: 600px;
+            height: 40px;
+            position: absolute;
+            margin-top: -94px;
+            margin-left: 525px;
+        }
+        .search input {
+           width: 500px;
+           height: 40px;
+           border: 3px solid #ff4200;
+           border-right: none;
+           font-size: 20px;
+      }
+         .search a {
+                float: right;
+                width: 97px;
+                height: 40px;
+                background: #ff4200;
+                text-decoration: none;
+                color: #fff;
+                font-size: 24px;
+                text-align: center;
+                line-height: 40px;
+            }
+        .search .bginput {
+                background: url(../imges/search.png) no-repeat left center;
+            }
+
+    </style>
+
+
+</head>
+<body>
+
+    <div class="one"> 
+        <div class="head" style="background:#f6eded;">
+            <div class="head-left">
+              <ul>
+                  <li><a href="#">亲，请登录</a></li>
+                  <li><a href="#">免费注册</a></li>
+                  <li><a href="#">手机逛超市</a></li>
+              </ul>
+            </div>
+            <div class="head-right">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">我的购物车</a></li>
+                    <li><a href="#"> 商品分类</a></li>
+                    <li><a href="#"> 卖家中心</a></li>
+                    <li><a href="#"> 联系客服</a></li>
+                    <li><a href="#"> 网站导航</a></li>
+                </ul>
+            </div>
+        </div>
+
+    <div class="BiaoSechen">
+        <div id="logo" class="logo" style="margin-left:200px;width:200px;">
+            <h1 class="logo_tit"><img src="~/ImaginPho/12417024_165657970000_2.jpg" style="width:80px;height:80px;" /></h1>
+            <h3 class="logo_subtit">商贸,便捷好省</h3>
+
+        </div> 
+
+        <div class="search">
+            <input type="text" class="bginput" id="txtSearch" placeholder="     好货疯抢72小时" />
+            <a href="#">搜索</a>
+        </div>
+
+        <div class="ShoppingCartf" style="position:absolute;margin-left:1225px;margin-top:-94px;background:#fff">
+            <a href="#" style="font-size:18px; color:#ff0000;"><img src="~/ImaginPho/agent.png" />我的购物车</a>
+        </div>
+    </div>
+
+    <div class="ZhongGeXian" style="width:1549px">
+           <ul class="ZhongGeXian_lice">
+               <li><a href="#">首页</a></li>
+               <li><a href="#">发布会</a></li>
+               <li><a href="#">预售</a></li>
+               <li><a href="#">新品试用</a></li>
+           </ul>
+        </div>
+
+
+        <div class="FenGeXian" style="width:100%;height:30px;background:#73b2b4;"></div>
+
+        <!--商品选择购买信息 (左，中间)-->
+        <div class="FenGeXian" style="width:100%;background:#eee2ed;margin-top:10px;">
+            <!--左-->
+            <div class="BitTuPian img-box text-center" style="width:300px;height:400px;margin-left:100px;">
+                <!--例如-->
+                <img src="~/ImaginPho/TB10HOcMXXXXXbHXXXXXXXXXXXX_!!0-item_pic.jpg_400x400q60.jpg" style="width:100%;height:100%" id="buideforBit"/>
+                @*<img src="" alt="" style="width:100%;height:100%" id="buideforBit" />*@
+            </div>
+            <!--中-->
+            <div class="GoodsXinXi" style="width:800px;height:600px;background:#a1d3f8;margin-left:410px;margin-top:-400px;position:relative;">
+                <!--商品名称-->
+                <div class="ZiTi" style="position:absolute;">
+                    <label class="control-label"id="GoodesNameSize" style="font-size:20px;">商品名称，颜色</label>
+                </div>
+                <div class="" style="position:absolute;margin-top:50px;">
+                    <label class="control-label" style="font-size:23px;color:#F00;">【购物无忧】七天无理由退换货！新品上市</label>
+                </div>
+                <!--价格-->
+                <div class="JiaGeXian" style="position:absolute;margin-top:90px;background:#d8d5d5;width:100%;">
+                    <label class="control-label" style="font-size:23px;color:#808080;">商城超市价：</label>
+                    <label class="control-label" style="font-size:23px;color:#F00;" id="JiaGe">￥123</label>
+                    <label class="control-label" style="font-size:23px;color:#808080;margin-left:20px;">降价通知：</label>
+                    <label class="control-label" style="font-size:18px;color:#ff4200;width:400px;" id="JianJiaTongZhi">降价通知</label>
+                </div>
+                <!--配送-->
+                <div class="PeiSongZhi" style="margin-top:150px;position:absolute;">
+                    <label class="control-label" style="font-size:18px;color:#808080;margin-left:10px;"> 配 送 至：</label>
+                    <select class="form-control" style="width:300px;margin-left:100px;margin-top:-34px;"></select>
+                    <label class="control-label" style="font-size:18px;color:#808080;margin-top:20px;"> 支付方式：</label>
+                    <select class="form-control" style="width:150px;margin-left:100px;margin-top:-34px;"></select>
+                </div>
+
+                <div class="" style="margin-top:250px;position:absolute;width:100%;">
+                    <label class="control-label" style="font-size:18px;color:#808080;">本产品由从</label>
+                    <label class="control-label" style="font-size:20px;color:#F00;"id="FaHuoDiDian">广东</label>
+                    <label class="control-label" style="font-size:18px;color:#808080;">发货，并提供售后服务</label>
+                </div>
+
+               
+                <!--选尺码-->
+                <div class="" style="margin-top:290px;position:absolute;">
+                    <label class="control-label" style="font-size:18px;color:#808080;">选择尺码：</label>
+                    <div class="" style="margin-left:100px;margin-top:-30px;">
+                        <button class="btn btn-sm btn-default">S</button>
+                        <button class="btn btn-sm btn-default">M</button>
+                        <button class="btn btn-sm btn-default">L</button>
+                        <button class="btn btn-sm btn-default">XL</button>
+                        <button class="btn btn-sm btn-default">2XL</button>
+                        <button class="btn btn-sm btn-default">3XL</button>
+                    </div>
+                </div>
+                <div class="" style="margin-top:330px;position:absolute;">
+                    <label class="control-label" style="font-size:18px;color:#808080;">选择颜色：</label>
+
+                </div>
+                <div class="" style="margin-top:380px;position:absolute;">
+                    <label class="control-label" style="font-size:18px;color:#808080;margin-left:36px;">数量：</label>
+                    <div class="" style="margin-left:100px;margin-top:-30px;">
+                        <button class="btn btn-sm btn-default">-</button>
+                        <input type="text" style="width:80px;margin-left:30px;margin-top:-33px;position:absolute;" id="XuanShuLiang" class="form-control"/>
+                        <button class="btn btn-sm btn-default" style="margin-left:82px;position:relative;">+</button>
+                    </div>
+                </div>
+                <div class="" style="margin-top:430px;position:absolute;margin-left:20px;">
+                    <label class="control-label" style="font-size:18px;color:#808080;">共余额为：</label>
+                    <label class="control-label" style="font-size:20px;color:#ff4200;" id="JinE">余额为：</label>
+                </div>
+                <!--立即、加入-->
+                <div class="" style="margin-top:460px;margin-left:280px;position:absolute;">
+                    <button class="btn btn-lg btn-success">立即购买</button>
+                    <button class="btn btn-lg btn-warning">加入购物车</button>
+                </div>
+
+            </div>
+            <!--右-->
+            <div class="Rightds text-center" style="width:330px;height:600px;background:#ccbace;margin-top:-600px;margin-left:1213px;position:relative;">
+                <div class="ZiTi text-center" style="position:absolute;width:100%;">
+                    <label class="control-label" style="font-size:18px;">看了又看</label>
+                </div>
+                <div class="ZiTi" style="position:absolute;width:180px;height:210px;margin-top:40px;">
+                    <img src="~/ImaginPho/TB10HOcMXXXXXbHXXXXXXXXXXXX_!!0-item_pic.jpg_400x400q60.jpg" style="width:100%;height:100%;margin-left:70px;" id="buideforBit" />
+                    <label class="control-label" style="font-size:16px;">￥价格</label>
+                    @*<img src="" alt="" style="width:100%;height:100%" id="buideforBit" />*@
+                    <!--做随机生成-->
+                    <img src="~/ImaginPho/TB10HOcMXXXXXbHXXXXXXXXXXXX_!!0-item_pic.jpg_400x400q60.jpg" style="width:100%;height:100%;margin-left:70px;" id="buideforBit" />
+                    <label class="control-label" style="font-size:16px;">￥价格</label>
+
+                </div>
+                <div class="" style="position:absolute;width:100%;margin-top:540px;height:60px;background:#ff4200">
+                    <button class="btn btn-default" style="margin-top:10px;">换一组</button>
+                </div>
+               
+
+            </div>
+
+        </div>
+
+        <!--商品信息-->
+        <div class="DianXinXi" style="margin-top:10px;">
+           
+            <div class="GoodsXinXi" style="width:1340px;height:390px;background:#a1d3f8;margin-left:100px;">
+                <ul id="myTab" class="nav nav-pills">
+                    <li class="active" data-toggle="tab"><a href="#bulletin" data-toggle="tab">商品介绍</a></li>
+                    <li><a href="#rule" data-toggle="tab">规则与包装</a></li>
+                    <li><a href="#forum" data-toggle="tab">售后保障</a></li>
+                    <li><a href="#security" data-toggle="tab">商品评价</a></li>
+                    <li><a href="#welfare" data-toggle="tab">好评商品</a></li>
+                </ul>
+
+                <!-- 选项卡面板 -->
+                <div id="myMianBanZu" class="tab-content">
+
+                    <!--商品介绍面板-->
+                    <div class="tab-pane active" id="bulletin">
+                        <div class="ZiTi" style="position:absolute;margin-left:70px;margin-top:30px;">
+                            <label class="control-label" style="font-size:16px;">品牌：</label>
+                        </div>
+                        <div class="" style="position:absolute;margin-left:150px;">
+                            <label class="control-label" id="GoodesShangBiao" style="font-size:16px;margin-top:30px;">查商标</label>
+                        </div>
+                        <div class="" style="position:absolute;margin-left:40px;margin-top:90px;">
+                           <ul>
+                               <li>商品名称：</li>
+                               <li>商品产地：</li>
+                               <li>开袋方式：</li>
+                               <li>里料材质：</li>
+                               <li>图案：</li>
+                               <li>上市时间</li>
+                           </ul>
+                        </div>
+                        <div class="" style="position:absolute;margin-left:330px;margin-top:90px;">
+                            <ul>
+                                <li>商品编码：</li>
+                                <li>货号：</li>
+                                <li>颜色：</li>
+                                <li>是否可折叠：</li>
+                                <li>大小：</li>
+                                <li>适合使用：</li>
+                                <li>商品毛重：</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <!--规则与包装面板-->
+                    <div class="tab-pane" id="rule"></div>
+
+                    <!--售后保障面板-->
+                    <div class="tab-pane" id="forum"></div>
+
+                    <!--商品评价面板-->
+                    <div class="tab-pane" id="security"></div>
+
+                    <!--好评商品面板-->
+                    <div class="tab-pane" id="welfare"></div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div><!--大-->
+
+</body>
+</html>

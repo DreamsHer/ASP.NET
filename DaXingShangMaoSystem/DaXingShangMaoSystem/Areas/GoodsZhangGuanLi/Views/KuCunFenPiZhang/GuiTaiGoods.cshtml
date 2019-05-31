@@ -1,0 +1,297 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SelectGoodsuE</title>
+
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_bootstrap.min.css" rel="stylesheet" />
+
+
+    <style>
+        .container {
+            background: #f0edf1;
+            width: 100%;
+        }
+
+        .reset-padding {
+            padding: 0 5px;
+        }
+
+        .reset {
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        label.Size {
+            font-size: 60px;
+        }
+
+        label {
+            font-weight: normal;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="h4">查询柜台商品列表</span>
+                    <div class="pull-right">
+                        <button class="form-control btn-sm btn btn-info" id="Colse"><span class="glyphicon glyphicon-remove">关闭</span></button>
+                    </div>
+                </div>
+
+                <div class="panel-body" style="background:#f0edf1;">
+                    <div class="pull-right">
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-sm-6">
+                                    <button class="btn btn-block" type="button" onclick="window.print();return false;"><span class="glyphicon glyphicon-print"></span> 打印页面</button>
+                                </div>
+                                <div class="col-sm-6">
+                                    <button class="btn btn-block" type="button" id="FanHui"><span class="glyphicon glyphicon-print"></span>返 回</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row" style="margin-left:2px;">
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <span>柜台单据列表</span>
+                            </div>
+                            <div class="panel-body" style="padding-left:15px;">
+                                <div class="row table-responsive" style="overflow:auto;height:260px;">
+                                    <table id="WarserHouseTable" style="margin-top:2px;">
+                                        <tr>
+                                            <th w_num="total_line">序号</th>
+                                            <th w_index="WareHouseID" w_hidden="true">进仓ID</th>
+                                            <th w_index="OrderFormPactID" w_hidden="true">合同ID</th>
+                                            <th w_index="Remember">进仓编号</th>
+                                            <th w_index="ContractNumber">合同编号</th>
+                                            <th w_index="MethodOfSettlingAccounts">结算方式</th>
+                                            <th w_index="SupplierCHName">供货商名称</th>
+                                            <th w_index="StaffCode">收货人编号</th>
+                                            <th w_index="StaffName">收货人姓名</th>
+                                            <th w_index="RegisterTime">登记时间</th>
+                                            <th w_render="bsgridSetSate">审核状态</th>
+                                            <th w_index="ExamineNot" w_hidden="true">审核状态</th>
+                                            <th w_render="bsgridSetSategh">生效状态</th>
+                                            <th w_index="Status" w_hidden="true">生效状态</th>
+                                            <th w_render="bsgridSetCre">冲红状态</th>
+                                            <th w_index="CrushRedNot" w_hidden="true">冲红状态</th>
+                                            <th w_index="QuFenLeiXingMC">进仓类型</th>
+
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="row" style="margin-left:2px;">
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <span>商品列表</span>
+                                    </div>
+                                    <div class="panel-body" style="padding-left:15px;">
+                                        <div class="row table-responsive" style="overflow:auto;height:230px;">
+                                            <table id="ShangPin" style="margin-top:2px;width:1000px;">
+                                                <tr>
+                                                    <th w_num="total_line" width="5%">序号</th>
+                                                    <th w_index="GoodsIDs" w_hidden="true"></th><!--商品ID-->
+
+                                                    <th w_index="GoodsCodes">商品代码</th>
+                                                    <th w_index="GoodsTiaoMas">商品条码</th>
+                                                    <th w_index="GoodsNames">商品名称</th>
+                                                    <th w_index="ArtNos">货号</th>
+                                                    <th w_index="SpecificationsModels">规格</th>
+                                                    <th w_index="PackContents">包装含量</th>
+                                                    <th w_index="MumberOfPackages">入库件数</th>
+                                                    <th w_index="Subdivision">入库细数</th>
+                                                    <th w_index="EstimateUnitNames">计量单位</th>
+                                                    <th w_index="TaxBids">含税进价</th>
+                                                    <th w_index="RetailMonovalents">零售单格</th>
+
+                                                </tr>
+                                            </table>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="row" style="margin-left:2px;">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <span>盘点商品列表</span>
+                                    </div>
+                                    <div class="panel-body" style="padding-left:15px;">
+                                        <div class="row table-responsive" style="overflow:auto;height:230px;">
+                                            <table id="ShangPinPanl" style="margin-top:2px;width:1000px;">
+                                                <tr>
+                                                    <th w_num="total_line" width="5%">序号</th>
+                                                    <th w_index="GoodsIDs" w_hidden="true"></th><!--商品ID-->
+                                                    <th w_index="SpouseBRanchNsame">盘点类型</th>
+                                                    <th w_index="registerTime">盘点时间</th>
+                                                 
+                                                    <th w_index="MumberOfPackages">盘点件数</th>
+                                                    <th w_index="Subdivision">盘点细数</th>
+                                                    <th w_index="Number">损益数</th>
+                                                </tr>
+                                            </table>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script><!--bootstrap-->
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.2.min.js"></script><!--bootstrap-->
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script><!--bootstrap-->
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+
+
+    <script>
+        var WarserHouseTable;
+        var ShangPin;
+
+        $(document).ready(function () {
+
+            WarserHouseTable = $.fn.bsgrid.init('WarserHouseTable', {
+                url: '/GoodsZhangGuanLi/KuCunFenPiZhang/ChaXunWareFonGuiTai',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                rowSelectedColor: true,
+                pageSize: 7,
+                pageSizeSelect: true,//
+                pagingLittleToolbar: true,//
+                pagingToolbarAlign: "left",//
+                event: {
+                    customRowEvents: {
+                        click: function (record, rowIndex, trObj, options) {
+
+                            ShangPin.search("wareHouseID=" + record.WareHouseID);
+                        }
+                    }
+                }
+            });
+            WarserHouseTable.search();
+
+            //主界面 商品（明细表）
+            ShangPin = $.fn.bsgrid.init('ShangPin', {
+                url: '/ShangPinJinCang/SelectWaretF/ChaXunShangPin',
+                autoLoad: false,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过变色
+                pageSize: 5,
+                pageSizeSelect: false,
+                pagingLittleToolbar: true,
+                pagingToolbarAlign: "left",
+                event: {
+                    customRowEvents: {
+                        click: function (record, rowIndex, trObj, options) {
+                            var Idg=record.GoodsIDs;
+                            ShangPinPanl.search({ goodsID: Idg });
+                        }
+                    }
+                }
+            });
+            //right
+            ShangPinPanl = $.fn.bsgrid.init('ShangPinPanl', {
+                url: '/GoodsZhangGuanLi/KuCunFenPiZhang/ChaXunShangPinPanl',
+                autoLoad: false,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过变色
+                pageSize: 5,
+                pageSizeSelect: false,
+                pagingLittleToolbar: true,
+                pagingToolbarAlign: "left",
+            });
+        });
+
+
+        //点击关闭
+        $("#Colse").click(function () {
+            $('body').remove();
+        });
+
+        //设置审核状态
+        function bsgridSetSate(record, rowIndex, colIndex, options) {//自定义列的代码（二）
+
+            var toVoidNo = WarserHouseTable.getRecordIndexValue(record, "ExamineNot");
+            toVoidNo = record.ExamineNot;
+            if (toVoidNo == true || toVoidNo == "true") {
+                return '<span style="color:cornflowerblue">已审核</span>';
+            } else {
+                return '<span style="color:red">未审核</span>';
+            }
+        }
+        //设置生效状态
+        function bsgridSetSategh(record, rowIndex, colIndex, options) {//自定义列的代码（二）
+            var toVoidNow = WarserHouseTable.getRecordIndexValue(record, "Status");
+            toVoidNow = record.Status;
+            if (toVoidNow == true || toVoidNow == "true") {
+                return '<span style="color:cornflowerblue">已生效</span>';
+            } else {
+                return '<span style="color:red">未生效</span>';
+            }
+        }
+        //设置冲红状态
+        function bsgridSetCre(record, rowIndex, colIndex, options) {//自定义列的代码（二）
+            var toVoidNow = WarserHouseTable.getRecordIndexValue(record, "CrushRedNot");
+            toVoidNow = record.CrushRedNot;
+            if (toVoidNow == true || toVoidNow == "true") {
+                return '<span style="color:red">冲红单</span>';
+            } else {
+                return '<span style="color:cornflowerblue">有效单</span>';
+            }
+        }
+
+
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,229 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <title>定义商品定价规则</title>
+    <style type="text/css">
+        .container {
+            width: 98%;
+            padding-top: 4px;
+        }
+
+        .panel-heading {
+            font-size: 16px;
+        }
+
+        .panel-body {
+            padding: 0;
+            border-left: 3px solid #377ab7;
+            border-bottom: 3px solid #377ab7;
+            border-right: 3px solid #377ab7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="shangpindingjiaguize">
+            <div class="panel panel-primary">
+                <div class="panel-heading">         
+                    <div class="row">
+                        <span style="padding-left:14px;">定义商品定价规则</span>                     
+                    </div>
+                </div>
+                <div class="panel-body" style="width:100%;height:550px; background-color:#f0edf1">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group" style="margin-top:15px;">
+                            <label class="col-md-5 control-label reset">价格类型</label>
+                            <div class="col-md-2 reset">
+                                <select class="form-control" name="PriceTypeID" id="PriceTypeID"></select>
+                            </div>
+                        </div>
+                        <table id="tabDingJiaGuiZe" style="width:100%;">
+                            <tr>
+                                <th w_num="total_line">序号</th>
+                                <th w_index="GoodsMoneyRuleID" w_hidden="true">GoodsMoneyRuleID</th>
+                                <th w_index="XiaXianMoney">金额下限</th>
+                                <th w_index="ShangXianMoney">金额上限</th>
+                                <th w_index="DecimalDigits">小数位数</th>
+                            </tr>
+                        </table>
+                        <div class="form-group" style="margin-top:50px;">
+                            <div class="col-sm-1 col-sm-offset-4">
+                                <button type="button" class="btn btn-success form-control" id="btnTianJia">
+                                    <span class="glyphicon glyphicon-plus"></span> 添加
+                                </button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-danger form-control" id="btnShanChu">
+                                    <span class="glyphicon glyphicon-trash"></span> 删除
+                                </button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-warning form-control" id="btnQuXiao">
+                                    <span class="glyphicon glyphicon-remove"></span> 取消
+                                </button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-info form-control" id="btnTuiChu">
+                                    <span class="glyphicon glyphicon-off"></span> 退出
+                                </button>
+                            </div>
+                        </div>
+                    </form>                   
+                </div>
+            </div>
+        </div>
+    </div>
+    @*添加窗体*@
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="tianjiachuangti">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:600px;height:200px;">
+                <div class="modal-header" style="background:#337ab7;">
+                    <span style="left:5px;">新增变价原因</span>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body" style="background:#eddddd;">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group" style="margin-top:10px;">
+                            <label class="col-md-2 col-sm-1 reset">金额下限</label>
+                            <div class="col-md-4 col-sm-1 reset">
+                                <input type="text" class="form-control" name="XiaXianMoney" id="XiaXianMoney"
+                                       onKeyUp="value=value.replace(/\D/g,'')" onafterpaste="value=value.replace(/\D/g,'')">
+                            </div>
+                            <label class="col-md-2 col-sm-1 reset">金额上限</label>
+                            <div class="col-md-4 col-sm-1 reset">
+                                <input type="text" class="form-control" name="ShangXianMoney" id="ShangXianMoney"
+                                       onKeyUp="value=value.replace(/\D/g,'')" onafterpaste="value=value.replace(/\D/g,'')">
+                            </div>                          
+                        </div>
+                        <div class="form-group" style="margin-top:10px;">                           
+                            <label class="col-md-2 col-sm-1 reset">小数位数</label>
+                            <div class="col-md-4 col-sm-1 reset">
+                                <input type="text" class="form-control" name="DecimalDigits" id="DecimalDigits"
+                                       onKeyUp="value=value.replace(/\D/g,'')" onafterpaste="value=value.replace(/\D/g,'')">
+                            </div>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <button type="button" class="btn form-control" style="background:#d1cccc;" id="btnXinZengBaoCun">
+                                    <span class="glyphicon glyphicon-download-alt"></span> 保存
+                                </button>
+                            </div>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <button type="button" class="btn form-control" style="background:#d1cccc;" data-dismiss="modal">
+                                    <span class="glyphicon glyphicon-remove"></span> 关闭
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    @*页面加载及查询*@
+    <script type="text/javascript">
+        var tabDingJiaGuiZe;
+        $(document).ready(function () {
+            tabDingJiaGuiZe = $.fn.bsgrid.init('tabDingJiaGuiZe', {
+                url: '/WuJiaGuanLi/ShangPinDingJiaGuanLi/SelectGoodsMoneyRule',
+                autoLoad: false,//自动加载数据
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                rowSelectedColor: true,//是否显示选中行背景色
+                pageSize: 9,//默认页面大小
+                pageSizeSelect: true,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置                
+            });
+            tabDingJiaGuiZe.refreshPage();
+
+            //价格类型
+            $.post("/WuJiaGuanLi/ShangPinDingJiaGuanLi/SelectPriceTypeID", function (data) {
+                selectLoadData("PriceTypeID", data);
+            });          
+        });
+
+        //新增窗体      
+        $("#btnTianJia").click(function () {
+            $("#tianjiachuangti").modal('show');            
+        });
+
+        //新增保存
+        $("#btnXinZengBaoCun").click(function () {
+            var PriceTypeID = $("#PriceTypeID").val();
+            var XiaXianMoney = $("#XiaXianMoney").val();
+            var ShangXianMoney = $("#ShangXianMoney").val();
+            var DecimalDigits = $("#DecimalDigits").val();
+            if (PriceTypeID > 0 && XiaXianMoney != '' && ShangXianMoney != '' && DecimalDigits !=null) {
+                $.post("/WuJiaGuanLi/ShangPinDingJiaGuanLi/InsertGoodsMoneyRule", {
+                    PriceTypeID: PriceTypeID,
+                    XiaXianMoney: XiaXianMoney,
+                    ShangXianMoney: ShangXianMoney,
+                    DecimalDigits: DecimalDigits,
+                }, function (mess) {
+                    if (mess == "success") {
+                        layer.alert('新增成功', { icon: 1, title: '提示' });
+                        $("#tianjiachuangti").modal('hide');
+                        tabDingJiaGuiZe.refreshPage();
+                    }
+                    else {
+                        layer.alert('新增失败', { icon: 2, title: '提示' });                       
+                    }                   
+                });
+            } else {
+                layer.alert('请填写需要新增的内容', { icon: 1, title: '提示' });
+            }
+        });
+
+        //删除
+        $("#btnShanChu").click(function () {
+            var selectRowIndex = tabDingJiaGuiZe.getSelectedRowIndex();//获取选中行的索引值
+            if (selectRowIndex >= 0) {
+                if (window.confirm("您确定要删除？")) {
+                    var GoodsMoneyRuleId = tabDingJiaGuiZe.getColumnValue(selectRowIndex, "GoodsMoneyRuleID");//获取选中行的id                   
+                    $.post("/WuJiaGuanLi/ShangPinDingJiaGuanLi/DeleteGoodsMoneyRule",
+                        { GoodsMoneyRuleId: GoodsMoneyRuleId }, function (msg) {
+                            if (msg == "success") {
+                                layer.alert('删除成功', { icon: 1, title: '提示' });
+                                tabDingJiaGuiZe.refreshPage();
+                            }
+                            else {
+                                layer.alert('删除失败', { icon: 2, title: '提示' });
+                            }
+                        });
+                }
+            }
+            else {
+                layer.alert('请选择需要删除的数据', { icon: 0, title: '提示' });
+            }
+        });
+
+        //取消按钮
+        $("#btnQuXiao").click(function () {
+            document.location.href = "/WuJiaGuanLi/ShangPinDingJiaGuanLi/ShangPinDingJiaGuiZe"
+        })
+
+        //页面关闭按钮
+        $(function () {        
+            $("#btnTuiChu").click(function () {
+                $("#shangpindingjiaguize").hide();
+            });
+        });
+
+    </script>
+</body>
+</html>

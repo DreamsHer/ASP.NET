@@ -1,0 +1,185 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SelectBuMenYuE</title>
+
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+
+
+    <style>
+        .container {
+            background: #fff;
+            width: 100%;
+        }
+
+        .reset-padding {
+            padding: 0 5px;
+        }
+
+        .reset {
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        label.Size {
+            font-size: 60px;
+        }
+
+        label {
+            font-weight: normal;
+        }
+    </style>
+
+
+</head>
+<body>
+   
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="form-group">
+
+                        <span class="h4"><b>查询部门库存余额帐</b></span>
+                        <div class="pull-right">
+                            <button class="form-control btn-sm btn btn-info" id="Colse"><span class="glyphicon glyphicon-remove">关闭</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-body" style="background:#e2dede;">
+
+                    <div class="col-lg-3" style="height:500px;"></div>
+                    <div class="col-lg-5" style="background:#f0edf1;">
+                        <div class="h2"><b>查询条件</b></div>
+                        <div class="row" style="margin-top:10px;">
+
+                            <div class="col-lg-5" >
+                                <div class="row" style="border: 3px solid #d8cddc;">
+                                    <div class="row" style="margin-top:10px;">
+                                        <div class="col-md-6">
+                                            <label class="control-label reset" style="margin-left:20px;">部门列表</label>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top:10px;margin-left:20px;">
+                                        <div class="col-md-9">
+                                            <select class="form-control" id="DrugTypeCods"></select>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top:10px;margin-left:20px;">
+                                        <div class="col-md-9">
+                                            <select class="form-control" id="Drug"></select>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top:10px;margin-left:20px;">
+                                        <div class="col-md-9">
+                                            <select class="form-control" id="DrugTy"></select>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top:10px;margin-left:20px;">
+                                        <div class="col-md-9">
+                                            <select class="form-control" id="DrugTypds"></select>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top:10px;margin-left:20px;">
+                                        <div class="col-md-9">
+                                            <select class="form-control" id="DrugeCods"></select>
+                                        </div>
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-4" style="border: 3px solid #d8cddc;">
+                                <div class="row" style="margin-top:20px;">
+                                    <div class="form-group">
+                                        <div class="col-md-6 reset" style="margin-left:20px;">
+                                            <input type="radio" id="Panl" name="Panl" value="标准盘点" checked/><label class="ZiYingPanl" style="font-size:16px;">一般盘点</label>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:10px;">
+                                    <div class="form-group">
+                                        <div class="col-md-6 reset" style="margin-left:20px;">
+                                            <input type="radio" id="Panl" name="Panl" value="标准盘点" /><label class="ZiYingPanl" style="font-size:16px;">标准盘点</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                     
+                        <div class="row"style="margin-top:20px;">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-10">
+                                <div class="row" style="margin-top:10px;">
+                                    <div class="form-group">
+                                        <div class="col-md-2">
+                                            <label class="control-label" style="margin-top:5px;">日期:</label>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <input type="date" class="form-control" id="patd" />
+                                        </div>
+                                        <div class="col-md-5">
+                                            <input type="date" class="form-control" id="patd" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top:60px;">
+                            <div class="form-group">
+                                <div class="col-md-3 col-lg-offset-3">
+                                    <button class="btn btn-block"type="button" id="SelectChaXun"><span class="glyphicon glyphicon-search">查 询</span></button>
+                                </div>
+                                <div class="col-md-3">
+                                    <button class="btn btn-block" type="button" id="SetOut"><span class="glyphicon glyphicon-off">退 出</span></button>
+                                </div>
+                              
+                            </div>
+                        </div>
+                     <br />
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div><!--大row-->
+
+
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script><!--bootstrap-->
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.2.min.js"></script><!--bootstrap-->
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script><!--bootstrap-->
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+
+
+
+    <script>
+
+
+
+    </script>
+
+</body>
+</html>

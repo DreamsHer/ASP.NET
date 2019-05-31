@@ -1,0 +1,222 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>备选供货商综合评审项目定义</title>
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    @*CSS样式(包含默认皮肤样式)*@
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    @*CSS皮肤(需引用于bsgrid.all.min.css之后)*@
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css">
+        .container {
+            width: 1000px;
+            padding: 0;
+        }
+
+        .panel-heading {
+            font-size: 16px;
+        }
+
+        .panel-body {
+            padding-top: 0;
+        }
+
+            .panel-body label {
+                font-weight: normal;
+                font-size: 16px;
+            }
+
+        .setPadding {
+            border: 1px solid #eee;
+            padding: 5px 0 5px 10px;
+        }
+
+            .setPadding button {
+                padding: 4px 6px;
+                font-size: 12px;
+            }
+
+        .form-horizontal label {
+            font-size: 12px;
+        }
+
+        .form-horizontal select, .form-horizontal input {
+            height: 26px;
+            padding: 0;
+        }
+
+        .reset {
+            padding: 0;
+        }
+
+        .examineeInfor {
+            border: 1px solid #eee;
+            padding: 0;
+        }
+
+        .h5 {
+            margin: 0;
+            background: #eef;
+            padding: 6px 10px;
+        }
+
+        .examineeInfor th, .examineeInfor td {
+            font-weight: normal;
+            text-align: center;
+        }
+
+        #examineeInfor th {
+            padding: 4px 8px;
+        }
+
+        .modal-header {
+            padding: 6px 5px;
+            border-bottom: none;
+            background: #337ab7;
+            text-align: center;
+            color: #fff;
+        }
+
+        .modal-content {
+            padding: 6px;
+        }
+
+        .modal-body {
+            border: 1px solid #ddd;
+            padding: 0 25px;
+        }
+
+        .modal-content label {
+            font-weight: normal;
+            font-size: 12px;
+        }
+
+        .img-box {
+            border: 1px solid #eee;
+            padding: 10px;
+        }
+
+        .modal-dialog {
+            width: 400px;
+        }
+
+        .modal .form-group {
+            margin-bottom: 0;
+            margin-top: 2px;
+        }
+
+        .form-group input {
+            height: 26px;
+        }
+
+        .setSex {
+            position: relative;
+            top: -10px;
+            left: 2px;
+        }
+    </style>
+</head>
+<body style="background:#f0edf1;">
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">固定扣款项目对照表</div>
+            <div class="panel-body" style="background:#f0edf1;">
+                <div class="table">
+                    <ul class="nav nav-tabs tab-color-blue background-blue" id="myTab4">
+                        <li class="active">
+                            <a id="tbnavB" href="#tpB" data-toggle="tab" aria-expanded="true">信用卡手续费（国内）</a>
+                        </li>
+                        <li class="">
+                            <a id="tbnavZ" href="#tpZ" data-toggle="tab" aria-expanded="false">信用卡手续费（国外）</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content  padding-0" id="InEmployeeForm">
+                        <div class="tab-pane active" id="tpB">
+                            <div id="chartL" style="width: 100%; height: 500px; float: left;">
+                                <form class="form-inline col-md-12" style="padding:100px 250px;">
+                                    <div class="panel-heading">对应扣款项目</div>
+                                    <div class="form-group col-md-4">
+                                       
+                                        <select class="form-control" id="WithholdTypeID" style="width:350px" name="WithholdTypeID"></select>
+                                    </div>
+                                </form>
+                                <div class="col-md-12" style="left:245px">
+                                    <button class="btn btn-success" style="margin-bottom:5px" id="btnXuanZeShenHe" name="btnXuanZeShenHe">
+                                        <i class="glyphicon glyphicon-file"></i>
+                                        保存
+                                    </button>
+                                    <button class="btn btn-primary " style="margin-bottom:5px" id="btnInsert" name="SupplierName">
+                                        <i class="glyphicon glyphicon-pencil"></i>
+                                        取消
+                                    </button>
+                                    <button class="btn btn-info" style="margin-bottom:5px" id="btnInsert" name="SupplierName">
+                                        <i class="glyphicon glyphicon-pencil"></i>
+                                        退出
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tpZ">
+                            <div id="chartL" style="width: 100%; height: 500px; float: left;">
+                                <form class="form-inline col-md-12" style="padding:100px 250px;">
+                                    <div class="panel-heading">对应扣款项目</div>
+                                    <div class="form-group col-md-4">
+
+                                        <select class="form-control" id="WithholdType" style="width:350px" name="WithholdType"></select>
+                                    </div>
+                                </form>
+                                <div class="col-md-12">
+                                    <div class="col-md-12"style="left:230px">
+                                        <button class="btn btn-success" style="margin-bottom:5px" id="btnXuanZeShenHe1" name="btnXuanZeShenHe">
+                                            <i class="glyphicon glyphicon-file"></i>
+                                            保存
+                                        </button>
+                                        <button class="btn btn-primary" style="margin-bottom:5px" id="btnInsert" name="SupplierName">
+                                            <i class="glyphicon glyphicon-pencil"></i>
+                                            取消
+                                        </button>
+                                        <button class="btn btn-info" style="margin-bottom:5px" id="btnInsert" name="SupplierName">
+                                            <i class="glyphicon glyphicon-pencil"></i>
+                                            退出
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    @*jquery.bsgrid*@
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>@*对话框*@
+    <script src="~/Content/js/customfunction.js"></script>@*封装js*@
+    <script src="~/Content/js/jquery.form.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap-table.js"></script>
+   <script>
+       $.post("/OrderFormPactment/OrderFormPact/selectWithholdTypeList", function (data) {
+           selectLoadData("WithholdTypeID", data)
+       });
+       $.post("/OrderFormPactment/OrderFormPact/selectWithholdTypeList2", function (data) {
+           selectLoadData("WithholdType", data)
+       });
+       $("#btnXuanZeShenHe").click(function () {
+           layer.alert("保存成功", { icon: 0, title: "提示：" });
+       });
+       $("#btnXuanZeShenHe1").click(function () {
+           layer.alert("保存成功", { icon: 0, title: "提示：" });
+       });
+   </script>
+</body>
+</html>

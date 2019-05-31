@@ -1,0 +1,335 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>定义合同扣款项目</title>
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    @*CSS样式(包含默认皮肤样式)*@
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    @*CSS皮肤(需引用于bsgrid.all.min.css之后)*@
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+   
+    <style type="text/css">
+        .container {
+            width: 900px;
+            padding: 0;
+        }
+
+        .panel-heading {
+            font-size: 16px;
+        }
+
+        .panel-body {
+            padding-top: 0;
+        }
+
+            .panel-body label {
+                font-weight: normal;
+                font-size: 16px;
+            }
+
+        .setPadding {
+            border: 1px solid #eee;
+            padding: 5px 0 5px 10px;
+        }
+
+            .setPadding button {
+                padding: 4px 6px;
+                font-size: 12px;
+            }
+
+        .form-horizontal label {
+            font-size: 12px;
+        }
+
+        .form-horizontal select, .form-horizontal input {
+            height: 26px;
+            padding: 0;
+        }
+
+        .reset {
+            padding: 0;
+        }
+
+        .examineeInfor {
+            border: 1px solid #eee;
+            padding: 0;
+        }
+
+        .h5 {
+            margin: 0;
+            background: #eef;
+            padding: 6px 10px;
+        }
+
+        .examineeInfor th, .examineeInfor td {
+            font-weight: normal;
+            text-align: center;
+        }
+
+        #examineeInfor th {
+            padding: 4px 8px;
+        }
+
+        .modal-header {
+            padding: 6px 5px;
+            border-bottom: none;
+            background: #337ab7;
+            text-align: center;
+            color: #fff;
+        }
+
+        .modal-content {
+            padding: 6px;
+        }
+
+        .modal-body {
+            border: 1px solid #ddd;
+            padding: 0 25px;
+        }
+
+        .modal-content label {
+            font-weight: normal;
+            font-size: 12px;
+        }
+
+        .img-box {
+            border: 1px solid #eee;
+            padding: 10px;
+        }
+
+        .modal-dialog {
+            width: 400px;
+        }
+
+        .modal .form-group {
+            margin-bottom: 0;
+            margin-top: 2px;
+        }
+
+        .form-group input {
+            height: 26px;
+        }
+
+        .setSex {
+            position: relative;
+            top: -10px;
+            left: 2px;
+        }
+    </style>
+</head>
+<body style="background:#f0edf1;">
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">定义进场扣款项目</div>
+            <div class="panel-body" style="background:#f0edf1;">
+                <div class="row examineeInfor col-md-12">
+                    <div class="col-md-12">
+                        <table id="taAlternativeProject" style="width:100%;" class="table table-hover table-bordered table-responsive table-striped">
+                            <tr>
+                                <th w_num="total_line">序号</th>
+                                <th w_index="AgreementWithholdID" w_hidden="true">结算扣款项目ID</th>
+                                <th w_index="AgreementWithholdName">结算扣款项目</th>
+                                <th w_index="MethodOfSettling">记成本/费用</th>
+
+                                <th w_index="SettlementDebi">扣款方式</th>
+                                <th w_index="UseNo">使用标记</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <button class="btn btn-primary" id="Insert" style="width:80px;margin-bottom:5px">增加</button>
+                            <button class="btn btn-warning" id="Update" style="width:80px;margin-bottom:5px">修改</button>
+                            <button class="btn btn-danger" id="Delete" style="width:80px;margin-bottom:5px">删除</button>
+                            <button class="btn btn-primary" type="button" onclick="SetUpdate()" disabled="disabled" style="width:80px;margin-bottom:5px">保存</button>
+                            <button class="btn btn-info" type="button" onclick="doDelete()" disabled="disabled" style="width:80px;margin-bottom:5px">退出</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="InsertRoom">
+        <div class="modal-dialog">
+            <div class="modal-content " style="width:500px;height:500px">
+                <form role="form" id="fromInsertRoom" class="form-horizontal">
+                    <div class="modal-header">
+                        <button type="button" id="close" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="InsertRoomDetail">添加进场费用项目</h4>
+                        <h4 class="modal-title" id="UpdateRoomDetail">修改进场费用项目</h4>
+                    </div>
+
+                    <div class="form-group">
+
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <label class="control-label col-lg-4 col-md-4 col-sm-4">结算扣款项目：</label><input type="text" class="hidden" id="AgreementWithholdID" name="AgreementWithholdID" />
+                            <div class="col-lg-8 col-md-8 col-sm-8">
+                                <input type="text" class="form-control" id="AgreementWithholdName" name="AgreementWithholdName" />
+                            </div>
+
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <label class="control-label col-lg-4 col-md-4 col-sm-4">记成本/费用：</label>
+                            <div class="col-lg-8 col-md-8 col-sm-8">
+                                <input type="text" class="form-control" id="MethodOfSettling" name="MethodOfSettling" />
+                            </div>
+
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <label class="control-label col-lg-4 col-md-4 col-sm-4">使用标记：</label>
+                            <div class="col-lg-8 col-md-8 col-sm-8">
+                                <input type="text" class="form-control" id="UseNo" name="UseNo" />
+                            </div>
+
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <label class="control-label col-lg-4 col-md-4 col-sm-4">扣款类型：</label>
+                            <div class="col-lg-8 col-md-8 col-sm-8">
+                                <select class="form-control" id="SettlementDebiID" name="SettlementDebiID"></select>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <label class="control-label col-lg-4 col-md-4 col-sm-4">扣款方式：</label>
+                            <div class="col-lg-8 col-md-8 col-sm-8">
+                                <input type="text" class="form-control" id="SettlementDebiList" name="SettlementDebiList" />
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </form>
+                <div class="col-lg-2">
+                    <button class="btn " id="AddRoom"style="width:80px;margin-bottom:5px">增加</button>
+                    <button class="btn " id="UpdateRoom"style="width:80px;margin-bottom:5px">修改</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    @*jquery.bsgrid*@
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>@*对话框*@
+    <script src="~/Content/js/customfunction.js"></script>@*封装js*@
+    <script src="~/Content/js/jquery.form.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap-table.js"></script>
+    <script type="text/javascript">
+        $.ajaxSetup({
+            async: false//将异步请求变成同步请求
+        });
+        var taAlternativeProject; var SettlementDebiID;
+        var SettlementDebi;
+        ///查询经销合同数据
+        $(function () {
+
+            taAlternativeProject = $.fn.bsgrid.init('taAlternativeProject', {
+                url: '/OrderFormPactment/OrderFormPact/selectAgreementWithhold',
+                autoLoad: false,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                rowSelectedColor: true,//是否显示选中行背景色
+                pageSize: 10,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left"//分页工具条的显示位置
+
+
+            });
+            taAlternativeProject.refreshPage();
+
+            $.post("/OrderFormPactment/OrderFormPact/selectSettlementDebi", function (data) {
+                selectLoadData("SettlementDebiID", data);
+            });
+        });
+        $("#SettlementDebiID").change(function () {
+            var SettlementDebiID = $("#SettlementDebiID").val();
+            $.getJSON("/OrderFormPactment/OrderFormPact/SelectFangXingXinXi?SettlementDebiID=" + SettlementDebiID, function (Date) {
+
+                $("#SettlementDebiList").val(Date.SettlementDebi);
+
+            });
+        });
+        $("#Insert").click(function () {
+            $("#AddRoom").css("display", "block");
+            $("#UpdateRoom").css("display", "none");
+            $("#InsertRoomDetail").css("display", "block");
+            $("#UpdateRoomDetail").css("display", "none");
+
+
+            $("#AgreementWithholdName").val("");
+            $("#MethodOfSettling").val("");
+            $("#UseNo").val("");
+            $("#SettlementDebiID").val("");
+            $("#SettlementDebiList").val("");
+
+            $("#InsertRoom").show();
+
+        });
+        $("#close").click(function () {
+            $("#InsertRoom").hide();
+
+        });
+        $("#AddRoom").click(function () {
+
+            var ForDate = $("#fromInsertRoom").serializeArray();
+
+            $.post("/OrderFormPactment/OrderFormPact/InsertRoom", ForDate, function (Tip) {
+                if (Tip == "success") {
+                    layer.confirm("新增成功", { icon: 1, btn: ["确定"] }, function (layerIndex) {
+                        layer.close();
+
+
+                        location.reload();
+                    });
+                }
+                else {
+                    layer.alert(Tip, { icon: 0, title: "提示：" });
+                }
+
+            });
+
+        });
+        $("#Update").click(function () {
+            layer.alert("该数据无法修改，请删除重新录入", { icon: 0, title: "提示：" });
+        });
+
+    </script>
+    <script>
+        var goodsId = 0;
+        $("#Delete").click(function () {
+            var selectRowIndex = taAlternativeProject.getSelectedRowIndex();//获取选中行的索引值
+            if (selectRowIndex >= 0) {
+                if (window.confirm("您确定要删除？")) {
+                    var goodsId = taAlternativeProject.getColumnValue(selectRowIndex, "AgreementWithholdID");
+                    //查询修改
+                    $.post("/OrderFormPactment/OrderFormPact/DeleteGoods",
+                        { goodsId: goodsId }, function (msg) {
+                            if (msg == "success") {
+                                layer.alert('删除成功', { icon: 1, title: '提示' });
+                                //刷新table
+                                taAlternativeProject.refreshPage();
+                            }
+                            else {
+                                layer.alert('删除失败', { icon: 2, title: '提示' });
+                            }
+                        });
+                }
+            }
+            else {
+                layer.alert('请选择需要删除的数据', { icon: 2, title: '提示' });
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,249 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <title>DengLuJieMian</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            
+        }
+        .hgfdfg {
+            background-image: url('../../../../ImaginPho/qianTaiTuPian/04.jpg');
+            /*background-image: url('../../../../ImaginPho/qianTaiTuPian/05.jpg');*/
+            /*background-image: url('../../../../ImaginPho/qianTaiTuPian/01.jpg');*/
+            /*background-attachment: fixed !important;*/
+            background-size: 100% !important;
+        }
+        .reset-padding {
+            padding: 0 5px;
+        }
+
+        .reset {
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        label.Size {
+            font-size: 60px;
+            color: #fff;
+        }
+
+        label {
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <div class="one" style="height:100px;background:#f7f1f1;">
+        <div class="BiaoSechen">
+            <div id="logo" class="logo" style="margin-left:50px;width:200px;">
+                <h1 class="logo_tit"><img src="~/ImaginPho/QX/008.jpg" style="width:170px;height:80px;" /></h1>
+                <div class="logo" style="margin-left:210px;width:200px;margin-top:-90px;">
+                    <h3 class="logo_subtit">商贸,便捷好省</h3>
+                    <h5 class="logo_subtit">SM.goods.com</h5>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+   <div class="row hgfdfg">
+       <div class="container">
+           <div class="row" style="margin-top:150px;">
+               <div class="col-md-5 col-lg-offset-7" id="zhengti">
+                   <div class="panel panel-body" style="" id="fgf">
+
+                       <h4 style="margin-top:-5px;font-size:22px;margin-left:100px;margin-top:30px;">欢迎登录大型商贸系统</h4>
+                       <form id="fmLogin" method="post" class="form-horizontal form-radius" style="margin-top:30px;">
+                           <div class="form-group has-feedback">
+                               <label class="col-sm-1"></label>
+                               <div class="col-sm-9" style="margin-left:10px;">
+                                   <img src="~/ImaginPho/agent.png" class="form-control-feedback" />
+                                   <input type="text" name="UserName" id="UserName" class="form-control" placeholder="请输入用户名/手机号码" />
+
+                               </div>
+                           </div>
+                           <div class="form-group has-feedback" style="margin-top:30px;">
+                               <label class="col-sm-1"></label>
+                               <div class="col-sm-9" style="margin-left:10px;">
+                                   <img src="~/ImaginPho/unlock.png" class="form-control-feedback pull-left" />
+                                   <input type="password" name="Password" id="Password" style="font-size:20px;" class="form-control" />
+                               </div>
+                           </div>
+                           <div class="form-group has-feedback" style="margin-top:30px;">
+                               <label class="col-sm-1"></label>
+                               <div class="col-sm-9" style="margin-left:10px;">
+                                   <button class="btn btn-danger form-control" type="button" id="DengLu">登 录</button>
+                               </div>
+
+                           </div>
+
+                           <div class="form-group" style="margin-top:50px;">
+                               <div class="col-sm-3  col-sm-offset-1">
+                                   <label class="control-label"><a href="http://localhost:5785/UserLog/Userlog/UserLogIndex">免费注册</a></label>
+                               </div>
+                               <div class="col-sm-3">
+                                   <label class="control-label" id="myYongHuZheCe"><a href="#" id="wangjiPawssd">忘记密码</a></label>
+                               </div>
+                               <div class="col-sm-3">
+                                   <label class="control-label" id="btnSubmit"><a href="#">忘记会员名</a></label>
+                               </div>
+
+                           </div>
+
+                       </form>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+    @*<div class="row" style="height:100px;background:#fff;">
+        
+    </div>*@
+    @*忘记密码*@
+    <div class="modal" id="WangJiMiMaChuangTi">
+        <div class="modal-dialog" style="width:600px;height:500px;">
+            <div class="modal-header" style="background:#a8d7ef;">
+                <span>亲，为你找回密码</span>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body" style="height:500px;background:#eddddd;">
+                <form class="form-horizontal" role="form" id="formInsertExaZhuCe" action="/DanWeiXinXi/LookXinXi/ChongSheMiMa" method="post">
+                    <br />
+                    <div class="form-group">
+                        <div class="col-lg-3 col-md-3 col-sm-3 text-right">
+                            <label class="control-label">用户名:</label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-5 reset">
+                            <input type="text" class="form-control" id="StaffName" name="StaffName" placeholder="请输入员工姓名" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-3 col-md-3 col-sm-3 text-right">
+                            <label class="control-label">姓名:</label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-5 reset">
+                            <input type="text" class="form-control" id="StaffCode" name="StaffCode" placeholder="请输入员工代码" onkeyup="value=value.replace(/[^0-9a-zA-Z]/g,'')" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-3 col-md-3 col-sm-3 text-right">
+                            <label class="control-label">手机号码:</label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-5 reset">
+                            <input type="text" class="form-control" id="UserName2" name="UserName" placeholder="请输入用户名" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-3 col-md-3 col-sm-3 text-right">
+                            <label class="control-label">身份证号码:</label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-5 reset">
+                            <input type="text" class="form-control" id="UniformAuthenticationCode" name="UniformAuthenticationCode" onkeyup="value=value.replace(/[^0-9a-zA-Z]/g,'')" placeholder="请输入密码" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-3 col-md-3 col-sm-3 text-right">
+                            <label class="control-label">员工类型:</label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-5 reset">
+                            <select class="form-control" name="StaffClassID" id="StaffClassID"></select>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <div class="col-sm-2 col-sm-offset-4">
+                            <button type="button" class="btn btn-primary btn-block btn-radius" id="btnTiJiao">
+                                提 交
+                            </button>
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="reset" class="btn btn-primary btn-block btn-radius" id="btn_rettue" data-dismiss="modal">
+                                返 回
+                            </button>
+                        </div>
+                    </div>
+                    <br />
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+
+    <script type="text/javascript">
+
+        //登录按钮
+        $("#DengLu").click(function () {
+
+            var uname = $("#UserName").val();
+            var pwd = $("#Password").val();
+
+            if (uname != '' && pwd != '') {
+               
+                $.post("/YongHuZhuJieMian/Login/UserLogin", {
+                    uname: uname,
+                    pwd: pwd
+
+                }, function (datad) {
+                    if (datad == "login") {
+                        window.location.href = "/ZhuMian/ZhuMian"
+                    } else if (datad == "UnNimeHuoPawssFail") {
+                        layer.alert("用户名或密码不正确", { icon: 5, title: '温馨小提示：' });
+                    }
+                });
+
+            } else {
+                layer.alert("请输入登录帐号与密码", { icon: 5, title: '温馨小提示：' });
+            }
+            
+        });
+
+
+        $("#wangjiPawssd").click(function () {
+            $("#WangJiMiMaChuangTi").modal('show');
+        });
+           
+
+
+
+
+
+
+
+
+        //注册用户
+        $("#btnZhuCe").click(function () {
+            window.location.href = "/UserLog/Userlog/UserLogIndex"
+        });
+
+        //用户登录
+        $("#btnSubmit").click(function () {
+            window.location.href = "http://localhost:5785/"
+        });
+
+        //忘记密码
+        $("#WangJiMiMa").click(function () {
+            $("#WangJiMiMaChuangTi").modal('show');
+        })
+
+
+
+
+    </script>
+
+</body>
+</html>

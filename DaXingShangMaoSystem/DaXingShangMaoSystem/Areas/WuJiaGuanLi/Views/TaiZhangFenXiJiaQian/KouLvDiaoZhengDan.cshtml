@@ -1,0 +1,667 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <title>联营租赁扣率调整单</title>
+    <style type="text/css">
+        .container {
+            width: 98%;
+            padding-top: 4px;
+        }
+
+        .panel-heading {
+            font-size: 16px;
+        }
+
+        .panel-body {
+            padding: 0;
+            border-left: 3px solid #377ab7;
+            border-bottom: 3px solid #377ab7;
+            border-right: 3px solid #377ab7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="koulvdiaozhengdan">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <span style="padding-left:14px;">联营租赁扣率调整单</span>                      
+                    </div>
+                </div>
+                <div class="panel-body" style="width:100%;height:550px; background:#f0edf1">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group" style="margin-top:15px;">
+                            <input type="hidden" name="SaleAdjustID" id="SaleAdjustIDD" />
+                            <label class="col-md-4 col-sm-1 control-label reset">开始时间</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="date" class="form-control" name="BeginTime" id="BeginTimeD">
+                            </div>
+                            <label class="col-md-1 col-sm-1 control-label reset">结束时间</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="date" class="form-control" name="EndTime" id="EndTimeD">
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:25px;">
+                            <input type="hidden" id="AgioTimeIntervalIDD" name="AgioTimeIntervalID" />
+                            <div class="col-sm-1" style="margin-top:2px;left:4px;">
+                                <button type="button" class="btn form-control" style="background:#d1cccc;" id="btnXuanShiDuan">
+                                    选择时段
+                                </button>
+                            </div>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="TimeInterval" id="TimeIntervalD" readonly>
+                            </div>
+                            <label class="col-md-1 control-label reset">分单号</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="FenDanHao" id="FenDanHaoD" readonly>
+                            </div>
+                            <label class="col-md-1 control-label reset">时段时刻</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="XingQi" id="XingQiD" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:15px;">
+                            <input type="hidden" id="GoodsDetailIDD" name="GoodsDetailID" />
+                            <div class="col-sm-1" style="margin-top:2px;left:4px;">
+                                <button type="button" class="btn form-control" style="background:#d1cccc;" id="btnXuanZeShangPinMing">
+                                    商品名称
+                                </button>
+                            </div>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="GoodsName" id="GoodsNameD" readonly>
+                            </div>
+                            <label class="col-md-1 control-label reset">原结算扣率</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="RateSale" id="RateSaleD" readonly>
+                            </div>
+                            <label class="col-md-1 control-label reset">合同号</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="ContractNumber" id="ContractNumberD" readonly>
+                            </div>
+                            <label class="col-md-1 control-label reset">商标品牌</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="GoodsChopName" id="GoodsChopNameD" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:5px;">
+                            <label class="col-md-1 control-label reset">供货商代码</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="SupplierNumber" id="SupplierNumberD" readonly>
+                            </div>
+                            <label class="col-md-1 control-label reset">供货名称</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="SupplierName" id="SupplierNameD" readonly>
+                            </div>
+                            <label class="col-md-1 control-label reset">核算方式</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="EstimateUnitName" id="EstimateUnitNameD" readonly>
+                            </div>
+                        </div> 
+                        <div class="form-group" style="margin-top:15px;">
+                            <label class="col-md-1 col-sm-1 control-label reset">调整单编号</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="text" class="form-control" name="AdjustCode" id="AdjustCodeD" readonly>
+                            </div>
+                            <label class="col-md-1 col-sm-1 control-label reset">调整单状态</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <select class="form-control" name="AdjustTypeID" id="AdjustTypeIDD"></select>
+                            </div>
+                            <label class="col-md-1 col-sm-1 control-label reset">扣率</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="text" class="form-control" name="Sale" id="SaleD"
+                                       onkeyup="value=value.replace(/[^\d\.]/g,'')">
+                            </div>
+                            <label class="col-md-1 col-sm-1 control-label reset">新结算扣率</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="text" class="form-control" name="NewRateSale" id="NewRateSaleD"
+                                       onkeyup="value=value.replace(/[^\d\.]/g,'')">
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:5px;">
+                            <label class="col-md-1 control-label reset">登记人</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="Registrant" id="RegistrantD">
+                            </div>
+                            <label class="col-md-1 control-label reset">登记时间</label>
+                            <div class="col-md-2 reset">
+                                <input type="date" class="form-control" name="RegisterTime" id="RegisterTimeD">
+                            </div>
+                            <label class="col-md-1 control-label reset">审核人</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="Auditor" id="AuditorD">
+                            </div>
+                            <label class="col-md-1 control-label reset">审核时间</label>
+                            <div class="col-md-2 reset">
+                                <input type="date" class="form-control" name="Checktime" id="ChecktimeD">
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:5px;">
+                            <label class="col-md-1 control-label reset">执行人</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="Executor" id="ExecutorD">
+                            </div>
+                            <label class="col-md-1 control-label reset">执行时间</label>
+                            <div class="col-md-2 reset">
+                                <input type="date" class="form-control" name="ExecuteTime" id="ExecuteTimeD">
+                            </div>
+                            <label class="col-md-1 control-label reset">终止人</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="StopRen" id="StopRenD">
+                            </div>
+                            <label class="col-md-1 control-label reset">终止时间</label>
+                            <div class="col-md-2 reset">
+                                <input type="date" class="form-control" name="StopShiJian" id="StopShiJianD">
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:5px;">
+                            <div class="col-md-2 reset" style="margin-left:30px;">
+                                <input id="DiaoZhengDanShenHeFouD" name="DiaoZhengDanShenHeFou" type="checkbox" /> 调整单审核否
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:60px;">
+                            <div class="col-sm-1 col-sm-offset-3">
+                                <button type="button" class="btn btn-success form-control" id="btnXinZeng">
+                                    <span class="glyphicon glyphicon-plus"></span> 添加
+                                </button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-primary form-control" id="btnXiuGai">
+                                    <span class="glyphicon glyphicon-pencil"></span> 修改
+                                </button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-info form-control" id="btnBaoCunXiuGai">
+                                    <span class="glyphicon glyphicon-arrow-down"></span> 保存
+                                </button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-warning form-control" id="btnQuXiao">
+                                    <span class="glyphicon glyphicon-remove"></span> 取消
+                                </button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-danger form-control" id="btnTuiChu">
+                                    <span class="glyphicon glyphicon-off"></span> 退出
+                                </button>
+                            </div>
+                        </div>
+                    </form>                                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*选择时段*@
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="ShiDuanChuangTi">
+        <div class="modal-dialog" style="width:800px;height:400px;">
+            <div class="modal-header" style="background:#a8d7ef;">
+                <span>选择时段信息</span>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body" style="background:#f0edf1;">
+                <table id="tabChuLiShiDuan" style="width:100%;">
+                    <tr>
+                        <th w_num="total_line">序号</th>
+                        <th w_index="AgioTimeIntervalID" w_hidden="true">AgioTimeIntervalID</th>
+                        <th w_index="TimeInterval">处理时段</th>
+                        <th w_index="FenDanHao">分单号</th>
+                        <th w_index="XingQi">时段时刻</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    @*商品选择*@
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="ShangPinChuangTi">
+        <div class="modal-dialog" style="width:1000px;height:400px;">
+            <div class="modal-header" style="background:#a8d7ef;">
+                <span>选择包装信息</span>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body" style="background:#f0edf1;">
+                <table id="tabShangPinXuanZe" style="width:100%;">
+                    <tr>
+                        <th w_num="total_line">序号</th>
+                        <th w_index="GoodsDetailID" w_hidden="true">GoodsDetailID</th>
+                        <th w_index="GoodsName">商品名称</th>
+                        <th w_index="RateSale">原结算扣率</th>
+                        <th w_index="GoodsDetailID" w_hidden="true">GoodsDetailID</th>
+                        <th w_index="ContractNumber">合同号</th>
+                        <th w_index="GoodsChopID" w_hidden="true">GoodsChopID</th>
+                        <th w_index="GoodsChopName">商标</th>
+                        <th w_index="SupplierID" w_hidden="true">SupplierID</th>
+                        <th w_index="SupplierNumber">供货商代码</th>
+                        <th w_index="SupplierName">供货名称</th>
+                        <th w_index="EstimateUnitID" w_hidden="true">EstimateUnitID</th>
+                        <th w_index="EstimateUnitName">核算方式</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    @*查询修改删除*@   
+    <div class="modal" id="ChaXunXiuGaiChuangTi">
+        <div class="modal-dialog" style="width:1200px;height:600px;">
+            <div class="modal-header" style="background:#a8d7ef;">
+                <span>查询修改删除</span>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body" style="background:#eddddd;">
+                <div class="row table-responsive" style="height:400px;overflow:auto;margin-top:-15px">
+                    <table id="tabChaXunXiuGai" style="margin-top:2px;width:1600px">
+                        <tr>
+                            <th w_num="total_line">序号</th>
+                            <th w_index="SaleAdjustID" w_hidden="true">SaleAdjustID</th>                           
+                            <th w_index="ReleaseTimeStrd">开始时间</th>
+                            <th w_index="ReleaseTimeStrh">结束时间</th>
+                            <th w_index="AgioTimeIntervalID" w_hidden="true">AgioTimeIntervalID</th>
+                            <th w_index="TimeInterval">处理时段</th>
+                            <th w_index="GoodsDetailID" w_hidden="true">GoodsDetailID</th>
+                            <th w_index="GoodsDetailName">商品信息</th>
+                            <th w_index="AdjustCode">调整单编号</th>
+                            <th w_index="AdjustTypeID" w_hidden="true">AdjustTypeID</th>
+                            <th w_index="AdjustTypeName">调整单状态</th>
+                            <th w_index="Sale">扣率</th>     
+                            <th w_index="NewRateSale">新结算扣率</th>                       
+                            <th w_index="Registrant">登记人</th>
+                            <th w_index="ReleaseTimeStr">登记时间</th>
+                            <th w_index="Auditor">审核人</th>
+                            <th w_index="ReleaseTimeStrr">审核时间</th>
+                            <th w_index="Executor">执行人</th>
+                            <th w_index="ReleaseTimeStrrr">执行时间</th>
+                            <th w_index="StopRen">终止人</th>
+                            <th w_index="ReleaseTimeStrf">终止时间</th> 
+                            <th w_index="DiaoZhengDanShenHeFou">调整单审核否</th>      
+                        </tr>
+                    </table>
+                </div>
+                <form class="form-horizontal" role="form">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="col-sm-1 col-sm-offset-4">
+                            <button type="button" class="btn btn-info form-control" id="btnXanZeXiuGai">修改</button>
+                        </div>
+                        <div class="col-sm-1">
+                            <button type="button" class="btn btn-danger form-control" id="btnShangChu">删除</button>
+                        </div>
+                        <div class="col-sm-1">
+                            <button type="button" class="btn btn-warning form-control" data-dismiss="modal">退出</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    @*页面加载及查询*@
+    <script type="text/javascript">
+        var tabChaXunShangPin;       
+        $(document).ready(function () {
+            //调整单编码
+            $.getJSON("/WuJiaGuanLi/TaiZhangFenXiJiaQian/SelectAdjustCode", function (data) {
+                $("#AdjustCodeD").val(data);
+            });
+
+            //调整单状态
+            $.post("/WuJiaGuanLi/TaiZhangFenXiJiaQian/SelectAdjustTypeName", function (data) {
+                selectLoadData("AdjustTypeIDD", data);
+            });
+        });
+
+        //选择时段
+        $(function () {
+            tabChuLiShiDuan = $.fn.bsgrid.init('tabChuLiShiDuan', {
+                url: '/WuJiaGuanLi/TaiZhangFenXiJiaQian/SelectAgioTimeInterval',
+                autoLoad: false,//自动加载数据
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                rowSelectedColor: true,//是否显示选中行背景色
+                pageSize: 8,//默认页面大小
+                pageSizeSelect: true,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置  
+                event: {
+                    customRowEvents: { //record 记录记载  options 选项
+                        click: function (record, rowIndex, trObj, options) {
+                            IdAgioTimeIntervalID = record.AgioTimeIntervalID
+
+                            if (IdAgioTimeIntervalID > 0) {
+
+                                var rowIndex = tabChuLiShiDuan.getSelectedRowIndex();
+                                if (rowIndex > -1) {
+                                    var agioTimeIntervalID = tabChuLiShiDuan.getColumnValue(rowIndex, "AgioTimeIntervalID");
+                                    $.getJSON("/WuJiaGuanLi/TaiZhangFenXiJiaQian/HuoQuAgioTimeInterval?ShiDuanID=" + agioTimeIntervalID, function (data) {
+                                        if (data == "失败") {
+                                            layer.alert('你没有选择信息！', { icon: 2, title: '提示' });
+                                        }
+                                        else {
+                                            $("#AgioTimeIntervalIDD").val(data.AgioTimeIntervalID);//隐藏域
+                                            $("#FenDanHaoD").val(data.FenDanHao);
+                                            $("#TimeIntervalD").val(data.TimeInterval);
+                                            $("#XingQiD").val(data.XingQi);
+                                        }
+                                        $("#ShiDuanChuangTi").modal('hide'); //选择后自动关闭
+                                    });
+                                }
+                                else {
+                                    layer.alert('请选择一条的信息！', { icon: 2, title: '提示' });
+                                }
+
+                            }
+
+                        }
+                    }
+                }
+
+            });
+
+            $("#btnXuanShiDuan").click(function () {                
+                tabChuLiShiDuan.refreshPage();
+                $("#ShiDuanChuangTi").modal('show');
+            });
+           
+        })
+         
+        //选择商品信息
+        $(function () {
+            tabShangPinXuanZe = $.fn.bsgrid.init('tabShangPinXuanZe', {
+                url: '/WuJiaGuanLi/TaiZhangFenXiJiaQian/XuanZeSangPinMingCheng',
+                autoLoad: false,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                pageSize: 8,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置 
+                event: {
+                    customRowEvents: { //record 记录记载  options 选项
+                        click: function (record, rowIndex, trObj, options) {
+                            IdGoodsDetailID = record.GoodsDetailID
+
+                            if (IdGoodsDetailID > 0) {
+                                //绑定商品
+                                var rowIndex = tabShangPinXuanZe.getSelectedRowIndex();
+                                if (rowIndex > -1) {
+                                    var goodsDetailID = tabShangPinXuanZe.getColumnValue(rowIndex, "GoodsDetailID");
+                                    $.getJSON("/WuJiaGuanLi/TaiZhangFenXiJiaQian/HuoQuSangPinMingCheng?ShangPinID=" + goodsDetailID, function (data) {
+                                        if (data == "失败") {
+                                            layer.alert('你没有选择信息！', { icon: 2, title: '提示' });
+                                        }
+                                        else {
+                                            $("#GoodsDetailIDD").val(data.GoodsDetailID);//隐藏域
+                                            $("#GoodsNameD").val(data.GoodsName);
+                                            $("#RateSaleD").val(data.RateSale);
+                                            $("#ContractNumberD").val(data.ContractNumber);
+                                            $("#GoodsChopNameD").val(data.GoodsChopName);
+                                            $("#SupplierNumberD").val(data.SupplierNumber);
+                                            $("#SupplierNameD").val(data.SupplierName);
+                                            $("#EstimateUnitNameD").val(data.EstimateUnitName);
+                                        }
+                                        $("#ShangPinChuangTi").modal('hide'); //选择后自动关闭
+                                    });
+                                }
+                                else {
+                                    layer.alert('请选择一条的信息！', { icon: 2, title: '提示' });
+                                }
+
+                            }
+
+                        }
+                    }
+                }
+
+            });
+            $("#btnXuanZeShangPinMing").click(function () {
+                tabShangPinXuanZe.refreshPage();
+                $("#ShangPinChuangTi").modal('show');
+            });
+        
+        });
+
+        //新增调整单信息
+        $("#btnXinZeng").click(function () {           
+            var BeginTime = $("#BeginTimeD").val();
+            var EndTime = $("#EndTimeD").val();
+            var AdjustTypeID = $("#AdjustTypeIDD").val();
+            var GoodsDetailID = $("#GoodsDetailIDD").val();
+            var AdjustCode = $("#AdjustCodeD").val();
+            var AgioTimeIntervalID = $("#AgioTimeIntervalIDD").val();        
+            var Sale = $("#SaleD").val();           
+            var NewRateSale = $("#NewRateSaleD").val();
+            var Registrant = $("#RegistrantD").val();
+            var RegisterTime = $("#RegisterTimeD").val();
+            var Auditor = $("#AuditorD").val();
+            var Checktime = $("#ChecktimeD").val();           
+            var Executor = $("#ExecutorD").val();
+            var ExecuteTime = $("#ExecuteTimeD").val();         
+            var StopRen = $("#StopRenD").val();
+            var StopShiJian = $("#StopShiJianD").val();
+            if (AdjustCode != '' && BeginTime != '' && EndTime != '' && AdjustTypeID > 0 && Sale != '' 
+                && Registrant != '' && RegisterTime != '' && Auditor != '' && Checktime != '' && Executor != ''
+                && ExecuteTime != '' && StopRen != '' && StopShiJian != '') {
+                $.post("/WuJiaGuanLi/TaiZhangFenXiJiaQian/XinZengKouLvDiaoZhengDan", {               
+                    BeginTime: BeginTime,
+                    EndTime: EndTime,
+                    AgioTimeIntervalID: AgioTimeIntervalID,                   
+                    GoodsDetailID: GoodsDetailID,
+                    AdjustCode: AdjustCode,
+                    AdjustTypeID: AdjustTypeID,
+                    Sale: Sale,                   
+                    NewRateSale: NewRateSale,
+                    Registrant: Registrant,
+                    RegisterTime: RegisterTime,
+                    Auditor: Auditor,
+                    Checktime: Checktime,
+                    Executor: Executor,
+                    ExecuteTime: ExecuteTime,                   
+                    StopRen: StopRen,
+                    StopShiJian: StopShiJian,                   
+                }, function (mess) {
+                    if (mess == "success") {
+                        layer.alert('新增成功', { icon: 1, title: '提示' });
+                    }
+                    else {
+                        layer.alert('新增失败', { icon: 0, title: '提示' });
+                    }
+                });
+            } else {
+                layer.alert('请输入完必填数据', { icon: 2, title: '提示' });
+            }
+        });
+
+        //调整单状态 回填
+        $.post("/WuJiaGuanLi/TaiZhangFenXiJiaQian/SelectAdjustTypeName1", function (data) {
+            selectLoadData("AdjustTypeIDD", data);
+        });
+
+        //查询修改删除
+        $(function () {
+            tabChaXunXiuGai = $.fn.bsgrid.init('tabChaXunXiuGai', {
+                url: '/WuJiaGuanLi/TaiZhangFenXiJiaQian/ChaXunXiuGaiShanChu',
+                autoLoad: false,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                pageSize: 10,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置               
+            });
+            $("#btnXiuGai").click(function () {               
+                tabChaXunXiuGai.refreshPage();  
+                $("#ChaXunXiuGaiChuangTi").modal('show');
+            });           
+        });        
+
+        //绑定数据在文本中
+        $("#btnXanZeXiuGai").click(function () {
+            var rowIndex = tabChaXunXiuGai.getSelectedRowIndex();
+            if (rowIndex > -1) {
+                var saleAdjustID = tabChaXunXiuGai.getColumnValue(rowIndex, "SaleAdjustID");
+                $.getJSON("/WuJiaGuanLi/TaiZhangFenXiJiaQian/HuoQuShuJuXiuGaiShanChu?GID=" + saleAdjustID, function (data) {
+                    if (data == "失败") {
+                        layer.alert('请选择修改审核信息', { icon: 0, title: '提示' });
+                    }
+                    else {
+                        $("#SaleAdjustIDD").val(data.SaleAdjustID);//隐藏域                        
+                        $("#BeginTimeD").val(data.ReleaseTimeStrd);
+                        $("#EndTimeD").val(data.ReleaseTimeStrh);
+
+                        $("#AgioTimeIntervalIDD").val(data.AgioTimeIntervalID);
+                        $("#FenDanHaoD").val(data.FenDanHao);
+                        $("#TimeIntervalD").val(data.TimeInterval);
+                        $("#XingQiD").val(data.XingQi);
+
+                        $("#GoodsDetailIDD").val(data.GoodsDetailID);
+                        $("#GoodsNameD").val(data.GoodsName);
+                        $("#RateSaleD").val(data.RateSale);
+                        $("#ContractNumberD").val(data.ContractNumber);
+                        $("#GoodsChopNameD").val(data.GoodsChopName);
+                        $("#SupplierNumberD").val(data.SupplierNumber);
+                        $("#SupplierNameD").val(data.SupplierName);
+                        $("#EstimateUnitNameD").val(data.EstimateUnitName);                      
+
+                        $("#AdjustCodeD").val(data.AdjustCode);
+                        $("#AdjustTypeIDD").val(data.AdjustTypeID);
+                        $("#SaleD").val(data.Sale);
+                        $("#NewRateSaleD").val(data.NewRateSale);
+                        $("#RegistrantD").val(data.Registrant);
+                        $("#RegisterTimeD").val(data.ReleaseTimeStr);
+                        $("#AuditorD").val(data.Auditor);
+                        $("#ChecktimeD").val(data.ReleaseTimeStrr);
+                        $("#ExecutorD").val(data.Executor);
+                        $("#ExecuteTimeD").val(data.ReleaseTimeStrrr);
+                        $("#StopRenD").val(data.StopRen);
+                        $("#StopShiJianD").val(data.ReleaseTimeStrf);
+                        if (data.DiaoZhengDanShenHeFou) {
+                            $("#DiaoZhengDanShenHeFouD").prop("checked", 'true');
+                        }
+                        else {
+                            $("#DiaoZhengDanShenHeFouD").removeAttr("checked");
+                        }
+                    }
+                    $("#ChaXunXiuGaiChuangTi").modal('hide'); //选择关闭表格
+                });
+            }
+            else {
+                layer.alert('请先选择修改审核信息', { icon: 0, title: '提示' });
+            }
+        });
+
+        //保存修改后的数据
+        $("#btnBaoCunXiuGai").click(function () {
+            var SaleAdjustID = $("#SaleAdjustIDD").val();//隐藏域           
+            var BeginTime = $("#BeginTimeD").val();
+            var EndTime = $("#EndTimeD").val();
+            var AgioTimeIntervalID = $("#AgioTimeIntervalIDD").val();
+            var GoodsDetailID = $("#GoodsDetailIDD").val();
+            var AdjustTypeID = $("#AdjustTypeIDD").val();
+            var AdjustCode = $("#AdjustCodeD").val();
+            var Sale = $("#SaleD").val();
+            var NewRateSale = $("#NewRateSaleD").val();
+            var Registrant = $("#RegistrantD").val();
+            var RegisterTime = $("#RegisterTimeD").val();
+            var Auditor = $("#AuditorD").val();
+            var Checktime = $("#ChecktimeD").val();
+            var Executor = $("#ExecutorD").val();
+            var ExecuteTime = $("#ExecuteTimeD").val();
+            var StopRen = $("#StopRenD").val();
+            var StopShiJian = $("#StopShiJianD").val();
+            var DiaoZhengDanShenHeFou = $("#DiaoZhengDanShenHeFouD").is(":checked");
+            if (BeginTime != '' && EndTime != '' && AgioTimeIntervalID > 0 && GoodsDetailID > 0 && AdjustTypeID > 0 && AdjustCode != ''
+                && Sale != '' && NewRateSaleD != '' && Registrant != '' && RegisterTime != '' && Auditor != '' && Checktime != ''                
+                && Executor != '' && ExecuteTime != '' && StopRen != '' && StopShiJian != '') {
+                $.post("/WuJiaGuanLi/TaiZhangFenXiJiaQian/DiaoZhengDanXiuGaiBaoCun", {
+                    SaleAdjustID: SaleAdjustID,//隐藏域                   
+                    BeginTime: BeginTime,
+                    EndTime: EndTime,
+                    AgioTimeIntervalID: AgioTimeIntervalID,
+                    GoodsDetailID: GoodsDetailID,
+                    AdjustTypeID: AdjustTypeID,
+                    AdjustCode: AdjustCode,           
+                    Sale: Sale,
+                    NewRateSale:NewRateSale,
+                    Registrant: Registrant,
+                    RegisterTime: RegisterTime,
+                    Auditor: Auditor,
+                    Checktime: Checktime,
+                    Executor: Executor,
+                    ExecuteTime: ExecuteTime,
+                    StopRen: StopRen,
+                    StopShiJian: StopShiJian,
+                    DiaoZhengDanShenHeFou: DiaoZhengDanShenHeFou,
+                }, function (data) {
+                    if (data == "success") {
+                        layer.alert('修改审核成功', { icon: 1, title: '提示' });
+                        $("#ChaXunXiuGaiChuangTi").modal('hide'); //关闭窗体
+                        tabChaXunXiuGai.refreshPage(); //刷新表格                       
+                    }
+                    else {
+                        layer.alert('修改审核失败', { icon: 2, title: '提示' });
+                    }
+                });
+            }
+            else {
+                layer.alert('请填写需要修改审核的内容', { icon: 0, title: '提示' });
+            }
+        });
+
+        //删除调整单信息
+        $("#btnShangChu").click(function () {
+            var selectRowIndex = tabChaXunXiuGai.getSelectedRowIndex();//获取选中行的索引值
+            if (selectRowIndex >= 0) {
+                if (window.confirm("您确定要删除？")) {
+                    var saleAdjustId = tabChaXunXiuGai.getColumnValue(selectRowIndex, "SaleAdjustID");
+                    //查询修改
+                    $.post("/WuJiaGuanLi/TaiZhangFenXiJiaQian/DeleteSaleAdjust",
+                        { saleAdjustId: saleAdjustId }, function (msg) {
+                            if (msg == "success") {
+                                layer.alert('删除成功', { icon: 1, title: '提示' });
+                                //刷新table
+                                tabChaXunXiuGai.refreshPage();
+                            }
+                            else {
+                                layer.alert('已审核，删除失败', { icon: 2, title: '提示' });
+                            }
+                        });
+                }
+            }
+            else {
+                layer.alert('请选择需要删除的数据', { icon: 2, title: '提示' });
+            }
+        });
+
+        //放弃
+        $("#btnQuXiao").click(function () {
+            document.location.href = "/WuJiaGuanLi/TaiZhangFenXiJiaQian/KouLvDiaoZhengDan"
+        })
+       
+        //页面关闭按钮
+        $(function () {            
+            $("#btnTuiChu").click(function () {
+                $("#koulvdiaozhengdan").hide();
+            });
+        });
+
+    </script>
+
+</body>
+</html>

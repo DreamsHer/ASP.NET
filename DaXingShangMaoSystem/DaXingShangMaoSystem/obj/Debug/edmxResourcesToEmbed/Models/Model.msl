@@ -1,0 +1,2041 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DaXingShangMaoXiTongModelStoreContainer" CdmEntityContainer="DaXingShangMaoXiTongEntities">
+    <EntitySetMapping Name="areas">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.areas">
+        <MappingFragment StoreEntitySet="areas">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="LevelType" ColumnName="LevelType" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="MergerName" ColumnName="MergerName" />
+          <ScalarProperty Name="Lng" ColumnName="Lng" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="Pinyin" ColumnName="Pinyin" />
+          <ScalarProperty Name="FirstChar" ColumnName="FirstChar" />
+          <ScalarProperty Name="shorthand" ColumnName="shorthand" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_AgreementList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_AgreementList">
+        <MappingFragment StoreEntitySet="B_AgreementList">
+          <ScalarProperty Name="AgreementID" ColumnName="AgreementID" />
+          <ScalarProperty Name="AgreementName" ColumnName="AgreementName" />
+          <ScalarProperty Name="AgreementCode" ColumnName="AgreementCode" />
+          <ScalarProperty Name="AgreementBeginTime" ColumnName="AgreementBeginTime" />
+          <ScalarProperty Name="AgreementFinishTime" ColumnName="AgreementFinishTime" />
+          <ScalarProperty Name="ConclusionTime" ColumnName="ConclusionTime" />
+          <ScalarProperty Name="AdjustAccountsFashionID" ColumnName="AdjustAccountsFashionID" />
+          <ScalarProperty Name="AgreementStateID" ColumnName="AgreementStateID" />
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_AgreementWithholdList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_AgreementWithholdList">
+        <MappingFragment StoreEntitySet="B_AgreementWithholdList">
+          <ScalarProperty Name="AgreementWithholdID" ColumnName="AgreementWithholdID" />
+          <ScalarProperty Name="AgreementWithholdName" ColumnName="AgreementWithholdName" />
+          <ScalarProperty Name="SettlementDebiID" ColumnName="SettlementDebiID" />
+          <ScalarProperty Name="MethodOfSettling" ColumnName="MethodOfSettling" />
+          <ScalarProperty Name="UseNo" ColumnName="UseNo" />
+          <ScalarProperty Name="SettlementDebiList" ColumnName="SettlementDebiList" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_AllocateDetailList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_AllocateDetailList">
+        <MappingFragment StoreEntitySet="B_AllocateDetailList">
+          <ScalarProperty Name="AllocateDetailID" ColumnName="AllocateDetailID" />
+          <ScalarProperty Name="AllocateID" ColumnName="AllocateID" />
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+          <ScalarProperty Name="MumberOfPackages" ColumnName="MumberOfPackages" />
+          <ScalarProperty Name="Subdivision" ColumnName="Subdivision" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_AllocateList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_AllocateList">
+        <MappingFragment StoreEntitySet="B_AllocateList">
+          <ScalarProperty Name="AllocateID" ColumnName="AllocateID" />
+          <ScalarProperty Name="ConverID" ColumnName="ConverID" />
+          <ScalarProperty Name="Remember" ColumnName="Remember" />
+          <ScalarProperty Name="payNamel" ColumnName="payNamel" />
+          <ScalarProperty Name="furlNamel" ColumnName="furlNamel" />
+          <ScalarProperty Name="SpouseBRanchID" ColumnName="SpouseBRanchID" />
+          <ScalarProperty Name="SpouseBRanchIDtwo" ColumnName="SpouseBRanchIDtwo" />
+          <ScalarProperty Name="RegisterName" ColumnName="RegisterName" />
+          <ScalarProperty Name="RegisterTime" ColumnName="RegisterTime" />
+          <ScalarProperty Name="ExamineName" ColumnName="ExamineName" />
+          <ScalarProperty Name="ExecuteTime" ColumnName="ExecuteTime" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ExamineNot" ColumnName="ExamineNot" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_ApproachCostList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_ApproachCostList">
+        <MappingFragment StoreEntitySet="B_ApproachCostList">
+          <ScalarProperty Name="ApproachCostID" ColumnName="ApproachCostID" />
+          <ScalarProperty Name="SettlementDebiID" ColumnName="SettlementDebiID" />
+          <ScalarProperty Name="MethodOfSettlingAccountsID" ColumnName="MethodOfSettlingAccountsID" />
+          <ScalarProperty Name="UseNo" ColumnName="UseNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_ChangeDetailList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_ChangeDetailList">
+        <MappingFragment StoreEntitySet="B_ChangeDetailList">
+          <ScalarProperty Name="ChangeDetailID" ColumnName="ChangeDetailID" />
+          <ScalarProperty Name="ChangeID" ColumnName="ChangeID" />
+          <ScalarProperty Name="WareHouseDetiailID" ColumnName="WareHouseDetiailID" />
+          <ScalarProperty Name="MumberOfPackages" ColumnName="MumberOfPackages" />
+          <ScalarProperty Name="Subdivision" ColumnName="Subdivision" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_ChangeList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_ChangeList">
+        <MappingFragment StoreEntitySet="B_ChangeList">
+          <ScalarProperty Name="ChangeID" ColumnName="ChangeID" />
+          <ScalarProperty Name="WareHouseID" ColumnName="WareHouseID" />
+          <ScalarProperty Name="Remember" ColumnName="Remember" />
+          <ScalarProperty Name="SpouseBRanchID" ColumnName="SpouseBRanchID" />
+          <ScalarProperty Name="StockPlaceID" ColumnName="StockPlaceID" />
+          <ScalarProperty Name="StockPlaceIDtwo" ColumnName="StockPlaceIDtwo" />
+          <ScalarProperty Name="payName" ColumnName="payName" />
+          <ScalarProperty Name="furlName" ColumnName="furlName" />
+          <ScalarProperty Name="RegisterName" ColumnName="RegisterName" />
+          <ScalarProperty Name="RegisterTime" ColumnName="RegisterTime" />
+          <ScalarProperty Name="ExamineName" ColumnName="ExamineName" />
+          <ScalarProperty Name="ExamineTime" ColumnName="ExamineTime" />
+          <ScalarProperty Name="ExamineNot" ColumnName="ExamineNot" />
+          <ScalarProperty Name="ShiFouGou" ColumnName="ShiFouGou" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_CheckRemerbenDetillList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_CheckRemerbenDetillList">
+        <MappingFragment StoreEntitySet="B_CheckRemerbenDetillList">
+          <ScalarProperty Name="CheckRemerbenDetillD" ColumnName="CheckRemerbenDetillD" />
+          <ScalarProperty Name="CheckRermeberID" ColumnName="CheckRermeberID" />
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+          <ScalarProperty Name="MumberOfPackages" ColumnName="MumberOfPackages" />
+          <ScalarProperty Name="Subdivision" ColumnName="Subdivision" />
+          <ScalarProperty Name="PiCiHao" ColumnName="PiCiHao" />
+          <ScalarProperty Name="SunYiShu" ColumnName="SunYiShu" />
+          <ScalarProperty Name="JiaZaiFou" ColumnName="JiaZaiFou" />
+          <ScalarProperty Name="Attritionrate" ColumnName="Attritionrate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_CheckRemerbenList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_CheckRemerbenList">
+        <MappingFragment StoreEntitySet="B_CheckRemerbenList">
+          <ScalarProperty Name="CheckRermeberID" ColumnName="CheckRermeberID" />
+          <ScalarProperty Name="Remter" ColumnName="Remter" />
+          <ScalarProperty Name="PablData" ColumnName="PablData" />
+          <ScalarProperty Name="CommodityType" ColumnName="CommodityType" />
+          <ScalarProperty Name="DrugType" ColumnName="DrugType" />
+          <ScalarProperty Name="StockPlaceID" ColumnName="StockPlaceID" />
+          <ScalarProperty Name="OrderFormPactID" ColumnName="OrderFormPactID" />
+          <ScalarProperty Name="GoodsClassifyID" ColumnName="GoodsClassifyID" />
+          <ScalarProperty Name="GoodsChopID" ColumnName="GoodsChopID" />
+          <ScalarProperty Name="ExamineName" ColumnName="ExamineName" />
+          <ScalarProperty Name="ExamineTime" ColumnName="ExamineTime" />
+          <ScalarProperty Name="Entering" ColumnName="Entering" />
+          <ScalarProperty Name="EnteringTime" ColumnName="EnteringTime" />
+          <ScalarProperty Name="GoodsNot" ColumnName="GoodsNot" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="YingKuiMoney" ColumnName="YingKuiMoney" />
+          <ScalarProperty Name="YuShenNot" ColumnName="YuShenNot" />
+          <ScalarProperty Name="ExamineNot" ColumnName="ExamineNot" />
+          <ScalarProperty Name="ShenHeName" ColumnName="ShenHeName" />
+          <ScalarProperty Name="DrugTypeID" ColumnName="DrugTypeID" />
+          <ScalarProperty Name="YiJiaZaiGoodsNot" ColumnName="YiJiaZaiGoodsNot" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_ChGoodsPanlSexList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_ChGoodsPanlSexList">
+        <MappingFragment StoreEntitySet="B_ChGoodsPanlSexList">
+          <ScalarProperty Name="GoodsPanlSexID" ColumnName="GoodsPanlSexID" />
+          <ScalarProperty Name="CheckRemerbenDetiID" ColumnName="CheckRemerbenDetiID" />
+          <ScalarProperty Name="departmentID" ColumnName="departmentID" />
+          <ScalarProperty Name="BiaoZhi" ColumnName="BiaoZhi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_ConverDeTailList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_ConverDeTailList">
+        <MappingFragment StoreEntitySet="B_ConverDeTailList">
+          <ScalarProperty Name="ConverDeTaiID" ColumnName="ConverDeTaiID" />
+          <ScalarProperty Name="ConverID" ColumnName="ConverID" />
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+          <ScalarProperty Name="WareHouseDetiailID" ColumnName="WareHouseDetiailID" />
+          <ScalarProperty Name="MumberOfPackages" ColumnName="MumberOfPackages" />
+          <ScalarProperty Name="Subdivision" ColumnName="Subdivision" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="YiKongNot" ColumnName="YiKongNot" />
+          <ScalarProperty Name="YuanMumberOfPack" ColumnName="YuanMumberOfPack" />
+          <ScalarProperty Name="YuanSubdivision" ColumnName="YuanSubdivision" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_ConverList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_ConverList">
+        <MappingFragment StoreEntitySet="B_ConverList">
+          <ScalarProperty Name="ConverID" ColumnName="ConverID" />
+          <ScalarProperty Name="WareHouseID" ColumnName="WareHouseID" />
+          <ScalarProperty Name="P_Remember" ColumnName="P_Remember" />
+          <ScalarProperty Name="payName" ColumnName="payName" />
+          <ScalarProperty Name="furlName" ColumnName="furlName" />
+          <ScalarProperty Name="SpouseBRanchID" ColumnName="SpouseBRanchID" />
+          <ScalarProperty Name="StockPlaceID" ColumnName="StockPlaceID" />
+          <ScalarProperty Name="RegisterName" ColumnName="RegisterName" />
+          <ScalarProperty Name="RegisterTime" ColumnName="RegisterTime" />
+          <ScalarProperty Name="ExamineName" ColumnName="ExamineName" />
+          <ScalarProperty Name="ExamineTime" ColumnName="ExamineTime" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ExamineNot" ColumnName="ExamineNot" />
+          <ScalarProperty Name="HaveNot" ColumnName="HaveNot" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_CustomerCardList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_CustomerCardList">
+        <MappingFragment StoreEntitySet="B_CustomerCardList">
+          <ScalarProperty Name="CustomerCardID" ColumnName="CustomerCardID" />
+          <ScalarProperty Name="EffectiveID" ColumnName="EffectiveID" />
+          <ScalarProperty Name="InvalidID" ColumnName="InvalidID" />
+          <ScalarProperty Name="CustomerCard" ColumnName="CustomerCard" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_DaBaoDingJiaList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_DaBaoDingJiaList">
+        <MappingFragment StoreEntitySet="B_DaBaoDingJiaList">
+          <ScalarProperty Name="DaBaoDingJiaID" ColumnName="DaBaoDingJiaID" />
+          <ScalarProperty Name="GoodsPurchasemoneyStatusID" ColumnName="GoodsPurchasemoneyStatusID" />
+          <ScalarProperty Name="GoodsDetailID" ColumnName="GoodsDetailID" />
+          <ScalarProperty Name="FactPrice" ColumnName="FactPrice" />
+          <ScalarProperty Name="ReferencePrice" ColumnName="ReferencePrice" />
+          <ScalarProperty Name="RetailMonovalent" ColumnName="RetailMonovalent" />
+          <ScalarProperty Name="PackGoodsID" ColumnName="PackGoodsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_DefaulGoodsDetaiLList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_DefaulGoodsDetaiLList">
+        <MappingFragment StoreEntitySet="B_DefaulGoodsDetaiLList">
+          <ScalarProperty Name="DefaulGoodsDetaiLLID" ColumnName="DefaulGoodsDetaiLLID" />
+          <ScalarProperty Name="DefaulGoodsID" ColumnName="DefaulGoodsID" />
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_DefaulGoodsList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_DefaulGoodsList">
+        <MappingFragment StoreEntitySet="B_DefaulGoodsList">
+          <ScalarProperty Name="DefaulGoodsID" ColumnName="DefaulGoodsID" />
+          <ScalarProperty Name="OrderFormPactID" ColumnName="OrderFormPactID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_DefaultrelevDetaiLList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_DefaultrelevDetaiLList">
+        <MappingFragment StoreEntitySet="B_DefaultrelevDetaiLList">
+          <ScalarProperty Name="DefaultrelevDetaiLLID" ColumnName="DefaultrelevDetaiLLID" />
+          <ScalarProperty Name="DefaultrelevID" ColumnName="DefaultrelevID" />
+          <ScalarProperty Name="OrderFormPactID" ColumnName="OrderFormPactID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_DefaultrelevList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_DefaultrelevList">
+        <MappingFragment StoreEntitySet="B_DefaultrelevList">
+          <ScalarProperty Name="DefaultrelevID" ColumnName="DefaultrelevID" />
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_DeleteCardList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_DeleteCardList">
+        <MappingFragment StoreEntitySet="B_DeleteCardList">
+          <ScalarProperty Name="DeleteCardID" ColumnName="DeleteCardID" />
+          <ScalarProperty Name="DeleteCardMC" ColumnName="DeleteCardMC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_DepatmenList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_DepatmenList">
+        <MappingFragment StoreEntitySet="B_DepatmenList">
+          <ScalarProperty Name="departmentID" ColumnName="departmentID" />
+          <ScalarProperty Name="DrugTypeID" ColumnName="DrugTypeID" />
+          <ScalarProperty Name="SpouseBRanchID" ColumnName="SpouseBRanchID" />
+          <ScalarProperty Name="departmentCodes" ColumnName="departmentCodes" />
+          <ScalarProperty Name="departmentName" ColumnName="departmentName" />
+          <ScalarProperty Name="HaoSunLv" ColumnName="HaoSunLv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_EffectiveList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_EffectiveList">
+        <MappingFragment StoreEntitySet="B_EffectiveList">
+          <ScalarProperty Name="EffectiveID" ColumnName="EffectiveID" />
+          <ScalarProperty Name="EffectiveMC" ColumnName="EffectiveMC" />
+          <ScalarProperty Name="YEffective" ColumnName="YEffective" />
+          <ScalarProperty Name="XEffective" ColumnName="XEffective" />
+          <ScalarProperty Name="Sum" ColumnName="Sum" />
+          <ScalarProperty Name="EctMoney" ColumnName="EctMoney" />
+          <ScalarProperty Name="CardNber" ColumnName="CardNber" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CredentialsNumber" ColumnName="CredentialsNumber" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_GoodsBianJiaList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_GoodsBianJiaList">
+        <MappingFragment StoreEntitySet="B_GoodsBianJiaList">
+          <ScalarProperty Name="GoodsBianJiaID" ColumnName="GoodsBianJiaID" />
+          <ScalarProperty Name="ChangeTypeID" ColumnName="ChangeTypeID" />
+          <ScalarProperty Name="BianJiaBianHao" ColumnName="BianJiaBianHao" />
+          <ScalarProperty Name="GoodsDetailID" ColumnName="GoodsDetailID" />
+          <ScalarProperty Name="NewMonovalent" ColumnName="NewMonovalent" />
+          <ScalarProperty Name="NewJob" ColumnName="NewJob" />
+          <ScalarProperty Name="RawMemberValue" ColumnName="RawMemberValue" />
+          <ScalarProperty Name="ChangeWhyID" ColumnName="ChangeWhyID" />
+          <ScalarProperty Name="ChangeData" ColumnName="ChangeData" />
+          <ScalarProperty Name="Registrant" ColumnName="Registrant" />
+          <ScalarProperty Name="RegisterTime" ColumnName="RegisterTime" />
+          <ScalarProperty Name="Auditor" ColumnName="Auditor" />
+          <ScalarProperty Name="Checktime" ColumnName="Checktime" />
+          <ScalarProperty Name="Executor" ColumnName="Executor" />
+          <ScalarProperty Name="ExecuteTime" ColumnName="ExecuteTime" />
+          <ScalarProperty Name="SpouseBRanchID" ColumnName="SpouseBRanchID" />
+          <ScalarProperty Name="NewAdvanceBid" ColumnName="NewAdvanceBid" />
+          <ScalarProperty Name="NewNoAdvanceBid" ColumnName="NewNoAdvanceBid" />
+          <ScalarProperty Name="BeginChangeData" ColumnName="BeginChangeData" />
+          <ScalarProperty Name="NewHanSuiJinHuoJia" ColumnName="NewHanSuiJinHuoJia" />
+          <ScalarProperty Name="NewBuHanSuiJinHuoJia" ColumnName="NewBuHanSuiJinHuoJia" />
+          <ScalarProperty Name="GengXinCaiGouJiaFou" ColumnName="GengXinCaiGouJiaFou" />
+          <ScalarProperty Name="Batch" ColumnName="Batch" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_GoodsChopList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_GoodsChopList">
+        <MappingFragment StoreEntitySet="B_GoodsChopList">
+          <ScalarProperty Name="GoodsChopID" ColumnName="GoodsChopID" />
+          <ScalarProperty Name="GoodsChopName" ColumnName="GoodsChopName" />
+          <ScalarProperty Name="SpellCod" ColumnName="SpellCod" />
+          <ScalarProperty Name="GoodsChopCode" ColumnName="GoodsChopCode" />
+          <ScalarProperty Name="TrademarkRankID" ColumnName="TrademarkRankID" />
+          <ScalarProperty Name="TrademarkStatusID" ColumnName="TrademarkStatusID" />
+          <ScalarProperty Name="TrademarkLocalID" ColumnName="TrademarkLocalID" />
+          <ScalarProperty Name="RegisteredAddress" ColumnName="RegisteredAddress" />
+          <ScalarProperty Name="DiplomaValid" ColumnName="DiplomaValid" />
+          <ScalarProperty Name="AgentCondition" ColumnName="AgentCondition" />
+          <ScalarProperty Name="RegisteredDiploma" ColumnName="RegisteredDiploma" />
+          <ScalarProperty Name="Proprietor" ColumnName="Proprietor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_GoodsClassifyList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_GoodsClassifyList">
+        <MappingFragment StoreEntitySet="B_GoodsClassifyList">
+          <ScalarProperty Name="GoodsClassifyID" ColumnName="GoodsClassifyID" />
+          <ScalarProperty Name="GoodsClassifyName" ColumnName="GoodsClassifyName" />
+          <ScalarProperty Name="F_GoodsClassifyID" ColumnName="F_GoodsClassifyID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="TurnoverData" ColumnName="TurnoverData" />
+          <ScalarProperty Name="AdvanceCess" ColumnName="AdvanceCess" />
+          <ScalarProperty Name="PriceMarkupRate" ColumnName="PriceMarkupRate" />
+          <ScalarProperty Name="GrossProfitRate" ColumnName="GrossProfitRate" />
+          <ScalarProperty Name="SellRate" ColumnName="SellRate" />
+          <ScalarProperty Name="MemberDiscountRate" ColumnName="MemberDiscountRate" />
+          <ScalarProperty Name="ConsumeCess" ColumnName="ConsumeCess" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_GoodsDetailList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_GoodsDetailList">
+        <MappingFragment StoreEntitySet="B_GoodsDetailList">
+          <ScalarProperty Name="GoodsDetailID" ColumnName="GoodsDetailID" />
+          <ScalarProperty Name="GoodsDetailName" ColumnName="GoodsDetailName" />
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+          <ScalarProperty Name="PurchaseID" ColumnName="PurchaseID" />
+          <ScalarProperty Name="RetailMonovalent" ColumnName="RetailMonovalent" />
+          <ScalarProperty Name="GoodsFixAPrice" ColumnName="GoodsFixAPrice" />
+          <ScalarProperty Name="ReferencePrice" ColumnName="ReferencePrice" />
+          <ScalarProperty Name="MemberPrice" ColumnName="MemberPrice" />
+          <ScalarProperty Name="RateSale" ColumnName="RateSale" />
+          <ScalarProperty Name="TaxBid" ColumnName="TaxBid" />
+          <ScalarProperty Name="NewRateSale" ColumnName="NewRateSale" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_GoodsKuCunList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_GoodsKuCunList">
+        <MappingFragment StoreEntitySet="B_GoodsKuCunList">
+          <ScalarProperty Name="GoodeKuCunLiangID" ColumnName="GoodeKuCunLiangID" />
+          <ScalarProperty Name="GoodsIDs" ColumnName="GoodsIDs" />
+          <ScalarProperty Name="MumberOfPackages" ColumnName="MumberOfPackages" />
+          <ScalarProperty Name="Subdivision" ColumnName="Subdivision" />
+          <ScalarProperty Name="AnQuanTianShu" ColumnName="AnQuanTianShu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_GoodsList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_GoodsList">
+        <MappingFragment StoreEntitySet="B_GoodsList">
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+          <ScalarProperty Name="GoodsName" ColumnName="GoodsName" />
+          <ScalarProperty Name="GoodsStampID" ColumnName="GoodsStampID" />
+          <ScalarProperty Name="EstimateUnitID" ColumnName="EstimateUnitID" />
+          <ScalarProperty Name="GoodsClassifyID" ColumnName="GoodsClassifyID" />
+          <ScalarProperty Name="GoodsSeasonID" ColumnName="GoodsSeasonID" />
+          <ScalarProperty Name="SourceID" ColumnName="SourceID" />
+          <ScalarProperty Name="BurdenStockSellStatusID" ColumnName="BurdenStockSellStatusID" />
+          <ScalarProperty Name="GoodsCode" ColumnName="GoodsCode" />
+          <ScalarProperty Name="BarCodTypeID" ColumnName="BarCodTypeID" />
+          <ScalarProperty Name="GoodsTiaoMa" ColumnName="GoodsTiaoMa" />
+          <ScalarProperty Name="PLUCod" ColumnName="PLUCod" />
+          <ScalarProperty Name="SpellCod" ColumnName="SpellCod" />
+          <ScalarProperty Name="ManufacturerID" ColumnName="ManufacturerID" />
+          <ScalarProperty Name="ProducingArea" ColumnName="ProducingArea" />
+          <ScalarProperty Name="ArtNo" ColumnName="ArtNo" />
+          <ScalarProperty Name="SpecificationsModel" ColumnName="SpecificationsModel" />
+          <ScalarProperty Name="ApplyTargetID" ColumnName="ApplyTargetID" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="GoodsChopID" ColumnName="GoodsChopID" />
+          <ScalarProperty Name="CommodityTypeID" ColumnName="CommodityTypeID" />
+          <ScalarProperty Name="GoodsStatusID" ColumnName="GoodsStatusID" />
+          <ScalarProperty Name="QualityGuaranteePeriod" ColumnName="QualityGuaranteePeriod" />
+          <ScalarProperty Name="QualityContent" ColumnName="QualityContent" />
+          <ScalarProperty Name="StatisticsScale" ColumnName="StatisticsScale" />
+          <ScalarProperty Name="AdvanceCess" ColumnName="AdvanceCess" />
+          <ScalarProperty Name="SellCess" ColumnName="SellCess" />
+          <ScalarProperty Name="GoodsColoursID" ColumnName="GoodsColoursID" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="Registrant" ColumnName="Registrant" />
+          <ScalarProperty Name="RegisterTime" ColumnName="RegisterTime" />
+          <ScalarProperty Name="Auditor" ColumnName="Auditor" />
+          <ScalarProperty Name="Checktime" ColumnName="Checktime" />
+          <ScalarProperty Name="GoodsPurchasemoneyTypeID" ColumnName="GoodsPurchasemoneyTypeID" />
+          <ScalarProperty Name="GoodsPurchasemoneyStatusID" ColumnName="GoodsPurchasemoneyStatusID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="OrderFormPactID" ColumnName="OrderFormPactID" />
+          <ScalarProperty Name="CountersellID" ColumnName="CountersellID" />
+          <ScalarProperty Name="PurchaseSectionID" ColumnName="PurchaseSectionID" />
+          <ScalarProperty Name="AllowGoodsXiaoShu" ColumnName="AllowGoodsXiaoShu" />
+          <ScalarProperty Name="AuditingBit" ColumnName="AuditingBit" />
+          <ScalarProperty Name="ZhuanGuiCommodityTypeID" ColumnName="ZhuanGuiCommodityTypeID" />
+          <ScalarProperty Name="GoodsPicture" ColumnName="GoodsPicture" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_GoodsListedDetailList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_GoodsListedDetailList">
+        <MappingFragment StoreEntitySet="B_GoodsListedDetailList">
+          <ScalarProperty Name="GoodsListedDetailID" ColumnName="GoodsListedDetailID" />
+          <ScalarProperty Name="GoodsListedID" ColumnName="GoodsListedID" />
+          <ScalarProperty Name="ConverDateilID" ColumnName="ConverDateilID" />
+          <ScalarProperty Name="SongHuoJianShu" ColumnName="SongHuoJianShu" />
+          <ScalarProperty Name="SongHuoXiShu" ColumnName="SongHuoXiShu" />
+          <ScalarProperty Name="MumberOfPackages" ColumnName="MumberOfPackages" />
+          <ScalarProperty Name="Subdivision" ColumnName="Subdivision" />
+          <ScalarProperty Name="ShiFouNot" ColumnName="ShiFouNot" />
+          <ScalarProperty Name="ShouChuLiang" ColumnName="ShouChuLiang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_GoodsListedList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_GoodsListedList">
+        <MappingFragment StoreEntitySet="B_GoodsListedList">
+          <ScalarProperty Name="GoodsListedID" ColumnName="GoodsListedID" />
+          <ScalarProperty Name="ConverID" ColumnName="ConverID" />
+          <ScalarProperty Name="ListedNumber" ColumnName="ListedNumber" />
+          <ScalarProperty Name="SpouseBRanchID" ColumnName="SpouseBRanchID" />
+          <ScalarProperty Name="ConsigneeShop" ColumnName="ConsigneeShop" />
+          <ScalarProperty Name="ConsigneeShopDiZhi" ColumnName="ConsigneeShopDiZhi" />
+          <ScalarProperty Name="payName" ColumnName="payName" />
+          <ScalarProperty Name="furlName" ColumnName="furlName" />
+          <ScalarProperty Name="RegisterName" ColumnName="RegisterName" />
+          <ScalarProperty Name="RegisterTime" ColumnName="RegisterTime" />
+          <ScalarProperty Name="ExamineName" ColumnName="ExamineName" />
+          <ScalarProperty Name="ExamineTime" ColumnName="ExamineTime" />
+          <ScalarProperty Name="GoodsDingYiQuID" ColumnName="GoodsDingYiQuID" />
+          <ScalarProperty Name="ExamineNot" ColumnName="ExamineNot" />
+          <ScalarProperty Name="AbateNot" ColumnName="AbateNot" />
+          <ScalarProperty Name="StoopSellNot" ColumnName="StoopSellNot" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_GoodsSignList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_GoodsSignList">
+        <MappingFragment StoreEntitySet="B_GoodsSignList">
+          <ScalarProperty Name="GoodsSignID" ColumnName="GoodsSignID" />
+          <ScalarProperty Name="GoodsSignName" ColumnName="GoodsSignName" />
+          <ScalarProperty Name="SignTypeID" ColumnName="SignTypeID" />
+          <ScalarProperty Name="JiaQianCode" ColumnName="JiaQianCode" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="GoodsDetailID" ColumnName="GoodsDetailID" />
+          <ScalarProperty Name="PlanPrice" ColumnName="PlanPrice" />
+          <ScalarProperty Name="Broadwise" ColumnName="Broadwise" />
+          <ScalarProperty Name="Ordinate" ColumnName="Ordinate" />
+          <ScalarProperty Name="EveryRow" ColumnName="EveryRow" />
+          <ScalarProperty Name="EveryRank" ColumnName="EveryRank" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_IncreaseDetailList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_IncreaseDetailList">
+        <MappingFragment StoreEntitySet="B_IncreaseDetailList">
+          <ScalarProperty Name="IncreaseDetailID" ColumnName="IncreaseDetailID" />
+          <ScalarProperty Name="IncreaseID" ColumnName="IncreaseID" />
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+          <ScalarProperty Name="MumberOfPackages" ColumnName="MumberOfPackages" />
+          <ScalarProperty Name="Subdivision" ColumnName="Subdivision" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_IncreaseList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_IncreaseList">
+        <MappingFragment StoreEntitySet="B_IncreaseList">
+          <ScalarProperty Name="IncreaseID" ColumnName="IncreaseID" />
+          <ScalarProperty Name="Remember" ColumnName="Remember" />
+          <ScalarProperty Name="IncreaseCause" ColumnName="IncreaseCause" />
+          <ScalarProperty Name="DrugTypeID" ColumnName="DrugTypeID" />
+          <ScalarProperty Name="StockPlaceID" ColumnName="StockPlaceID" />
+          <ScalarProperty Name="RegisterName" ColumnName="RegisterName" />
+          <ScalarProperty Name="RegisterTime" ColumnName="RegisterTime" />
+          <ScalarProperty Name="ExamineName" ColumnName="ExamineName" />
+          <ScalarProperty Name="ExamineTime" ColumnName="ExamineTime" />
+          <ScalarProperty Name="ExamineNot" ColumnName="ExamineNot" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_InvalidList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_InvalidList">
+        <MappingFragment StoreEntitySet="B_InvalidList">
+          <ScalarProperty Name="InvalidID" ColumnName="InvalidID" />
+          <ScalarProperty Name="InvalidMC" ColumnName="InvalidMC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_ManufacturerList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_ManufacturerList">
+        <MappingFragment StoreEntitySet="B_ManufacturerList">
+          <ScalarProperty Name="ManufacturerID" ColumnName="ManufacturerID" />
+          <ScalarProperty Name="ManufacturerName" ColumnName="ManufacturerName" />
+          <ScalarProperty Name="ManufacturerCode" ColumnName="ManufacturerCode" />
+          <ScalarProperty Name="ManufacturerPC" ColumnName="ManufacturerPC" />
+          <ScalarProperty Name="ManufacturerPYCode" ColumnName="ManufacturerPYCode" />
+          <ScalarProperty Name="ManufacturerJCName" ColumnName="ManufacturerJCName" />
+          <ScalarProperty Name="ManufacturerProduct" ColumnName="ManufacturerProduct" />
+          <ScalarProperty Name="ManufacturerAddress" ColumnName="ManufacturerAddress" />
+          <ScalarProperty Name="ManufacturerBarCode" ColumnName="ManufacturerBarCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_NewGoodsManageList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_NewGoodsManageList">
+        <MappingFragment StoreEntitySet="B_NewGoodsManageList">
+          <ScalarProperty Name="NewGoodsManageID" ColumnName="NewGoodsManageID" />
+          <ScalarProperty Name="NewGoodsManageMC" ColumnName="NewGoodsManageMC" />
+          <ScalarProperty Name="GoodsDetailID" ColumnName="GoodsDetailID" />
+          <ScalarProperty Name="MarketID" ColumnName="MarketID" />
+          <ScalarProperty Name="Wu" ColumnName="Wu" />
+          <ScalarProperty Name="You" ColumnName="You" />
+          <ScalarProperty Name="BuXiaoShou" ColumnName="BuXiaoShou" />
+          <ScalarProperty Name="XiaoShou" ColumnName="XiaoShou" />
+          <ScalarProperty Name="BuXiaoShouBuXiuGai" ColumnName="BuXiaoShouBuXiuGai" />
+          <ScalarProperty Name="XiaoShouBuXiuGai" ColumnName="XiaoShouBuXiuGai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_OrderFormDetailList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_OrderFormDetailList">
+        <MappingFragment StoreEntitySet="B_OrderFormDetailList">
+          <ScalarProperty Name="OrderFormDetailID" ColumnName="OrderFormDetailID" />
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+          <ScalarProperty Name="OrderFormID" ColumnName="OrderFormID" />
+          <ScalarProperty Name="MumberOfPackages" ColumnName="MumberOfPackages" />
+          <ScalarProperty Name="Subdivision" ColumnName="Subdivision" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_OrderFormList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_OrderFormList">
+        <MappingFragment StoreEntitySet="B_OrderFormList">
+          <ScalarProperty Name="OrderFormID" ColumnName="OrderFormID" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="OrderFormTypeID" ColumnName="OrderFormTypeID" />
+          <ScalarProperty Name="OrderFormPactID" ColumnName="OrderFormPactID" />
+          <ScalarProperty Name="SpouseBRanchID" ColumnName="SpouseBRanchID" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="DeliveryFashion" ColumnName="DeliveryFashion" />
+          <ScalarProperty Name="OrderGoodsData" ColumnName="OrderGoodsData" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="ExpensesOTtaxation" ColumnName="ExpensesOTtaxation" />
+          <ScalarProperty Name="ValueTotal" ColumnName="ValueTotal" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="Register" ColumnName="Register" />
+          <ScalarProperty Name="RegisterTime" ColumnName="RegisterTime" />
+          <ScalarProperty Name="CheckRen" ColumnName="CheckRen" />
+          <ScalarProperty Name="Checktime" ColumnName="Checktime" />
+          <ScalarProperty Name="ConsigneeNot" ColumnName="ConsigneeNot" />
+          <ScalarProperty Name="ShiFouShouHuo" ColumnName="ShiFouShouHuo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_OrderFormPactDetailList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_OrderFormPactDetailList">
+        <MappingFragment StoreEntitySet="B_OrderFormPactDetailList">
+          <ScalarProperty Name="OrderFormPactDetailID" ColumnName="OrderFormPactDetailID" />
+          <ScalarProperty Name="OrderFormID" ColumnName="OrderFormID" />
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+          <ScalarProperty Name="PackInfo" ColumnName="PackInfo" />
+          <ScalarProperty Name="MumberOfPackages" ColumnName="MumberOfPackages" />
+          <ScalarProperty Name="Subdivision" ColumnName="Subdivision" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_OrderFormPactList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_OrderFormPactList">
+        <MappingFragment StoreEntitySet="B_OrderFormPactList">
+          <ScalarProperty Name="OrderFormPactID" ColumnName="OrderFormPactID" />
+          <ScalarProperty Name="AgreementTypeID" ColumnName="AgreementTypeID" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="AgreementStatusID" ColumnName="AgreementStatusID" />
+          <ScalarProperty Name="SpouseBRanchID" ColumnName="SpouseBRanchID" />
+          <ScalarProperty Name="ContractNumber" ColumnName="ContractNumber" />
+          <ScalarProperty Name="HandworkContractNumber" ColumnName="HandworkContractNumber" />
+          <ScalarProperty Name="AgreementManagerID" ColumnName="AgreementManagerID" />
+          <ScalarProperty Name="HostContractNumber" ColumnName="HostContractNumber" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="MethodOfSettlingAccountsID" ColumnName="MethodOfSettlingAccountsID" />
+          <ScalarProperty Name="ValidTip" ColumnName="ValidTip" />
+          <ScalarProperty Name="ValidBegin" ColumnName="ValidBegin" />
+          <ScalarProperty Name="ConclusionTime" ColumnName="ConclusionTime" />
+          <ScalarProperty Name="ConclusionSite" ColumnName="ConclusionSite" />
+          <ScalarProperty Name="PurchasingAgent" ColumnName="PurchasingAgent" />
+          <ScalarProperty Name="AdvanceMarketData" ColumnName="AdvanceMarketData" />
+          <ScalarProperty Name="RetreatMarketData" ColumnName="RetreatMarketData" />
+          <ScalarProperty Name="WritData" ColumnName="WritData" />
+          <ScalarProperty Name="AccountData" ColumnName="AccountData" />
+          <ScalarProperty Name="AdvancedSettleAccounts" ColumnName="AdvancedSettleAccounts" />
+          <ScalarProperty Name="PlanFiringData" ColumnName="PlanFiringData" />
+          <ScalarProperty Name="Firingdata" ColumnName="Firingdata" />
+          <ScalarProperty Name="AgreementID" ColumnName="AgreementID" />
+          <ScalarProperty Name="AdjustAccountsFashionID" ColumnName="AdjustAccountsFashionID" />
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+          <ScalarProperty Name="TryPaymentData" ColumnName="TryPaymentData" />
+          <ScalarProperty Name="TryPaymentShiXiaoData" ColumnName="TryPaymentShiXiaoData" />
+          <ScalarProperty Name="AgreementRen" ColumnName="AgreementRen" />
+          <ScalarProperty Name="Registrant" ColumnName="Registrant" />
+          <ScalarProperty Name="Auditor" ColumnName="Auditor" />
+          <ScalarProperty Name="Executor" ColumnName="Executor" />
+          <ScalarProperty Name="Registranttime" ColumnName="Registranttime" />
+          <ScalarProperty Name="Auditortime" ColumnName="Auditortime" />
+          <ScalarProperty Name="Executortime" ColumnName="Executortime" />
+          <ScalarProperty Name="UseOf" ColumnName="UseOf" />
+          <ScalarProperty Name="GoodsGenreID" ColumnName="GoodsGenreID" />
+          <ScalarProperty Name="GoodsChopID" ColumnName="GoodsChopID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_PackGoodsList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_PackGoodsList">
+        <MappingFragment StoreEntitySet="B_PackGoodsList">
+          <ScalarProperty Name="PackGoodsID" ColumnName="PackGoodsID" />
+          <ScalarProperty Name="PackName" ColumnName="PackName" />
+          <ScalarProperty Name="PackCode" ColumnName="PackCode" />
+          <ScalarProperty Name="PackTiaoMa" ColumnName="PackTiaoMa" />
+          <ScalarProperty Name="EstimateUnitID" ColumnName="EstimateUnitID" />
+          <ScalarProperty Name="PackSpellCod" ColumnName="PackSpellCod" />
+          <ScalarProperty Name="PackDengJiRen" ColumnName="PackDengJiRen" />
+          <ScalarProperty Name="PackDengJiShi" ColumnName="PackDengJiShi" />
+          <ScalarProperty Name="PackGengXinRen" ColumnName="PackGengXinRen" />
+          <ScalarProperty Name="PackGengXinShi" ColumnName="PackGengXinShi" />
+          <ScalarProperty Name="PackShuLaing" ColumnName="PackShuLaing" />
+          <ScalarProperty Name="GoodsDetailID" ColumnName="GoodsDetailID" />
+          <ScalarProperty Name="GoodsPurchasemoneyStatusID" ColumnName="GoodsPurchasemoneyStatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_PanlList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_PanlList">
+        <MappingFragment StoreEntitySet="B_PanlList">
+          <ScalarProperty Name="DrugTypeID" ColumnName="DrugTypeID" />
+          <ScalarProperty Name="DrugType" ColumnName="DrugType" />
+          <ScalarProperty Name="F_DrugTypeID" ColumnName="F_DrugTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_PurchaseList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_PurchaseList">
+        <MappingFragment StoreEntitySet="B_PurchaseList">
+          <ScalarProperty Name="PurchaseID" ColumnName="PurchaseID" />
+          <ScalarProperty Name="GoodsDetailID" ColumnName="GoodsDetailID" />
+          <ScalarProperty Name="PurchasingAgent" ColumnName="PurchasingAgent" />
+          <ScalarProperty Name="PricePlace" ColumnName="PricePlace" />
+          <ScalarProperty Name="PricePlace2" ColumnName="PricePlace2" />
+          <ScalarProperty Name="PricePlace3" ColumnName="PricePlace3" />
+          <ScalarProperty Name="PricePlace4" ColumnName="PricePlace4" />
+          <ScalarProperty Name="Price1" ColumnName="Price1" />
+          <ScalarProperty Name="Price2" ColumnName="Price2" />
+          <ScalarProperty Name="Price3" ColumnName="Price3" />
+          <ScalarProperty Name="Price4" ColumnName="Price4" />
+          <ScalarProperty Name="PriceData" ColumnName="PriceData" />
+          <ScalarProperty Name="NoAdvanceBid" ColumnName="NoAdvanceBid" />
+          <ScalarProperty Name="AdvanceBid" ColumnName="AdvanceBid" />
+          <ScalarProperty Name="PurchasePriceMarkup" ColumnName="PurchasePriceMarkup" />
+          <ScalarProperty Name="LastBid" ColumnName="LastBid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_RetureFactoryDeTailList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_RetureFactoryDeTailList">
+        <MappingFragment StoreEntitySet="B_RetureFactoryDeTailList">
+          <ScalarProperty Name="RetureFactoryDeTailID" ColumnName="RetureFactoryDeTailID" />
+          <ScalarProperty Name="RetureFactoryID" ColumnName="RetureFactoryID" />
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+          <ScalarProperty Name="ReMumberOfPackages" ColumnName="ReMumberOfPackages" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_RetureFactoryList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_RetureFactoryList">
+        <MappingFragment StoreEntitySet="B_RetureFactoryList">
+          <ScalarProperty Name="RetureFactoryID" ColumnName="RetureFactoryID" />
+          <ScalarProperty Name="ConverID" ColumnName="ConverID" />
+          <ScalarProperty Name="Remember" ColumnName="Remember" />
+          <ScalarProperty Name="SpouseBRanchID" ColumnName="SpouseBRanchID" />
+          <ScalarProperty Name="StockPlaceID" ColumnName="StockPlaceID" />
+          <ScalarProperty Name="ReturnofID" ColumnName="ReturnofID" />
+          <ScalarProperty Name="Settlement" ColumnName="Settlement" />
+          <ScalarProperty Name="Appendix" ColumnName="Appendix" />
+          <ScalarProperty Name="Evidences" ColumnName="Evidences" />
+          <ScalarProperty Name="RegisterName" ColumnName="RegisterName" />
+          <ScalarProperty Name="RegisterTime" ColumnName="RegisterTime" />
+          <ScalarProperty Name="ExamineName" ColumnName="ExamineName" />
+          <ScalarProperty Name="ExamineTime" ColumnName="ExamineTime" />
+          <ScalarProperty Name="ExamineNot" ColumnName="ExamineNot" />
+          <ScalarProperty Name="MumberOfPackages" ColumnName="MumberOfPackages" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_SaleAdjustList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_SaleAdjustList">
+        <MappingFragment StoreEntitySet="B_SaleAdjustList">
+          <ScalarProperty Name="SaleAdjustID" ColumnName="SaleAdjustID" />
+          <ScalarProperty Name="AdjustCode" ColumnName="AdjustCode" />
+          <ScalarProperty Name="BeginTime" ColumnName="BeginTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="GoodsDetailID" ColumnName="GoodsDetailID" />
+          <ScalarProperty Name="AdjustTypeID" ColumnName="AdjustTypeID" />
+          <ScalarProperty Name="AgioTimeIntervalID" ColumnName="AgioTimeIntervalID" />
+          <ScalarProperty Name="Sale" ColumnName="Sale" />
+          <ScalarProperty Name="NewRateSale" ColumnName="NewRateSale" />
+          <ScalarProperty Name="Registrant" ColumnName="Registrant" />
+          <ScalarProperty Name="RegisterTime" ColumnName="RegisterTime" />
+          <ScalarProperty Name="Auditor" ColumnName="Auditor" />
+          <ScalarProperty Name="Checktime" ColumnName="Checktime" />
+          <ScalarProperty Name="Executor" ColumnName="Executor" />
+          <ScalarProperty Name="ExecuteTime" ColumnName="ExecuteTime" />
+          <ScalarProperty Name="StopRen" ColumnName="StopRen" />
+          <ScalarProperty Name="StopShiJian" ColumnName="StopShiJian" />
+          <ScalarProperty Name="DiaoZhengDanShenHeFou" ColumnName="DiaoZhengDanShenHeFou" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_SellCheckBatchDetaiList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_SellCheckBatchDetaiList">
+        <MappingFragment StoreEntitySet="B_SellCheckBatchDetaiList">
+          <ScalarProperty Name="SellCheckBatchDetailD" ColumnName="SellCheckBatchDetailD" />
+          <ScalarProperty Name="SellCheckBatchID" ColumnName="SellCheckBatchID" />
+          <ScalarProperty Name="ConverDeTaiID" ColumnName="ConverDeTaiID" />
+          <ScalarProperty Name="MumberOfPackages" ColumnName="MumberOfPackages" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_SellCheckBatchList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_SellCheckBatchList">
+        <MappingFragment StoreEntitySet="B_SellCheckBatchList">
+          <ScalarProperty Name="SellCheckBatchID" ColumnName="SellCheckBatchID" />
+          <ScalarProperty Name="SellID" ColumnName="SellID" />
+          <ScalarProperty Name="Remember" ColumnName="Remember" />
+          <ScalarProperty Name="MaiChangID" ColumnName="MaiChangID" />
+          <ScalarProperty Name="SpouseBRanchID" ColumnName="SpouseBRanchID" />
+          <ScalarProperty Name="DrugTypeID" ColumnName="DrugTypeID" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="RegisterTime" ColumnName="RegisterTime" />
+          <ScalarProperty Name="StaffIDTwo" ColumnName="StaffIDTwo" />
+          <ScalarProperty Name="ExamineTime" ColumnName="ExamineTime" />
+          <ScalarProperty Name="ExamineNot" ColumnName="ExamineNot" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_SellDeTaLsit">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_SellDeTaLsit">
+        <MappingFragment StoreEntitySet="B_SellDeTaLsit">
+          <ScalarProperty Name="SellDeTaliID" ColumnName="SellDeTaliID" />
+          <ScalarProperty Name="SellID" ColumnName="SellID" />
+          <ScalarProperty Name="ConverDeTaiID" ColumnName="ConverDeTaiID" />
+          <ScalarProperty Name="ConverID" ColumnName="ConverID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_SellList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_SellList">
+        <MappingFragment StoreEntitySet="B_SellList">
+          <ScalarProperty Name="SellID" ColumnName="SellID" />
+          <ScalarProperty Name="Remember" ColumnName="Remember" />
+          <ScalarProperty Name="SpouseBRanchID" ColumnName="SpouseBRanchID" />
+          <ScalarProperty Name="PanlDate" ColumnName="PanlDate" />
+          <ScalarProperty Name="RegisterName" ColumnName="RegisterName" />
+          <ScalarProperty Name="RegisterTime" ColumnName="RegisterTime" />
+          <ScalarProperty Name="ExamineName" ColumnName="ExamineName" />
+          <ScalarProperty Name="ExecuteTime" ColumnName="ExecuteTime" />
+          <ScalarProperty Name="QiDongName" ColumnName="QiDongName" />
+          <ScalarProperty Name="QiDongTime" ColumnName="QiDongTime" />
+          <ScalarProperty Name="ExamineNot" ColumnName="ExamineNot" />
+          <ScalarProperty Name="QiDongmineNot" ColumnName="QiDongmineNot" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_SellRetuerDateiList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_SellRetuerDateiList">
+        <MappingFragment StoreEntitySet="B_SellRetuerDateiList">
+          <ScalarProperty Name="SellRetuerDateilID" ColumnName="SellRetuerDateilID" />
+          <ScalarProperty Name="SellRetuerID" ColumnName="SellRetuerID" />
+          <ScalarProperty Name="SellDeTaliID" ColumnName="SellDeTaliID" />
+          <ScalarProperty Name="MumberOfPackages" ColumnName="MumberOfPackages" />
+          <ScalarProperty Name="Subdivision" ColumnName="Subdivision" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_SellRetuerList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_SellRetuerList">
+        <MappingFragment StoreEntitySet="B_SellRetuerList">
+          <ScalarProperty Name="SellRetuerID" ColumnName="SellRetuerID" />
+          <ScalarProperty Name="SellID" ColumnName="SellID" />
+          <ScalarProperty Name="Remember" ColumnName="Remember" />
+          <ScalarProperty Name="payName" ColumnName="payName" />
+          <ScalarProperty Name="furlName" ColumnName="furlName" />
+          <ScalarProperty Name="SpouseBRanchID" ColumnName="SpouseBRanchID" />
+          <ScalarProperty Name="StockPlaceID" ColumnName="StockPlaceID" />
+          <ScalarProperty Name="RegisterName" ColumnName="RegisterName" />
+          <ScalarProperty Name="RegisterTime" ColumnName="RegisterTime" />
+          <ScalarProperty Name="ExamineName" ColumnName="ExamineName" />
+          <ScalarProperty Name="ExamineTime" ColumnName="ExamineTime" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="ExamineNot" ColumnName="ExamineNot" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_ShooppingDateilIDOrderFounList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_ShooppingDateilIDOrderFounList">
+        <MappingFragment StoreEntitySet="B_ShooppingDateilIDOrderFounList">
+          <ScalarProperty Name="ShooppingDateilIDOrderFounID" ColumnName="ShooppingDateilIDOrderFounID" />
+          <ScalarProperty Name="ShooppingOrderFountID" ColumnName="ShooppingOrderFountID" />
+          <ScalarProperty Name="ShoppingID" ColumnName="ShoppingID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_ShooppingOrderFountList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_ShooppingOrderFountList">
+        <MappingFragment StoreEntitySet="B_ShooppingOrderFountList">
+          <ScalarProperty Name="ShooppingOrderFountID" ColumnName="ShooppingOrderFountID" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="ShooppingNumber" ColumnName="ShooppingNumber" />
+          <ScalarProperty Name="ShooppingTime" ColumnName="ShooppingTime" />
+          <ScalarProperty Name="ExamineNot" ColumnName="ExamineNot" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_ShooppingSellList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_ShooppingSellList">
+        <MappingFragment StoreEntitySet="B_ShooppingSellList">
+          <ScalarProperty Name="ShooppingSellID" ColumnName="ShooppingSellID" />
+          <ScalarProperty Name="ShooppingOrderFountID" ColumnName="ShooppingOrderFountID" />
+          <ScalarProperty Name="ShoopSexExamineName" ColumnName="ShoopSexExamineName" />
+          <ScalarProperty Name="ShoopSexExamineTime" ColumnName="ShoopSexExamineTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_ShoppingList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_ShoppingList">
+        <MappingFragment StoreEntitySet="B_ShoppingList">
+          <ScalarProperty Name="ShoppingID" ColumnName="ShoppingID" />
+          <ScalarProperty Name="UnameID" ColumnName="UnameID" />
+          <ScalarProperty Name="GoodsListedDetailID" ColumnName="GoodsListedDetailID" />
+          <ScalarProperty Name="Money" ColumnName="Money" />
+          <ScalarProperty Name="BitColer" ColumnName="BitColer" />
+          <ScalarProperty Name="MumberOfPackages" ColumnName="MumberOfPackages" />
+          <ScalarProperty Name="SubmitNot" ColumnName="SubmitNot" />
+          <ScalarProperty Name="AffirmNot" ColumnName="AffirmNot" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_SourceList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_SourceList">
+        <MappingFragment StoreEntitySet="B_SourceList">
+          <ScalarProperty Name="SourceID" ColumnName="SourceID" />
+          <ScalarProperty Name="SourceName" ColumnName="SourceName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_StaffList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_StaffList">
+        <MappingFragment StoreEntitySet="B_StaffList">
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="StaffName" ColumnName="StaffName" />
+          <ScalarProperty Name="StaffCode" ColumnName="StaffCode" />
+          <ScalarProperty Name="StaffClassID" ColumnName="StaffClassID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UniformAuthenticationCode" ColumnName="UniformAuthenticationCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_StaffRoleDetailList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_StaffRoleDetailList">
+        <MappingFragment StoreEntitySet="B_StaffRoleDetailList">
+          <ScalarProperty Name="StaffRoleDetailID" ColumnName="StaffRoleDetailID" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="StaffClassID" ColumnName="StaffClassID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_StockList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_StockList">
+        <MappingFragment StoreEntitySet="B_StockList">
+          <ScalarProperty Name="StockID" ColumnName="StockID" />
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+          <ScalarProperty Name="StockPlaceID" ColumnName="StockPlaceID" />
+          <ScalarProperty Name="TurnoverData" ColumnName="TurnoverData" />
+          <ScalarProperty Name="StockNumber" ColumnName="StockNumber" />
+          <ScalarProperty Name="RuKuContent" ColumnName="RuKuContent" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="ThinCount" ColumnName="ThinCount" />
+          <ScalarProperty Name="PurchaseID" ColumnName="PurchaseID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_SupplierGoodsList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_SupplierGoodsList">
+        <MappingFragment StoreEntitySet="B_SupplierGoodsList">
+          <ScalarProperty Name="SupplierGoodsID" ColumnName="SupplierGoodsID" />
+          <ScalarProperty Name="SupplierGoodsName" ColumnName="SupplierGoodsName" />
+          <ScalarProperty Name="EstimateUnitID" ColumnName="EstimateUnitID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="GoodsGenreID" ColumnName="GoodsGenreID" />
+          <ScalarProperty Name="GoodsBrandID" ColumnName="GoodsBrandID" />
+          <ScalarProperty Name="SpecificationsModel" ColumnName="SpecificationsModel" />
+          <ScalarProperty Name="GoodsChopID" ColumnName="GoodsChopID" />
+          <ScalarProperty Name="ArtNo" ColumnName="ArtNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_SupplierList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_SupplierList">
+        <MappingFragment StoreEntitySet="B_SupplierList">
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="SupplierNumber" ColumnName="SupplierNumber" />
+          <ScalarProperty Name="SupplierCHName" ColumnName="SupplierCHName" />
+          <ScalarProperty Name="SupplierAbbreviation" ColumnName="SupplierAbbreviation" />
+          <ScalarProperty Name="SupplierEnglishName" ColumnName="SupplierEnglishName" />
+          <ScalarProperty Name="SupplierPTCode" ColumnName="SupplierPTCode" />
+          <ScalarProperty Name="SupplierDependency" ColumnName="SupplierDependency" />
+          <ScalarProperty Name="SupplierRegisteredAddress" ColumnName="SupplierRegisteredAddress" />
+          <ScalarProperty Name="UnitCharacterID" ColumnName="UnitCharacterID" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="SupplierRegisteredEnglish" ColumnName="SupplierRegisteredEnglish" />
+          <ScalarProperty Name="SupplierRankID" ColumnName="SupplierRankID" />
+          <ScalarProperty Name="AgreementTypeID" ColumnName="AgreementTypeID" />
+          <ScalarProperty Name="AgreementStateID" ColumnName="AgreementStateID" />
+          <ScalarProperty Name="Registrant" ColumnName="Registrant" />
+          <ScalarProperty Name="Auditor" ColumnName="Auditor" />
+          <ScalarProperty Name="Executor" ColumnName="Executor" />
+          <ScalarProperty Name="Registranttime" ColumnName="Registranttime" />
+          <ScalarProperty Name="Auditortime" ColumnName="Auditortime" />
+          <ScalarProperty Name="Executortime" ColumnName="Executortime" />
+          <ScalarProperty Name="SupplierInformationName" ColumnName="SupplierInformationName" />
+          <ScalarProperty Name="SupplierTelephone" ColumnName="SupplierTelephone" />
+          <ScalarProperty Name="SupplierContacts" ColumnName="SupplierContacts" />
+          <ScalarProperty Name="SupplierPost" ColumnName="SupplierPost" />
+          <ScalarProperty Name="SupplierEmail" ColumnName="SupplierEmail" />
+          <ScalarProperty Name="SupplierZipCode" ColumnName="SupplierZipCode" />
+          <ScalarProperty Name="SupplierPortraiture" ColumnName="SupplierPortraiture" />
+          <ScalarProperty Name="SupplierAddress" ColumnName="SupplierAddress" />
+          <ScalarProperty Name="SupplierURL" ColumnName="SupplierURL" />
+          <ScalarProperty Name="EnterpriseNatureID" ColumnName="EnterpriseNatureID" />
+          <ScalarProperty Name="EnterpriseTypeID" ColumnName="EnterpriseTypeID" />
+          <ScalarProperty Name="EnterpriseBank" ColumnName="EnterpriseBank" />
+          <ScalarProperty Name="EnterpriseNumber" ColumnName="EnterpriseNumber" />
+          <ScalarProperty Name="NationalTaxNumber" ColumnName="NationalTaxNumber" />
+          <ScalarProperty Name="LocalTaxNumber" ColumnName="LocalTaxNumber" />
+          <ScalarProperty Name="EnterprisePassword" ColumnName="EnterprisePassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_TakeGlanceList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_TakeGlanceList">
+        <MappingFragment StoreEntitySet="B_TakeGlanceList">
+          <ScalarProperty Name="TakeGlanceID" ColumnName="TakeGlanceID" />
+          <ScalarProperty Name="UnameID" ColumnName="UnameID" />
+          <ScalarProperty Name="GoodsListedDetailID" ColumnName="GoodsListedDetailID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_ThreeSingleList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_ThreeSingleList">
+        <MappingFragment StoreEntitySet="B_ThreeSingleList">
+          <ScalarProperty Name="ThreeSingleID" ColumnName="ThreeSingleID" />
+          <ScalarProperty Name="PurchaseSectionID" ColumnName="PurchaseSectionID" />
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_Unamelist">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_Unamelist">
+        <MappingFragment StoreEntitySet="B_Unamelist">
+          <ScalarProperty Name="UnameID" ColumnName="UnameID" />
+          <ScalarProperty Name="uname" ColumnName="uname" />
+          <ScalarProperty Name="pwd" ColumnName="pwd" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="useof" ColumnName="useof" />
+          <ScalarProperty Name="EnrollTime" ColumnName="EnrollTime" />
+          <ScalarProperty Name="MemberIntegral" ColumnName="MemberIntegral" />
+          <ScalarProperty Name="ShoppingNuber" ColumnName="ShoppingNuber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_VoluntarilyOrderGoodsList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_VoluntarilyOrderGoodsList">
+        <MappingFragment StoreEntitySet="B_VoluntarilyOrderGoodsList">
+          <ScalarProperty Name="VoluntarilyOrderGoodsID" ColumnName="VoluntarilyOrderGoodsID" />
+          <ScalarProperty Name="GoodsDetailID" ColumnName="GoodsDetailID" />
+          <ScalarProperty Name="OrderFormDetailID" ColumnName="OrderFormDetailID" />
+          <ScalarProperty Name="ZiDongDingDanHao" ColumnName="ZiDongDingDanHao" />
+          <ScalarProperty Name="Pack" ColumnName="Pack" />
+          <ScalarProperty Name="AdviseNumber" ColumnName="AdviseNumber" />
+          <ScalarProperty Name="AverageNumber" ColumnName="AverageNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_WanManifestDetailList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_WanManifestDetailList">
+        <MappingFragment StoreEntitySet="B_WanManifestDetailList">
+          <ScalarProperty Name="WanManifestDetailID" ColumnName="WanManifestDetailID" />
+          <ScalarProperty Name="WanManifestID" ColumnName="WanManifestID" />
+          <ScalarProperty Name="GoodsID" ColumnName="GoodsID" />
+          <ScalarProperty Name="MumberOfPackages" ColumnName="MumberOfPackages" />
+          <ScalarProperty Name="Subdivision" ColumnName="Subdivision" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_WanManifestList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_WanManifestList">
+        <MappingFragment StoreEntitySet="B_WanManifestList">
+          <ScalarProperty Name="WanManifestID" ColumnName="WanManifestID" />
+          <ScalarProperty Name="SellID" ColumnName="SellID" />
+          <ScalarProperty Name="Remember" ColumnName="Remember" />
+          <ScalarProperty Name="PurchaseSectionID" ColumnName="PurchaseSectionID" />
+          <ScalarProperty Name="RegisterName" ColumnName="RegisterName" />
+          <ScalarProperty Name="RegisterTime" ColumnName="RegisterTime" />
+          <ScalarProperty Name="ExamineName" ColumnName="ExamineName" />
+          <ScalarProperty Name="ExamineTime" ColumnName="ExamineTime" />
+          <ScalarProperty Name="ExamineNot" ColumnName="ExamineNot" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_WareHouseDetiailList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_WareHouseDetiailList">
+        <MappingFragment StoreEntitySet="B_WareHouseDetiailList">
+          <ScalarProperty Name="WareHouseDetiailID" ColumnName="WareHouseDetiailID" />
+          <ScalarProperty Name="WareHouseID" ColumnName="WareHouseID" />
+          <ScalarProperty Name="OrderFormDetailID" ColumnName="OrderFormDetailID" />
+          <ScalarProperty Name="MumberOfPackages" ColumnName="MumberOfPackages" />
+          <ScalarProperty Name="Subdivision" ColumnName="Subdivision" />
+          <ScalarProperty Name="YiKongNot" ColumnName="YiKongNot" />
+          <ScalarProperty Name="YuanMumberOfPack" ColumnName="YuanMumberOfPack" />
+          <ScalarProperty Name="YuanSubdivision" ColumnName="YuanSubdivision" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_WareHouseList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_WareHouseList">
+        <MappingFragment StoreEntitySet="B_WareHouseList">
+          <ScalarProperty Name="WareHouseID" ColumnName="WareHouseID" />
+          <ScalarProperty Name="Remember" ColumnName="Remember" />
+          <ScalarProperty Name="SpouseBRanchID" ColumnName="SpouseBRanchID" />
+          <ScalarProperty Name="StockPlaceID" ColumnName="StockPlaceID" />
+          <ScalarProperty Name="OrderFormID" ColumnName="OrderFormID" />
+          <ScalarProperty Name="OrderFormPactID" ColumnName="OrderFormPactID" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="RegisterName" ColumnName="RegisterName" />
+          <ScalarProperty Name="RegisterTime" ColumnName="RegisterTime" />
+          <ScalarProperty Name="ExamineName" ColumnName="ExamineName" />
+          <ScalarProperty Name="ExamineTime" ColumnName="ExamineTime" />
+          <ScalarProperty Name="ExamineNot" ColumnName="ExamineNot" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="HoveNot" ColumnName="HoveNot" />
+          <ScalarProperty Name="Appendix" ColumnName="Appendix" />
+          <ScalarProperty Name="Evidences" ColumnName="Evidences" />
+          <ScalarProperty Name="CrushRedNot" ColumnName="CrushRedNot" />
+          <ScalarProperty Name="QuFenLeiXingID" ColumnName="QuFenLeiXingID" />
+          <ScalarProperty Name="PeiHuoNot" ColumnName="PeiHuoNot" />
+          <ScalarProperty Name="ShiFouKongNot" ColumnName="ShiFouKongNot" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_WeatherList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_WeatherList">
+        <MappingFragment StoreEntitySet="B_WeatherList">
+          <ScalarProperty Name="WeatherID" ColumnName="WeatherID" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="WeatherCondition" ColumnName="WeatherCondition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="B_WithholdContrastList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.B_WithholdContrastList">
+        <MappingFragment StoreEntitySet="B_WithholdContrastList">
+          <ScalarProperty Name="WithholdContrastID" ColumnName="WithholdContrastID" />
+          <ScalarProperty Name="WithholdContrastName" ColumnName="WithholdContrastName" />
+          <ScalarProperty Name="WithholdTypeID" ColumnName="WithholdTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_AdjustAccountsFashionList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_AdjustAccountsFashionList">
+        <MappingFragment StoreEntitySet="S_AdjustAccountsFashionList">
+          <ScalarProperty Name="AdjustAccountsFashionID" ColumnName="AdjustAccountsFashionID" />
+          <ScalarProperty Name="AdjustAccountsFashion" ColumnName="AdjustAccountsFashion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_AdjustTypeList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_AdjustTypeList">
+        <MappingFragment StoreEntitySet="S_AdjustTypeList">
+          <ScalarProperty Name="AdjustTypeID" ColumnName="AdjustTypeID" />
+          <ScalarProperty Name="AdjustTypeName" ColumnName="AdjustTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_AgioTimeIntervalList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_AgioTimeIntervalList">
+        <MappingFragment StoreEntitySet="S_AgioTimeIntervalList">
+          <ScalarProperty Name="AgioTimeIntervalID" ColumnName="AgioTimeIntervalID" />
+          <ScalarProperty Name="FenDanHao" ColumnName="FenDanHao" />
+          <ScalarProperty Name="TimeInterval" ColumnName="TimeInterval" />
+          <ScalarProperty Name="XingQi" ColumnName="XingQi" />
+          <ScalarProperty Name="AgioTimeIntervalTypeID" ColumnName="AgioTimeIntervalTypeID" />
+          <ScalarProperty Name="PermiTimeDeny" ColumnName="PermiTimeDeny" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_AgioTimeIntervalTypeList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_AgioTimeIntervalTypeList">
+        <MappingFragment StoreEntitySet="S_AgioTimeIntervalTypeList">
+          <ScalarProperty Name="AgioTimeIntervalTypeID" ColumnName="AgioTimeIntervalTypeID" />
+          <ScalarProperty Name="AgioTimeIntervalType" ColumnName="AgioTimeIntervalType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_AgreementManagerList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_AgreementManagerList">
+        <MappingFragment StoreEntitySet="S_AgreementManagerList">
+          <ScalarProperty Name="AgreementManagerID" ColumnName="AgreementManagerID" />
+          <ScalarProperty Name="AgreementManagerName" ColumnName="AgreementManagerName" />
+          <ScalarProperty Name="AgreementManagerZong" ColumnName="AgreementManagerZong" />
+          <ScalarProperty Name="AgreementManagerGaoJi" ColumnName="AgreementManagerGaoJi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_AgreementStateList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_AgreementStateList">
+        <MappingFragment StoreEntitySet="S_AgreementStateList">
+          <ScalarProperty Name="AgreementStateID" ColumnName="AgreementStateID" />
+          <ScalarProperty Name="AgreementState" ColumnName="AgreementState" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_AgreementTypeList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_AgreementTypeList">
+        <MappingFragment StoreEntitySet="S_AgreementTypeList">
+          <ScalarProperty Name="AgreementTypeID" ColumnName="AgreementTypeID" />
+          <ScalarProperty Name="AgreementTypeName" ColumnName="AgreementTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_AlternativeList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_AlternativeList">
+        <MappingFragment StoreEntitySet="S_AlternativeList">
+          <ScalarProperty Name="AlternativeID" ColumnName="AlternativeID" />
+          <ScalarProperty Name="AlternativeName" ColumnName="AlternativeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_AlternativeProjectList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_AlternativeProjectList">
+        <MappingFragment StoreEntitySet="S_AlternativeProjectList">
+          <ScalarProperty Name="AlternativeProjectID" ColumnName="AlternativeProjectID" />
+          <ScalarProperty Name="AlternativeProjectMC" ColumnName="AlternativeProjectMC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_AlternativeSupplierList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_AlternativeSupplierList">
+        <MappingFragment StoreEntitySet="S_AlternativeSupplierList">
+          <ScalarProperty Name="AlternativeSupplierID" ColumnName="AlternativeSupplierID" />
+          <ScalarProperty Name="AlternativeSupplierName" ColumnName="AlternativeSupplierName" />
+          <ScalarProperty Name="AlternativeSupplierTP" ColumnName="AlternativeSupplierTP" />
+          <ScalarProperty Name="AlternativeSupplierContacts" ColumnName="AlternativeSupplierContacts" />
+          <ScalarProperty Name="AlternativeSupplierAddress" ColumnName="AlternativeSupplierAddress" />
+          <ScalarProperty Name="AlternativeSupplierPC" ColumnName="AlternativeSupplierPC" />
+          <ScalarProperty Name="AlternativeID" ColumnName="AlternativeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_ApplyTargetList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_ApplyTargetList">
+        <MappingFragment StoreEntitySet="S_ApplyTargetList">
+          <ScalarProperty Name="ApplyTargetID" ColumnName="ApplyTargetID" />
+          <ScalarProperty Name="ApplyTarget" ColumnName="ApplyTarget" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_AreaCodeList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_AreaCodeList">
+        <MappingFragment StoreEntitySet="S_AreaCodeList">
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="AreaMC" ColumnName="AreaMC" />
+          <ScalarProperty Name="Postalcode" ColumnName="Postalcode" />
+          <ScalarProperty Name="CodeRule" ColumnName="CodeRule" />
+          <ScalarProperty Name="DaiMa" ColumnName="DaiMa" />
+          <ScalarProperty Name="ShuHaoID" ColumnName="ShuHaoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_BarCodTypeList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_BarCodTypeList">
+        <MappingFragment StoreEntitySet="S_BarCodTypeList">
+          <ScalarProperty Name="BarCodTypeID" ColumnName="BarCodTypeID" />
+          <ScalarProperty Name="BarCodTypeName" ColumnName="BarCodTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_BurdenStockSellStatusList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_BurdenStockSellStatusList">
+        <MappingFragment StoreEntitySet="S_BurdenStockSellStatusList">
+          <ScalarProperty Name="BurdenStockSellStatusID" ColumnName="BurdenStockSellStatusID" />
+          <ScalarProperty Name="BurdenStockSellStatusName" ColumnName="BurdenStockSellStatusName" />
+          <ScalarProperty Name="Stamp" ColumnName="Stamp" />
+          <ScalarProperty Name="BurdenStockDataNumber" ColumnName="BurdenStockDataNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_CardValiditySpecifiedList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_CardValiditySpecifiedList">
+        <MappingFragment StoreEntitySet="S_CardValiditySpecifiedList">
+          <ScalarProperty Name="SpecificModeID" ColumnName="SpecificModeID" />
+          <ScalarProperty Name="TheCardsSpecificMode" ColumnName="TheCardsSpecificMode" />
+          <ScalarProperty Name="CardSellingSpecificMode" ColumnName="CardSellingSpecificMode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_ChangeTypeList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_ChangeTypeList">
+        <MappingFragment StoreEntitySet="S_ChangeTypeList">
+          <ScalarProperty Name="ChangeTypeID" ColumnName="ChangeTypeID" />
+          <ScalarProperty Name="ChangeTypeName" ColumnName="ChangeTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_ChangeWhyList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_ChangeWhyList">
+        <MappingFragment StoreEntitySet="S_ChangeWhyList">
+          <ScalarProperty Name="ChangeWhyID" ColumnName="ChangeWhyID" />
+          <ScalarProperty Name="ChangeWhy" ColumnName="ChangeWhy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_CommodityTypeList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_CommodityTypeList">
+        <MappingFragment StoreEntitySet="S_CommodityTypeList">
+          <ScalarProperty Name="CommodityTypeID" ColumnName="CommodityTypeID" />
+          <ScalarProperty Name="CommodityType" ColumnName="CommodityType" />
+          <ScalarProperty Name="GoodsTypeSpecificationID" ColumnName="GoodsTypeSpecificationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_CompanyList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_CompanyList">
+        <MappingFragment StoreEntitySet="S_CompanyList">
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="CompanyMC" ColumnName="CompanyMC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_ContactCertificate">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_ContactCertificate">
+        <MappingFragment StoreEntitySet="S_ContactCertificate">
+          <ScalarProperty Name="ContactCertificateID" ColumnName="ContactCertificateID" />
+          <ScalarProperty Name="ContactCertificateName" ColumnName="ContactCertificateName" />
+          <ScalarProperty Name="ContactCertificateTime" ColumnName="ContactCertificateTime" />
+          <ScalarProperty Name="ContactCertificateHM" ColumnName="ContactCertificateHM" />
+          <ScalarProperty Name="ContactCertificateTimeless" ColumnName="ContactCertificateTimeless" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_CounterList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_CounterList">
+        <MappingFragment StoreEntitySet="S_CounterList">
+          <ScalarProperty Name="CountersellID" ColumnName="CountersellID" />
+          <ScalarProperty Name="CountersellName" ColumnName="CountersellName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_CXSummaryList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_CXSummaryList">
+        <MappingFragment StoreEntitySet="S_CXSummaryList">
+          <ScalarProperty Name="CXSummaryID" ColumnName="CXSummaryID" />
+          <ScalarProperty Name="UXsable" ColumnName="UXsable" />
+          <ScalarProperty Name="RXeturn" ColumnName="RXeturn" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="GrandTotalAmount" ColumnName="GrandTotalAmount" />
+          <ScalarProperty Name="ToatalAgio" ColumnName="ToatalAgio" />
+          <ScalarProperty Name="GrandAgioAmount" ColumnName="GrandAgioAmount" />
+          <ScalarProperty Name="YuanKaHao" ColumnName="YuanKaHao" />
+          <ScalarProperty Name="XinKaHao" ColumnName="XinKaHao" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="ZhaiYao" ColumnName="ZhaiYao" />
+          <ScalarProperty Name="HuiYuanXinMing" ColumnName="HuiYuanXinMing" />
+          <ScalarProperty Name="JiLuBianHao" ColumnName="JiLuBianHao" />
+          <ScalarProperty Name="YouXiaoQiKa" ColumnName="YouXiaoQiKa" />
+          <ScalarProperty Name="ZuoFeiJinE" ColumnName="ZuoFeiJinE" />
+          <ScalarProperty Name="ZuoFeiYuanYing" ColumnName="ZuoFeiYuanYing" />
+          <ScalarProperty Name="ZuoFeiShuLiang" ColumnName="ZuoFeiShuLiang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_EnterpriseNatureList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_EnterpriseNatureList">
+        <MappingFragment StoreEntitySet="S_EnterpriseNatureList">
+          <ScalarProperty Name="EnterpriseNatureID" ColumnName="EnterpriseNatureID" />
+          <ScalarProperty Name="EnterpriseNatureName" ColumnName="EnterpriseNatureName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_EnterpriseTypeList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_EnterpriseTypeList">
+        <MappingFragment StoreEntitySet="S_EnterpriseTypeList">
+          <ScalarProperty Name="EnterpriseTypeID" ColumnName="EnterpriseTypeID" />
+          <ScalarProperty Name="EnterpriseTypeName" ColumnName="EnterpriseTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_EstimateUnitList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_EstimateUnitList">
+        <MappingFragment StoreEntitySet="S_EstimateUnitList">
+          <ScalarProperty Name="EstimateUnitID" ColumnName="EstimateUnitID" />
+          <ScalarProperty Name="EstimateUnitName" ColumnName="EstimateUnitName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_GoodsBottomPriceList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_GoodsBottomPriceList">
+        <MappingFragment StoreEntitySet="S_GoodsBottomPriceList">
+          <ScalarProperty Name="GoodsBottomPriceID" ColumnName="GoodsBottomPriceID" />
+          <ScalarProperty Name="GoodsDetailID" ColumnName="GoodsDetailID" />
+          <ScalarProperty Name="DiscountRate" ColumnName="DiscountRate" />
+          <ScalarProperty Name="DiscountFrons" ColumnName="DiscountFrons" />
+          <ScalarProperty Name="LowestRetail" ColumnName="LowestRetail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_GoodsBrandList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_GoodsBrandList">
+        <MappingFragment StoreEntitySet="S_GoodsBrandList">
+          <ScalarProperty Name="GoodsBrandID" ColumnName="GoodsBrandID" />
+          <ScalarProperty Name="GoodsBrandName" ColumnName="GoodsBrandName" />
+          <ScalarProperty Name="GoodsBrandZhuPinPai" ColumnName="GoodsBrandZhuPinPai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_GoodsGenreIDList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_GoodsGenreIDList">
+        <MappingFragment StoreEntitySet="S_GoodsGenreIDList">
+          <ScalarProperty Name="GoodsGenreID" ColumnName="GoodsGenreID" />
+          <ScalarProperty Name="GoodsGenreName" ColumnName="GoodsGenreName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_GoodsMoneyRuleList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_GoodsMoneyRuleList">
+        <MappingFragment StoreEntitySet="S_GoodsMoneyRuleList">
+          <ScalarProperty Name="GoodsMoneyRuleID" ColumnName="GoodsMoneyRuleID" />
+          <ScalarProperty Name="PriceTypeID" ColumnName="PriceTypeID" />
+          <ScalarProperty Name="XiaXianMoney" ColumnName="XiaXianMoney" />
+          <ScalarProperty Name="ShangXianMoney" ColumnName="ShangXianMoney" />
+          <ScalarProperty Name="DecimalDigits" ColumnName="DecimalDigits" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_GoodsPurchasemoneyStatusList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_GoodsPurchasemoneyStatusList">
+        <MappingFragment StoreEntitySet="S_GoodsPurchasemoneyStatusList">
+          <ScalarProperty Name="GoodsPurchasemoneyStatusID" ColumnName="GoodsPurchasemoneyStatusID" />
+          <ScalarProperty Name="GoodsPurchasemoneyStatus" ColumnName="GoodsPurchasemoneyStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_GoodsPurchasemoneyTypeList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_GoodsPurchasemoneyTypeList">
+        <MappingFragment StoreEntitySet="S_GoodsPurchasemoneyTypeList">
+          <ScalarProperty Name="GoodsPurchasemoneyTypeID" ColumnName="GoodsPurchasemoneyTypeID" />
+          <ScalarProperty Name="GoodsPurchasemoneyType" ColumnName="GoodsPurchasemoneyType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_GoodsSeasonList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_GoodsSeasonList">
+        <MappingFragment StoreEntitySet="S_GoodsSeasonList">
+          <ScalarProperty Name="GoodsSeasonID" ColumnName="GoodsSeasonID" />
+          <ScalarProperty Name="GoodsSeasonName" ColumnName="GoodsSeasonName" />
+          <ScalarProperty Name="KaiShiYue" ColumnName="KaiShiYue" />
+          <ScalarProperty Name="KaiShiRi" ColumnName="KaiShiRi" />
+          <ScalarProperty Name="JieShuYue" ColumnName="JieShuYue" />
+          <ScalarProperty Name="jieShuRi" ColumnName="jieShuRi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_GoodsStampList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_GoodsStampList">
+        <MappingFragment StoreEntitySet="S_GoodsStampList">
+          <ScalarProperty Name="GoodsStampID" ColumnName="GoodsStampID" />
+          <ScalarProperty Name="GoodsStampName" ColumnName="GoodsStampName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_GoodsStatusIList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_GoodsStatusIList">
+        <MappingFragment StoreEntitySet="S_GoodsStatusIList">
+          <ScalarProperty Name="GoodsStatusID" ColumnName="GoodsStatusID" />
+          <ScalarProperty Name="GoodsStatusName" ColumnName="GoodsStatusName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_GoodsTypeSpecificationList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_GoodsTypeSpecificationList">
+        <MappingFragment StoreEntitySet="S_GoodsTypeSpecificationList">
+          <ScalarProperty Name="GoodsTypeSpecificationID" ColumnName="GoodsTypeSpecificationID" />
+          <ScalarProperty Name="GoodsTypeSpecificationName" ColumnName="GoodsTypeSpecificationName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_HuoDongZhuanQu">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_HuoDongZhuanQu">
+        <MappingFragment StoreEntitySet="S_HuoDongZhuanQu">
+          <ScalarProperty Name="GoodsDingYiQuID" ColumnName="GoodsDingYiQuID" />
+          <ScalarProperty Name="GoodsDingYiQuMC" ColumnName="GoodsDingYiQuMC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_MaiChangList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_MaiChangList">
+        <MappingFragment StoreEntitySet="S_MaiChangList">
+          <ScalarProperty Name="MaiChangID" ColumnName="MaiChangID" />
+          <ScalarProperty Name="MaiChangMC" ColumnName="MaiChangMC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_MakeCollectionsList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_MakeCollectionsList">
+        <MappingFragment StoreEntitySet="S_MakeCollectionsList">
+          <ScalarProperty Name="MakeCollectionsID" ColumnName="MakeCollectionsID" />
+          <ScalarProperty Name="MakeCollectionsMC" ColumnName="MakeCollectionsMC" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_MarketNameList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_MarketNameList">
+        <MappingFragment StoreEntitySet="S_MarketNameList">
+          <ScalarProperty Name="MarketID" ColumnName="MarketID" />
+          <ScalarProperty Name="MarketName" ColumnName="MarketName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_MemberCredentialsType">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_MemberCredentialsType">
+        <MappingFragment StoreEntitySet="S_MemberCredentialsType">
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="CredentialsType" ColumnName="CredentialsType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_MemberFamilyMember">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_MemberFamilyMember">
+        <MappingFragment StoreEntitySet="S_MemberFamilyMember">
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="FamilyMember" ColumnName="FamilyMember" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_MemberHobbiesInterests">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_MemberHobbiesInterests">
+        <MappingFragment StoreEntitySet="S_MemberHobbiesInterests">
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="HobbiesInterests" ColumnName="HobbiesInterests" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_MemberInfoList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_MemberInfoList">
+        <MappingFragment StoreEntitySet="S_MemberInfoList">
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="XingMing" ColumnName="XingMing" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="CredentialsNumber" ColumnName="CredentialsNumber" />
+          <ScalarProperty Name="PostalAddress" ColumnName="PostalAddress" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Postalcode" ColumnName="Postalcode" />
+          <ScalarProperty Name="dianziyoujian" ColumnName="dianziyoujian" />
+          <ScalarProperty Name="Profession" ColumnName="Profession" />
+          <ScalarProperty Name="OfficePhone" ColumnName="OfficePhone" />
+          <ScalarProperty Name="PrivateTelephone" ColumnName="PrivateTelephone" />
+          <ScalarProperty Name="CellphoneNumber" ColumnName="CellphoneNumber" />
+          <ScalarProperty Name="CardNumberChange" ColumnName="CardNumberChange" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UntreatedIntegral" ColumnName="UntreatedIntegral" />
+          <ScalarProperty Name="CredentialsType" ColumnName="CredentialsType" />
+          <ScalarProperty Name="MemberFamilyIncome" ColumnName="MemberFamilyIncome" />
+          <ScalarProperty Name="MemberEd" ColumnName="MemberEd" />
+          <ScalarProperty Name="TimeToMall" ColumnName="TimeToMall" />
+          <ScalarProperty Name="Vehicle" ColumnName="Vehicle" />
+          <ScalarProperty Name="FamilyMember" ColumnName="FamilyMember" />
+          <ScalarProperty Name="HobbiesInterests" ColumnName="HobbiesInterests" />
+          <ScalarProperty Name="CustomQuality" ColumnName="CustomQuality" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="CommentsOnAForm" ColumnName="CommentsOnAForm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_MemberMemberEd">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_MemberMemberEd">
+        <MappingFragment StoreEntitySet="S_MemberMemberEd">
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="MemberEd" ColumnName="MemberEd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_MemberMemberFamilyIncome">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_MemberMemberFamilyIncome">
+        <MappingFragment StoreEntitySet="S_MemberMemberFamilyIncome">
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="MemberFamilyIncome" ColumnName="MemberFamilyIncome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_MemberProfession">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_MemberProfession">
+        <MappingFragment StoreEntitySet="S_MemberProfession">
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="Profession" ColumnName="Profession" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_MemberSCDList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_MemberSCDList">
+        <MappingFragment StoreEntitySet="S_MemberSCDList">
+          <ScalarProperty Name="MemberSCDID" ColumnName="MemberSCDID" />
+          <ScalarProperty Name="MemberSCDMC" ColumnName="MemberSCDMC" />
+          <ScalarProperty Name="RecordNumber" ColumnName="RecordNumber" />
+          <ScalarProperty Name="GSite" ColumnName="GSite" />
+          <ScalarProperty Name="FurlSite" ColumnName="FurlSite" />
+          <ScalarProperty Name="MemberType" ColumnName="MemberType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_MembershipAgeList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_MembershipAgeList">
+        <MappingFragment StoreEntitySet="S_MembershipAgeList">
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="MemberName" ColumnName="MemberName" />
+          <ScalarProperty Name="OriginationAge" ColumnName="OriginationAge" />
+          <ScalarProperty Name="EndAge" ColumnName="EndAge" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_MembershipCardAccount">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_MembershipCardAccount">
+        <MappingFragment StoreEntitySet="S_MembershipCardAccount">
+          <ScalarProperty Name="MembershipCardAccountID" ColumnName="MembershipCardAccountID" />
+          <ScalarProperty Name="MembershipCardAccount" ColumnName="MembershipCardAccount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_MembershipCardForm">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_MembershipCardForm">
+        <MappingFragment StoreEntitySet="S_MembershipCardForm">
+          <ScalarProperty Name="MembershipCardFormID" ColumnName="MembershipCardFormID" />
+          <ScalarProperty Name="SpecificModeID" ColumnName="SpecificModeID" />
+          <ScalarProperty Name="MemberSCDID" ColumnName="MemberSCDID" />
+          <ScalarProperty Name="MemberSCDMC" ColumnName="MemberSCDMC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_MembershipCardInfoList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_MembershipCardInfoList">
+        <MappingFragment StoreEntitySet="S_MembershipCardInfoList">
+          <ScalarProperty Name="MembershipCardInfoID" ColumnName="MembershipCardInfoID" />
+          <ScalarProperty Name="CardNber" ColumnName="CardNber" />
+          <ScalarProperty Name="Sum" ColumnName="Sum" />
+          <ScalarProperty Name="EctMoney" ColumnName="EctMoney" />
+          <ScalarProperty Name="Ccustodian" ColumnName="Ccustodian" />
+          <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+          <ScalarProperty Name="StartCardNbumer" ColumnName="StartCardNbumer" />
+          <ScalarProperty Name="EndCardNber" ColumnName="EndCardNber" />
+          <ScalarProperty Name="StoreNumb" ColumnName="StoreNumb" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Interior" ColumnName="Interior" />
+          <ScalarProperty Name="SurelySite" ColumnName="SurelySite" />
+          <ScalarProperty Name="CardCode" ColumnName="CardCode" />
+          <ScalarProperty Name="CredentialsNumber" ColumnName="CredentialsNumber" />
+          <ScalarProperty Name="GrandTotalAmount" ColumnName="GrandTotalAmount" />
+          <ScalarProperty Name="TheCardsDate" ColumnName="TheCardsDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_MembershipCardList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_MembershipCardList">
+        <MappingFragment StoreEntitySet="S_MembershipCardList">
+          <ScalarProperty Name="MembershipCardID" ColumnName="MembershipCardID" />
+          <ScalarProperty Name="MembershipCardTypeID" ColumnName="MembershipCardTypeID" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="MembershipCardFormID" ColumnName="MembershipCardFormID" />
+          <ScalarProperty Name="MembershipCardMC" ColumnName="MembershipCardMC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_MembershipCardSafekeeping">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_MembershipCardSafekeeping">
+        <MappingFragment StoreEntitySet="S_MembershipCardSafekeeping">
+          <ScalarProperty Name="MembershipCardID" ColumnName="MembershipCardID" />
+          <ScalarProperty Name="PermitSales" ColumnName="PermitSales" />
+          <ScalarProperty Name="TheCards" ColumnName="TheCards" />
+          <ScalarProperty Name="TheCardsTab" ColumnName="TheCardsTab" />
+          <ScalarProperty Name="SalesTab" ColumnName="SalesTab" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_MembershipCardStatusList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_MembershipCardStatusList">
+        <MappingFragment StoreEntitySet="S_MembershipCardStatusList">
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="StoreCardID" ColumnName="StoreCardID" />
+          <ScalarProperty Name="CustomerCardID" ColumnName="CustomerCardID" />
+          <ScalarProperty Name="StatusMC" ColumnName="StatusMC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_MembershipCardSupervise">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_MembershipCardSupervise">
+        <MappingFragment StoreEntitySet="S_MembershipCardSupervise">
+          <ScalarProperty Name="MembershipCardID" ColumnName="MembershipCardID" />
+          <ScalarProperty Name="PasswordIdentification" ColumnName="PasswordIdentification" />
+          <ScalarProperty Name="PermitReportTheloss" ColumnName="PermitReportTheloss" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_MembershipCardTypeList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_MembershipCardTypeList">
+        <MappingFragment StoreEntitySet="S_MembershipCardTypeList">
+          <ScalarProperty Name="MembershipCardTypeID" ColumnName="MembershipCardTypeID" />
+          <ScalarProperty Name="MembershipCardID" ColumnName="MembershipCardID" />
+          <ScalarProperty Name="TheCardsbranchID" ColumnName="TheCardsbranchID" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="MembershipCardTypeMC" ColumnName="MembershipCardTypeMC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_MemberTimeToMall">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_MemberTimeToMall">
+        <MappingFragment StoreEntitySet="S_MemberTimeToMall">
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="TimeToMall" ColumnName="TimeToMall" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_MemberVehicle">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_MemberVehicle">
+        <MappingFragment StoreEntitySet="S_MemberVehicle">
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="Vehicle" ColumnName="Vehicle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_MethodOfSettlingAccountsList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_MethodOfSettlingAccountsList">
+        <MappingFragment StoreEntitySet="S_MethodOfSettlingAccountsList">
+          <ScalarProperty Name="MethodOfSettlingAccountsID" ColumnName="MethodOfSettlingAccountsID" />
+          <ScalarProperty Name="MethodOfSettlingAccounts" ColumnName="MethodOfSettlingAccounts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_ModuleList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_ModuleList">
+        <MappingFragment StoreEntitySet="S_ModuleList">
+          <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+          <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_OrderFormTypeList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_OrderFormTypeList">
+        <MappingFragment StoreEntitySet="S_OrderFormTypeList">
+          <ScalarProperty Name="OrderFormTypeID" ColumnName="OrderFormTypeID" />
+          <ScalarProperty Name="OrderFormTypeName" ColumnName="OrderFormTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_PackInfoIDList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_PackInfoIDList">
+        <MappingFragment StoreEntitySet="S_PackInfoIDList">
+          <ScalarProperty Name="PackInfoID" ColumnName="PackInfoID" />
+          <ScalarProperty Name="GoodsDetailID" ColumnName="GoodsDetailID" />
+          <ScalarProperty Name="PackContent" ColumnName="PackContent" />
+          <ScalarProperty Name="PackWeight" ColumnName="PackWeight" />
+          <ScalarProperty Name="DefaultPack" ColumnName="DefaultPack" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_PaymentList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_PaymentList">
+        <MappingFragment StoreEntitySet="S_PaymentList">
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="PaymentMC" ColumnName="PaymentMC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_PersonalIformationList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_PersonalIformationList">
+        <MappingFragment StoreEntitySet="S_PersonalIformationList">
+          <ScalarProperty Name="PersonalIformationID" ColumnName="PersonalIformationID" />
+          <ScalarProperty Name="UnameID" ColumnName="UnameID" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Detailedaddress" ColumnName="Detailedaddress" />
+          <ScalarProperty Name="Zipcode" ColumnName="Zipcode" />
+          <ScalarProperty Name="Consignee" ColumnName="Consignee" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Phonecode" ColumnName="Phonecode" />
+          <ScalarProperty Name="UserImage" ColumnName="UserImage" />
+          <ScalarProperty Name="MoRenDiZhiBit" ColumnName="MoRenDiZhiBit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_PreferentialFashionList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_PreferentialFashionList">
+        <MappingFragment StoreEntitySet="S_PreferentialFashionList">
+          <ScalarProperty Name="PreferentialFashionID" ColumnName="PreferentialFashionID" />
+          <ScalarProperty Name="MemberSCDID" ColumnName="MemberSCDID" />
+          <ScalarProperty Name="PreferentialFashion" ColumnName="PreferentialFashion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_PriceTypeList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_PriceTypeList">
+        <MappingFragment StoreEntitySet="S_PriceTypeList">
+          <ScalarProperty Name="PriceTypeID" ColumnName="PriceTypeID" />
+          <ScalarProperty Name="PriceTypeMC" ColumnName="PriceTypeMC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_PublishWayList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_PublishWayList">
+        <MappingFragment StoreEntitySet="S_PublishWayList">
+          <ScalarProperty Name="PublishWaysID" ColumnName="PublishWaysID" />
+          <ScalarProperty Name="PublishWays" ColumnName="PublishWays" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_QuFenLeiXingList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_QuFenLeiXingList">
+        <MappingFragment StoreEntitySet="S_QuFenLeiXingList">
+          <ScalarProperty Name="QuFenLeiXingID" ColumnName="QuFenLeiXingID" />
+          <ScalarProperty Name="QuFenLeiXingMC" ColumnName="QuFenLeiXingMC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_ReturnofList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_ReturnofList">
+        <MappingFragment StoreEntitySet="S_ReturnofList">
+          <ScalarProperty Name="ReturnofID" ColumnName="ReturnofID" />
+          <ScalarProperty Name="Returnof" ColumnName="Returnof" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_SellAssemblelist">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_SellAssemblelist">
+        <MappingFragment StoreEntitySet="S_SellAssemblelist">
+          <ScalarProperty Name="SellAssembleID" ColumnName="SellAssembleID" />
+          <ScalarProperty Name="SellAssembleName" ColumnName="SellAssembleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_SellingInfoList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_SellingInfoList">
+        <MappingFragment StoreEntitySet="S_SellingInfoList">
+          <ScalarProperty Name="SellingInfoID" ColumnName="SellingInfoID" />
+          <ScalarProperty Name="MembershipCardAccountID" ColumnName="MembershipCardAccountID" />
+          <ScalarProperty Name="CouponUID" ColumnName="CouponUID" />
+          <ScalarProperty Name="MakeCollectionsID" ColumnName="MakeCollectionsID" />
+          <ScalarProperty Name="PublishWaysID" ColumnName="PublishWaysID" />
+          <ScalarProperty Name="PreferentialFashionID" ColumnName="PreferentialFashionID" />
+          <ScalarProperty Name="CXSummaryID" ColumnName="CXSummaryID" />
+          <ScalarProperty Name="MInspectionCard" ColumnName="MInspectionCard" />
+          <ScalarProperty Name="Gtotal" ColumnName="Gtotal" />
+          <ScalarProperty Name="SingleFee" ColumnName="SingleFee" />
+          <ScalarProperty Name="RAmount" ColumnName="RAmount" />
+          <ScalarProperty Name="XAmount" ColumnName="XAmount" />
+          <ScalarProperty Name="FeeAmount" ColumnName="FeeAmount" />
+          <ScalarProperty Name="Summary" ColumnName="Summary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_SettlementDebiList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_SettlementDebiList">
+        <MappingFragment StoreEntitySet="S_SettlementDebiList">
+          <ScalarProperty Name="SettlementDebiID" ColumnName="SettlementDebiID" />
+          <ScalarProperty Name="SettlementDebi" ColumnName="SettlementDebi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_SignTypeList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_SignTypeList">
+        <MappingFragment StoreEntitySet="S_SignTypeList">
+          <ScalarProperty Name="SignTypeID" ColumnName="SignTypeID" />
+          <ScalarProperty Name="SignTypeName" ColumnName="SignTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_SpouseBRanchList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_SpouseBRanchList">
+        <MappingFragment StoreEntitySet="S_SpouseBRanchList">
+          <ScalarProperty Name="SpouseBRanchID" ColumnName="SpouseBRanchID" />
+          <ScalarProperty Name="SpouseBRanchName" ColumnName="SpouseBRanchName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_StaffClassList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_StaffClassList">
+        <MappingFragment StoreEntitySet="S_StaffClassList">
+          <ScalarProperty Name="StaffClassID" ColumnName="StaffClassID" />
+          <ScalarProperty Name="StaffClass" ColumnName="StaffClass" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_StaffPowerList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_StaffPowerList">
+        <MappingFragment StoreEntitySet="S_StaffPowerList">
+          <ScalarProperty Name="StaffPowerID" ColumnName="StaffPowerID" />
+          <ScalarProperty Name="StaffClassID" ColumnName="StaffClassID" />
+          <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_StatisticAttribute">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_StatisticAttribute">
+        <MappingFragment StoreEntitySet="S_StatisticAttribute">
+          <ScalarProperty Name="StatisticAttributeID" ColumnName="StatisticAttributeID" />
+          <ScalarProperty Name="StatisticAttributeMC" ColumnName="StatisticAttributeMC" />
+          <ScalarProperty Name="DrugTypeID" ColumnName="DrugTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_StockPlaceList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_StockPlaceList">
+        <MappingFragment StoreEntitySet="S_StockPlaceList">
+          <ScalarProperty Name="StockPlaceID" ColumnName="StockPlaceID" />
+          <ScalarProperty Name="StockPlaceName" ColumnName="StockPlaceName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_StoreCardList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_StoreCardList">
+        <MappingFragment StoreEntitySet="S_StoreCardList">
+          <ScalarProperty Name="StoreCardID" ColumnName="StoreCardID" />
+          <ScalarProperty Name="MembershipCardInfoID" ColumnName="MembershipCardInfoID" />
+          <ScalarProperty Name="DeleteCardID" ColumnName="DeleteCardID" />
+          <ScalarProperty Name="TheCardsID" ColumnName="TheCardsID" />
+          <ScalarProperty Name="StoreCardMC" ColumnName="StoreCardMC" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="CardTypeCode" ColumnName="CardTypeCode" />
+          <ScalarProperty Name="Safekeeping" ColumnName="Safekeeping" />
+          <ScalarProperty Name="Faceamount" ColumnName="Faceamount" />
+          <ScalarProperty Name="EctMoney" ColumnName="EctMoney" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Tab" ColumnName="Tab" />
+          <ScalarProperty Name="DeleteCause" ColumnName="DeleteCause" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_SupplierGroupList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_SupplierGroupList">
+        <MappingFragment StoreEntitySet="S_SupplierGroupList">
+          <ScalarProperty Name="SupplierGroupID" ColumnName="SupplierGroupID" />
+          <ScalarProperty Name="SupplierGroupName" ColumnName="SupplierGroupName" />
+          <ScalarProperty Name="SupplierGroupPYCode" ColumnName="SupplierGroupPYCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_SupplierRankList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_SupplierRankList">
+        <MappingFragment StoreEntitySet="S_SupplierRankList">
+          <ScalarProperty Name="SupplierRankID" ColumnName="SupplierRankID" />
+          <ScalarProperty Name="SupplierRankName" ColumnName="SupplierRankName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_SupplierReturnTypeList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_SupplierReturnTypeList">
+        <MappingFragment StoreEntitySet="S_SupplierReturnTypeList">
+          <ScalarProperty Name="SupplierReturnTypeID" ColumnName="SupplierReturnTypeID" />
+          <ScalarProperty Name="SupplierReturnType" ColumnName="SupplierReturnType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_TheCardsbranchList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_TheCardsbranchList">
+        <MappingFragment StoreEntitySet="S_TheCardsbranchList">
+          <ScalarProperty Name="TheCardsbranchID" ColumnName="TheCardsbranchID" />
+          <ScalarProperty Name="SellingInfoID" ColumnName="SellingInfoID" />
+          <ScalarProperty Name="TheCardsID" ColumnName="TheCardsID" />
+          <ScalarProperty Name="TheCardsbranchMC" ColumnName="TheCardsbranchMC" />
+          <ScalarProperty Name="CodeRule" ColumnName="CodeRule" />
+          <ScalarProperty Name="Store" ColumnName="Store" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_TheCardsList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_TheCardsList">
+        <MappingFragment StoreEntitySet="S_TheCardsList">
+          <ScalarProperty Name="TheCardsID" ColumnName="TheCardsID" />
+          <ScalarProperty Name="SellingInfoID" ColumnName="SellingInfoID" />
+          <ScalarProperty Name="Kahao" ColumnName="Kahao" />
+          <ScalarProperty Name="TheCardsMC" ColumnName="TheCardsMC" />
+          <ScalarProperty Name="TheCardsNumber" ColumnName="TheCardsNumber" />
+          <ScalarProperty Name="CardPeriodOfValidity" ColumnName="CardPeriodOfValidity" />
+          <ScalarProperty Name="CardPersonalizationNumber" ColumnName="CardPersonalizationNumber" />
+          <ScalarProperty Name="CardPersonalizationStatus" ColumnName="CardPersonalizationStatus" />
+          <ScalarProperty Name="Ccustodian" ColumnName="Ccustodian" />
+          <ScalarProperty Name="Recordnumber" ColumnName="Recordnumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_TrademarkLocalList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_TrademarkLocalList">
+        <MappingFragment StoreEntitySet="S_TrademarkLocalList">
+          <ScalarProperty Name="TrademarkLocalID" ColumnName="TrademarkLocalID" />
+          <ScalarProperty Name="TrademarkLocalName" ColumnName="TrademarkLocalName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_TrademarkRankList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_TrademarkRankList">
+        <MappingFragment StoreEntitySet="S_TrademarkRankList">
+          <ScalarProperty Name="TrademarkRankID" ColumnName="TrademarkRankID" />
+          <ScalarProperty Name="TrademarkRankName" ColumnName="TrademarkRankName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_TrademarkStatusList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_TrademarkStatusList">
+        <MappingFragment StoreEntitySet="S_TrademarkStatusList">
+          <ScalarProperty Name="TrademarkStatusID" ColumnName="TrademarkStatusID" />
+          <ScalarProperty Name="TrademarkStatusName" ColumnName="TrademarkStatusName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_UnitCharacterList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_UnitCharacterList">
+        <MappingFragment StoreEntitySet="S_UnitCharacterList">
+          <ScalarProperty Name="UnitCharacterID" ColumnName="UnitCharacterID" />
+          <ScalarProperty Name="UnitCharacterName" ColumnName="UnitCharacterName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_VieOpponentList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_VieOpponentList">
+        <MappingFragment StoreEntitySet="S_VieOpponentList">
+          <ScalarProperty Name="VieOpponentID" ColumnName="VieOpponentID" />
+          <ScalarProperty Name="VieOpponentName" ColumnName="VieOpponentName" />
+          <ScalarProperty Name="VieOpponentCode" ColumnName="VieOpponentCode" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="SalesVolume" ColumnName="SalesVolume" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_WithholdTypeList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_WithholdTypeList">
+        <MappingFragment StoreEntitySet="S_WithholdTypeList">
+          <ScalarProperty Name="WithholdTypeID" ColumnName="WithholdTypeID" />
+          <ScalarProperty Name="WithholdType" ColumnName="WithholdType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_ZhuanGuiCommodityTypeLiat">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_ZhuanGuiCommodityTypeLiat">
+        <MappingFragment StoreEntitySet="S_ZhuanGuiCommodityTypeLiat">
+          <ScalarProperty Name="ZhuanGuiCommodityTypeID" ColumnName="ZhuanGuiCommodityTypeID" />
+          <ScalarProperty Name="ZhuanGuiCommodityType" ColumnName="ZhuanGuiCommodityType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="S_GoodsColoursList">
+      <EntityTypeMapping TypeName="DaXingShangMaoXiTongModel.S_GoodsColoursList">
+        <MappingFragment StoreEntitySet="S_GoodsColoursList">
+          <ScalarProperty Name="GoodsColoursID" ColumnName="GoodsColoursID" />
+          <ScalarProperty Name="GoodsColours" ColumnName="GoodsColours" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

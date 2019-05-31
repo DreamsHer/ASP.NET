@@ -1,0 +1,356 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>BuMneJingYing</title>
+
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+
+
+    <style>
+        .container {
+            background: #f0edf1;
+            width: 100%;
+        }
+
+        .reset-padding {
+            padding: 0 5px;
+        }
+
+        .reset {
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        label.Size {
+            font-size: 60px;
+        }
+
+        label {
+            font-weight: normal;
+        }
+    </style>
+
+
+</head>
+<body>
+    
+    <div class="container">
+
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="h4">部门经营打印</span>
+                    <div class="pull-right">
+                        <button class="form-control btn-sm btn btn-info" id="Colse"><span class="glyphicon glyphicon-remove">关闭</span></button>
+                    </div>
+                </div>
+                <div class="panel-body" style="background:#f0edf1;">
+
+                    <div class="row container" style="border: 3px solid #d8cddc;">
+                       
+                      <div class="col-lg-5">
+                          <div class="col-lg-1"></div>
+                          <div class="col-lg-6" style="border: 3px solid #d8cddc;margin-top:10px;">
+                              <div class="col-lg-1"></div>
+                              <div class="col-lg-10">
+                                  <div class="row" style="margin-top:10px;">
+                                      <div class="col-md-7">
+                                          <label class="control-label">部门选择</label>
+                                      </div>
+                                  </div>
+                                  <div class="row" style="margin-top:10px;">
+                                      <div class="col-md-12" style="padding-left:15px;">
+                                          <select class="form-control" id="BuMenOne"></select>
+                                      </div>
+                                  </div>
+                                  <div class="row" style="margin-top:10px;">
+                                      <div class="col-md-12" style="padding-left:15px;">
+                                          <select class="form-control" id="BuMenOtwo"></select>
+                                      </div>
+                                  </div>
+                                  <div class="row" style="margin-top:10px;">
+                                      <div class="col-md-12" style="padding-left:15px;">
+                                          <select class="form-control" id="BuMenOThree"></select>
+                                      </div>
+                                  </div>
+                                  <div class="row" style="margin-top:10px;">
+                                      <div class="col-md-12" style="padding-left:15px;">
+                                          <select class="form-control" id="BuMenOFour"></select>
+                                      </div>
+                                  </div>
+                                  <div class="row" style="margin-top:10px;">
+                                      <div class="col-md-12" style="padding-left:15px;">
+                                          <select class="form-control" id="BuMeFirn"></select>
+                                      </div>
+                                  </div>
+                                  <br />
+                              </div>
+                             
+                          </div>
+                          <div class="col-lg-1"></div>
+                          <div class="col-lg-4" style="border: 3px solid #d8cddc;margin-top:10px;">
+                              <div class="row" style="margin-top:80px;">
+                                  <div class="form-group">
+                                      <div class="col-md-6 reset" style="margin-left:40px;">
+                                          <input type="radio" id="CommodityTypec" name="CommodityTypec" value="日数据" /><label class="ZiYingPanl">日数据</label>
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="row" style="margin-top:40px;">
+                                  <div class="form-group">
+                                      <div class="col-md-6 reset" style="margin-left:40px;">
+                                          <input type="radio" id="CommodityTypec" name="CommodityTypec" value="月数据" /><label class="ZiYingPanl">月数据</label>
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="row" style="margin-top:40px;">
+                                  <div class="form-group">
+                                      <div class="col-md-6 reset" style="margin-left:40px;">
+                                          <input type="radio" id="CommodityTypec" name="CommodityTypec" value="年数据" /><label class="ZiYingPanl">年数据</label>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="row" style="margin-top:40px;">
+                                  
+                              </div>
+                          </div>
+
+                      </div>
+                          
+                        <div class="col-lg-7">
+                            <div class="col-lg-2" style="border: 3px solid #d8cddc;margin-top:10px;">
+
+                                <div class="row" style="margin-top:60px;">
+                                    <div class="form-group">
+                                        <div class="col-md-6 reset" style="margin-left:30px;">
+                                            <input type="radio" id="dsdsdf" name="dsdsdf" value="一级" /><label class="ZiYingPanl">一级</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:20px;">
+                                    <div class="form-group">
+                                        <div class="col-md-6 reset" style="margin-left:30px;">
+                                            <input type="radio" id="dsdsdf" name="dsdsdf" value="二级" /><label class="ZiYingPanl">二级</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:20px;">
+                                    <div class="form-group">
+                                        <div class="col-md-6 reset" style="margin-left:30px;">
+                                            <input type="radio" id="dsdsdf" name="dsdsdf" value="三级" /><label class="ZiYingPanl">三级</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:20px;">
+                                    <div class="form-group">
+                                        <div class="col-md-6 reset" style="margin-left:30px;">
+                                            <input type="radio" id="dsdsdf" name="dsdsdf" value="四级" /><label class="ZiYingPanl">四级</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:20px;">
+                                    <div class="form-group">
+                                        <div class="col-md-6 reset" style="margin-left:30px;">
+                                            <input type="radio" id="dsdsdf" name="dsdsdf" value="末级" /><label class="ZiYingPanl">末级</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:10px;">
+                                   
+                                </div>
+
+                               
+                            </div>
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-3" style="border: 3px solid #d8cddc;margin-top:10px;">
+                                <div class="row" style="margin-top:160px;">
+                                    <div class="form-group">
+                                        <div class="col-md-6 reset" style="margin-left:40px;">
+                                            <input type="radio" id="dsdsdf" name="dsdsdf" value="进价含税" /><label class="ZiYingPanl">进价含税</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top:100px;">
+                                   
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-5" style="border: 3px solid #d8cddc;margin-top:10px;">
+                                <div class="col-lg-1"></div>
+                                <div class="col-lg-10">
+                                    <div class="row" style="margin-top:10px;">
+                                        <div class="col-md-7">
+                                            <label class="control-label">进货部门选择</label>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top:10px;">
+                                        <div class="col-md-9" style="padding-left:15px;">
+                                            <select class="form-control" id="JinHuoOne"></select>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top:10px;">
+                                        <div class="col-md-9" style="padding-left:15px;">
+                                            <select class="form-control" id="JinHuoTwo"></select>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top:10px;">
+                                        <div class="col-md-9" style="padding-left:15px;">
+                                            <select class="form-control" id="JinHuoThree"></select>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top:10px;">
+                                        <div class="col-md-9" style="padding-left:15px;">
+                                            <select class="form-control" id="JinHuoFour"></select>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top:10px;">
+                                        <div class="col-md-9" style="padding-left:15px;">
+                                            <select class="form-control" id="JinHuoMo"></select>
+                                        </div>
+                                    </div>
+                                    <br />
+                                </div>
+
+                            </div>
+
+                        </div>   
+
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-6">
+                                <div class="row" style="margin-top:20px;">
+                                    <div class="form-group">
+                                        <div class="col-md-2">
+                                            <label class="control-label" style="padding-left:20px;">日 期：</label>
+                                        </div>
+
+                                        <div class="col-md-4" style="padding-left:15px;">
+                                            <input id="QiDay" class="form-control" type="date" />
+                                        </div>
+                                        <div class="col-md-4" style="padding-left:15px;">
+                                            <input id="ZhiDay" class="form-control" type="date" />
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-6">
+                                <div class="row" style="margin-top:20px;">
+                                    <div class="form-group">
+                                        <div class="col-md-2">
+                                            <label class="control-label">报表标题：</label>
+                                        </div>
+
+                                        <div class="col-md-8" style="padding-left:15px;">
+                                            <input id="QiDay" class="form-control" type="text" placeholder="例：经营日报"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+
+
+                    <div class="row" style="margin-top:20px;">
+                        <div class="form-group">
+                            <div class="col-sm-1 col-lg-offset-5">
+                                <button class="form-control btn-block btn btn-primary" type="button" id="DaYinBtn" onclick="window.print();return false;"><span class="glyphicon glyphicon-print">打印</span></button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button class="form-control btn-block btn btn-info" type="button" id="SelOutBtn"><span class="glyphicon glyphicon-off">退出</span></button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.2.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            //盘点部门
+            $.post("/GoodsZhangGuanLi/DaYinBuMenBiao/CaiGouXiaLa", function (data) {
+                selectLoadData("BuMenOne", data);
+            });
+
+            //盘点部门
+            $.post("/GoodsZhangGuanLi/DaYinBuMenBiao/PeiSong", function (data) {
+                selectLoadData("JinHuoOne", data);
+            });
+
+            //部门
+            $.post("/GoodsZhangGuanLi/DaYinBuMenBiao/PeiSongd", function (data) {
+                selectLoadData("JinHuoThree", data);
+            });
+
+        });
+
+        //部门改变
+        $("#BuMenOne").change(function () {
+            var spouseBRanchID = $("#BuMenOne").val();
+            if (spouseBRanchID > 0) {
+                $.post("/GoodsZhangGuanLi/DaYinBuMenBiao/BuMen?DrugTypeID=" + spouseBRanchID, function (data) {
+                   
+                    selectLoadData("BuMenOtwo", data);
+                });
+            }
+        });
+        //配送部门改变
+        $("#JinHuoOne").change(function () {
+            var spouseBRanchID = $("#JinHuoOne").val();
+            if (spouseBRanchID > 0) {
+                $.post("/GoodsZhangGuanLi/DaYinBuMenBiao/PeiSonger", function (data) {
+                    selectLoadData("JinHuoTwo", data);
+                });
+            }
+        });
+        //配送部门改变
+        $("#JinHuoThree").change(function () {
+            var spouseBRanchID = $("#JinHuoThree").val();
+            if (spouseBRanchID > 0) {
+                $.post("/GoodsZhangGuanLi/DaYinBuMenBiao/PeiSongdser", function (data) {
+                    selectLoadData("JinHuoFour", data);
+                });
+            }
+        });
+        //点击关闭
+        $("#Colse").click(function () {
+            $('body').remove();
+        });
+        //点击退出body
+        $("#SelOutBtn").click(function () {
+            $('body').remove();
+        });
+    </script>
+
+
+</body>
+</html>

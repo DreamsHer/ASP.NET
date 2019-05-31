@@ -1,0 +1,361 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <title>自营合同经营商品定义</title>
+    <style type="text/css">
+        .container {
+            width: 98%;
+            padding-top: 4px;
+        }
+
+        .panel-heading {
+            font-size: 16px;
+        }
+
+        .panel-body {
+            padding: 0;
+            border-left: 3px solid #377ab7;
+            border-bottom: 3px solid #377ab7;
+            border-right: 3px solid #377ab7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="hetongjingyinshangpin">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <span style="padding-left:14px;">按合同设商品信息</span>                        
+                    </div>
+                </div>
+                <div class="panel-body" style="width:100%;height:550px;background:#f0edf1">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group" style="margin-top:5px;">
+                            <div class="col-sm-1 col-sm-1" style="left:10px;">
+                                <button type="button" class="btn btn-primary form-control" style="margin-top:10px;" id="btnXuanZeHeTong">
+                                    选择合同
+                                </button>
+                            </div>
+                            <div class="col-md-2 col-sm-1 reset" style="margin-top:10px;">
+                                <input type="text" class="form-control" name="ContractNumber" id="ContractNumber" readonly>
+                            </div>
+                            <label class="col-md-1 col-sm-1 control-label reset" style="margin-top:10px;">结算方式</label>
+                            <div class="col-md-2 col-sm-1 reset" style="margin-top:10px;">
+                                <input type="text" class="form-control" name="MethodOfSettlingAccounts" id="MethodOfSettlingAccounts" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:5px;">
+                            <label class="col-md-1 col-sm-1 control-label reset">供货单位</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="text" class="form-control" name="SupplierName" id="SupplierName" readonly>
+                            </div>
+                            <label class="col-md-1 col-sm-1 control-label reset">有效期：</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="date" class="form-control" name="ReleaseTimeStr" id="ReleaseTimeStr1" readonly>
+                            </div>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="date" class="form-control" name="ReleaseTimeStrr" id="ReleaseTimeStrr1" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:5px;">
+                            <div class="col-sm-1" style="left:10px;">
+                                <button type="button" class="btn btn-primary form-control" style="margin-top:10px;" id="btnXuanZeShangPin">
+                                    选择商品
+                                </button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-danger form-control" style="margin-top:10px;" id="btnShanChuShangPin">
+                                    删除商品
+                                </button>
+                            </div>
+                        </div>
+                        <table id="tabShangPinXinXi" style="width:100%;">
+                            <tr>
+                                <th w_index="GoodsDetailIDs" w_hidden="true">GoodsDetailID</th>
+                                <th w_index="GoodsCode">商品代码</th>
+                                <th w_index="GoodsName">商品名称</th>
+                                <th w_index="AdvanceCess">进价税率</th>
+                                <th w_index="AdvanceBid">含税采购价</th>
+                                <th w_index="NoAdvanceBid">不含税采购价</th>
+                                <th w_index="RetailMonovalent">零售单价</th>
+                                <th w_index="PurchasePriceMarkup">采购价加价率</th>
+                                <th w_check="true">缺省合同</th>
+                            </tr>
+                        </table>
+                        <div class="form-group" style="margin-top:20px;">
+                            <div class="col-sm-1 col-sm-offset-4">
+                                <button type="button" class="btn btn-success form-control" id="btnQueRen">
+                                    <span class="glyphicon glyphicon-ok"></span> 确认
+                                </button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-warning form-control" id="btnQuXiao">
+                                    <span class="glyphicon glyphicon-remove"></span> 取消
+                                </button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-info form-control" id="btnTuiChu">
+                                    <span class="glyphicon glyphicon-off"></span> 退出
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*选择合同*@
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="tianxiehetongxinxi">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:760px;height:450px;">
+                <div class="modal-header" style="background:#a8d7ef;">
+                    <span>合同选择窗体</span>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body">
+                    <table id="tabHeTongXinXi" style="width:100%">
+                        <tr>
+                            <th w_index="ContractNumber">合同号</th>
+                            <th w_index="MethodOfSettlingAccounts">结算方式</th>
+                            <th w_index="SupplierName">供货单位</th>
+                            <th w_index="ReleaseTimeStr">有效期(始)</th>
+                            <th w_index="ReleaseTimeStrr">有效期(末)</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*选择商品*@
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="tianxieshangpinxinxi">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:800px;height:450px;">
+                <div class="modal-header" style="background:#a8d7ef;">
+                    <span>商品选择窗体</span>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body">
+                    <table id="tabShangPinXinXiChuangTi" style="width:100%">
+                        <tr>
+                            <th w_index="GoodsCode">商品代码</th>
+                            <th w_index="GoodsName">商品名称</th>
+                            <th w_index="AdvanceCess">进价税率</th>
+                            <th w_index="AdvanceBid">含税采购价</th>
+                            <th w_index="NoAdvanceBid">不含税采购价</th>
+                            <th w_index="RetailMonovalent">零售单价</th>
+                            <th w_index="PurchasePriceMarkup">采购价加价率</th>
+                            <th w_check="true">缺省合同</th>
+                        </tr>
+                    </table>
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group" style="margin-top:15px;">
+                            <div class="col-sm-2 col-sm-offset-5">
+                                <button type="button" class="btn btn-success form-control" id="btnShangPinXuanZe">
+                                    选择商品
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+
+    @*页面加载数据*@
+    <script type="text/javascript">
+        var tabShangPinXinXi;
+        var tabHeTongXinXi;
+        var tabShangPinXinXiChuangTis;
+        var GoodsIDsQuan;
+        var JieShouGoodelShuZu = new Array();
+        var JieShouID = new Array();
+        //自动加载数据
+        $(document).ready(function () {
+           
+        });
+
+        //选择合同
+        $(function () {           
+            tabHeTongXinXis = $.fn.bsgrid.init('tabHeTongXinXi', {
+                url: '/ShangPinGuanLi/ShangPinGuanLiBuFen/SelectHeTongXinXiXuanZe',
+                autoLoad: false,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                pageSize: 8,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置
+                event: {
+                    customRowEvents: { //record 记录记载  options 选项
+                        click: function (record, rowIndex, trObj, options) {
+                            IdOrderFormPactID = record.OrderFormPactID
+
+                            if (IdOrderFormPactID > 0) {
+                                //获取合同信息
+                                var rowIndex = tabHeTongXinXis.getSelectedRowIndex();
+                                if (rowIndex > -1) {
+                                    var orderFormPactID = tabHeTongXinXis.getColumnValue(rowIndex, "OrderFormPactID");
+                                    $.getJSON("/ShangPinGuanLi/ShangPinGuanLiBuFen/SelectHuoQuHeTongXinXi?HTID=" + orderFormPactID, function (data) {
+                                        if (data == "失败") {
+                                            alert("你没有选择信息");
+                                        }
+                                        else {
+                                            $("#OrderFormPactID").val(data.OrderFormPactID);//隐藏域
+                                            $("#ContractNumber").val(data.ContractNumber);
+                                            $("#MethodOfSettlingAccounts").val(data.MethodOfSettlingAccounts);
+                                            $("#SupplierName").val(data.SupplierName);
+                                            $("#ReleaseTimeStr1").val(data.ReleaseTimeStr);
+                                            $("#ReleaseTimeStrr1").val(data.ReleaseTimeStrr);
+                                        }
+                                        $("#tianxiehetongxinxi").modal('hide');
+                                    });
+                                }
+                                else {
+                                    alert("请选择一条的信息");
+                                }
+
+                            }
+
+                        }
+                    }
+                }
+
+            });
+
+            $("#btnXuanZeHeTong").click(function () {               
+                tabHeTongXinXis.refreshPage();
+                $("#tianxiehetongxinxi").modal('show');
+            });
+
+        });
+
+        //商品选择
+        $(function () {
+            tabShangPinXinXiChuangTis = $.fn.bsgrid.init('tabShangPinXinXiChuangTi', {
+                url: '/ShangPinGuanLi/ShangPinGuanLiBuFen/ShangPinXinXiDeXuanZe',
+                autoLoad: false,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                pageSize: 8,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置
+                displayPagingToolbarOnlyMultiPages: true,//仅当多页时才显示分页工具条                   
+            });
+            $("#btnXuanZeShangPin").click(function () {               
+                tabShangPinXinXiChuangTis.refreshPage();
+                $("#tianxieshangpinxinxi").modal('show');
+            });
+
+            //界面表格
+            tabShangPinXinXi = $.fn.bsgrid.init('tabShangPinXinXi', {
+                url: '/ShangPinGuanLi/ShangPinGuanLiBuFen/HuoQuShangPinXinXiDeXuanZe',
+                autoLoad: false,//自动加载数据
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                rowSelectedColor: true,//是否显示选中行背景色
+                pageSize: 8,//默认页面大小
+                pageSizeSelect: true,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置
+                event: {
+                    customRowEvents: { //record 记录记载  options 选项
+                        click: function (record, rowIndex, trObj, options) {
+                            if (record != null) {
+                                GoodsDetailId = record.GoodsDetailID;
+                            }
+                        }
+                    }
+                }
+            });
+
+            //获取商品信息名称
+            $("#btnShangPinXuanZe").click(function () {
+                var rowIndex = tabShangPinXinXiChuangTis.getSelectedRowIndex();
+                if (rowIndex > -1) {
+                    GoodsIDsQuan = tabShangPinXinXiChuangTis.getColumnValue(rowIndex, "GoodsDetailID");
+                    JieShouGoodelShuZu.push(([GoodsIDsQuan]));
+                   
+                    for (var i = 0; i < JieShouID.length; i++) {
+                        var K = JieShouID[i][0];
+                        if (K > 0) {
+                            JieShouID.splice(i, 1);
+                        }
+                    }
+
+                    for (var i = 0; i < JieShouGoodelShuZu.length;) {
+                        var A = JieShouGoodelShuZu[i][0];
+                        JieShouID.push(A);
+                        i++;
+                    }
+
+                    tabShangPinXinXi.search({ JieShouID: JieShouID });
+
+                }
+                else {
+                    layer.alert("请选择一条的信息", { icon: 6, title: '提示' });
+                }
+                $("#tianxieshangpinxinxi").modal('hide');
+            });
+        });
+        
+        //删除商品
+        $("#btnShanChuShangPin").click(function () {
+            var selectRowIndex = tabShangPinXinXi.getSelectedRowIndex();//获取选中行的索引值          
+            if (selectRowIndex >= 0) {
+                if (window.confirm("您确定要删除？")) {
+                    var GoodsDetailId = tabShangPinXinXi.getColumnValue(selectRowIndex, "GoodsDetailIDs");//获取选中行的id                   
+                    $.post("/ShangPinGuanLi/ShangPinGuanLiBuFen/DeleteGoodsDetail",
+                        { GoodsDetailId: GoodsDetailId }, function (msg) {
+                            if (msg == "success") {
+                                layer.alert('删除成功', { icon: 1, title: '提示' });
+                                tabShangPinXinXi.refreshPage();
+                            }
+                            else {
+                                layer.alert('删除失败', { icon: 2, title: '提示' });
+                            }
+                        });
+                }
+            }
+            else {
+                layer.alert('请选择需要删除的数据', { icon: 0, title: '提示' });
+            }
+        });
+
+        //放弃按钮
+        $("#btnQuXiao").click(function () {
+            document.location.href = "/ShangPinGuanLi/ShangPinGuanLiBuFen/HeTongJingYinShangPin";
+        });
+
+        //页面关闭按钮
+        $(function () {       
+            $("#btnTuiChu").click(function () {
+                $("#hetongjingyinshangpin").hide();
+            });
+        });
+
+    </script>
+
+</body>
+</html>

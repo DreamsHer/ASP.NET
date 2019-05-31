@@ -1,0 +1,397 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ZongHeSelectKuCun</title>
+
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        .container { /*作用不让缩小放大时走形*/
+            width: 100%;
+            margin: 0;
+        }
+
+        .panel-heading span {
+            font-size: 18px;
+        }
+
+        .form-horizontal label {
+            font-weight: normal;
+        }
+
+        .reset {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .panel-body {
+            padding-left: 0;
+        }
+
+        a {
+            font-size: 17px;
+            margin-right: 8px;
+        }
+
+            a, a:hover, a:active, a:visited, a:link {
+                color: white;
+                text-decoration: none;
+            }
+
+        td a {
+            color: blue !important;
+        }
+
+        .h4 {
+            margin: 0 0 4px 0;
+        }
+
+        th {
+            font-weight: normal;
+        }
+
+        .h4, td, th {
+            text-align: center;
+        }
+
+        .table tbody tr td {
+            padding: 4px;
+        }
+
+            .table tbody tr td button {
+                height: 24px;
+                padding: 2px 12px;
+            }
+
+        #noticeInfor {
+            height: 100px;
+            overflow: auto;
+            border: 1px solid #eee;
+        }
+    </style>
+
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="h4">综合查询库存商品</span>
+                    <div class="pull-right">
+                        <button class="form-control btn-sm btn btn-info" id="Colse"><span class="glyphicon glyphicon-remove">关闭</span></button>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-11 col-sm-11 col-xs-11" style="padding-left:2px;">
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+
+                                <label class="col-md-1 control-label reset">库存地点：</label>
+                                <div class="col-md-2 reset">
+                                    <select class="form-control" id="KuCunDiDian"></select>
+                                </div>
+                                <label class="col-md-1 col-sm-1 control-label reset">进仓单类型</label>
+                                <div class="col-md-2 reset">
+                                    <select class="form-control" name="QuFenLeiXingID" id="QuFenLeiXingID"></select>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <button type="button" class="btn btn-primary" id="btnSelect"><span class="glyphicon glyphicon-search"></span>查 询</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <div class="row" style="margin-left:2px;">
+                        <div class="col-lg-9">
+                            <div class="row">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <span>数据列表</span>
+                                        <div class="pull-right">
+                                            <div class="row">
+                                                <div class="form-group">
+                                                    <div class="col-sm-6">
+                                                        <button class="btn btn-block" type="button" onclick="window.print();return false;"><span class="glyphicon glyphicon-print"></span> 打印页面</button>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <button class="btn btn-block" type="button" id="FanHui"><span class="glyphicon glyphicon-print"></span>返 回</button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-body" style="padding-left:15px;">
+                                        <div class="h4"><b>进仓单据</b></div>
+                                        <table id="WarserHouseTable" style="margin-top:2px;">
+                                            <tr>
+                                                <th w_num="total_line">序号</th>
+                                                <th w_index="WareHouseID" w_hidden="true">进仓ID</th>
+                                                <th w_index="OrderFormPactID" w_hidden="true">合同ID</th>
+                                                <th w_index="Remember">进仓编号</th>
+                                                <th w_index="ContractNumber">合同编号</th>
+                                                <th w_index="MethodOfSettlingAccounts">结算方式</th>
+                                                <th w_index="SupplierCHName">供货商名称</th>
+
+
+                                                <th w_index="StaffCode">收货人编号</th>
+                                                <th w_index="StaffName">收货人姓名</th>
+                                                <th w_index="RegisterTime">登记时间</th>
+
+                                                <th w_render="bsgridSetSate">审核状态</th>
+                                                <th w_index="ExamineNot" w_hidden="true">审核状态</th>
+
+                                                <th w_render="bsgridSetSategh">生效状态</th>
+                                                <th w_index="Status" w_hidden="true">生效状态</th>
+
+                                                <th w_render="bsgridSetCre">冲红状态</th>
+                                                <th w_index="CrushRedNot" w_hidden="true">冲红状态</th>
+
+                                                <th w_index="QuFenLeiXingMC">进仓类型</th>
+                                            </tr>
+                                        </table>
+
+                                        <div class="h4"><b>商品信息</b></div>
+
+                                        <table id="ShangPin">
+                                            <tr>
+                                                <th w_num="total_line" width="5%">序号</th>
+                                                <th w_index="GoodsIDs" w_hidden="true"></th><!--商品ID-->
+
+                                                <th w_index="GoodsCodes">商品代码</th>
+                                                <th w_index="GoodsTiaoMas">商品条码</th>
+                                                <th w_index="GoodsNames">商品名称</th>
+                                                <th w_index="ArtNos">货号</th>
+                                                <th w_index="SpecificationsModels">规格</th>
+                                                <th w_index="PackContents">包装含量</th>
+
+                                                <th w_index="MumberOfPackages">入库件数</th>
+                                                <th w_index="Subdivision">入库细数</th>
+
+                                                <th w_index="EstimateUnitNames">计量单位</th>
+                                                <th w_index="TaxBids">含税进价</th>
+                                                <th w_index="RetailMonovalents">零售单格</th>
+
+                                            </tr>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <div class="row">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h5>批次商品的结存数量与金额</h5>
+                                    </div>
+                                    <div class="panel-body" style="padding-left:15px;">
+                                        <div class="h6">对应的库存批次商品</div>
+
+                                        <div class="row" style="margin-top:20px;">
+                                            <div class="form-group">
+                                                <div class="col-md-4">
+                                                    <label class="control-label">库存数量：</label>
+                                                </div>
+                                                <div class="col-sm-5">
+                                                    <div style="border-bottom: #000 1px solid; width: 90px;">
+                                                        <input readonly="readonly" id="ShuLiang" style="width: 90px; border: none; color: #0000FF;font-size: 20px;" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row" style="margin-top:20px;">
+                                            <div class="form-group">
+                                                <div class="col-md-4">
+                                                    <label class="control-label">最后进价是</label>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div style="border-bottom: #000 1px solid; width: 90px;">
+                                                        <input readonly="readonly" id="JinE" style="width: 90px; border: none; color: #0000FF;font-size: 20px;" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row" style="margin-top:20px;">
+                                            <div class="form-group">
+                                                <div class="col-md-4">
+                                                    <label class="control-label">库存地点是</label>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div style="border-bottom: #000 1px solid; width: 90px;">
+                                                        <input readonly="readonly" id="KuCun" style="width: 90px; border: none; color: #0000FF;background:#fff; font-size: 20px;" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.2.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <script src="~/Content/js/jquery.form.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+
+
+    <script>
+        var WarserHouseTable;
+        var ShangPin;
+        var WareHouseIDQuan;
+
+        $(document).ready(function () {
+            //进仓单类型
+            $.post("/ShangPinJinCang/SelectWaretF/QuarctJin", function (data) {
+                selectLoadData("QuFenLeiXingID", data);
+            });
+
+            //库存地点
+            $.post("/GoodsZhangGuanLi/KuCunFenPiZhang/SelectKuCunDian", function (data) {
+                selectLoadData("KuCunDiDian", data);
+            });
+
+            WarserHouseTable = $.fn.bsgrid.init('WarserHouseTable', {
+                url: '/GoodsZhangGuanLi/KuCunFenPiZhang/ChaXunWareFonZongHe',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                rowSelectedColor: true,
+                pageSize: 9,
+                pageSizeSelect: true,//
+                pagingLittleToolbar: true,//
+                pagingToolbarAlign: "left",//
+                event: {
+                    customRowEvents: {
+                        click: function (record, rowIndex, trObj, options) {
+                            var Ids = record.WareHouseID;
+                            ShangPin.search("wareHouseID=" + record.WareHouseID);
+                            $.post("/ShangPinJinCang/SelectWaretF/ChaXunShangPinShu?wareHouseID=" + Ids, function (data) {
+                                if (data.hfdf) {
+                                    $("#ShuLiang").val(data.hfdf);
+                                    if (data.JinE) {
+                                        $("#JinE").val("￥" + data.JinE);
+                                        if (data.StockPlaceName) {
+                                            $("#KuCun").val(data.StockPlaceName);
+                                        }
+                                    }
+                                }
+                            });
+                        }
+                    }
+                }
+            });
+            //主界面 商品（明细表）
+            ShangPin = $.fn.bsgrid.init('ShangPin', {
+                url: '/ShangPinJinCang/SelectWaretF/ChaXunShangPin',
+                autoLoad: false,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过变色
+                pageSize: 5,
+                pageSizeSelect: false,
+                pagingLittleToolbar: true,
+                pagingToolbarAlign: "left",
+            });
+
+            tabNoticeSearch();
+
+            //点击关闭
+            $("#Colse").click(function () {
+                $('body').remove();
+            });
+
+        });
+
+        //条件查询
+        function tabNoticeSearch() {
+            var stockPlaceID = $("#KuCunDiDian").val();
+            var quFenLeiXingID = $("#QuFenLeiXingID").val();
+            if (quFenLeiXingID == undefined || quFenLeiXingID == "") {
+                quFenLeiXingID = 0;
+            }
+
+            if (stockPlaceID == undefined || stockPlaceID == "") {
+                stockPlaceID = 0;
+            }
+
+            WarserHouseTable.search("&quFenLeiXingID=" + quFenLeiXingID + "&stockPlaceID=" + stockPlaceID);
+        }
+        //查询按钮
+        $("#btnSelect").click(function () {
+            tabNoticeSearch();
+            ShangPin.clearGridBodyData();
+        });
+        //设置审核状态
+        function bsgridSetSate(record, rowIndex, colIndex, options) {//自定义列的代码（二）
+
+            var toVoidNo = WarserHouseTable.getRecordIndexValue(record, "ExamineNot");
+            toVoidNo = record.ExamineNot;
+            if (toVoidNo == true || toVoidNo == "true") {
+                return '<span style="color:cornflowerblue">已审核</span>';
+            } else {
+                return '<span style="color:red">未审核</span>';
+            }
+        }
+        //设置生效状态
+        function bsgridSetSategh(record, rowIndex, colIndex, options) {//自定义列的代码（二）
+            var toVoidNow = WarserHouseTable.getRecordIndexValue(record, "Status");
+            toVoidNow = record.Status;
+            if (toVoidNow == true || toVoidNow == "true") {
+                return '<span style="color:cornflowerblue">已生效</span>';
+            } else {
+                return '<span style="color:red">未生效</span>';
+            }
+        }
+        //设置冲红状态
+        function bsgridSetCre(record, rowIndex, colIndex, options) {//自定义列的代码（二）
+            var toVoidNow = WarserHouseTable.getRecordIndexValue(record, "CrushRedNot");
+            toVoidNow = record.CrushRedNot;
+            if (toVoidNow == true || toVoidNow == "true") {
+                return '<span style="color:red">冲红单</span>';
+            } else {
+                
+                return '<span style="color:cornflowerblue">有效单</span>';
+            }
+        }
+
+
+    </script>
+
+
+</body>
+</html>

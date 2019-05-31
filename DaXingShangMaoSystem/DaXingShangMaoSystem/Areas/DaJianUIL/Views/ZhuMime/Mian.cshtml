@@ -1,0 +1,1605 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Mian</title>
+
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+
+
+    <link href="~/CeShiYinYong/calendar.css" rel="stylesheet" />
+    <!--头部一-->
+    <style>
+        .container {
+            /*margin:0 auto;
+            padding:0;*/
+            width: 100%;
+            /*background:#f8f6f6;*/
+            background:#fff;
+            margin-top:5px;
+              /*background-image: url('../../../../ImaginPho/20692341_100749352000_2.jpg');*/
+        }
+
+
+        label {
+            font-weight: normal;
+        }
+
+        body{
+            /*background:#fff;*/
+           
+         
+        }
+    </style>
+
+    <!--头部二-->
+    <style>
+        .fr li{
+            float:left;
+	        list-style:none;
+	        margin-left:10px;
+            margin-top:10px;
+            
+        }
+        .fd li{
+            border-left:2px solid #999;
+        }
+        .fr li a{
+            color:#808080;
+          text-decoration:none;
+          font-size:16px;
+        }
+        .fr li a:hover {
+                color: #F00;
+            }
+        .heiderTwoFoin{
+            width:100%;
+        }
+        .heiderTwoFoin li{
+            float:left;
+	        list-style:none;
+	        margin-left:15px;
+            line-height:15px;
+          
+            /*margin-top:20px;*/
+        }
+      
+
+        .heiderTwoFoin li a{
+            color:#000000;
+            font-size:22px;
+          text-decoration:none;
+        }
+        .heiderTwoFoin li a:hover {
+                color:#fff;
+            }
+      
+
+        /*尾部的*/
+        
+        .fdgfh li{
+	        list-style:none;
+	        margin-left:-30px;
+            line-height:30px;
+        }
+     
+        .fdgfh li a{
+            color:#808080;
+          text-decoration:none;
+        }
+        .fdgfh li a:hover {
+                color: #F00;
+            }
+
+        /*搜索*/
+        .search {
+            /*width: 600px;*/
+            height: 40px;
+            margin: 0 auto;
+            position: absolute;
+            top: -4px;
+            left: 0px;
+            position: relative;
+           
+        }
+            .search input {
+                /*width: 500px;*/
+                height: 34px;
+                border: 3px solid #ff4200;
+                border-right: none;
+                font-size: 20px;
+            }
+            .fsdghj{
+                float: right;
+                /*width: 98px;*/
+              margin-top:-3px;
+                height: 36px;
+                background: #ff4200;
+                text-decoration: none;
+                color: #fff;
+                font-size: 22px;
+                text-align: center;
+                line-height: 40px;
+            }
+            .search .bginput {
+                background: url(../imges/search.png) no-repeat left center;
+                margin-top:3px;
+            }
+
+
+
+    </style>
+
+    <!--轮播-字体-->
+    <style>
+       
+         .Lunfr li{
+            font-size:17px;
+	        list-style:none;
+	        line-height:32px;
+            width:100%;
+        }
+      
+        .Lunfr li a{
+            color:#999;
+           
+          text-decoration:none;
+        }
+        .Lunfr li a:hover {
+                color: #F00;
+                
+            }
+        .Lunfr li:hover {
+            width:100%;
+            background:#fff;
+        }
+
+        /*轮播*/
+      h3{
+            color:#ff0000;
+            font-size:23px;
+        }
+        p{
+            color:#fff;
+            font-size:16px;
+        }
+
+        /*a 标签下的面板字体*/
+        .tensix {
+            /*width: 870px;*/
+             width: 100%;
+            height: 378px;
+              /*height:100%;*/
+            background: #999;
+            position: absolute;
+            margin-left: 178px;
+            top: -3px;
+        }
+        .tensix-left {
+            width: 870px;
+            height: 390px;
+            background: #dfd7e1;
+            /*float:left;*/
+        }
+.tensix-left dl{
+	border-bottom:5px solid #CCC;
+}
+.tensix-left dl{
+	overflow:hidden;
+}
+.tensix-left dl dt{
+	float:left;
+	width:90px;
+	height:25px;
+	line-height:30px;
+	text-align:right;
+	padding-right:20px;
+	font-size:18px;	
+}
+.tensix-left dl dt a{
+	color:#ff4200;
+	font-weight:bold;
+	font-size:16px;	
+}
+.tensix-left dl dd a{
+	display:block;
+	float:left;
+	border-left:1px solid #999;
+	line-height:14px;
+	color:#000000;
+	font-size:16px;
+	padding:0 10px;
+	margin:4px 0;
+}
+.tensix{
+	display:none;
+}
+.Lunfr li:hover .tensix{
+	display:block;
+}
+
+    </style>
+
+    <!--公告-->
+    <style>
+        
+        .boxs-right{
+            margin-top:5px;
+            width:100%;
+            height:170px;
+            background:#ddf3f3;
+            position:absolute;
+        }
+
+        .notice {
+            width:100%;
+            height: 168px;
+            border: 1px solid #000;
+            overflow: hidden;
+            /*margin: 10px auto;*/
+        }
+
+        .notice-tit {
+            height: 33px;
+            position: relative;
+            background: #f99;
+        }
+        .notice-tit ul {
+                position: absolute;
+                width: 401px;
+                left: -1px;
+         }
+
+        .notice-tit li {
+            font-size:20px;
+                float: left;
+                width: 58px;
+                height: 26px;
+                line-height: 26px;
+                text-align: center;
+                overflow: hidden;
+                padding: 0 1px;
+                border-bottom: 1px solid #000;
+        }
+
+        .notice-tit li.select {
+                    background: #fff;
+                    border-bottom-color: #fff;
+                    border-left: 1px solid #000;
+                    border-right: 1px solid #000;
+                    padding: 0;
+                    font-weight: bolder;
+        }
+       .notice li a:link, .notice-tit li a:visited {
+                text-decoration: none;
+                color: #000;
+        }
+        notice li a:hover {
+            color: #f90;
+        }
+        .notice-con .mod {
+            margin: 0px 6px;
+        }
+            .notice-con .mod ul li {
+                float: left;
+                width: 143px;
+                height: 36px;
+                overflow: hidden;
+            }
+        .notice-con .mod {
+            display: none;
+        }
+
+    </style>
+
+
+
+</head>
+<body>
+   <div class="container">
+
+       <div class="row" >
+              <img src="~/ImaginPho/qianTaiTuPian/TB1.hAmJpXXXXXZXpXXvYLnJVXX-990-80.jpg" style="width:100%;"/>
+       </div>
+
+       <div class="row" style="background:#dfd7e1; position: relative;">
+           <div class="form-group">
+               <div class="col-lg-7" style="position: relative;">
+                   <ul class="fr">
+                       <li class="fore1 icon-plus-state0" id="ttbar-login" clstag="h|keycount|2016|01b">
+                           <a href="javascript:login();" class="link-login">你好，请登录</a>&nbsp;&nbsp;<a href="javascript:regist();" class="link-regist style-red" style="color:#ff0000;">免费注册</a>
+                       </li>
+                   </ul>
+               </div>
+
+               <div class="col-lg-5" style="position: relative;">
+                   <ul class="fr fd">
+                       <li class="spacer"></li>
+                       <li class="fore2" clstag="h|keycount|2016|01c">
+                           <div class="dt"><a target="_blank" href="https://order.jd.com/center/list.action">我的订单</a></div>
+                       </li>
+                       <li class="spacer"></li>
+                       <li class="fore3 dorpdown" id="ttbar-myjd" clstag="h|keycount|2016|01d" data-load="1">
+                           <div class="dt cw-icon"><a target="_blank" href="https://home.jd.com/">我的京东</a><i class="iconfont"></i><i class="ci-right"><s>◇</s></i></div>
+                           <div class="dd dorpdown-layer"><div class="dd-spacer"></div><div class="dd-inner"><span class="loading"></span></div></div>
+                       </li>
+                       <li class="spacer"></li>
+                       <li class="fore4" clstag="h|keycount|2016|01e">
+                           <div class="dt"><a target="_blank" href="https://vip.jd.com/">商贸会员</a></div>
+                       </li>
+                       <li class="spacer"></li>
+                       <li class="fore5" clstag="h|keycount|2016|01f">
+                           <div class="dt"><a target="_blank" href="https://b.jd.com/">企业采购</a></div>
+                       </li>
+                       <li class="spacer"></li>
+                       <li class="fore8 dorpdown" id="ttbar-serv" clstag="h|keycount|2016|01g">
+                           <div class="dt cw-icon">客户服务</div>
+                       </li>
+                   </ul>
+               </div>
+           </div>
+       </div>
+
+
+
+       <div id="header">
+           <div class="w">
+               <div class="col-lg-4">
+                   <div class="col-lg-4"></div>
+                   <div class="col-lg-8" id="GooBiao">
+                       <div id="logo" class="logo" clstag="h|keycount|2016|02a">
+                           <h1 class="logo_tit"><img src="~/ImaginPho/12417024_165657970000_2.jpg" style="width:80px;height:80px;" /></h1>
+                           <h3 class="logo_subtit">商贸,便捷好省</h3>
+
+                       </div>
+                   </div>
+               </div>
+
+               <div class="col-lg-8" style="margin-top:50px;">
+                   <div class="row">
+                       <div class="col-lg-7">
+                          <div class="row">
+                              <div class="form-group">
+                                  <div class="search col-md-11">
+                                      <input type="text" class="bginput form-control" id="txtSearch" placeholder="     好货疯抢72小时" />
+                                  </div>
+                                  <div class="col-md-1">
+                                      <a href="#" class="btn fsdghj" style="background:#ff0000; margin-top:-3px;">搜索</a>
+                                  </div>
+                              </div>
+                             
+                          </div>
+                           <div class="row">
+                               <div class="fr" style="position:relative;margin-top:-30px;">
+                                   <ul class="fd">
+                                       <li><a href="#">生活用品</a></li>
+                                       <li><a href="#">月饼</a></li>
+                                       <li><a href="#">汽车</a></li>
+                                       <li><a href="#">笔记本</a></li>
+                                       <li><a href="#">睡衣</a></li>
+                                       <li><a href="#">运动鞋</a></li>
+                                       <li><a href="#">冰箱</a></li>
+                                       <li><a href="#">洗衣机</a></li>
+                                   </ul>
+                               </div>
+                           </div>
+                          
+                       </div>
+                       <div class="col-lg-1"></div>
+                     <div class="col-lg-4">
+                         <div class="col-md-2"></div>
+                         <div class="col-md-8" style="background:#fff;">
+                             <a target="_blank" href="#" style="font-size:18px; color:#ff0000;"><img src="~/ImaginPho/agent.png" />我的购物车</a>
+                         </div>
+                         
+                     </div>
+                   </div>
+               </div>
+           </div>
+
+          
+
+       </div>
+
+
+       <div class="LunBoheider">
+           <div class="row">
+               <div class="col-lg-12" style="background:#ff4200;">
+                   <div class="col-lg-2"></div>
+                   <div class="col-lg-2" style="background:#dfd7e1;">
+                       <div class="col-lg-3"></div>
+                       <div class="col-lg-9">
+                           <h4 style="color:#000000;">商品分类</h4>
+                       </div>
+                   </div>
+
+                   <div class="heiderTwoFoin">
+                       <ul class="TwoFoin">
+                           <li><a href="#">生活用品</a></li>
+                           <li><a href="#">品牌街</a></li>
+                           <li><a href="#">电器城</a></li>
+                           <li><a href="#">医药馆</a></li>
+                           <li><a href="#">魅力惠</a></li>
+                           <li><a href="#">运动鞋</a></li>
+                           <li><a href="#">营业厅</a></li>
+                           <li><a href="#">商城超市</a></li>
+                       </ul>
+                   </div>
+                   
+               </div>
+               
+
+           </div>
+
+           <div class="row">
+               <div class="col-lg-12" style="height:417px;background:#f8f6f6;">
+                       <div style="width:100%;">
+                           <div id="MyLunBo" class="carousel slide">
+                               <!--slide属性、让图片平滑过去切换-->
+                               <ol class="carousel-indicators">
+                                   <!--轮播图片的计数器-->
+                                   <li data-target="#mymyCarousel" data-slide-to="0" class="active"></li><!--target 目标；slide 滑动-->
+                                   <li data-target="#mymyCarousel" data-slide-to="1"></li>
+                                   <li data-target="#mymyCarousel" data-slide-to="2"></li>
+                                   <li data-target="#mymyCarousel" data-slide-to="3"></li>
+                                   <li data-target="#mymyCarousel" data-slide-to="4"></li>
+                               </ol>
+                               <div class="carousel-inner">
+                                   <!--轮播的图片-->
+                                   <div class="item active" style=" height:417px; width:100%;">
+                                       <img src="~/Content/ImaginPho/photo (157).jpg" alt="" style="height:100%;width:100%;"/>
+                                    
+                                       <div class="carousel-caption">
+                                           <h3>
+                                               夜幕降临
+                                               <p>那年的夏天，遥远的你在对面</p>
+                                           </h3>
+                                       </div>
+                                   </div>
+                                   <div class="item" style=" height:417px; width:100%;">
+                                       <img src="~/ImaginPho/20692341_100749352000_2.jpg" alt="" style="height:100%;width:100%;"/>
+                                       <div class="carousel-caption">
+                                           <h3>
+                                               迷漫的都市
+                                               <p>傍晚时分总会迎来人群急促的穿梭，回家的脚步</p>
+                                           </h3>
+                                       </div>
+                                   </div>
+                                   <div class="item" style=" height:417px; width:100%;">
+                                       <img src="~/ImaginPho/photo (153).jpg" alt="" style="height:100%;width:100%;"/>
+                                    
+                                   </div>
+                                   <div class="item" style=" height:417px; width:100%;">
+                                       <img src="~/Content/ImaginPho/photo (197).jpg" alt="" style="height:100%;width:100%;"/>
+                                       
+                                   </div>
+                                   <div class="item" style=" height:417px; width:100%;">
+                                       <img src="~/Content/ImaginPho/photo (203).jpg" alt="" style="height:100%;width:100%;"/>
+                                   </div>
+                               </div>
+                               <!--轮播图片的控制器-->
+                               <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                   <span class="glyphicon glyphicon-chevron-left"></span>
+                               </a>
+                               <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                   <span class="glyphicon glyphicon-chevron-right"></span>
+                               </a>
+                           </div>
+                   </div>
+
+
+                   <div class="LunBoPhoto" style="position:relative;z-index: 2;top:-417px;">
+                       <div class="col-lg-2"></div>
+                       <div class="col-lg-2" style="background:#ddf3f3; z-index: 2;" id="FenLeiBan">
+                           <ul class="Lunfr">
+                               <li>
+                                   <a href="#">☆女装/外套</a>
+                                   <div class="tensix">
+                                       <div class="tensix-left">
+                                           <dl>
+                                               <dt><a href="#">时代潮流</a></dt>
+                                               <dd>
+                                                   <a href="#">护手露</a> <a href="#">化妆品</a> <a href="#">首饰</a>
+                                                   <a href="#">外套</a> <a href="#">牛仔裤</a> <a href="#">耳环</a>
+                                                   <a href="#">帽子</a> <a href="#">鞋子</a> <a href="#">手包</a>
+                                               </dd>
+                                               <dd>
+                                                   <a href="#">护手露</a> <a href="#">化妆品</a> <a href="#">首饰</a>
+                                                   <a href="#">外套</a> <a href="#">牛仔裤</a> <a href="#">耳环</a>
+                                                   <a href="#">帽子</a> <a href="#">鞋子</a> <a href="#">手包</a>
+                                               </dd>
+                                           </dl>
+                                           <dl>
+                                               <dt><a href="#">超级实惠</a></dt>
+                                               <dd>
+                                                   <a href="#">护手露</a> <a href="#">化妆品</a> <a href="#">首饰</a>
+                                                   <a href="#">外套</a> <a href="#">牛仔裤</a> <a href="#">耳环</a>
+                                                   <a href="#">帽子</a> <a href="#">鞋子</a> <a href="#">手包</a>
+                                               </dd>
+                                               <dd>
+                                                   <a href="#">护手露</a> <a href="#">化妆品</a> <a href="#">首饰</a>
+                                                   <a href="#">外套</a> <a href="#">牛仔裤</a> <a href="#">耳环</a>
+                                                   <a href="#">帽子</a> <a href="#">鞋子</a> <a href="#">手包</a>
+                                               </dd>
+                                           </dl>
+                                       </div>
+                                   </div>
+
+                               </li>
+                               <li><a href="#">☆男装/运动户外</a></li>
+                               <li><a href="#">☆女鞋/男鞋/箱包</a></li>
+                               <li><a href="#">☆化妆品/个人护理</a></li>
+                               <li><a href="#">☆腕表/珠宝饰品/眼镜</a></li>
+                               <li><a href="#">☆手机/数码/电脑办公</a></li>
+                               <li><a href="#">☆生鲜水果</a></li>
+                               <li><a href="#">☆零食/进口食品/茶酒</a></li>
+                               <li><a href="#">☆家具建材</a></li>
+                               <li><a href="#">☆大家电/生活电器</a></li>
+                               <li><a href="#">☆汽车/配件/用品</a></li>
+                               <li><a href="#">☆图书宝典</a></li>
+                           </ul>
+                       </div>
+
+
+                   </div>
+               </div>
+           </div>
+          
+       </div>
+
+       <!--活动秒杀部分-->
+       <div class="col-lg-12" style="background:#fff">
+           <div class="col-lg-8">
+               <div class="row">
+                   <div class="col-md-4">
+                       <label class="control-label" style="color:#0d7512;font-size:28px;font-family: '华文新魏';">活动专区, 秒杀抢货！</label>
+                   </div>
+               </div>
+
+               <div class="row">
+                   <div class="form-group has-feedback">
+                       <div class="col-md-3">
+                           <a href="http://localhost:1915/DaJianUIL/ZhuMime/ShoppingCart">
+                               <div class="img-box text-center" style="width:100%; height:160px;background:#e7f7f5">
+                                   <img src="" alt="" style="width:100%;height:100%" id="HuoDongOne" />
+                               </div>
+                               <div class="">
+                                   <div>
+                                       <input readonly="readonly" id="HuoDongOneZi" style="width: 180px; border: none; background:#fff; font-size: 20px;" />
+                                   </div>
+                               </div>
+                               <div class="">
+                                   <div>
+                                       <input readonly="readonly" id="HuoDongOneZitwo" style="width: 180px; border: none; color: #808080;background:#fff; font-size: 10px;" />
+                                   </div>
+                               </div>
+                           </a>
+                       </div>
+                       <div class="col-md-3">
+                           <a href="#">
+                               <div class="img-box text-center" style="width:100%; height:160px;background:#e7f7f5">
+                                   <img src="" alt="" style="width:100%;height:100%" id="HuoDongTwo" />
+                               </div>
+                               <div class="">
+                                   <div>
+                                       <input readonly="readonly" id="HuoDongTwoZi" style="width: 180px; border: none; background:#fff; font-size: 20px;" />
+                                   </div>
+                               </div>
+                               <div class="">
+                                   <div>
+                                       <input readonly="readonly" id="HuoDongTwoZitwo" style="width: 180px; border: none; color: #808080; background:#fff; font-size: 10px;" />
+                                   </div>
+                               </div>
+                           </a>
+                           
+                       </div>
+                       <div class="col-md-3">
+                           <a href="#">
+                               <div class="img-box text-center" style="width:100%; height:160px;background:#e7f7f5">
+                                   <img src="" alt="" style="width:100%;height:100%" id="HuoDongfrtee" />
+                               </div>
+                               <div class="">
+                                   <div>
+                                       <input readonly="readonly" id="HuoDongfrteeZi" style="width: 180px; border: none; background:#fff; font-size: 20px;" />
+                                   </div>
+                               </div>
+                               <div class="">
+                                   <div>
+                                       <input readonly="readonly" id="HuoDongfrteeZitwo" style="width: 180px; border: none; color: #808080; background:#fff; font-size: 10px;" />
+                                   </div>
+                               </div>
+                           </a>
+                           
+                       </div>
+                       <div class="col-md-3">
+                          <a href="#">
+                              <div class="img-box text-center" style="width:100%; height:160px;background:#e7f7f5">
+                                  <img src="" alt="" style="width:100%;height:100%" id="HuoDongFroue" />
+                              </div>
+                              <div class="">
+                                  <div>
+                                      <input readonly="readonly" id="HuoDongFroueZi" style="width: 180px; border: none; background:#fff; font-size: 20px;" />
+                                  </div>
+                              </div>
+                              <div class="">
+                                  <div>
+                                      <input readonly="readonly" id="HuoDongFroueZitwo" style="width: 180px; border: none; color: #808080;background:#fff; font-size: 10px;" />
+                                  </div>
+                              </div>
+                          </a>
+                       </div>
+
+                   </div>
+               </div>
+           </div>
+           <div class="col-lg-3">
+               @*<div class="col-md-3">*@
+                   <div class="boxs-right" style="background:#eee">
+                       <div id="notice" class="notice">
+                           <div id="notice-tit" class="notice-tit">
+                               <ul>
+                                   <li>
+                                       <a href="javascript::">公告</a>
+                                   </li>
+                                   <li>
+                                       <a href="#">规则</a>
+                                   </li>
+                                   <li>
+                                       <a href="#">论坛</a>
+                                   </li>
+                                   <li>
+                                       <a href="#">安全</a>
+                                   </li>
+                                   <li class="select">
+                                       <a href="#">公益</a>
+                                   </li>
+                               </ul>
+                           </div>
+                           <div id="notice-con" class="notice-con">
+                               <div class="mod">
+                                   <ul>
+                                       <li>
+                                           <a href="#">
+                                               张勇：要玩快乐足球
+                                           </a>
+                                       </li>
+                                       <li>
+                                           <a href="#">
+                                               阿里2000万驰援灾区
+                                           </a>
+                                       </li>
+                                       <li>
+                                           <a href="#">
+                                               旅游宝让你边玩边赚钱
+                                           </a>
+                                       </li>
+                                       <li>
+                                           <a href="#">
+                                               多行跟进阿里信用贷款
+                                           </a>
+                                       </li>
+                                   </ul>
+                               </div>
+                               <div class="mod">
+                                   <ul>
+                                       <li>
+                                           <span>[<a href="#">通知</a>]</span>
+                                           <a href="#">
+                                               "滥发"即将更新
+                                           </a>
+                                       </li>
+                                       <li>
+                                           <span>
+                                               [
+                                               <a href="#">通知</a>
+                                               ]
+                                           </span>
+                                           <a href="#">
+                                               比特币严管啦！
+                                           </a>
+                                       </li>
+                                       <li>
+                                           <span>
+                                               [
+                                               <a href="#">通知</a>
+                                               ]
+                                           </span>
+                                           <a href="#">
+                                               禁发商品目录
+                                           </a>
+                                       </li>
+                                       <li>
+                                           <span>
+                                               [
+                                               <a href="#">通知</a>
+                                               ]
+                                           </span>
+                                           <a href="#">
+                                               商品属性限制
+                                           </a>
+                                       </li>
+                                   </ul>
+                               </div>
+                               <div class="mod">
+                                   <ul>
+                                       <li>
+                                           <span>
+                                               [
+                                               <a href="#">聚焦</a>
+                                               ]
+                                           </span>
+                                           <a href="#">
+                                               金牌卖家再启航
+                                           </a>
+                                       </li>
+                                       <li>
+                                           <span>
+                                               [
+                                               <a href="#">功能</a>
+                                               ]
+                                           </span>
+                                           <a href="#">
+                                               橱窗功能升级啦
+                                           </a>
+                                       </li>
+                                       <li>
+                                           <span>
+                                               [
+                                               <a href="#">话题</a>
+                                               ]
+                                           </span>
+                                           <a href="#">
+                                               又爱又恨优惠券
+                                           </a>
+                                       </li>
+                                       <li>
+                                           <span>
+                                               [
+                                               <a href="#">工具</a>
+                                               ]
+                                           </span>
+                                           <a href="#">
+                                               购后总店铺红包
+                                           </a>
+                                       </li>
+                                   </ul>
+                               </div>
+                               <div class="mod">
+                                   <ul>
+                                       <li>
+                                           <a href="#">
+                                               个人重要信息要管l牢！
+                                           </a>
+                                       </li>
+                                       <li>
+                                           <a href="#">
+                                               卖家防范红包诈骗提醒！
+                                           </a>
+                                       </li>
+                                       <li>
+                                           <a href="#">
+                                               更换收货地址的陷阱！
+                                           </a>
+                                       </li>
+                                       <li>
+                                           <a href="#">
+                                               注意骗子的技术部升级了！
+                                           </a>
+                                       </li>
+                                   </ul>
+                               </div>
+                               <div class="mod" style="display:block">
+                                   <ul>
+                                       <li>
+                                           <a href="#">
+                                               走进无声课堂
+                                           </a>
+                                       </li>
+                                       <li>
+                                           <a href="#">
+                                               淘宝之行大众评审赢公益
+                                           </a>
+                                       </li>
+                                       <li>
+                                           <a href="#">
+                                               爱心品牌联合征集
+                                           </a>
+                                       </li>
+                                       <li>
+                                           <a href="#">
+                                               名公益机构淘宝开店攻略
+                                           </a>
+                                       </li>
+                                   </ul>
+                               </div>
+                           </div>
+                       @*</div>*@
+
+                   </div>
+               </div>
+           </div>
+          
+       </div>
+
+
+       <!--购物超市-->
+       <div class="col-lg-12" style="background:#dfd7e1;margin-top:10px;">
+           <div class="row">
+               <div class="col-md-4">
+                   <label class="control-label" style="color:#6261b7;font-size:28px;font-family: '华文新魏';">购物超市  Shopping & supermarket</label>
+               </div>
+           </div>
+
+           <div class="row">
+               <div class="col-lg-3">
+                   <div class="form-group has-feedback">
+                       <div class="col-md-12">
+                           <div class="row" style="background:#fff">
+                               <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                                   <img src="" alt="" style="width:100%;height:100%"  id="GoodesOne" />
+                               </div>
+                             
+                           </div>
+                           <div class="row" style="background:#fff">
+                               <h6>那年的夏天，遥远的你在对面</h6>
+                               <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                                   <img src="" alt="" style="width:100%;height:100%" id="GoodesTwo" />
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="col-lg-9" style="background:#fff;">
+                  <div class="row">
+                      <div class="col-lg-3"  style="margin-left:-3px;">
+                          <div class="col-lg-12">
+                              <div class="row" style="background:#fff">
+                                  <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                                      <img src="" alt="" style="width:100%" height="110" id="Goodesftree" />
+                                  </div>
+                                  <h6>那年的夏天，遥远的你在对面</h6>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-3" style="margin-left:-3px;">
+                          <div class="col-lg-12">
+                              <div class="row" style="background:#fff">
+                                  <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                                      <img src="" alt="" style="width:100%" height="110" id="GoodesFour" />
+                                  </div>
+                                  <h6>那年的夏天，遥远的你在对面</h6>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-3" style="margin-left:-3px;">
+                          <div class="col-lg-12">
+                              <div class="row" style="background:#fff">
+                                  <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                                      <img src="" alt="" style="width:100%" height="110" id="GoodesFirt" />
+                                  </div>
+                                  <h6>那年的夏天，遥远的你在对面</h6>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-3" style="margin-left:-3px;">
+                          <div class="col-lg-12">
+                              <div class="row" style="background:#fff">
+                                  <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                                      <img src="" alt="" style="width:100%" height="110" id="GoodesSix" />
+                                  </div>
+                                  <h6>那年的夏天，遥远的你在对面</h6>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                   <div class="row">
+                       <div class="col-lg-3" style="margin-left:-3px;">
+                           <div class="col-lg-12">
+                               <div class="row" style="background:#fff">
+                                   <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                                       <img src="" alt="" style="width:100%" height="110" id="GoodesSeven" />
+                                   </div>
+                                   <h6>那年的夏天，遥远的你在对面</h6>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="col-lg-3" style="margin-left:-3px;">
+                           <div class="col-lg-12">
+                               <div class="row" style="background:#fff">
+                                   <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                                       <img src="" alt="" style="width:100%" height="110" id="GoodesEight" />
+                                   </div>
+                                   <h6>那年的夏天，遥远的你在对面</h6>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="col-lg-3" style="margin-left:-3px;">
+                           <div class="col-lg-12">
+                               <div class="row" style="background:#fff">
+                                   <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                                       <img src="" alt="" style="width:100%" height="110" id="GoodesNinget" />
+                                   </div>
+                                   <h6>那年的夏天，遥远的你在对面</h6>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="col-lg-3" style="margin-left:-3px;">
+                           <div class="col-lg-12">
+                               <div class="row" style="background:#fff">
+                                   <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                                       <img src="" alt="" style="width:100%" height="110" id="GoodesTen" />
+                                   </div>
+                                   <h6>那年的夏天，遥远的你在对面</h6>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+
+           
+
+           </div>
+
+       </div>
+
+       <!--广告横幅-->
+       <div class="oNEGuangGao">
+           <div class="col-lg-12" style="background:#f99;margin-top:10px;">
+               <div class="row" style="position:relative;">
+                   <img src="~/ImaginPho/qianTaiTuPian/er1_05.png" style="width:100%;height:90px;" />
+               </div>
+           </div>
+       </div>
+
+       <!--靓丽人生-->
+       <div class="col-lg-12" style="background:#dfd7e1;margin-top:10px;">
+           <div class="row">
+               <div class="col-md-4">
+                   <label class="control-label" style="color:#6261b7;font-size:28px;font-family: '华文新魏';">靓丽人生  FASHION & BEAUTY</label>
+               </div>
+           </div>
+
+           <div class="row">
+               <div class="col-lg-3">
+                   <div class="form-group has-feedback">
+                       <div class="col-md-12">
+                         <div class="row" style="background:#fff">
+                             <h6>那年的夏天，遥远的你在对面</h6>
+                             <div class="img-box text-center" style="width:100%; height:380px;background:#e7f7f5">
+                                 <img src="" alt="" style="width:100%" height="110" id="buideforBit" />
+                             </div>
+                         </div>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="col-lg-4" style="background:#fff;">
+                   <div class="row">
+                       <div class="col-md-12">
+                           <label class="control-label" style="color:#f99;font-size:20px;font-family: '华文新魏';">时尚潮流  FADDISH & TIDE</label>
+                       </div>
+                   </div>
+                   <div class="row">
+                       <div class="col-lg-4">
+                           <div class="img-box text-center" style="width:100%; height:160px;background:#e7f7f5">
+                               <img src="" alt="" style="width:100%" height="110" id="buideforTwo" />
+                           </div>
+                           <div class="">
+                               <h6>那年的夏天，遥远的你在对面</h6>
+                           </div>
+                       </div>
+                       <div class="col-lg-4">
+                           <div class="img-box text-center" style="width:100%; height:160px;background:#e7f7f5">
+                               <img src="" alt="" style="width:100%" height="110" id="buideforfreetn" />
+                           </div>
+                           <div class="">
+                               <h6>那年的夏天，遥远的你在对面</h6>
+                           </div>
+                       </div>
+                       <div class="col-lg-4">
+                           <div class="img-box text-center" style="width:100%; height:160px;background:#e7f7f5">
+                               <img src="" alt="" style="width:100%" height="110" id="buideforFour" />
+                           </div>
+                           <div class="">
+                               <h6>那年的夏天，遥远的你在对面</h6>
+                           </div>
+                       </div>
+                       
+                   </div>
+                   <div class="row">
+                       <div class="col-lg-4">
+                           <div class="img-box text-center" style="width:100%; height:160px;background:#e7f7f5">
+                               <img src="" alt="" style="width:100%" height="110" id="buideforFinrt" />
+                           </div>
+                           <div class="">
+                               <h6>那年的夏天，遥远的你在对面</h6>
+                           </div>
+                       </div>
+                       <div class="col-lg-4">
+                           <div class="img-box text-center" style="width:100%; height:160px;background:#e7f7f5">
+                               <img src="" alt="" style="width:100%" height="110" id="buideforSix" />
+                           </div>
+                           <div class="">
+                               <h6>那年的夏天，遥远的你在对面</h6>
+                           </div>
+                       </div>
+                       <div class="col-lg-4">
+                           <div class="img-box text-center" style="width:100%; height:160px;background:#e7f7f5">
+                               <img src="" alt="" style="width:100%" height="110" id="buideforSevent" />
+                           </div>
+                           <div class="">
+                               <h6>那年的夏天，遥远的你在对面</h6>
+                           </div>
+                       </div>
+
+                   </div>
+               </div>
+
+               <div class="col-lg-4" style="background:#fff;margin-left:10px;">
+                   <div class="row">
+                       <div class="col-md-12">
+                           <label class="control-label" style="color:#1bb9b4;font-size:20px;font-family: '华文新魏';">品牌活动BRAND ACTIVITY</label>
+                       </div>
+                   </div>
+
+                   <div class="row">
+                       <div class="col-lg-6">
+                           <div class="img-box text-center" style="width:100%; height:160px;background:#e7f7f5">
+                               <img src="" alt="" style="width:100%" height="110" id="buideforEight" />
+                           </div>
+                           <div class="">
+                               <h6>那年的夏天，遥远的你在对面</h6>
+                           </div>
+                       </div>
+                       <div class="col-lg-6">
+                           <div class="img-box text-center" style="width:100%; height:160px;background:#e7f7f5">
+                               <img src="" alt="" style="width:100%" height="110" id="buideforNinety" />
+                           </div>
+                           <div class="">
+                               <h6>那年的夏天，遥远的你在对面</h6>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="row">
+                       <div class="col-lg-6">
+                           <div class="img-box text-center" style="width:100%; height:160px;background:#e7f7f5">
+                               <img src="" alt="" style="width:100%" height="110" id="buideforTen" />
+                           </div>
+                           <div class="">
+                               <h6>那年的夏天，遥远的你在对面</h6>
+                           </div>
+                       </div>
+                       <div class="col-lg-6">
+                           <div class="img-box text-center" style="width:100%; height:160px;background:#e7f7f5">
+                               <img src="" alt="" style="width:100%" height="110" id="buideforEnely" />
+                           </div>
+                           <div class="">
+                               <h6>那年的夏天，遥远的你在对面</h6>
+                           </div>
+                       </div>
+                   </div>
+
+               </div>
+
+           </div>
+
+       </div>
+
+      
+
+       <!--广告横幅-->
+       <div class="TwoGuangGao">
+           <div class="col-lg-12" style="background:#f99;margin-top:10px;">
+               <div class="row" style="position:relative;">
+                   <img src="~/ImaginPho/qianTaiTuPian/abl17_07.png" style="width:100%;height:90px;"/>
+                   
+               </div>
+           </div>
+       </div>
+      
+       <!--衣服时装 注：Id未设 -->
+       <div class="col-lg-12" style="background:#dfd7e1;margin-top:10px;">
+           <div class="row">
+               <div class="col-md-4">
+                   <label class="control-label" style="color:#6261b7;font-size:28px;font-family: '华文新魏';">衣服时装  clothing & fashionable</label>
+               </div>
+           </div>
+
+           <div class="row">
+               <div class="col-lg-2" style="margin-left:-3px;">
+                   <div class="col-lg-12">
+                       <div class="row" style="background:#fff">
+                           <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                               <img src="" alt="" style="width:100%" height="110" id="Goodesftree" />
+                           </div>
+                           <h6>那年的夏天，遥远的你在对面</h6>
+                       </div>
+                   </div>
+               </div>
+               <div class="col-lg-2" style="margin-left:-3px;">
+                   <div class="col-lg-12">
+                       <div class="row" style="background:#fff">
+                           <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                               <img src="" alt="" style="width:100%" height="110" id="Goodesftree" />
+                           </div>
+                           <h6>那年的夏天，遥远的你在对面</h6>
+                       </div>
+                   </div>
+               </div>
+               <div class="col-lg-2" style="margin-left:-3px;">
+                   <div class="col-lg-12">
+                       <div class="row" style="background:#fff">
+                           <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                               <img src="" alt="" style="width:100%" height="110" id="Goodesftree" />
+                           </div>
+                           <h6>那年的夏天，遥远的你在对面</h6>
+                       </div>
+                   </div>
+               </div>
+               <div class="col-lg-2" style="margin-left:-3px;">
+                   <div class="col-lg-12">
+                       <div class="row" style="background:#fff">
+                           <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                               <img src="" alt="" style="width:100%" height="110" id="Goodesftree" />
+                           </div>
+                           <h6>那年的夏天，遥远的你在对面</h6>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="col-lg-2" style="margin-left:-3px;">
+                   <div class="col-lg-12">
+                       <div class="row" style="background:#fff">
+                           <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                               <img src="" alt="" style="width:100%" height="110" id="Goodesftree" />
+                           </div>
+                           <h6>那年的夏天，遥远的你在对面</h6>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="col-lg-2" style="margin-left:-3px;">
+                   <div class="col-lg-12">
+                       <div class="row" style="background:#fff">
+                           <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                               <img src="" alt="" style="width:100%" height="110" id="Goodesftree" />
+                           </div>
+                           <h6>那年的夏天，遥远的你在对面</h6>
+                       </div>
+                   </div>
+               </div>
+            
+
+           </div>
+
+           <div class="row">
+               <div class="col-lg-2" style="margin-left:-3px;">
+                   <div class="col-lg-12">
+                       <div class="row" style="background:#fff">
+                           <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                               <img src="" alt="" style="width:100%" height="110" id="Goodesftree" />
+                           </div>
+                           <h6>那年的夏天，遥远的你在对面</h6>
+                       </div>
+                   </div>
+               </div>
+               <div class="col-lg-2" style="margin-left:-3px;">
+                   <div class="col-lg-12">
+                       <div class="row" style="background:#fff">
+                           <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                               <img src="" alt="" style="width:100%" height="110" id="Goodesftree" />
+                           </div>
+                           <h6>那年的夏天，遥远的你在对面</h6>
+                       </div>
+                   </div>
+               </div>
+               <div class="col-lg-2" style="margin-left:-3px;">
+                   <div class="col-lg-12">
+                       <div class="row" style="background:#fff">
+                           <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                               <img src="" alt="" style="width:100%" height="110" id="Goodesftree" />
+                           </div>
+                           <h6>那年的夏天，遥远的你在对面</h6>
+                       </div>
+                   </div>
+               </div>
+               <div class="col-lg-2" style="margin-left:-3px;">
+                   <div class="col-lg-12">
+                       <div class="row" style="background:#fff">
+                           <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                               <img src="" alt="" style="width:100%" height="110" id="Goodesftree" />
+                           </div>
+                           <h6>那年的夏天，遥远的你在对面</h6>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="col-lg-2" style="margin-left:-3px;">
+                   <div class="col-lg-12">
+                       <div class="row" style="background:#fff">
+                           <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                               <img src="" alt="" style="width:100%" height="110" id="Goodesftree" />
+                           </div>
+                           <h6>那年的夏天，遥远的你在对面</h6>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="col-lg-2" style="margin-left:-3px;">
+                   <div class="col-lg-12">
+                       <div class="row" style="background:#fff">
+                           <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                               <img src="" alt="" style="width:100%" height="110" id="Goodesftree" />
+                           </div>
+                           <h6>那年的夏天，遥远的你在对面</h6>
+                       </div>
+                   </div>
+               </div>
+
+
+           </div>
+
+       </div>
+
+       <!--优、七、特、帮助-->
+       <div class="col-lg-12" style="margin-top:30px;">
+           <div class="row">
+               <div class="col-lg-3">
+                   <div class="form-group">
+                       <div class="col-md-3"></div>
+                       <div class="col-md-3">
+                           <img src="~/ImaginPho/qianTaiTuPian/cabe7_03.png" style="margin-top:20px;"/>
+                       </div>
+                       <div class="col-md-6">
+                           <div class="row">
+                               <h3>品质保障</h3>
+                           </div>
+                           <div class="row">
+                               <h6>品质护航、购物无忧</h6>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+
+
+               <div class="col-lg-3">
+                   <div class="form-group">
+                       <div class="col-md-3">
+                           <img src="~/ImaginPho/qianTaiTuPian/cabe7_05.png" style="margin-top:20px;"/>
+                       </div>
+                       <div class="col-md-7">
+                           <div class="row">
+                               <h3>七天无理由退货</h3>
+                           </div>
+                           <div class="row">
+                               <h6>为你提供售后无忧保障</h6>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="col-lg-3">
+                   <div class="form-group">
+                       <div class="col-md-3">
+                           <img src="~/ImaginPho/qianTaiTuPian/cabe7_07.png" style="margin-top:20px;" />
+                       </div>
+                       <div class="col-md-7">
+                           <div class="row">
+                               <h3>特色服务体现</h3>
+                           </div>
+                           <div class="row">
+                               <h6>为你呈现不一样的服务</h6>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="col-lg-3">
+                   <div class="form-group">
+                       <div class="col-md-3">
+                           <img src="~/ImaginPho/qianTaiTuPian/cabe7_09.png" style="margin-top:20px;" />
+                          
+                       </div>
+                       <div class="col-md-7">
+                           <div class="row">
+                               <h3>帮助中心</h3>
+                           </div>
+                           <div class="row">
+                               <h6>你的购物指南</h6>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+
+
+           </div>
+
+       </div>
+
+       <!--最后底部-->
+       <div class="col-lg-12" style="margin-top:10px;">
+           <div class="row">
+               <div class="col-lg-1"></div>
+               <div class="col-lg-2">
+                   <div class="col-md-12">
+                       <div class="row">
+                           <h4>购物指物</h4>
+                       </div>
+                       <div class="row">
+                          <ul class="fdgfh">
+                              <li><a href="#">免费注册</a></li>
+                              <li><a href="#">开通支付宝</a></li>
+                              <li><a href="#">支付宝充值</a></li>
+                          </ul>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="col-lg-2">
+                   <div class="col-md-12">
+                       <div class="row">
+                           <h4>天猫保障</h4>
+                       </div>
+                       <div class="row">
+                           <ul class="fdgfh">
+                               <li><a href="#">发票保障</a></li>
+                               <li><a href="#">售后规则</a></li>
+                               <li><a href="#">缺货赔付</a></li>
+                           </ul>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="col-lg-2">
+                   <div class="col-md-12">
+                       <div class="row">
+                           <h4>支付方式</h4>
+                       </div>
+                       <div class="row">
+                           <ul class="fdgfh">
+                               <li><a href="#">快捷方式</a></li>
+                               <li><a href="#">信用卡</a></li>
+                               <li><a href="#">余额宝</a></li>
+                               <li><a href="#">蚂蚁花呗</a></li>
+                               <li><a href="#">货到付款</a></li>
+                           </ul>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="col-lg-2">
+                   <div class="col-md-12">
+                       <div class="row">
+                           <h4>商家服务</h4>
+                       </div>
+                       <div class="row">
+                           <ul class="fdgfh">
+                               <li><a href="#">商家入驻</a></li>
+                               <li><a href="#">商家中心</a></li>
+                               <li><a href="#">天猫规则</a></li>
+                               <li><a href="#">天猫智库</a></li>
+                               <li><a href="#">物流服务</a></li>
+                               <li><a href="#">喵言喵语</a></li>
+                               <li><a href="#">运营服务</a></li>
+                           </ul>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="col-lg-2">
+                   <div class="col-md-12">
+                       <div class="row">
+                           <h4>商贸超市</h4>
+                       </div>
+                       <div class="row">
+                           <img src="~/ImaginPho/qianTaiTuPian/cabe7_15.png" />
+                       </div>
+                   </div>
+               </div>
+
+              
+
+           </div>
+
+       </div>
+
+   </div>
+    
+
+    <script src="~/Content/js/jquery-1.11.3.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+
+   
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+
+    
+
+    <script>
+
+        $(document).ready(function () {
+            
+
+            $.post("/DaJianUIL/ZhuMime/SelectGoodeseilt", function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    if ($("#HuoDongOneZi").val() == '') {
+                        $("#HuoDongOneZi").val(data[i].GoodsName);
+                        $("#HuoDongOneZitwo").val(data[i].Remember);
+                        $("#HuoDongOne").attr("src", "/DaJianUIL/ZhuMime/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    }
+
+                    else if ($("#HuoDongTwoZi").val() == '') {
+                        $("#HuoDongTwoZi").val(data[i].GoodsName);
+                        $("#HuoDongTwoZitwo").val(data[i].Remember);
+                        $("#HuoDongTwo").attr("src", "/DaJianUIL/ZhuMime/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    }
+
+
+                    else if ($("#HuoDongfrteeZi").val() == '') {
+                        $("#HuoDongfrteeZi").val(data[i].GoodsName);
+                        $("#HuoDongfrteeZitwo").val(data[i].Remember);
+                        $("#HuoDongfrtee").attr("src", "/DaJianUIL/ZhuMime/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    }
+
+                    else if ($("#HuoDongFroueZi").val() == '') {
+                        $("#HuoDongFroueZi").val(data[i].GoodsName);
+                        $("#HuoDongFroueZitwo").val(data[i].Remember);
+                        $("#HuoDongFroue").attr("src", "/DaJianUIL/ZhuMime/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    }
+                }
+            });
+            
+
+
+            $.post("/DaJianUIL/ZhuMime/SelectGoodeseiltYuan", function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    if ($("#GoodesOne").val() == '') {
+                        $("#GoodesOne").attr("src", "/DaJianUIL/ZhuMime/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    }
+                }
+            });
+
+            //$.post("/DaJianUIL/ZhuMime/SelectGoodeseiltYuan", function (data) {
+            //    for (var i = 0; i < data.length; i++) {
+            //        if ($("#GoodesOneZi").val() == '') {
+            //            $("#GoodesOneZi").val(data[i].GoodsName + " 价格：￥" + data[i].TaxBid + "/" + data[i].Remarks);
+            //            $("#GoodesOne").attr("src", "/DaJianUIL/ZhuMime/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+            //        }
+            //    }
+            //});
+
+
+            //$("#HuoDongOne").attr("src", "/DaJianUIL/ZhuMime/SelectGoodeseilt");
+        });
+            
+       
+      
+        function dgfgd() {
+            $("#GooBiao").animate({
+                left: 10, opacity: 'show'
+            }, 2000);  
+        }
+
+      
+
+        //lun
+        $(function () {
+            dgfgd();
+            $(".carousel").carousel({ 
+                interval: 5000
+                         
+            });
+
+            $("#MyLunBo a.left").click(function () { 
+                $(".carousel").carousel("prev");
+            });
+            $("#MyLunBo a.right").click(function () {
+                $(".carousel").carousel("next");
+            });
+           
+            $("#FenLeiBan").fadeTo("slow", 0.86);
+
+            tab();
+        });
+
+        //tab
+        function tab() {
+            var index = 0;
+            var timer = null;
+
+          
+            var titles = $('notice-tit').getElementsByTagName('li');
+            var divs = $('notice-con').getElementsByTagName('div');
+
+
+
+            for (var i = 0; i < titles.length; i++) {
+                titles[i].id = i;
+                titles[i].onmouseover = function () {
+                    clearInterval(timer);
+                    changeOption(this.id);
+                }
+                titles[i].onmouseout = function () {
+                    timer = setInterval(autoPlay, 2000);
+                }
+            }
+            if (timer) {
+                clearInterval(timer);
+                timer = null;
+            }
+            timer = setInterval(autoPlay, 2000);
+
+
+
+            function autoPlay() {
+                index++;
+                if (index >= titles.length) {
+                    index = 0;
+                }
+                changeOption(index);
+            }
+
+            function changeOption(curIndex) {
+                for (var j = 0; j < titles.length; j++) {
+                    titles[j].className = '';
+                    divs[j].style.display = 'none';
+                }
+                titles[curIndex].className = 'select';
+                divs[curIndex].style.display = 'block';
+                index = curIndex;
+            }
+        }
+
+        function backtop() {
+            var btn = document.getElementById("btn");
+            //获取界面所示区域的高度。
+            var clientHeight = document.documentElement.clientHeight;
+            var timer = null;
+            var istop = true;
+            window.onscroll = function () {
+                if (!istop) {
+                    clearInterval(timer);
+                }
+                istop = false;
+                var osTop = document.documentElement.scrollTop || document.body.scrollTop;
+                if (osTop >= clientHeight) {
+                    btn.style.display = 'block';
+                }
+                else {
+                    btn.style.display = 'none';
+                }
+            }
+            btn.onclick = function () {
+                //设置定时器
+                timer = setInterval(function () {
+                    //兼容问题 chrome不支持document.documentElement.scrollTop 支持document.body.scrollTop
+                    //获取滚动条距离顶部的距离
+                    var osTop = document.documentElement.scrollTop || document.body.scrollTop;
+                    var ispeed = Math.floor(-osTop / 6);
+
+                    //document.documentElement.scrollTop=document.body.scrollTop-=200;
+                    document.documentElement.scrollTop = document.body.scrollTop = osTop + ispeed;
+                    istop = true;
+                    //console.log(osTop-ispeed);
+                    if (osTop == 0) {
+                        clearInterval(timer);
+                    }
+                }, 30);
+            }
+        }
+
+    </script>
+
+
+</body>
+</html>

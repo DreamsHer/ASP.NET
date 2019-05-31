@@ -1,0 +1,245 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PanlHuiZong</title>
+
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+
+
+    <style>
+        .container {
+            background: #fff;
+            width: 100%;
+        }
+
+        .reset-padding {
+            padding: 0 5px;
+        }
+
+        .reset {
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        label.Size {
+            font-size: 60px;
+        }
+
+        label {
+            font-weight: normal;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="form-group">
+
+                        <span class="h4"><b>盘点情况汇总</b></span>
+                        <div class="pull-right">
+                            <button class="form-control btn-sm btn btn-info" id="Colse"><span class="glyphicon glyphicon-remove">关闭</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-body" style="background:#f0edf1;">
+                    <div class="col-lg-1"></div>
+                    
+                    <input readonly="readonly" id="dhrugType" type="hidden"/>
+
+                    <div class="col-lg-5" >
+                        <div class="row">
+                            <div class="form-group">
+                               <div class="row" style="margin-top:40px;">
+                                   <div class="col-md-2">
+                                       <label class="control-label reset" style="margin-left:15px;">部门:</label>
+                                   </div>
+                                   <div class="col-md-4">
+                                       <select class="form-control" id="DrugTypeCods"></select>
+                                   </div>
+                                   <div class="col-md-5">
+                                       <div style="border-bottom: #000 1px solid; width: 220px;">
+                                           <input readonly="readonly" id="DrugType" style="width: 220px; border: none; color: #0000FF;background:#f0edf1; font-size: 15px;" />
+                                       </div>
+                                   </div>
+                               </div>
+
+                                <div class="row" style="margin-top:10px;">
+                                    <div class="form-group">
+                                        <div class="col-md-2">
+                                            <label class="control-label">汇总区间:</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="date" id="PablDataOne" class="form-control"/>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <input type="date" id="PablDataTwo" class="form-control"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row" style="margin-top:10px;">
+                                    <div class="form-group">
+                                        <div class="col-md-2">
+                                            <label class="control-label">盘点日期:</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="date" id="PablDataFtree" class="form-control"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row" style="margin-top:90px;">
+                                    <div class="form-group">
+                                        <div class="col-md-3 col-lg-offset-2">
+                                            <button class="btn btn-block btn-primary" type="button" id="TianJia"><span class="glyphicon glyphicon-search">查 询</span></button>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <button class="btn btn-block" type="button" id="SelOutBtn"><span class="glyphicon glyphicon-off">退 出</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                          
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="row" style="background:#fff;">
+                            <div style="margin-top:20px;margin-left:10px;overflow:auto;height:390px;">
+                                <table id="ShangPin" style="width:900px;">
+                                    <tr>
+                                        <th w_num="total_line" width="7%">序号</th>
+                                        <th w_index="DrugType">部 门</th>
+                                        <th w_index="GoodsNames">商品名称</th>
+
+                                        <th w_index="FactPrice">销售金额</th>
+                                        <th w_index="HaoSunLv">损耗率</th>
+                                        <th w_index="HeLiHaoSunLv">合理损耗额</th>
+                                        <th w_index="ShiJiHaoSunLv">实际盘亏金额</th>
+                                        <th w_index="ChaE">差 额</th>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-1"></div>
+                </div>
+
+            </div>
+        </div>
+    </div><!--大row-->
+
+
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script><!--bootstrap-->
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.2.min.js"></script><!--bootstrap-->
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script><!--bootstrap-->
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+
+
+    <script>
+        var ShangPinghg;
+        var deparngtCodes;
+        var JieId;
+
+        $(document).ready(function () {
+           
+            ShangPin = $.fn.bsgrid.init('ShangPin', {
+                url: '/PanDianShuYiChuLi/SunHaoLv/SelectHoaSun',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                pageSize: 10,
+                pageSizeSelect: false,
+                pagingLittleToolbar: true,
+                pagingToolbarAlign: "left",
+            });
+            ShangPin.search();
+
+
+            //部门
+            $.post("/PanDianShuYiChuLi/SunHaoLv/SelectDernrt", function (data) {
+                selectLoadData("DrugTypeCods", data);
+            });
+
+        });
+        
+        $("#DrugTypeCods").change(function () {
+            deparngtCodes = $("#DrugTypeCods").val();
+            if (deparngtCodes!='') {
+                $.post("/PanDianShuYiChuLi/SunHaoLv/SelectDernrtName?deparntCodes=" + deparngtCodes, function (data) {
+
+                    JieId = data[0].DrugTypefID;
+                    $.post("/PanDianShuYiChuLi/SunHaoLv/SelectPanl?JieId=" + JieId, function (mess) {
+                        $("#DrugType").val(data[0].departmentName + "__" + mess[0].DrugType);
+                        $("#dhrugType").val(mess[0].DrugType);
+                       
+                    });
+                });
+            }
+            else {
+                document.location.href = "/PanDianShuYiChuLi/SunHaoLv/PanlHuiZong";
+            }
+           
+           
+           
+        });
+
+
+        //条件
+        ShangPinghg = $.fn.bsgrid.init('ShangPin', {
+            url: '/PanDianShuYiChuLi/SunHaoLv/SelectHoaSunTiao',
+            autoLoad: false,
+            stripeRows: true,
+            rowHoverColor: true,
+            pageSize: 9,
+            pageSizeSelect: false,
+            pagingLittleToolbar: true,
+            pagingToolbarAlign: "left",
+        });
+        $("#TianJia").click(function () {
+            if (JieId > 0) {
+                ShangPinghg.search({ drugType: JieId });
+            }
+            else {
+                layer.alert("请先选择条件部门！", { icon: 5, title: '温馨小提示：' });
+            }
+           
+
+        });
+
+        $("#Colse").click(function () {
+            $('body').remove();
+        });
+        $("#SelOutBtn").click(function () {
+            $('body').remove();
+        });
+
+    </script>
+
+
+</body>
+</html>

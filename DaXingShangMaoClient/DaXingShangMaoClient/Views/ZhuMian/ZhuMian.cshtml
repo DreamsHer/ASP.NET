@@ -1,0 +1,1590 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ZhuMian</title>
+
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+
+    <script src="~/Content/js/jquery-1.11.3.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <!--头部-->
+    <style>
+        .one {
+            width: 1449px;
+            background: #f7f1f1;
+            border: 1px solid #000;
+            margin-left: 20px;
+            margin: 0 auto;
+        }
+
+
+        .head-left {
+            width: 650px;
+            height: 30px;
+        }
+
+            .head-left ul li {
+                float: left;
+                list-style: none;
+                margin-left: 20px;
+            }
+
+                .head-left ul li a {
+                    font-size: 16px;
+                    color: #000;
+                    padding: 4px;
+                    text-decoration: none;
+                }
+
+        .head-right {
+            width: 1100px;
+            height: 30px;
+            position: absolute;
+            margin-left: 550px;
+            margin-top: -30px;
+        }
+
+            .head-right ul li {
+                float: left;
+                list-style: none;
+                position: relative;
+            }
+
+                .head-right ul li a {
+                    font-size: 15px;
+                    color: #000;
+                    padding: 10px;
+                    text-decoration: none;
+                }
+
+            .head-right li {
+                border-left: 2px solid #999;
+            }
+
+        .head a:hover {
+            color: #F00;
+        }
+
+
+        .search {
+            width: 600px;
+            height: 40px;
+            position: absolute;
+            margin-top: -134px;
+            margin-left: 465px;
+        }
+
+            .search input {
+                width: 500px;
+                height: 40px;
+                border: 3px solid #ff4200;
+                border-right: none;
+                font-size: 20px;
+            }
+
+            .search a {
+                float: right;
+                width: 97px;
+                height: 40px;
+                background: #ff4200;
+                text-decoration: none;
+                color: #fff;
+                font-size: 24px;
+                text-align: center;
+                line-height: 40px;
+            }
+
+            .search .bginput {
+                background: url(../imges/search.png) no-repeat left center;
+            }
+
+
+
+        .ulWaiCeng {
+            width: 1449px;
+            height: 35px;
+        }
+
+            .ulWaiCeng ul li {
+                float: left;
+                list-style: none;
+                margin-left: 20px;
+                margin-top: 5px;
+            }
+
+                .ulWaiCeng ul li a {
+                    font-size: 20px;
+                    color: #000;
+                    padding: 4px;
+                    text-decoration: none;
+                }
+
+                .ulWaiCeng ul li:hover a {
+                    color: #fff;
+                    background: #91d2db;
+                }
+    </style>
+
+
+    <!--商品分类部分-->
+    <style>
+        .toptitle {
+            width: 200px;
+            height: 30px;
+            background: #C66;
+            line-height: 30px;
+            font-size: 20px;
+            color: #FFF;
+        }
+
+        .toptitle {
+            position: absolute;
+            margin-left: 40px;
+        }
+
+        .nono {
+            width: 1446px;
+            height: 30px;
+            background: #F00;
+            margin-left: 15px;
+        }
+
+        .line {
+            width: 1049px;
+            height: 30px;
+            background: #F30;
+            margin: 0 auto;
+            position: absolute;
+            margin-left: 250px;
+        }
+
+            .line ul li {
+                float: left;
+                text-align: center;
+                list-style: none;
+            }
+
+                .line ul li a {
+                    text-decoration: none;
+                    font-size: 20px;
+                    color: #FFF;
+                    padding: 10px;
+                }
+
+                    .line ul li a:hover {
+                        color: #900;
+                    }
+
+
+        .submenu-tow {
+            width: 240px;
+            height: 460px;
+            line-height: 30px;
+            background: #fee5fc;
+            margin-left: 16px;
+        }
+
+            .submenu-tow li {
+                text-decoration: none;
+                font-size: 16px;
+                line-height: 32px;
+                margin-left: 20px;
+                list-style: none;
+            }
+
+                .submenu-tow li a {
+                    text-decoration: none;
+                    list-style: none;
+                    color: #000;
+                }
+
+                .submenu-tow li:hover {
+                    background: #f7f7f7;
+                }
+
+                .submenu-tow li a:hover {
+                    color: #F00;
+                }
+
+
+
+        .tensix {
+            width: 955px;
+            height: 420px;
+            background: #fff;
+            position: absolute;
+            margin-left: 180px;
+            top: 360px;
+            z-index: 2;
+        }
+
+        .tensix-left {
+            width: 955px;
+            height: 420px;
+            background: #e4cadb;
+           
+        }
+
+            .tensix-left dl {
+                border-bottom: 5px solid #CCC;
+            }
+
+            .tensix-left dl {
+                overflow: hidden;
+            }
+
+                .tensix-left dl dt {
+                    float: left;
+                    width: 80px;
+                    height: 25px;
+                    line-height: 30px;
+                    text-align: right;
+                    padding-right: 20px;
+                    font-size: 18px;
+                }
+
+                    .tensix-left dl dt a {
+                        color: #ff4200;
+                        font-weight: bold;
+                        font-size: 18px;
+                    }
+
+                .tensix-left dl dd a {
+                    display: block;
+                    float: left;
+                    border-left: 1px solid #999;
+                    line-height: 14px;
+                    color: #242323;
+                    font-size: 18px;
+                    padding: 0 10px;
+                    margin: 4px 0;
+                }
+
+        .tensix {
+            display: none;
+        }
+
+        .submenu-tow li:hover .tensix {
+            display: block;
+        }
+    </style>
+
+
+    <style>
+        /*尾部的*/
+
+        .fdgfh li {
+            list-style: none;
+            margin-left: -30px;
+            line-height: 30px;
+        }
+
+            .fdgfh li a {
+                color: #808080;
+                text-decoration: none;
+            }
+
+                .fdgfh li a:hover {
+                    color: #F00;
+                }
+    </style>
+
+
+
+</head>
+<body onkeydown="HuiCheDengLu()">
+
+    <div class="one">
+
+        <div class="row" style="width:1449px;height:100px;margin-left:0px;">
+            <img src="~/ImaginPho/qianTaiTuPian/TB1.hAmJpXXXXXZXpXXvYLnJVXX-990-80.jpg" style="width:1443px;height:100%;" />
+        </div>
+
+        <div class="head" style="background:#f6eded;">
+            <div class="head-left">
+                <ul>
+                    <li><a href="http://localhost:5785/YongHuZhuJieMian/Login/Login">亲，请登录</a></li>
+                    <li><a href="http://localhost:5785/UserLog/Userlog/UserLogIndex" style="color:#F00">免费注册</a></li>
+                </ul>
+            </div>
+            <div class="head-right">
+                <ul>
+                    <li><a href="http://localhost:5785/ShooppingCart/ShooppingCar/ShoopingCarUIl">我的订单<label id="MyOrtrHop" style="color:#ff4200">0</label></a></li>
+                    <li><a href="#" id="MyShopping">我的商城</a></li>
+                    <li><a href="#"> 商贸会员</a></li>
+                    <li><a href="#"> 企业采购</a></li>
+                    <li><a href="#"> 客户服务</a></li>
+                    <li><a href="#"> 网站导航</a></li>
+                    <li><a href="#"> 工作空间</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="BiaoSechen">
+            <div id="logo" class="logo" style="margin-left:150px;width:200px;">
+                <h1 class="logo_tit"><img src="~/ImaginPho/QX/008.jpg" style="width:200px;height:100px;" /></h1>
+                <h4 class="logo_subtit">商贸,便捷好省</h4>
+                <h5 class="logo_subtit">SM.goods.com</h5>
+            </div>
+
+            <div class="search">
+                <input type="text" class="bginput" id="txtSearch" placeholder="     好货疯抢72小时   例：食品类" />
+                <a href="#" id="SouSuo">搜索</a>
+            </div>
+
+            <div class="ShoppingCartf" style="position:absolute;margin-left:1180px;margin-top:-134px;background:#fff" id="MyGouWuCatrh">
+                <a href="" style="font-size:18px; color:#ff0000;"><img src="~/ImaginPho/qianTaiTuPian/a7dazf7615377915855.jpg" style="width:30px;height:30px;"/>我的购物车<label id="GouWuCatrJian" style="color:#ff4200">0</label></a>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="nono">
+                <!--上头顶-->
+                <div class="toptitle" style="">☷ 商品分类</div>
+                <div class="line">
+                    <ul>
+                        <li><a href="http://localhost:5785/YongHuZhuJieMian/Login/BuFenJieMian">〓商贸超市</a></li>
+                        <li><a href="#">☀商贸国际</a></li>
+                        <li><a href="#">商贸会员</a></li>
+                        <li><a href="#">品牌街</a></li>
+                        <li><a href="#">电器城</a></li>
+                        <li><a href="#">喵鲜生</a></li>
+                        <li><a href="#">医药馆</a></li>
+                        <li><a href="#">营业厅</a></li>
+                        <li><a href="#">魅力惠</a></li>
+                        <li><a href="#">阿里旅行</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--商品分类-->
+            <ul class="submenu-tow">
+                <li>
+                    <a href="#">☆女装/外套</a>
+                    <!--<div class="right-box"></div>-->
+                    <div class="tensix">
+                        <div class="tensix-left">
+                            <dl>
+                                <dt><a href="#">时代潮流</a></dt>
+                                <dd>
+                                    <a href="#">护手露</a> <a href="#">化妆品</a> <a href="#">首饰</a>
+                                    <a href="#">外套</a> <a href="#">牛仔裤</a> <a href="#">耳环</a>
+                                    <a href="#">帽子</a> <a href="#">鞋子</a> <a href="#">手包</a>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt><a href="#">超级实惠</a></dt>
+                                <dd>
+                                    <a href="#">连衣裙</a> <a href="#">枕头</a> <a href="#">首饰</a>
+                                    <a href="#">冬衣大装</a> <a href="#">牛仔衫</a> <a href="#">耳环</a>
+                                    <a href="#">防晒衣</a> <a href="#">鞋子</a> <a href="#">手包</a>
+                                </dd>
+
+
+                            </dl>
+                            <dl>
+                                <dt><a href="#">疯狂商城</a></dt>
+                                <dd>
+                                    <a href="#">连衣裙</a> <a href="#">枕头</a> <a href="#">首饰</a>
+                                    <a href="#">冬衣大装</a> <a href="#">牛仔衫</a> <a href="#">耳环</a>
+                                    <a href="#">防晒衣</a> <a href="#">鞋子</a> <a href="#">手包</a>
+                                </dd>
+
+                            </dl>
+
+
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">☆男装/运动户外</a>
+
+
+                </li>
+                <li><a href="#">☆女鞋/男鞋/箱包</a></li>
+                <li><a href="#">☆化妆品/个人护理</a></li>
+                <li>
+                    <a href="#">☆腕表/珠宝饰品/眼镜</a>
+
+
+                </li>
+                <li><a href="#">☏手机/数码/电脑办公</a></li>
+                <li><a href="#">☆母婴玩具</a></li>
+                <li><a href="#">☆零食/进口食品/茶酒</a></li>
+                <li><a href="#">☆生鲜水果</a></li>
+                <li><a href="#">☆大家电/生活电器</a></li>
+                <li><a href="#">☆家具建材</a></li>
+
+                <li><a href="#">☆家纺/家饰/鲜花</a></li>
+
+                <li><a href="#">☆厨具/收纳/宠物</a></li>
+                <li><a href="#">☆图书宝典</a></li>
+            </ul>
+
+            <div class="LunBo" style="width:950px;height:510px;position:absolute;margin-top:-465px;margin-left:260px;">
+                <div style="width:100%;">
+                    <div id="MyLunBo" class="carousel slide">
+                        <!--slide属性、让图片平滑过去切换-->
+                        <ol class="carousel-indicators">
+                            <!--轮播图片的计数器-->
+                            <li data-target="#mymyCarousel" data-slide-to="0" class="active"></li><!--target 目标；slide 滑动-->
+                            <li data-target="#mymyCarousel" data-slide-to="1"></li>
+                            <li data-target="#mymyCarousel" data-slide-to="2"></li>
+                            <li data-target="#mymyCarousel" data-slide-to="3"></li>
+                            <li data-target="#mymyCarousel" data-slide-to="4"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <!--轮播的图片-->
+                            <div class="item active" style=" height:417px; width:100%;">
+                                <img src="~/ImaginPho/qianTaiTuPian/01.jpg" style="height:100%;width:100%;"/>
+                                <div class="carousel-caption">
+                                    <h3>夜幕降临</h3>
+                                    <p>那年的夏天，遥远的你在对面</p>
+                                </div>
+                            </div>
+                            <div class="item" style=" height:417px; width:100%;">
+                                <img src="~/ImaginPho/qianTaiTuPian/02.jpg" alt="" style="height:100%;width:100%;"/>
+                                <div class="carousel-caption">
+                                    <h3>迷漫的都市</h3>
+                                    <p>傍晚时分总会迎来人群急促的穿梭，回家的脚步</p>
+                                </div>
+                            </div>
+                            <div class="item" style=" height:417px; width:100%;">
+                                <img src="~/ImaginPho/qianTaiTuPian/04.jpg" alt="" style="height:100%;width:100%;"/>
+                            </div>
+                            <div class="item" style=" height:417px; width:100%;">
+                                <img src="~/ImaginPho/qianTaiTuPian/05.jpg" alt="" style="height:100%;width:100%;"/>
+                            </div>
+                            <div class="item" style=" height:417px; width:100%;">
+                                <img src="~/ImaginPho/qianTaiTuPian/03.jpg" alt="" style="height:100%;width:100%;"/>
+                            </div>
+                        </div>
+                        <!--轮播图片的控制器-->
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--轮右边-->
+            <div class="right_ZiSi" style="width:248px;height:460px;background:#f3e3f7;position:absolute;margin-left:1212px;margin-top:-467px;">
+                <div class="row" style="height:20px;"><h3 style="color:#ff4200;text-align:center;">猜你喜欢</h3></div>
+                <a href="http://localhost:1915/DaJianUIL/ZhuMime/ShoppingCart">
+                    <div class="img-box text-center" style="width:230px; height:160px;background:#e7f7f5;position:relative;margin:30px auto;">
+                        <img src="~/ImaginPho/122.sipng_03.png" style="width:100%;height:100%" />
+                    </div>
+
+                </a>
+
+                <a href="http://localhost:1915/DaJianUIL/ZhuMime/ShoppingCart">
+                    <div class="img-box text-center" style="width:230px; height:160px;background:#e7f7f5;position:relative;margin:30px auto;">
+
+                        <img src="~/ImaginPho/qianTaiTuPian/122.sipng_05.png" style="width:100%;height:100%" />
+                    </div>
+
+                </a>
+            </div>
+
+            <!--滚动-->
+            <div class="row" style="width:952px;height:35px;background:#f9e1fa;position:absolute;margin-left:258px;margin-top:-45px;">
+                <div calss="tiao">
+                    <h4 style="color:#ff4200;">
+                        <marquee>
+                            <b>大家好！欢迎来到大型商贸系统，这里只要你想到的都有，没想到的也有，欢迎来订购哦！</b>
+                        </marquee>
+                    </h4>
+                </div>
+            </div>
+
+
+            <!--你的活动-->
+            <div class="row" style="width:1442px;height:35px;background:#fff;position:relative;margin-left:15px;">
+                <h4 style="text-align:center;color:#F00;">你的活动</h4>
+            </div>
+
+            <!--活动神价部分-->
+            <div class="row" style="width:1442px;height:40px;background:#fff;position:relative;margin-left:15px;">
+                <label class="control-label" style="color:#0d7512;font-size:28px;font-family: '华文新魏';margin-left:15px;">活动专区, 神价抢货！</label>
+            </div>
+            <!--图部分-->
+            <div class="Huo_box" style="width:1442px;height:170px;background:#fff;position:relative;margin-left:15px;">
+                <div class="col-lg-2">
+                    <a href="">
+                        <div class="img-box text-center" style="width:100%; height:100%;background:#e7f7f5">
+                            <img src="~/ImaginPho/qianTaiTuPian/9kee_03.png" />
+                        </div>
+
+                    </a>
+                </div>
+
+                <div class="col-lg-2" style="margin-left:20px;">
+                    <a href="">
+                        <div class="img-box text-center" style="width:100%; height:100%;background:#e7f7f5">
+                            <img src="~/ImaginPho/qianTaiTuPian/LinShi.PNG" />
+                        </div>
+
+                    </a>
+                </div>
+
+                <div class="col-lg-2" style="margin-left:20px;">
+                    <a href="">
+                        <div class="img-box text-center" style="width:100%; height:100%;background:#e7f7f5">
+                            <img src="~/ImaginPho/qianTaiTuPian/LinShiTwo.PNG" />
+                        </div>
+
+                    </a>
+                </div>
+
+
+
+                <div class="col-lg-2" style="margin-left:20px;">
+                    <a href="">
+                        <div class="img-box text-center" style="width:100%; height:100%;background:#e7f7f5">
+                            <img src="~/ImaginPho/qianTaiTuPian/111.PNG" />
+
+                        </div>
+
+                    </a>
+                </div>
+
+
+
+            </div>
+
+
+            <!--table公告-->
+            @*<div class="tabgfh" style="width:380px;height:180px;background:#94ced8;position:absolute;margin-left:1075px;margin-top:-210px;">
+
+            </div>*@
+
+
+            <!--购物超市-->
+            <div class="row" style="width:1442px;height:40px;position:relative;margin-left:15px;">
+                <label class="control-label" style="color:#6261b7;font-size:28px;font-family: '华文新魏';margin-left:15px;">购物超市  Shopping & supermarket</label>
+            </div>
+
+            <div class="Huo_box" style="width:1442px;height:560px;background:#fff; position:relative;margin-left:15px;">
+                <div class="col-lg-3">
+                    <div class="" style="height:260px;background:#fff;border:solid 1px #999;"id="GouWu_Onebox">
+                        <a href="http://localhost:5785/YongHuZhuJieMian/GoodesUIL/DanYiShangPinJieMian">
+                            <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:100%" id="GouWu_One" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="GouWu_OneZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input type="hidden" id="GouWu_OneId" />
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="http://localhost:5785/YongHuZhuJieMian/GoodesUIL/DanYiShangPinJieMian" style="height:230px;background:#F00;margin-top:20px;border:solid 1px #999;"id="GouWu_Twobox">
+                        <a href="">
+                            <div class="img-box text-center" style="width:100%; height:198px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:100%" id="GouWu_Two" />
+
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="GouWu_TwoZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input type="hidden" id="GouWu_TwoId" />
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-2">
+                    <div class="" style="height:260px;background:#fff;border:solid 1px #999;" id="GouWu_frteebox">
+                        <a href="http://localhost:5785/YongHuZhuJieMian/GoodesUIL/ShiPinJieMian">
+                            <input type="hidden" id="GouWu_frteeId" />
+                            <div class="img-box text-center" style="width:99%; height:190px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:99%" id="GouWu_frtee" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="GouWu_frteeZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input readonly="readonly" id="GouWu_frteeZitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2" id="GouWu_frourbox">
+                    <div class="" style="height:260px;background:#fff;border:solid 1px #999;">
+                        <a href="http://localhost:5785/YongHuZhuJieMian/GoodesUIL/DanYiShangPinJieMian">
+                            <input type="hidden" id="GouWu_frourId" />
+                            <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:99%" id="GouWu_frour" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="GouWu_frourZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input readonly="readonly" id="GouWu_frourZitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-2" id="GouWu_fritbox">
+                    <div class="" style="height:260px;background:#fff;border:solid 1px #999;">
+                        <a href="http://localhost:5785/YongHuZhuJieMian/GoodesUIL/DanYiShangPinJieMian">
+                            <input type="hidden" id="GouWu_fritId" />
+                            <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:100%" id="GouWu_frit" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="GouWu_fritZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input readonly="readonly" id="GouWu_fritZitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2">
+                    <div class="" style="height:260px;background:#fff;border:solid 1px #999;" id="GouWu_Sixbox">
+                        <a href="">
+                            <input type="hidden" id="GouWu_SixId" />
+                            <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:100%" id="GouWu_Six" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="GouWu_SixZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input readonly="readonly" id="GouWu_SixZitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2">
+                    <div class="" style="height:260px;background:#fff;border:solid 1px #999;" id="GouWu_Sevenbox">
+                        <a href="">
+                            <input type="hidden" id="GouWu_SevenId" />
+                            <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:100%" id="GouWu_Seven" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="GouWu_SevenZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input readonly="readonly" id="GouWu_SevenZitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2">
+                    <div class="" style="height:260px;background:#fff;border:solid 1px #999;" id="GouWu_eightbox">
+                        <a href="">
+                            <input type="hidden" id="GouWu_eightId" />
+                            <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:100%" id="GouWu_eight" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="GouWu_eightZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input readonly="readonly" id="GouWu_eightZitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2">
+                    <div class="" style="height:260px;background:#fff;border:solid 1px #999;" id="GouWu_nightbox">
+                        <a href="">
+                            <input type="hidden" id="GouWu_nightId" />
+                            <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:100%" id="GouWu_night" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="GouWu_nightZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input readonly="readonly" id="GouWu_nighttwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2">
+                    <div class="" style="height:260px;background:#fff;border:solid 1px #999;" id="GouWu_tenbox"> 
+                        <a href="">
+                            <input type="hidden" id="GouWu_tenId" />
+                            <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:100%" id="GouWu_ten" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="GouWu_tenZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input readonly="readonly" id="GouWu_tentwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+            <!--广告横幅-->
+            <div class="row" style="position:relative;margin-top:10px;width:1440px;height:60px;background:#F30;margin-left:18px">
+                <img src="~/ImaginPho/qianTaiTuPian/er1_05.png" style="width:100%;height:100%;" />
+            </div>
+
+            <!--靓丽人生-->
+            <div class="row" style="width:1442px;height:35px;position:relative;margin-left:15px;top:5px;">
+                <label class="control-label" style="color:#f867df;font-size:28px;font-family: '华文新魏';margin-left:15px;">靓丽人生  FASHION & BEAUTY</label>
+            </div>
+
+            <!--图-->
+            <div class="BiaoDeFuro" style="width:1442px;height:530px;background:#fff;position:relative;margin-left:16px;margin-top:10px;">
+                <div class="col-lg-3">
+                    <div class="" style="height:430px;background:#F00;margin-top:30px;">
+                        <a href="">
+                            <div class="img-box text-center" style="width:100%; height:400px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:100%" id="LiangLi_Two" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="LiangLi_TwoZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input readonly="readonly" id="LiangLi_TwoZitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />
+                                <input type="hidden" id="LiangLi_TwoId" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="control-label" style="color:#f99;font-size:20px;font-family: '华文新魏';">时尚潮流  FADDISH & TIDE</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-4" style="margin:0;">
+                        <div class="" style="height:250px;background:#fff;border:solid 1px #999;">
+                            <a href="http://localhost:5785/YongHuZhuJieMian/GoodesUIL/DanYiShangPinJieMian">
+                                <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                                    <img src="" alt="" style="width:100%;height:100%" id="LiangLi_One" />
+                                </div>
+                                <div class="">
+                                    <input readonly="readonly" id="LiangLi_OneZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                    <input readonly="readonly" id="LiangLi_Onezitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />
+                                    <input type="hidden" id="LiangLi_OneId" />
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4" style="margin:0;">
+                        <div class="" style="height:250px;background:#fff;border:solid 1px #999;">
+                            <a href="">
+                                <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                                    <img src="" alt="" style="width:100%;height:100%" id="LiangLi_eight" />
+                                </div>
+                                <div class="">
+                                    <input readonly="readonly" id="LiangLi_eightZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                    <input readonly="readonly" id="LiangLi_eightZitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />
+                                    <input type="hidden" id="LiangLi_eightId" />
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4" style="margin:0;">
+                        <div class="" style="height:250px;background:#fff;border:solid 1px #999;">
+                            <a href="">
+                                <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                                    <img src="" alt="" style="width:100%;height:100%" id="LiangLi_frtee" />
+                                </div>
+                                <div class="">
+                                    <input readonly="readonly" id="LiangLi_frteeZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                    <input readonly="readonly" id="LiangLi_frteeZitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />
+                                    <input type="hidden" id="LiangLi_frteeId" />
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4" style="margin:0;">
+                        <div class="" style="height:250px;background:#fff;border:solid 1px #999;">
+                            <a href="">
+                                <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                                    <img src="" alt="" style="width:100%;height:100%" id="LiangLi_fourt" />
+                                </div>
+                                <div class="">
+                                    <input readonly="readonly" id="LiangLi_fourtZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                    <input readonly="readonly" id="LiangLi_fourtZitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />
+                                    <input type="hidden" id="LiangLi_fourtId" />
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4" style="margin:0;">
+                        <div class="" style="height:250px;background:#fff;border:solid 1px #999;">
+                            <a href="">
+                                <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                                    <img src="" alt="" style="width:100%;height:100%" id="LiangLi_frite" />
+                                </div>
+                                <div class="">
+                                    <input readonly="readonly" id="LiangLi_friteZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                    <input readonly="readonly" id="LiangLi_friteZitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />
+                                    <input type="hidden" id="LiangLi_friteId" />
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4" style="margin:0;">
+                        <div class="" style="height:250px;background:#fff;border:solid 1px #999;">
+                            <a href="">
+                                <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                                    <img src="" alt="" style="width:100%;height:100%" id="LiangLi_Six" />
+                                </div>
+                                <div class="">
+                                    <input readonly="readonly" id="LiangLi_SixZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                    <input readonly="readonly" id="LiangLi_SixZitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />
+                                    <input type="hidden" id="LiangLi_SixId" />
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="col-lg-12" style="margin:0;">
+                        <div class="" style="height:230px;">
+                            @*<a href="">
+                                放字体
+                            </a>*@
+                            <img src="~/ImaginPho/ceyYOCandd2I.gif" style="width:100%;height:100%"/>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12" style="margin:0;top:20px;">
+                        <div class="" style="height:250px;background:#fff;border:solid 1px #999;">
+                            <a href="">
+                                <div class="img-box text-center" style="width:100%; height:190px;background:#e7f7f5">
+                                    <img src="" alt="" style="width:100%;height:100%" id="LiangLi_Seven" />
+                                </div>
+                                <div class="">
+                                    <input readonly="readonly" id="LiangLi_SevenZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                    <input readonly="readonly" id="LiangLi_SevenZitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />
+                                    <input type="hidden" id="LiangLi_SevenId" />
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!--广告横幅（衣服）-->
+            <div class="row" style="position:relative;margin-top:10px;width:1440px;height:90px;margin-left:18px">
+                <img src="~/ImaginPho/qianTaiTuPian/abl17_07.png" style="width:100%;height:100%;" />
+            </div>
+
+
+            <!--衣服时装-->
+            <div class="row" style="width:1442px;height:35px;position:relative;margin-left:15px;top:5px;">
+                <label class="control-label" style="color:#6261b7;font-size:28px;font-family: '华文新魏';margin-left:15px;">衣服时装  clothing & fashionable</label>
+            </div>
+
+            <!--衣服时装(图)-->
+            <div class="YiFu" style="width:1442px;height:550px;background:#fff;position:relative;margin-left:16px;margin-top:10px;">
+
+                <div class="col-lg-2" style="margin:0;">
+                    <div class="" style="height:280px;border:solid 1px #999;">
+                        <a href="">
+                            <div class="img-box text-center" style="width:100%; height:220px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:100%" id="YiFugirl_one" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="YiFugirl_oneZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input readonly="readonly" id="YiFugirl_oneZitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />
+
+                                <input id="YiFugirl_oneId" type="hidden" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2" style="margin:0;">
+                    <div class="" style="height:280px;border:solid 1px #999;">
+                        <a href="">
+                            <div class="img-box text-center" style="width:100%; height:220px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:100%" id="YiFugirl_Two" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="YiFugirl_TwoZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input readonly="readonly" id="YiFugirl_TwoZitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />
+                                <input id="YiFugirl_TwoId" type="hidden" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2" style="margin:0;">
+                    <div class="" style="height:280px;border:solid 1px #999;">
+                        <a href="">
+                            <div class="img-box text-center" style="width:100%; height:220px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:100%" id="YiFugirl_frtee" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="YiFugirl_frteeZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input readonly="readonly" id="YiFugirl_frteeZitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />
+                                <input id="YiFugirl_frteeId" type="hidden" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2" style="margin:0;">
+                    <div class="" style="height:280px;border:solid 1px #999;">
+                        <a href="">
+                            <div class="img-box text-center" style="width:100%; height:220px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:100%" id="YiFugirl_Four" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="YiFugirl_FourZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input readonly="readonly" id="YiFugirl_FourZitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />
+                                <input id="YiFugirl_FourId" type="hidden" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2" style="margin:0;">
+                    <div class="" style="height:280px;border:solid 1px #999;">
+                        <a href="">
+                            <div class="img-box text-center" style="width:100%; height:220px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:100%" id="YiFugirl_Frit" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="YiFugirl_FritZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input readonly="readonly" id="YiFugirl_FritZitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />
+                                <input id="YiFugirl_FritId" type="hidden" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2" style="margin:0;">
+                    <div class="" style="height:280px;border:solid 1px #999;">
+                        <a href="">
+                            <div class="img-box text-center" style="width:100%; height:220px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:100%" id="YiFugirl_Six" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="YiFugirl_SixZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input readonly="readonly" id="YiFugirl_SixZitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />
+                                <input id="YiFugirl_SixId" type="hidden" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2" style="margin:0;">
+                    <div class="" style="height:280px;border:solid 1px #999;">
+                        <a href="">
+                            <div class="img-box text-center" style="width:100%; height:220px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:100%" id="YiFugirl_Seven" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="YiFugirl_SevenZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input readonly="readonly" id="YiFugirl_SevenZitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />
+                                <input id="YiFugirl_SevenId" type="hidden" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2" style="margin:0;">
+                    <div class="" style="height:280px;border:solid 1px #999;">
+                        <a href="">
+                            <div class="img-box text-center" style="width:100%; height:220px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:100%" id="YiFugirl_eight" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="YiFugirl_eightZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input readonly="readonly" id="YiFugirl_eightZitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />
+                                <input id="YiFugirl_eightId" type="hidden" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2" style="margin:0;">
+                    <div class="" style="height:280px;border:solid 1px #999;">
+                        <a href="">
+                            <div class="img-box text-center" style="width:100%; height:220px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:100%" id="YiFugirl_night" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="YiFugirl_nightZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input readonly="readonly" id="YiFugirl_nightZitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />
+                                <input id="YiFugirl_nightId" type="hidden" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2" style="margin:0;">
+                    <div class="" style="height:280px;border:solid 1px #999;">
+                        <a href="">
+                            <div class="img-box text-center" style="width:100%; height:220px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:100%" id="YiFugirl_ten" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="YiFugirl_tenZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input readonly="readonly" id="YiFugirl_tenZitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />
+                                <input id="YiFugirl_tenId" type="hidden" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2" style="margin:0;">
+                    <div class="" style="height:280px;border:solid 1px #999;">
+                        <a href="">
+                            <div class="img-box text-center" style="width:100%; height:220px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:100%" id="YiFugirl_ensenv" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="YiFugirl_ensenvZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input readonly="readonly" id="YiFugirl_ensenvZitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />
+                                <input id="YiFugirl_ensenvId" type="hidden" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2" style="margin:0;">
+                    <div class="" style="height:280px;border:solid 1px #999;">
+                        <a href="">
+                            <div class="img-box text-center" style="width:100%; height:220px;background:#e7f7f5">
+                                <img src="" alt="" style="width:100%;height:100%" id="YiFugirl_ShiEr" />
+                            </div>
+                            <div class="">
+                                <input readonly="readonly" id="YiFugirl_ShiErZi" style="width: 100%; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                                <input readonly="readonly" id="YiFugirl_ShiErZitwo" style="width: 100%; border: none; background:#fff; font-size: 16px;" />
+                                <input id="YiFugirl_ShiErId" type="hidden" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!--优、七、特、帮助-->
+            <div class="gfd" style="width:1442px;height:35px;position:relative;margin-left:15px;top:5px;">
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-3">
+                            <img src="~/ImaginPho/qianTaiTuPian/cabe7_03.png" style="margin-top:20px;" />
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <h3>品质保障</h3>
+                            </div>
+                            <div class="row">
+                                <h6>品质护航、购物无忧</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <img src="~/ImaginPho/qianTaiTuPian/cabe7_05.png" style="margin-top:20px;" />
+                        </div>
+                        <div class="col-md-7">
+                            <div class="row">
+                                <h3>七天无理由退货</h3>
+                            </div>
+                            <div class="row">
+                                <h6>为你提供售后无忧保障</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <img src="~/ImaginPho/qianTaiTuPian/cabe7_07.png" style="margin-top:20px;" />
+                        </div>
+                        <div class="col-md-7">
+                            <div class="row">
+                                <h3>特色服务体现</h3>
+                            </div>
+                            <div class="row">
+                                <h6>为你呈现不一样的服务</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <img src="~/ImaginPho/qianTaiTuPian/cabe7_09.png" style="margin-top:20px;" />
+
+                        </div>
+                        <div class="col-md-7">
+                            <div class="row">
+                                <h3>帮助中心</h3>
+                            </div>
+                            <div class="row">
+                                <h6>你的购物指南</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <!--最后底部-->
+            <div class="col-lg-12" style="margin-top:10px;">
+                <div class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-2">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <h4>购物指物</h4>
+                            </div>
+                            <div class="row">
+                                <ul class="fdgfh">
+                                    <li><a href="#">免费注册</a></li>
+                                    <li><a href="#">开通支付宝</a></li>
+                                    <li><a href="#">支付宝充值</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <h4>天猫保障</h4>
+                            </div>
+                            <div class="row">
+                                <ul class="fdgfh">
+                                    <li><a href="#">发票保障</a></li>
+                                    <li><a href="#">售后规则</a></li>
+                                    <li><a href="#">缺货赔付</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <h4>支付方式</h4>
+                            </div>
+                            <div class="row">
+                                <ul class="fdgfh">
+                                    <li><a href="#">快捷方式</a></li>
+                                    <li><a href="#">信用卡</a></li>
+                                    <li><a href="#">余额宝</a></li>
+                                    <li><a href="#">蚂蚁花呗</a></li>
+                                    <li><a href="#">货到付款</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <h4>商家服务</h4>
+                            </div>
+                            <div class="row">
+                                <ul class="fdgfh">
+                                    <li><a href="#">商家入驻</a></li>
+                                    <li><a href="#">商家中心</a></li>
+                                    <li><a href="#">天猫规则</a></li>
+                                    <li><a href="#">天猫智库</a></li>
+                                    <li><a href="#">物流服务</a></li>
+                                    <li><a href="#">喵言喵语</a></li>
+                                    <li><a href="#">运营服务</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <h4>商贸超市</h4>
+                            </div>
+                            <div class="row">
+                                <img src="~/ImaginPho/qianTaiTuPian/cabe7_15.png" />
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    
+
+
+
+    <script>
+        var UnameidQuan;
+
+        $(document).ready(function () {
+            $(".carousel").carousel({
+                interval: 3000
+            });
+
+            $("#MyLunBo a.left").click(function () {
+                $(".carousel").carousel("prev");
+            });
+            $("#MyLunBo a.right").click(function () {
+                $(".carousel").carousel("next");
+            });
+
+            //我的商城
+            $("#MyShopping").click(function () {
+                $.post("/ZhuMian/HuoQuUnNameID", function (msg) {
+                    if (msg != "") {
+                        window.location.href = "http://localhost:5785/MyZiLiao/MyZiLiao/MyGeRenZiliao"
+
+                    } else {
+                        window.location.href = "http://localhost:5785/YongHuZhuJieMian/Login/Login"
+                    }
+
+                });
+            });
+
+            //chao
+            $.post("/ZhuMian/SelectGoodeseilt", function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    if ($("#GouWu_OneZi").val() == '') {
+                        $("#GouWu_OneZi").val(data[i].GoodsName);
+                        $("#GouWu_OneId").val(data[i].converIDs);
+                        $("#GouWu_One").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    } else if ($("#GouWu_TwoZi").val() == '') {
+                        $("#GouWu_TwoZi").val(data[i].GoodsName);
+                        $("#GouWu_TwoId").val(data[i].converIDs);
+                        $("#GouWu_Two").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    } else if ($("#GouWu_frteeZi").val() == '') {
+                        $("#GouWu_frteeZi").val(data[i].GoodsName);
+                        $("#GouWu_frteeId").val(data[i].converIDs);
+                        $("#GouWu_frteeZitwo").val(data[i].Remember);
+                        $("#GouWu_frtee").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    } else if ($("#GouWu_frourZi").val() == '') {
+                        $("#GouWu_frourZi").val(data[i].GoodsName);
+                        $("#GouWu_frourId").val(data[i].converIDs);
+                        $("#GouWu_frourZitwo").val(data[i].Remember);
+                        $("#GouWu_frour").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    } else if ($("#GouWu_fritZi").val() == '') {
+                        $("#GouWu_fritZi").val(data[i].GoodsName);
+                        $("#GouWu_fritId").val(data[i].converIDs);
+                        $("#GouWu_fritZitwo").val(data[i].Remember);
+                        $("#GouWu_frit").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    } else if ($("#GouWu_SixZi").val() == '') {
+                        $("#GouWu_SixZi").val(data[i].GoodsName);
+                        $("#GouWu_SixId").val(data[i].converIDs);
+                        $("#GouWu_SixZitwo").val(data[i].Remember);
+                        $("#GouWu_Six").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    }
+
+                    else if ($("#GouWu_SevenZi").val() == '') {
+                        $("#GouWu_SevenZi").val(data[i].GoodsName);
+                        $("#GouWu_SevenId").val(data[i].converIDs);
+                        $("#GouWu_SevenZitwo").val(data[i].Remember);
+                        $("#GouWu_Seven").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    }
+
+                    else if ($("#GouWu_eightZi").val() == '') {
+                        $("#GouWu_eightZi").val(data[i].GoodsName);
+                        $("#GouWu_eightId").val(data[i].converIDs);
+                        $("#GouWu_eightZitwo").val(data[i].Remember);
+                        $("#GouWu_eight").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    }
+                    else if ($("#GouWu_nightZi").val() == '') {
+                        $("#GouWu_nightZi").val(data[i].GoodsName);
+                        $("#GouWu_nightId").val(data[i].converIDs);
+                        $("#GouWu_nighttwo").val(data[i].Remember);
+                        $("#GouWu_night").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    }
+
+                    else if ($("#GouWu_tenZi").val() == '') {
+                        $("#GouWu_tenZi").val(data[i].GoodsName);
+                        $("#GouWu_tenId").val(data[i].converIDs);
+                        $("#GouWu_tentwo").val(data[i].Remember);
+                        $("#GouWu_ten").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    }
+
+                }
+                });
+
+
+
+            //liang
+            $.post("/ZhuMian/SelectGoodeseiltliang", function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    if ($("#LiangLi_OneZi").val() == '') {
+                        $("#LiangLi_OneZi").val(data[i].GoodsName);
+                        $("#LiangLi_Onezitwo").val(data[i].Remember);
+                        $("#LiangLi_OneId").val(data[i].converIDs);
+                        $("#LiangLi_One").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    } else if ($("#LiangLi_TwoZi").val() == '') {
+                        $("#LiangLi_TwoZi").val(data[i].GoodsName);
+                        $("#LiangLi_TwoZitwo").val(data[i].Remember);
+                        $("#LiangLi_TwoId").val(data[i].converIDs);
+                        $("#LiangLi_Two").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    } else if ($("#LiangLi_frteeZi").val() == '') {
+                        $("#LiangLi_frteeZi").val(data[i].GoodsName);
+                        $("#LiangLi_frteeZitwo").val(data[i].Remember);
+                        $("#LiangLi_frteeId").val(data[i].converIDs);
+                        $("#LiangLi_frtee").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    } else if ($("#LiangLi_fourtZi").val() == '') {
+                        $("#LiangLi_fourtZi").val(data[i].GoodsName);
+                        $("#LiangLi_fourtZitwo").val(data[i].Remember);
+                        $("#LiangLi_fourtId").val(data[i].converIDs);
+                        $("#LiangLi_fourt").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    } else if ($("#LiangLi_friteZi").val() == '') {
+                        $("#LiangLi_friteZi").val(data[i].GoodsName);
+                        $("#LiangLi_friteZitwo").val(data[i].Remember);
+                        $("#LiangLi_friteId").val(data[i].converIDs);
+                        $("#LiangLi_frite").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    } else if ($("#LiangLi_SixZi").val() == '') {
+                        $("#LiangLi_SixZi").val(data[i].GoodsName);
+                        $("#LiangLi_SixZitwo").val(data[i].Remember);
+                        $("#LiangLi_SixId").val(data[i].converIDs);
+                        $("#LiangLi_Six").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    } else if ($("#LiangLi_SevenZi").val() == '') {
+                        $("#LiangLi_SevenZi").val(data[i].GoodsName);
+                        $("#LiangLi_SevenZitwo").val(data[i].Remember);
+                        $("#LiangLi_SevenId").val(data[i].converIDs);
+                        $("#LiangLi_Seven").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    } else if ($("#LiangLi_eightZi").val() == '') {
+                        $("#LiangLi_eightZi").val(data[i].GoodsName);
+                        $("#LiangLi_eightZitwo").val(data[i].Remember);
+                        $("#LiangLi_eightId").val(data[i].converIDs);
+                        $("#LiangLi_eight").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                        } 
+                }
+
+
+            });
+
+
+            //yifu(girl)
+            $.post("/ZhuMian/SelectGoodeseiltYiFu", function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    if ($("#YiFugirl_oneZi").val() == '') {
+                        $("#YiFugirl_oneZi").val(data[i].GoodsName);
+                        $("#YiFugirl_oneZitwo").val(data[i].Remember);
+                        $("#YiFugirl_oneId").val(data[i].converIDs);
+                        $("#YiFugirl_one").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    } else if ($("#YiFugirl_TwoZi").val() == '') {
+                        $("#YiFugirl_TwoZi").val(data[i].GoodsName);
+                        $("#YiFugirl_TwoZitwo").val(data[i].Remember);
+                        $("#YiFugirl_TwoId").val(data[i].converIDs);
+                        $("#YiFugirl_Two").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    } else if ($("#YiFugirl_frteeZi").val() == '') {
+                        $("#YiFugirl_frteeZi").val(data[i].GoodsName);
+                        $("#YiFugirl_frteeZitwo").val(data[i].Remember);
+                        $("#YiFugirl_frteeId").val(data[i].converIDs);
+                        $("#YiFugirl_frtee").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    } else if ($("#YiFugirl_FourZi").val() == '') {
+                        $("#YiFugirl_FourZi").val(data[i].GoodsName);
+                        $("#YiFugirl_FourZitwo").val(data[i].Remember);
+                        $("#YiFugirl_FourId").val(data[i].converIDs);
+                        $("#YiFugirl_Four").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    } else if ($("#YiFugirl_FritZi").val() == '') {
+                        $("#YiFugirl_FritZi").val(data[i].GoodsName);
+                        $("#YiFugirl_FritZitwo").val(data[i].Remember);
+                        $("#YiFugirl_FritId").val(data[i].converIDs);
+                        $("#YiFugirl_Frit").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    } else if ($("#YiFugirl_SixZi").val() == '') {
+                        $("#YiFugirl_SixZi").val(data[i].GoodsName);
+                        $("#YiFugirl_SixZitwo").val(data[i].Remember);
+                        $("#YiFugirl_SixId").val(data[i].converIDs);
+                        $("#YiFugirl_Six").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    }
+                }
+
+
+            });
+
+            //yifu(boy)
+            $.post("/ZhuMian/SelectGoodeseiltYiFuboy", function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    if ($("#YiFugirl_SevenZi").val() == '') {
+                        $("#YiFugirl_SevenZi").val(data[i].GoodsName);
+                        $("#YiFugirl_SevenZitwo").val(data[i].Remember);
+                        $("#YiFugirl_SevenId").val(data[i].converIDs);
+                        $("#YiFugirl_Seven").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    } else if ($("#YiFugirl_eightZi").val() == '') {
+                        $("#YiFugirl_eightZi").val(data[i].GoodsName);
+                        $("#YiFugirl_eightZitwo").val(data[i].Remember);
+                        $("#YiFugirl_eightId").val(data[i].converIDs);
+                        $("#YiFugirl_eight").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    } else if ($("#YiFugirl_nightZi").val() == '') {
+                        $("#YiFugirl_nightZi").val(data[i].GoodsName);
+                        $("#YiFugirl_nightZitwo").val(data[i].Remember);
+                        $("#YiFugirl_nightId").val(data[i].converIDs);
+                        $("#YiFugirl_night").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    }
+                    else if ($("#YiFugirl_tenZi").val() == '') {
+                        $("#YiFugirl_tenZi").val(data[i].GoodsName);
+                        $("#YiFugirl_tenZitwo").val(data[i].Remember);
+                        $("#YiFugirl_tenId").val(data[i].converIDs);
+                        $("#YiFugirl_ten").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    } else if ($("#YiFugirl_ensenvZi").val() == '') {
+                        $("#YiFugirl_ensenvZi").val(data[i].GoodsName);
+                        $("#YiFugirl_ensenvZitwo").val(data[i].Remember);
+                        $("#YiFugirl_ensenvId").val(data[i].converIDs);
+                        $("#YiFugirl_ensenv").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    } else if ($("#YiFugirl_ShiErZi").val() == '') {
+                        $("#YiFugirl_ShiErZi").val(data[i].GoodsName);
+                        $("#YiFugirl_ShiErZitwo").val(data[i].Remember);
+                        $("#YiFugirl_ShiErId").val(data[i].converIDs);
+                        $("#YiFugirl_ShiEr").attr("src", "/ZhuMian/SelectGoffodeseilt?goodsListedID=" + data[i].converIDs);
+                    }
+                }
+
+
+            });
+
+
+        });
+
+        
+
+
+        $("#MyGouWuCatrh").click(function () {
+            $.post("/ZhuMian/HuoQuUnNameID", function (msgh) {
+                if (msgh == "") {
+                    window.location.href = "http://localhost:5785/YongHuZhuJieMian/Login/Login"
+                    
+                } else {
+                    UnameidQuan = msgh;
+                    window.location.href = "http://localhost:5785/ShooppingCart/ShooppingCar/ShoopingCarUIl"
+                   
+                }
+
+            });
+        });
+
+    </script>
+
+
+    <script>
+        var dfd;
+        $("#GouWu_Onebox").click(function () {
+             dfd = $("#GouWu_OneId").val();
+            fgfdfhj();
+        });
+        $("#GouWu_Twobox").click(function () {
+            dfd = $("#GouWu_TwoId").val();
+            fgfdfhj();
+        });
+        $("#GouWu_frteebox").click(function () {
+            dfd = $("#GouWu_frteeId").val();
+            fgfdfhj();
+        });
+        $("#GouWu_frourbox").click(function () {
+            dfd = $("#GouWu_frourId").val();
+            fgfdfhj();
+        });
+
+        $("#GouWu_fritbox").click(function () {
+            dfd = $("#GouWu_fritId").val();
+            fgfdfhj();
+        });
+
+        $("#GouWu_Sixbox").click(function () {
+            dfd = $("#GouWu_SixId").val();
+            fgfdfhj();
+        });
+
+        $("#GouWu_Sevenbox").click(function () {
+            dfd = $("#GouWu_SevenId").val();
+            fgfdfhj();
+        });
+
+        $("#GouWu_eightbox").click(function () {
+            dfd = $("#GouWu_eightId").val();
+            fgfdfhj();
+        });
+
+        $("#GouWu_nightbox").click(function () {
+            dfd = $("#GouWu_nightId").val();
+            fgfdfhj();
+        });
+
+        function fgfdfhj() {
+            if (dfd > 0) {
+                $.post("/ZhuMian/hanlectCheckgh", { checkRermeberId: dfd }, function (data) {
+
+                });
+            }
+        }
+
+    </script>
+
+
+    <script>
+        var ShuRuZhi;
+        $("#SouSuo").click(function () {
+            ShuRuZhi = $("#txtSearch").val();
+            if (ShuRuZhi != '') {
+                $.post("/ZhuMian/SouSuoKuang?ShuRuZhi=" + ShuRuZhi, {
+                }, function (data) {
+                    if (data == "success") {
+                        //layer.alert("yes", { icon: 6, title: '温习提示：' });
+                        window.location.href = "http://localhost:5785/YongHuZhuJieMian/Login/BuFenJieMian"
+                        
+                    }
+                    else {
+                        layer.alert("抱歉：查找不到与你输入的相关商品", { icon: 5, title: '温馨提示：' });
+                    }
+                });
+
+            }
+            
+        });
+        //
+        function HuiCheDengLu() {
+            if (event.keyCode == 13) {
+                $("#SouSuo").click();
+            }
+        };
+    </script>
+
+</body>
+</html>

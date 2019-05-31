@@ -1,0 +1,512 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GoodsPanlSex</title>
+
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+
+    <style>
+        .container {
+            background: #fff;
+            width: 100%;
+        }
+
+        .reset-padding {
+            padding: 0 5px;
+        }
+
+        .reset {
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        label.Size {
+            font-size: 60px;
+        }
+
+        label {
+            font-weight: normal;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="form-group">
+
+                        <span class="h4"><b>按部门设置盘点商品属性</b></span>
+                        <div class="pull-right">
+                            <button class="form-control btn-sm btn btn-info" id="Colse"><span class="glyphicon glyphicon-remove">关闭</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-body" style="background:#f0edf1;">
+
+                    <div class="container" style="background:#f0edf1;">
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="row" style="margin-top:60px;margin-top:20px;">
+                                    <div class="col-md-1">
+                                        <label class="control-label reset" style="margin-left:35px;margin-top:10px;">部门:</label>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <select class="form-control" id="DrugTypeCods"></select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div style="border-bottom: #000 1px solid; width: 300px;">
+                                            <input readonly="readonly" id="DrugType" style="width: 300px; border: none; color: #0000FF;background:#f0edf1; font-size: 15px;" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-lg-4">
+                                    <div class="col-md-4 col-lg-offset-1">
+                                        <button class="btn btn-block" type="button" id="TianJiaGoods"><span class="glyphicon glyphicon-plus">添加商品</span></button>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="col-md-3 col-lg-offset-1">
+                                        <button class="btn btn-block" type="button" id="QuanXuan"><span class="glyphicon glyphicon-ok">全 选</span></button>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <button class="btn btn-block" type="button" id="QuanBuXuan"><span class="glyphicon glyphicon-remove">全不选</span></button>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="col-md-5">
+                                        <button class="btn btn-block" type="button" id="PiLiangSex"><span class="glyphicon glyphicon-pencil">批量设置标记</span></button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top:20px;margin-left:10px;overflow:auto;width:100%;height:300px;">
+                            <table id="ShangPin" style="background:#74a4e8;">
+                                <tr>
+                                    <th w_index="XuanZe" w_render="Chacke" width="5%">选择</th>
+                                    <th w_index="GoodsIDs" w_hidden="true"></th><!--商品ID-->
+
+                                    <th w_index="GoodsCodes">商品代码</th>
+                                    <th w_index="GoodsTiaoMas">商品条码</th>
+                                    <th w_index="GoodsNames">商品名称</th>
+
+                                    <th w_index="EstimateUnitNames">计量单位</th>
+                                    <th w_index="ArtNos">货 号</th>
+                                    <th w_index="GoodsClassifyName">商品分类</th>
+                                    <th w_index="GoodsChopName">商标</th>
+                                    <th w_index="" w_render="crearViewButton">盘点标志</th>
+                                    <th w_num="total_line">盘点显示顺序</th>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="row" style="margin-top:20px;">
+                            <div class="form-group">
+                                <div class="col-md-1 col-lg-offset-3">
+                                    <button class="btn btn-block btn-primary" type="button" id="Sex"><span class="glyphicon glyphicon-copy">设 置</span></button>
+                                </div>
+
+                                <div class="col-md-1">
+                                    <button class="btn btn-block btn-danger" type="button" id="Delete"><span class="glyphicon glyphicon-trash">删 除</span></button>
+                                </div>
+                                <div class="col-md-1">
+                                    <button class="btn btn-block btn-success" type="button" id="BaoCun"><span class="glyphicon glyphicon-download-alt">保 存</span></button>
+                                </div>
+                                <div class="col-md-1">
+                                    <button class="btn btn-block btn-warning" type="button" id="FangQi"><span class="glyphicon glyphicon-remove">放 弃</span></button>
+                                </div>
+                                <div class="col-md-1">
+                                    <button class="btn btn-block btn-info" type="button" id="SetOut"><span class="glyphicon glyphicon-off">退 出</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--批量选商品''查询窗口-->
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modPiLiangGoods">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background:#74a4e8;">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">商品查询窗口</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row table-responsive" style="overflow:auto;height:500px;">
+                        <table id="PiLiangGoodsTable" style="margin-top:2px;width:900px;">
+                            <tr>
+                                <th w_index="XuanZe" w_render="ModeChacke" width="5%">选择</th>
+                                
+                                <th w_index="GoodsIDs" w_hidden="true">商品ID</th>
+                                <th w_index="GoodsCodes">商品代码</th>
+                                <th w_index="GoodsTiaoMas">商品条码</th>
+                                <th w_index="GoodsNames">商品名称</th>
+                                <th w_index="EstimateUnitNames">计量单位</th>
+                                <th w_index="ArtNos">货 号</th>
+                                <th w_index="GoodsClassifyName">商品分类</th>
+                                <th w_index="GoodsChopName">商标</th>
+
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row" style="margin-top:10px;">
+                        <div class="form-group">
+                            <div class="col-md-2 col-lg-offset-4">
+                                <button class="form-control btn btn-success" type="button" id="btnXuanGoodels"><span class="glyphicon glyphicon-pencil">选 择</span></button>
+                            </div>
+
+                            <div class="col-md-2">
+                                <button class="form-control btn btn-primary" type="button" id="btnQuXiaodJ">返 回</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script><!--bootstrap-->
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.2.min.js"></script><!--bootstrap-->
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script><!--bootstrap-->
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+
+
+    <script>
+        var ShangPinghg;
+        var PiLiangGoodsTable;
+        var frugTypefID;
+        
+        var JiLuChaekID = new Array();
+        var ChareShuZu = new Array();
+        var ZhuJieIDShuZu = new Array();
+
+        $(document).ready(function () {
+
+            ShangPin = $.fn.bsgrid.init('ShangPin', {
+                //url: '/PanDianShuYiChuLi/SunHaoLv/SelectHoaSunChan',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                pageSize: 9,
+                pageSizeSelect: false,
+                pagingLittleToolbar: true,
+                pagingToolbarAlign: "left",
+            });
+
+            
+            PiLiangGoodsTable = $.fn.bsgrid.init('PiLiangGoodsTable', {
+                url: '/PanDianShuYiChuLi/SunHaoLv/SelectHoaSunChan',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                pageSize: 9,
+                pageSizeSelect: false,
+                pagingLittleToolbar: true,
+                pagingToolbarAlign: "left",
+            });
+           
+            //部门
+            $.post("/PanDianShuYiChuLi/SunHaoLv/SelectDernrtBuMen", function (data) {
+                selectLoadData("DrugTypeCods", data);
+            });
+
+            $("#TianJiaGoods").prop("disabled", 'true');
+            $("#QuanXuan").prop("disabled", 'true');
+            $("#QuanBuXuan").prop("disabled", 'true');
+            $("#PiLiangSex").prop("disabled", 'true');
+
+         
+            $("#BaoCun").prop("disabled", 'true');
+            $("#FangQi").prop("disabled", 'true');
+           
+        });
+
+        $("#DrugTypeCods").change(function () {
+            var deparngtCodes = $("#DrugTypeCods").val();
+            if (deparngtCodes>0) {
+                $.post("/PanDianShuYiChuLi/SunHaoLv/SelectDernrtName?deparntCodes=" + deparngtCodes, function (data) {
+
+                    $("#DrugType").val(data[0].departmentName);
+                     frugTypefID = data[0].DrugTypefID;
+
+                });
+            }
+            else {
+                document.location.href = "/PanDianShuYiChuLi/SunHaoLv/GoodsPanlSex";
+            }
+
+        });
+        
+        //添加商品
+        $("#TianJiaGoods").click(function () {
+            if (frugTypefID > 0) {
+                //清一下
+                for (var i = 0; i < ChareShuZu.length; i++) {
+                    var l = ChareShuZu[i];
+                    if (l > 0 || l == 0) {
+                        ChareShuZu.splice(i, 1);
+                    }
+                    ChareShuZu.splice(i, 1);//
+                }
+                if (ChareShuZu.length>0) {
+                     for (var i = 0; i < ChareShuZu.length; i++) {
+                         var l = ChareShuZu[i];
+                         if (l > 0 || l == 0) {
+                             ChareShuZu.splice(i, 1);
+                         }
+                         ChareShuZu.splice(i, 1);//
+                     }
+                }
+
+                PiLiangGoodsTable.search({ drugTypeID: frugTypefID });
+                $("#modPiLiangGoods").modal('show');
+            }
+            else {
+                layer.alert("请先选择下拉部门", { icon: 6, title: '温馨小提示：' });
+            }
+            
+        });
+
+        $("#Colse").click(function () {
+            $('body').remove();
+        });
+        $("#SetOut").click(function () {
+            $('body').remove();
+        });
+
+        //确定选择商品
+        ShangPinghg = $.fn.bsgrid.init('ShangPin', {
+            url: '/PanDianShuYiChuLi/SunHaoLv/BangDingPiGoodel',
+            autoLoad: false,
+            stripeRows: true,
+            rowHoverColor: true,
+            pageSize: 9,
+            pageSizeSelect: false,
+            pagingLittleToolbar: true,
+            pagingToolbarAlign: "left",
+        });
+        $("#btnXuanGoodels").click(function () {
+            for (var i = 0; i < JiLuChaekID.length; i++) {
+                var l = JiLuChaekID[i];
+                if (l > 0 || l == 0) {
+                    JiLuChaekID.splice(i, 1);
+                }
+                JiLuChaekID.splice(i, 1);//
+            }
+            if (JiLuChaekID.length>0) {
+                for (var i = 0; i < JiLuChaekID.length; i++) {
+                    var l = JiLuChaekID[i];
+                    if (l > 0 || l == 0) {
+                        JiLuChaekID.splice(i, 1);
+                    }
+                    JiLuChaekID.splice(i, 1);//
+                }
+            }
+
+            for (var i = 0; i < ChareShuZu.length; i++) {
+                var HuoQuID = ChareShuZu[i];
+                if ($("#ModeXuanZeGou" + HuoQuID).prop('checked')) {
+                    JiLuChaekID.push(HuoQuID);
+                }
+            }
+
+            if (JiLuChaekID.length > 0) {
+                ShangPinghg.search({ jiLuChaekID: JiLuChaekID });
+                $("#modPiLiangGoods").modal('hide');
+
+                $("#BaoCun").removeAttr("disabled");
+                $("#FangQi").removeAttr("disabled");
+            }
+            else {
+                layer.alert("还没有选择商品", { icon: 6, title: '温馨小提示：' });
+            }
+           
+
+        });
+
+
+        //全选
+        $("#QuanXuan").click(function () {
+
+            if (ZhuJieIDShuZu.length > 0) {
+                for (var i = 0; i < ZhuJieIDShuZu.length; i++) {
+                    var HuoQuID = ZhuJieIDShuZu[i];
+                    $("#XuanZeGou" + HuoQuID).prop('checked', 'true');
+                }
+            }
+            else {
+                layer.alert("还没显示有商品", { icon: 6, title: '温馨小提示：' });
+            }
+        });
+
+        //全不选
+        $("#QuanBuXuan").click(function () {
+
+            if (ZhuJieIDShuZu.length > 0) {
+                for (var i = 0; i < ZhuJieIDShuZu.length; i++) {
+                    var HuoQuID = ZhuJieIDShuZu[i];
+                    $("#XuanZeGou" + HuoQuID).removeAttr('checked');
+                }
+            }
+            else {
+                layer.alert("还没显示有商品", { icon: 6, title: '温馨小提示：' });
+            }
+        });
+
+        //批量标志
+        $("#PiLiangSex").click(function () {
+            if (ZhuJieIDShuZu.length > 0) {
+                for (var i = 0; i < ZhuJieIDShuZu.length; i++) {
+                    var HuoQuID = ZhuJieIDShuZu[i];
+                    if ($("#XuanZeGou" + HuoQuID).prop('checked')) {
+                        $("#PanlBiaoZhih" + HuoQuID).val(" ✔");
+                    }
+                    else {
+                        $("#PanlBiaoZhih" + HuoQuID).val("");
+                    }
+
+                }
+            }
+            else {
+                layer.alert("还没显示有商品", { icon: 6, title: '温馨小提示：' });
+            }
+        });
+
+
+        //设置
+        $("#Sex").click(function () {
+            var deparngtCodes = $("#DrugTypeCods").val();
+            if (deparngtCodes > 0) {
+                $("#TianJiaGoods").removeAttr("disabled");
+                $("#QuanXuan").removeAttr("disabled");
+                $("#QuanBuXuan").removeAttr("disabled");
+                $("#PiLiangSex").removeAttr("disabled");
+                $("#Delete").prop("disabled");
+                layer.msg("可以选择添加商品了哟！", { icon: 6, skin: "layui-layer-molv" });
+            }
+            else {
+                layer.alert("请选择下拉部门", { icon: 0, title: '温馨小提示：' });
+            }
+        });
+
+
+        //删除
+        $("#Delete").click(function () {
+
+            for (var i = 0; i < ZhuJieIDShuZu.length; i++) {
+                var l = ZhuJieIDShuZu[i];
+                if (l > 0 || l == 0) {
+                    ZhuJieIDShuZu.splice(i, 1);
+                }
+                ZhuJieIDShuZu.splice(i, 1);//
+            }
+            if (ZhuJieIDShuZu.length > 0) {
+                for (var i = 0; i < ZhuJieIDShuZu.length; i++) {
+                    var l = ZhuJieIDShuZu[i];
+                    if (l > 0 || l == 0) {
+                        ZhuJieIDShuZu.splice(i, 1);
+                    }
+                    ZhuJieIDShuZu.splice(i, 1);//
+                }
+            }
+
+            layer.confirm("是否界面移除商品？", {
+                icon: 3,
+                btn: ['确定', '取消']
+                //按钮
+            }, function (layerIndex) {
+                layer.close(layerIndex);//关闭提示框
+                ShangPin = $.fn.bsgrid.init('ShangPin', {
+                    //url: '/PanDianShuYiChuLi/SunHaoLv/SelectHoaSunChan',
+                    autoLoad: false,
+                    stripeRows: true,
+                    rowHoverColor: true,
+                    pageSize: 9,
+                    pageSizeSelect: false,
+                    pagingLittleToolbar: true,
+                    pagingToolbarAlign: "left",
+                });
+            });
+
+            
+        });
+
+        //
+        $("#BaoCun").click(function () {
+            if (ZhuJieIDShuZu.length > 0) {
+                layer.confirm("是否保存？", {
+                    icon: 3,
+                    btn: ['确定', '取消']
+                    //按钮
+                }, function (layerIndex) {
+                    layer.close(layerIndex);//关闭提示框
+                    layer.alert("保存成功", { icon: 6, title: '温馨小提示：' });
+                    document.location.href = "/PanDianShuYiChuLi/SunHaoLv/GoodsPanlSex";
+                });
+            }
+            else {
+                layer.alert("请填写完整数据信息", { icon: 6, title: '温馨小提示：' });
+            }
+        });
+
+
+        //主界面
+        function Chacke(record, rowIndex, colIndex, options) {
+            var IDS;
+            IDS = record.GoodsIDs;
+            ZhuJieIDShuZu.push(IDS);
+           
+            return ' <input type="checkbox" class="easyui-combotree" id="XuanZeGou' + record.GoodsIDs + '" data-options="onChange:onConsignmentDepartmentCodeSelect;" />';
+        }
+        //模态
+        function ModeChacke(record, rowIndex, colIndex, options) {
+            var IDS;
+            IDS = record.GoodsIDs;
+            ChareShuZu.push(IDS);
+            return ' <input type="checkbox" class="easyui-combotree" id="ModeXuanZeGou' + record.GoodsIDs + '" data-options="onChange:onConsignmentDepartmentCodeSelect;" />';
+        }
+
+        //盘点标志
+        function crearViewButton(record, rowIndex, colIndex, options) {
+            return ' <input class="easyui-combotree" style="width: 100px;" disabled id="PanlBiaoZhih' + record.GoodsIDs + '" data-options="onChange:onConsignmentDepartmentCodeSelect;"/>';
+        }
+       
+        $("#FangQi").click(function () {
+            document.location.href = "/PanDianShuYiChuLi/SunHaoLv/GoodsPanlSex";
+        });
+
+    </script>
+
+
+</body>
+</html>

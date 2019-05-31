@@ -1,0 +1,2047 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DaXingShangMaoXiTongModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="areas">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="ShortName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LevelType" Type="nvarchar" MaxLength="50" />
+    <Property Name="CityCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ZipCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="MergerName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Lng" Type="nvarchar" MaxLength="50" />
+    <Property Name="Lat" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pinyin" Type="nvarchar" MaxLength="50" />
+    <Property Name="FirstChar" Type="nvarchar" MaxLength="50" />
+    <Property Name="shorthand" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="B_AgreementList">
+    <Key>
+      <PropertyRef Name="AgreementID" />
+    </Key>
+    <Property Name="AgreementID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AgreementName" Type="char" MaxLength="20" />
+    <Property Name="AgreementCode" Type="char" MaxLength="20" />
+    <Property Name="AgreementBeginTime" Type="datetime" />
+    <Property Name="AgreementFinishTime" Type="datetime" />
+    <Property Name="ConclusionTime" Type="datetime" />
+    <Property Name="AdjustAccountsFashionID" Type="int" />
+    <Property Name="AgreementStateID" Type="int" />
+    <Property Name="GoodsID" Type="int" />
+  </EntityType>
+  <EntityType Name="B_AgreementWithholdList">
+    <Key>
+      <PropertyRef Name="AgreementWithholdID" />
+    </Key>
+    <Property Name="AgreementWithholdID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AgreementWithholdName" Type="char" MaxLength="20" />
+    <Property Name="SettlementDebiID" Type="int" />
+    <Property Name="MethodOfSettling" Type="char" MaxLength="20" />
+    <Property Name="UseNo" Type="char" MaxLength="20" />
+    <Property Name="SettlementDebiList" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="B_AllocateDetailList">
+    <Key>
+      <PropertyRef Name="AllocateDetailID" />
+    </Key>
+    <Property Name="AllocateDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AllocateID" Type="int" />
+    <Property Name="GoodsID" Type="int" />
+    <Property Name="MumberOfPackages" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Subdivision" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Number" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="B_AllocateList">
+    <Key>
+      <PropertyRef Name="AllocateID" />
+    </Key>
+    <Property Name="AllocateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ConverID" Type="int" />
+    <Property Name="Remember" Type="char" MaxLength="20" />
+    <Property Name="payNamel" Type="char" MaxLength="20" />
+    <Property Name="furlNamel" Type="char" MaxLength="20" />
+    <Property Name="SpouseBRanchID" Type="int" />
+    <Property Name="SpouseBRanchIDtwo" Type="int" />
+    <Property Name="RegisterName" Type="char" MaxLength="20" />
+    <Property Name="RegisterTime" Type="datetime" />
+    <Property Name="ExamineName" Type="char" MaxLength="20" />
+    <Property Name="ExecuteTime" Type="datetime" />
+    <Property Name="Remarks" Type="char" MaxLength="20" />
+    <Property Name="ExamineNot" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="B_ApproachCostList">
+    <Key>
+      <PropertyRef Name="ApproachCostID" />
+    </Key>
+    <Property Name="ApproachCostID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SettlementDebiID" Type="int" />
+    <Property Name="MethodOfSettlingAccountsID" Type="int" />
+    <Property Name="UseNo" Type="bit" />
+  </EntityType>
+  <EntityType Name="B_ChangeDetailList">
+    <Key>
+      <PropertyRef Name="ChangeDetailID" />
+    </Key>
+    <Property Name="ChangeDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ChangeID" Type="int" />
+    <Property Name="WareHouseDetiailID" Type="int" />
+    <Property Name="MumberOfPackages" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Subdivision" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="B_ChangeList">
+    <Key>
+      <PropertyRef Name="ChangeID" />
+    </Key>
+    <Property Name="ChangeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WareHouseID" Type="int" />
+    <Property Name="Remember" Type="char" MaxLength="20" />
+    <Property Name="SpouseBRanchID" Type="int" />
+    <Property Name="StockPlaceID" Type="int" />
+    <Property Name="StockPlaceIDtwo" Type="int" />
+    <Property Name="payName" Type="char" MaxLength="20" />
+    <Property Name="furlName" Type="char" MaxLength="20" />
+    <Property Name="RegisterName" Type="char" MaxLength="20" />
+    <Property Name="RegisterTime" Type="datetime" />
+    <Property Name="ExamineName" Type="char" MaxLength="20" />
+    <Property Name="ExamineTime" Type="datetime" />
+    <Property Name="ExamineNot" Type="bit" Nullable="false" />
+    <Property Name="ShiFouGou" Type="bit" />
+  </EntityType>
+  <EntityType Name="B_CheckRemerbenDetillList">
+    <Key>
+      <PropertyRef Name="CheckRemerbenDetillD" />
+    </Key>
+    <Property Name="CheckRemerbenDetillD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CheckRermeberID" Type="int" />
+    <Property Name="GoodsID" Type="int" />
+    <Property Name="MumberOfPackages" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Subdivision" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PiCiHao" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SunYiShu" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="JiaZaiFou" Type="bit" Nullable="false" />
+    <Property Name="Attritionrate" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="B_CheckRemerbenList">
+    <Key>
+      <PropertyRef Name="CheckRermeberID" />
+    </Key>
+    <Property Name="CheckRermeberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Remter" Type="char" MaxLength="20" />
+    <Property Name="PablData" Type="date" />
+    <Property Name="CommodityType" Type="char" MaxLength="20" />
+    <Property Name="DrugType" Type="char" MaxLength="20" />
+    <Property Name="StockPlaceID" Type="int" />
+    <Property Name="OrderFormPactID" Type="int" />
+    <Property Name="GoodsClassifyID" Type="int" />
+    <Property Name="GoodsChopID" Type="int" />
+    <Property Name="ExamineName" Type="char" MaxLength="20" />
+    <Property Name="ExamineTime" Type="datetime" />
+    <Property Name="Entering" Type="bit" Nullable="false" />
+    <Property Name="EnteringTime" Type="char" MaxLength="20" />
+    <Property Name="GoodsNot" Type="bit" Nullable="false" />
+    <Property Name="StaffID" Type="int" />
+    <Property Name="YingKuiMoney" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="YuShenNot" Type="bit" Nullable="false" />
+    <Property Name="ExamineNot" Type="bit" Nullable="false" />
+    <Property Name="ShenHeName" Type="char" MaxLength="20" />
+    <Property Name="DrugTypeID" Type="int" Nullable="false" />
+    <Property Name="YiJiaZaiGoodsNot" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="B_ChGoodsPanlSexList">
+    <Key>
+      <PropertyRef Name="GoodsPanlSexID" />
+    </Key>
+    <Property Name="GoodsPanlSexID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CheckRemerbenDetiID" Type="int" />
+    <Property Name="departmentID" Type="int" />
+    <Property Name="BiaoZhi" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="B_ConverDeTailList">
+    <Key>
+      <PropertyRef Name="ConverDeTaiID" />
+    </Key>
+    <Property Name="ConverDeTaiID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ConverID" Type="int" />
+    <Property Name="GoodsID" Type="int" />
+    <Property Name="WareHouseDetiailID" Type="int" />
+    <Property Name="MumberOfPackages" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Subdivision" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Number" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="YiKongNot" Type="bit" Nullable="false" />
+    <Property Name="YuanMumberOfPack" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="YuanSubdivision" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="B_ConverList">
+    <Key>
+      <PropertyRef Name="ConverID" />
+    </Key>
+    <Property Name="ConverID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WareHouseID" Type="int" />
+    <Property Name="P_Remember" Type="char" MaxLength="20" />
+    <Property Name="payName" Type="char" MaxLength="20" />
+    <Property Name="furlName" Type="char" MaxLength="20" />
+    <Property Name="SpouseBRanchID" Type="int" />
+    <Property Name="StockPlaceID" Type="int" />
+    <Property Name="RegisterName" Type="char" MaxLength="20" />
+    <Property Name="RegisterTime" Type="datetime" />
+    <Property Name="ExamineName" Type="char" MaxLength="20" />
+    <Property Name="ExamineTime" Type="datetime" />
+    <Property Name="Remarks" Type="char" MaxLength="20" />
+    <Property Name="ExamineNot" Type="bit" Nullable="false" />
+    <Property Name="HaveNot" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="B_CustomerCardList">
+    <Key>
+      <PropertyRef Name="CustomerCardID" />
+    </Key>
+    <Property Name="CustomerCardID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EffectiveID" Type="int" />
+    <Property Name="InvalidID" Type="int" />
+    <Property Name="CustomerCard" Type="char" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="B_DaBaoDingJiaList">
+    <Key>
+      <PropertyRef Name="DaBaoDingJiaID" />
+    </Key>
+    <Property Name="DaBaoDingJiaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodsPurchasemoneyStatusID" Type="int" />
+    <Property Name="GoodsDetailID" Type="int" />
+    <Property Name="FactPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ReferencePrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="RetailMonovalent" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PackGoodsID" Type="int" />
+  </EntityType>
+  <EntityType Name="B_DefaulGoodsDetaiLList">
+    <Key>
+      <PropertyRef Name="DefaulGoodsDetaiLLID" />
+    </Key>
+    <Property Name="DefaulGoodsDetaiLLID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DefaulGoodsID" Type="int" />
+    <Property Name="GoodsID" Type="int" />
+  </EntityType>
+  <EntityType Name="B_DefaulGoodsList">
+    <Key>
+      <PropertyRef Name="DefaulGoodsID" />
+    </Key>
+    <Property Name="DefaulGoodsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderFormPactID" Type="int" />
+  </EntityType>
+  <EntityType Name="B_DefaultrelevDetaiLList">
+    <Key>
+      <PropertyRef Name="DefaultrelevDetaiLLID" />
+    </Key>
+    <Property Name="DefaultrelevDetaiLLID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DefaultrelevID" Type="int" />
+    <Property Name="OrderFormPactID" Type="int" />
+  </EntityType>
+  <EntityType Name="B_DefaultrelevList">
+    <Key>
+      <PropertyRef Name="DefaultrelevID" />
+    </Key>
+    <Property Name="DefaultrelevID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodsID" Type="int" />
+  </EntityType>
+  <EntityType Name="B_DeleteCardList">
+    <Key>
+      <PropertyRef Name="DeleteCardID" />
+    </Key>
+    <Property Name="DeleteCardID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeleteCardMC" Type="char" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="B_DepatmenList">
+    <Key>
+      <PropertyRef Name="departmentID" />
+    </Key>
+    <Property Name="departmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DrugTypeID" Type="int" />
+    <Property Name="SpouseBRanchID" Type="int" />
+    <Property Name="departmentCodes" Type="char" MaxLength="10" />
+    <Property Name="departmentName" Type="char" MaxLength="10" />
+    <Property Name="HaoSunLv" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="B_EffectiveList">
+    <Key>
+      <PropertyRef Name="EffectiveID" />
+    </Key>
+    <Property Name="EffectiveID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EffectiveMC" Type="char" MaxLength="50" />
+    <Property Name="YEffective" Type="nchar" MaxLength="50" />
+    <Property Name="XEffective" Type="nchar" MaxLength="50" />
+    <Property Name="Sum" Type="nchar" MaxLength="10" />
+    <Property Name="EctMoney" Type="nchar" MaxLength="10" />
+    <Property Name="CardNber" Type="nchar" MaxLength="20" />
+    <Property Name="Name" Type="nchar" MaxLength="10" />
+    <Property Name="CredentialsNumber" Type="nchar" MaxLength="20" />
+    <Property Name="Status" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="B_GoodsBianJiaList">
+    <Key>
+      <PropertyRef Name="GoodsBianJiaID" />
+    </Key>
+    <Property Name="GoodsBianJiaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ChangeTypeID" Type="int" />
+    <Property Name="BianJiaBianHao" Type="nvarchar(max)" />
+    <Property Name="GoodsDetailID" Type="int" />
+    <Property Name="NewMonovalent" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="NewJob" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="RawMemberValue" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ChangeWhyID" Type="int" />
+    <Property Name="ChangeData" Type="date" />
+    <Property Name="Registrant" Type="nvarchar(max)" />
+    <Property Name="RegisterTime" Type="date" />
+    <Property Name="Auditor" Type="nvarchar(max)" />
+    <Property Name="Checktime" Type="date" />
+    <Property Name="Executor" Type="nvarchar(max)" />
+    <Property Name="ExecuteTime" Type="date" />
+    <Property Name="SpouseBRanchID" Type="int" />
+    <Property Name="NewAdvanceBid" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="NewNoAdvanceBid" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="BeginChangeData" Type="date" />
+    <Property Name="NewHanSuiJinHuoJia" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="NewBuHanSuiJinHuoJia" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="GengXinCaiGouJiaFou" Type="bit" />
+    <Property Name="Batch" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="B_GoodsChopList">
+    <Key>
+      <PropertyRef Name="GoodsChopID" />
+    </Key>
+    <Property Name="GoodsChopID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodsChopName" Type="char" MaxLength="20" />
+    <Property Name="SpellCod" Type="char" MaxLength="20" />
+    <Property Name="GoodsChopCode" Type="char" MaxLength="20" />
+    <Property Name="TrademarkRankID" Type="int" />
+    <Property Name="TrademarkStatusID" Type="int" />
+    <Property Name="TrademarkLocalID" Type="int" />
+    <Property Name="RegisteredAddress" Type="char" MaxLength="50" />
+    <Property Name="DiplomaValid" Type="date" />
+    <Property Name="AgentCondition" Type="char" MaxLength="20" />
+    <Property Name="RegisteredDiploma" Type="char" MaxLength="50" />
+    <Property Name="Proprietor" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="B_GoodsClassifyList">
+    <Key>
+      <PropertyRef Name="GoodsClassifyID" />
+    </Key>
+    <Property Name="GoodsClassifyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodsClassifyName" Type="char" MaxLength="20" />
+    <Property Name="F_GoodsClassifyID" Type="int" />
+    <Property Name="Code" Type="char" MaxLength="20" />
+    <Property Name="TurnoverData" Type="char" MaxLength="20" />
+    <Property Name="AdvanceCess" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PriceMarkupRate" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="GrossProfitRate" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SellRate" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="MemberDiscountRate" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ConsumeCess" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="B_GoodsDetailList">
+    <Key>
+      <PropertyRef Name="GoodsDetailID" />
+    </Key>
+    <Property Name="GoodsDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodsDetailName" Type="nvarchar(max)" />
+    <Property Name="GoodsID" Type="int" />
+    <Property Name="PurchaseID" Type="int" />
+    <Property Name="RetailMonovalent" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="GoodsFixAPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ReferencePrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="MemberPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="RateSale" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TaxBid" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="NewRateSale" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="B_GoodsKuCunList">
+    <Key>
+      <PropertyRef Name="GoodeKuCunLiangID" />
+    </Key>
+    <Property Name="GoodeKuCunLiangID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodsIDs" Type="int" />
+    <Property Name="MumberOfPackages" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Subdivision" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="AnQuanTianShu" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="B_GoodsList">
+    <Key>
+      <PropertyRef Name="GoodsID" />
+    </Key>
+    <Property Name="GoodsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodsName" Type="nvarchar(max)" />
+    <Property Name="GoodsStampID" Type="int" />
+    <Property Name="EstimateUnitID" Type="int" />
+    <Property Name="GoodsClassifyID" Type="int" />
+    <Property Name="GoodsSeasonID" Type="int" />
+    <Property Name="SourceID" Type="int" />
+    <Property Name="BurdenStockSellStatusID" Type="int" />
+    <Property Name="GoodsCode" Type="char" MaxLength="20" />
+    <Property Name="BarCodTypeID" Type="int" />
+    <Property Name="GoodsTiaoMa" Type="char" MaxLength="20" />
+    <Property Name="PLUCod" Type="nvarchar(max)" />
+    <Property Name="SpellCod" Type="nvarchar(max)" />
+    <Property Name="ManufacturerID" Type="int" />
+    <Property Name="ProducingArea" Type="nvarchar(max)" />
+    <Property Name="ArtNo" Type="nvarchar(max)" />
+    <Property Name="SpecificationsModel" Type="nvarchar(max)" />
+    <Property Name="ApplyTargetID" Type="int" />
+    <Property Name="Remarks" Type="nvarchar(max)" />
+    <Property Name="GoodsChopID" Type="int" />
+    <Property Name="CommodityTypeID" Type="int" />
+    <Property Name="GoodsStatusID" Type="int" />
+    <Property Name="QualityGuaranteePeriod" Type="nvarchar(max)" />
+    <Property Name="QualityContent" Type="nvarchar(max)" />
+    <Property Name="StatisticsScale" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="AdvanceCess" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SellCess" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="GoodsColoursID" Type="int" />
+    <Property Name="StaffID" Type="int" />
+    <Property Name="Registrant" Type="nvarchar(max)" />
+    <Property Name="RegisterTime" Type="date" />
+    <Property Name="Auditor" Type="nvarchar(max)" />
+    <Property Name="Checktime" Type="date" />
+    <Property Name="GoodsPurchasemoneyTypeID" Type="int" />
+    <Property Name="GoodsPurchasemoneyStatusID" Type="int" />
+    <Property Name="SupplierID" Type="int" />
+    <Property Name="OrderFormPactID" Type="int" />
+    <Property Name="CountersellID" Type="int" />
+    <Property Name="PurchaseSectionID" Type="int" />
+    <Property Name="AllowGoodsXiaoShu" Type="bit" Nullable="false" />
+    <Property Name="AuditingBit" Type="bit" Nullable="false" />
+    <Property Name="ZhuanGuiCommodityTypeID" Type="int" />
+    <Property Name="GoodsPicture" Type="image" />
+  </EntityType>
+  <EntityType Name="B_GoodsListedDetailList">
+    <Key>
+      <PropertyRef Name="GoodsListedDetailID" />
+    </Key>
+    <Property Name="GoodsListedDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodsListedID" Type="int" />
+    <Property Name="ConverDateilID" Type="int" />
+    <Property Name="SongHuoJianShu" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SongHuoXiShu" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="MumberOfPackages" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Subdivision" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ShiFouNot" Type="bit" Nullable="false" />
+    <Property Name="ShouChuLiang" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="B_GoodsListedList">
+    <Key>
+      <PropertyRef Name="GoodsListedID" />
+    </Key>
+    <Property Name="GoodsListedID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ConverID" Type="int" />
+    <Property Name="ListedNumber" Type="nchar" MaxLength="10" />
+    <Property Name="SpouseBRanchID" Type="int" />
+    <Property Name="ConsigneeShop" Type="nchar" MaxLength="20" />
+    <Property Name="ConsigneeShopDiZhi" Type="nchar" MaxLength="30" />
+    <Property Name="payName" Type="nchar" MaxLength="20" />
+    <Property Name="furlName" Type="nchar" MaxLength="5" />
+    <Property Name="RegisterName" Type="nchar" MaxLength="20" />
+    <Property Name="RegisterTime" Type="date" />
+    <Property Name="ExamineName" Type="nchar" MaxLength="20" />
+    <Property Name="ExamineTime" Type="date" />
+    <Property Name="GoodsDingYiQuID" Type="int" />
+    <Property Name="ExamineNot" Type="bit" Nullable="false" />
+    <Property Name="AbateNot" Type="bit" Nullable="false" />
+    <Property Name="StoopSellNot" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="B_GoodsSignList">
+    <Key>
+      <PropertyRef Name="GoodsSignID" />
+    </Key>
+    <Property Name="GoodsSignID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodsSignName" Type="nvarchar(max)" />
+    <Property Name="SignTypeID" Type="int" />
+    <Property Name="JiaQianCode" Type="nvarchar(max)" />
+    <Property Name="Width" Type="nvarchar(max)" />
+    <Property Name="Height" Type="nvarchar(max)" />
+    <Property Name="GoodsDetailID" Type="int" />
+    <Property Name="PlanPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Broadwise" Type="nvarchar(max)" />
+    <Property Name="Ordinate" Type="nvarchar(max)" />
+    <Property Name="EveryRow" Type="nvarchar(max)" />
+    <Property Name="EveryRank" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="B_IncreaseDetailList">
+    <Key>
+      <PropertyRef Name="IncreaseDetailID" />
+    </Key>
+    <Property Name="IncreaseDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IncreaseID" Type="int" />
+    <Property Name="GoodsID" Type="int" />
+    <Property Name="MumberOfPackages" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Subdivision" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Number" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="B_IncreaseList">
+    <Key>
+      <PropertyRef Name="IncreaseID" />
+    </Key>
+    <Property Name="IncreaseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Remember" Type="char" MaxLength="20" />
+    <Property Name="IncreaseCause" Type="char" MaxLength="20" />
+    <Property Name="DrugTypeID" Type="int" />
+    <Property Name="StockPlaceID" Type="int" />
+    <Property Name="RegisterName" Type="char" MaxLength="20" />
+    <Property Name="RegisterTime" Type="datetime" />
+    <Property Name="ExamineName" Type="char" MaxLength="20" />
+    <Property Name="ExamineTime" Type="datetime" />
+    <Property Name="ExamineNot" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="B_InvalidList">
+    <Key>
+      <PropertyRef Name="InvalidID" />
+    </Key>
+    <Property Name="InvalidID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InvalidMC" Type="char" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="B_ManufacturerList">
+    <Key>
+      <PropertyRef Name="ManufacturerID" />
+    </Key>
+    <Property Name="ManufacturerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ManufacturerName" Type="char" MaxLength="20" />
+    <Property Name="ManufacturerCode" Type="char" MaxLength="20" />
+    <Property Name="ManufacturerPC" Type="char" MaxLength="20" />
+    <Property Name="ManufacturerPYCode" Type="char" MaxLength="20" />
+    <Property Name="ManufacturerJCName" Type="char" MaxLength="10" />
+    <Property Name="ManufacturerProduct" Type="char" MaxLength="30" />
+    <Property Name="ManufacturerAddress" Type="char" MaxLength="50" />
+    <Property Name="ManufacturerBarCode" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="B_NewGoodsManageList">
+    <Key>
+      <PropertyRef Name="NewGoodsManageID" />
+    </Key>
+    <Property Name="NewGoodsManageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NewGoodsManageMC" Type="nvarchar(max)" />
+    <Property Name="GoodsDetailID" Type="int" />
+    <Property Name="MarketID" Type="int" />
+    <Property Name="Wu" Type="bit" Nullable="false" />
+    <Property Name="You" Type="bit" Nullable="false" />
+    <Property Name="BuXiaoShou" Type="bit" Nullable="false" />
+    <Property Name="XiaoShou" Type="bit" Nullable="false" />
+    <Property Name="BuXiaoShouBuXiuGai" Type="bit" Nullable="false" />
+    <Property Name="XiaoShouBuXiuGai" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="B_OrderFormDetailList">
+    <Key>
+      <PropertyRef Name="OrderFormDetailID" />
+    </Key>
+    <Property Name="OrderFormDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodsID" Type="int" />
+    <Property Name="OrderFormID" Type="int" />
+    <Property Name="MumberOfPackages" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Subdivision" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Quantity" Type="nvarchar(max)" />
+    <Property Name="Remarks" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="B_OrderFormList">
+    <Key>
+      <PropertyRef Name="OrderFormID" />
+    </Key>
+    <Property Name="OrderFormID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderNumber" Type="nvarchar(max)" />
+    <Property Name="OrderFormTypeID" Type="int" />
+    <Property Name="OrderFormPactID" Type="int" />
+    <Property Name="SpouseBRanchID" Type="int" />
+    <Property Name="Place" Type="nvarchar(max)" />
+    <Property Name="DeliveryFashion" Type="nvarchar(max)" />
+    <Property Name="OrderGoodsData" Type="date" />
+    <Property Name="Value" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ExpensesOTtaxation" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ValueTotal" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="StaffID" Type="int" />
+    <Property Name="Register" Type="nvarchar(max)" />
+    <Property Name="RegisterTime" Type="date" />
+    <Property Name="CheckRen" Type="nvarchar(max)" />
+    <Property Name="Checktime" Type="date" />
+    <Property Name="ConsigneeNot" Type="bit" Nullable="false" />
+    <Property Name="ShiFouShouHuo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="B_OrderFormPactDetailList">
+    <Key>
+      <PropertyRef Name="OrderFormPactDetailID" />
+    </Key>
+    <Property Name="OrderFormPactDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderFormID" Type="int" />
+    <Property Name="GoodsID" Type="int" />
+    <Property Name="PackInfo" Type="char" MaxLength="20" />
+    <Property Name="MumberOfPackages" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Subdivision" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Quantity" Type="nchar" MaxLength="10" />
+    <Property Name="Remarks" Type="char" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="B_OrderFormPactList">
+    <Key>
+      <PropertyRef Name="OrderFormPactID" />
+    </Key>
+    <Property Name="OrderFormPactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AgreementTypeID" Type="int" />
+    <Property Name="StaffID" Type="int" />
+    <Property Name="AgreementStatusID" Type="int" />
+    <Property Name="SpouseBRanchID" Type="int" />
+    <Property Name="ContractNumber" Type="char" MaxLength="20" />
+    <Property Name="HandworkContractNumber" Type="char" MaxLength="20" />
+    <Property Name="AgreementManagerID" Type="int" />
+    <Property Name="HostContractNumber" Type="char" MaxLength="20" />
+    <Property Name="SupplierID" Type="int" />
+    <Property Name="MethodOfSettlingAccountsID" Type="int" />
+    <Property Name="ValidTip" Type="datetime" />
+    <Property Name="ValidBegin" Type="datetime" />
+    <Property Name="ConclusionTime" Type="datetime" />
+    <Property Name="ConclusionSite" Type="char" MaxLength="50" />
+    <Property Name="PurchasingAgent" Type="char" MaxLength="10" />
+    <Property Name="AdvanceMarketData" Type="date" />
+    <Property Name="RetreatMarketData" Type="date" />
+    <Property Name="WritData" Type="date" />
+    <Property Name="AccountData" Type="date" />
+    <Property Name="AdvancedSettleAccounts" Type="date" />
+    <Property Name="PlanFiringData" Type="date" />
+    <Property Name="Firingdata" Type="date" />
+    <Property Name="AgreementID" Type="int" />
+    <Property Name="AdjustAccountsFashionID" Type="int" />
+    <Property Name="GoodsID" Type="int" />
+    <Property Name="TryPaymentData" Type="int" />
+    <Property Name="TryPaymentShiXiaoData" Type="int" />
+    <Property Name="AgreementRen" Type="char" MaxLength="20" />
+    <Property Name="Registrant" Type="char" MaxLength="20" />
+    <Property Name="Auditor" Type="char" MaxLength="20" />
+    <Property Name="Executor" Type="char" MaxLength="20" />
+    <Property Name="Registranttime" Type="datetime" />
+    <Property Name="Auditortime" Type="datetime" />
+    <Property Name="Executortime" Type="datetime" />
+    <Property Name="UseOf" Type="bit" />
+    <Property Name="GoodsGenreID" Type="int" />
+    <Property Name="GoodsChopID" Type="int" />
+  </EntityType>
+  <EntityType Name="B_PackGoodsList">
+    <Key>
+      <PropertyRef Name="PackGoodsID" />
+    </Key>
+    <Property Name="PackGoodsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PackName" Type="nvarchar(max)" />
+    <Property Name="PackCode" Type="nvarchar(max)" />
+    <Property Name="PackTiaoMa" Type="nvarchar(max)" />
+    <Property Name="EstimateUnitID" Type="int" />
+    <Property Name="PackSpellCod" Type="nvarchar(max)" />
+    <Property Name="PackDengJiRen" Type="nvarchar(max)" />
+    <Property Name="PackDengJiShi" Type="date" />
+    <Property Name="PackGengXinRen" Type="nvarchar(max)" />
+    <Property Name="PackGengXinShi" Type="date" />
+    <Property Name="PackShuLaing" Type="nvarchar(max)" />
+    <Property Name="GoodsDetailID" Type="int" />
+    <Property Name="GoodsPurchasemoneyStatusID" Type="int" />
+  </EntityType>
+  <EntityType Name="B_PanlList">
+    <Key>
+      <PropertyRef Name="DrugTypeID" />
+    </Key>
+    <Property Name="DrugTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DrugType" Type="nchar" MaxLength="32" />
+    <Property Name="F_DrugTypeID" Type="int" />
+  </EntityType>
+  <EntityType Name="B_PurchaseList">
+    <Key>
+      <PropertyRef Name="PurchaseID" />
+    </Key>
+    <Property Name="PurchaseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodsDetailID" Type="int" />
+    <Property Name="PurchasingAgent" Type="nvarchar(max)" />
+    <Property Name="PricePlace" Type="nvarchar(max)" />
+    <Property Name="PricePlace2" Type="nvarchar(max)" />
+    <Property Name="PricePlace3" Type="nvarchar(max)" />
+    <Property Name="PricePlace4" Type="nvarchar(max)" />
+    <Property Name="Price1" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Price2" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Price3" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Price4" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PriceData" Type="date" />
+    <Property Name="NoAdvanceBid" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="AdvanceBid" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PurchasePriceMarkup" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="LastBid" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="B_RetureFactoryDeTailList">
+    <Key>
+      <PropertyRef Name="RetureFactoryDeTailID" />
+    </Key>
+    <Property Name="RetureFactoryDeTailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RetureFactoryID" Type="int" />
+    <Property Name="GoodsID" Type="int" />
+    <Property Name="ReMumberOfPackages" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="B_RetureFactoryList">
+    <Key>
+      <PropertyRef Name="RetureFactoryID" />
+    </Key>
+    <Property Name="RetureFactoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ConverID" Type="int" />
+    <Property Name="Remember" Type="char" MaxLength="20" />
+    <Property Name="SpouseBRanchID" Type="int" />
+    <Property Name="StockPlaceID" Type="int" />
+    <Property Name="ReturnofID" Type="int" />
+    <Property Name="Settlement" Type="char" MaxLength="20" />
+    <Property Name="Appendix" Type="char" MaxLength="20" />
+    <Property Name="Evidences" Type="char" MaxLength="20" />
+    <Property Name="RegisterName" Type="char" MaxLength="20" />
+    <Property Name="RegisterTime" Type="datetime" />
+    <Property Name="ExamineName" Type="char" MaxLength="20" />
+    <Property Name="ExamineTime" Type="datetime" />
+    <Property Name="ExamineNot" Type="bit" Nullable="false" />
+    <Property Name="MumberOfPackages" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Number" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="B_SaleAdjustList">
+    <Key>
+      <PropertyRef Name="SaleAdjustID" />
+    </Key>
+    <Property Name="SaleAdjustID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdjustCode" Type="nvarchar(max)" />
+    <Property Name="BeginTime" Type="datetime" />
+    <Property Name="EndTime" Type="datetime" />
+    <Property Name="GoodsDetailID" Type="int" />
+    <Property Name="AdjustTypeID" Type="int" />
+    <Property Name="AgioTimeIntervalID" Type="int" />
+    <Property Name="Sale" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="NewRateSale" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Registrant" Type="nvarchar(max)" />
+    <Property Name="RegisterTime" Type="datetime" />
+    <Property Name="Auditor" Type="nvarchar(max)" />
+    <Property Name="Checktime" Type="datetime" />
+    <Property Name="Executor" Type="nvarchar(max)" />
+    <Property Name="ExecuteTime" Type="datetime" />
+    <Property Name="StopRen" Type="nvarchar(max)" />
+    <Property Name="StopShiJian" Type="datetime" />
+    <Property Name="DiaoZhengDanShenHeFou" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="B_SellCheckBatchDetaiList">
+    <Key>
+      <PropertyRef Name="SellCheckBatchDetailD" />
+    </Key>
+    <Property Name="SellCheckBatchDetailD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SellCheckBatchID" Type="int" />
+    <Property Name="ConverDeTaiID" Type="int" />
+    <Property Name="MumberOfPackages" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="B_SellCheckBatchList">
+    <Key>
+      <PropertyRef Name="SellCheckBatchID" />
+    </Key>
+    <Property Name="SellCheckBatchID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SellID" Type="int" />
+    <Property Name="Remember" Type="char" MaxLength="20" />
+    <Property Name="MaiChangID" Type="int" />
+    <Property Name="SpouseBRanchID" Type="int" />
+    <Property Name="DrugTypeID" Type="int" />
+    <Property Name="StaffID" Type="int" />
+    <Property Name="RegisterTime" Type="date" />
+    <Property Name="StaffIDTwo" Type="int" />
+    <Property Name="ExamineTime" Type="date" />
+    <Property Name="ExamineNot" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="B_SellDeTaLsit">
+    <Key>
+      <PropertyRef Name="SellDeTaliID" />
+    </Key>
+    <Property Name="SellDeTaliID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SellID" Type="int" />
+    <Property Name="ConverDeTaiID" Type="int" />
+    <Property Name="ConverID" Type="int" />
+  </EntityType>
+  <EntityType Name="B_SellList">
+    <Key>
+      <PropertyRef Name="SellID" />
+    </Key>
+    <Property Name="SellID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Remember" Type="char" MaxLength="20" />
+    <Property Name="SpouseBRanchID" Type="int" />
+    <Property Name="PanlDate" Type="datetime" />
+    <Property Name="RegisterName" Type="char" MaxLength="20" />
+    <Property Name="RegisterTime" Type="datetime" />
+    <Property Name="ExamineName" Type="char" MaxLength="20" />
+    <Property Name="ExecuteTime" Type="datetime" />
+    <Property Name="QiDongName" Type="char" MaxLength="20" />
+    <Property Name="QiDongTime" Type="datetime" />
+    <Property Name="ExamineNot" Type="bit" Nullable="false" />
+    <Property Name="QiDongmineNot" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="B_SellRetuerDateiList">
+    <Key>
+      <PropertyRef Name="SellRetuerDateilID" />
+    </Key>
+    <Property Name="SellRetuerDateilID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SellRetuerID" Type="int" />
+    <Property Name="SellDeTaliID" Type="int" />
+    <Property Name="MumberOfPackages" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Subdivision" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Number" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="B_SellRetuerList">
+    <Key>
+      <PropertyRef Name="SellRetuerID" />
+    </Key>
+    <Property Name="SellRetuerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SellID" Type="int" />
+    <Property Name="Remember" Type="char" MaxLength="20" />
+    <Property Name="payName" Type="char" MaxLength="20" />
+    <Property Name="furlName" Type="char" MaxLength="20" />
+    <Property Name="SpouseBRanchID" Type="int" />
+    <Property Name="StockPlaceID" Type="int" />
+    <Property Name="RegisterName" Type="char" MaxLength="20" />
+    <Property Name="RegisterTime" Type="datetime" />
+    <Property Name="ExamineName" Type="char" MaxLength="20" />
+    <Property Name="ExamineTime" Type="datetime" />
+    <Property Name="Remarks" Type="char" MaxLength="20" />
+    <Property Name="ExamineNot" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="B_ShooppingDateilIDOrderFounList">
+    <Key>
+      <PropertyRef Name="ShooppingDateilIDOrderFounID" />
+    </Key>
+    <Property Name="ShooppingDateilIDOrderFounID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ShooppingOrderFountID" Type="int" />
+    <Property Name="ShoppingID" Type="int" />
+  </EntityType>
+  <EntityType Name="B_ShooppingOrderFountList">
+    <Key>
+      <PropertyRef Name="ShooppingOrderFountID" />
+    </Key>
+    <Property Name="ShooppingOrderFountID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Message" Type="nchar" MaxLength="15" />
+    <Property Name="ShooppingNumber" Type="nchar" MaxLength="30" />
+    <Property Name="ShooppingTime" Type="date" />
+    <Property Name="ExamineNot" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="B_ShooppingSellList">
+    <Key>
+      <PropertyRef Name="ShooppingSellID" />
+    </Key>
+    <Property Name="ShooppingSellID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ShooppingOrderFountID" Type="int" />
+    <Property Name="ShooppingNuber" Type="nchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="B_ShoppingList">
+    <Key>
+      <PropertyRef Name="ShoppingID" />
+    </Key>
+    <Property Name="ShoppingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UnameID" Type="int" />
+    <Property Name="GoodsListedDetailID" Type="int" />
+    <Property Name="Money" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="BitColer" Type="nchar" MaxLength="30" />
+    <Property Name="MumberOfPackages" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SubmitNot" Type="bit" Nullable="false" />
+    <Property Name="AffirmNot" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="B_SourceList">
+    <Key>
+      <PropertyRef Name="SourceID" />
+    </Key>
+    <Property Name="SourceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SourceName" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="B_StaffList">
+    <Key>
+      <PropertyRef Name="StaffID" />
+    </Key>
+    <Property Name="StaffID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StaffName" Type="char" MaxLength="20" />
+    <Property Name="StaffCode" Type="char" MaxLength="20" />
+    <Property Name="StaffClassID" Type="int" />
+    <Property Name="UserName" Type="nvarchar(max)" />
+    <Property Name="Password" Type="nvarchar(max)" />
+    <Property Name="UniformAuthenticationCode" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="B_StaffRoleDetailList">
+    <Key>
+      <PropertyRef Name="StaffRoleDetailID" />
+    </Key>
+    <Property Name="StaffRoleDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StaffID" Type="int" />
+    <Property Name="StaffClassID" Type="int" />
+  </EntityType>
+  <EntityType Name="B_StockList">
+    <Key>
+      <PropertyRef Name="StockID" />
+    </Key>
+    <Property Name="StockID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodsID" Type="int" />
+    <Property Name="StockPlaceID" Type="int" />
+    <Property Name="TurnoverData" Type="char" MaxLength="20" />
+    <Property Name="StockNumber" Type="char" MaxLength="20" />
+    <Property Name="RuKuContent" Type="char" MaxLength="20" />
+    <Property Name="Number" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ThinCount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PurchaseID" Type="int" />
+  </EntityType>
+  <EntityType Name="B_SupplierGoodsList">
+    <Key>
+      <PropertyRef Name="SupplierGoodsID" />
+    </Key>
+    <Property Name="SupplierGoodsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SupplierGoodsName" Type="char" MaxLength="30" />
+    <Property Name="EstimateUnitID" Type="int" />
+    <Property Name="SupplierID" Type="int" />
+    <Property Name="GoodsGenreID" Type="int" />
+    <Property Name="GoodsBrandID" Type="int" />
+    <Property Name="SpecificationsModel" Type="char" MaxLength="20" />
+    <Property Name="GoodsChopID" Type="int" />
+    <Property Name="ArtNo" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="B_SupplierList">
+    <Key>
+      <PropertyRef Name="SupplierID" />
+    </Key>
+    <Property Name="SupplierID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SupplierName" Type="char" MaxLength="20" />
+    <Property Name="SupplierNumber" Type="char" MaxLength="20" />
+    <Property Name="SupplierCHName" Type="char" MaxLength="30" />
+    <Property Name="SupplierAbbreviation" Type="char" MaxLength="20" />
+    <Property Name="SupplierEnglishName" Type="char" MaxLength="30" />
+    <Property Name="SupplierPTCode" Type="char" MaxLength="20" />
+    <Property Name="SupplierDependency" Type="char" MaxLength="50" />
+    <Property Name="SupplierRegisteredAddress" Type="char" MaxLength="50" />
+    <Property Name="UnitCharacterID" Type="int" />
+    <Property Name="PaymentID" Type="int" />
+    <Property Name="CompanyID" Type="int" />
+    <Property Name="SupplierRegisteredEnglish" Type="nchar" MaxLength="50" />
+    <Property Name="SupplierRankID" Type="int" />
+    <Property Name="AgreementTypeID" Type="int" />
+    <Property Name="AgreementStateID" Type="int" />
+    <Property Name="Registrant" Type="char" MaxLength="50" />
+    <Property Name="Auditor" Type="char" MaxLength="50" />
+    <Property Name="Executor" Type="char" MaxLength="50" />
+    <Property Name="Registranttime" Type="datetime" />
+    <Property Name="Auditortime" Type="datetime" />
+    <Property Name="Executortime" Type="datetime" />
+    <Property Name="SupplierInformationName" Type="char" MaxLength="20" />
+    <Property Name="SupplierTelephone" Type="char" MaxLength="20" />
+    <Property Name="SupplierContacts" Type="char" MaxLength="20" />
+    <Property Name="SupplierPost" Type="char" MaxLength="20" />
+    <Property Name="SupplierEmail" Type="char" MaxLength="20" />
+    <Property Name="SupplierZipCode" Type="char" MaxLength="20" />
+    <Property Name="SupplierPortraiture" Type="char" MaxLength="20" />
+    <Property Name="SupplierAddress" Type="char" MaxLength="20" />
+    <Property Name="SupplierURL" Type="char" MaxLength="20" />
+    <Property Name="EnterpriseNatureID" Type="int" />
+    <Property Name="EnterpriseTypeID" Type="int" />
+    <Property Name="EnterpriseBank" Type="char" MaxLength="20" />
+    <Property Name="EnterpriseNumber" Type="char" MaxLength="20" />
+    <Property Name="NationalTaxNumber" Type="char" MaxLength="20" />
+    <Property Name="LocalTaxNumber" Type="char" MaxLength="20" />
+    <Property Name="EnterprisePassword" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="B_TakeGlanceList">
+    <Key>
+      <PropertyRef Name="TakeGlanceID" />
+    </Key>
+    <Property Name="TakeGlanceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UnameID" Type="int" />
+    <Property Name="GoodsListedDetailID" Type="int" />
+  </EntityType>
+  <EntityType Name="B_ThreeSingleList">
+    <Key>
+      <PropertyRef Name="ThreeSingleID" />
+    </Key>
+    <Property Name="ThreeSingleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PurchaseSectionID" Type="int" />
+    <Property Name="GoodsID" Type="int" />
+  </EntityType>
+  <EntityType Name="B_Unamelist">
+    <Key>
+      <PropertyRef Name="UnameID" />
+    </Key>
+    <Property Name="UnameID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uname" Type="nvarchar(max)" />
+    <Property Name="pwd" Type="nvarchar(max)" />
+    <Property Name="phone" Type="nchar" MaxLength="20" />
+    <Property Name="useof" Type="bit" />
+    <Property Name="EnrollTime" Type="date" />
+    <Property Name="MemberIntegral" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ShoppingNuber" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="B_VoluntarilyOrderGoodsList">
+    <Key>
+      <PropertyRef Name="VoluntarilyOrderGoodsID" />
+    </Key>
+    <Property Name="VoluntarilyOrderGoodsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodsDetailID" Type="int" />
+    <Property Name="OrderFormDetailID" Type="int" />
+    <Property Name="ZiDongDingDanHao" Type="nvarchar(max)" />
+    <Property Name="Pack" Type="nvarchar(max)" />
+    <Property Name="AdviseNumber" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="AverageNumber" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="B_WanManifestDetailList">
+    <Key>
+      <PropertyRef Name="WanManifestDetailID" />
+    </Key>
+    <Property Name="WanManifestDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WanManifestID" Type="int" />
+    <Property Name="GoodsID" Type="int" />
+    <Property Name="MumberOfPackages" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Subdivision" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="B_WanManifestList">
+    <Key>
+      <PropertyRef Name="WanManifestID" />
+    </Key>
+    <Property Name="WanManifestID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SellID" Type="int" />
+    <Property Name="Remember" Type="char" MaxLength="20" />
+    <Property Name="PurchaseSectionID" Type="int" />
+    <Property Name="RegisterName" Type="char" MaxLength="20" />
+    <Property Name="RegisterTime" Type="date" />
+    <Property Name="ExamineName" Type="char" MaxLength="20" />
+    <Property Name="ExamineTime" Type="date" />
+    <Property Name="ExamineNot" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="B_WareHouseDetiailList">
+    <Key>
+      <PropertyRef Name="WareHouseDetiailID" />
+    </Key>
+    <Property Name="WareHouseDetiailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WareHouseID" Type="int" />
+    <Property Name="OrderFormDetailID" Type="int" />
+    <Property Name="MumberOfPackages" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Subdivision" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="YiKongNot" Type="bit" Nullable="false" />
+    <Property Name="YuanMumberOfPack" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="YuanSubdivision" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="B_WareHouseList">
+    <Key>
+      <PropertyRef Name="WareHouseID" />
+    </Key>
+    <Property Name="WareHouseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Remember" Type="char" MaxLength="20" />
+    <Property Name="SpouseBRanchID" Type="int" />
+    <Property Name="StockPlaceID" Type="int" />
+    <Property Name="OrderFormID" Type="int" />
+    <Property Name="OrderFormPactID" Type="int" />
+    <Property Name="StaffID" Type="int" />
+    <Property Name="RegisterName" Type="char" MaxLength="20" />
+    <Property Name="RegisterTime" Type="datetime" />
+    <Property Name="ExamineName" Type="char" MaxLength="20" />
+    <Property Name="ExamineTime" Type="datetime" />
+    <Property Name="ExamineNot" Type="bit" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="HoveNot" Type="bit" Nullable="false" />
+    <Property Name="Appendix" Type="char" MaxLength="10" />
+    <Property Name="Evidences" Type="char" MaxLength="10" />
+    <Property Name="CrushRedNot" Type="bit" Nullable="false" />
+    <Property Name="QuFenLeiXingID" Type="int" />
+    <Property Name="PeiHuoNot" Type="bit" Nullable="false" />
+    <Property Name="ShiFouKongNot" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="B_WeatherList">
+    <Key>
+      <PropertyRef Name="WeatherID" />
+    </Key>
+    <Property Name="WeatherID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Data" Type="date" />
+    <Property Name="WeatherCondition" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="B_WithholdContrastList">
+    <Key>
+      <PropertyRef Name="WithholdContrastID" />
+    </Key>
+    <Property Name="WithholdContrastID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WithholdContrastName" Type="char" MaxLength="20" />
+    <Property Name="WithholdTypeID" Type="int" />
+  </EntityType>
+  <EntityType Name="S_AdjustAccountsFashionList">
+    <Key>
+      <PropertyRef Name="AdjustAccountsFashionID" />
+    </Key>
+    <Property Name="AdjustAccountsFashionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdjustAccountsFashion" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_AdjustTypeList">
+    <Key>
+      <PropertyRef Name="AdjustTypeID" />
+    </Key>
+    <Property Name="AdjustTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdjustTypeName" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_AgioTimeIntervalList">
+    <Key>
+      <PropertyRef Name="AgioTimeIntervalID" />
+    </Key>
+    <Property Name="AgioTimeIntervalID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FenDanHao" Type="nvarchar(max)" />
+    <Property Name="TimeInterval" Type="nvarchar(max)" />
+    <Property Name="XingQi" Type="nvarchar(max)" />
+    <Property Name="AgioTimeIntervalTypeID" Type="int" />
+    <Property Name="PermiTimeDeny" Type="bit" />
+  </EntityType>
+  <EntityType Name="S_AgioTimeIntervalTypeList">
+    <Key>
+      <PropertyRef Name="AgioTimeIntervalTypeID" />
+    </Key>
+    <Property Name="AgioTimeIntervalTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AgioTimeIntervalType" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_AgreementManagerList">
+    <Key>
+      <PropertyRef Name="AgreementManagerID" />
+    </Key>
+    <Property Name="AgreementManagerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AgreementManagerName" Type="char" MaxLength="20" />
+    <Property Name="AgreementManagerZong" Type="char" MaxLength="20" />
+    <Property Name="AgreementManagerGaoJi" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_AgreementStateList">
+    <Key>
+      <PropertyRef Name="AgreementStateID" />
+    </Key>
+    <Property Name="AgreementStateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AgreementState" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_AgreementTypeList">
+    <Key>
+      <PropertyRef Name="AgreementTypeID" />
+    </Key>
+    <Property Name="AgreementTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AgreementTypeName" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_AlternativeList">
+    <Key>
+      <PropertyRef Name="AlternativeID" />
+    </Key>
+    <Property Name="AlternativeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AlternativeName" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_AlternativeProjectList">
+    <Key>
+      <PropertyRef Name="AlternativeProjectID" />
+    </Key>
+    <Property Name="AlternativeProjectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AlternativeProjectMC" Type="char" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="S_AlternativeSupplierList">
+    <Key>
+      <PropertyRef Name="AlternativeSupplierID" />
+    </Key>
+    <Property Name="AlternativeSupplierID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AlternativeSupplierName" Type="char" MaxLength="20" />
+    <Property Name="AlternativeSupplierTP" Type="char" MaxLength="20" />
+    <Property Name="AlternativeSupplierContacts" Type="char" MaxLength="10" />
+    <Property Name="AlternativeSupplierAddress" Type="char" MaxLength="50" />
+    <Property Name="AlternativeSupplierPC" Type="char" MaxLength="20" />
+    <Property Name="AlternativeID" Type="int" />
+  </EntityType>
+  <EntityType Name="S_ApplyTargetList">
+    <Key>
+      <PropertyRef Name="ApplyTargetID" />
+    </Key>
+    <Property Name="ApplyTargetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ApplyTarget" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="S_AreaCodeList">
+    <Key>
+      <PropertyRef Name="AreaID" />
+    </Key>
+    <Property Name="AreaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AreaMC" Type="char" MaxLength="50" />
+    <Property Name="Postalcode" Type="char" MaxLength="50" />
+    <Property Name="CodeRule" Type="char" MaxLength="50" />
+    <Property Name="DaiMa" Type="nchar" MaxLength="50" />
+    <Property Name="ShuHaoID" Type="int" />
+  </EntityType>
+  <EntityType Name="S_BarCodTypeList">
+    <Key>
+      <PropertyRef Name="BarCodTypeID" />
+    </Key>
+    <Property Name="BarCodTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BarCodTypeName" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_BurdenStockSellStatusList">
+    <Key>
+      <PropertyRef Name="BurdenStockSellStatusID" />
+    </Key>
+    <Property Name="BurdenStockSellStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BurdenStockSellStatusName" Type="char" MaxLength="30" />
+    <Property Name="Stamp" Type="nchar" MaxLength="10" />
+    <Property Name="BurdenStockDataNumber" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="S_CardValiditySpecifiedList">
+    <Key>
+      <PropertyRef Name="SpecificModeID" />
+    </Key>
+    <Property Name="SpecificModeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TheCardsSpecificMode" Type="char" MaxLength="50" />
+    <Property Name="CardSellingSpecificMode" Type="char" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="S_ChangeTypeList">
+    <Key>
+      <PropertyRef Name="ChangeTypeID" />
+    </Key>
+    <Property Name="ChangeTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ChangeTypeName" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_ChangeWhyList">
+    <Key>
+      <PropertyRef Name="ChangeWhyID" />
+    </Key>
+    <Property Name="ChangeWhyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ChangeWhy" Type="char" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="S_CommodityTypeList">
+    <Key>
+      <PropertyRef Name="CommodityTypeID" />
+    </Key>
+    <Property Name="CommodityTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CommodityType" Type="nvarchar(max)" />
+    <Property Name="GoodsTypeSpecificationID" Type="int" />
+  </EntityType>
+  <EntityType Name="S_CompanyList">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyMC" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_ContactCertificate">
+    <Key>
+      <PropertyRef Name="ContactCertificateID" />
+    </Key>
+    <Property Name="ContactCertificateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContactCertificateName" Type="nchar" MaxLength="20" />
+    <Property Name="ContactCertificateTime" Type="datetime" />
+    <Property Name="ContactCertificateHM" Type="nchar" MaxLength="20" />
+    <Property Name="ContactCertificateTimeless" Type="datetime" />
+    <Property Name="SupplierID" Type="int" />
+  </EntityType>
+  <EntityType Name="S_CounterList">
+    <Key>
+      <PropertyRef Name="CountersellID" />
+    </Key>
+    <Property Name="CountersellID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountersellName" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="S_CXSummaryList">
+    <Key>
+      <PropertyRef Name="CXSummaryID" />
+    </Key>
+    <Property Name="CXSummaryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UXsable" Type="char" MaxLength="50" />
+    <Property Name="RXeturn" Type="char" MaxLength="50" />
+    <Property Name="TotalAmount" Type="char" MaxLength="50" />
+    <Property Name="GrandTotalAmount" Type="char" MaxLength="50" />
+    <Property Name="ToatalAgio" Type="char" MaxLength="50" />
+    <Property Name="GrandAgioAmount" Type="char" MaxLength="50" />
+    <Property Name="YuanKaHao" Type="nchar" MaxLength="50" />
+    <Property Name="XinKaHao" Type="nchar" MaxLength="50" />
+    <Property Name="Amount" Type="nchar" MaxLength="50" />
+    <Property Name="ZhaiYao" Type="nchar" MaxLength="50" />
+    <Property Name="HuiYuanXinMing" Type="nchar" MaxLength="50" />
+    <Property Name="JiLuBianHao" Type="nchar" MaxLength="50" />
+    <Property Name="YouXiaoQiKa" Type="nchar" MaxLength="50" />
+    <Property Name="ZuoFeiJinE" Type="nchar" MaxLength="50" />
+    <Property Name="ZuoFeiYuanYing" Type="nchar" MaxLength="50" />
+    <Property Name="ZuoFeiShuLiang" Type="nchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="S_EnterpriseNatureList">
+    <Key>
+      <PropertyRef Name="EnterpriseNatureID" />
+    </Key>
+    <Property Name="EnterpriseNatureID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EnterpriseNatureName" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_EnterpriseTypeList">
+    <Key>
+      <PropertyRef Name="EnterpriseTypeID" />
+    </Key>
+    <Property Name="EnterpriseTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EnterpriseTypeName" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_EstimateUnitList">
+    <Key>
+      <PropertyRef Name="EstimateUnitID" />
+    </Key>
+    <Property Name="EstimateUnitID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EstimateUnitName" Type="char" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="S_GoodsBottomPriceList">
+    <Key>
+      <PropertyRef Name="GoodsBottomPriceID" />
+    </Key>
+    <Property Name="GoodsBottomPriceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodsDetailID" Type="int" />
+    <Property Name="DiscountRate" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DiscountFrons" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="LowestRetail" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="S_GoodsBrandList">
+    <Key>
+      <PropertyRef Name="GoodsBrandID" />
+    </Key>
+    <Property Name="GoodsBrandID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodsBrandName" Type="nchar" MaxLength="20" />
+    <Property Name="GoodsBrandZhuPinPai" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“DaXingShangMaoXiTong.dbo.S_GoodsColoursList”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="S_GoodsColoursList">
+    <Key>
+      <PropertyRef Name="GoodsColoursID" />
+    </Key>
+    <Property Name="GoodsColoursID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodsColours" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="S_GoodsGenreIDList">
+    <Key>
+      <PropertyRef Name="GoodsGenreID" />
+    </Key>
+    <Property Name="GoodsGenreID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodsGenreName" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_GoodsMoneyRuleList">
+    <Key>
+      <PropertyRef Name="GoodsMoneyRuleID" />
+    </Key>
+    <Property Name="GoodsMoneyRuleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PriceTypeID" Type="int" />
+    <Property Name="XiaXianMoney" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ShangXianMoney" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DecimalDigits" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="S_GoodsPurchasemoneyStatusList">
+    <Key>
+      <PropertyRef Name="GoodsPurchasemoneyStatusID" />
+    </Key>
+    <Property Name="GoodsPurchasemoneyStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodsPurchasemoneyStatus" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_GoodsPurchasemoneyTypeList">
+    <Key>
+      <PropertyRef Name="GoodsPurchasemoneyTypeID" />
+    </Key>
+    <Property Name="GoodsPurchasemoneyTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodsPurchasemoneyType" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_GoodsSeasonList">
+    <Key>
+      <PropertyRef Name="GoodsSeasonID" />
+    </Key>
+    <Property Name="GoodsSeasonID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodsSeasonName" Type="char" MaxLength="10" />
+    <Property Name="KaiShiYue" Type="char" MaxLength="5" />
+    <Property Name="KaiShiRi" Type="char" MaxLength="5" />
+    <Property Name="JieShuYue" Type="char" MaxLength="5" />
+    <Property Name="jieShuRi" Type="char" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="S_GoodsStampList">
+    <Key>
+      <PropertyRef Name="GoodsStampID" />
+    </Key>
+    <Property Name="GoodsStampID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodsStampName" Type="char" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="S_GoodsStatusIList">
+    <Key>
+      <PropertyRef Name="GoodsStatusID" />
+    </Key>
+    <Property Name="GoodsStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodsStatusName" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="S_GoodsTypeSpecificationList">
+    <Key>
+      <PropertyRef Name="GoodsTypeSpecificationID" />
+    </Key>
+    <Property Name="GoodsTypeSpecificationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodsTypeSpecificationName" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_HuoDongZhuanQu">
+    <Key>
+      <PropertyRef Name="GoodsDingYiQuID" />
+    </Key>
+    <Property Name="GoodsDingYiQuID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodsDingYiQuMC" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="S_MaiChangList">
+    <Key>
+      <PropertyRef Name="MaiChangID" />
+    </Key>
+    <Property Name="MaiChangID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaiChangMC" Type="char" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="S_MakeCollectionsList">
+    <Key>
+      <PropertyRef Name="MakeCollectionsID" />
+    </Key>
+    <Property Name="MakeCollectionsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MakeCollectionsMC" Type="char" MaxLength="50" />
+    <Property Name="Amount" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_MarketNameList">
+    <Key>
+      <PropertyRef Name="MarketID" />
+    </Key>
+    <Property Name="MarketID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MarketName" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="S_MemberCredentialsType">
+    <Key>
+      <PropertyRef Name="MemberID" />
+    </Key>
+    <Property Name="MemberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CredentialsType" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_MemberFamilyMember">
+    <Key>
+      <PropertyRef Name="MemberID" />
+    </Key>
+    <Property Name="MemberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FamilyMember" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="S_MemberHobbiesInterests">
+    <Key>
+      <PropertyRef Name="MemberID" />
+    </Key>
+    <Property Name="MemberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HobbiesInterests" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_MemberInfoList">
+    <Key>
+      <PropertyRef Name="AreaID" />
+    </Key>
+    <Property Name="AreaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MemberID" Type="int" />
+    <Property Name="XingMing" Type="char" MaxLength="50" />
+    <Property Name="Sex" Type="char" MaxLength="50" />
+    <Property Name="CredentialsNumber" Type="char" MaxLength="50" />
+    <Property Name="PostalAddress" Type="char" MaxLength="50" />
+    <Property Name="Location" Type="char" MaxLength="50" />
+    <Property Name="Postalcode" Type="char" MaxLength="50" />
+    <Property Name="dianziyoujian" Type="char" MaxLength="50" />
+    <Property Name="Profession" Type="char" MaxLength="50" />
+    <Property Name="OfficePhone" Type="char" MaxLength="50" />
+    <Property Name="PrivateTelephone" Type="char" MaxLength="50" />
+    <Property Name="CellphoneNumber" Type="char" MaxLength="50" />
+    <Property Name="CardNumberChange" Type="char" MaxLength="50" />
+    <Property Name="Amount" Type="char" MaxLength="50" />
+    <Property Name="UntreatedIntegral" Type="char" MaxLength="50" />
+    <Property Name="CredentialsType" Type="char" MaxLength="50" />
+    <Property Name="MemberFamilyIncome" Type="char" MaxLength="50" />
+    <Property Name="MemberEd" Type="char" MaxLength="50" />
+    <Property Name="TimeToMall" Type="char" MaxLength="50" />
+    <Property Name="Vehicle" Type="char" MaxLength="50" />
+    <Property Name="FamilyMember" Type="char" MaxLength="50" />
+    <Property Name="HobbiesInterests" Type="char" MaxLength="50" />
+    <Property Name="CustomQuality" Type="char" MaxLength="50" />
+    <Property Name="BirthDate" Type="char" MaxLength="50" />
+    <Property Name="CommentsOnAForm" Type="char" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="S_MemberMemberEd">
+    <Key>
+      <PropertyRef Name="MemberID" />
+    </Key>
+    <Property Name="MemberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MemberEd" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_MemberMemberFamilyIncome">
+    <Key>
+      <PropertyRef Name="MemberID" />
+    </Key>
+    <Property Name="MemberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MemberFamilyIncome" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_MemberProfession">
+    <Key>
+      <PropertyRef Name="MemberID" />
+    </Key>
+    <Property Name="MemberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Profession" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_MemberSCDList">
+    <Key>
+      <PropertyRef Name="MemberSCDID" />
+    </Key>
+    <Property Name="MemberSCDID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MemberSCDMC" Type="char" MaxLength="50" />
+    <Property Name="RecordNumber" Type="char" MaxLength="50" />
+    <Property Name="GSite" Type="char" MaxLength="50" />
+    <Property Name="FurlSite" Type="char" MaxLength="50" />
+    <Property Name="MemberType" Type="char" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="S_MembershipAgeList">
+    <Key>
+      <PropertyRef Name="MemberID" />
+    </Key>
+    <Property Name="MemberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MemberName" Type="char" MaxLength="50" />
+    <Property Name="OriginationAge" Type="char" MaxLength="10" />
+    <Property Name="EndAge" Type="char" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="S_MembershipCardAccount">
+    <Key>
+      <PropertyRef Name="MembershipCardAccountID" />
+    </Key>
+    <Property Name="MembershipCardAccountID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MembershipCardAccount" Type="char" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="S_MembershipCardForm">
+    <Key>
+      <PropertyRef Name="MembershipCardFormID" />
+    </Key>
+    <Property Name="MembershipCardFormID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SpecificModeID" Type="int" />
+    <Property Name="MemberSCDID" Type="int" />
+    <Property Name="MemberSCDMC" Type="char" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="S_MembershipCardInfoList">
+    <Key>
+      <PropertyRef Name="MembershipCardInfoID" />
+    </Key>
+    <Property Name="MembershipCardInfoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CardNber" Type="char" MaxLength="50" />
+    <Property Name="Sum" Type="char" MaxLength="50" />
+    <Property Name="EctMoney" Type="char" MaxLength="50" />
+    <Property Name="Ccustodian" Type="char" MaxLength="50" />
+    <Property Name="CardNumber" Type="char" MaxLength="50" />
+    <Property Name="StartCardNbumer" Type="char" MaxLength="50" />
+    <Property Name="EndCardNber" Type="char" MaxLength="50" />
+    <Property Name="StoreNumb" Type="char" MaxLength="50" />
+    <Property Name="Cost" Type="char" MaxLength="50" />
+    <Property Name="Interior" Type="char" MaxLength="50" />
+    <Property Name="SurelySite" Type="char" MaxLength="50" />
+    <Property Name="CardCode" Type="char" MaxLength="50" />
+    <Property Name="CredentialsNumber" Type="char" MaxLength="50" />
+    <Property Name="GrandTotalAmount" Type="char" MaxLength="50" />
+    <Property Name="TheCardsDate" Type="char" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="S_MembershipCardList">
+    <Key>
+      <PropertyRef Name="MembershipCardID" />
+    </Key>
+    <Property Name="MembershipCardID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MembershipCardTypeID" Type="int" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="MembershipCardFormID" Type="int" />
+    <Property Name="MembershipCardMC" Type="char" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="S_MembershipCardSafekeeping">
+    <Key>
+      <PropertyRef Name="MembershipCardID" />
+    </Key>
+    <Property Name="MembershipCardID" Type="int" Nullable="false" />
+    <Property Name="PermitSales" Type="char" MaxLength="50" />
+    <Property Name="TheCards" Type="char" MaxLength="50" />
+    <Property Name="TheCardsTab" Type="char" MaxLength="50" />
+    <Property Name="SalesTab" Type="char" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="S_MembershipCardStatusList">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StoreCardID" Type="int" />
+    <Property Name="CustomerCardID" Type="int" />
+    <Property Name="StatusMC" Type="char" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="S_MembershipCardSupervise">
+    <Key>
+      <PropertyRef Name="MembershipCardID" />
+    </Key>
+    <Property Name="MembershipCardID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PasswordIdentification" Type="char" MaxLength="50" />
+    <Property Name="PermitReportTheloss" Type="char" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="S_MembershipCardTypeList">
+    <Key>
+      <PropertyRef Name="MembershipCardTypeID" />
+    </Key>
+    <Property Name="MembershipCardTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MembershipCardID" Type="int" />
+    <Property Name="TheCardsbranchID" Type="int" />
+    <Property Name="AreaID" Type="int" />
+    <Property Name="MembershipCardTypeMC" Type="char" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="S_MemberTimeToMall">
+    <Key>
+      <PropertyRef Name="MemberID" />
+    </Key>
+    <Property Name="MemberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TimeToMall" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_MemberVehicle">
+    <Key>
+      <PropertyRef Name="MemberID" />
+    </Key>
+    <Property Name="MemberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Vehicle" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_MethodOfSettlingAccountsList">
+    <Key>
+      <PropertyRef Name="MethodOfSettlingAccountsID" />
+    </Key>
+    <Property Name="MethodOfSettlingAccountsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MethodOfSettlingAccounts" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_ModuleList">
+    <Key>
+      <PropertyRef Name="ModuleID" />
+    </Key>
+    <Property Name="ModuleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModuleName" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_OrderFormTypeList">
+    <Key>
+      <PropertyRef Name="OrderFormTypeID" />
+    </Key>
+    <Property Name="OrderFormTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderFormTypeName" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_PackInfoIDList">
+    <Key>
+      <PropertyRef Name="PackInfoID" />
+    </Key>
+    <Property Name="PackInfoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodsDetailID" Type="int" />
+    <Property Name="PackContent" Type="nvarchar(max)" />
+    <Property Name="PackWeight" Type="nvarchar(max)" />
+    <Property Name="DefaultPack" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="S_PaymentList">
+    <Key>
+      <PropertyRef Name="PaymentID" />
+    </Key>
+    <Property Name="PaymentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaymentMC" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="S_PersonalIformationList">
+    <Key>
+      <PropertyRef Name="PersonalIformationID" />
+    </Key>
+    <Property Name="PersonalIformationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UnameID" Type="int" />
+    <Property Name="Location" Type="nchar" MaxLength="50" />
+    <Property Name="Detailedaddress" Type="nchar" MaxLength="50" />
+    <Property Name="Zipcode" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="Consignee" Type="nchar" MaxLength="20" />
+    <Property Name="Phone" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Phonecode" Type="nchar" MaxLength="20" />
+    <Property Name="UserImage" Type="image" />
+    <Property Name="MoRenDiZhiBit" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="S_PreferentialFashionList">
+    <Key>
+      <PropertyRef Name="PreferentialFashionID" />
+    </Key>
+    <Property Name="PreferentialFashionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MemberSCDID" Type="int" />
+    <Property Name="PreferentialFashion" Type="char" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="S_PriceTypeList">
+    <Key>
+      <PropertyRef Name="PriceTypeID" />
+    </Key>
+    <Property Name="PriceTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PriceTypeMC" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="S_PublishWayList">
+    <Key>
+      <PropertyRef Name="PublishWaysID" />
+    </Key>
+    <Property Name="PublishWaysID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PublishWays" Type="char" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="S_QuFenLeiXingList">
+    <Key>
+      <PropertyRef Name="QuFenLeiXingID" />
+    </Key>
+    <Property Name="QuFenLeiXingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QuFenLeiXingMC" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="S_ReturnofList">
+    <Key>
+      <PropertyRef Name="ReturnofID" />
+    </Key>
+    <Property Name="ReturnofID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Returnof" Type="char" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="S_SellAssemblelist">
+    <Key>
+      <PropertyRef Name="SellAssembleID" />
+    </Key>
+    <Property Name="SellAssembleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SellAssembleName" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="S_SellingInfoList">
+    <Key>
+      <PropertyRef Name="SellingInfoID" />
+    </Key>
+    <Property Name="SellingInfoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MembershipCardAccountID" Type="int" />
+    <Property Name="CouponUID" Type="int" />
+    <Property Name="MakeCollectionsID" Type="int" />
+    <Property Name="PublishWaysID" Type="int" />
+    <Property Name="PreferentialFashionID" Type="int" />
+    <Property Name="CXSummaryID" Type="int" />
+    <Property Name="MInspectionCard" Type="char" MaxLength="50" />
+    <Property Name="Gtotal" Type="char" MaxLength="50" />
+    <Property Name="SingleFee" Type="char" MaxLength="50" />
+    <Property Name="RAmount" Type="char" MaxLength="50" />
+    <Property Name="XAmount" Type="char" MaxLength="50" />
+    <Property Name="FeeAmount" Type="char" MaxLength="50" />
+    <Property Name="Summary" Type="char" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="S_SettlementDebiList">
+    <Key>
+      <PropertyRef Name="SettlementDebiID" />
+    </Key>
+    <Property Name="SettlementDebiID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SettlementDebi" Type="char" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="S_SignTypeList">
+    <Key>
+      <PropertyRef Name="SignTypeID" />
+    </Key>
+    <Property Name="SignTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SignTypeName" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="S_SpouseBRanchList">
+    <Key>
+      <PropertyRef Name="SpouseBRanchID" />
+    </Key>
+    <Property Name="SpouseBRanchID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SpouseBRanchName" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_StaffClassList">
+    <Key>
+      <PropertyRef Name="StaffClassID" />
+    </Key>
+    <Property Name="StaffClassID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StaffClass" Type="nvarchar(max)" />
+    <Property Name="StaffID" Type="int" />
+  </EntityType>
+  <EntityType Name="S_StaffPowerList">
+    <Key>
+      <PropertyRef Name="StaffPowerID" />
+    </Key>
+    <Property Name="StaffPowerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StaffClassID" Type="int" />
+    <Property Name="ModuleID" Type="int" />
+  </EntityType>
+  <EntityType Name="S_StatisticAttribute">
+    <Key>
+      <PropertyRef Name="StatisticAttributeID" />
+    </Key>
+    <Property Name="StatisticAttributeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatisticAttributeMC" Type="nchar" MaxLength="20" />
+    <Property Name="DrugTypeID" Type="int" />
+  </EntityType>
+  <EntityType Name="S_StockPlaceList">
+    <Key>
+      <PropertyRef Name="StockPlaceID" />
+    </Key>
+    <Property Name="StockPlaceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StockPlaceName" Type="char" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="S_StoreCardList">
+    <Key>
+      <PropertyRef Name="StoreCardID" />
+    </Key>
+    <Property Name="StoreCardID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MembershipCardInfoID" Type="int" />
+    <Property Name="DeleteCardID" Type="int" />
+    <Property Name="TheCardsID" Type="int" />
+    <Property Name="StoreCardMC" Type="char" MaxLength="20" />
+    <Property Name="OrderNumber" Type="char" MaxLength="50" />
+    <Property Name="CardTypeCode" Type="char" MaxLength="50" />
+    <Property Name="Safekeeping" Type="char" MaxLength="50" />
+    <Property Name="Faceamount" Type="char" MaxLength="50" />
+    <Property Name="EctMoney" Type="char" MaxLength="50" />
+    <Property Name="Status" Type="char" MaxLength="50" />
+    <Property Name="Tab" Type="char" MaxLength="50" />
+    <Property Name="DeleteCause" Type="char" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="S_SupplierGroupList">
+    <Key>
+      <PropertyRef Name="SupplierGroupID" />
+    </Key>
+    <Property Name="SupplierGroupID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SupplierGroupName" Type="char" MaxLength="30" />
+    <Property Name="SupplierGroupPYCode" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_SupplierRankList">
+    <Key>
+      <PropertyRef Name="SupplierRankID" />
+    </Key>
+    <Property Name="SupplierRankID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SupplierRankName" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_SupplierReturnTypeList">
+    <Key>
+      <PropertyRef Name="SupplierReturnTypeID" />
+    </Key>
+    <Property Name="SupplierReturnTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SupplierReturnType" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_TheCardsbranchList">
+    <Key>
+      <PropertyRef Name="TheCardsbranchID" />
+    </Key>
+    <Property Name="TheCardsbranchID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SellingInfoID" Type="int" />
+    <Property Name="TheCardsID" Type="int" />
+    <Property Name="TheCardsbranchMC" Type="char" MaxLength="50" />
+    <Property Name="CodeRule" Type="char" MaxLength="50" />
+    <Property Name="Store" Type="char" MaxLength="50" />
+    <Property Name="Code" Type="char" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="S_TheCardsList">
+    <Key>
+      <PropertyRef Name="TheCardsID" />
+    </Key>
+    <Property Name="TheCardsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SellingInfoID" Type="int" />
+    <Property Name="Kahao" Type="char" MaxLength="10" />
+    <Property Name="TheCardsMC" Type="char" MaxLength="50" />
+    <Property Name="TheCardsNumber" Type="char" MaxLength="50" />
+    <Property Name="CardPeriodOfValidity" Type="char" MaxLength="50" />
+    <Property Name="CardPersonalizationNumber" Type="char" MaxLength="50" />
+    <Property Name="CardPersonalizationStatus" Type="char" MaxLength="50" />
+    <Property Name="Ccustodian" Type="nchar" MaxLength="50" />
+    <Property Name="Recordnumber" Type="nchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="S_TrademarkLocalList">
+    <Key>
+      <PropertyRef Name="TrademarkLocalID" />
+    </Key>
+    <Property Name="TrademarkLocalID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TrademarkLocalName" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_TrademarkRankList">
+    <Key>
+      <PropertyRef Name="TrademarkRankID" />
+    </Key>
+    <Property Name="TrademarkRankID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TrademarkRankName" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_TrademarkStatusList">
+    <Key>
+      <PropertyRef Name="TrademarkStatusID" />
+    </Key>
+    <Property Name="TrademarkStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TrademarkStatusName" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_UnitCharacterList">
+    <Key>
+      <PropertyRef Name="UnitCharacterID" />
+    </Key>
+    <Property Name="UnitCharacterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UnitCharacterName" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_VieOpponentList">
+    <Key>
+      <PropertyRef Name="VieOpponentID" />
+    </Key>
+    <Property Name="VieOpponentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VieOpponentName" Type="char" MaxLength="30" />
+    <Property Name="VieOpponentCode" Type="char" MaxLength="20" />
+    <Property Name="Area" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SalesVolume" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="S_WithholdTypeList">
+    <Key>
+      <PropertyRef Name="WithholdTypeID" />
+    </Key>
+    <Property Name="WithholdTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WithholdType" Type="char" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="S_ZhuanGuiCommodityTypeLiat">
+    <Key>
+      <PropertyRef Name="ZhuanGuiCommodityTypeID" />
+    </Key>
+    <Property Name="ZhuanGuiCommodityTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ZhuanGuiCommodityType" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityContainer Name="DaXingShangMaoXiTongModelStoreContainer">
+    <EntitySet Name="areas" EntityType="Self.areas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_AgreementList" EntityType="Self.B_AgreementList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_AgreementWithholdList" EntityType="Self.B_AgreementWithholdList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_AllocateDetailList" EntityType="Self.B_AllocateDetailList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_AllocateList" EntityType="Self.B_AllocateList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_ApproachCostList" EntityType="Self.B_ApproachCostList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_ChangeDetailList" EntityType="Self.B_ChangeDetailList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_ChangeList" EntityType="Self.B_ChangeList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_CheckRemerbenDetillList" EntityType="Self.B_CheckRemerbenDetillList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_CheckRemerbenList" EntityType="Self.B_CheckRemerbenList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_ChGoodsPanlSexList" EntityType="Self.B_ChGoodsPanlSexList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_ConverDeTailList" EntityType="Self.B_ConverDeTailList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_ConverList" EntityType="Self.B_ConverList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_CustomerCardList" EntityType="Self.B_CustomerCardList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_DaBaoDingJiaList" EntityType="Self.B_DaBaoDingJiaList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_DefaulGoodsDetaiLList" EntityType="Self.B_DefaulGoodsDetaiLList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_DefaulGoodsList" EntityType="Self.B_DefaulGoodsList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_DefaultrelevDetaiLList" EntityType="Self.B_DefaultrelevDetaiLList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_DefaultrelevList" EntityType="Self.B_DefaultrelevList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_DeleteCardList" EntityType="Self.B_DeleteCardList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_DepatmenList" EntityType="Self.B_DepatmenList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_EffectiveList" EntityType="Self.B_EffectiveList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_GoodsBianJiaList" EntityType="Self.B_GoodsBianJiaList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_GoodsChopList" EntityType="Self.B_GoodsChopList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_GoodsClassifyList" EntityType="Self.B_GoodsClassifyList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_GoodsDetailList" EntityType="Self.B_GoodsDetailList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_GoodsKuCunList" EntityType="Self.B_GoodsKuCunList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_GoodsList" EntityType="Self.B_GoodsList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_GoodsListedDetailList" EntityType="Self.B_GoodsListedDetailList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_GoodsListedList" EntityType="Self.B_GoodsListedList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_GoodsSignList" EntityType="Self.B_GoodsSignList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_IncreaseDetailList" EntityType="Self.B_IncreaseDetailList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_IncreaseList" EntityType="Self.B_IncreaseList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_InvalidList" EntityType="Self.B_InvalidList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_ManufacturerList" EntityType="Self.B_ManufacturerList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_NewGoodsManageList" EntityType="Self.B_NewGoodsManageList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_OrderFormDetailList" EntityType="Self.B_OrderFormDetailList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_OrderFormList" EntityType="Self.B_OrderFormList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_OrderFormPactDetailList" EntityType="Self.B_OrderFormPactDetailList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_OrderFormPactList" EntityType="Self.B_OrderFormPactList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_PackGoodsList" EntityType="Self.B_PackGoodsList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_PanlList" EntityType="Self.B_PanlList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_PurchaseList" EntityType="Self.B_PurchaseList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_RetureFactoryDeTailList" EntityType="Self.B_RetureFactoryDeTailList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_RetureFactoryList" EntityType="Self.B_RetureFactoryList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_SaleAdjustList" EntityType="Self.B_SaleAdjustList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_SellCheckBatchDetaiList" EntityType="Self.B_SellCheckBatchDetaiList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_SellCheckBatchList" EntityType="Self.B_SellCheckBatchList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_SellDeTaLsit" EntityType="Self.B_SellDeTaLsit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_SellList" EntityType="Self.B_SellList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_SellRetuerDateiList" EntityType="Self.B_SellRetuerDateiList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_SellRetuerList" EntityType="Self.B_SellRetuerList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_ShooppingDateilIDOrderFounList" EntityType="Self.B_ShooppingDateilIDOrderFounList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_ShooppingOrderFountList" EntityType="Self.B_ShooppingOrderFountList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_ShooppingSellList" EntityType="Self.B_ShooppingSellList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_ShoppingList" EntityType="Self.B_ShoppingList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_SourceList" EntityType="Self.B_SourceList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_StaffList" EntityType="Self.B_StaffList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_StaffRoleDetailList" EntityType="Self.B_StaffRoleDetailList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_StockList" EntityType="Self.B_StockList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_SupplierGoodsList" EntityType="Self.B_SupplierGoodsList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_SupplierList" EntityType="Self.B_SupplierList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_TakeGlanceList" EntityType="Self.B_TakeGlanceList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_ThreeSingleList" EntityType="Self.B_ThreeSingleList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_Unamelist" EntityType="Self.B_Unamelist" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_VoluntarilyOrderGoodsList" EntityType="Self.B_VoluntarilyOrderGoodsList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_WanManifestDetailList" EntityType="Self.B_WanManifestDetailList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_WanManifestList" EntityType="Self.B_WanManifestList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_WareHouseDetiailList" EntityType="Self.B_WareHouseDetiailList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_WareHouseList" EntityType="Self.B_WareHouseList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_WeatherList" EntityType="Self.B_WeatherList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="B_WithholdContrastList" EntityType="Self.B_WithholdContrastList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_AdjustAccountsFashionList" EntityType="Self.S_AdjustAccountsFashionList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_AdjustTypeList" EntityType="Self.S_AdjustTypeList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_AgioTimeIntervalList" EntityType="Self.S_AgioTimeIntervalList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_AgioTimeIntervalTypeList" EntityType="Self.S_AgioTimeIntervalTypeList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_AgreementManagerList" EntityType="Self.S_AgreementManagerList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_AgreementStateList" EntityType="Self.S_AgreementStateList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_AgreementTypeList" EntityType="Self.S_AgreementTypeList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_AlternativeList" EntityType="Self.S_AlternativeList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_AlternativeProjectList" EntityType="Self.S_AlternativeProjectList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_AlternativeSupplierList" EntityType="Self.S_AlternativeSupplierList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_ApplyTargetList" EntityType="Self.S_ApplyTargetList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_AreaCodeList" EntityType="Self.S_AreaCodeList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_BarCodTypeList" EntityType="Self.S_BarCodTypeList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_BurdenStockSellStatusList" EntityType="Self.S_BurdenStockSellStatusList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_CardValiditySpecifiedList" EntityType="Self.S_CardValiditySpecifiedList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_ChangeTypeList" EntityType="Self.S_ChangeTypeList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_ChangeWhyList" EntityType="Self.S_ChangeWhyList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_CommodityTypeList" EntityType="Self.S_CommodityTypeList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_CompanyList" EntityType="Self.S_CompanyList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_ContactCertificate" EntityType="Self.S_ContactCertificate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_CounterList" EntityType="Self.S_CounterList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_CXSummaryList" EntityType="Self.S_CXSummaryList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_EnterpriseNatureList" EntityType="Self.S_EnterpriseNatureList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_EnterpriseTypeList" EntityType="Self.S_EnterpriseTypeList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_EstimateUnitList" EntityType="Self.S_EstimateUnitList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_GoodsBottomPriceList" EntityType="Self.S_GoodsBottomPriceList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_GoodsBrandList" EntityType="Self.S_GoodsBrandList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_GoodsGenreIDList" EntityType="Self.S_GoodsGenreIDList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_GoodsMoneyRuleList" EntityType="Self.S_GoodsMoneyRuleList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_GoodsPurchasemoneyStatusList" EntityType="Self.S_GoodsPurchasemoneyStatusList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_GoodsPurchasemoneyTypeList" EntityType="Self.S_GoodsPurchasemoneyTypeList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_GoodsSeasonList" EntityType="Self.S_GoodsSeasonList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_GoodsStampList" EntityType="Self.S_GoodsStampList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_GoodsStatusIList" EntityType="Self.S_GoodsStatusIList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_GoodsTypeSpecificationList" EntityType="Self.S_GoodsTypeSpecificationList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_HuoDongZhuanQu" EntityType="Self.S_HuoDongZhuanQu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_MaiChangList" EntityType="Self.S_MaiChangList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_MakeCollectionsList" EntityType="Self.S_MakeCollectionsList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_MarketNameList" EntityType="Self.S_MarketNameList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_MemberCredentialsType" EntityType="Self.S_MemberCredentialsType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_MemberFamilyMember" EntityType="Self.S_MemberFamilyMember" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_MemberHobbiesInterests" EntityType="Self.S_MemberHobbiesInterests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_MemberInfoList" EntityType="Self.S_MemberInfoList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_MemberMemberEd" EntityType="Self.S_MemberMemberEd" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_MemberMemberFamilyIncome" EntityType="Self.S_MemberMemberFamilyIncome" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_MemberProfession" EntityType="Self.S_MemberProfession" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_MemberSCDList" EntityType="Self.S_MemberSCDList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_MembershipAgeList" EntityType="Self.S_MembershipAgeList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_MembershipCardAccount" EntityType="Self.S_MembershipCardAccount" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_MembershipCardForm" EntityType="Self.S_MembershipCardForm" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_MembershipCardInfoList" EntityType="Self.S_MembershipCardInfoList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_MembershipCardList" EntityType="Self.S_MembershipCardList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_MembershipCardSafekeeping" EntityType="Self.S_MembershipCardSafekeeping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_MembershipCardStatusList" EntityType="Self.S_MembershipCardStatusList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_MembershipCardSupervise" EntityType="Self.S_MembershipCardSupervise" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_MembershipCardTypeList" EntityType="Self.S_MembershipCardTypeList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_MemberTimeToMall" EntityType="Self.S_MemberTimeToMall" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_MemberVehicle" EntityType="Self.S_MemberVehicle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_MethodOfSettlingAccountsList" EntityType="Self.S_MethodOfSettlingAccountsList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_ModuleList" EntityType="Self.S_ModuleList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_OrderFormTypeList" EntityType="Self.S_OrderFormTypeList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_PackInfoIDList" EntityType="Self.S_PackInfoIDList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_PaymentList" EntityType="Self.S_PaymentList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_PersonalIformationList" EntityType="Self.S_PersonalIformationList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_PreferentialFashionList" EntityType="Self.S_PreferentialFashionList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_PriceTypeList" EntityType="Self.S_PriceTypeList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_PublishWayList" EntityType="Self.S_PublishWayList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_QuFenLeiXingList" EntityType="Self.S_QuFenLeiXingList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_ReturnofList" EntityType="Self.S_ReturnofList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_SellAssemblelist" EntityType="Self.S_SellAssemblelist" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_SellingInfoList" EntityType="Self.S_SellingInfoList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_SettlementDebiList" EntityType="Self.S_SettlementDebiList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_SignTypeList" EntityType="Self.S_SignTypeList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_SpouseBRanchList" EntityType="Self.S_SpouseBRanchList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_StaffClassList" EntityType="Self.S_StaffClassList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_StaffPowerList" EntityType="Self.S_StaffPowerList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_StatisticAttribute" EntityType="Self.S_StatisticAttribute" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_StockPlaceList" EntityType="Self.S_StockPlaceList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_StoreCardList" EntityType="Self.S_StoreCardList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_SupplierGroupList" EntityType="Self.S_SupplierGroupList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_SupplierRankList" EntityType="Self.S_SupplierRankList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_SupplierReturnTypeList" EntityType="Self.S_SupplierReturnTypeList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_TheCardsbranchList" EntityType="Self.S_TheCardsbranchList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_TheCardsList" EntityType="Self.S_TheCardsList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_TrademarkLocalList" EntityType="Self.S_TrademarkLocalList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_TrademarkRankList" EntityType="Self.S_TrademarkRankList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_TrademarkStatusList" EntityType="Self.S_TrademarkStatusList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_UnitCharacterList" EntityType="Self.S_UnitCharacterList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_VieOpponentList" EntityType="Self.S_VieOpponentList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_WithholdTypeList" EntityType="Self.S_WithholdTypeList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_ZhuanGuiCommodityTypeLiat" EntityType="Self.S_ZhuanGuiCommodityTypeLiat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_GoodsColoursList" EntityType="Self.S_GoodsColoursList" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [S_GoodsColoursList].[GoodsColoursID] AS [GoodsColoursID], 
+    [S_GoodsColoursList].[GoodsColours] AS [GoodsColours]
+    FROM [dbo].[S_GoodsColoursList] AS [S_GoodsColoursList]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,20 @@
+﻿
+
+function ZiDingShengCheng() {
+
+    $("#CeShiAdd").append('<div class="" id="CeShiAdd"><div class="row" style="margin-top:10px;margin-left:2px;"><input type="hidden" id="JieShooppingDateilId"/><input type="checkbox" id="JieShooppingId" value="true" style="margin-top:30px;margin-left:40px;" /> 店铺：品牌男装转销店<select class="form-control" style="width:120px;margin-left:240px;margin-top:-30px;"><option>优惠卷1</option><option>优惠卷2</option></select><div class="" style="border:1px solid #808080;height:150px;width:95%;margin-left:35px;"><div class="col-lg-1"><input type="checkbox" name="rememberMe" id="JieShooppingId" value="true" style="margin-top:30px;margin-left:60px;" /></div><div class="col-lg-2"><div class="img-box text-center" style="width:100%; height:145px;background:#e7f7f5"><img src="" alt="" style="width:100%;height:100%" id="LiangLi_eight"/></div></div><div class="col-lg-2"><label style="margin-top:10px;"></label><br /><span id="GoodsMingXi">&nbsp;</span><br /></div><div class="col-lg-2"><label class="control-label"style="margin-top:10px;">颜色：</label><span id="GoodColrd">&nbsp;</span><br /><label class="control-label"style="margin-top:10px;">尺码：</label><label class="control-label" id="LeiXingHao"></label></div><div class="col-lg-1"><label style="margin-top:10px;"></label><br /><span id="TaxeJiaE">&nbsp;￥</span><br /></div><div class="col-lg-1"><label class="control-label" id="jianshu" style="margin-top:10px;"></label></div><div class="col-lg-1"><label style="margin-top:10px;"></label><br /><span id="Mormy" style="color:#F00">&nbsp;￥</span></div><div class="col-lg-2"><button type="button" class="btn btn-sm btn-primary" style="margin-top:10px;" id="DeleteGoodse">删除</button><br /><label class="control-label" style="margin-top:10px;">相似宝贝</label></div></div></div></div>');
+
+}
+
+//function ZiDingShengChengfg(selectId, jsonData) {
+//    //$("#" + selectId).empty();//清空该元素
+//    //for (k in jsonData) {
+   
+//    for (k in jsonData) {
+//        //$("#" + selectId).append('<option value="' + jsonData[k].id + '">' + jsonData[k].text + '</option>');
+//        $("#" + selectId).append('<option value="' + jsonData[k].id + '">' + jsonData[k].text + '</option>');
+
+//        $("#CeShiAdd").append('<div class="" id="CeShiAdd"><div class="row" style="margin-top:10px;margin-left:2px;"><input type="hidden" id="' + jsonData[k].JieShooppingDateilId + '"/><input type="checkbox" id="' + jsonData[k].JieShooppingId + '" value="true" style="margin-top:30px;margin-left:40px;" /> 店铺：品牌男装转销店<select class="form-control" style="width:120px;margin-left:240px;margin-top:-30px;"><option>优惠卷1</option><option>优惠卷2</option></select><div class="" style="border:1px solid #808080;height:150px;width:95%;margin-left:35px;"><div class="col-lg-1"><input type="checkbox" id="' + jsonData[k].JieShooppingId + '" value="true" style="margin-top:30px;margin-left:60px;" /></div><div class="col-lg-2"><div class="img-box text-center" style="width:100%; height:145px;background:#e7f7f5"><img src="" alt="" style="width:100%;height:100%" id="LiangLi_eight"/></div></div><div class="col-lg-2"><label style="margin-top:10px;"></label><br /><span id="' + jsonData[k].GoodsDetailName + '">&nbsp;</span><br /></div><div class="col-lg-2"><label class="control-label"style="margin-top:10px;">颜色：</label><span id="' + jsonData[k].StockPlaceName + '">&nbsp;</span><br /><label class="control-label"style="margin-top:10px;">尺码：</label><label class="control-label" id="LeiXingHao"></label></div><div class="col-lg-1"><label style="margin-top:10px;"></label><br /><span id="TaxeJiaE">&nbsp;￥</span><br /></div><div class="col-lg-1"><label class="control-label" id="jianshu" style="margin-top:10px;"></label></div><div class="col-lg-1"><label style="margin-top:10px;"></label><br /><span id="Mormy" style="color:#F00">&nbsp;￥</span></div><div class="col-lg-2"><button type="button" class="btn btn-sm btn-primary" style="margin-top:10px;" id="DeleteGoodse">删除</button><br /><label class="control-label" style="margin-top:10px;">相似宝贝</label></div></div></div></div>');
+
+//    }
+//}

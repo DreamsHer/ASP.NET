@@ -1,0 +1,286 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SelectFanCangDan</title>
+
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+
+    <style>
+        .container { 
+            width: 100%;
+            margin: 0;
+        }
+
+        .panel-heading span {
+            font-size: 18px;
+        }
+
+        .form-horizontal label {
+            font-weight: normal;
+        }
+
+        .reset {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .panel-body {
+            padding-left: 0;
+        }
+
+        a {
+            font-size: 17px;
+            margin-right: 8px;
+        }
+
+            a, a:hover, a:active, a:visited, a:link {
+                color: white;
+                text-decoration: none;
+            }
+
+        td a {
+            color: blue !important;
+        }
+
+        .h4 {
+            margin: 0 0 4px 0;
+        }
+
+        th {
+            font-weight: normal;
+        }
+
+        .h4, td, th {
+            text-align: center;
+        }
+
+        .table tbody tr td {
+            padding: 4px;
+        }
+
+            .table tbody tr td button {
+                height: 24px;
+                padding: 2px 12px;
+            }
+
+        #noticeInfor {
+            height: 100px;
+            overflow: auto;
+            border: 1px solid #eee;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="h4">查询返仓单</span>
+                    <div class="pull-right">
+                        <button class="form-control btn-xs btn btn-info" id="Colse"><span class="glyphicon glyphicon-remove">关闭</span></button>
+                    </div>
+                </div>
+                <div class="panel-body">
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <span>数据列表</span>
+                            <div class="pull-right">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-3">
+                                            <button class="btn btn-success" type="button" id="XingZeng"><span class="glyphicon glyphicon-pencil"></span> 新 增</button>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <button class="btn btn-success" type="button" onclick="window.print();return false;"><span class="glyphicon glyphicon-print"></span> 打印页面</button>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <button class="btn btn-warning" type="button" id="WprintAchievement"><span class="glyphicon glyphicon-print"></span> 浏览器打印</button>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <button class="btn btn-primary" type="button" id="goHome"><span class="glyphicon glyphicon-share-alt"></span>返回主页</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body" style="padding-left:15px; background:#eee;">
+                            <div class="h4"><b>返仓单据</b></div>
+                            <table id="ConvterTable" style="margin-top:2px;">
+                                <tr>
+                                    <th w_num="total_line">序号</th>
+                                    <th w_index="SellRetuerID" w_hidden="true">返仓ID</th>
+                                    <th w_index="Remember">返仓单编号</th>
+                                    <th w_index="SpouseBRanchName">发货部门</th>
+                                    <th w_index="StockPlaceName">收货部门</th>
+                                    <th w_index="payName">实物付货人</th>
+                                    <th w_index="furlName">实物收货人</th>
+
+                                    <th w_index="RegisterName">制单人</th>
+                                    <th w_index="registerTime">制单时间</th>
+                                    <th w_index="ExamineName">审核人</th>
+                                    <th w_index="examineTime">审核时间</th>
+                                    <th w_index="Remarks">备注</th>
+                                    <th w_render="bsgridSetCre">审核状态</th>
+                                    <th w_index="ExamineNot" w_hidden="true">审核状态</th>
+
+                                </tr>
+                            </table>
+
+                            <div class="h4"><b>返仓商品信息</b></div>
+
+                            <table id="ShangPin">
+                                <tr>
+                                    <th w_num="total_line" width="5%">序号</th>
+                                    <th w_index="GoodsIDs" w_hidden="true"></th><!--商品ID-->
+                                    <th w_index="ConverID" w_hidden="true"></th><!--进仓ID-->
+
+                                    <th w_index="GoodsCode">商品代码</th>
+                                    <th w_index="GoodsTiaoMas">商品条码</th>
+                                    <th w_index="GoodsNames">商品名称</th>
+                                    <th w_index="ArtNos">货号</th>
+                                    <th w_index="SpecificationsModels">规格</th>
+                                 
+                                    <th w_index="MumberOfPackages">发货件数</th>
+                                    <th w_index="Subdivision">发货细数</th>
+                                    <th w_index="EstimateUnitNames">计量单位</th>
+                                    <th w_index="TaxBids">含税进价</th>
+                                    <th w_index="RetailMonovalents">零售单格</th>
+                                    <th w_index="Number">商品批次号</th>
+
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.2.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <script src="~/Content/js/jquery.form.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+
+
+    <script>
+
+        var ConvterTable;
+        var ShangPin;
+
+        $(document).ready(function () {
+
+            //查询进仓单
+            ConvterTable = $.fn.bsgrid.init('ConvterTable', {
+                url: '/FanCangDan/SelectFanCang/SelectSellctRect',
+                autoLoad: false,//自动加载数据
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                rowSelectedColor: true,//是否显示选中行背景色
+                pageSize: 9,//默认页面大小
+                pageSizeSelect: true,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置
+
+                event: {//事件
+                    customRowEvents: {//自定义行事件
+                        click: function (record, rowIndex, trObj, options) {//点击事件
+                            ShangPin.search("sellRetuerID=" + record.SellRetuerID);
+                        }
+                    }
+                }
+
+            });
+            ConvterTable.search();
+            //主界面商品
+            ShangPin = $.fn.bsgrid.init('ShangPin', {
+                url: '/FanCangDan/SelectFanCang/gBangDingPiGoodel',
+                autoLoad: false,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过变色
+                pageSize: 5,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置
+            });
+        });
+
+        //设置生效状态
+        function bsgridSetCre(record, rowIndex, colIndex, options) {//自定义列的代码（二）
+            var toVoidNow = ConvterTable.getRecordIndexValue(record, "ExamineNot");
+            toVoidNow = record.ExamineNot;
+            if (toVoidNow == true || toVoidNow == "true") {
+                return '<span style="color:cornflowerblue">已审核</span>';
+            } else {
+                return '<span style="color:red">未审核</span>';
+            }
+        }
+
+        $("#XingZeng").click(function () {
+            window.location.href = "/FanCangDan/FanCangDan/FanCang"
+        });
+        //点击关闭
+        $("#Colse").click(function () {
+            $('body').remove();
+        });
+    </script>
+
+    <!--浏览器打印-->
+    <script>
+
+        //点击打印按钮
+        $("#WprintAchievement").click(function () {
+            $.ajax({
+                url: '@Url.Action("DaYinConverList", "SelectFanCang")',
+                success: function (data) {
+                    if (judgePopupBlocked) {//判断
+                        layer.alert("浏览器禁用弹出窗口了，请允许弹出窗口");
+                    }
+                    //打开浏览器窗口
+                    var popUpWindow = window.open();
+                    if (popUpWindow) {//判断是否允许了
+                        $(popUpWindow.document.body).html(data);
+                    }
+                    else {
+                        layer.alert("浏览器禁用弹出窗口了，请允许弹出窗口");
+                    }
+                }
+            });
+        });
+        //判断浏览器是否阻止了弹出窗口
+        function judgePopupBlocked() {
+            var w = window.open(null, "", "width=1,height=1");
+            try {
+                w.close();
+                return false;
+
+            } catch (e) {
+                return true;
+
+            }
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,370 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <title>销售单打印</title>
+    <style type="text/css">
+        .container {
+            width: 98%;
+            padding-top: 4px;
+        }
+
+        .panel-heading {
+            font-size: 16px;
+        }
+
+        .panel-body {
+            padding: 0;
+            border-left: 3px solid #377ab7;
+            border-bottom: 3px solid #377ab7;
+            border-right: 3px solid #377ab7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="dingdanchuli">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <span style="padding-left:14px;">销售单打印</span>
+                    </div>
+                </div>
+                <div class="panel-body" style="width:100%;height:550px;background:#f0edf1">
+
+                    <div class="row" style="margin-top:10px;">
+                        <div class="col-lg-4"></div>
+                        <div class="col-lg-5">
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label class="control-label" style="padding-left:20px;">店家名称：</label>
+                                </div>
+
+                                <div class="col-md-6" style="margin-top:5px;">
+                                    <div style="border-bottom: #000 1px solid; width: 180px;">
+                                        <input readonly="readonly" id="onel" style="width: 180px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+
+                    <div class="row" style="margin-top:25px;">
+
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <label class="control-label" style="padding-left:20px;">订单编号：</label>
+                                </div>
+
+                                <div class="col-md-6" style="margin-top:5px;">
+                                    <div style="border-bottom: #000 1px solid; width: 180px;">
+                                        <input readonly="readonly" id="onell" style="width: 180px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <label class="control-label" style="padding-left:20px;">订单日期：</label>
+                                </div>
+
+                                <div class="col-md-6" style="margin-top:5px;">
+                                    <div style="border-bottom: #000 1px solid; width: 180px;">
+                                        <input readonly="readonly" id="onelll" style="width: 180px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <label class="control-label" style="padding-left:20px;">售卖归类：</label>
+                                </div>
+
+                                <div class="col-md-6" style="margin-top:5px;">
+                                    <div style="border-bottom: #000 1px solid; width: 180px;">
+                                        <input readonly="readonly" id="onelllgd" style="width: 180px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="margin-top:15px;">
+
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <label class="control-label" style="padding-left:20px;">商品名称：</label>
+                                </div>
+
+                                <div class="col-md-6" style="margin-top:5px;">
+                                    <div style="border-bottom: #000 1px solid; width: 180px;">
+                                        <input readonly="readonly" id="fdfdd" style="width: 180px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <label class="control-label" style="padding-left:20px;">商品代码：</label>
+                                </div>
+
+                                <div class="col-md-6" style="margin-top:5px;">
+                                    <div style="border-bottom: #000 1px solid; width: 180px;">
+                                        <input readonly="readonly" id="fdsdsgt" style="width: 180px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <label class="control-label" style="padding-left:20px;">商标品牌：</label>
+                                </div>
+
+                                <div class="col-md-6" style="margin-top:5px;">
+                                    <div style="border-bottom: #000 1px solid; width: 180px;">
+                                        <input readonly="readonly" id="rtrsd" style="width: 180px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="margin-top:15px;">
+
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <label class="control-label" style="padding-left:20px;">购买数量：</label>
+                                </div>
+
+                                <div class="col-md-6" style="margin-top:5px;">
+                                    <div style="border-bottom: #000 1px solid; width: 180px;">
+                                        <input readonly="readonly" id="gfd" style="width: 180px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <label class="control-label" style="padding-left:20px;">购买颜色：</label>
+                                </div>
+
+                                <div class="col-md-6" style="margin-top:5px;">
+                                    <div style="border-bottom: #000 1px solid; width: 180px;">
+                                        <input readonly="readonly" id="iuytutt" style="width: 180px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <label class="control-label" style="padding-left:20px;">客户姓名：</label>
+                                </div>
+
+                                <div class="col-md-6" style="margin-top:5px;">
+                                    <div style="border-bottom: #000 1px solid; width: 180px;">
+                                        <input readonly="readonly" id="KeHuName" style="width: 180px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="margin-top:15px;">
+
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <label class="control-label" style="padding-left:20px;">手机号：</label>
+                                </div>
+
+                                <div class="col-md-6" style="margin-top:5px;">
+                                    <div style="border-bottom: #000 1px solid; width: 180px;">
+                                        <input readonly="readonly" id="phonenuber" style="width: 180px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <label class="control-label" style="padding-left:20px;">地 区：</label>
+                                </div>
+
+                                <div class="col-md-6" style="margin-top:5px;">
+                                    <div style="border-bottom: #000 1px solid; width: 180px;">
+                                        <input readonly="readonly" id="Regional" style="width: 180px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <label class="control-label" style="padding-left:20px;">邮政编码：</label>
+                                </div>
+
+                                <div class="col-md-6" style="margin-top:5px;">
+                                    <div style="border-bottom: #000 1px solid; width: 180px;">
+                                        <input readonly="readonly" id="posalCode" style="width: 180px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="margin-top:15px;">
+
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label class="control-label" style="padding-left:20px;">客户留言：</label>
+                                </div>
+
+                                <div class="col-md-8" style="margin-top:5px;">
+                                    <div style="border-bottom: #000 1px solid; width: 350px;">
+                                        <input readonly="readonly" id="EveryRank" style="width: 300px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <div class="col-md-2">
+                                    <label class="control-label">收货地址：</label>
+                                </div>
+
+                                <div class="col-md-8" style="margin-top:5px;">
+                                    <div style="border-bottom: #000 1px solid; width: 470px;">
+                                        <input readonly="readonly" id="Width" style="width: 470px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="margin-top:15px;">
+
+                        <div class="col-lg-4" style="margin-left:800px;">
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <label class="control-label" style="padding-left:20px;color:red">审核人：</label>
+                                </div>
+
+                                <div class="col-md-6" style="margin-top:5px;">
+                                    <div style="border-bottom: #000 1px solid; width: 180px;">
+                                        <input readonly="readonly" id="fdsdsrs" style="width: 180px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="margin-top:15px;">
+
+                        <div class="col-lg-4" style="margin-left:800px;">
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <label class="control-label" style="padding-left:20px;color:red">审核日期：</label>
+                                </div>
+
+                                <div class="col-md-6" style="margin-top:5px;">
+                                    <div style="border-bottom: #000 1px solid; width: 180px;">
+                                        <input readonly="readonly" id="fdsfds" style="width: 180px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group" style="margin-top:30px;">
+                        <div class="col-sm-1 col-md-offset-4">
+                            <button type="button" class="btn btn-info form-control" onclick="window.print(); return false;">页面打印</button>
+                        </div>
+                        <div class="col-sm-1">
+                            <button type="button" class="btn btn-danger form-control" id="btnTuiChu">退出</button>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    
+   
+    <script>
+
+        $(document).ready(function () {
+            $.post("/GoodsZhangGuanLi/QianTaiXiaoShouChaXun/SelectShooppingOrderSexId", function (data) {
+              
+
+                $("#onel").val(data[0].Quantity);//店家名称
+                $("#onell").val(data[0].ShooppingNumber);//订单编号
+                $("#onelll").val(data[0].ReleaseTimeStrbb);//订单日期
+                $("#onelllgd").val(data[0].ChangeWhy);//售卖归类
+                $("#fdfdd").val(data[0].GoodsName);//商品名称
+                $("#fdsdsgt").val(data[0].GoodsCode);//商品代码
+                $("#rtrsd").val(data[0].GoodsChopName);//商标品牌
+                $("#gfd").val(data[0].MumberOfPackages);//购买数量
+                $("#iuytutt").val(data[0].XingQi);//购买颜色
+
+                $("#KeHuName").val(data[0].EveryRow);//客户姓名
+                $("#phonenuber").val(data[0].Ordinate);//手机
+                $("#Regional").val(data[0].Broadwise);//地区
+                $("#posalCode").val(data[0].Height);//邮政编码
+                $("#EveryRank").val(data[0].EveryRank);//留言
+                $("#Width").val(data[0].Width);//地址
+
+                $("#fdsdsrs").val(data[0].BianJiaBianHao);//审核人
+                $("#fdsfds").val(data[0].ReleaseTimeStrd);//审核时间
+                
+            });
+        });
+
+
+    </script>
+
+
+</body>
+</html>

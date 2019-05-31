@@ -1,0 +1,352 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShoppingCart</title>
+
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+    <style>
+        .one {
+            width: 1449px;
+            background: #f7f1f1;
+            border: 2px solid #000;
+            margin-left: 20px;
+            margin: 0 auto;
+        }
+
+        .head-left {
+            width: 450px;
+            height: 30px;
+        }
+
+            .head-left ul li {
+                float: left;
+                list-style: none;
+                margin-left: 20px;
+            }
+
+                .head-left ul li a {
+                    font-size: 12px;
+                    color: #000;
+                    padding: 4px;
+                    text-decoration: none;
+                }
+
+        .head-right {
+            width: 800px;
+            height: 30px;
+            position: absolute;
+            margin-left: 550px;
+            margin-top: -30px;
+        }
+
+            .head-right ul li {
+                float: left;
+                list-style: none;
+                position: relative;
+            }
+
+                .head-right ul li a {
+                    font-size: 15px;
+                    color: #000;
+                    padding: 10px;
+                    text-decoration: none;
+                }
+
+        .head a:hover {
+            color: #F00;
+        }
+
+
+       .search {
+            width: 700px;
+            height: 40px;
+            position: absolute;
+            margin-top: -150px;
+            margin-left: 400px;
+        }
+
+            .search input {
+                width: 600px;
+                height: 40px;
+                border: 3px solid #aa1414;
+                border-right: none;
+                font-size: 20px;
+            }
+
+            .search a {
+                float: right;
+                width: 100px;
+                height: 40px;
+                background: #aa1414;
+                text-decoration: none;
+                color: #fff;
+                font-size: 24px;
+                text-align: center;
+                line-height: 40px;
+            }
+
+            .search .bginput {
+                background: url(../imges/search.png) no-repeat left center;
+            }
+    </style>
+
+</head>
+<body>
+
+    <div class="one">
+        <!--头部信息-->
+        <div class="head" style="background:#f6eded;">
+            <div class="head-left">
+                <ul>
+                    <li><a href="#">欢迎来商贸系统</a></li>
+                    <li><a href="http://localhost:5785/YongHuZhuJieMian/GoodesUIL/DengLuJieMian">亲，请登录</a></li>
+                    <li><a href="http://localhost:5785/UserLog/Userlog/UserLogIndex" style="color:#F00;">免费注册</a></li>
+                </ul>
+            </div>
+            <div class="head-right">
+                <ul>
+                    <li><a href="http://localhost:5785/">首页</a></li>
+                    <li><a href="#"> | </a></li>
+                    <li><a href="http://localhost:5785/YongHuZhuJieMian/GoodesUIL/GouWuCheJieMian"> 我的购物车</a></li>
+                    <li><a href="#"> | </a></li>
+                    <li><a href="#"> 商品分类</a></li>
+                    <li><a href="#"> | </a></li>
+                    <li><a href="#"> 卖家中心</a></li>
+                    <li><a href="#"> | </a></li>
+                    <li><a href="#"> 联系客服</a></li>
+                    <li><a href="#"> | </a></li>
+                    <li><a href="#"> 网站导航</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="BiaoSechen">
+            <div id="logo" class="logo" style="margin-left:50px;width:200px;">
+                <h1 class="logo_tit"><img src="~/ImaginPho/QX/008.jpg" style="width:200px;height:100px;" /></h1>
+                <h3 class="logo_subtit">商贸,便捷好省</h3>
+                <h5 class="logo_subtit">SM.goods.com</h5>
+            </div>
+
+            <div class="search">
+                <input type="text" class="bginput" id="txtSearch" placeholder="搜索 商品/品牌/店铺" style="color:#808080;font-size:15px;" />
+                <a href="#">搜索</a>
+            </div>
+
+            <div class="ShoppingCartf" style="position:absolute;margin-left:1160px;margin-top:-220px;width:200px;">
+                <h1 class="logo_tit"><img src="~/ImaginPho/QX/009.png" style="width:200px;height:150px;" /></h1>
+            </div>
+        </div>
+
+        <div class="FenGeXian" style="width:100%;height:30px;background:#73b2b4;">
+            <h4>
+                <marquee>
+                    大家好！欢迎来到大型商贸系统，这里只要你想到的都有，没想到的也有，欢迎来订购哦！
+                </marquee>
+            </h4>
+        </div>
+
+        <!--商品选择购买信息 (左，中间)-->
+        <div class="FenGeXian" style="width:100%;background:#f7f1f1;margin-top:10px;">
+            <!--左-->
+            <div class="BitTuPian img-box text-center" style="width:330px;height:450px;margin-left:50px;">
+                <!--例如-->
+                <img src="~/ImaginPho/TB10HOcMXXXXXbHXXXXXXXXXXXX_!!0-item_pic.jpg_400x400q60.jpg" style="width:100%;height:100%" id="buideforBit" />
+                @*<img src="" alt="" style="width:100%;height:100%" id="buideforBit" />*@
+            </div>
+            <!--中-->
+            <div class="GoodsXinXi" style="width:760px;height:600px;background:#fff;margin-left:400px;margin-top:-450px;position:relative;">
+                <!--商品名称-->
+                <div class="ZiTi" style="position:absolute;">
+                    <label class="control-label" id="GoodesNameSize" style="font-size:20px; margin-top:15px;">2017新潮时尚纯手工制作连衣裙</label>
+                </div>
+                <!--价格-->
+                <div class="JiaGeXian" style="position:absolute;margin-top:50px;">
+                    <label class="control-label" style="font-size:17px;color:#808080;margin-left:10px;margin-top:20px;">商城价格：</label>
+                    <input readonly="readonly" id="GouWu_OneZi" style="width: 130px; border: none; background:#fff; font-size: 20px;color:#ff4200;" /><br />
+                    <label class="control-label" style="font-size:17px;color:#808080;margin-left:10px;margin-top:20px;">会员价格：</label>
+                    <input readonly="readonly" id="GouWu_OneZi" style="width: 130px; border: none; background:#fff; font-size: 20px;color:#ff4200;" />
+                </div>
+                <!--配送-->
+                <div class="PeiSongZhi" style="margin-top:160px;position:absolute;">
+                  
+                    <label class="control-label" style="font-size:18px;color:#808080;margin-left:10px;margin-top:10px;"> 配 送 至：</label>
+                    <select class="form-control" id="GoodsTiaoMa" style="width:350px;margin-left:100px;margin-top:-34px;"></select>
+                   
+                </div>
+
+                <div class="" style="margin-top:240px;position:absolute;width:100%;">
+                    <label class="control-label" style="font-size:18px;color:#808080;">本产品由从</label>
+                    <label class="control-label" style="font-size:20px;color:#F00;" id="FaHuoDiDian">广东</label>
+                    <label class="control-label" style="font-size:18px;color:#808080;">发货，并提供售后服务</label>
+                </div>
+
+
+                <!--选尺码-->
+                <div class="" style="margin-top:290px;position:absolute;">
+                    <label class="control-label" style="font-size:18px;color:#808080;">选择尺码：</label>
+                    <div class="" style="margin-left:100px;margin-top:-30px;">
+                        <button class="btn btn-sm btn-default">S</button>
+                        <button class="btn btn-sm btn-default">M</button>
+                        <button class="btn btn-sm btn-default">L</button>
+                        <button class="btn btn-sm btn-default">XL</button>
+                        <button class="btn btn-sm btn-default">2XL</button>
+                        <button class="btn btn-sm btn-default">3XL</button>
+                    </div>
+                </div>
+                <div class="" style="margin-top:340px;position:absolute;">
+                    <label class="control-label" style="font-size:18px;color:#808080;">选择颜色：</label>
+                    <select class="form-control" id="GoodsTiaoMa" style="width:150px;margin-left:100px;margin-top:-34px;"></select>
+                </div>
+                <div class="" style="margin-top:390px;position:absolute;">
+                    <label class="control-label" style="font-size:18px;color:#808080;margin-left:36px;">数量：</label>
+                    <div class="" style="margin-left:100px;margin-top:-30px;">
+                        <button class="btn btn-sm btn-default">-</button>
+                        <input type="text" style="width:80px;margin-left:30px;margin-top:-33px;position:absolute;" id="XuanShuLiang" class="form-control" />
+                        <button class="btn btn-sm btn-default" style="margin-left:82px;position:relative;">+</button>
+                    </div>
+                </div>
+                <div class="" style="margin-top:440px;position:absolute;">
+                    <label class="control-label" style="font-size:18px;color:#808080;">共余额为：</label>
+                    <label class="control-label" style="font-size:20px;color:#ff4200;" id="JinE">余额为：</label>
+                </div>
+                <!--立即、加入-->
+                <div class="" style="margin-top:460px;margin-left:280px;position:absolute;">
+                    <button class="btn btn-lg btn-success">立即购买</button>
+                    <button class="btn btn-lg btn-warning">加入购物车</button>
+                </div>
+
+            </div>
+            <!--右-->
+            <div class="Rightds text-center" style="width:260px;height:600px;background:#fff;margin-top:-600px;margin-left:1175px;position:relative;">
+                <div class="ZiTi text-center" style="position:absolute;width:100%;">
+                    <label class="control-label" style="font-size:18px;">看了又看</label>
+                </div>
+                <div class="ZiTi" style="position:absolute;width:180px;height:210px;margin-top:40px;">
+                    <img src="~/ImaginPho/TB10HOcMXXXXXbHXXXXXXXXXXXX_!!0-item_pic.jpg_400x400q60.jpg" style="width:100%;height:100%;margin-left:50px;" id="buideforBit" />
+                    <label class="control-label" style="font-size:16px;">￥价格</label>
+                    @*<img src="" alt="" style="width:100%;height:100%" id="buideforBit" />*@
+                    <!--做随机生成-->
+                    <img src="~/ImaginPho/TB10HOcMXXXXXbHXXXXXXXXXXXX_!!0-item_pic.jpg_400x400q60.jpg" style="width:100%;height:100%;margin-left:50px;" id="buideforBit" />
+                    <label class="control-label" style="font-size:16px;">￥价格</label>
+
+                </div>
+                <div class="" style="position:absolute;width:100%;margin-top:540px;height:60px;background:#e5d4e5">
+                    <button class="btn btn-default" style="margin-top:10px;">换一组</button>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+
+        <!--商品详细信息-->
+        <div class="DianXinXi" style="margin-top:10px;">
+
+            <div class="GoodsXinXi" style="width:100%;height:390px;background:#fff;">
+
+                <ul id="myTab" class="nav nav-pills">
+                    <li class="active" data-toggle="tab"><a href="#bulletin" data-toggle="tab">商品详情</a></li>
+                    <li><a href="#rule" data-toggle="tab">累计评价</a></li>
+                    <li><a href="#forum" data-toggle="tab">服务详情</a></li>
+                </ul>
+
+                <div style="width:100%;border-bottom:2px solid #808080;"></div>
+
+                <!-- 选项卡面板 -->
+                <div id="myMianBanZu" class="tab-content">
+
+                    <!--商品详情-->
+                    <div class="tab-pane active" id="bulletin">
+                        <div class="ZiTi" style="position:absolute;margin-left:70px;margin-top:30px;">
+                            <label class="control-label" style="font-size:16px;">品牌名称：</label>
+                        </div>
+                        <div class="" style="position:absolute;margin-left:40px;margin-top:90px;">
+                            <ul>
+                                <li>商品名称：</li>
+                                <li>商品产地：</li>
+                                <li>上市时间：</li>
+                                <li>商品编码：</li>
+                            </ul>
+                        </div>
+                        <div class="" style="position:absolute;margin-left:330px;margin-top:90px;">
+                            <ul>
+                                <li>货号：</li>
+                                <li>颜色：</li>
+                                <li>大小：</li>
+                                <li>适合使用：</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--累计评价-->
+                    <div class="tab-pane" id="rule">
+
+                        <ul id="myTab" class="nav nav-pills">
+                            <li class="active" data-toggle="tab"><a href="#QuBuPingJia" data-toggle="tab"><input type="radio" /><label class="setSex">全部</label></a></li>
+                            <li><a href="#HaoPin" data-toggle="tab"><input type="radio" /><label class="setSex">好评</label></a></li>
+                            <li><a href="#ChaPin" data-toggle="tab"><input type="radio" /><label class="setSex">差评</label></a></li>
+                        </ul>
+                        <div id="myLeiJiPingJia" class="tab-content">
+                            <!--全部-->
+                            <div class="tab-pane active" id="QuBuPingJia">
+
+                            </div>
+
+                            <!--好评-->
+                            <div class="tab-pane" id="HaoPin">
+
+                            </div>
+
+                            <!--差评-->
+                            <div class="tab-pane" id="ChaPin">
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!--服务详情-->
+                    <div class="tab-pane" id="forum">
+                        <p style="margin-left:550px;font-size:25px;color:#F00;">商贸电器城服务承诺</p>
+                        <br />
+                        <p style="margin-left:20px;font-size:15px;">1. 在天猫电器购买带有“只换不修”标识的商品后，商品主体出现国家“三包”范围内或厂家保修服务范围内的质量问题（指“非人为损坏”问题），同时符合服务履行标准的，则商家承诺向买家提供一次免费更换全新商品的服务。其中，商品主体与配件的区分以商品说明书为准。</p>
+
+                        <p style="margin-left:20px;font-size:15px;">2. 商家应履行只换不修服务但未履行的，商家需以发放天猫积分方式赔付消费者，发放天猫积分数量（个）=商品实际成交金额（元）*30（个/元），最高不超过5万个天猫积分。商家向买家发放天猫积分后，该未履行只换不修服务的情形，不再属于《天猫规则》中违背承诺的投诉受理范围。</p>
+
+                        <p style="margin-left:20px;font-size:15px;">
+                            3. 安全提示：<br />
+                            请勿随意接收任何来源不明的文件，请勿随意点击任何来源不明的链接。涉及资金往来的事项请务必仔细核对资金往来信息。 天猫不会以订单有问题，让您提供任何银行卡、密码、手机验证码！遇到可疑情况可在钱盾“诈骗举报”中进行举报
+                        </p>
+
+                        <p style="margin-left:20px;font-size:15px;">
+                            4.内容声明： <br />
+                            天猫为第三方交易平台及互联网信息服务提供者，天猫（含网站、客户端等）所展示的商品/服务的标题、价格、详情等信息内容系由店铺经营者发布，其真实性、准确性和合法性均由店铺经营者负责。天猫提醒用户购买商品/服务前注意谨慎核实。如用户对商品/服务的标题、价格、详情等任何信息有任何疑问的，请在购买前通过阿里旺旺与店铺经营者沟通确认；天猫存在海量店铺，如用户发现店铺内有任何违法/侵权信息，请立即向天猫举报并提供有效线索。
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div><!--大-->
+
+</body>
+</html>

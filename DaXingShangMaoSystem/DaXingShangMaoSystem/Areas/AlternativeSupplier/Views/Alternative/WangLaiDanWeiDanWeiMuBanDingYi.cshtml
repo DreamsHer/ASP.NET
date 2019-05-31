@@ -1,0 +1,302 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>往来单位证书模板定义</title>
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    @*CSS样式(包含默认皮肤样式)*@
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    @*CSS皮肤(需引用于bsgrid.all.min.css之后)*@
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css">
+        .container {
+            width: 600px;
+            padding: 0;
+        }
+
+        .panel-heading {
+            font-size: 16px;
+        }
+
+        .panel-body {
+            padding-top: 0;
+        }
+
+            .panel-body label {
+                font-weight: normal;
+                font-size: 16px;
+            }
+
+        .setPadding {
+            
+            padding: 5px 0 5px 10px;
+        }
+
+            .setPadding button {
+                padding: 4px 6px;
+                font-size: 12px;
+            }
+
+        .form-horizontal label {
+            font-size: 12px;
+        }
+
+        .form-horizontal select, .form-horizontal input {
+            height: 26px;
+            padding: 0;
+        }
+
+        .reset {
+            padding: 0;
+        }
+
+        .examineeInfor {
+           
+            padding: 0;
+        }
+
+        .h5 {
+            margin: 0;
+            background: #eef;
+            padding: 6px 10px;
+        }
+
+        .examineeInfor th, .examineeInfor td {
+            font-weight: normal;
+            text-align: center;
+        }
+
+        #examineeInfor th {
+            padding: 4px 8px;
+        }
+
+        .modal-header {
+            padding: 6px 5px;
+            border-bottom: none;
+            background: #337ab7;
+            text-align: center;
+            color: #fff;
+        }
+
+        .modal-content {
+            padding: 6px;
+        }
+
+        .modal-body {
+            
+            padding: 0 25px;
+        }
+
+        .modal-content label {
+            font-weight: normal;
+            font-size: 12px;
+        }
+
+        .img-box {
+            border: 1px solid #eee;
+            padding: 10px;
+        }
+
+        .modal-dialog {
+            width: 400px;
+        }
+
+        .modal .form-group {
+            margin-bottom: 0;
+            margin-top: 2px;
+        }
+
+        .form-group input {
+            height: 26px;
+        }
+
+        .setSex {
+            position: relative;
+            top: -10px;
+            left: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">往来单位证书模板定义</div>
+            <div class="panel-body">
+                <div class="row examineeInfor col-md-12">
+                    <div class="col-md-10">
+                        <table id="taAlternativeProject" style="width:100%" class="table table-hover table-bordered table-responsive table-striped">
+                            <tr>
+                                <th w_num="total_line">序号</th>
+                                <th w_index="ContactCertificateID" w_hidden="true">ContactCertificateID</th>
+                                <th w_index="ContactCertificateName ">证书名称</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-lg-5 col-md-5 col-sm-5" style="left:-10px">
+                            <button class="btn btn-primary" id="insertNoticeType" style="width:80px;margin-top:55px; margin-bottom:35px">新增</button>
+                            <button class="btn btn-warning" id="updateNoticeType" style="width:80px;margin-bottom:35px">修改</button>
+                            <button class="btn btn-danger" id="deleteNoticeType" style="width:80px;margin-bottom:35px">删除</button>
+                            <button class="btn btn-primary" type="button" onclick="SetUpdate()" disabled="disabled" style="width:80px;margin-bottom:35px">保存</button>
+                            <button class="btn btn-info" type="button" onclick="doDelete()" disabled="disabled" style="width:80px;margin-bottom:35px">退出</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="modal bs-example-modal-sm" id="modNoticeType">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-sm-10 col-sm-offset-1">
+                                    <form id="formNoticeType" class="form-horizontal">
+                                        <!--重置表单-->
+                                        <input type="reset" class="hidden" />
+                                        <!--隐藏域-->
+                                        <input type="text" class="hidden" name="ContactCertificateID" />
+                                        <div class="form-group">
+                                            <label class="control-label">项目名称</label>
+                                            <input type="text" class="form-control" name="ContactCertificateName" />
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="button" class="btn btn-primary" id="btnSaveNoticeType">保存</button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+        </div>
+    </div>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    @*jquery.bsgrid*@
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>@*对话框*@
+    <script src="~/Content/js/customfunction.js"></script>@*封装js*@
+    <script src="~/Content/js/jquery.form.js"></script>
+    <script>
+        var noticeTypeId;//类型ID
+        var taAlternativeProject;//类型table
+
+
+        $(document).ready(function () {
+            //初始化类型表格
+            taAlternativeProject = $.fn.bsgrid.init('taAlternativeProject', {
+                url: '/AlternativeSupplier/Alternative/SelectContactCertificate',
+                autoLoad: true,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                pageSize: 10,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置
+
+            });
+            });
+
+        $("#insertNoticeType").click(function () {
+            $('#modNoticeType .modal-title').html('<span class="glyphicon glyphicon-th-list"></span>新增项目类型');
+            $('#formNoticeType input[type="reset"]').click();//重置表单
+            $("#modNoticeType").modal("show");//弹出类型模态窗体
+        });
+        $("#updateNoticeType").click(function () {
+            $('#modNoticeType .modal-title').html('<span class="glyphicon glyphicon-th-list"></span>修改项目类型');
+            $('#formNoticeType input[type="reset"]').click();//重置表单
+            var selectRowIndex = taAlternativeProject.getSelectedRowIndex();//获取选中行的索引值
+            if (selectRowIndex >= 0) {
+                var noticeTypeId = taAlternativeProject.getColumnValue(selectRowIndex, "ContactCertificateID");//获取选中行的类型id
+                //查询修改的供货商类型
+                $.post("/AlternativeSupplier/Alternative/SelectContactCertificateID",
+                    { noticeTypeId: noticeTypeId }, function (data) {
+                        loadDatatoForm("formNoticeType", data);//根据json对象填充form表单
+                    });
+                $("#modNoticeType").modal("show");//弹出类型模态窗体
+            }
+            else {
+                alert("请选择需要修改的数据");
+            }
+        });
+        //保存 新增/修改类型
+        $("#btnSaveNoticeType").click(function () {
+            if ($('#formNoticeType [name="ContactCertificateName"]').val() != "") {
+                var strUrl = "";
+                if ($('#formNoticeType [name="ContactCertificateID"]').val() == "") {
+                    //无类型id 表单为新增
+                    strUrl = "/AlternativeSupplier/Alternative/InsertContactCertificatet";
+                } else {
+                    //有类型id 表单为修改
+                    strUrl = "/AlternativeSupplier/Alternative/UpdateContactCertificate";
+                }
+                var formDate = $("#formNoticeType").serializeArray();
+                $.post(strUrl, formDate, function (msg) {
+                    if (msg == "success") {
+                        alert("保存成功");
+
+                        //关闭类型模态窗体
+                        $("#modNoticeType").modal("hide");
+                        //刷新table
+                        taAlternativeProject.refreshPage();
+                    }
+                    else if (msg == "exist") {
+                        alert("已经存在");
+                    }
+                    else if (msg == "nofull") {
+                        alert("请填写完整");
+                    }
+                    else {
+                        alert("保存失败");
+                    }
+                });
+            }
+            else {
+                alert("请填写完整");
+            }
+        });
+
+        //删除 类型
+        $("#deleteNoticeType").click(function () {
+            var selectRowIndex = taAlternativeProject.getSelectedRowIndex();//获取选中行的索引值
+            if (selectRowIndex >= 0) {
+                if (window.confirm("您确定要删除该类型？")) {
+                    var noticeTypeId = taAlternativeProject.getColumnValue(selectRowIndex, "ContactCertificateID");//获取选中行的类型id
+                    //查询修改的类型
+                    $.post("/AlternativeSupplier/Alternative/DeleteContactCertificate",
+                        { noticeTypeId: noticeTypeId }, function (msg) {
+                            if (msg == "success") {
+                                alert("删除成功");
+                                //刷新table
+                                taAlternativeProject.refreshPage();
+                            }
+
+                            else {
+                                alert("删除失败");
+                            }
+                        });
+                }
+            }
+            else {
+                alert("请选择需要删除的数据");
+            }
+        });
+
+
+    </script>
+</body>
+</html>

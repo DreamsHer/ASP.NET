@@ -1,0 +1,242 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <title>变价原因定义</title>
+    <style type="text/css">
+        .container {
+            width: 98%;
+            padding-top: 4px;
+        }
+
+        .panel-heading {
+            font-size: 16px;
+        }
+
+        .panel-body {
+            padding: 0;
+            border-left: 3px solid #377ab7;
+            border-bottom: 3px solid #377ab7;
+            border-right: 3px solid #377ab7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="bianjiayuanyin">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <span style="padding-left:14px;">变价原因定义</span>                        
+                    </div>
+                </div>
+                <div class="panel-body" style="width:100%;height:550px; background:#f0edf1;">
+                    <table id="tabYuanYin" style="width:100%;">
+                        <tr>
+                            <th w_num="total_line" width="40%">显示顺序</th>
+                            <th w_index="ChangeWhyID" w_hidden="true">ChangeWhyID</th>
+                            <th w_index="ChangeWhy" width="60%">变价原因</th>
+                        </tr>
+                    </table>
+                    <div class="form-group" style="margin-top:60px;">
+                        <div class="col-sm-1 col-sm-offset-5">
+                            <button type="button" class="btn btn-success form-control" id="btnXinZeng">
+                                <span class="glyphicon glyphicon-plus"></span> 添加
+                            </button>
+                        </div>
+                        <div class="col-sm-1">
+                            <button type="button" class="btn btn-info form-control" id="btnXiuGai">
+                                <span class="glyphicon glyphicon-tags"></span> 修改
+                            </button>
+                        </div>
+                        <div class="col-sm-1">
+                            <button type="button" class="btn btn-danger form-control" id="btnTuiChu">
+                                <span class="glyphicon glyphicon-off"></span> 退出
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*新增模态窗体*@
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="xinzengyuanyin">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:600px;height:150px;">
+                <div class="modal-header" style="background:#337ab7;">
+                    <span style="left:5px;">新增变价原因</span>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group" style="margin-top:10px;">
+                            <label class="col-md-2 col-sm-1 reset">变价原因</label>
+                            <div class="col-md-4 col-sm-1 reset">
+                                <input type="text" class="form-control" name="ChangeWhy" id="ChangeWhy">
+                            </div>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <button type="button" class="btn form-control" style="background:#d1cccc;" id="btnXinZengBaoCun">
+                                    <span class="glyphicon glyphicon-download-alt"></span> 保存
+                                </button>
+                            </div>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <button type="button" class="btn form-control" style="background:#d1cccc;" data-dismiss="modal">
+                                    <span class="glyphicon glyphicon-remove"></span> 关闭
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*修改模态窗体*@
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="XiuGaiYuanYin">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:600px;height:150px;">
+                <div class="modal-header" style="background:#a8d7ef;">
+                    <span style="left:5px;">变价原因修改界面</span>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form" id="formNoticeType">
+                        <div class="form-group" style="margin-top:10px;">
+                            <!--重置表单-->
+                            <input type="reset" class="hidden" />
+                            <!--隐藏域-->
+                            <input type="text" class="hidden" name="ChangeWhyID" id="ChangeWhyID" />
+                            <label class="col-md-2 col-sm-1 reset">变价原因</label>
+                            <div class="col-md-4 col-sm-1 reset">
+                                <input type="text" class="form-control" name="ChangeWhy" id="ChangeWhy1">
+                            </div>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <button type="button" class="btn form-control" style="background:#d1cccc;" id="btnBaoCunXiuGai">
+                                    <span class="glyphicon glyphicon-download-alt"></span> 保存
+                                </button>
+                            </div>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <button type="button" class="btn form-control" style="background:#d1cccc;" data-dismiss="modal">
+                                    <span class="glyphicon glyphicon-remove"></span> 关闭
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    @*页面加载及查询*@
+    <script type="text/javascript">       
+        $(document).ready(function () {
+            tabYuanYin = $.fn.bsgrid.init('tabYuanYin', {
+                url: '/WuJiaGuanLi/ShouJinBianJiaGuanLi/SelectChangeWhy',
+                autoLoad: false,//自动加载数据
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                rowSelectedColor: true,//是否显示选中行背景色
+                pageSize: 10,//默认页面大小
+                pageSizeSelect: true,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置               
+            });
+            tabYuanYin.refreshPage();
+        });
+
+        //新增窗体      
+        $("#btnXinZeng").click(function () {
+            $("#xinzengyuanyin").modal('show');
+        });
+
+        //新增保存
+        $("#btnXinZengBaoCun").click(function () {
+            var ChangeWhy = $("#ChangeWhy").val();
+            if (ChangeWhy != '') {
+                $.post("/WuJiaGuanLi/ShouJinBianJiaGuanLi/InsertChangeWhy", {
+                    ChangeWhy: ChangeWhy,
+                }, function (mess) {
+                    if (mess == "success") {
+                        layer.alert('新增成功', { icon: 1, title: '提示' });
+                        $("#xinzengyuanyin").modal('hide');
+                        tabYuanYin.refreshPage();
+                    }
+                    else {
+                        layer.alert('新增失败', { icon: 2, title: '提示' });
+                    }
+                });
+            } else {
+                layer.alert('请填写需要新增的内容', { icon: 1, title: '提示' });
+            }
+        });
+
+        //修改窗体
+        $("#btnXiuGai").click(function () {
+            var rowIndex = tabYuanYin.getSelectedRowIndex();
+            if (rowIndex > -1) {
+                var changeWhyId = tabYuanYin.getColumnValue(rowIndex, "ChangeWhyID");
+                $.getJSON("/WuJiaGuanLi/ShouJinBianJiaGuanLi/UpdataChangeWhy?changeWhyId=" + changeWhyId, function (data) {
+                    if (data == "失败") {
+                        layer.alert('请选择修改信息', { icon: 0, title: '提示' });
+                    }
+                    else {
+                        $("#ChangeWhyID").val(data.ChangeWhyID);//隐藏域
+                        $("#ChangeWhy1").val(data.ChangeWhy);
+                    }
+                    $("#XiuGaiYuanYin").modal('show');
+                });
+            }
+            else {
+                layer.alert('请选择需要修改的信息', { icon: 2, title: '提示' });
+            }
+        });
+
+        //修改保存
+        $("#btnBaoCunXiuGai").click(function () {
+            var ChangeWhyID = $("#ChangeWhyID").val();
+            var ChangeWhy = $("#ChangeWhy1").val();
+            if (ChangeWhy != "") {
+                $.post("/WuJiaGuanLi/ShouJinBianJiaGuanLi/UpdataChangeWhyBaoCun", {
+                    ChangeWhyID: ChangeWhyID,
+                    ChangeWhy: ChangeWhy,
+                }, function (data) {
+                    if (data == "success") {
+                        layer.alert('修改成功', { icon: 1, title: '提示' });
+                        $("#XiuGaiYuanYin").modal('hide');
+                        tabYuanYin.refreshPage();
+                    }
+                    else {
+                        layer.alert('修改失败', { icon: 2, title: '提示' });
+                    }
+                });
+            } else {
+                layer.alert('请填写需要修改的内容', { icon: 0, title: '提示' });
+            }
+        });
+
+        //页面关闭按钮
+        $(function () {           
+            $("#btnTuiChu").click(function () {
+                $("#bianjiayuanyin").hide();
+            });
+        });
+    </script>
+
+</body>
+</html>

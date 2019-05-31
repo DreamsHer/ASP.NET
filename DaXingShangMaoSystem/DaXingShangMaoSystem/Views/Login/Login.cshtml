@@ -1,0 +1,324 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('../../ImaginPho/17470f6051223c4e238bc30cec801d35.png');
+            background-attachment: fixed !important;
+            background-size: 100% !important;
+        }
+
+        .reset-padding {
+            padding: 0 5px;
+        }
+
+        .reset {
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        label.Size {
+            font-size: 60px;
+            color: #fff;
+        }
+
+        label {
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body onkeydown="HuiCheDengLu()">
+
+    <div class="container">
+        <!--顶头-->
+        <div class="row text-center" style="margin-top:10px;">
+            <form class="form-horizontal">
+                <div class="form-group" id="heightSize" style=" display: none;margin-top:30px;">
+                    <label class="control-label Size">大</label>
+                    <label class="control-label Size">型</label>
+                    <label class="control-label Size">商</label>
+                    <label class="control-label Size">贸</label>
+                    <label class="control-label Size">系</label>
+                    <label class="control-label Size">统</label>
+                    <label class="control-label Size">欢</label>
+                    <label class="control-label Size">迎</label>
+                    <label class="control-label Size">你</label>
+                </div>
+            </form>
+        </div>
+        <!--大体信息-->
+        <div class="row" style="margin-top:70px;">
+            <div class="col-md-6 col-md-offset-2" id="zhengti" style="display: none;">
+                <div class="panel" id="fgf">
+                    <div class="panel panel-heading" style="background:#a8d7ef;">
+                        <h3>欢迎登录后台</h3>
+                    </div>
+                    <div class="panel panel-body">
+                        <form id="fmLogin" method="post" class="form-horizontal form-radius">
+                            <div class="form-group has-feedback">
+                                <label class="col-sm-3 control-label no-padding-right reset" for="StaffName">用户名:</label>
+                                <div class="col-sm-7">
+                                    <input type="text" name="UserName" id="UserName" value="@ViewBag.UserName" class="form-control" placeholder="请输入用户名" />
+                                    <img src="~/ImaginPho/agent.png" class="form-control-feedback" />
+                                </div>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <label class="col-sm-3 control-label no-padding-right reset" for="password">密码: </label>
+                                <div class="col-sm-7">
+                                    <input type="password" name="Password" id="Password" value="@ViewBag.Password" 
+                                        style="font-size:20px;"   onkeyup="value=value.replace(/[^0-9a-zA-Z]/g,'')" class="form-control" />
+                                    <img src="~/ImaginPho/unlock.png" class="form-control-feedback" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label no-padding-right reset" for="StaffClass"> 身份: </label>
+                                <div class="col-sm-7">
+                                    <select id="StaffClass" name="StaffClass" class="form-control form-control-radius select2 ">
+                                        <option value="1" @(ViewBag.StaffClass == "1" ? "selected=\"selected\"" : "")>合同管理员</option>
+                                        <option value="2" @(ViewBag.StaffClass == "2" ? "selected=\"selected\"" : "")>会员管理员</option>
+                                        <option value="3" @(ViewBag.StaffClass == "3" ? "selected=\"selected\"" : "")>制作商品员</option>
+                                        <option value="4" @(ViewBag.StaffClass == "4" ? "selected=\"selected\"" : "")>进仓管理员</option>
+                                        <option value="5" @(ViewBag.StaffClass == "5" ? "selected=\"selected\"" : "")>超级管理员</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 col-md-offset-1 control-label no-padding-right reset" for="validCode">验证码:</label>
+                                <div class="col-sm-7">
+                                    <div class="input-group">
+                                        <input type="text" name="validCode" id="validCode" value="" class="form-control" onkeyup="value=value.replace(/[^0-9a-zA-Z]/g,'')" />
+                                        <div class="input-group-addon" style="padding:0"><img src="/Login/ValideCode" id="ValidateCode" onclick="reloadValideImage()" /></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-7 col-md-offset-3">
+                                    <input type="checkbox" name="rememberMe" id="rememberMe" value="true" @(ViewBag.isRember == true ? "checked=\"checked\"" : "") /> 记住我
+                                    <span style="color: red">(请不要在公用电脑上使用！)</span>
+                                </label>
+                            </div>
+                            <div class="form-group" style="margin-top:30px;">
+                                <div class="col-sm-2 col-sm-offset-3">
+                                    <button type="button" class="btn btn-primary btn-block btn-radius" id="myYongHuZheCe">注 册</button>
+                                </div>
+                                <div class="col-sm-2">
+                                    <button type="button" class="btn btn-primary btn-block btn-radius" id="btnSubmit">登 录</button>
+                                </div>
+                                <div class="col-sm-2">
+                                    <button type="reset" class="btn btn-primary btn-block btn-radius" onclick="reloadImage()">重 置</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            @*</div>*@
+        </div>
+    </div>
+
+    <!--注册员工帐号-->
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modUpinttZhuCe">
+        <div class="modal-dialog">
+            <!--水平-->
+            <div class="modal-content">
+                <div class="modal-header" style="background:#a8d7ef;">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">注册员工帐号</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form" id="formInsertExaZhuCe" action="/DanWeiXinXi/LookXinXi/ChongSheMiMa" method="post">
+                        <br />
+                        <div class="form-group">
+                            <div class="col-lg-3 col-md-3 col-sm-3 text-right">
+                                <label class="control-label">员工姓名:</label>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-5 reset">
+                                <input type="text" class="form-control" id="StaffName" name="StaffName" placeholder="请输入员工姓名" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-3 col-md-3 col-sm-3 text-right">
+                                <label class="control-label">员工代码:</label>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-5 reset">
+                                <input type="text" class="form-control" id="StaffCode" name="StaffCode" placeholder="请输入员工代码" onkeyup="value=value.replace(/[^0-9a-zA-Z]/g,'')" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-3 col-md-3 col-sm-3 text-right">
+                                <label class="control-label">用户名:</label>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-5 reset">
+                                <input type="text" class="form-control" id="UserName2" name="UserName" placeholder="请输入用户名" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-3 col-md-3 col-sm-3 text-right">
+                                <label class="control-label">登录密码:</label>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-5 reset">
+                                <input type="text" class="form-control" id="UniformAuthenticationCode" name="UniformAuthenticationCode" onkeyup="value=value.replace(/[^0-9a-zA-Z]/g,'')" placeholder="请输入密码" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-3 col-md-3 col-sm-3 text-right">
+                                <label class="control-label">员工类型:</label>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-5 reset">
+                                <select class="form-control" name="StaffClassID" id="StaffClassID"></select>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <div class="col-sm-2 col-sm-offset-4">
+                                <button type="button" class="btn btn-primary btn-block btn-radius" id="btnTiJiao">
+                                    提 交
+                                </button>
+                            </div>
+                            <div class="col-sm-2">
+                                <button type="reset" class="btn btn-primary btn-block btn-radius" id="btn_rettue" data-dismiss="modal">
+                                    返 回
+                                </button>
+                            </div>
+                        </div>
+                        <br />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/jquery.form.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+
+    @*登录界面*@
+    <script type="text/javascript">
+        $("#myYongHuZheCe").click(function () {
+            $("#modUpinttZhuCe").modal('show');
+        });
+        $("#zhengti").animate({
+            left: 130, opacity: 'show'
+        }, 4000);
+
+        $("#heightSize").show('slow');
+        if(window.top.location.href != window.location.href){
+            window.top.location.href = window.location.href;
+        }
+        //验证码刷新方法
+        function reloadValideImage() {
+            //在请求时加上当前时间作为参数，避免浏览器缓存
+            $("#ValidateCode").attr("src", '/Login/ValideCode?ts=' + new Date().getTime());
+        }
+
+        //登录
+        $("#btnSubmit").click(function () {
+            //window.location.href = "/Login/Mian"
+            var fromData = $("#fmLogin").serializeArray();
+            $.post("/Login/UserLogin", fromData, function (msg) {
+                if (msg == "fail") {
+                    layer.alert("用户名或密码不正确", { icon: 5, title: '温馨小提示：' });
+                } else {
+                    if (msg == "loginErro") {
+                        layer.alert("请输入用户名/密码", { icon: 5, title: '温馨小提示：' });
+                    } else {
+                        if (msg == "vlodeCodeErro") {
+                            layer.alert("请输入正确的验证码", { icon: 5, title: '温馨小提示：' });
+                        } else {
+                            if (msg == "login") {
+                                window.location.href = "/Login/Mian"
+                            }
+                            else if (msg == "passwordErro") {
+                                layer.alert("请输入正确的密码", { icon: 5, title: '温馨小提示：' });
+                            } else {
+                                if (msg == "staffClassErro") {
+                                    layer.alert("请选择正确的用户类型", { icon: 5, title: '温馨小提示：' });
+                                }
+                                else {
+                                    alert(msg);
+                                }
+
+                            }
+                        }
+
+                    }
+
+                }
+
+            });
+        });
+        $("#coclYanSe").fadeTo("slow", 0.66);
+
+        //回车键登录
+        function HuiCheDengLu() {
+            if (event.keyCode==13) {
+                $("#btnSubmit").click();
+            }
+        };
+    </script>
+
+    @*新增用户信息*@
+    <script type="text/javascript">
+
+        $("#fgf").fadeTo("slow", 0.86);
+        $(function () {
+            //记录编号
+            $.getJSON("/Login/getEmpCodef", function (data) {
+                $("#StaffCode").val(data);
+            });
+        });
+
+        //员工类型
+        $.post("/Login/SelectStaffClassID", function (data) {
+            selectLoadData("StaffClassID", data);
+        });
+
+        $("#btnTiJiao").click(function () {
+            var StaffName = $("#StaffName").val();
+            var StaffCode = $("#StaffCode").val();
+            var UserName = $("#UserName2").val();
+            var UniformAuthenticationCode = $("#UniformAuthenticationCode").val();
+            var StaffClassID = $("#StaffClassID").val();
+            if (StaffName !=''&& StaffCode != '' && UserName != '' && UniformAuthenticationCode != '' && StaffClassID > 0) {
+                $.post("/Login/XinZengYongHuXinXi", {
+                    StaffName:StaffName,
+                    StaffCode: StaffCode,
+                    UserName: UserName,
+                    UniformAuthenticationCode: UniformAuthenticationCode,
+                    StaffClassID: StaffClassID,
+                }, function (data) {
+                    if (data == "success") {
+                        layer.alert('提交成功', { icon: 1, title: '提示' });
+                        $("#modUpinttZhuCe").modal('hide');
+                    }
+                    else {
+                        layer.alert('提交失败', { icon: 2, title: '提示' });
+                    }
+                });
+            }
+            else {
+                layer.alert('请先输入完数据', { icon: 3, title: '提示' });
+            }
+        });
+
+
+    </script>
+
+</body>
+</html>

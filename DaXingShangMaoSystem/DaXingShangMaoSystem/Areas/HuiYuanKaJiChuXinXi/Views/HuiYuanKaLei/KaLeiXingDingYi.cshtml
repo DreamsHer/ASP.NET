@@ -1,0 +1,590 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>KaLeiXingDingYi</title>
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        .container {
+        width:100%;
+        padding :0;
+        border:1px solid blue;
+        background-color:#f0edf1;
+        }
+        .baik {
+        width:35%;
+        height:750px;
+        background-color:white;
+        border:1px solid darkgrey;
+        overflow:scroll; 
+        float:left;
+        margin-left:50px;
+        }
+       
+        .yink {
+        width:63%;
+        height:750px;
+        margin-left:530px;
+        margin-top:10px;
+        border:1px solid darkgrey;
+        }
+        .k1 {
+        width:650px;
+        height:65px;
+        border:1px solid gainsboro;      
+        }
+        .fx {
+        width:200px;
+        height:50px;
+        float:left;
+        }
+        .fl {
+        width:200px;
+        height:50px;
+        float:left;
+        }
+        .jichu {
+        width:650px;
+        height:155px;
+        border:1px solid gainsboro;
+        }
+        .JCGNSD {
+        width:650px;
+        height:110px;
+        }
+        .faxinfanshi {
+        width:150px;
+        height:80px;
+        float:left;
+        }
+        .shiyonduixing {
+        width:150px;
+        height:80px;
+        float:left;
+        }
+        .si {
+        width:150px;
+        height:100px;
+        float:left;
+        margin-top:10px;
+        }
+        .jifeng {
+        width:650px;
+        height:70px;
+        border:1px solid gainsboro;
+      
+        }
+        .JFGNSD {
+        width:420px;
+        height:30px;
+        margin-left:220px;
+        }
+        .one {
+        width:200px;
+        height:30px;
+        float:left;
+        }
+        .two{
+        width:200px;
+        height:30px;
+        float:left;
+        }
+        .youhuijuangongnengkaishe {
+        width:650px;
+        height:85px;
+        border:1px solid gainsboro;
+        }
+        .KTYHJZH {
+        width:200px;
+        height:45px;
+        float:left;
+        }
+        .youhuifangshi {
+        width:430px;
+        height:45px;
+        float:left;
+        }
+        .buzhekou {
+        width:100px;
+        height:25px;
+        float:left;
+        }
+        .zhekoulv {
+        width:100px;
+        height:25px;
+        float:left;
+        }
+        .huiyuanjia {
+        width:100px;
+        height:25px;
+        float:left;
+        }
+        .chuzhi {
+        width:650px;
+        height:100px;
+        border:1px solid gainsboro;
+        }
+        .sanChu {
+        width:650px;
+        height:30px;
+        }
+        .kaitong {
+        width:200px;
+        float:left;
+        }
+        .faka {
+        width:200px;
+        float:left;
+        }
+        .biaoji{
+        width:200px;
+        float:left;
+        }
+        .kafeijinE {
+        width:650px;
+        height:30px;
+        }
+        .zifaxingka {
+        width:650px;
+        height:450px;
+        }
+        .Kk3 {
+        width:650px;
+        height:30px;
+        }
+        .kahaozongchangdu {
+        width:180px;
+        height:30px;
+        float:left;
+        margin-left:50px;
+        }
+        .qiandaoma {
+        height:30px;
+        float:left;
+        width:200px;
+        }
+        .houzhima {
+        height:30px;
+        float:left;
+        width:200px;
+        }
+        .suanka {
+        width:650px;
+        height:50px;
+        }
+        .cikajiezhi {
+        width:300px;
+        height:50px;
+        float:left;
+        margin-left:50px;
+        }
+        .cika {
+        width:100px;
+        float:left;
+        }
+        .icka {
+        width:100px;
+        float:left;
+        }
+        .xuyaoka {
+        width:250px;
+        height:50px;
+        float:left;
+        }
+        .Kyouxiao {
+        width:600px;
+        height:55px;
+        margin-left:50px;
+        }
+        .jikashizhiding {
+        width:200px;
+        float:left;
+        }
+        .shoukashizhiding {
+        float:left;
+        }
+        .kuaner {
+        width:600px;
+        height:50px;
+        margin-left:50px;
+        }
+        .youxiaoqichangdu {
+        width:300px;
+        height:30px;
+        float:left;
+        }
+        .cidaoneironjiami {
+        width:200px;
+        height:25px;
+        float:left;
+        }
+        .neikuang {
+        width:500px;
+        height:30px;
+        }
+        .zifu {
+        margin-left:50px;   
+        }
+        .anniu {
+        width:100%;
+        height:50px;
+        margin-top:10px;
+        text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class=" panel-heading">会员卡类型定义</div>
+        </div>
+        <div class="baik">
+            <table id="tabHeTongXinXi" style="height:100px;width:100px;overflow:scroll" class="table table-bordered table-condensed table-hover table-responsive">
+                <tr>
+                    <th w_index="MembershipCardTypeID">代码</th>
+                    <th w_index="MembershipCardTypeMC">卡类名称</th>
+                </tr>
+            </table>
+        </div>
+        <div class=" yink">
+                <div class="k1">
+                    <div class=" fx">
+                        <h5 style=" color:blueviolet">会员卡类型</h5>
+                        <div class="DM">
+                            代码
+                            <input style="width:120px"/>
+                        </div>
+                    </div>
+                    <div class=" fl">
+                      <h5 style=" color:blueviolet">会员卡卡种 积分卡</h5>  
+                        <div class="MC">
+                            名称
+                            <input style="width:150px" id="MembershipCardTypeMC"name="MembershipCardTypeMC"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="jichu">
+                   <h5 style=" color:blueviolet">基础功能设定</h5> 
+                    <div class=" col-md-3">
+                        <div class="JCGNSD">
+                            <div class="faxinfanshi">
+                                发行方式
+                                <div>
+                                    <label>
+                                        <input name="form-field-radio" type="radio" />
+                                        <span class="lbl">自发卡</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label>
+                                        <input name="form-field-radio" type="radio" />
+                                        <span class="lbl">外部卡</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="shiyonduixing">
+                                使用对象
+                                <div>
+                                    <label>
+                                        <input name="form-field-radio" type="radio" />
+                                        <span>个人消费卡</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label>
+                                        <input name="form-field-radio" type="radio" />
+                                        <span>团体消费卡</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class=" col-md-4">
+                                <div class="si">
+                                    <div>
+                                        <label>
+                                            <input name="form-flield-checkbox"type="checkbox"/>
+                                            <span>需要密码标识</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label>
+                                            <input name="form-flield-checkbox" type="checkbox" />
+                                            <span>允许挂失</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label>
+                                            <input name="form-flield-checkbox" type="checkbox" />
+                                            <span>允许作废</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label>
+                                            <input name="form-flield-checkbox" type="checkbox" />
+                                            <span>允许退卡</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="jifeng">
+                    <h5 style=" color:blueviolet">积分功能设定</h5>            
+                        <div class="JFGNSD">
+                                <div class="one">
+                                    <div>
+                                        <label>
+                                            <input name="form-flield-checkbox"type="checkbox"/>
+                                            <span>保存消费记录</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="two">
+                                    <div>
+                                        <label>
+                                            <input name="form-flield-checkbox" type="checkbox" />
+                                            <span>参与消费积分</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                <div class="youhuijuangongnengkaishe">
+                    <h5 style=" color:blueviolet">优惠劵功能开设</h5>
+                    <div class="KTYHJZH">
+                        <div>
+                            <label>
+                                <input name="form-flield-checkbox" type="checkbox" />
+                                <span>开通优惠劵账户</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="youhuifangshi">
+                        优惠方式
+                        <div>
+                        <div class="buzhekou">
+                            <label>
+                                <input name="form-flield-radio"type="radio"/>
+                                <span>不折扣</span>
+                            </label>
+                        </div>
+                            <div class="zhekoulv">
+                                <label>
+                                    <input name="form-flield-radio" type="radio" />
+                                    <span>折扣率</span>
+                                </label>
+                                </div>
+                                <div class="huiyuanjia">
+                                    <label>
+                                        <input name="form-flield-radio" type="radio" />
+                                        <span>会员价</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <div class="chuzhi">
+                    <h5 style=" color:blueviolet">储值功能设定</h5>
+                    <div class="sanChu">
+                        <div class="kaitong">
+                            <label>
+                                <input name=" form-flield-checkbox" type="checkbox" />
+                                <span>开通储值账户</span>
+                            </label>
+                        </div>
+                        <div class=" faka">
+                            <label>
+                                <input name=" form-flield-checkbox" type="checkbox" />
+                                <span>发卡时有面值</span>
+                            </label>
+                        </div>
+                        <div class=" biaoji">
+                            <label>
+                                <input name=" form-flield-checkbox" type="checkbox" />
+                                <span>储值优惠劵标记</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="kafeijinE">
+                        <div>
+                            卡费金额
+                            <input />
+                        </div>
+                    </div>
+                 </div>
+                <div class="zifaxingka">
+                   <h5>自发行卡 会员卡级次</h5> 
+                    <div class="Kk3">
+                        <div class=" kahaozongchangdu">
+                            <label>
+                                卡号总长度
+                                <input style="width:80px" />
+                            </label>
+                        </div>
+                        <div class=" qiandaoma">
+                            <label>
+                                前导码
+                                <input style="width:80px" />
+                            </label>
+                        </div>
+                        <div class=" houzhima">
+                            <label>
+                                后置码
+                                <input style="width:80px" />
+                            </label>
+                        </div>
+                    </div>
+                    <div class="suanka">
+                        <div class="cikajiezhi">
+                            磁道介质
+                            <div class="lianka">
+                                <div class="cika">
+                                    <label>
+                                        <input name="form-flield-radio"type="radio"/>
+                                        <span>磁卡</span>
+                                    </label>
+                                </div>
+                                <div class="icka">
+                                    <label>
+                                        <input name="form-flield-radio" type="radio" />
+                                        <span>IC卡</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" xuyaoka">
+                            <div>
+                                <label>
+                                    <input name=" form-flield-checkbox"type="checkbox"/>
+                                    <span>需按系统制卡</span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input name=" form-flield-checkbox"type="checkbox"/>
+                                    <span>需按强制验卡</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Kyouxiao">
+                        <div class="kayouxioaqizhidingfangshi">
+                            <h5>卡有效期指定方式</h5>
+                            <div>
+                                <div class=" jikashizhiding">
+                                    <label>
+                                        <input name="form-flield-radio" type="radio" />
+                                        <span>建卡时指定</span>
+                                    </label>
+                                </div>
+                                <div class="shoukashizhiding">
+                                    <label>
+                                        <input name="form-flield-radio" type="radio" />
+                                        <span>售卡时指定</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kuaner">
+                        <div class=" neikuang">
+                            <div class=" youxiaoqichangdu">
+                                <label>
+                                    有效期长度
+                                    <input style="width:200px" />
+                                </label>
+                            </div>
+                            <div class="cidaoneironjiami">
+                                <label>
+                                    <input name="form-flield-checkbox" type="checkbox" />
+                                    <span>磁道内容加密</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="zifu">
+                        <h4>Y表示年，M表示月，D表示日，列如有效期3年，请输入3Y</h4>
+                    </div>
+                </div>
+            </div>
+        <div class=" anniu">
+            <button style="color:gainsboro">
+                <span class="glyphicon glyphicon-adjust "></span> 前 翻 </button>
+            <button class="btn-danger"> 
+                <span class="glyphicon glyphicon-barcode"></span>后 翻 </button>
+            <button id="BtnInser"class="btn-primary"> 
+                <span class="glyphicon glyphicon-calendar "></span>添 加 </button>
+            <button class="btn-success"> 
+                <span class="glyphicon glyphicon-dashboard "></span>修 改 </button>
+            <button class="btn-warning"> 
+                <span class="glyphicon glyphicon-eject"></span>删 除 </button>
+            <button style="color:gainsboro"> 
+                <span class="glyphicon glyphicon-file"></span>确 认 </button>
+            <button style="color:gainsboro"> 
+                <span class="glyphicon glyphicon-gbp"></span>取 消 </button>
+            <button> 
+                <span class="glyphicon glyphicon-hand-up"></span>退 出 </button>
+        </div>
+         </div>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <script>
+        $(function () {
+            tabHeTongXinXi = $.fn.bsgrid.init('tabHeTongXinXi', {
+                url: '/HuiYuanKaJiChuXinXi/HuiYuanKaLei/SelectKaLeiXing',
+                autoLoad: true,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                pageSize: 9,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置
+                displayPagingToolbarOnlyMultiPages: true,//仅当多页时才显示分页工具条
+                event: {
+                    customRowEvents: { //record 记录记载  options 选项
+                        click: function (record, rowIndex, trObj, options) {
+                            if (record != null) {
+                                MembershipCardTypeID = record.MembershipCardTypeID;
+                            }
+                        }
+                    }
+                }
+            });
+            tabHeTongXinXi.refreshPage();
+        });
+
+        $("#BtnInser").click(function () {
+            var MembershipCardTypeMC = $("#MembershipCardTypeMC").val();
+            if (MembershipCardTypeMC != '') {
+                $.post("/HuiYuanKaJiChuXinXi/HuiYuanKaLei/BtnInser", {
+                    MembershipCardTypeMC: MembershipCardTypeMC,
+                }, function (data) {
+                    if (data == "success") {
+                        layer.alert('成功'), { icon: 1, title: '提示' };
+                    }
+                    else {
+                        layer.alert('失败'), { icon: 1, title: '提示' };
+                    }
+                });
+            } else {
+                layer.alert('请输入数据', { icon: 3, title: '提示' });
+            }
+        });
+    </script>
+</body>
+</html>

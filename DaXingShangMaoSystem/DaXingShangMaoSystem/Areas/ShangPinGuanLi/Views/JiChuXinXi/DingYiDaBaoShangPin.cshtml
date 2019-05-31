@@ -1,0 +1,456 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />        
+    <title>定义打包商品</title>
+    <style type="text/css">
+        .container {
+            width: 98%;
+            padding-top: 4px;
+        }
+
+        .panel-heading {
+            font-size: 16px;
+        }
+
+        .panel-body {
+            padding: 0;
+            border-left: 3px solid #377ab7;
+            border-bottom: 3px solid #377ab7;
+            border-right: 3px solid #377ab7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="dabaoshangpin">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <span style="padding-left:14px;">定义打包商品</span>                        
+                    </div>
+                </div>
+                <div class="panel-body" style="width:100%;height:550px;background:#f0edf1;">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group" style="margin-top:5px;">
+                            <input type="text" class="hidden" name="PackGoodsID" id="PackGoodsID" />
+                            <label class="col-md-1 col-sm-1 control-label reset">打包代码</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="text" class="form-control" name="PackCode" id="PackCode" readonly>
+                            </div>
+                            <label class="col-md-1 col-sm-1 control-label reset">打包条码</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="text" class="form-control" name="PackTiaoMa" id="PackTiaoMa" readonly>
+                            </div>
+                            <label class="col-md-1 col-sm-1 control-label reset">计量单位</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <select class="form-control" name="EstimateUnitID" id="EstimateUnitID"></select>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:10px;">
+                            <label class="col-md-1 col-sm-1 control-label reset">打包名称</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="text" class="form-control" name="PackName" id="PackName">
+                            </div>
+                            <label class="col-md-1 col-sm-1 control-label reset">打包拼音码</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="text" class="form-control" name="PackSpellCod" id="PackSpellCod"
+                                       onkeyup="value=value.replace(/[^\a-\z\A-\Z]/g,'')">
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-primary form-control" id="btnXuanZeShangPin">选择商品</button>
+                            </div>
+                        </div>
+                        <table id="tabShangPingXinXi" style="width:100%;">
+                            <tr>
+                                @*<th w_index="GoodsDetailID">商品明细ID</th>*@
+                                <th w_index="GoodsID" w_hidden="true">GoodsID</th>
+                                <th w_index="GoodsCode">商品代码</th>
+                                <th w_index="GoodsTiaoMa">商品条码</th>
+                                <th w_index="GoodsName">商品名称</th>
+                                <th w_index="EstimateUnitID" w_hidden="true">EstimateUnitID</th>
+                                <th w_index="EstimateUnitName">计量单位</th>
+                                <th w_index="SpecificationsModel">规格型号</th>
+                                <th w_index="RetailMonovalent">零售单价</th>
+                                <th w_index="MemberPrice">会员价</th>
+                            </tr>
+                        </table>
+                        <div class="form-group" style="margin-top:10px;">
+                            <label class="col-md-1 col-sm-1 control-label reset">打包登记人</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="text" class="form-control" name="PackDengJiRen" id="PackDengJiRen">
+                            </div>
+                            <label class="col-md-1 col-sm-1 control-label reset">登记时间</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="date" class="form-control" name="PackDengJiShi" id="PackDengJiShi">
+                            </div>
+                            <label class="col-md-1 col-sm-1 control-label reset">打包更新人</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="text" class="form-control" name="PackGengXinRen" id="PackGengXinRen">
+                            </div>
+                            <label class="col-md-1 col-sm-1 control-label reset">更新时间</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="date" class="form-control" name="PackGengXinShi" id="PackGengXinShi">
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:20px;">
+                            <div class="col-sm-1 col-sm-offset-4">
+                                <button type="button" class="btn btn-success form-control" id="btnXinZeng">新增保存</button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-primary form-control" id="btnChaXun">查询修改</button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-info form-control" id="btnXiuGaiBaoCun">修改保存</button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-warning form-control" id="btnQuXiao">取消</button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-danger form-control" id="btnTuiChu">退出</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*选择商品打包*@
+    <div class="modal" id="XuanZeDaBaoShangPin">
+        <div class="modal-dialog" style="width:800px;height:650px;">
+            <div class="modal-header" style="background:#a8d7ef;">
+                <span>选择打包商品</span>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body" style="background:#f0edf1;">
+                <table id="tabXuanZeDaBaoShangPin" style="width:100%;">
+                    <tr>
+                        <th w_num="total_line">序号</th>
+                        <th w_index="GoodsDetailID" w_hidden="true">GoodsDetailID</th>
+                        <th w_index="GoodsID" w_hidden="true">GoodsID</th>
+                        <th w_index="GoodsCode">商品代码</th>
+                        <th w_index="GoodsTiaoMa">商品条码</th>
+                        <th w_index="GoodsName">商品名称</th>
+                        <th w_index="EstimateUnitID" w_hidden="true">EstimateUnitID</th>
+                        <th w_index="EstimateUnitName">计量单位</th>
+                        <th w_index="SpecificationsModel">规格型号</th>
+                        <th w_index="RetailMonovalent">零售单价</th>
+                        <th w_index="MemberPrice">会员价</th>
+                    </tr>
+                </table>
+                <form class="form-horizontal" role="form">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="col-sm-2 col-sm-offset-4">
+                            <button type="button" class="btn btn-info form-control" id="btnXuanZeAnNiu">选择</button>
+                        </div>                     
+                        <div class="col-sm-2">
+                            <button type="button" class="btn btn-danger form-control" data-dismiss="modal" >退出</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    @*查询修改打包商品*@
+    <div class="modal" id="chaxundabao">
+        <div class="modal-dialog" style="width:1000px;height:650px;">
+            <div class="modal-header" style="background:#a8d7ef;">
+                <span>查询打包商品</span>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body" style="background:#eddddd;">
+                <table id="tabChaXunDaBaoShangPin" style="width:100%;">
+                    <tr>
+                        <th w_num="total_line">序号</th>
+                        <th w_index="PackGoodsID" w_hidden="true">PackGoodsID</th>
+                        <th w_index="PackCode">打包代码</th>
+                        <th w_index="PackTiaoMa">打包条码</th>
+                        <th w_index="EstimateUnitName">计量单位</th>
+                        <th w_index="PackName">打包名称</th>
+                        <th w_index="PackSpellCod">打包拼音码</th>
+                        @*<th w_index="GoodsDetailID">商品明细ID</th>*@
+                        <th w_index="PackDengJiRen">登记人</th>
+                        <th w_index="ReleaseTimeStr">登记时间</th>
+                        <th w_index="PackGengXinRen">更新人</th>
+                        <th w_index="ReleaseTimeStrr">更新时间</th>
+                    </tr>
+                </table>
+                <form class="form-horizontal" role="form">
+                    <div class="form-group" style="margin-top:20px;">
+                        <div class="col-sm-1 col-sm-offset-5">
+                            <button type="button" class="btn btn-info form-control" id="btnXiuGaiAnNiu">修改</button>
+                        </div>
+                        <div class="col-sm-1">
+                            <button type="button" class="btn btn-danger form-control" data-dismiss="modal">退出</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>   
+    @*加载页面数据*@
+    <script type="text/javascript">
+        var tabXuanZeDaBaoShangPin;
+        var tabShangPingXinXi;
+        var GoodsIDsQuan;
+        var JieShouGoodelShuZu = new Array();
+        var JieShouID = new Array();
+       
+        //打包代码
+        $.getJSON("/ShangPinGuanLi/JiChuXinXi/SelectPackCode", function (data) {
+            $("#PackCode").val(data);
+        });
+        //打包条码
+        $.getJSON("/ShangPinGuanLi/JiChuXinXi/SelectPackTiaoMa", function (data) {
+            $("#PackTiaoMa").val(data);
+        });
+        //计量单位
+        $.post("/ShangPinGuanLi/JiChuXinXi/SelectEstimateUnitName", function (data) {
+            selectLoadData("EstimateUnitID", data);
+        });
+
+        //商品组成
+        $(function () {
+            tabXuanZeDaBaoShangPin = $.fn.bsgrid.init('tabXuanZeDaBaoShangPin', {
+                url: '/ShangPinGuanLi/JiChuXinXi/SelectGoodsDetail',
+                autoLoad: false,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                pageSize: 9,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置
+                displayPagingToolbarOnlyMultiPages: true,//仅当多页时才显示分页工具条
+                event: {
+                    customRowEvents: { //record 记录记载  options 选项
+                        click: function (record, rowIndex, trObj, options) {
+                            if (record != null) {
+                                goodsDetailID = record.GoodsDetailID;
+                            }
+                        }
+                    }
+                }
+            });
+            //查询商品
+            $("#btnXuanZeShangPin").click(function () {
+                tabXuanZeDaBaoShangPin.refreshPage();
+                $("#XuanZeDaBaoShangPin").modal('show');            
+            });
+
+            //界面表格
+            tabShangPingXinXi = $.fn.bsgrid.init('tabShangPingXinXi', {
+                url: '/ShangPinGuanLi/JiChuXinXi/HuoQuShangPinXinXi',
+                autoLoad: false,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                pageSize: 9,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置
+                event: {
+                    customRowEvents: { //record 记录记载  options 选项
+                        click: function (record, rowIndex, trObj, options) {
+                            if (record != null) {
+                                goodsDetailID = record.GoodsDetailID;
+                            }
+                        }
+                    }
+                }
+            });
+
+            //绑定商品          
+            $("#btnXuanZeAnNiu").click(function () {
+                var rowIndex = tabXuanZeDaBaoShangPin.getSelectedRowIndex();
+                if (rowIndex > -1) {
+                    GoodsIDsQuan = tabXuanZeDaBaoShangPin.getColumnValue(rowIndex, "GoodsDetailID");
+                    JieShouGoodelShuZu.push(([GoodsIDsQuan]));
+                                      
+                    for (var i = 0; i < JieShouID.length; i++) {
+                        var K = JieShouID[i][0];
+                        if (K > 0) {
+                            JieShouID.splice(i, 1);
+                        }
+                    }
+
+                    for (var i = 0; i < JieShouGoodelShuZu.length;) {
+                        var A = JieShouGoodelShuZu[i][0];
+                        JieShouID.push(A);
+                        i++;
+                    }
+
+                    tabShangPingXinXi.search({ JieShouID: JieShouID });
+
+                }
+                else {
+                    layer.alert("请选择一条的信息", { icon: 6, title: '提示' });
+                }
+                $("#XuanZeDaBaoShangPin").modal('hide');
+            });
+        });
+
+        //新增保存
+        $("#btnXinZeng").click(function () {            
+            var PackCode = $("#PackCode").val();
+            var PackTiaoMa = $("#PackTiaoMa").val();
+            var EstimateUnitID = $("#EstimateUnitID").val();
+            var PackName = $("#PackName").val();
+            var PackSpellCod = $("#PackSpellCod").val();           
+            var GoodsDetailID = $("#GoodsDetailID").val();           
+            var PackDengJiRen = $("#PackDengJiRen").val();
+            var PackDengJiShi = $("#PackDengJiShi").val();
+            var PackGengXinRen = $("#PackGengXinRen").val();
+            var PackGengXinShi = $("#PackGengXinShi").val();
+            //    && EstimateUnitID > 0 && PackDengJiShi != '' && PackGengXinShi != '' && GoodsDetailID > 0
+            if (PackName != '' ) {
+                $.post("/ShangPinGuanLi/JiChuXinXi/XinZengDaBao", {                    
+                    PackCode: PackCode,
+                    PackTiaoMa: PackTiaoMa,
+                    EstimateUnitID: EstimateUnitID,
+                    PackName: PackName,
+                    PackSpellCod: PackSpellCod,
+                    GoodsDetailID: GoodsDetailID,
+                    PackDengJiRen: PackDengJiRen,
+                    PackDengJiShi: PackDengJiShi,
+                    PackGengXinRen: PackGengXinRen,
+                    PackGengXinShi: PackGengXinShi,
+                }, function (mess) {
+                    if (mess == "success") {
+                        layer.alert('新增成功', { icon: 1, title: '提示' });
+                    }
+                    else {
+                        layer.alert('新增失败', { icon: 0, title: '提示' });
+                    }
+                });
+            } else {
+                layer.alert('请输入完必填数据', { icon: 2, title: '提示' });
+            }
+        });
+
+        //查询修改
+        tabChaXunDaBaoShangPin = $.fn.bsgrid.init('tabChaXunDaBaoShangPin', {
+            url: '/ShangPinGuanLi/JiChuXinXi/ChaXunXiuGaiDaBao',
+            autoLoad: false,
+            stripeRows: true,//隔行变色
+            rowHoverColor: true,//划过行变色
+            pageSize: 10,
+            pageSizeSelect: false,//是否选择分页页数下拉框
+            pagingLittleToolbar: true,//精简的图标按钮分页工具条
+            pagingToolbarAlign: "left",//分页工具条的显示位置
+        });
+
+        $("#btnChaXun").click(function () {
+            tabChaXunDaBaoShangPin.refreshPage();
+            $("#chaxundabao").modal('show');
+        });
+              
+        //回填计量单位
+        $.post("/ShangPinGuanLi/JiChuXinXi/SelectEstimateUnitName1", function (data) {
+            selectLoadData("EstimateUnitID", data);
+        });
+
+        //绑定数据在文本中
+        $("#btnXiuGaiAnNiu").click(function () {
+            var rowIndex = tabChaXunDaBaoShangPin.getSelectedRowIndex();
+            if (rowIndex > -1) {
+                var packGoodsID = tabChaXunDaBaoShangPin.getColumnValue(rowIndex, "PackGoodsID");
+                $.getJSON("/ShangPinGuanLi/JiChuXinXi/HuiTianDaBaoXinXi?DBID=" + packGoodsID, function (data) {
+                    if (data == "失败") {
+                        layer.alert('请选择修改信息', { icon: 0, title: '提示' });
+                    }
+                    else {
+                        $("#PackGoodsID").val(data.PackGoodsID);//隐藏域
+                        $("#PackCode").val(data.PackCode);
+                        $("#PackTiaoMa").val(data.PackTiaoMa);
+                        $("#EstimateUnitID").val(data.EstimateUnitID);
+                        $("#PackName").val(data.PackName);
+                        $("#PackSpellCod").val(data.PackSpellCod);
+                        //$("#GoodsDetailID").val(data.GoodsDetailID);
+                        $("#PackDengJiRen").val(data.PackDengJiRen);
+                        $("#PackDengJiShi").val(data.ReleaseTimeStr);
+                        $("#PackGengXinRen").val(data.PackGengXinRen);
+                        $("#PackGengXinShi").val(data.ReleaseTimeStrr);
+                    }
+                    $("#chaxundabao").modal('hide'); //选择关闭表格
+                });
+            }
+            else {
+                layer.alert('你还没选择修改信息', { icon: 0, title: '提示' });
+            }
+        });
+
+        //保存修改后的数据
+        $("#btnXiuGaiBaoCun").click(function () {
+            var PackGoodsID = $("#PackGoodsID").val();//隐藏域
+            var PackCode = $("#PackCode").val();
+            var PackTiaoMa = $("#PackTiaoMa").val();
+            var EstimateUnitID = $("#EstimateUnitID").val();
+            var PackName = $("#PackName").val();
+            var PackSpellCod = $("#PackSpellCod").val();          
+            //var GoodsDetailID = $("#GoodsDetailID").val();
+            var PackDengJiRen = $("#PackDengJiRen").val();
+            var PackDengJiShi = $("#PackDengJiShi").val();
+            var PackGengXinRen = $("#PackGengXinRen").val();
+            var PackGengXinShi = $("#PackGengXinShi").val();
+            //&& GoodsDetailID > 0
+            if (PackCode != '' && PackTiaoMa != '' && EstimateUnitID > 0 && PackName != '' && PackSpellCod != '' 
+                && PackDengJiRen != '' && PackDengJiShi != '' && PackGengXinRen != '' && PackGengXinShi != '') {                
+                $.post("/ShangPinGuanLi/JiChuXinXi/XiuGaiBaoCunDaBao", {
+                    PackGoodsID: PackGoodsID,//隐藏域
+                    PackCode: PackCode,
+                    PackTiaoMa: PackTiaoMa,
+                    EstimateUnitID: EstimateUnitID,
+                    PackName: PackName,
+                    PackSpellCod: PackSpellCod,
+                    //GoodsDetailID: GoodsDetailID,
+                    PackDengJiRen: PackDengJiRen,
+                    PackDengJiShi: PackDengJiShi,
+                    PackGengXinRen: PackGengXinRen,
+                    PackGengXinShi: PackGengXinShi,                 
+                }, function (data) {
+                    if (data == "success") {
+                        layer.alert('修改成功', { icon: 1, title: '提示' });
+                        $("#chaxundabao").modal('hide'); //关闭窗体
+                        tabChaXunDaBaoShangPin.refreshPage(); //刷新表格                       
+                    }
+                    else {
+                        layer.alert('修改失败', { icon: 2, title: '提示' });
+                    }
+                });
+            }
+            else {
+                layer.alert('请填写需要修改的内容', { icon: 0, title: '提示' });
+            }
+        });
+
+        //取消按钮
+        $("#btnQuXiao").click(function () {
+            document.location.href = "/ShangPinGuanLi/JiChuXinXi/DingYiDaBaoShangPin";
+        })
+
+        //页面关闭按钮
+        $(function () {           
+            $("#btnTuiChu").click(function () {
+                $("#dabaoshangpin").hide();
+            });
+        });
+    </script>
+</body>
+</html>

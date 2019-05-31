@@ -1,0 +1,155 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>XuanPanlShiTu</title>
+
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+
+
+    <style>
+        .container {
+            background: #fff;
+            width: 100%;
+        }
+
+        .reset-padding {
+            padding: 0 5px;
+        }
+
+        .reset {
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        label.Size {
+            font-size: 60px;
+        }
+
+        label {
+            font-weight: normal;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="form-group">
+
+                        <span class="h4"><b>选择盘点编辑</b></span>
+                        <div class="pull-right">
+                            <button class="form-control btn-sm btn btn-info" id="Colse"><span class="glyphicon glyphicon-remove">关闭</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-body" style="background:#f0edf1;">
+
+                    <div class="col-lg-12">
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-8" style="border: 3px solid #d8cddc;background:#f0edf1;">
+                            <div class="row">
+                                <div style="margin-top:20px;margin-left:10px;overflow:auto;width:100%;height:350px;">
+                                    <table id="ShangPin">
+                                        <tr>
+                                            <th w_num="total_line" width="10%">序号</th>
+                                         
+                                            <th w_index="CheckRermeberID" w_hidden="true">盘点计划ID</th>
+                                            <th w_index="Remember">编号</th>
+                                            <th w_index="PablData">盘点日期</th>
+                                            <th w_index="CommodityType">类型</th>
+                                            <th w_index="StockPlaceName">库存地点</th>
+                                            <th w_index="ExamineName">执行人</th>
+                                            <th w_index="ExamineTime">执行时间</th>
+
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-md-2 col-lg-offset-4">
+                                        <button class="btn btn-primary" type="button" id="OkTwo"><span class="glyphicon glyphicon-ok">选 择</span></button>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button class="btn btn-warning" type="button" id="QuXiaoTwo"><span class="glyphicon glyphicon-remove">取 消</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top:20px;">
+                               <label> </label>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div><!--大row-->
+
+
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script><!--bootstrap-->
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.2.min.js"></script><!--bootstrap-->
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script><!--bootstrap-->
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+
+
+    <script>
+        var CheckRermeberId;
+        $(document).ready(function () {
+            //主界面商品
+            ShangPin = $.fn.bsgrid.init('ShangPin', {
+                url: '/PanDianShuYiChuLi/BianJiPanl/SelectCheckgh',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                pageSize: 8,
+                pageSizeSelect: false,
+                pagingLittleToolbar: true,
+                pagingToolbarAlign: "left",
+            });
+            ShangPin.search();
+
+        });
+
+
+        $("#OkTwo").click(function () {
+            var rowIndex = ShangPin.getSelectedRowIndex();//
+            CheckRermeberId = ShangPin.getColumnValue(rowIndex, "CheckRermeberID");//获取ID
+            if (CheckRermeberId >0) {
+               
+                $.post("/PanDianShuYiChuLi/BianJiPanl/ChuanlectCheckgh", { checkRermeberId: CheckRermeberId }, function (data) {
+
+                });
+                $('body').remove();
+                document.location.href = "/PanDianShuYiChuLi/BianJiPanl/JinRuZePanl";
+            }
+            else {
+                layer.alert("请选择数据", { icon: 6, title: '温馨小提示：' });
+            }
+        });
+
+    </script>
+
+</body>
+</html>

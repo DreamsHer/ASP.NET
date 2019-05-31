@@ -1,0 +1,285 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />   
+    <title>设置新商品销售柜台 </title>
+    <style type="text/css">
+        .container {
+            width: 98%;
+            padding-top: 4px;
+        }
+
+        .panel-heading {
+            font-size: 16px;
+        }
+
+        .panel-body {
+            padding: 0;
+            border-left: 3px solid #377ab7;
+            border-bottom: 3px solid #377ab7;
+            border-right: 3px solid #377ab7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="xinshangpinxiaoshou">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <span style="padding-left:14px;">设置新商品销售柜台</span>                       
+                    </div>
+                </div>
+                <div class="panel-body" style="width:100%;height:550px;background:#f0edf1">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group" style="margin-top:5px;">
+                            <div class="col-sm-1" style="margin-top:2px;left:4px;">
+                                <button type="button" class="btn form-control" style="background:#d1cccc;" id="XuanZeShangPin">
+                                    商品代码
+                                </button>
+                            </div>
+                            <input type="hidden" name="GoodsDetailID" id="GoodsDetailIDD" />
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="text" class="form-control" name="GoodsCode" id="GoodsCode" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:5px;">
+                            <input class="hidden" name="GoodsID" id="GoodsID" />
+                            <label class="col-md-1 col-sm-1 control-label reset">商品名称</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="text" class="form-control" name="GoodsName" id="GoodsName" readonly>
+                            </div>
+                            <label class="col-md-1 col-sm-1 control-label reset">商品条码</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="text" class="form-control" name="GoodsTiaoMa" id="GoodsTiaoMa" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:5px;">
+                            <label class="col-md-1 col-sm-1 control-label reset">商品规格</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="text" class="form-control" name="SpecificationsModel" id="SpecificationsModel" readonly>
+                            </div>
+                            <label class="col-md-1 col-sm-1 control-label reset">计量单位</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="text" class="form-control" name="EstimateUnitName" id="EstimateUnitName" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:5px;">
+                            <label class="col-md-1 col-sm-1 control-label reset">商品货号</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="text" class="form-control" name="ArtNo" id="ArtNo" readonly>
+                            </div>
+                            <label class="col-md-1 col-sm-1 control-label reset">零售单价</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="text" class="form-control" name="RetailMonovalent" id="RetailMonovalent" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:5px;">
+                            <label class="col-md-1 col-sm-1 control-label reset">柜台名称</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <input type="text" class="form-control" name="NewGoodsManageMC" id="NewGoodsManageMC">
+                            </div>
+                            <label class="col-md-1 col-sm-1 control-label reset">柜台位置</label>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <select class="form-control" name="MarketID" id="MarketID"></select>
+                            </div>
+                        </div>
+                        <div class="row" style="padding-left:650px;">
+                            <input id="Wu" name="Wu" type="checkbox" />下级部门无该商品
+                        </div>
+                        <div class="row" style="padding-left:650px;margin-top:18px;">
+                            <input id="You" name="You" type="checkbox" />下级部门有该商品
+                        </div>
+                        <div class="row" style="padding-left:650px;margin-top:18px;">
+                            <input id="BuXiaoShou" name="BuXiaoShou" type="checkbox" />本部门不销售该商品
+                        </div>
+                        <div class="row" style="padding-left:650px;margin-top:18px;">
+                            <input id="XiaoShou" name="XiaoShou" type="checkbox" />本部门销售该商品
+                        </div>
+                        <div class="row" style="padding-left:650px;margin-top:18px;">
+                            <input id="BuXiaoShouBuXiuGai" name="BuXiaoShouBuXiuGai" type="checkbox" />本部门不销售该商品且不能修改
+                        </div>
+                        <div class="row" style="padding-left:650px;margin-top:18px;">
+                            <input id="XiaoShouBuXiuGai" name="XiaoShouBuXiuGai" type="checkbox" />本部门销售该商品且不能修改
+                        </div>
+                        <div class="form-group" style="margin-top:20px;">
+                            <div class="col-sm-1 col-sm-offset-5">
+                                <button type="button" class="btn btn-success form-control" id="btnQueRen">
+                                    <span class="glyphicon glyphicon-ok"></span> 确认
+                                </button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-warning form-control" id="btnQuXiao">
+                                    <span class="glyphicon glyphicon-remove"></span> 取消
+                                </button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-danger form-control" id="btnTuiChu">
+                                    <span class="glyphicon glyphicon-off"></span> 退出
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*选择商品*@
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="ShangPinChuangTi">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:800px;height:430px;">
+                <div class="modal-header" style="background:#a8d7ef;">
+                    <span>选择商品窗体</span>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body">
+                    <table id="tabXuanZeShangPin" style="width:100%">
+                        <tr>
+                            <th w_num="total_line">序号</th>
+                            <th w_index="GoodsDetailID" w_hidden="true">GoodsDetailID</th>
+                            <th w_index="GoodsCode">商品代码</th>
+                            <th w_index="GoodsTiaoMa">商品条码</th>
+                            <th w_index="GoodsName">商品名称</th>
+                            <th w_index="SpecificationsModel">商品规格</th>
+                            <th w_index="EstimateUnitName">计量单位</th>
+                            <th w_index="ArtNo">商品货号</th>
+                            <th w_index="RetailMonovalent">零售单价</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    @*数据内容*@
+    <script type="text/javascript">
+        var tabXuanZeShangPins;
+        $(function () {
+            //柜台位置
+            $.post("/ShangPinGuanLi/ShangPinGuanLiBuFen/SelectMarketID", function (data) {
+                selectLoadData("MarketID", data);
+            });
+
+            //商品的选择
+            tabXuanZeShangPins = $.fn.bsgrid.init('tabXuanZeShangPin', {
+                url: '/ShangPinGuanLi/ShangPinGuanLiBuFen/SelectShangPin',
+                autoLoad: false,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                pageSize: 8,
+                pageSizeSelect: false,//是否选择分页页数下拉框                                                                                                                
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置 
+                event: {
+                    customRowEvents: { //record 记录记载  options 选项
+                        click: function (record, rowIndex, trObj, options) {
+                            IdGoodsDetailID = record.GoodsDetailID
+
+                            if (IdGoodsDetailID > 0) {
+                                //获取商品
+                                var rowIndex = tabXuanZeShangPins.getSelectedRowIndex();
+                                if (rowIndex > -1) {
+                                    var goodsDetailID = tabXuanZeShangPins.getColumnValue(rowIndex, "GoodsDetailID");
+                                    $.getJSON("/ShangPinGuanLi/ShangPinGuanLiBuFen/HuoQuShangPin?ShangPinID=" + goodsDetailID, function (data) {
+                                        if (data == "失败") {
+                                            layer.alert('你没有选择信息！', { icon: 2, title: '提示' });
+                                        }
+                                        else {
+                                            $("#GoodsDetailIDD").val(data.GoodsDetailID);//隐藏域  
+                                            $("#GoodsID").val(data.GoodsID);
+                                            $("#GoodsName").val(data.GoodsName);
+                                            $("#GoodsTiaoMa").val(data.GoodsTiaoMa);
+                                            $("#GoodsCode").val(data.GoodsCode);
+                                            $("#SpecificationsModel").val(data.SpecificationsModel);
+                                            $("#EstimateUnitName").val(data.EstimateUnitName);
+                                            $("#ArtNo").val(data.ArtNo);
+                                            $("#RetailMonovalent").val(data.RetailMonovalent);
+                                        }
+                                        $("#ShangPinChuangTi").modal('hide'); //选择后自动关闭
+                                    });
+                                }
+                                else {
+                                    layer.alert('请选择一条的信息！', { icon: 2, title: '提示' });
+                                }
+
+                            }
+
+                        }
+                    }
+                }
+
+            });
+
+            $("#XuanZeShangPin").click(function () {               
+                tabXuanZeShangPins.refreshPage();
+                $("#ShangPinChuangTi").modal('show');
+            });
+
+        });
+       
+        //新增
+        $("#btnQueRen").click(function () {
+            var NewGoodsManageMC = $("#NewGoodsManageMC").val();
+            var MarketID = $("#MarketID").val();
+            var GoodsDetailID = $("#GoodsDetailIDD").val();
+            var You = $("#You").is(":checked");
+            var Wu = $("#Wu").is(":checked");
+            var XiaoShou = $("#XiaoShou").is(":checked");
+            var XiaoShouBuXiuGai = $("#XiaoShouBuXiuGai").is(":checked");
+            var BuXiaoShou = $("#BuXiaoShou").is(":checked");
+            var BuXiaoShouBuXiuGai = $("#BuXiaoShouBuXiuGai").is(":checked");
+            if (NewGoodsManageMC != '') {
+                $.post("/ShangPinGuanLi/ShangPinGuanLiBuFen/XinZengXinShangPinGuiTai", {
+                    NewGoodsManageMC: NewGoodsManageMC,
+                    MarketID: MarketID,
+                    GoodsDetailID: GoodsDetailID,
+                    You: You,
+                    Wu: Wu,
+                    XiaoShou: XiaoShou,
+                    XiaoShouBuXiuGai: XiaoShouBuXiuGai,
+                    BuXiaoShou: BuXiaoShou,
+                    BuXiaoShouBuXiuGai: BuXiaoShouBuXiuGai,
+                }, function (mess) {
+                    if (mess == "success") {
+                        layer.alert('设置成功', { icon: 1, title: '提示' });                       
+                    }
+                    else {
+                        layer.alert('设置失败', { icon: 2, title: '提示' });
+                    }
+                });
+            } else {
+                layer.alert('请填写需要设置的内容', { icon: 0, title: '提示' });
+            }
+        });
+
+        //放弃按钮
+        $("#btnQuXiao").click(function () {
+            document.location.href = "/ShangPinGuanLi/ShangPinGuanLiBuFen/XinShangPinXiaoShouGuiTai";
+        });
+
+        //关闭按钮
+        $(function () {           
+            $("#btnTuiChu").click(function () {
+                $("#xinshangpinxiaoshou").hide();
+            });
+        });
+
+    </script>
+</body>
+</html>

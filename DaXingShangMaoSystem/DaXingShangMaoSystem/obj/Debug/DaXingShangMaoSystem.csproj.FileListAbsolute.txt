@@ -1,0 +1,773 @@
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\csc.exe
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Collections.Immutable.dll
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Reflection.Metadata.dll
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\vbc.exe
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe.config
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll.config
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.pdb
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.dll
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.dll
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.Web.Infrastructure.dll
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.dll
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.dll
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.dll
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.dll
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.dll
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.dll
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.xml
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.xml
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.xml
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.xml
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.xml
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.xml
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.xml
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.xml
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.csprojResolveAssemblyReference.cache
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.dll
+F:\.NET MVC项目实训\.NET MVC项目分配\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.pdb
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.csprojResolveAssemblyReference.cache
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.pdb
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\csc.exe
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Collections.Immutable.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Reflection.Metadata.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\vbc.exe
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe.config
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll.config
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.pdb
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.CrystalReports.Engine.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportSource.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.Shared.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.Web.Infrastructure.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\stdole.dll
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.xml
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.xml
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.xml
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.xml
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.xml
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.xml
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.xml
+D:\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.xml
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\csc.exe
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CSharp.Core.targets
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.VisualBasic.Core.targets
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Collections.Immutable.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Reflection.Metadata.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\vbc.exe
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe.config
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll.config
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.pdb
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.CrystalReports.Engine.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportSource.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.Shared.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.Web.Infrastructure.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\stdole.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.xml
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.xml
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.xml
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.xml
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.xml
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.xml
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.xml
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.xml
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.csprojResolveAssemblyReference.cache
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.dll
+G:\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.pdb
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\csc.exe
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\vbc.exe
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll.config
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.pdb
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportSource.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.Shared.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\stdole.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.xml
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.xml
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.xml
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.xml
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.xml
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.xml
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.xml
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.xml
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.csprojResolveAssemblyReference.cache
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.dll
+C:\Users\鹏劲呀\Desktop\16级一班余鹏劲MVC项目\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.pdb
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\csc.exe
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Collections.Immutable.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Reflection.Metadata.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\vbc.exe
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe.config
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll.config
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.pdb
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.CrystalReports.Engine.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportSource.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.Shared.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.Web.Infrastructure.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\stdole.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.xml
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.xml
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.xml
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.xml
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.xml
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.xml
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.xml
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.xml
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.csprojResolveAssemblyReference.cache
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.dll
+F:\.NET MVC项目实训\李奕更+邱雄+余鹏劲+何天宋\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.pdb
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\csc.exe
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Collections.Immutable.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Reflection.Metadata.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\vbc.exe
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe.config
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll.config
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.pdb
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.Web.Infrastructure.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\stdole.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.xml
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.xml
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.xml
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.xml
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.xml
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.xml
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.xml
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.xml
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.csprojResolveAssemblyReference.cache
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.dll
+D:\16级一班余鹏劲MVC项目（已交）\余鹏劲\项目源码\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.pdb
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\csc.exe
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\vbc.exe
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll.config
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.pdb
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\stdole.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.xml
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.xml
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.xml
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.xml
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.xml
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.xml
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.xml
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.xml
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.csprojResolveAssemblyReference.cache
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.pdb
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportSource.dll
+C:\Users\YuPengJing\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.Shared.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\csc.exe
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\vbc.exe
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll.config
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.pdb
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportSource.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.Shared.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\stdole.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.xml
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.xml
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.xml
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.xml
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.xml
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.xml
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.xml
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.dll
+C:\Users\Administrator\Desktop\框\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.pdb
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.csprojResolveAssemblyReference.cache
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.pdb
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\csc.exe
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Collections.Immutable.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Reflection.Metadata.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\vbc.exe
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe.config
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll.config
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.pdb
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.CrystalReports.Engine.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportSource.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.Shared.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.Web.Infrastructure.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\stdole.dll
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.xml
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.xml
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.xml
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.xml
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.xml
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.xml
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.xml
+F:\.NET MVC项目实训\新建文件夹\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.xml
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\csc.exe
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Collections.Immutable.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Reflection.Metadata.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\vbc.exe
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe.config
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll.config
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.pdb
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.CrystalReports.Engine.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportSource.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.Shared.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.Web.Infrastructure.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\stdole.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.xml
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.xml
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.xml
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.xml
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.xml
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.xml
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.xml
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.xml
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.dll
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.pdb
+F:\.NET MVC项目实训\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.csprojResolveAssemblyReference.cache
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\csc.exe
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Collections.Immutable.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Reflection.Metadata.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\vbc.exe
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe.config
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll.config
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.pdb
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.CrystalReports.Engine.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportSource.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.Shared.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.Web.Infrastructure.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\stdole.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.xml
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.xml
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.xml
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.xml
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.xml
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.xml
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.xml
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.xml
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.csprojResolveAssemblyReference.cache
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.dll
+F:\LIYIGENG 作业总汇\大型商贸系统后台3.8\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.pdb
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\csc.exe
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\vbc.exe
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll.config
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.pdb
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportSource.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.Shared.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\stdole.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.xml
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.xml
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.xml
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.xml
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.xml
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.xml
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.xml
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.xml
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.csprojResolveAssemblyReference.cache
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.dll
+C:\Users\QX\Desktop\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.pdb
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\csc.exe
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Collections.Immutable.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Reflection.Metadata.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\vbc.exe
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe.config
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll.config
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.pdb
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.CrystalReports.Engine.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportSource.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.Shared.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.Web.Infrastructure.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\stdole.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.xml
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.xml
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.xml
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.xml
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.xml
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.xml
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.xml
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.xml
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.csprojResolveAssemblyReference.cache
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.dll
+F:\.NET MVC项目实训\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.pdb
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\csc.exe
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\vbc.exe
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll.config
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.pdb
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportSource.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.Shared.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\stdole.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.xml
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.xml
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.xml
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.xml
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.xml
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.xml
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.xml
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.xml
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.csprojResolveAssemblyReference.cache
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.dll
+C:\Users\YuPengJing\Desktop\项目整\李奕更+邱雄+余鹏劲+何天宋\源代码\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.pdb
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\csc.exe
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Collections.Immutable.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\System.Reflection.Metadata.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\vbc.exe
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\roslyn\VBCSCompiler.exe.config
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll.config
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\DaXingShangMaoSystem.pdb
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.Web.Infrastructure.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\stdole.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.xml
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\EntityFramework.SqlServer.xml
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Razor.xml
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.xml
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Deployment.xml
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Webpages.Razor.xml
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Helpers.xml
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\bin\System.Web.Mvc.xml
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.csprojResolveAssemblyReference.cache
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.dll
+E:\最新项目实训源码\MVC项目开发（最新）\后台源码\DaXingShangMaoSystem\DaXingShangMaoSystem\obj\Debug\DaXingShangMaoSystem.pdb

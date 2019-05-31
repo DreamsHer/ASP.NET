@@ -1,0 +1,244 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <title>ChaXunFuHeTianJianKa</title>
+    <style>
+        .container{
+            width:800px;
+            height:500px;
+            border:5px solid blue;
+            margin-top:20px;
+            background-color:gainsboro;
+        }
+        .toubu {
+        width:795px;
+        height :20px;
+        margin-left:-15px;
+        background-color:blue;
+        color:white;
+        }
+        .zuokuang {
+        width:450px;
+        height:470px;
+        overflow:scroll;
+        border:3px solid lightgrey;
+        margin-left:-15px;
+        background-color:whitesmoke;
+        float:left;
+        }
+        .youkuang{
+        width:300px;
+        height:450px;
+        float:left;
+        border:1px solid gainsboro;
+        margin-left:25px;
+        margin-top:20px;
+        }
+        .quanbuquxiao {
+        margin-top:10px;
+        }
+        .kashulian {
+        margin-top:80px;
+        margin-left:15px;
+        }
+        .kaishikahao {
+        margin-top:20px;
+        }
+        .jieshukahao{
+        margin-top:20px;
+        }
+        .chaxunjieguoleijia {
+        margin-left:50px;
+        margin-top:30px;
+        }
+        .kuchunshuliang {
+        margin-left:60px;
+        margin-top:30px;
+        }
+        .anniu {
+        margin-top:50px;
+        margin-left:50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="toubu">
+            查询符合条件的卡
+        </div> 
+        <div class="zonkuang">
+            <div class="zuokuang">
+                <table id="Tiaojianbiao" class="table table-bordered table-hover table-striped table-condensed">
+                    <tr>
+                        <th w_index="">选择</th>
+                        <th w_index="CardNber">卡号</th>
+                        <th w_index="Sum">余额</th>
+                        <th w_index="EctMoney">铺底金额</th>
+                        <th w_index="Ccustodian">当前保管人</th>
+                    </tr>
+                </table>
+            </div>
+            <div class="youkuang">
+                <div>
+                    <button>全部选择</button>
+                </div>
+                <div class="quanbuquxiao">
+                    <button>全部取消</button>
+                </div>
+                <div class="kashulian">
+                    卡数量 ： 
+                    <input id="CardNumber"name="CardNumber"/>
+                </div>
+                <div class="kaishikahao">
+                    开始卡号 ： 
+                    <input id="StartCardNbumer"name="StartCardNbumer"/>
+                </div>
+                <div class="jieshukahao">
+                    结束卡号 ： 
+                    <input id="EndCardNber"name="EndCardNber"/>
+                </div>
+                <div class="chaxunjieguoleijia">
+                    <label>
+                        <input name="form-flield-checkbox" type="checkbox" />
+                        <span> 查 询 结 果 累 加 </span>
+                    </label>
+                </div>
+                <div class="kuchunshuliang">
+                    <label>
+                        <span>  库  存  数  量  ：      18  张 </span>
+                    </label>
+                </div>
+                <div class="anniu">
+                    <button id="btnXuanZeHeTong"> 查 询 </button>
+                    <button> 确 认 </button>
+                    <button> 取 消 </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="tianxiehetongxinxi">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:760px;height:350px;">
+                <div class="modal-header" style="background:#a8d7ef;">
+                    <span>会员建卡信息</span>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body" style="background:#eddddd;">
+                    <div class="" style="width:100%;height:330px; background:#f0edf1;">
+                        <div class="" style="width:100%;height:280px;overflow:auto;">
+                            <table id="tabHeTongXinXi" style="margin-top:2px;width:100%;" class="table">
+                                <tr>
+                                    <th w_index="CardNumber">卡数量</th>
+                                    <th w_index="StartCardNbumer">开始卡号</th>
+                                    <th w_index="EndCardNber">结束卡号</th>
+                                </tr>
+                            </table>
+                        </div>
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group" style="margin-top:15px;">
+                                <div class="col-sm-2 col-sm-offset-5">
+                                    <button type="button" class="btn btn-success form-control" id="btnHeTongXuanZe">
+                                        选择信息
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <script>
+        var Tiaojianbiao;//条件表
+        var MembershipCardInfoID;//ID
+        $(document).ready(function () {
+            //初始化表格
+            Tiaojianbiao = $.fn.bsgrid.init('Tiaojianbiao', {
+                url: '/HuiYuanJianKaYuFaFang/HuiYuanKaLinYon/InsertCardInfo',
+                autoLoad: true,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                displayBlankRows: false,//是否显示空白行，默认值false
+                pageSize: 2,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条               
+                event: {
+                    customRowEvents: {
+                        click: function (record, rowIndex, trObj, options) {
+                            if (record != null) {
+                                MembershipCardInfoId = record.MembershipCardInfoID;
+                            }
+                        }
+                    }
+                }
+            });
+        });
+        $(function () {
+            //卡信息的选择
+            $("#btnXuanZeHeTong").click(function () {
+                tabHeTongXinXi = $.fn.bsgrid.init('tabHeTongXinXi', {
+                    url: '/HuiYuanJianKaYuFaFang/HuiYuanKaLinYon/SelectMembershipCardInf',
+                    autoLoad: false,
+                    stripeRows: true,//隔行变色
+                    rowHoverColor: true,//划过行变色
+                    pageSize: 20,
+                    pageSizeSelect: false,//是否选择分页页数下拉框
+                    pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                    pagingToolbarAlign: "left",//分页工具条的显示位置
+                    displayPagingToolbarOnlyMultiPages: true,//仅当多页时才显示分页工具条
+                    event: {
+                        customRowEvents: { //record 记录记载  options 选项
+                            click: function (record, rowIndex, trObj, options) {
+                                if (record != null) {
+                                    MembershipCardInfoID = record.MembershipCardInfoID;
+                                }
+                            }
+                        }
+                    }
+                });
+                tabHeTongXinXi.refreshPage();
+                $("#tianxiehetongxinxi").modal('show');
+            });
+            //获取卡信息
+            $("#btnHeTongXuanZe").click(function () {
+                var rowIndex = tabHeTongXinXi.getSelectedRowIndex();
+                if (rowIndex > -1) {
+                    var MembershipCardInfoID = tabHeTongXinXi.getColumnValue(rowIndex, "MembershipCardInfoID");
+                    $.getJSON("/HuiYuanJianKaYuFaFang/HuiYuanKaLinYon/SelectMembershipCardInfo?HTID=" + MembershipCardInfoID, function (data) {
+                        if (data == "失败") {
+                            alert("你没有选择信息");
+                        }
+                        else {
+                            $("#MembershipCardInfoID").val(data.MembershipCardInfoID);//隐藏域
+                            $("#CardNumber").val(data.CardNumber);
+                            $("#StartCardNbumer").val(data.StartCardNbumer);
+                            $("#EndCardNber").val(data.EndCardNber);
+                        }
+                        $("#tianxiehetongxinxi").modal('hide');
+                    });
+                }
+                else {
+                    alert("请选择一条的信息");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

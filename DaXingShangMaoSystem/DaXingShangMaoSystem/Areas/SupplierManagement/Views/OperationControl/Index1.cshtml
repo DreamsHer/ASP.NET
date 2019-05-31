@@ -1,0 +1,841 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+    <meta name="keywords" content="" />
+   
+    <title>个人资料</title>
+    
+
+   
+    <link rel="stylesheet" href="//g.alicdn.com/tb/global/3.5.34/global-min.css">
+
+    <link rel="stylesheet" href="//g.alicdn.com/tb/mtb-profile/0.0.2/oth/??p/c2c/header-top-min.css?t=20110728.css">
+ 
+    <script src="//g.alicdn.com/??kissy/k/1.4.14/seed-min.js,tb/global/3.5.34/global-min.js"></script>
+ 
+    <link rel="stylesheet" href="//g.alicdn.com/tb/mtb-profile/0.0.2/oth/tbsp/tbsp.css?t=20090602.css" />
+
+
+    <link href="//g.alicdn.com/tb/mtb-profile/0.0.2/oth/p/sns/1.0/tbsp-sns-min.css?t=20120401.css" type="text/css" rel="stylesheet" />
+
+
+    <script type="text/javascript" src="//g.alicdn.com/tb/mtb-profile/0.0.2/oth/p/header/header-v8-min.js?t=20120401.js"></script>
+    <link rel="stylesheet" href="//g.alicdn.com//tb/mtb-profile/0.0.2/2.0/mods/base/base.css?t=20120401.css">
+
+
+
+    <style>
+        #privacySet {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body class="mission  mytaobao-v2 ">
+    <script>
+with(document)with(body)with(insertBefore(createElement("script"),firstChild))setAttribute("exparams","category=&userid=2689850129&aplus&yunid=&587e153837ee7&trid=0b838cda15151978544751963e60ad&asid=ARHbU6CeFVBaXN8ETQAAAAAwnl5mppu+sQ==",id="tb-beacon-aplus",src=(location>"https"?"//g":"//g")+".alicdn.com/alilog/mlog/aplus_v2.js")
+    </script>
+
+    <!-- S GLOBAL HTML -->
+   
+    <!-- -->
+    <!-- 全网顶通 -->
+    <!-- E GLOBAL HTML   -->
+    <script type="text/javascript">
+        TB.Global.blacklist = ["fn-cart"];
+        TB.Global.init();
+    </script>
+    <div id="page">
+        <!-- start ems/mytaobao/header -->
+        <link rel="stylesheet" href="//g.alicdn.com/tb/mtbframe/2.0.2/pages/home/base.css">
+        <script type="text/javascript" src="//g.alicdn.com/tb/mtbframe/2.0.4/components/common/base.js"></script>
+        <!--
+        <link rel="stylesheet" href="//g.alicdn.com/tb/mytaobao/5.0.8/pages/home/base.css">
+        <script type="text/javascript" src="//g.alicdn.com/tb/mytaobao/5.1.1/components/common/base.js"></script>
+        -->
+       
+        <!-- end ems/mytaobao/header -->
+        <div id="content" class="layout grid-s160m0">
+            <div id="mytaobao-panel" class="grid-c2">
+                <link href="//g.alicdn.com//tb/mtb-profile/0.0.2/app-config.css" type="text/css" rel="stylesheet" />
+                <link rel="stylesheet" href="//g.alicdn.com//tb/mtb-profile/0.0.2/3.0/profile/css/pf-base.css">
+                <link rel="stylesheet" href="//g.alicdn.com//tb/mtb-profile/0.0.2/3.0/profile/css/mt-tips.css">
+
+
+                <script type="text/javascript" src="//g.alicdn.com//tb/mtb-profile/0.0.2/fuck/es5-shim.js"></script>
+                <script>
+        TB=window.TB;
+        KISSY.use("dom,event", function(S,DOM,Event){
+
+            YAHOO = window.YAHOO = KISSY.mix({},KISSY);
+
+            YAHOO.util = {};
+            YAHOO.util.Dom = KISSY.mix({},DOM);
+            YAHOO.util.Event = KISSY.mix({},Event);
+            YAHOO.lang = YAHOO;
+
+            TB.form = {};
+            YAHOO.util.Event.addListener = YAHOO.util.Event.on;
+            YAHOO.util.Dom.getElementsByClassName = function(n){
+                return DOM.get("."+n);
+            }
+            YAHOO.util.Dom.get = function(n){
+                return DOM.get("#"+n);
+            }
+            YAHOO.util.Event.onDOMReady = function(fn){ Event.on(window, "ready", fn) };
+            TB.applyIf = KISSY.mix;
+
+            (function(){
+                window['\u0024'] = YAHOO.util.Dom.get;
+                window['\u0024\u0045'] = YAHOO.util.Event;
+            })();
+
+
+    KISSY.getScript("//assets.alicdn.com//app/matrix/js/date.js?t=20140318.js", {success:function(){
+        KISSY.getScript("//www.taobao.com/home/js/sys/districtselector.js?t=20140318.js", {success:function(){
+
+
+            (function () {
+
+
+                var Y = YAHOO.util;
+                var provSel = Y.Dom.get('J_redstar_province');
+                var citySel = Y.Dom.get('J_redstar_city');
+                var distSel = Y.Dom.get('J_redstar_area');
+
+                var codeInput = Y.Dom.get('divisionCode');
+                var liveCodeInput = Y.Dom.get('liveDivisionCode');
+                var cv = TB.form.DistrictSelector.attach('J_redstar_province', 'J_redstar_city', 'J_redstar_area');
+                cv.initSelectedCodes(codeInput.value);
+                var ds = TB.form.DistrictSelector.attach('J_live_province', 'J_live_city', 'J_live_area');
+                ds.initSelectedCodes(liveCodeInput.value);
+
+                //参数校验
+                var validate = function () {
+                    //if (provSel.options.length > 1 && provSel.selectedIndex == 0)
+                    //if (citySel.options.length > 1 && citySel.selectedIndex == 0)
+                    //if (distSel.options.length > 1 && distSel.selectedIndex == 0)
+
+                    var yearVal = Y.Dom.get('J_Year').selectedIndex;
+                    var monthVal = Y.Dom.get('J_Month').selectedIndex;
+                    var dayVal = Y.Dom.get('J_Date').selectedIndex;
+
+                    if (yearVal == 0 && monthVal == 0 && dayVal == 0) {
+                        return true;
+                    }
+
+                    if (yearVal == 0 || monthVal == 0 || dayVal == 0) {
+                        return false;
+                    }
+
+                    return true;
+                }
+
+                Y.Event.on(provSel.form, 'submit', function (ev) {
+                    if (!validate()) {
+                        Y.Dom.setStyle('J_birthdayTip', 'display', 'block');
+                        Y.Event.stopEvent(ev);
+                        return false;
+                    }
+                    var codes = cv.getSelectedCodes();
+                    //隐藏域的赋值
+                    codeInput.value = codes[2] || codes[1];
+
+                    var livecodes = ds.getSelectedCodes();
+                    //隐藏域的赋值
+                    liveCodeInput.value = livecodes[2] || livecodes[1];
+                    return true;
+                });
+
+                window['distSelector'] = cv;
+
+                init();
+            })();
+
+            //根据出生日期改变星座
+            function resetAstro() {
+                var astro = YAHOO.util.Dom.get("astro");
+                var monthOption = YAHOO.util.Dom.get("J_Month");
+                var dateOption = YAHOO.util.Dom.get("J_Date");
+                var monthSelectIndex = monthOption.selectedIndex;
+                var dateSelectIndex = dateOption.selectedIndex;
+                if (monthSelectIndex == 0 || dateSelectIndex == 0) {
+                    astro.options.length = 0;
+                    astro.options[0] = new Option("-------------", "");
+                    return;
+                }
+                var month = parseInt(monthOption[monthSelectIndex].value);
+                var date = parseInt(dateOption[dateSelectIndex].value);
+                var s = "摩羯水瓶双鱼牡羊金牛双子巨蟹狮子处女天秤天蝎射手摩羯";
+                var arr = [20, 19, 21, 21, 21, 22, 23, 23, 23, 23, 22, 22];
+                var s = s.substr(month * 2 - (date < arr[month - 1] ? 2 : 0), 2);
+                astro.options.length = 0;
+                astro.options[0] = new Option(s + "座", s + "座");
+            }
+
+            //初始化页面
+            function init() {
+                resetAstro();
+
+                //初始化星座
+                var _birthdayJ_Month = YAHOO.util.Dom.get("J_Month");
+                var _birthdayJ_Date = YAHOO.util.Dom.get("J_Date");
+                YAHOO.util.Event.addListener(_birthdayJ_Month, "change", function () {
+                    resetAstro();
+                });
+                YAHOO.util.Event.addListener(_birthdayJ_Date, "change", function () {
+                    resetAstro();
+                });
+
+                if (!document.getElementById('J_gender1').checked && !document.getElementById('J_gender2').checked) {
+                    document.getElementById('J_gender2').checked = true;
+                }
+            }
+
+            //用于离开页面时验证是否有资料修改，如有修改则弹出提示确认框
+            (function () {
+                var E = YAHOO.util.Event;
+                var D = YAHOO.util.Dom;
+                var oldContent = '';
+                var newContent = '';
+                var contentReady = false;
+                var form = (D.getElementsByClassName("infoForm"))[0];
+
+                var getOldContent = function () {
+                    oldContent = '';
+                    for (var i = 0; i < form.length; i++) {
+                        if (form.elements[i].type == 'hidden')
+                            continue;
+                        //默认提示文案修改时请修改以下文案
+                        if (form.elements[i].value == "多条内容用空格或逗号分隔")
+                            continue;
+                        if (form.elements[i].type == 'radio') {
+                            oldContent += form.elements[i].checked;
+                            continue;
+                        }
+                        if (form.elements[i].type == 'checkbox') {
+                            oldContent += form.elements[i].checked;
+                            continue;
+                        }
+                        oldContent += form.elements[i].value;
+                    }
+                    contentReady = true;
+                }
+
+                var checkEdit = function (e) {
+                    var newContent = '';
+                    for (var i = 0; i < form.length; i++) {
+                        if (form.elements[i].type == 'hidden')
+                            continue;
+                        if (form.elements[i].value == "多条内容用空格或逗号分隔")
+                            continue;
+                        if (form.elements[i].type == 'radio') {
+                            newContent += form.elements[i].checked;
+                            continue;
+                        }
+                        if (form.elements[i].type == 'checkbox') {
+                            newContent += form.elements[i].checked;
+                            continue;
+                        }
+                        newContent += form.elements[i].value;
+
+                    }
+                    if (newContent != oldContent)
+                        e.returnValue = '======================================\n' + '你修改的资料还没有保存，确认要离开吗？\n' + '======================================';
+                }
+
+                E.onDOMReady(function () {
+                    setTimeout(getOldContent, 1000);
+                });
+
+                E.addListener(window, 'beforeunload', function (e) {
+                    if (contentReady == true)
+                        checkEdit(e);
+                });
+
+                form.onsubmit = function () {
+                    getOldContent();
+                };
+            })();
+
+        }})
+    }})
+
+
+        });
+                </script>
+
+
+                <style type="text/css">
+                    .sns-config .bd .tips-box {
+                        font-size: 15px;
+                        margin: 10px 0;
+                    }
+
+                        .sns-config .bd .tips-box b {
+                            margin: 0 4px;
+                        }
+
+                    #baseInfoForm .input-help-text {
+                        line-height: 12px;
+                        color: #999;
+                    }
+
+                    #J_uniqueName {
+                        width: 136px;
+                    }
+
+                    #J_realname-mask {
+                        width: 136px;
+                    }
+                </style>
+
+                <div class="col-main">
+                    <div class="main-wrap">
+                        <div id="profile" class="sns-config">
+                            <div class="sns-tab tab-app">
+                               
+                                <ul class="tab-sub">
+                                    <li class="selected"><a href="base_info_set.htm"><span>基本资料</span></a></li>
+                                   
+                                </ul>
+                            </div>
+                            <div class="sns-box box-detail">
+                                <div class="bd">
+                                    <div class="sns-nf">
+                                        <div class="tips-box">亲爱的<b>想******运</b>，填写真实的资料，有助于好友找到你哦。</div>
+                                        <form id="baseInfoForm" name="baseInfoForm" method="post" class="infoForm">
+                                            <input name='_tb_token_' type='hidden' value='587e153837ee7'>
+                                            <input type="hidden" name="action" value="user/baseInfoSetAction" />
+                                            <input type="hidden" name="event_submit_do_save_or_update_base_info_setting" value="1" />
+                                            <input type="hidden" name="redirectURL" value="" />
+                                            <input type="hidden" id="J_occupation_view" value="" />
+                                            <input type="hidden" id="J_home_url" value="$itaobaoServer.setTarget('json/school_json.htm')" />
+                                            <div id="main-profile" class="parts">
+                                                @*<p>
+                                                    <label>当前头像：</label>
+                                                    <span class="pf-avatar-box">
+                                                        <a class="pf-avatar">
+                                                            <img src="//wwc.alicdn.com/avatar/getAvatar.do?userId=2689850129&width=80&height=80&type=sns">
+                                                        </a>
+                                                        <a href="//i.taobao.com/user/headset.htm" class="pf-edit-avatar">编辑头像</a>
+                                                    </span>
+                                                </p>*@
+                                                <p>
+                                                    <label>昵称：<em>*</em></label>
+                                                    <input id="J_uniqueName-mask" class="f-txt" type="text" value="改个名字改改运吧" maxlength="25">
+                                                    <input id="J_uniqueName" name="_fm.b._0.u" type="hidden" value="改个名字改改运吧" maxlength="25">
+                                                </p>
+                                                <p class="input-help-text">
+                                                    <span>*昵称填写须知：与淘宝业务或卖家品牌冲突的昵称，淘宝将有可能收回</span>
+                                                </p>
+                                                <p>
+                                                    <label>真实姓名：</label>
+                                                    <input id="J_realname-mask" class="f-txt" type="text" value="" maxlength="6">
+                                                    <input id="J_realname" name="_fm.b._0.r" type="hidden" value="" maxlength="6">
+                                                </p>
+                                                <p>
+                                                    <label>性别：<em>*</em></label>
+                                                    <label for="J_gender1" class="except"><input id="J_gender1" type="radio" name="_fm.b._0.g" value="0" />男</label>
+                                                    <label for="J_gender2" class="except"><input id="J_gender2" type="radio" name="_fm.b._0.g" value="1" checked="checked" />女</label>
+                                                </p>
+                                                <p>
+                                                    <label>生日：</label>
+                                                    <select id="J_Year" name="_fm.b._0.y">
+                                                        <option>年</option>
+                                                        <option value="1940">1940</option>
+                                                        <option value="1941">1941</option>
+                                                        <option value="1942">1942</option>
+                                                        <option value="1943">1943</option>
+                                                        <option value="1944">1944</option>
+                                                        <option value="1945">1945</option>
+                                                        <option value="1946">1946</option>
+                                                        <option value="1947">1947</option>
+                                                        <option value="1948">1948</option>
+                                                        <option value="1949">1949</option>
+                                                        <option value="1950">1950</option>
+                                                        <option value="1951">1951</option>
+                                                        <option value="1952">1952</option>
+                                                        <option value="1953">1953</option>
+                                                        <option value="1954">1954</option>
+                                                        <option value="1955">1955</option>
+                                                        <option value="1956">1956</option>
+                                                        <option value="1957">1957</option>
+                                                        <option value="1958">1958</option>
+                                                        <option value="1959">1959</option>
+                                                        <option value="1960">1960</option>
+                                                        <option value="1961">1961</option>
+                                                        <option value="1962">1962</option>
+                                                        <option value="1963">1963</option>
+                                                        <option value="1964">1964</option>
+                                                        <option value="1965">1965</option>
+                                                        <option value="1966">1966</option>
+                                                        <option value="1967">1967</option>
+                                                        <option value="1968">1968</option>
+                                                        <option value="1969">1969</option>
+                                                        <option value="1970">1970</option>
+                                                        <option value="1971">1971</option>
+                                                        <option value="1972">1972</option>
+                                                        <option value="1973">1973</option>
+                                                        <option value="1974">1974</option>
+                                                        <option value="1975">1975</option>
+                                                        <option value="1976">1976</option>
+                                                        <option value="1977">1977</option>
+                                                        <option value="1978">1978</option>
+                                                        <option value="1979">1979</option>
+                                                        <option value="1980">1980</option>
+                                                        <option value="1981">1981</option>
+                                                        <option value="1982">1982</option>
+                                                        <option value="1983">1983</option>
+                                                        <option value="1984">1984</option>
+                                                        <option value="1985">1985</option>
+                                                        <option value="1986">1986</option>
+                                                        <option value="1987">1987</option>
+                                                        <option value="1988">1988</option>
+                                                        <option value="1989">1989</option>
+                                                        <option value="1990">1990</option>
+                                                        <option value="1991">1991</option>
+                                                        <option value="1992">1992</option>
+                                                        <option value="1993">1993</option>
+                                                        <option value="1994">1994</option>
+                                                        <option value="1995">1995</option>
+                                                        <option value="1996" selected="selected">1996</option>
+                                                        <option value="1997">1997</option>
+                                                        <option value="1998">1998</option>
+                                                        <option value="1999">1999</option>
+                                                        <option value="2000">2000</option>
+                                                        <option value="2001">2001</option>
+                                                        <option value="2002">2002</option>
+                                                        <option value="2003">2003</option>
+                                                        <option value="2004">2004</option>
+                                                        <option value="2005">2005</option>
+                                                        <option value="2006">2006</option>
+                                                        <option value="2007">2007</option>
+                                                        <option value="2008">2008</option>
+                                                        <option value="2009">2009</option>
+                                                        <option value="2010">2010</option>
+                                                        <option value="2011">2011</option>
+                                                        <option value="2012">2012</option>
+                                                        <option value="2013">2013</option>
+                                                        <option value="2014">2014</option>
+                                                        <option value="2015">2015</option>
+                                                        <option value="2016">2016</option>
+                                                        <option value="2017">2017</option>
+                                                        <option value="2018">2018</option>
+                                                    </select>
+                                                    <select id="J_Month" name="_fm.b._0.m">
+                                                        <option>月</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8" selected="selected">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                        <option value="11">11</option>
+                                                        <option value="12">12</option>
+                                                    </select>
+                                                    <select id="J_Date" name="_fm.b._0.d">
+                                                        <option>日</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6" selected="selected">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                        <option value="11">11</option>
+                                                        <option value="12">12</option>
+                                                        <option value="13">13</option>
+                                                        <option value="14">14</option>
+                                                        <option value="15">15</option>
+                                                        <option value="16">16</option>
+                                                        <option value="17">17</option>
+                                                        <option value="18">18</option>
+                                                        <option value="19">19</option>
+                                                        <option value="20">20</option>
+                                                        <option value="21">21</option>
+                                                        <option value="22">22</option>
+                                                        <option value="23">23</option>
+                                                        <option value="24">24</option>
+                                                        <option value="25">25</option>
+                                                        <option value="26">26</option>
+                                                        <option value="27">27</option>
+                                                        <option value="28">28</option>
+                                                        <option value="29">29</option>
+                                                        <option value="30">30</option>
+                                                        <option value="31">31</option>
+                                                    </select>
+                                                    <sub>（出生年份为保密）</sub>
+                                                    <span>星座：</span>
+                                                    <select id="astro" name="astro" disabled="disabled">
+                                                        <option value="">-------------</option>
+                                                    </select>
+                                                </p>
+                                                <div class="sns-msg" id="J_birthdayTip" style="display:none;">
+                                                    <p class="error">生日如果填写的话请填写完整！</p>
+                                                </div>
+                                                <p>
+                                                    <label>居住地：</label>
+                                                    <select name="_fm.b._0.p" id="J_redstar_province"></select>
+                                                    <select name="_fm.b._0.c" id="J_redstar_city"></select>
+                                                    <select name="_fm.b._0.a" id="J_redstar_area"></select>
+                                                    <input id="divisionCode" value="440115" type="hidden" name="_fm.b._0.di" />
+                                                </p>
+                                                <div class="sns-msg" id="J_redstarTip" style="display:none;">
+                                                    <p class="error">居住地所在的省市区为必填项！</p>
+                                                </div>
+                                                <p>
+                                                    <label>家乡：</label>
+                                                    <select id="J_live_province" name="_fm.b._0.ho"></select>
+                                                    <select id="J_live_city" name="_fm.b._0.hom"></select>
+                                                    <select id="J_live_area" name="_fm.b._0.home"></select>
+                                                    <input type="hidden" name="_fm.b._0.l" value="440983" id="liveDivisionCode" />
+                                                </p>
+                                            </div>
+                                            <div class="act skin-blue">
+                                                <span class="btn n-btn">
+                                                    <button type="submit" id="J_saveProfile">保存</button>
+                                                    <div style="width:1px; height:1px; overflow:hidden; ">
+                                                        <input type="submit"></input>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <script type="text/javascript">
+(function () {
+    // var S = KISSY, DOM = S.DOM, Event = S.Event;
+
+    KISSY.use('dom,event', function(S, DOM, Event) {
+
+        Event.on('.pf-avatar-box', 'mouseenter', function () {
+            DOM.show('.pf-edit-avatar');
+        });
+
+        Event.on('.pf-avatar-box', 'mouseleave', function () {
+            DOM.hide('.pf-edit-avatar');
+        });
+
+    });
+
+})();
+
+
+
+                        </script>
+
+                    </div>
+                </div>
+
+                <div class="sns-widget" data-mission='{"missionId":"3812005"}' style='display:none;'></div>
+
+                <script type="text/javascript">
+
+(function () {
+
+    var S = KISSY, DOM = S.DOM, Event = S.Event, shareSiteData = [],
+            serverHost = location.hostname.indexOf('taobao.net') > -1 ? 'daily.taobao.net' : 'taobao.com',
+            API = {
+                'bingShareURL': location.protocol + '//t.' + serverHost + '/cooperate/bindInfo.htm',
+                'checkNickURL': location.protocol + '//i.' + serverHost + '/user/uniqueNick.htm'
+            },
+            popupShareBing,
+            friendlyTips,
+            blurTimes = 0;
+
+    var NICKREG = /^[\w\u4e00-\u9fa5]+$/,
+            NICKNUMREG = /^[0-9]+$/;
+
+    S.use('overlay', function () {
+        popupShareBing = new S.Overlay({
+            prefixCls: 'bingshare-',
+            content: '',
+            zIndex: '10001',
+            align: {
+                points: ['cc', 'cc']
+            }
+        });
+    });
+
+KISSY.use('dom,event,io', function(S,DOM,Event,IO) {
+
+    //绑定分享的弹层html
+    function bingShareHtml() {
+        var header = '<div id="J_bingShare"><div class="inner"><a class="J_close"></a><h3>以下是亲已绑定站点的昵称哦~</h3>',
+                templateData = '<dl class="clearfix bing-share-dl">' +
+                        '<dt><p class="site-name">{name}</p><p class="unique-name">您已绑定：<a>{uniqueName}</a></p></dt>' +
+                        '<dd class="site-logo"><span class="{sign}"></span></dd>' +
+                        '<dd class="btn"><button class="J_useNickName" data-nick="{uniqueName}"></button></dd>' +
+                        '</dl>',
+                footer = '<p class="bing-link"><a href="//t.' + serverHost + '/cooperate/connect/connect_manager.htm" target="_blank">亲，到这里绑定更多站点哦~ 填写资料更方便&gt;&gt;</a></p></div></div>',
+                body = '';
+
+        S.each(shareSiteData, function (o) {
+            body += S.substitute(templateData, o);
+        });
+
+        return header + body + footer;
+    };
+
+
+    //执行插入钩子
+    function insertUniqueName() {
+        var trigger = DOM.get('#J_uniqueName');
+
+        DOM.insertAfter(DOM.create('&nbsp;&nbsp;<a href="#" id="J_bingShareSite">使用已绑定账号昵称</a>'), trigger);
+        bingEventUniqueName();
+    }
+
+    function bingEventUniqueName() {
+
+        Event.on('#J_bingShareSite', 'click', function (evt) {
+            evt.preventDefault();
+            popupShareBing.set('content', bingShareHtml());
+            popupShareBing.render();
+
+            var closeNode = popupShareBing.get('contentEl').one('.J_close');
+            Event.on(closeNode, 'click', function (ev) {
+                ev.preventDefault();
+                popupShareBing.hide();
+            });
+
+            popupShareBing.show();
+
+            //选择并使用站点昵称
+            selectNicknameAndUse();
+        });
+    }
+
+    //选择站点昵称
+    function selectNicknameAndUse() {
+
+        Event.on('.J_useNickName', 'click', function () {
+            var nkName = DOM.attr(this, 'data-nick');
+            DOM.get('#J_uniqueName').value = nkName;
+
+
+            //验证合法性
+            checkNicknameRightful(S.trim(nkName));
+            //验证昵称的唯一性
+            checkNicknameOnly(nkName);
+
+            popupShareBing.hide();
+        });
+    }
+
+    //验证昵称的合法性
+    function checkNicknameRightful(name) {
+
+        var target = DOM.get('#J_uniqueName');
+        var charNum = getLength(S.trim(name));
+        if (charNum < 5 || charNum > 25) {
+            insertErrorTips("昵称的长度要在5-25个字符之间");
+            return;
+        }
+
+        if (!name.match(NICKREG)) {
+            insertErrorTips("只能包含汉字、英文、“_”和数字");
+            return;
+        }
+
+        if (name.match(NICKNUMREG)) {
+            insertErrorTips("昵称不能全为数字");
+            return;
+        }
+
+        //无异常内容
+        insertErrorTips('');
+
+
+    }
+
+    //获取字符数
+    function getLength(s) {
+        return s.replace(/[^\x00-\xff]/g, '**').length;
+    }
+
+    //验证昵称的唯一性
+    function checkNicknameOnly(name) {
+        IO.jsonp(API.checkNickURL, {"uniqueName": name, "_input_charset": "utf-8"}, function (data) {
+
+            if ("1" == data.status) {
+                if ("true" == data.isonly) {
+                    insertErrorTips("此昵称太受欢迎啦~，已有人抢了");
+                    return;
+                }
+            } else if ("-2" == data.status) {
+                location.href = 'https://login.' + serverHost + '/member/login.jhtml?redirectURL=' + encodeURIComponent(location.href);
+            }
+        });
+    }
+
+    //昵称后面插入异常提示
+    function insertErrorTips(content) {
+        var trigger = DOM.get('#J_uniqueName');
+        var errorTips = DOM.get('.J_errorTips');
+
+        if ('' == content) {
+            DOM.remove(errorTips);
+            return;
+        }
+
+        if (!!errorTips) {
+            errorTips.innerHTML = content;
+            return;
+        }
+
+        var container = DOM.create('<span class="mt-error-tips J_errorTips">' + content + '</span>');
+        DOM.insertAfter(container, trigger);
+    }
+
+    //填写完昵称后，验证昵称的唯一性和合法性
+    function editNickNameAndBlur() {
+
+        Event.on('#J_uniqueName', 'focus', function () {
+            blurTimes--; //解决失焦时多次请求验证的问题
+        });
+
+        Event.on('#J_uniqueName', 'blur', function () {
+
+            blurTimes++;
+            if (blurTimes > 0) {
+                return;
+            }
+
+            //验证合法性
+            checkNicknameRightful(S.trim(this.value));
+            //验证昵称的唯一性
+            checkNicknameOnly(this.value);
+        });
+    }
+
+    //异步判断是否存在绑定站点
+    function getDataBingShare() {
+        IO.jsonp(API.bingShareURL, function (data) {
+            if (data.isLogin) {
+                S.each(data.result.apps, function (o) {
+                    if (!o.boundurl && '' != o.uniqueName && o.sign != 'jianghu') {
+                        shareSiteData.push(o);
+                    }
+                });
+                //执行操作
+                if (shareSiteData.length > 0) {
+                    insertUniqueName();
+                }
+
+            } else {
+                //location.href = 'https://login.' + serverHost + '/member/login.jhtml?redirectURL=' + encodeURIComponent(location.href);
+            }
+        })
+    }
+
+    function saveProfile() {
+        Event.on('#J_saveProfile', 'click', function (ev) {
+            ev.preventDefault();
+            if (!!DOM.get('.J_errorTips')) {
+                DOM.get('#J_uniqueName').focus();
+                return;
+            }
+            DOM.get("#baseInfoForm").submit();
+        });
+    }
+
+
+    //（づ￣3￣）づ??～，你猜猜我是干嘛的
+    function meMeDaInit(id){
+        //打码处理，w(?Д?)w
+        function daMa(str) {
+            if (!str.length || str.length < 2) {
+                return "";
+            }
+            if (str.length === 2) {
+                return str.charAt(0) + '*';
+            }
+            var tmp = str.split('');
+            for (var i = 1, j = tmp.length - 1; i < j; i++) {
+                tmp[i] = '*';
+            }
+            return tmp.join('');
+        }
+        //初始化，w(?Д?)w
+        var elemId = id, elemMask = id+'-mask';
+        DOM.get(elemMask).value && DOM.get(elemMask).setAttribute('value', daMa(DOM.get(elemMask).value));
+        //获得焦点的时候还原显示，方便二次修改，Σ( ° △ °|||)?
+        Event.on(elemMask, 'focus', function (ev) {
+            DOM.get(elemMask).setAttribute('value', DOM.get(elemId).value);
+        });
+        
+        Event.on(elemMask, 'blur', function (ev) {
+            DOM.get(elemMask).setAttribute('value', daMa(DOM.get(elemMask).value));
+        });
+       
+        Event.on(elemMask, 'keyup', function (ev) {
+            DOM.get(elemId).setAttribute('value', DOM.get(elemMask).value);
+        });
+    }
+
+
+    //初始化执行异步数据,绑定昵称操作，
+    getDataBingShare();
+
+    //填写完昵称后，验证昵称的唯一性和合法性
+    editNickNameAndBlur();
+
+    //保存个人资料
+    saveProfile();
+
+    //为了联盟
+    meMeDaInit('#J_uniqueName');
+    //为了部落
+    meMeDaInit('#J_realname');
+
+});
+
+})();
+                </script>
+
+                <div class="col-sub" style="z-index:0">
+                    <style>
+                        #Content .main-wrap,
+                        #content .main-wrap {
+                            margin-left: 139px;
+                        }
+
+                        #Content .col-sub,
+                        #content .col-sub {
+                            width: 139px;
+                            margin-left: -100%;
+                            *display: inline;
+                        }
+                    </style>
+                   
+
+
+                </div>
+            </div>
+        </div>
+        <!-- 页脚 -->
+      </div>
+    
+    <script src='//w.cnzz.com/c.php?id=30050853' language='JavaScript'></script>
+</body>
+</html>

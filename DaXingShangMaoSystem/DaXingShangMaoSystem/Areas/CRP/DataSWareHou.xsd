@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSWareHou" targetNamespace="http://tempuri.org/DataSWareHou.xsd" xmlns:mstns="http://tempuri.org/DataSWareHou.xsd" xmlns="http://tempuri.org/DataSWareHou.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="DaXingShangMaoXiTongConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DaXingShangMaoXiTongConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.DaXingShangMaoXiTongConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataWareHouerTableAdapter" GeneratorDataComponentClassName="DataWareHouerTableAdapter" Name="DataWareHouer" UserDataComponentName="DataWareHouerTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DaXingShangMaoXiTongConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT   B_WareHouseList.Remember, B_OrderFormPactList.ContractNumber, 
+                S_MethodOfSettlingAccountsList.MethodOfSettlingAccounts, B_SupplierList.SupplierCHName, B_StaffList.StaffCode, 
+                B_StaffList.StaffName, B_WareHouseList.RegisterTime, B_WareHouseList.ExamineNot, B_WareHouseList.Status, 
+                B_WareHouseList.CrushRedNot, S_QuFenLeiXingList.QuFenLeiXingMC
+FROM      B_WareHouseList INNER JOIN
+                B_StaffList ON B_WareHouseList.StaffID = B_StaffList.StaffID INNER JOIN
+                S_QuFenLeiXingList ON B_WareHouseList.QuFenLeiXingID = S_QuFenLeiXingList.QuFenLeiXingID INNER JOIN
+                B_OrderFormPactList ON B_WareHouseList.OrderFormPactID = B_OrderFormPactList.OrderFormPactID INNER JOIN
+                S_MethodOfSettlingAccountsList ON 
+                B_OrderFormPactList.MethodOfSettlingAccountsID = S_MethodOfSettlingAccountsList.MethodOfSettlingAccountsID INNER
+                 JOIN
+                B_SupplierList ON B_OrderFormPactList.SupplierID = B_SupplierList.SupplierID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Remember" DataSetColumn="Remember" />
+              <Mapping SourceColumn="ContractNumber" DataSetColumn="ContractNumber" />
+              <Mapping SourceColumn="MethodOfSettlingAccounts" DataSetColumn="MethodOfSettlingAccounts" />
+              <Mapping SourceColumn="SupplierCHName" DataSetColumn="SupplierCHName" />
+              <Mapping SourceColumn="StaffCode" DataSetColumn="StaffCode" />
+              <Mapping SourceColumn="StaffName" DataSetColumn="StaffName" />
+              <Mapping SourceColumn="RegisterTime" DataSetColumn="RegisterTime" />
+              <Mapping SourceColumn="ExamineNot" DataSetColumn="ExamineNot" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="CrushRedNot" DataSetColumn="CrushRedNot" />
+              <Mapping SourceColumn="QuFenLeiXingMC" DataSetColumn="QuFenLeiXingMC" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataPeiHuoDanTableAdapter" GeneratorDataComponentClassName="DataPeiHuoDanTableAdapter" Name="DataPeiHuoDan" UserDataComponentName="DataPeiHuoDanTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DaXingShangMaoXiTongConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT   B_ConverList.P_Remember, B_ConverList.payName, B_ConverList.furlName, 
+                S_SpouseBRanchList.SpouseBRanchName, S_StockPlaceList.StockPlaceName, B_ConverList.RegisterName, 
+                B_ConverList.RegisterTime, B_ConverList.ExamineName, B_ConverList.ExamineTime, B_ConverList.Remarks, 
+                B_ConverList.ExamineNot
+FROM      B_ConverList INNER JOIN
+                S_SpouseBRanchList ON B_ConverList.SpouseBRanchID = S_SpouseBRanchList.SpouseBRanchID INNER JOIN
+                S_StockPlaceList ON B_ConverList.StockPlaceID = S_StockPlaceList.StockPlaceID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="P_Remember" DataSetColumn="P_Remember" />
+              <Mapping SourceColumn="payName" DataSetColumn="payName" />
+              <Mapping SourceColumn="furlName" DataSetColumn="furlName" />
+              <Mapping SourceColumn="SpouseBRanchName" DataSetColumn="SpouseBRanchName" />
+              <Mapping SourceColumn="StockPlaceName" DataSetColumn="StockPlaceName" />
+              <Mapping SourceColumn="RegisterName" DataSetColumn="RegisterName" />
+              <Mapping SourceColumn="RegisterTime" DataSetColumn="RegisterTime" />
+              <Mapping SourceColumn="ExamineName" DataSetColumn="ExamineName" />
+              <Mapping SourceColumn="ExamineTime" DataSetColumn="ExamineTime" />
+              <Mapping SourceColumn="Remarks" DataSetColumn="Remarks" />
+              <Mapping SourceColumn="ExamineNot" DataSetColumn="ExamineNot" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSWareHou" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSWareHou" msprop:Generator_UserDSName="DataSWareHou">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataWareHouer" msprop:Generator_TableClassName="DataWareHouerDataTable" msprop:Generator_TableVarName="tableDataWareHouer" msprop:Generator_RowChangedName="DataWareHouerRowChanged" msprop:Generator_TablePropName="DataWareHouer" msprop:Generator_RowDeletingName="DataWareHouerRowDeleting" msprop:Generator_RowChangingName="DataWareHouerRowChanging" msprop:Generator_RowEvHandlerName="DataWareHouerRowChangeEventHandler" msprop:Generator_RowDeletedName="DataWareHouerRowDeleted" msprop:Generator_RowClassName="DataWareHouerRow" msprop:Generator_UserTableName="DataWareHouer" msprop:Generator_RowEvArgName="DataWareHouerRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Remember" msprop:Generator_ColumnVarNameInTable="columnRemember" msprop:Generator_ColumnPropNameInRow="Remember" msprop:Generator_ColumnPropNameInTable="RememberColumn" msprop:Generator_UserColumnName="Remember" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContractNumber" msprop:Generator_ColumnVarNameInTable="columnContractNumber" msprop:Generator_ColumnPropNameInRow="ContractNumber" msprop:Generator_ColumnPropNameInTable="ContractNumberColumn" msprop:Generator_UserColumnName="ContractNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MethodOfSettlingAccounts" msprop:Generator_ColumnVarNameInTable="columnMethodOfSettlingAccounts" msprop:Generator_ColumnPropNameInRow="MethodOfSettlingAccounts" msprop:Generator_ColumnPropNameInTable="MethodOfSettlingAccountsColumn" msprop:Generator_UserColumnName="MethodOfSettlingAccounts" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SupplierCHName" msprop:Generator_ColumnVarNameInTable="columnSupplierCHName" msprop:Generator_ColumnPropNameInRow="SupplierCHName" msprop:Generator_ColumnPropNameInTable="SupplierCHNameColumn" msprop:Generator_UserColumnName="SupplierCHName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StaffCode" msprop:Generator_ColumnVarNameInTable="columnStaffCode" msprop:Generator_ColumnPropNameInRow="StaffCode" msprop:Generator_ColumnPropNameInTable="StaffCodeColumn" msprop:Generator_UserColumnName="StaffCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StaffName" msprop:Generator_ColumnVarNameInTable="columnStaffName" msprop:Generator_ColumnPropNameInRow="StaffName" msprop:Generator_ColumnPropNameInTable="StaffNameColumn" msprop:Generator_UserColumnName="StaffName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RegisterTime" msprop:Generator_ColumnVarNameInTable="columnRegisterTime" msprop:Generator_ColumnPropNameInRow="RegisterTime" msprop:Generator_ColumnPropNameInTable="RegisterTimeColumn" msprop:Generator_UserColumnName="RegisterTime" type="xs:string" minOccurs="0" />
+              <xs:element name="ExamineNot" msprop:Generator_ColumnVarNameInTable="columnExamineNot" msprop:Generator_ColumnPropNameInRow="ExamineNot" msprop:Generator_ColumnPropNameInTable="ExamineNotColumn" msprop:Generator_UserColumnName="ExamineNot" type="xs:string" />
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" type="xs:string" />
+              <xs:element name="CrushRedNot" msprop:Generator_ColumnVarNameInTable="columnCrushRedNot" msprop:Generator_ColumnPropNameInRow="CrushRedNot" msprop:Generator_ColumnPropNameInTable="CrushRedNotColumn" msprop:Generator_UserColumnName="CrushRedNot" type="xs:string" />
+              <xs:element name="QuFenLeiXingMC" msprop:Generator_ColumnVarNameInTable="columnQuFenLeiXingMC" msprop:Generator_ColumnPropNameInRow="QuFenLeiXingMC" msprop:Generator_ColumnPropNameInTable="QuFenLeiXingMCColumn" msprop:Generator_UserColumnName="QuFenLeiXingMC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataPeiHuoDan" msprop:Generator_TableClassName="DataPeiHuoDanDataTable" msprop:Generator_TableVarName="tableDataPeiHuoDan" msprop:Generator_TablePropName="DataPeiHuoDan" msprop:Generator_RowDeletingName="DataPeiHuoDanRowDeleting" msprop:Generator_RowChangingName="DataPeiHuoDanRowChanging" msprop:Generator_RowEvHandlerName="DataPeiHuoDanRowChangeEventHandler" msprop:Generator_RowDeletedName="DataPeiHuoDanRowDeleted" msprop:Generator_UserTableName="DataPeiHuoDan" msprop:Generator_RowChangedName="DataPeiHuoDanRowChanged" msprop:Generator_RowEvArgName="DataPeiHuoDanRowChangeEvent" msprop:Generator_RowClassName="DataPeiHuoDanRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="P_Remember" msprop:Generator_ColumnVarNameInTable="columnP_Remember" msprop:Generator_ColumnPropNameInRow="P_Remember" msprop:Generator_ColumnPropNameInTable="P_RememberColumn" msprop:Generator_UserColumnName="P_Remember" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="payName" msprop:Generator_ColumnVarNameInTable="columnpayName" msprop:Generator_ColumnPropNameInRow="payName" msprop:Generator_ColumnPropNameInTable="payNameColumn" msprop:Generator_UserColumnName="payName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="furlName" msprop:Generator_ColumnVarNameInTable="columnfurlName" msprop:Generator_ColumnPropNameInRow="furlName" msprop:Generator_ColumnPropNameInTable="furlNameColumn" msprop:Generator_UserColumnName="furlName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SpouseBRanchName" msprop:Generator_ColumnVarNameInTable="columnSpouseBRanchName" msprop:Generator_ColumnPropNameInRow="SpouseBRanchName" msprop:Generator_ColumnPropNameInTable="SpouseBRanchNameColumn" msprop:Generator_UserColumnName="SpouseBRanchName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StockPlaceName" msprop:Generator_ColumnVarNameInTable="columnStockPlaceName" msprop:Generator_ColumnPropNameInRow="StockPlaceName" msprop:Generator_ColumnPropNameInTable="StockPlaceNameColumn" msprop:Generator_UserColumnName="StockPlaceName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RegisterName" msprop:Generator_ColumnVarNameInTable="columnRegisterName" msprop:Generator_ColumnPropNameInRow="RegisterName" msprop:Generator_ColumnPropNameInTable="RegisterNameColumn" msprop:Generator_UserColumnName="RegisterName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RegisterTime" msprop:Generator_ColumnVarNameInTable="columnRegisterTime" msprop:Generator_ColumnPropNameInRow="RegisterTime" msprop:Generator_ColumnPropNameInTable="RegisterTimeColumn" msprop:Generator_UserColumnName="RegisterTime" type="xs:string" minOccurs="0" />
+              <xs:element name="ExamineName" msprop:Generator_ColumnVarNameInTable="columnExamineName" msprop:Generator_ColumnPropNameInRow="ExamineName" msprop:Generator_ColumnPropNameInTable="ExamineNameColumn" msprop:Generator_UserColumnName="ExamineName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ExamineTime" msprop:Generator_ColumnVarNameInTable="columnExamineTime" msprop:Generator_ColumnPropNameInRow="ExamineTime" msprop:Generator_ColumnPropNameInTable="ExamineTimeColumn" msprop:Generator_UserColumnName="ExamineTime" type="xs:string" minOccurs="0" />
+              <xs:element name="Remarks" msprop:Generator_ColumnVarNameInTable="columnRemarks" msprop:Generator_ColumnPropNameInRow="Remarks" msprop:Generator_ColumnPropNameInTable="RemarksColumn" msprop:Generator_UserColumnName="Remarks" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ExamineNot" msprop:Generator_ColumnVarNameInTable="columnExamineNot" msprop:Generator_ColumnPropNameInRow="ExamineNot" msprop:Generator_ColumnPropNameInTable="ExamineNotColumn" msprop:Generator_UserColumnName="ExamineNot" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

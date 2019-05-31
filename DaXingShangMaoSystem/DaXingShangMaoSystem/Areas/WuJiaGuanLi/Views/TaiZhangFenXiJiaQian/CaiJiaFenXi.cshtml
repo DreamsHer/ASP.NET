@@ -1,0 +1,306 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <title>采价分析_录入</title>
+    <style type="text/css">
+        .container {
+            width: 98%;
+            padding-top: 4px;
+        }
+
+        .panel-heading {
+            font-size: 16px;
+        }
+
+        .panel-body {
+            padding: 0;
+            border-left: 3px solid #377ab7;
+            border-bottom: 3px solid #377ab7;
+            border-right: 3px solid #377ab7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="caijiafenxi">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <span style="padding-left:14px;">采价分析_录入</span>                       
+                    </div>
+                </div>
+                <div class="panel-body" style="width:100%;height:550px; background:#f0edf1;">
+                    <table id="tabShangPin" style="width:100%">
+                        <tr>
+                            <th w_num="total_line">序号</th>
+                            <th w_index="PurchaseID" w_hidden="true">PurchaseID</th>
+                            <th w_index="GoodsCode">商品代码</th>
+                            <th w_index="GoodsName">商品名称</th>
+                            <th w_index="SpecificationsModel">规格型号</th>
+                            <th w_index="GoodsChopName">商标品牌</th>
+                            <th w_index="EstimateUnitName">计量单位</th>
+                            <th w_index="RetailMonovalent">本商场零售价</th>
+                            <th w_index="Price1">百货大楼</th>
+                            <th w_index="Price2">超市</th>
+                            <th w_index="Price3">购物中心</th>
+                            <th w_index="Price4">华联</th>
+                            <th w_index="ToVoidNo" w_render="crearViewButton">操作</th>
+                        </tr>
+                    </table>
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group" style="margin-top:15px;">
+                            <label class="col-md-1 control-label reset">采购员</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="PurchasingAgent" id="PurchasingAgent">
+                            </div>
+                            <label class="col-md-1 control-label reset">采价日期</label>
+                            <div class="col-md-2 reset">
+                                <input type="date" class="form-control" name="PriceData" id="PriceData">
+                            </div>
+                            <label class="col-md-1 control-label reset">商品名称</label>
+                            <div class="col-md-2 reset">
+                                <select class="form-control" name="GoodsDetailID" id="GoodsDetailID"></select>
+                            </div>
+                            <label class="col-md-1 control-label reset">采购加价率</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="PurchasePriceMarkup" id="PurchasePriceMarkup"
+                                       onkeyup="value=value.replace(/[^\d\.]/g,'')" placeholder="只能输入小数">
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:10px;">
+                            <label class="col-md-1 control-label reset">采价地点1</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="PricePlace" id="PricePlace">
+                            </div>
+                            <label class="col-md-1 control-label reset">采价地点2</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="PricePlace2" id="PricePlace2">
+                            </div>
+                            <label class="col-md-1 control-label reset">采价地点3</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="PricePlace3" id="PricePlace3">
+                            </div>
+                            <label class="col-md-1 control-label reset">采价地点4</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="PricePlace4" id="PricePlace4">
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:10px;">
+                            <label class="col-md-1 control-label reset">采价零售1</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="Price1" id="Price1"
+                                       onkeyup="value=value.replace(/[^\d\.]/g,'')" placeholder="只能输入数字">
+                            </div>
+                            <label class="col-md-1 control-label reset">采价零售2</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="Price2" id="Price2"
+                                       onkeyup="value=value.replace(/[^\d\.]/g,'')" placeholder="只能输入数字">
+                            </div>
+                            <label class="col-md-1 control-label reset">采价零售3</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="Price3" id="Price3"
+                                       onkeyup="value=value.replace(/[^\d\.]/g,'')" placeholder="只能输入数字">
+                            </div>
+                            <label class="col-md-1 control-label reset">采价零售4</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="Price4" id="Price4"
+                                       onkeyup="value=value.replace(/[^\d\.]/g,'')" placeholder="只能输入数字">
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:10px;">
+                            <label class="col-md-1 control-label reset">不含税进价</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="NoAdvanceBid" id="NoAdvanceBid"
+                                       onkeyup="value=value.replace(/[^\d\.]/g,'')" placeholder="只能输入数字">
+                            </div>
+                            <label class="col-md-1 control-label reset">含税进价</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="AdvanceBid" id="AdvanceBid"
+                                       onkeyup="value=value.replace(/[^\d\.]/g,'')" placeholder="只能输入数字">
+                            </div>
+                            <label class="col-md-1 control-label reset">最后进价</label>
+                            <div class="col-md-2 reset">
+                                <input type="text" class="form-control" name="LastBid" id="LastBid"
+                                       onkeyup="value=value.replace(/[^\d\.]/g,'')" placeholder="只能输入数字">
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-success form-control" id="btnXinZeng">
+                                    <span class="glyphicon glyphicon-plus"></span> 添加
+                                </button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-warning form-control" id="btnFangQi">
+                                    <span class="glyphicon glyphicon-remove"></span> 放弃
+                                </button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-primary form-control" id="btnTuiChu">
+                                    <span class="glyphicon glyphicon-off"></span> 退出
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    @*页面加载及查询*@
+    <script type="text/javascript">
+        var tabShangPin;
+        var purchaseId = 0;
+        $(document).ready(function () {           
+            //商品名称
+            $.post("/WuJiaGuanLi/TaiZhangFenXiJiaQian/SelectGoodsDetailName", function (data) {
+                selectLoadData("GoodsDetailID", data);
+            });           
+        });
+        $(function () {
+            tabShangPin = $.fn.bsgrid.init('tabShangPin', {
+                url: '/WuJiaGuanLi/TaiZhangFenXiJiaQian/SelectCaiGouFenXi',
+                autoLoad: false,//自动加载数据
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                rowSelectedColor: true,//是否显示选中行背景色
+                pageSize: 7,//默认页面大小
+                pageSizeSelect: true,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置               
+            });
+            tabShangPin.search();
+        })
+        
+        //新增采价信息
+        $("#btnXinZeng").click(function () {
+            var GoodsDetailID = $("#GoodsDetailID").val();
+            var PurchasingAgent = $("#PurchasingAgent").val();
+            var PriceData = $("#PriceData").val();
+            var PricePlace = $("#PricePlace").val();
+            var PricePlace2 = $("#PricePlace2").val();
+            var PricePlace3 = $("#PricePlace3").val();
+            var PricePlace4 = $("#PricePlace4").val();
+            var Price1 = $("#Price1").val();
+            var Price2 = $("#Price2").val();
+            var Price3 = $("#Price3").val();
+            var Price4 = $("#Price4").val();
+            var NoAdvanceBid = $("#NoAdvanceBid").val();
+            var AdvanceBid = $("#AdvanceBid").val();
+            var PurchasePriceMarkup = $("#PurchasePriceMarkup").val();
+            var LastBid = $("#LastBid").val();
+            if (GoodsDetailID != '' && PurchasingAgent != '' && PriceData != '' && PricePlace != '' && PricePlace2 != '' && PricePlace3 != ''
+                && PricePlace4 != '' && Price1 != '' && Price2 != '' && Price3 != '' && Price4 != '' && NoAdvanceBid != '' && AdvanceBid != ''
+                && PurchasePriceMarkup != '' && LastBid != '') {
+                $.post("/WuJiaGuanLi/TaiZhangFenXiJiaQian/XinZengCaiGouBiao", {
+                    GoodsDetailID: GoodsDetailID,
+                    PurchasingAgent: PurchasingAgent,
+                    PriceData: PriceData,
+                    PricePlace: PricePlace,
+                    PricePlace2: PricePlace2,
+                    PricePlace3: PricePlace3,
+                    PricePlace4: PricePlace4,
+                    Price1: Price1,
+                    Price2: Price2,
+                    Price3: Price3,
+                    Price4: Price4,
+                    NoAdvanceBid: NoAdvanceBid,
+                    AdvanceBid: AdvanceBid,
+                    PurchasePriceMarkup: PurchasePriceMarkup,
+                    LastBid: LastBid,
+                }, function (data) {
+                    if (data == "success") {
+                        layer.alert('新增成功', { icon: 1, title: '提示' });
+                        tabShangPin.refreshPage(); //刷新table
+                    }
+                    else {
+                        layer.alert('新增失败', { icon: 2, title: '提示' });
+                    }
+                });
+            }
+            else {
+                layer.alert('请输入完必填数据', { icon: 3, title: '提示' });
+            }
+        });
+
+        //自定义权限操作按钮列
+        function crearViewButton(record, rowIndex, colIndex, options) {
+            var purchaseId = record.ToVoidNo;
+            return '<button type="button" style=display:compact; class="btn btn-danger" onclick="Delete(' + record.PurchaseID + ')">删除</button>';
+        }
+
+        function Delete(purchaseId) {//通过主键删除角色
+            layer.confirm("确定删除？", {
+                icon: 3,
+                btn: ['确定', '取消']
+                //按钮
+            }, function (layerIndex) {
+                layer.close(layerIndex);//关闭提示框
+                $.post("/WuJiaGuanLi/TaiZhangFenXiJiaQian/DeletePurchase",
+                        { purchaseId: purchaseId }, function (msg) {
+                            if (msg == "success") {
+                                layer.alert('删除成功', { icon: 1, title: '提示' });
+                                tabShangPin.refreshPage(); //刷新table
+                            }
+                            else {
+                                layer.alert('删除失败', { icon: 2, title: '提示' });
+                            }
+                        });
+            });
+        };
+
+
+
+        //删除采购信息        
+        $("#btnShanChu").click(function () {
+            var selectRowIndex = tabShangPin.getSelectedRowIndex();//获取选中行的索引值
+            if (selectRowIndex >= 0) {
+                if (window.confirm("您确定要删除？")) {
+                    var purchaseId = tabShangPin.getColumnValue(selectRowIndex, "PurchaseID");
+                    //查询修改
+                    $.post("/WuJiaGuanLi/TaiZhangFenXiJiaQian/DeletePurchase",
+                        { purchaseId: purchaseId }, function (msg) {
+                            if (msg == "success") {
+                                layer.alert('删除成功', { icon: 1, title: '提示' });                               
+                                tabShangPin.refreshPage(); //刷新table
+                            }
+                            else {
+                                layer.alert('删除失败', { icon: 2, title: '提示' });
+                            }
+                        });
+                }
+            }
+            else {
+                layer.alert('请选择需要删除的数据', { icon: 2, title: '提示' });
+            }
+        });
+
+        //放弃
+        $("#btnFangQi").click(function () {
+            document.location.href = "/WuJiaGuanLi/TaiZhangFenXiJiaQian/CaiJiaFenXi";
+        })
+
+        //页面关闭按钮
+        $(function () {          
+            $("#btnTuiChu").click(function () {
+                $("#caijiafenxi").hide();
+            });
+        });
+
+    </script>
+</body>
+</html>

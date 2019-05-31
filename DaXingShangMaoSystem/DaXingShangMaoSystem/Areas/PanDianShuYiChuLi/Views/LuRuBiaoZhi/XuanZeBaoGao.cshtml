@@ -1,0 +1,407 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>XuanZeBaoGao</title>
+
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+
+
+    <style>
+        .container {
+            background: #fff;
+            width: 100%;
+        }
+
+        .reset-padding {
+            padding: 0 5px;
+        }
+
+        .reset {
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        label.Size {
+            font-size: 60px;
+        }
+
+        label {
+            font-weight: normal;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="form-group">
+                        
+                        <span class="h4"><b>录入标志</b></span>
+                        <div class="pull-right">
+                            <button class="form-control btn-sm btn btn-info" id="Colse"><span class="glyphicon glyphicon-remove">关闭</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-body" style="background:#f0edf1;">
+
+                    <div class="col-lg-4">
+                        <div class="row" style="margin-top:10px;">
+                            <div class="form-group">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-3">
+                                    <label class="control-label reset">盘点编号</label>
+                                </div>
+                                <div class="col-md-5">
+                                    <input type="text" id="Remter" class="form-control" placeholder="例：0001"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top:30px;">
+                            <div class="form-group">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-3">
+                                    <label class="control-label reset">盘点日期:</label>
+                                </div>
+                                <div class="col-md-5">
+                                    <input type="date" id="PablData" class="form-control"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top:30px;">
+                            <div class="form-group">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-3">
+                                    <label class="control-label reset" style="margin-left:20px;">部门:</label>
+                                </div>
+                                <div class="col-md-5">
+                                    <select class="form-control" id="DrugType"></select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row col-lg-6" style="border: 3px solid #d8cddc; margin-left:120px;margin-top:30px;">
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                    <input type="radio" name="PanDiana" value="盘点" checked /><label class="PanDiana">未审核</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="radio" name="PanDiana" value="局部盘点" /><label class="PanDiana">录入完成</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row col-lg-12" style="border: 3px solid #d8cddc; margin-left:120px;margin-top:30px;">
+                            <div class="form-group">
+                                <div class="col-md-6">
+                                    <input type="radio" name="CommodityType" value="盘点" checked /><label class="PanDiana">自营商品盘点</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="radio" name="CommodityType" value="局部盘点" /><label class="PanDiana">联营商品盘点</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="radio" name="CommodityType" value="局部盘点" /><label class="PanDiana">租赁商品盘点</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row col-lg-12" style="margin-top:30px;">
+                            <div class="form-group">
+                                <div class="col-md-4"></div>
+                                <div class="col-md-4">
+                                    <button class="form-control btn-block btn btn-primary" type="button" id="TianJia"><span class="glyphicon glyphicon-search">查 询</span></button>
+                                </div>
+                                <div class="col-md-4">
+                                    <button class="btn btn-block" type="button" id="SexZhi"><span class="glyphicon glyphicon-remove">重 置</span></button>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-1"></div>
+
+                    <div class="col-lg-7">
+                        <div style="margin-top:20px;margin-left:10px;overflow:auto;width:100%;height:430px;background:#fff">
+                            <table id="ShangPin">
+                                <tr>
+                                    <th w_num="total_line" width="10%">序号</th>
+                                    <th w_index="CheckRermeberID" w_hidden="true">盘点计划ID</th>
+
+                                    <th w_index="DrugType" w_hidden="true">部门</th>
+                                    <th w_index="StockPlaceID" w_hidden="true">库存ID</th>
+                                    <th w_index="OrderFormPactID" w_hidden="true">合同</th>
+                                    <th w_index="GoodsClassifyID" w_hidden="true">商品分类</th>
+                                    <th w_index="GoodsChopID" w_hidden="true">商标</th>
+                                    <th w_index="ExamineName" w_hidden="true">登记人</th>
+                                    <th w_index="ExamineTime" w_hidden="true">登记时间</th>
+                                    <th w_index="SupplierID" w_hidden="true">盘点ID</th>
+
+                                    <th w_index="staffId" w_hidden="true">预审人ID</th>
+                                    <th w_index="TaxBids" w_hidden="true">盈亏数金额</th>
+                                    
+
+                                    <th w_index="Remember">编号</th>
+                                    <th w_index="PablData">盘点日期</th>
+                                    <th w_index="CommodityType">部门类型</th>
+                                    <th w_index="StockPlaceName">库存地点</th>
+                                    <th w_render="bsgridSetCreh">状态</th>
+                                    <th w_index="Entering" w_hidden="true">状态</th>
+                                    <th w_index="EnteringTime">录入完成时间</th>
+
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="row" style="margin-top:4px;">
+                            <div class="form-group">
+                                <div class="col-md-3 col-lg-offset-3">
+                                    <button class="btn btn-info" type="button" onclick="saveShenHeBtn(true)"><span class="glyphicon glyphicon-ok">设定录入完成标志</span></button>
+                                </div>
+                                <div class="col-md-3">
+                                    <button class="btn btn-danger" type="button" onclick="saveQuXiaon(true)"><span class="glyphicon glyphicon-remove">取消录入完成标志</span></button>
+                                </div>
+                                <div class="col-md-3">
+                                    <input class="form-control" type="hidden" id="LuRuShiJian" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div><!--大row-->
+
+
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script><!--bootstrap-->
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.2.min.js"></script><!--bootstrap-->
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script><!--bootstrap-->
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+
+
+    <script>
+        var ShangPinId;
+        var CheckRermeberId;
+
+        //点击关闭
+        $("#Colse").click(function () {
+            $('body').remove();
+        });
+
+        $(document).ready(function () {
+            //主界面商品
+            ShangPin = $.fn.bsgrid.init('ShangPin', {
+                url: '/PanDianShuYiChuLi/LuRuBiaoZhi/SelectCheckgh',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                pageSize: 9,
+                pageSizeSelect: false,
+                pagingLittleToolbar: true,
+                pagingToolbarAlign: "left",
+            });
+            ShangPin.search();
+            //部门
+            $.post("/PanDianShuYiChuLi/GoodsWeiHu/PanlBuMen", function (data) {
+                selectLoadData("DrugType", data);
+            });
+
+           
+            //录入时间
+            $.post("/PanDianShuYiChuLi/LuRuBiaoZhi/SelectTime", function (data) {
+                $("#LuRuShiJian").val(data);
+            });
+        });
+
+
+        //设定录入完成
+        function saveShenHeBtn(state) {
+            var rowIndex = ShangPin.getSelectedRowIndex();//获取选中的行
+
+            var CheckRermeberID= ShangPin.getColumnValue(rowIndex, "CheckRermeberID");
+            var Remember= ShangPin.getColumnValue(rowIndex, "Remember");
+            var PablData= ShangPin.getColumnValue(rowIndex, "PablData");
+            var CommodityType= ShangPin.getColumnValue(rowIndex, "CommodityType");
+            var DrugType= ShangPin.getColumnValue(rowIndex, "DrugType");
+            var StockPlaceID= ShangPin.getColumnValue(rowIndex, "StockPlaceID");
+            var OrderFormPactID= ShangPin.getColumnValue(rowIndex, "OrderFormPactID");
+            var GoodsClassifyID= ShangPin.getColumnValue(rowIndex, "GoodsClassifyID");
+            var GoodsChopID= ShangPin.getColumnValue(rowIndex, "GoodsChopID");
+            var ExamineName= ShangPin.getColumnValue(rowIndex, "ExamineName");
+            var ExamineTime = ShangPin.getColumnValue(rowIndex, "ExamineTime");
+
+            var DrugTypeID = ShangPin.getColumnValue(rowIndex, "SupplierID");
+            var StaffID = ShangPin.getColumnValue(rowIndex, "staffId");
+            var YingKuiMoney = ShangPin.getColumnValue(rowIndex, "TaxBids");
+
+            var EnteringTime = $("#LuRuShiJian").val();//录入时间
+
+            if (rowIndex > -1) {
+                layer.confirm("是否设定标志？", {
+                    icon: 3,
+                    btn: ['确定', '取消']
+                    //按钮
+                }, function (layerIndex) {
+                    layer.close(layerIndex);//关闭提示框
+                    $.post("/PanDianShuYiChuLi/LuRuBiaoZhi/SheDingCheckgh?state=" + state, {
+                        CheckRermeberID: CheckRermeberID,
+                        Remter: Remember,
+                        PablData: PablData,
+                        CommodityType: CommodityType,
+                        DrugType:DrugType,
+                        StockPlaceID: StockPlaceID,
+                        OrderFormPactID: OrderFormPactID,
+                        GoodsClassifyID: GoodsClassifyID,
+                        GoodsChopID: GoodsChopID,
+                        ExamineName: ExamineName,
+                        ExamineTime: ExamineTime,
+                        EnteringTime: EnteringTime,
+                        
+                        DrugTypeID: DrugTypeID,
+                        StaffID: StaffID,
+                        YingKuiMoney: YingKuiMoney
+
+                    }, function (mess) {
+                        layer.alert("录入成功！。。。", { icon: 6, title: '温馨小提示：' });
+                        if (mess == "succsee") {
+                            if (mess.returnJson) {
+                                if (data.State == true || data.State == "true") {
+                                }
+                            }
+                        }
+                        document.location.href = "/PanDianShuYiChuLi/LuRuBiaoZhi/XuanZeBaoGao";
+                    });
+
+                });
+            }
+            else {
+                layer.alert("请选择需要录入的数据", { icon: 6, title: '温馨小提示：' });
+            }
+        }
+
+        //取消录入
+        
+        function saveQuXiaon(state) {
+            var rowIndex = ShangPin.getSelectedRowIndex();//获取选中的行
+
+            var CheckRermeberID = ShangPin.getColumnValue(rowIndex, "CheckRermeberID");
+            var Remember = ShangPin.getColumnValue(rowIndex, "Remember");
+            var PablData = ShangPin.getColumnValue(rowIndex, "PablData");
+            var CommodityType = ShangPin.getColumnValue(rowIndex, "CommodityType");
+            var DrugType = ShangPin.getColumnValue(rowIndex, "DrugType");
+            var StockPlaceID = ShangPin.getColumnValue(rowIndex, "StockPlaceID");
+            var OrderFormPactID = ShangPin.getColumnValue(rowIndex, "OrderFormPactID");
+            var GoodsClassifyID = ShangPin.getColumnValue(rowIndex, "GoodsClassifyID");
+            var GoodsChopID = ShangPin.getColumnValue(rowIndex, "GoodsChopID");
+            var ExamineName = ShangPin.getColumnValue(rowIndex, "ExamineName");
+            var ExamineTime = ShangPin.getColumnValue(rowIndex, "ExamineTime");
+
+            var DrugTypeID = ShangPin.getColumnValue(rowIndex, "SupplierID");
+            var StaffID = ShangPin.getColumnValue(rowIndex, "staffId");
+            var YingKuiMoney = ShangPin.getColumnValue(rowIndex, "TaxBids");
+
+            if (rowIndex > -1) {
+                layer.confirm("是否取消标志？", {
+                    icon: 3,
+                    btn: ['确定', '取消']
+                    //按钮
+                }, function (layerIndex) {
+                    layer.close(layerIndex);//关闭提示框
+                    $.post("/PanDianShuYiChuLi/LuRuBiaoZhi/QuXiaogCheckgh?state=" + state, {
+                        CheckRermeberID: CheckRermeberID,
+                        Remter: Remember,
+                        PablData: PablData,
+                        CommodityType: CommodityType,
+                        DrugType: DrugType,
+                        StockPlaceID: StockPlaceID,
+                        OrderFormPactID: OrderFormPactID,
+                        GoodsClassifyID: GoodsClassifyID,
+                        GoodsChopID: GoodsChopID,
+                        ExamineName: ExamineName,
+                        ExamineTime: ExamineTime,
+                        
+                        DrugTypeID: DrugTypeID,
+                        StaffID: StaffID,
+                        YingKuiMoney: YingKuiMoney
+                       
+                    }, function (mess) {
+                        layer.alert("取消成功", { icon: 6, title: '温馨小提示：' });
+                        if (mess == "succsee") {
+                            if (mess.returnJson) {
+                                if (data.State == true || data.State == "true") {
+                                }
+                            }
+                        }
+                        document.location.href = "/PanDianShuYiChuLi/LuRuBiaoZhi/XuanZeBaoGao";
+                    });
+
+                });
+            }
+            else {
+                layer.alert("请选择需要录入的数据", { icon: 6, title: '温馨小提示：' });
+            }
+        }
+
+        //设置生效状态
+        function bsgridSetCreh(record, rowIndex, colIndex, options) {//自定义列的代码（二）
+            var toVoidNow = ShangPin.getRecordIndexValue(record, "Entering");
+            toVoidNow = record.Entering;
+            if (toVoidNow == true || toVoidNow == "true") {
+                return '<span style="color:blue">录入完成</span>';
+            } else {
+                return '<span style="color:red">未审核</span>';
+            }
+        }
+
+
+
+        //查询
+        ShangPinId = $.fn.bsgrid.init('ShangPin', {
+            url: '/PanDianShuYiChuLi/LuRuBiaoZhi/TiaoJianSelectCheckgh',
+            autoLoad: false,
+            stripeRows: true,
+            rowHoverColor: true,
+            pageSize: 10,
+            pageSizeSelect: false,
+            pagingLittleToolbar: true,
+            pagingToolbarAlign: "left",
+        });
+        $("#TianJia").click(function () {
+            var Remter = $("#Remter").val();
+
+            if (Remter!='') {
+                ShangPinId.search({ remter: Remter });
+            }
+            else {
+                layer.alert("请输入查询条件！起码一个", { icon: 6, title: '温馨小提示：' });
+            }
+
+        });
+
+        $("#SexZhi").click(function () {
+            document.location.href = "/PanDianShuYiChuLi/LuRuBiaoZhi/XuanZeBaoGao";
+        })
+       
+
+    </script>
+
+</body>
+</html>

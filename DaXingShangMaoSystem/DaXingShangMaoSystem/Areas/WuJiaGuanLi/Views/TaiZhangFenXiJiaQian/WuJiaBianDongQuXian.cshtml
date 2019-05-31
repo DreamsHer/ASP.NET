@@ -1,0 +1,244 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <title>物价变动曲线</title>
+    <style type="text/css">
+        .container {
+            width: 98%;
+            padding-top: 4px;
+        }
+
+        .panel-heading {
+            font-size: 16px;
+        }
+
+        .panel-body {
+            padding: 0;
+            border-left: 3px solid #377ab7;
+            border-bottom: 3px solid #377ab7;
+            border-right: 3px solid #377ab7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="biandongquxian">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <span style="padding-left:14px;">物价变动曲线</span>                       
+                    </div>
+                </div>
+                <div class="panel-body" style="width:100%;height:550px;background:#f0edf1">
+                    <div class="col-md-6 col-sm-6 col-xs-6" style="margin-top:15px;">
+                        <table id="tabShangPin" style="width:100%;">
+                            <tr>
+                                <th w_num="total_line">序号</th>
+                                <th w_index="GoodsBianJiaID" w_hidden="true">GoodsBianJiaID</th>
+                                <th w_index="GoodsCode">商品代码</th>
+                                <th w_index="GoodsName">商品名称</th>
+                                <th w_index="GoodsTiaoMa">商品条码</th>
+                                <th w_index="RetailMonovalent">原零售单价</th>
+                                <th w_index="NewMonovalent">新零售单价</th>
+                            </tr>
+                        </table>
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group" style="margin-top:15px;">
+                                <label class="col-md-2 control-label reset">登记时间</label>
+                                <div class="col-md-4 reset">
+                                    <input type="date" class="form-control" name="GoodsCode" id="GoodsCode">
+                                </div>
+                                <div class="col-md-4 reset">
+                                    <input type="date" class="form-control" name="GoodsCode" id="GoodsCode">
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-top:50px;">
+                                <div class="col-sm-2 col-sm-offset-2">
+                                    <button type="button" class="btn btn-success form-control" id="btnXinZeng">
+                                        <span class="glyphicon glyphicon-plus"></span> 增加
+                                    </button>
+                                </div>
+                                <div class="col-sm-2">
+                                    <button type="button" class="btn btn-danger form-control" id="btnShanChu">
+                                        <span class="glyphicon glyphicon-trash"></span> 删除
+                                    </button>
+                                </div>
+                                <div class="col-sm-2">
+                                    <button type="button" class="btn btn-info form-control" id="btnbtnXanShi">
+                                        <span class="glyphicon glyphicon-screenshot"></span> 显示
+                                    </button>
+                                </div>
+                                <div class="col-sm-2">
+                                    <button type="button" class="btn btn-warning form-control" id="btnTuiChu">
+                                        <span class="glyphicon glyphicon-off"></span> 退出
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-5" style="margin-top:15px;">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*增加商品*@
+    <div class="modal" id="XuanZeShangPin">
+        <div class="modal-dialog" style="width:650px;height:500px;">
+            <div class="modal-header" style="background:#a8d7ef;">
+                <span>新增物价变价</span>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body" style="background:#f0edf1;">
+                <table id="tabXuanZeShangPin" style="width:100%;">
+                    <tr>
+                        <th w_num="total_line">序号</th>
+                        <th w_index="GoodsBianJiaID" w_hidden="true">GoodsBianJiaID</th>
+                        <th w_index="GoodsCode">商品代码</th>
+                        <th w_index="GoodsName">商品名称</th>
+                        <th w_index="GoodsTiaoMa">商品条码</th>
+                        <th w_index="RetailMonovalent">原零售单价</th>
+                        <th w_index="NewMonovalent">新零售单价</th>
+                    </tr>
+                </table>
+                <form class="form-horizontal" role="form">
+                    <div class="form-group" style="margin-top:10px;">
+                        <div class="col-sm-2 col-sm-offset-4">
+                            <button type="button" class="btn btn-primary form-control" id="btnXuanZeAnNiu">选择</button>
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="button" class="btn btn-danger form-control" data-dismiss="modal">退出</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    @*页面加载及查询*@
+    <script type="text/javascript">
+        var tabShangPin;
+        var tabXuanZeShangPin;
+        var GoodsIDsQuan;
+        var JieShouGoodelShuZu = new Array();
+        var JieShouID = new Array();
+        $(document).ready(function () {           
+           
+        });
+
+        //添加物价变动商品
+        $(function () {
+            //查询商品
+            $("#btnXinZeng").click(function () {
+                tabXuanZeShangPin = $.fn.bsgrid.init('tabXuanZeShangPin', {
+                    url: '/WuJiaGuanLi/TaiZhangFenXiJiaQian/SelectGoodsDetail',
+                    autoLoad: false,
+                    stripeRows: true,//隔行变色
+                    rowHoverColor: true,//划过行变色
+                    pageSize: 10,
+                    pageSizeSelect: false,//是否选择分页页数下拉框
+                    pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                    pagingToolbarAlign: "left",//分页工具条的显示位置
+                    displayPagingToolbarOnlyMultiPages: true,//仅当多页时才显示分页工具条                   
+                });
+                tabXuanZeShangPin.refreshPage();
+                $("#XuanZeShangPin").modal('show');
+            });
+
+            //界面表格
+            tabShangPin = $.fn.bsgrid.init('tabShangPin', {
+                url: '/WuJiaGuanLi/TaiZhangFenXiJiaQian/HuoQuShangPinXinXi',
+                autoLoad: false,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                pageSize: 10,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置                
+            });
+
+            //绑定商品          
+            $("#btnXuanZeAnNiu").click(function () {
+                var rowIndex = tabXuanZeShangPin.getSelectedRowIndex();
+                if (rowIndex > -1) {
+                    GoodsIDsQuan = tabXuanZeShangPin.getColumnValue(rowIndex, "GoodsDetailID");
+                    JieShouGoodelShuZu.push(([GoodsIDsQuan]));
+
+                    for (var i = 0; i < JieShouID.length; i++) {
+                        var K = JieShouID[i][0];
+                        if (K > 0) {
+                            JieShouID.splice(i, 1);
+                        }
+                    }
+
+                    for (var i = 0; i < JieShouGoodelShuZu.length;) {
+                        var A = JieShouGoodelShuZu[i][0];
+                        JieShouID.push(A);
+                        i++;
+                    }
+
+                    tabShangPin.search({ JieShouID: JieShouID });
+
+                }
+                else {
+                    layer.alert("请选择一条的信息", { icon: 6, title: '提示' });
+                }
+                $("#XuanZeDaBaoShangPin").modal('hide');
+            });
+        });
+
+        //删除
+        $("#btnShanChu").click(function () {
+            var selectRowIndex = tabShangPin.getSelectedRowIndex();//获取选中行的索引值
+            if (selectRowIndex >= 0) {
+                if (window.confirm("您确定要删除？")) {
+                    var goodsBianJiaID = tabShangPin.getColumnValue(selectRowIndex, "GoodsBianJiaID");//获取选中行的id
+                    //查询
+                    $.post("/WuJiaGuanLi/TaiZhangFenXiJiaQian/DeleteGoodsBianJia",
+                        { goodsBianJiaID: goodsBianJiaID }, function (msg) {
+                            if (msg == "success") {
+                                layer.alert('删除成功', { icon: 1, title: '提示' });
+                                //刷新table
+                                tabShangPin.refreshPage();
+                            }
+                            else {
+                                layer.alert('删除失败', { icon: 2, title: '提示' });
+                            }
+                        });
+                }
+            }
+            else {
+                layer.alert('请选择需要删除的数据', { icon: 0, title: '提示' });
+            }
+        });
+
+        //页面关闭按钮
+        $(function () {           
+            $("#btnTuiChu").click(function () {
+                $("#biandongquxian").hide();
+            });
+        });
+
+    </script>
+
+</body>
+</html>

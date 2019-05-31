@@ -1,0 +1,448 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <title>定义商品计量单位和使用对象</title>
+    <style type="text/css">
+        .container {
+            width: 98%;
+            padding-top: 4px;
+        }
+
+        .panel-heading {
+            font-size: 16px;
+        }
+
+        .panel-body {
+            padding: 0;
+            border-left: 3px solid #377ab7;
+            border-bottom: 3px solid #377ab7;
+            border-right: 3px solid #377ab7;
+        }
+
+        .modal-header {
+            background: #337ab7;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            color: #fff;
+        }
+
+        h4 span {
+            margin-right: 5px;
+        }
+
+        .form-group {
+            margin-left: 30%;
+            margin-right: 30%;
+        }
+
+        label {
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="danweiheshuxingdingYi">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <span style="padding-left:14px;">定义商品计量单位和使用对象</span>                       
+                    </div>
+                </div>
+                <div class="panel-body" style="width:100%;height:550px;background:#f0edf1">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <table id="tabEstimateUnit" style="width:100%;">
+                            <tr>
+                                <th w_num="total_line">单位序号</th>
+                                <th w_index="EstimateUnitID" w_hidden="true">EstimateUnitID</th>
+                                <th w_index="EstimateUnitName">计量单位</th>
+                            </tr>
+                        </table>
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group" style="margin-top:30px;">
+                                <div class="col-sm-2 col-lg-offset-3">
+                                    <button type="button" class="btn btn-success form-control" id="XinZengEstimateUnit">
+                                        <span class="glyphicon glyphicon-plus"></span> 新增
+                                    </button>
+                                </div>
+                                <div class="col-sm-2">
+                                    <button type="button" class="btn btn-info form-control" id="XiuGaiEstimateUnit">
+                                        <span class="glyphicon glyphicon-pencil"></span> 修改
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <table id="tabApplyTarget" style="width:100%;">
+                            <tr>
+                                <th w_num="total_line">对象序号</th>
+                                <th w_index="ApplyTargetID" w_hidden="true">ApplyTargetID</th>
+                                <th w_index="ApplyTarget">使用对象</th>
+                            </tr>
+                        </table>
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group" style="margin-top:30px;">
+                                <div class="col-sm-2 col-lg-offset-2">
+                                    <button type="button" class="btn btn-success form-control" id="XinZengApplyTarget">
+                                        <span class="glyphicon glyphicon-plus"></span> 新增
+                                    </button>
+                                </div>
+                                <div class="col-sm-2">
+                                    <button type="button" class="btn btn-info form-control" id="XiuGaiApplyTarget">
+                                        <span class="glyphicon glyphicon-pencil"></span> 修改
+                                    </button>
+                                </div>
+                                <div class="col-sm-2">
+                                    <button type="button" class="btn btn-danger form-control" id="TuiChu">
+                                        <span class="glyphicon glyphicon-off"></span> 退出
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>                
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*新增模态窗体*@
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="XinZengChaungTiEstimateUnit">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:600px;height:150px;">
+                <div class="modal-header" style="background:#337ab7;">
+                    <span style="left:5px;">新增计量单位界面</span>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group" style="margin-top:10px;">
+                            <label class="col-md-2 col-sm-1 reset">计量单位</label>
+                            <div class="col-md-4 col-sm-1 reset">
+                                <input type="text" class="form-control" name="EstimateUnitName" id="EstimateUnitName">
+                            </div>
+                            <div class="col-md-2 col-sm-1 reset">                               
+                                <button type="button" class="btn form-control" style="background:#d1cccc;" id="DanWeiBaoCun">
+                                    <span class="glyphicon glyphicon-download-alt"></span> 保存
+                                </button>
+                            </div>
+                            <div class="col-md-2 col-sm-1 reset">                                 
+                                <button type="button" class="btn form-control" style="background:#d1cccc;" data-dismiss="modal">
+                                    <span class="glyphicon glyphicon-remove"></span> 关闭
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="XinZengChaungTiApplyTarget">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:600px;height:150px;">
+                <div class="modal-header" style="background:#337ab7;">
+                    <span style="left:5px;">新增使用对象界面</span>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group" style="margin-top:10px;">
+                            <label class="col-md-2 col-sm-1 reset">使用对象</label>
+                            <div class="col-md-4 col-sm-1 reset">
+                                <input type="text" class="form-control" name="ApplyTarget" id="ApplyTarget">
+                            </div>
+                            <div class="col-md-2 col-sm-1 reset">                                   
+                                <button type="button" class="btn form-control" style="background:#d1cccc;" id="DuiXiangBaoCun">
+                                    <span class="glyphicon glyphicon-download-alt"></span> 保存
+                                </button>
+                            </div>
+                            <div class="col-md-2 col-sm-1 reset">                                 
+                                <button type="button" class="btn form-control" style="background:#d1cccc;" data-dismiss="modal">
+                                    关闭
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*修改模态窗体*@
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="XiuGaiChaungTiEstimateUnit">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:600px;height:150px;">
+                <div class="modal-header" style="background:#a8d7ef;">
+                    <span style="left:5px;">计量单位修改界面</span>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form" id="formNoticeType">
+                        <div class="form-group" style="margin-top:10px;">
+                            <!--重置表单-->
+                            <input type="reset" class="hidden" />
+                            <!--隐藏域-->
+                            <input type="text" class="hidden" name="EstimateUnitID" id="EstimateUnitID" />
+                            <label class="col-md-2 col-sm-1 reset">计量单位</label>
+                            <div class="col-md-4 col-sm-1 reset">
+                                <input type="text" class="form-control" name="EstimateUnitName1" id="EstimateUnitName1">
+                            </div>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <button type="button" class="btn form-control" style="background:#d1cccc;" id="EstimateUnitBaoCun">
+                                    保存
+                                </button>                                  
+                            </div>
+                            <div class="col-md-2 col-sm-1 reset">                                
+                                <button type="button" class="btn form-control" style="background:#d1cccc;" data-dismiss="modal">
+                                   关闭
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="XiuGaiChaungTiApplyTarget">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:600px;height:150px;">
+                <div class="modal-header" style="background:#a8d7ef;">
+                    <span style="left:5px;">使用对象修改界面</span>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form" id="formNoticeType">
+                        <div class="form-group" style="margin-top:10px;">
+                            <!--重置表单-->
+                            <input type="reset" class="hidden" />
+                            <!--隐藏域-->
+                            <input type="text" class="hidden" name="ApplyTargetID" id="ApplyTargetID" />
+                            <label class="col-md-2 col-sm-1 reset">使用单位</label>
+                            <div class="col-md-4 col-sm-1 reset">
+                                <input type="text" class="form-control" name="ApplyTarget1" id="ApplyTarget1">
+                            </div>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <button type="button" class="btn form-control" style="background:#d1cccc;" id="ApplyTargetBaoCun">
+                                    保存
+                                </button>                                   
+                            </div>
+                            <div class="col-md-2 col-sm-1 reset">
+                                <button type="button" class="btn form-control" style="background:#d1cccc;" data-dismiss="modal">
+                                    关闭
+                                </button>                                  
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    @*计量单位*@
+    <script type="text/javascript">
+        var tabEstimateUnit;      
+        var estimateUnitID;
+        //查询
+        $(document).ready(function () {           
+            tabEstimateUnit = $.fn.bsgrid.init('tabEstimateUnit', {
+                url: '/ShangPinGuanLi/JiChuXinXi/SelectEstimateUnitID',
+                autoLoad: false,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                pageSize: 10,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置               
+            });
+            tabEstimateUnit.search();
+        });
+
+        //新增窗体        
+        $("#XinZengEstimateUnit").click(function () {
+            $("#XinZengChaungTiEstimateUnit").modal('show');
+        });
+
+        //新增保存
+        $("#DanWeiBaoCun").click(function () {
+            var EstimateUnitName = $("#EstimateUnitName").val();
+            if (EstimateUnitName != '') {
+                $.post("/ShangPinGuanLi/JiChuXinXi/InsertEstimateUnit", {
+                    EstimateUnitName: EstimateUnitName,
+                }, function (mess) {
+                    if (mess == "success") {
+                        layer.alert('新增成功', { icon: 1, title: '提示' });
+                        $("#XinZengChaungTiEstimateUnit").modal('hide');
+                        tabEstimateUnit.refreshPage();
+                    }
+                    else {                        
+                        layer.alert('新增失败', { icon: 2, title: '提示' });
+                    }
+                });
+            } else {               
+                layer.alert('请填写需要新增的内容', { icon: 1, title: '提示' });
+            }
+        });
+       
+        //修改窗体
+        $("#XiuGaiEstimateUnit").click(function () {
+            var rowIndex = tabEstimateUnit.getSelectedRowIndex();
+            if (rowIndex > -1) {
+                var UnitID = tabEstimateUnit.getColumnValue(rowIndex, "EstimateUnitID");
+                $.getJSON("/ShangPinGuanLi/JiChuXinXi/UpdataEstimateUnit?UnitID=" + UnitID, function (data) {
+                    if (data == "失败") {                      
+                        layer.alert('请选择修改信息', { icon: 0, title: '提示' });
+                    }
+                    else {
+                        $("#EstimateUnitID").val(data.EstimateUnitID);//隐藏域
+                        $("#EstimateUnitName1").val(data.EstimateUnitName);
+                    }
+                    $("#XiuGaiChaungTiEstimateUnit").modal('show');
+                });
+            }
+            else {                
+                layer.alert('请选择需要修改的信息', { icon: 2, title: '提示' });
+            }
+        });
+
+        //修改保存
+        $("#EstimateUnitBaoCun").click(function () {
+            var EstimateUnitID = $("#EstimateUnitID").val();
+            var EstimateUnitName = $("#EstimateUnitName1").val();
+            if (EstimateUnitName != "") {
+                $.post("/ShangPinGuanLi/JiChuXinXi/UpdataEstimateUnitBaoCun", {
+                    EstimateUnitID:EstimateUnitID,
+                    EstimateUnitName: EstimateUnitName,
+                }, function (data) {
+                    if (data == "success") {                      
+                        layer.alert('修改成功', { icon: 1, title: '提示' });
+                        $("#XiuGaiChaungTiEstimateUnit").modal('hide');
+                        tabEstimateUnit.refreshPage();
+                    }
+                    else {                       
+                        layer.alert('修改失败', { icon: 2, title: '提示' });
+                    }
+                });
+            } else {               
+                layer.alert('请填写需要修改的内容', { icon: 0, title: '提示' });
+            }
+        });
+               
+    </script>
+
+    @*使用对象*@
+    <script type="text/javascript">     
+        var tabApplyTarget;
+        //查询
+        $(document).ready(function () {                        
+            tabApplyTarget = $.fn.bsgrid.init('tabApplyTarget', {
+                url: '/ShangPinGuanLi/JiChuXinXi/SelectApplyTargetID',
+                autoLoad: false,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                pageSize: 10,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置               
+            });
+            tabApplyTarget.search();
+        });
+       
+        //新增窗体
+        $("#XinZengApplyTarget").click(function () {
+            $("#XinZengChaungTiApplyTarget").modal('show');
+        });
+
+        //新增保存
+        $("#DuiXiangBaoCun").click(function () {
+            var ApplyTarget = $("#ApplyTarget").val();
+            if (ApplyTarget != '') {
+                $.post("/ShangPinGuanLi/JiChuXinXi/InsertApplyTarget", {
+                    ApplyTarget: ApplyTarget,
+                }, function (mess) {
+                    if (mess == "success") {
+                        layer.alert('新增成功', { icon: 1, title: '提示' });
+                        $("#XinZengChaungTiApplyTarget").modal('hide');
+                        tabApplyTarget.refreshPage();
+                    }
+                    else {
+                        layer.alert('新增失败', { icon: 2, title: '提示' });
+                    }
+                });
+            } else {
+                layer.alert('请填写需要新增的内容', { icon: 0, title: '提示' });
+            }
+        });
+   
+        //修改窗体
+        $("#XiuGaiApplyTarget").click(function () {
+            var rowIndex = tabApplyTarget.getSelectedRowIndex();
+            if (rowIndex > -1) {
+                var applyTargetID = tabApplyTarget.getColumnValue(rowIndex, "ApplyTargetID");
+                $.getJSON("/ShangPinGuanLi/JiChuXinXi/UpdataApplyTarget?applyTargetID=" + applyTargetID, function (data) {
+                    if (data == "失败") {
+                        layer.alert('请选择修改信息', { icon: 0, title: '提示' });
+                    }
+                    else {
+                        $("#ApplyTargetID").val(data.ApplyTargetID);//隐藏域
+                        $("#ApplyTarget1").val(data.ApplyTarget);
+                    }
+                    $("#XiuGaiChaungTiApplyTarget").modal('show');
+                });
+            }
+            else {
+                layer.alert('请选择需要修改的信息', { icon: 0, title: '提示' });
+            }
+        });
+
+        //修改保存
+        $("#ApplyTargetBaoCun").click(function () {
+            var ApplyTargetID = $("#ApplyTargetID").val();
+            var ApplyTarget = $("#ApplyTarget1").val();
+            if (ApplyTarget != "") {
+                $.post("/ShangPinGuanLi/JiChuXinXi/UpdataApplyTargetBaoCun", {
+                    ApplyTargetID: ApplyTargetID,
+                    ApplyTarget: ApplyTarget,
+                }, function (data) {
+                    if (data == "success") {
+                        layer.alert('修改成功', { icon: 1, title: '提示' });
+                        $("#XiuGaiChaungTiApplyTarget").modal('hide');
+                        tabApplyTarget.refreshPage();
+                    }
+                    else {
+                        layer.alert('修改失败', { icon: 2, title: '提示' });
+                    }
+                });
+            } else {
+                layer.alert('请填写需要修改的内容', { icon: 0, title: '提示' });
+            }
+        });               
+       
+        //关闭按钮
+        $(function () {
+            $("#TuiChu").click(function () {
+                $("#danweiheshuxingdingYi").hide();
+            });
+        });
+
+    </script>
+</body>
+</html>

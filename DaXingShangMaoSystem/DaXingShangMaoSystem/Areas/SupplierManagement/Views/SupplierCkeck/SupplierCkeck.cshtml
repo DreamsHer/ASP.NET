@@ -1,0 +1,217 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    @*CSS样式(包含默认皮肤样式)*@
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    @*CSS皮肤(需引用于bsgrid.all.min.css之后)*@
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <title>业务往来单位清退</title>
+</head>
+<body style="background:#f0edf1;">
+    <div class="row" style="display:block;width:100%;border:none;height:467px;">
+        <div class="panel panel-default">
+            <div class="panel-heading" style="padding: 1px 15px;">
+                <div class="h4">
+                    业务往来单位清退
+                    <button class="close" type="button" onclick="closeRegistrationProcessing()"><span class="glyphicon glyphicon-remove"></span></button>
+                </div>
+            </div>
+            <div class="panel col-md-9 form-group" style="background:#f0edf1;">
+                <form class="form-inline" style="padding:0px 20px;">
+                    <div class="form-group">
+                        <label for="exampleInputName2">供货商</label>
+                        <input type="text" class="form-control" id="SupplierNumber">
+                    </div>
+
+                </form>
+                <form style="padding:0px 20px;">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="" />
+                            经销
+                        </label>
+                        <label>
+                            <input type="checkbox" value="" />
+                            代销
+                        </label>
+                        <label>
+                            <input type="checkbox" value="" />
+                            营销
+                        </label>
+                        <label>
+                            <input type="checkbox" value="" />
+                            租赁
+                        </label>
+                    </div>
+                </form>
+                <div style="padding:0px 20px;">
+                    <button class="btn btn-primary" style="margin-bottom:5px" id="btn1">
+                        <i class="glyphicon glyphicon-file"></i>
+                        全选
+                    </button>
+                    <button class="btn btn-info" style="margin-bottom:5px" id="btn2">
+                        <i class="glyphicon glyphicon-pencil"></i>
+                        取消
+                    </button>
+                </div>
+            </div>
+            <div class="panel col-md-3 form-group" style="background:#f0edf1;">
+                <div class="checkbox" style="background:#f0edf1;">
+                    <label class="col-md-6">
+                        <input type="checkbox" value="" />
+                        正常
+                    </label>
+                    <label class="col-md-6">
+                        <input type="checkbox" value="" />
+                        暂停进货
+                    </label>
+                    <label class="col-md-6">
+                        <input type="checkbox" value="" />
+                        未审核
+                    </label>
+                    <label class="col-md-6">
+                        <input type="checkbox" value="" />
+                        暂停付款
+                    </label>
+                    <label class="col-md-6">
+                        <input type="checkbox" value="" />
+                        淘汰
+                    </label>
+                </div>
+            </div>
+
+            <div class="panel" style="width: 1246px; height: 250px; float: left;margin:0;">
+                <div class="row examineeInfor" style="padding: 1px 15px;">
+                    <table id="tabShangBiaoXinXi1" style="width: 100%; min-width: 446px;" class="bsgrid">
+                        <thead>
+                            <tr>
+                                <th w_num="total_line" w_check="true">选择</th>
+                                <th w_index="SupplierID" w_hidden="true">供货商ID</th>
+                                <th w_index="SupplierNumber">供货商代码</th>
+                                <th w_index="SupplierName">供货商名称</th>
+                                <th w_index="HeTongQiShiRiQi">经销</th>
+                                <th w_index="HeTongJieShuRiQi">代销</th>
+                                <th w_index="ZhuangTai">联营</th>
+                                <th w_index="QianDingShiJIan">租赁</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div>
+        <div style="padding:0px 20px;">
+            <button class="btn btn-primary" style="margin-bottom:5px" id="btnInsert1" onclick="myFunction()">
+                <i class="glyphicon glyphicon-file"></i>
+                查询
+            </button>
+            <button class="btn btn-primary" style="margin-bottom:5px"id="btnShangChu">
+                <i class="glyphicon glyphicon-pencil"></i>
+                确认清退
+            </button>
+            <button class="btn btn-info" style="margin-bottom:5px">
+                <i class="glyphicon glyphicon-pencil"></i>
+                退出
+            </button>
+        </div>
+    </div>
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    @*jquery.bsgrid*@
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>@*对话框*@
+    <script src="~/Content/js/customfunction.js"></script>@*封装js*@
+    <script src="~/Content/js/jquery.form.js"></script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("SupplierNumber").value;
+            if (x==""||isNaN(x)) {
+                alert("模糊查询不能为空，也不能输入中文")
+            }
+        }
+
+
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("input[type='checkbox']").attr("checked", 'true');//全选     
+            });
+            $("#btn2").click(function () {
+                $("input[type='checkbox']").removeAttr("checked");//取消全选     
+            });
+        })
+        $("#txtSearchCode").keyup(function () {
+             var str = $("#txtSearchCode").val();
+            $.getJSON("/SupplierManagement/SupplierCkeck/selectData1?supplierNumber=" + str, function (data) {
+                $("#tbEmployee").bootstrapTable('load', data);
+            });
+        });
+        var tabShangBiaoXinXi1;
+        tabShangBiaoXinXi1 = $.fn.bsgrid.init('tabShangBiaoXinXi1', {
+            url: '/SupplierManagement/SupplierCkeck/selectData1',
+            autoLoad: false,
+            stripeRows: true,//隔行变色
+            rowHoverColor: true,//划过行变色
+            pageSize: 5,
+            pageSizeSelect: false,//是否选择分页页数下拉框
+            pagingLittleToolbar: true,//精简的图标按钮分页工具条
+            pagingToolbarAlign: "left",//分页工具条的显示位置
+            displayPagingToolbarOnlyMultiPages: true, //仅当多页时才显示分页工具条
+
+        });
+        $("#btnInsert1").click(function () {            
+            tabShangBiaoXinXi1Search();
+        })
+        function tabShangBiaoXinXi1Search() {       
+            var supplierNumber = $("#SupplierNumber").val();
+            if (supplierNumber == undefined) {
+                supplierNumber = 0;
+            }
+
+            //查询考生table数据
+            tabShangBiaoXinXi1.search({ supplierNumber: supplierNumber });
+        }
+
+    </script>
+    @*删除供货商*@
+    <script>
+        var goodsId = 0;
+        $("#btnShangChu").click(function () {
+            var selectRowIndex = tabShangBiaoXinXi1.getSelectedRowIndex();//获取选中行的索引值
+            if (selectRowIndex >= 0) {
+                if (window.confirm("您确定要清退？")) {
+                    var goodsId = tabShangBiaoXinXi1.getColumnValue(selectRowIndex, "SupplierID");
+                    //查询修改
+                    $.post("/SupplierManagement/OperationControl/DeleteHeTong",
+                        { goodsId: goodsId }, function (msg) {
+                            if (msg == "success") {
+                                layer.alert('清退成功', { icon: 1, title: '提示' });
+                                //刷新table
+                                tabShangBiaoXinXi1.refreshPage();
+                            }
+                            else {
+                                layer.alert('清退失败', { icon: 2, title: '提示' });
+                            }
+                        });
+                }
+            }
+            else {
+                layer.alert('请选择需要清退的数据', { icon: 2, title: '提示' });
+            }
+        });
+
+    </script>       
+</body>
+</html>

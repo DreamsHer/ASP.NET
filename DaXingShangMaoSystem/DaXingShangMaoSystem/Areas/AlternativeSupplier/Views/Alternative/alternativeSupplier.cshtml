@@ -1,0 +1,364 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>备选供货商综合评审项目定义</title>
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    @*CSS样式(包含默认皮肤样式)*@
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    @*CSS皮肤(需引用于bsgrid.all.min.css之后)*@
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css">
+        .container {
+            width: 1000px;
+            padding: 0;
+        }
+
+        .panel-heading {
+            font-size: 16px;
+        }
+
+        .panel-body {
+            padding-top: 0;
+        }
+
+            .panel-body label {
+                font-weight: normal;
+                font-size: 16px;
+            }
+
+        .setPadding {
+            border: 1px solid #eee;
+            padding: 5px 0 5px 10px;
+        }
+
+            .setPadding button {
+                padding: 4px 6px;
+                font-size: 12px;
+            }
+
+        .form-horizontal label {
+            font-size: 12px;
+        }
+
+        .form-horizontal select, .form-horizontal input {
+            height: 26px;
+            padding: 0;
+        }
+
+        .reset {
+            padding: 0;
+        }
+
+        .examineeInfor {
+            border: 1px solid #eee;
+            padding: 0;
+        }
+
+        .h5 {
+            margin: 0;
+            background: #eef;
+            padding: 6px 10px;
+        }
+
+        .examineeInfor th, .examineeInfor td {
+            font-weight: normal;
+            text-align: center;
+        }
+
+        #examineeInfor th {
+            padding: 4px 8px;
+        }
+
+        .modal-header {
+            padding: 6px 5px;
+            border-bottom: none;
+            background: #337ab7;
+            text-align: center;
+            color: #fff;
+        }
+
+        .modal-content {
+            padding: 6px;
+        }
+
+        .modal-body {
+            border: 1px solid #ddd;
+            padding: 0 25px;
+        }
+
+        .modal-content label {
+            font-weight: normal;
+            font-size: 12px;
+        }
+
+        .img-box {
+            border: 1px solid #eee;
+            padding: 10px;
+        }
+
+        .modal-dialog {
+            width: 400px;
+        }
+
+        .modal .form-group {
+            margin-bottom: 0;
+            margin-top: 2px;
+        }
+
+        .form-group input {
+            height: 26px;
+        }
+
+        .setSex {
+            position: relative;
+            top: -10px;
+            left: 2px;
+        }
+    </style>
+</head>
+<body style="background:#f0edf1;">
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">备选供货商综合评审项目定义</div>
+            <div class="panel-body" style="background:#f0edf1;">
+                <div class="table">
+                    <ul class="nav nav-tabs tab-color-blue background-blue" id="myTab4">
+                        <li class="active">
+                            <a id="tbnavB" href="#tpB" data-toggle="tab" aria-expanded="true">选择备选供货商</a>
+                        </li>
+                        <li class="">
+                            <a id="tbnavZ" href="#tpZ" data-toggle="tab" aria-expanded="false">备选供货商转正</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content  padding-0" id="InEmployeeForm">
+                        <div class="tab-pane active" id="tpB">
+                            <div id="chartL" style="width: 100%; height: 400px; float: left;">
+                                <div class="col-md-8">
+                                    <div class="col-md-12">
+                                        <form class="form-inline col-md-12" style="padding:35px 20px; margin:0;">
+                                            <div class="form-group col-md-8">
+                                                <label for="exampleInputName2">企业性质:</label>
+                                                <select class="form-control" id="EnterpriseNatureID" style="width:175px" name="EnterpriseNatureId"></select>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <form class="form-inline col-md-12" style="padding:35px 20px; margin:0;">
+                                            <div class="form-group col-md-8">
+                                                <label for="exampleInputName2">企业类型:</label>
+                                                <select class="form-control" id="EnterpriseTypeID" style="width:175px" name="EnterpriseTypeId"></select>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <form class="form-inline col-md-12" style="padding:35px 20px; margin:0;">
+                                            <div class="form-group col-md-8">
+                                                <label for="exampleInputName2">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;区:</label>
+                                                <input type="text" class="form-control" id="SupplierDependency" name="supplierDependency">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col-md-4" style="background:#f0edf1;">
+                                    <div class="col-md-12" style="background:#f0edf1;">
+                                        <form class="form-inline col-md-12" style="padding:35px 20px; margin:0;background:#f0edf1;">
+                                            <div class="panel col-md-12 form-control" style="background:#f0edf1;">
+                                                <div class="checkbox  col-md-12" style="padding:15px 20px;">
+                                                    <label class="col-md-6">
+                                                        <input type="checkbox" value="" />
+                                                        经销
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox  col-md-12" style="padding:15px 20px;">
+                                                    <label class="col-md-6">
+                                                        <input type="checkbox" value="" />
+                                                        代销
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox  col-md-12" style="padding:15px 20px;">
+                                                    <label class="col-md-6">
+                                                        <input type="checkbox" value="" />
+                                                        联营
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox  col-md-12" style="padding:15px 20px;">
+                                                    <label class="col-md-6">
+                                                        <input type="checkbox" value="" />
+                                                        租赁
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                            <div class="col-md-12" style="left:400px">
+                                <button class="btn btn-danger" style="margin-bottom:5px" id="btnInsert1" name="btnInsert1">
+                                    <i class="glyphicon glyphicon-file"></i>
+                                    查询
+                                </button>
+                                <button class="btn btn-info" style="margin-bottom:5px" id="btnInsert" name="SupplierName">
+                                    <i class="glyphicon glyphicon-pencil"></i>
+                                    退出
+                                </button>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tpZ">
+                            <div class="col-md-12" style="background:#f0edf1;">
+                                <div id="chartL" style="width: 100%; height: 400px; float: left;">
+                                    <div class="panel" style="width: 100%; height: 250px; float: left;margin:0;">
+                                        <div class="row examineeInfor" style="padding: 1px 15px;">
+                                            <table id="tabShangBiaoXinXi1" style="width: 100%; min-width: 446px;" class="bsgrid">
+                                                <thead>
+                                                    <tr>
+
+                                                        <th w_index="SupplierID">商品代码</th>
+                                                        <th w_index="SupplierName">商品名称</th>
+                                                        <th w_index="SupplierTelephone">货号</th>
+                                                        <th w_index="SupplierContacts">联系人</th>
+                                                        <th w_index="SupplierAddress">商品单位</th>
+                                                        <th w_index="EnterpriseTypeName">企业性质名称</th>
+                                                        <th w_index="EnterpriseNatureName">企业类型名称</th>
+                                                        <th w_index="SupplierDependency">地址</th>
+
+
+
+                                                    </tr>
+                                                </thead>
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12" style="left:380px">
+                                    <button class="btn btn-primary" style="margin-bottom:5px" id="btnInsert2" name="btnInsert1">
+                                        <i class="glyphicon glyphicon-file"></i>
+                                        转正
+                                    </button>
+                                    <button class="btn btn-info" style="margin-bottom:5px" id="btnInsert" name="SupplierName">
+                                        <i class="glyphicon glyphicon-pencil"></i>
+                                        退出
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="tpL">
+                            <div id="chartL" style="width: 100%; height: 500px; float: left;"></div>
+                        </div>
+
+                        <div class="tab-pane" id="tpG">
+                            <div id="chartG" style="width: 100%; height: 313px; float: left;">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    @*jquery.bsgrid*@
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>@*对话框*@
+    <script src="~/Content/js/customfunction.js"></script>@*封装js*@
+    <script src="~/Content/js/jquery.form.js"></script>
+    <script>
+        //企业类型绑定
+        $.post("/AlternativeSupplier/Alternative/selectEnterpriseNature", function (data) {
+            selectLoadData("EnterpriseNatureID", data)
+        });
+        $.post("/AlternativeSupplier/Alternative/selectEnterpriseType", function (data) {
+            selectLoadData("EnterpriseTypeID", data)
+        });
+        var tabShangBiaoXinXi1;
+        tabShangBiaoXinXi1 = $.fn.bsgrid.init('tabShangBiaoXinXi1', {
+            url: '/AlternativeSupplier/Alternative/SelectHeTongChuLi',
+            autoLoad: false,
+            stripeRows: true,//隔行变色
+            rowHoverColor: true,//划过行变色
+            pageSize: 10,
+            pageSizeSelect: false,//是否选择分页页数下拉框
+            pagingLittleToolbar: true,//精简的图标按钮分页工具条
+            pagingToolbarAlign: "left"//分页工具条的显示位置
+
+        });
+        $("#btnInsert1").click(function () {
+
+           
+            tabShangBiaoXinXi1Search();
+        });
+        //多条件搜索 学院下拉框改变事件
+        $("#EnterpriseNatureID").change(function () {
+            var EnterpriseNatureId = $("#EnterpriseNatureID").val();
+            //绑定多条件搜索年级下拉框
+            createSelect("EnterpriseNatureID", "/AlternativeSupplier/Alternative/selectEnterpriseNature?EnterpriseNatureId=" + EnterpriseNatureId);
+
+        })
+        //多条件搜索年级下拉框改变事件
+        $("#EnterpriseTypeID").change(function () {
+            var EnterpriseTypeId = $("#EnterpriseTypeID").val();
+            //绑定多条件搜索班级下拉框
+            createSelect("EnterpriseTypeID", "/AlternativeSupplier/Alternative/selectEnterpriseType?EnterpriseTypeId=" + EnterpriseTypeId);
+        })
+        function tabShangBiaoXinXi1Search() {
+
+
+            var EnterpriseNatureId = $("#EnterpriseNatureID").val();
+            if (EnterpriseNatureId == "" || EnterpriseNatureId == undefined) {
+                EnterpriseNatureId = 0;
+            }
+            var EnterpriseTypeId = $("#EnterpriseTypeID").val();
+            if (EnterpriseTypeId == "" || EnterpriseTypeId == undefined) {
+                EnterpriseTypeId = 0;
+            }
+            var supplierDependency = $("#SupplierDependency").val();
+            if (supplierDependency == undefined) {
+                supplierDependency = 0;
+            }
+
+            //查询考生table数据
+            tabShangBiaoXinXi1.search({ supplierDependency: supplierDependency, EnterpriseNatureId: EnterpriseNatureId, EnterpriseTypeId: EnterpriseTypeId });
+        }
+    </script>
+    @*删除供货商*@
+    <script>
+        var goodsId = 0;
+        $("#btnInsert2").click(function () {
+            var selectRowIndex = tabShangBiaoXinXi1.getSelectedRowIndex();//获取选中行的索引值
+            if (selectRowIndex >= 0) {
+                if (window.confirm("您确定要转正？")) {
+                    var goodsId = tabShangBiaoXinXi1.getColumnValue(selectRowIndex, "SupplierID");
+                    //查询修改
+                    $.post("/SupplierManagement/OperationControl/DeleteHeTong",
+                        { goodsId: goodsId }, function (msg) {
+                            if (msg == "success") {
+                                layer.alert('转正成功', { icon: 1, title: '提示' });
+                                //刷新table
+                                tabShangBiaoXinXi1.refreshPage();
+                            }
+                            else {
+                                layer.alert('转正失败', { icon: 2, title: '提示' });
+                            }
+                        });
+                }
+            }
+            else {
+                layer.alert('请选择需要转正的数据', { icon: 2, title: '提示' });
+            }
+        });
+
+    </script>
+</body>
+</html>

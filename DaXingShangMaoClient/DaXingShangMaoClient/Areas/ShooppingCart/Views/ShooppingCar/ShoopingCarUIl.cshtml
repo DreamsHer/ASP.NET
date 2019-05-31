@@ -1,0 +1,491 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShoopingCarUIl</title>
+    
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+
+    <script src="~/Content/js/jquery-1.11.3.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    
+
+    <style>
+        .one {
+            width: 1449px;
+            background: #f7f1f1;
+            /*border: 1px solid #000;*/
+            margin-left: 20px;
+            margin: 0 auto;
+        }
+
+        .head-left {
+            width: 450px;
+            height: 30px;
+        }
+
+            .head-left ul li {
+                float: left;
+                list-style: none;
+                margin-left: 20px;
+            }
+
+                .head-left ul li a {
+                    font-size: 12px;
+                    color: #000;
+                    padding: 4px;
+                    text-decoration: none;
+                }
+
+        .head-right {
+            width: 750px;
+            height: 30px;
+            position: absolute;
+            margin-left: 620px;
+            margin-top: -30px;
+        }
+
+            .head-right ul li {
+                float: left;
+                list-style: none;
+                position: relative;
+            }
+
+                .head-right ul li a {
+                    font-size: 15px;
+                    color: #000;
+                    padding: 10px;
+                    text-decoration: none;
+                }
+
+        .head a:hover {
+            color: #F00;
+        }
+
+
+        .JieSuan-left {
+            width: 500px;
+            height: 30px;
+        }
+
+            .JieSuan-left ul li {
+                float: left;
+                list-style: none;
+                font-size: 16px;
+                margin-top: 15px;
+            }
+
+                .JieSuan-left ul li a {
+                    color: #000;
+                    padding: 4px;
+                    text-decoration: none;
+                }
+
+        .JieSuan-right {
+            width: 550px;
+            height: 30px;
+            position: absolute;
+            margin-left: 1000px;
+            margin-top: -30px;
+        }
+
+            .JieSuan-right ul li {
+                float: left;
+                list-style: none;
+                position: relative;
+                margin-top: 15px;
+            }
+
+                .JieSuan-right ul li a {
+                    font-size: 16px;
+                    color: #000;
+                    padding: 10px;
+                    text-decoration: none;
+                }
+
+        .JieSuan a:hover {
+            color: #ff6a00;
+        }
+
+
+        .search {
+            width: 700px;
+            height: 40px;
+            position: absolute;
+            margin-top: -150px;
+            margin-left: 400px;
+        }
+
+            .search input {
+                width: 600px;
+                height: 40px;
+                border: 3px solid #aa1414;
+                border-right: none;
+                font-size: 20px;
+            }
+
+            .search a {
+                float: right;
+                width: 100px;
+                height: 40px;
+                background: #aa1414;
+                text-decoration: none;
+                color: #fff;
+                font-size: 24px;
+                text-align: center;
+                line-height: 40px;
+            }
+
+            .search .bginput {
+                background: url(../imges/search.png) no-repeat left center;
+            }
+
+
+
+        .JiBenXinXi {
+            position: absolute;
+            margin-top: 15px;
+        }
+
+            .JiBenXinXi ul li {
+                float: left;
+                list-style: none;
+                position: relative;
+            }
+
+                .JiBenXinXi ul li a {
+                    font-size: 15px;
+                    color: #000;
+                    padding: 10px;
+                    text-decoration: none;
+                }
+
+            .JiBenXinXi a:hover {
+                color: #ff6a00;
+            }
+    </style>
+
+</head>
+<body>
+
+    <div class="one">
+
+        <!--头部信息-->
+        <div class="head" style="background:#f6eded;">
+            <div class="head-left">
+                <ul>
+                    <li><a href="#">欢迎来商贸系统</a></li>
+                    <li><a href="http://localhost:5785/YongHuZhuJieMian/GoodesUIL/DengLuJieMian">亲，请登录</a></li>
+                    <li><a href="http://localhost:5785/UserLog/Userlog/UserLogIndex" style="color:#F00;">免费注册</a></li>
+                </ul>
+            </div>
+            <div class="head-right">
+                <ul>
+                    <li><a href="http://localhost:5785/">首页</a></li>
+                    <li><a href="#"> | </a></li>
+                    <li><a href="http://localhost:5785/ShooppingCart/ShooppingCar/ShoopingCarUIl"> 我的购物车</a></li>
+                    <li><a href="#"> | </a></li>
+                    <li><a href="#"> 商品分类</a></li>
+                    <li><a href="#"> | </a></li>
+                    <li><a href="#"> 卖家中心</a></li>
+                    <li><a href="#"> | </a></li>
+                    <li><a href="#"> 联系客服</a></li>
+                    <li><a href="#"> | </a></li>
+                    <li><a href="#"> 网站导航</a></li>
+                </ul>
+            </div>
+        </div>
+
+        @*搜索框信息*@
+        <div class="BiaoSechen" style="position:relative;">
+            <div id="logo" class="logo" style="margin-left:50px;width:200px;">
+                <h1 class="logo_tit"><img src="~/ImaginPho/QX/008.jpg" style="width:200px;height:100px;" /></h1>
+                <h3 class="logo_subtit">商贸,便捷好省</h3>
+                <h5 class="logo_subtit">SM.goods.com</h5>
+            </div>
+
+            <div class="search">
+                <input type="text" class="bginput" id="txtSearch" placeholder="搜索 商品/品牌/店铺" style="color:#808080;font-size:15px;" />
+                <a href="#">搜索</a>
+            </div>
+
+            <div class="ShoppingCartf" style="position:absolute;margin-left:1160px;margin-top:-220px;width:200px;">
+                <h1 class="logo_tit"><img src="~/ImaginPho/QX/010.gif" style="width:200px;height:150px;" /></h1>
+            </div>
+            
+        </div>
+
+        @*加入购物车的商品信息*@
+        <div class="DianXinXi" style="position:relative;">
+
+            <div class="GoodsXinXi" style="width:100%;height:780px;background:#fff;">
+                <div class="JiBenXinXi">
+                    <ul>
+                        <li><input type="checkbox" id="QuanXuanGoods" value="true" /> 全选商品</li>
+                    </ul>
+                </div>
+                <br />
+                
+                
+                <div class="" id="CeShiAdd"></div>
+                
+                <div class="JieSuan" style="background:#e2dede;height:50px;width:100%; margin-top:15px;position:relative;">
+                    <div class="JieSuan-left">
+                        <ul>
+                            <li><input type="checkbox" id="QuanXuan" value="true" /> 全选</li>
+                            <li><a href="#">删除</a></li>
+                            <li><a href="#"> 清除失效宝贝</a></li>
+                            <li><a href="#"> 移入收藏夹</a></li>
+                            <li><a href="#"> 分享</a></li>
+                        </ul>
+                    </div>
+                    <div class="JieSuan-right">
+                        <ul>
+                            <li><a href="#"> 已选商品</a></li>
+                            <li><span id="JieHeJianShu" style="color:red;"></span></li>
+                            <li><a href="#"> 件</a></li>
+                            <li><a href="#">合计(不含运费)：0:00</a></li>
+                            <li><button class="btn btn-danger" style="height:50px;margin-top:-15px;width:100px; margin-left:20px" id="JieSuan">结算</button></li>
+                        </ul>
+                    </div>
+                </div>
+
+                @*浏览过的商品信息*@
+                <div class="LiuLan" style="margin-top:10px;">
+
+                    <div class="GoodsXinXi" style="width:100%;height:500px;background:#fff;">
+
+                        <ul id="myTab" class="nav nav-pills">
+                            <li class="active" data-toggle="tab"><a href="#LiuLan" data-toggle="tab">最近浏览过的</a></li>
+                            <li><a href="#CaiNi" data-toggle="tab">猜你喜欢的</a></li>
+                        </ul>
+
+                        <!-- 选项卡面板 -->
+                        <div id="myMianBanZu" class="tab-content">
+
+                            <!--最近浏览过的-->
+                            <div class="tab-pane active" id="LiuLan">
+
+                            </div>
+
+                            <!--猜你喜欢的-->
+                            <div class="tab-pane" id="CaiNi">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                @*底部网页说明*@
+                <div class="" style="width:100%;height:110px;font-size:16px;color:#c3c1c1;">
+                    <div class="" style="width:100%;border-top:2px solid #808080;"></div>
+                    <div class="JiBenXinXi">
+                        <ul>
+                            <li><a href="#">关于电商</a></li>
+                            <li><a href="#">合作伙伴</a></li>
+                            <li><a href="#">廉政举报</a></li>
+                            <li><a href="#">联系客户</a></li>
+                            <li><a href="#">开放平台</a></li>
+                            <li><a href="#">诚征英才</a></li>
+                            <li><a href="#">联系我们</a></li>
+                            <li><a href="#">网站地图</a></li>
+                            <li><a href="#">发力声明</a></li>
+                            <li><a href="#">1997—2017 DianShang.com </a>版权所有</li>
+                        </ul>
+                        <br />
+                        <ul>
+                            <li>网络文化经营许可证书：<a href="#">粤网文[2003]0268-027号</a></li>
+                            <li>增值电信业务经营许可证书：<a href="#">粤B2-20080224-1</a></li>
+                            <li>信息网络传播视听节目许可证：<a href="#">1109364号</a></li>
+                            <li>互联网不良信息举报联系电话：<a href="#">0571-81683733</a></li>
+                        </ul>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+        
+
+       
+
+    </div>
+
+   
+
+    <script>
+     
+        var ChuShiMermoiy;//初金额
+      
+        var ShuZuGouXuanId = new Array();
+
+        var JieGoodsListedDetailIDid=1; //上市明细ID
+        var JieShoppingID=2;//购物ID
+        var GouWu_One = 3;//图片
+        var GoodsMingXi = 4;//明细名称
+        var GoodColrdfd = 5;//颜色
+        var LeiXingChiMaHao = 6;//尺码
+        var TaxeJiaE = 7;//单价额
+
+        var Mormy = 8;//dan购买共计金额
+
+        //var JianChu=9;//减数符号
+        var XuanShuLiang=10;//数量
+        var JiaDe=11;//加数符号
+
+        var GouWuClickHangIdQuan;
+
+        $(document).ready(function () {
+            
+            $.post("/ShooppingCart/ShooppingCar/SelectShooppingCart", function (mess) {
+                var Ki = 1;
+                for (var i = 0; i < mess.length; i++) {
+                   
+                    $("#CeShiAdd").append('<div class="row" style="margin-top:10px;margin-left:2px;" onclick="Insewrtr(this.id)"><input type="checkbox" value="true" style="margin-top:30px;margin-left:40px;" /> 店铺：品牌男装转销店<select class="form-control" style="width:120px;margin-left:240px;margin-top:-30px;"><option>优惠卷1</option><option>优惠卷2</option></select><div class="" style="border:1px solid #808080;height:150px;width:95%;margin-left:35px;"><div class="col-lg-1"> <input type="hidden" id="' + JieGoodsListedDetailIDid + i + '" /><input type="checkbox" id="' + mess[i].WareHouseID + '" onclick="FuXuanKuang(this.id)" value="true" style="margin-top:30px;margin-left:60px;" /></div><div class="col-lg-2"><div class="img-box text-center" style="width:100%; height:145px;background:#e7f7f5"><img src="" alt="" style="width:100%;height:100%" id="' + GouWu_One + i + '" /></div></div><div class="col-lg-2"><label style="margin-top:10px;"></label><br /><span id="' + GoodsMingXi + i + '">&nbsp;</span></div><div class="col-lg-2"><label class="control-label" style="margin-top:10px;">颜色：</label><span id="' + GoodColrdfd + i + '">&nbsp;</span><br /><label class="control-label" style="margin-top:10px;">尺码：</label><label class="control-label" id="' + LeiXingChiMaHao + i + '"></label></div><div class="col-lg-1"><label style="margin-top:10px;"></label><br /><span id="' + TaxeJiaE + i + '">&nbsp;￥</span><br /></div><div class="col-lg-2"><div class="" style="margin-top:10px;"><button class="btn btn-sm btn-default" id="' + mess[i].WareHouseID + '" onclick="JianChuq(this.id)">-</button><input type="text" style="width:80px;margin-left:30px;margin-top:-33px;position:absolute;" id="' + XuanShuLiang + i + '" class="form-control" onblur="' + ShuRuLiang() + i + '" /><button class="btn btn-sm btn-default" id="' + mess[i].WareHouseID + '" onclick="JiaDeq(this.id)" style="margin-left:82px;position:relative;">+</button> </div></div><div class="col-lg-1"><label style="margin-top:10px;"></label><br /><span id="' + Mormy + i + '" style="color:#F00">&nbsp;￥</span></div><div class="col-lg-1"><button type="button" class="btn btn-sm btn-primary" style="margin-top:10px;" id="' + mess[i].WareHouseID + '" onclick="fangfa(this.id)">删除</button><br /><label class="control-label" style="margin-top:10px;"><a href="" id="DianJiXS">相似宝贝</a></label></div></div></div>');
+                    $('#' + JieGoodsListedDetailIDid + i + '').val(mess[i].GoodsListedDetailID);//上市明细ID
+                    $('#' + JieShoppingID + i + '').val(mess[i].WareHouseID);//购物ID
+                    $('#' + GoodsMingXi + i + '').append(mess[i].GoodsDetailName);//明细名称
+                    $('#' + GoodColrdfd + i + '').append(mess[i].StockPlaceName);//颜色
+                    $('#' + TaxeJiaE + i + '').append(mess[i].TaxBid);//单价
+                    $('#' + Mormy + i + '').append(mess[i].Subdivision);//金额
+                    $('#' + XuanShuLiang + i + '').val(mess[i].MumberOfPackages);//件数
+                    $('#' + GouWu_One + i + '').attr("src", "/ShooppingCart/ShooppingCar/SelectGoffodeseilt?goodsListedID=" + mess[i].RetureFactoryID);//图
+                    
+                    Ki = Ki + 1;
+                }
+                
+            });
+        });
+
+
+        //结算按钮
+        $("#JieSuan").click(function () {
+            var jfd = ShuZuGouXuanId.length;
+            if (jfd > 0) {
+                
+
+                $.post("/ShooppingCart/ShooppingCar/JieSuanShooppingCart", { ShuZuGouXuanId: ShuZuGouXuanId }, function () {
+
+                });
+                window.location.href = "http://localhost:5785/ShooppingCart/ShooppingCar/OrderFormCarUIl";
+            }
+            else {
+                layer.alert("请先选择需要结算的商品", { icon: 5, title: '温馨小提示：' });
+            }
+           
+        });
+
+        //移除
+        function fangfa(id) {
+            GouWuClickHangIdQuan = id;
+            layer.confirm("是否删除？", {
+                icon: 3,
+                btn: ['确定', '取消']
+                //按钮
+            }, function (layerIndex) {
+                layer.close(layerIndex);//关闭提示框
+
+                $.post("/ShooppingCart/ShooppingCar/DeleteShooppingCart", { GouCarId: GouWuClickHangIdQuan }, function (msg) {
+                    if (msg== "success") {
+                        window.location.href = "http://localhost:5785/ShooppingCart/ShooppingCar/ShoopingCarUIl";
+                    }
+                });
+
+            });
+        }
+        
+        
+        function JianChuq(id) {
+            alert("减");
+            //$("#")
+        }
+        
+        function JiaDeq(id) {
+            alert("加");
+            //$("#")
+        }
+
+        function FuXuanKuang(id) {
+            $("#JieHeJianShu").empty();
+            ShuZuGouXuanId.push(id);
+
+          
+            var jfd = ShuZuGouXuanId.length;
+
+            $("#JieHeJianShu").append(jfd);
+
+
+            //$.post("/")
+ 
+        }
+
+        //+
+        //$("#JiaDe").click(function () {
+         
+        //    var ChuShiJian = $("#XuanShuLiang").val();
+        //    $("#XuanShuLiang").empty();
+        //    if (ChuShiJian == undefined || ChuShiJian == '') {
+        //        $("#XuanShuLiang").val('1');
+        //    }
+        //    else {
+        //        ChuShiJian = parseInt(ChuShiJian) + 1;
+        //        $("#XuanShuLiang").val(ChuShiJian);
+
+        //        $("#Mormy").empty();
+        //        $("#Mormy").append("￥" + ChuShiJian * ChuShiMermoiy);
+        //    }
+
+        //});
+        ////-
+        //$("#JianChu").click(function () {
+        //    var ChuShiJian = $("#XuanShuLiang").val();
+        //    ChuShiJian = ChuShiJian - 1;
+        //    if (parseInt(ChuShiJian) > 0) {
+
+        //        $("#XuanShuLiang").val(ChuShiJian);
+        //        $("#Mormy").empty();
+        //        $("#Mormy").append("￥" + ChuShiJian * ChuShiMermoiy);
+        //    }
+        //    else {
+        //        $("#XuanShuLiang").val("1");
+        //    }
+        //});
+
+        //=0
+        function ShuRuLiang() {
+            var ChuShiJian = $("#XuanShuLiang").val();
+            if (ChuShiJian == 0) {
+                $("#XuanShuLiang").val("1");
+            }
+            else {
+                $("#Mormy").empty();
+                $("#Mormy").append("￥" + ChuShiJian * ChuShiMermoiy);
+               
+            }
+        }
+
+      
+
+    </script>
+
+
+
+</body>
+</html>

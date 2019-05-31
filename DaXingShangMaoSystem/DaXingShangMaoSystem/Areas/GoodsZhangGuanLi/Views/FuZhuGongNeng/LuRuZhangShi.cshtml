@@ -1,0 +1,310 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LuRuZhangShi</title>
+
+    <link href="~/Content/easyui/themes/default/easyui.css" rel="stylesheet" />
+    <link href="~/Content/easyui/themes/black/demo.css" rel="stylesheet" />
+    <link href="~/Content/easyui/themes/color.css" rel="stylesheet" />
+
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+
+    
+
+    <style>
+        .container {
+            background: #fff;
+            width: 99%;
+        }
+
+        .reset-padding {
+            padding: 0 5px;
+        }
+
+        .reset {
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        label.Size {
+            font-size: 60px;
+        }
+
+        label {
+            font-weight: normal;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading"><h4>录入三级帐初始化数据</h4></div>
+                <div class="panel-body" style="background:#f0edf1;">
+                    <div class="row" style="margin-top:20px;">
+                        <div class="col-md-11 col-sm-11 col-xs-11" style="padding-left:2px;">
+                            <form class="form-horizontal" role="form">
+                                <div class="row">
+                                    <div class="col-lg-1"></div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <div class="col-md-3">
+                                                <label class="control-label" style="padding-left:20px;">部 门：</label>
+                                            </div>
+
+                                            <div class="col-md-5">
+                                                <select class="form-control" id="SpouseBRanchID"></select>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div style="border-bottom: #000 1px solid; width: 170px;">
+                                                    <input readonly="readonly" id="bumen" style="width: 170px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-1"></div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <div class="col-md-3">
+                                                <label class="control-label">商品代码：</label>
+                                            </div>
+
+                                            <div class="col-md-5">
+                                               <input type="text" id="GoodsDaiMa" class="form-control" placeholder="例：000001"/>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <button class="btn btn-block" type="button" id="ChaXun"><span class="glyphicon glyphicon-search">查 询</span></button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+                    <div class="row" style="margin-left:2px;">
+                        <div class="row">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+
+                                </div>
+                                <div class="panel-body" style="padding-left:15px;">
+                                    <table id="WarserHouseTable" style="margin-top:2px;">
+                                        <tr>
+                                            <th w_num="total_line">序号</th>
+                                            <th w_index="GoodsIDs" w_hidden="true">商品ID</th>
+                                            
+                                            <th w_index="GoodsCodes" w_render="crearViewButton">商品代码</th>
+                                          
+
+                                            <th w_index="GoodsNames">商品名称</th>
+                                            <th w_index="RetailMonovalents">零售单价</th>
+                                            <th w_index="EstimateUnitNames">计量单位</th>
+                                            <th w_index="ArtNos">商品货号</th>
+                                            <th w_index="SpecificationsModels">规格</th>
+
+                                            <th w_index="ContractNumber">合同号</th>
+                                            <th w_index="ValidTip">有效期起</th>
+                                            <th w_index="ValidBegin">有效期止</th>
+                                            <th w_index="SupplierNumber">往来代码</th>
+                                            <th w_index="SupplierCHName">往来名称</th>
+                                           
+                                        </tr>
+                                    </table>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="p" class="easyui-progressbar"></div>
+                    </div>
+
+                    <div class="row" style="margin-top:20px;">
+                        <div class="form-group">
+                            <div class="col-md-1 col-lg-offset-4">
+                                <button class="form-control btn btn-success" type="button" onclick="start()"><span class="glyphicon glyphicon-ok">确 认</span></button>
+                            </div>
+                            <div class="col-md-1">
+                                <button class="form-control btn btn-warning" type="button" id="DeLete"><span class="glyphicon glyphicon-remove">取 消</span></button>
+                            </div>
+                            <div class="col-md-1">
+                                <button class="form-control btn btn-primary" type="button" id="Fan">关 闭</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.2.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/easyui/jquery.min.js"></script><!--j-->
+    <script src="~/Content/easyui/jquery.easyui.min.js"></script><!---->
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+
+    
+
+    <script>
+        var spouseBRanchID;
+        var WarserHousefdTable;
+        var JieShouIdShu = new Array();
+        var GoodIdsQuan;
+        var JieId = new Array();
+
+        $(document).ready(function () {
+
+            WarserHouseTable = $.fn.bsgrid.init('WarserHouseTable', {
+                //url: '/GoodsZhangGuanLi/KuCunFenPiZhang/ChaXunWareFonf',
+                autoLoad: false,
+                stripeRows: true,
+                rowHoverColor: true,
+                rowSelectedColor: true,
+                pageSize: 9,
+                pageSizeSelect: true,//
+                pagingLittleToolbar: true,//
+                pagingToolbarAlign: "left",//
+
+            });
+
+            //部门
+            $.post("/GoodsZhangGuanLi/FuZhuGongNeng/CaiGouXiaLa", function (data) {
+                selectLoadData("SpouseBRanchID", data);
+            });
+        });
+
+
+        //部门改变
+        $("#SpouseBRanchID").change(function () {
+            spouseBRanchID = $("#SpouseBRanchID").val();
+            if (spouseBRanchID > 0) {
+                $.post("/GoodsZhangGuanLi/FuZhuGongNeng/CaiGouXiaLaName?spouseBRanchID=" + spouseBRanchID, function (data) {
+                    $("#bumen").val(data[0].SpouseBRanchName);
+                });
+            }
+        });
+
+
+        WarserHousefdTable = $.fn.bsgrid.init('WarserHouseTable', {
+            url: '/GoodsZhangGuanLi/FuZhuGongNeng/BfdangDingShangPin',
+            autoLoad: false,
+            stripeRows: true,
+            rowHoverColor: true,
+            rowSelectedColor: true,
+            pageSize: 9,
+            pageSizeSelect: true,//
+            pagingLittleToolbar: true,//
+            pagingToolbarAlign: "left",//
+
+        });
+        $("#ChaXun").click(function () {
+            var GoodsCodes = $("#GoodsDaiMa").val();
+            if (GoodsCodes!='') {
+                WarserHousefdTable.search({ goodsCode: GoodsCodes });
+            }
+            else {
+                alert("请输入商品代码编号");
+            }
+            
+        });
+
+        //确定
+        function start() {
+            for (var i = 0; i < JieShouIdShu.length > 0; i++) {
+                var K = JieShouIdShu[i];
+                JieId.push(K);
+            }
+
+
+            var value;
+            var GoodsCodes = $("#GoodsDaiMa").val();
+            var SpouseBRanchID=$("#SpouseBRanchID").val();
+            if (GoodsCodes != '' && SpouseBRanchID > 0 && GoodIdsQuan > 0) {
+
+                layer.confirm("是否录入？", {
+                    icon: 3,
+                    btn: ['确定', '取消']
+                  
+                }, function (layerIndex) {
+                    layer.close(layerIndex);//关闭提示框
+
+                    value = $('#p').progressbar('getValue');
+                    if (value < 100) {
+                        value += Math.floor(Math.random() * 10);
+                        $('#p').progressbar('setValue', value);
+                        setTimeout(arguments.callee, 200);
+
+                        if (value > 99) {
+
+                            $.post("/GoodsZhangGuanLi/FuZhuGongNeng/InsectSanZhang", {
+                                PurchaseSectionID: SpouseBRanchID,
+                                GoodsID: GoodIdsQuan
+                            }, function (data) {
+                                layer.alert("录入完成！", { icon: 6, title: '温馨小提示：' });
+                                if (data == "succsee") {
+                                    document.location.href = "/GoodsZhangGuanLi/FuZhuGongNeng/LuRuZhangShi";
+                                }
+                                else {
+                                    alert("No");
+                                }
+                               
+                            });
+                        }
+                    }  
+                });
+ 
+                }
+                else {
+                    layer.alert("请选择部门输入商品代码编号查询", { icon: 5, title: '温馨小提示：' });
+                    
+                }
+        };
+        
+
+
+        //自定义table文本框
+        function crearViewButton(record, rowIndex, colIndex, options) {
+             GoodIdsQuan = record.GoodsIDs;
+             JieShouIdShu.push(GoodIdsQuan);
+
+            return ' <input class="easyui-combotree" style="width: 100px;" value="' + record.GoodsCodes + '" id="DaiMaHao' + record.GoodsIDs + '" data-options="onChange:onConsignmentDepartmentCodeSelect;" placeholder="请输入..."/>';
+
+        }
+       
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,406 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>用户注册</title>
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css">
+        body {
+            padding-top: 30px;
+        }
+
+        #web {
+            margin: 0 auto;
+            width: 400px;
+        }
+
+        .title {
+            font-size: 18px;
+            padding-left: 25px;
+            border-left: solid #999 1px;
+            margin-bottom: 40px;
+        }
+
+        .form_item {
+            width: 398px;
+            height: 52px;
+            border: solid #ddd 1px;
+            position: relative;
+        }
+
+            .form_item label {
+                width: 90px;
+                height: 52px;
+                line-height: 52px;
+                float: left;
+                padding-left: 20px;
+                font-size: 14px;
+                color: #666;
+            }
+
+            .form_item .code {
+                position: absolute;
+                right: 0;
+                top: 0;
+                text-align: center;
+            }
+
+            .form_item input {
+                border: 0;
+                font-size: 14px;
+                width: 190px;
+                height: 19px;
+                padding-bottom: 11px;
+                padding-left: 20px;
+                padding-top: 16px;
+            }
+
+        .input-tip {
+            color: #c5c5c5;
+            height: 27px;
+            font-size: 12px;
+            padding-top: 5px;
+        }
+
+            .input-tip span {
+                height: 22px;
+                line-height: 22px;
+            }
+
+        button, #btn {
+            width: 100%;
+            height: 54px;
+            color: #fff;
+            background-color: #e22;
+            border: 0;
+            font-size: 16px;
+            font-family: "微软雅黑";
+        }
+    </style>  
+</head>
+<body>
+    <div id="web">
+        <form action="" method="post">
+            <div class="title">欢迎注册大型商贸平台账号</div>
+            <div class="form_item">
+                <label>用  户  名</label>
+                <input type="text" value="" placeholder="您的账户名和登录名" id="uname" name="uname" style="margin-top:10px;"/>
+            </div>
+            <div class="input-tip">
+                <span id="uname_error"></span>
+            </div>
+            <div class="form_item">
+                <label>设置密码</label>
+                <input type="text" value="" placeholder="建议至少使用两种字符组合" id="pwd" name="pwd" style="margin-top:10px;"/>
+            </div>
+            <div class="input-tip">
+                <span id="pwd_error"></span>
+            </div>
+            <div class="form_item">
+                <label>确认密码</label>
+                <input type="text" value="" placeholder="请再次输入密码" id="confirm_pwd" name="confirm_pwd" style="margin-top:10px;"/>
+            </div>
+            <div class="input-tip">
+                <span id="confirm_pwd_error"></span>
+            </div>
+            <div class="form_item">
+                <label>中国+86</label>
+                <input type="text"  placeholder="建议使用常用手机" id="phone" name="phone" style="margin-top:10px;"/>
+            </div>
+            <div class="input-tip">
+                <span id="phone_error"></span>
+            </div>
+            <div class="form_item">
+                <label>验  证  码</label>
+                <input type="text" value="" placeholder="请输入验证码" id="code" style="margin-top:10px;"/>
+                <label class="code"></label>
+            </div>           
+            <div class="input-tip">
+                <span id="code_error"></span>
+            </div>
+            <div class="form_item">
+                <label>手机验证</label>
+                <input type="text" value="" placeholder="请您输入手机获取的验证码" id="YZM" name="YZM" style="margin-top:10px;" />
+            </div>
+
+            <div style="color:#333; font-size:12px">
+                <input type="checkbox" name="agreen" id="agreen" />
+                我已阅读并同意
+                <a style="color: #38f">《大型商贸用户注册协议》</a>
+            </div>
+            <div class="input-tip">
+                <span></span>
+            </div>
+            <button type="button" name="btn1" id="btn1" value=""style="margin-top:1px">手机号码验证</button>
+            <button type="button" name="btn2" id="btn2" value=""style="margin-top:1px">是否获取成功</button>
+            <button type="button" name="btn" id="btn" value=""style="margin-top:1px">立即注册</button>
+           
+           
+            <div class="input-tip">
+                <span></span>
+            </div>           
+        </form>
+       
+    </div>  
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.2.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <script src="~/Content/js/jquery.form.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script type="text/javascript">
+       
+        $(function(){  
+            //$("#")  
+  
+            // 二维数组, 用于生成随机验证码  
+            var array = [["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"], ["0", "1", "2", "3", "4", "6", "7", "8", "9"]];  
+            var str = "";  
+            randomCode();  
+  
+            // 点击更换验证码  
+            $(".code").click(function(){  
+                randomCode();  
+            });  
+  
+            // 随机生成验证码  
+            function randomCode(){  
+                str = "";  
+                for (var i = 0; i < 4; i++) {  
+  
+                    // 随机生成一个下标  
+                    var temp = Math.random();  
+                    temp = temp < 0.5 ? Math.floor(temp) : Math.ceil(temp);  
+  
+                    var length = array[temp].length;  
+                    //从任意值开始至任意值:  
+                    //parseInt(Math.random() * (上限-下限+1) + 下限);  
+                    var index = parseInt(Math.random() * length);  
+                    str += array[temp][index];  
+                }  
+                $(".code").html(str);  
+            }  
+      
+            $("#btn1").click(function () {
+                var phone = $("#phone").val();
+                $.post("/UserLog/Userlog/YanZhengShouJIHaoMa?HaoMa=" + phone, function (Tip)
+                {
+                    if (Tip=="success") {
+                        layer.alert("发送成功");
+                    } else {
+                        layer.alert("发送失败");
+                    }
+                });
+            });
+           
+
+
+            // 用户名正则表达式  
+            var uname_reg = /^[\u4e00-\u9fa5]{4,20}$|^[\dA-Za-z_\-]{4,20}$/;  
+            var uname_ok = false;  
+            // 用户名输入框获取焦点  
+            $("#uname").focus(function(){  
+                $(this).css("outline", "none");  
+                $(this).attr("placeholder", "");  
+                $(this).parent().css("border-color", "#999");  
+                $("#uname_error").css("color", "#c5c5c5");  
+                $("#uname_error").html("支持中文, 字母, 数字, \"-\", \"_\", 的组合, 4-20个字符");  
+            });  
+            $("#uname").blur(function(){  
+                if ($(this).val() == "") {  
+                    $(this).attr("placeholder", "您的账户名和登录名");  
+                    $("#uname_error").html("");  
+                    uname_ok = false;  
+                } else if ($(this).val().length < 4 || $(this).val().length > 20) {  
+                    // 长度不对  
+                    $("#uname_error").html("长度只能在4-20个字符之间");  
+                    $("#uname_error").css("color", "red");  
+                    $(this).parent().css("border-color", "red");  
+                    uname_ok = false;  
+                } else if (!$(this).val().match(uname_reg)) {  
+                    // 有特殊字符  
+                    $("#uname_error").html("格式错误, 仅支持中文, 字母, 数字, \"-\", \"_\"的组合");  
+                    $("#uname_error").css("color", "red");  
+                    $(this).parent().css("border-color", "red");  
+                    uname_ok = false;  
+                } else {  
+                    uname_ok = true;  
+                }  
+            });  
+  
+            var pwd_reg = /^(?![A-Z]+$)(?![a-z]+$)(?!\d+$)(?![\W_]+$)\S{6,20}$/;  
+            var pwd_ok = false;  
+            // 密码输入框获取焦点  
+            $("#pwd").focus(function(){  
+                $(this).css("outline", "none");  
+                $(this).attr("placeholder", "");  
+                $(this).parent().css("border-color", "#999");  
+                $("#pwd_error").css("color", "#c5c5c5");  
+                $("#pwd_error").html("建议使用字母, 数字和符号两种及以上的组合, 6-20个字符");  
+            });  
+            $("#pwd").blur(function(){  
+                if ($(this).val() == "") {  
+                    $(this).attr("placeholder", "建议至少使用两种字符组合");  
+                    $("#pwd_error").html("");  
+                    pwd_ok = false;  
+                } else if ($(this).val().length < 6 || $(this).val().length > 20) {  
+                    // 长度不对  
+                    $("#pwd_error").html("长度只能在6-20个字符之间");  
+                    $("#pwd_error").css("color", "red");  
+                    $(this).parent().css("border-color", "red");  
+                    pwd_ok = false;  
+                } else if (!$(this).val().match(pwd_reg)) {  
+                    // 不是两种及以上的组合  
+                    $("#pwd_error").html("有被盗风险, 建议使用字母, 数字和符号两种及以上组合");  
+                    $("#pwd_error").css("color", "red");  
+                    $(this).parent().css("border-color", "red");  
+                    pwd_ok = false;  
+                } else {  
+                    pwd_ok = true;  
+                }  
+            });  
+  
+    // 再次密码输入框获取焦点  
+            var confirm_pwd_ok = false;  
+            $("#confirm_pwd").focus(function(){  
+                $(this).css("outline", "none");  
+                $(this).attr("placeholder", "");  
+                $(this).parent().css("border-color", "#999");  
+                $("#confirm_pwd_error").css("color", "#c5c5c5");  
+                $("#confirm_pwd_error").html("请再次输入密码");  
+            });  
+            $("#confirm_pwd").blur(function(){  
+                if ($(this).val() == "") {  
+                    $(this).attr("placeholder", "请再次输入密码");  
+                    $("#confirm_pwd_error").html("");  
+                    confirm_pwd_ok = false;  
+                } else if ($(this).val() != $("#pwd").val()) {  
+                    // 再次输入的密码不一致  
+                    $("#confirm_pwd_error").html("两次输入的密码不一致");  
+                    $("#confirm_pwd_error").css("color", "red");  
+                    $(this).parent().css("border-color", "red");  
+                    confirm_pwd_ok = false;  
+                } else {  
+                    confirm_pwd_ok = true;  
+                }  
+            });  
+  
+            // 手机号码输入框获取焦点  
+            var phone_reg = /^1[3|4|5|7|8]\d{9}$/;  
+            var phone_ok = false;  
+            $("#phone").focus(function(){  
+                $(this).css("outline", "none");  
+                $(this).attr("placeholder", "");  
+                $(this).parent().css("border-color", "#999");  
+                $("#phone_error").css("color", "#c5c5c5");  
+                $("#phone_error").html("验证完成后, 可以使用该手机登录和找回密码");  
+            });  
+            $("#phone").blur(function(){   
+                if ($(this).val() == "") {  
+                    $(this).attr("placeholder", "建议使用常用手机");  
+                    $("#phone_error").html("");  
+                    phone_ok = false;  
+                } else if ($(this).val().length != 11) {  
+                    // 长度不对  
+                    $("#phone_error").html("格式有错");  
+                    $("#phone_error").css("color", "red");  
+                    $(this).parent().css("border-color", "red");  
+                    phone_ok = false;  
+                } else if (!$(this).val().match(phone_reg)) {  
+                    // 输入的不是手机号码  
+                    $("#phone_error").html("格式有错");  
+                    $("#phone_error").css("color", "red");  
+                    $(this).parent().css("border-color", "red");  
+                    phone_ok = false;  
+                } else {  
+                    phone_ok = true;  
+                }  
+            });  
+  
+            // 验证码输入框获取焦点  
+            var code_ok = false;  
+            $("#code").focus(function(){  
+                $(this).css("outline", "none");  
+                $(this).attr("placeholder", "");  
+                $(this).parent().css("border-color", "#999");  
+                $("#code_error").css("color", "#c5c5c5");  
+                $("#code_error").html("看不清? 点击更换验证码");  
+            });  
+            $("#code").blur(function(){  
+                if ($(this).val() == "") {  
+                    $(this).attr("placeholder", "建议使用常用手机");  
+                    $("#code_error").html("");  
+                    code_ok = false;  
+                } else if ($(this).val() != str) {  
+                    // 输入错误的验证码  
+                    $("#code_error").html("验证码输入错误");  
+                    $("#code_error").css("color", "red");  
+                    $(this).parent().css("border-color", "red");  
+                    code_ok = false;  
+                } else {  
+                    code_ok = true;  
+                }  
+            });  
+  
+            // 是否同意协议  
+            $("#agreen").click(function(){  
+                //alert($("#agreen").att("checked"));  
+                if ($(this).attr('checked')) {  
+                    $(this).attr('checked', false);  
+                } else {  
+                    $(this).attr('checked', true);  
+                }  
+            });  
+        })
+
+       
+ 
+    </script>
+
+    <script>    
+       
+        
+    </script>
+    <script>
+        
+        $("#btn").click(function (event) {
+            var uname = $("#uname").val();
+            var phone = $("#phone").val();
+            var pwd = $("#pwd").val();
+            var useof = $("#agreen").is(":checked");
+            if (uname != null && phone != null && pwd != null && useof !=null) {
+                $.post("/UserLog/Userlog/InsertUname", {
+                    uname: uname,
+                    phone: phone,
+                    pwd: pwd,
+                    useof:useof
+                }, function (data) {
+                    if (data == "success") {
+                        layer.alert('提交成功', { icon: 1, title: '提示' });
+
+                    }
+                    else {
+                        layer.alert('提交失败', { icon: 2, title: '提示' });
+                    }
+                });
+            }
+            else {
+                layer.alert('请先输入完数据', { icon: 3, title: '提示' });
+            }
+        });
+
+       
+    </script>
+
+</body>
+</html>

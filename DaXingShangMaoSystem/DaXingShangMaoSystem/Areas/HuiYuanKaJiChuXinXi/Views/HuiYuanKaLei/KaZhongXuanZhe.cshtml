@@ -1,0 +1,117 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <title>KaZhongXuanZhe</title>
+    
+    <style>
+        .container {
+       width:400px;
+       padding :0;
+       border:1px solid blue;
+       margin-top:30px;
+       background-color:#f0edf1;
+        }
+        
+        .zk {
+        width:200px;
+        height:330px;
+        background-color:white;
+        border:1px solid darkgrey;
+        overflow:scroll;
+        margin-top:10px;
+        float:left;
+        margin-left:20px;
+        }
+        .yk {
+        width:150px;
+        height:230px;
+        margin-top:150px;
+        margin-left:280px;
+        }
+        .shan {
+        width:150px;
+        height:85px;
+        }
+        .xia {
+        width:150px;
+        height:85px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class=" panel-heading">选择卡种</div>
+        </div>
+        <div class="zk">
+            <table id="tabHeTongXinXi" style="height:100px;width:100px" class="table table-bordered table-condensed table-hover table-responsive">
+                <tr>
+                    <th w_index="MembershipCardID" style="width:16%">代码</th>
+                    <th w_index="MembershipCardMC" style="width:25%">卡种名称</th>
+                    <th w_index="" style="width:60%"></th>
+                </tr>
+            </table>
+        </div>
+        <div class=" yk ">
+            <div class="shan">
+                <button class="btn-danger" id="quedin">
+                <span><i class="glyphicon glyphicon-file"></i></span> 确 定 </button>
+            </div>
+            <div class=" xia">
+                <button class="Button btn-primary"id=" quxiao">
+                <span class=" glyphicon glyphicon-trash"></span> 取 消 </button>
+            </div>
+        </div>
+        </div>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <script>
+
+        $(function () {
+            tabHeTongXinXi = $.fn.bsgrid.init('tabHeTongXinXi', {
+                url: '/HuiYuanKaJiChuXinXi/HuiYuanKaLei/SelectKaZhobg',
+                autoLoad: true,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                pageSize: 2,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置
+                displayPagingToolbarOnlyMultiPages: true,//仅当多页时才显示分页工具条
+                event: {
+                    customRowEvents: { //record 记录记载  options 选项
+                        click: function (record, rowIndex, trObj, options) {
+                            if (record != null) {
+                                MembershipCardID = record.MembershipCardID;
+                            }
+                        }
+                    }
+                }
+            });
+            tabHeTongXinXi.refreshPage();
+        });
+        $(function () {
+            $("#quedin").click( function () {
+                window.location.href = "/HuiYuanKaJiChuXinXi/HuiYuanKaLei/KaLeiXingDingYi";
+            });
+        });
+    </script>
+</body>
+</html>

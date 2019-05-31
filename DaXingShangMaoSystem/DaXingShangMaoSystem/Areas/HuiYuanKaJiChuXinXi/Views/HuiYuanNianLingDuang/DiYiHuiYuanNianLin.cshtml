@@ -1,0 +1,175 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <title>DiYiHuiYuanNianLin</title>
+  
+    <style>
+        .container {
+        width:100%;
+        height:350px;
+        background-color:#f0edf1;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="container"> 
+        <div class="panel panel-primary">
+            <div class="panel-heading">定义会员年龄段</div>
+        </div>
+        <div class="row examineeInfor" style="width:100%;height:250px;margin-left:5px;background-color:#f0edf1">
+            <table id="MemberAge"class=" table table-hover table-condensed  table-bordered  table-striped">
+                <tr>
+                    <th w_num="total_line">编号</th>
+                    <th w_index="MemberID" w_hidden="true">MemberID</th>
+                    <th w_index="MemberName">名称</th>
+                    <th w_index="OriginationAge">起始年龄</th>
+                    <th w_index="EndAge">终止年龄</th>
+                </tr>
+            </table>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-10 col-md-offset-4 col-sm-offset-4 col-xs-offset-2">
+                <button onclick="Tianjian()"class="btn-success">
+                    <span class="glyphicon glyphicon-file"></span>添加</button>
+                <button id="doDelete"class="btn-danger">
+                    <span class="glyphicon glyphicon-trash"></span>删除</button>
+                <button style="color:gainsboro"class="btn-primary">
+                    <span class="glyphicon glyphicon-cloud"></span>确认</button>
+                <button style="color:gainsboro"class="btn-info">
+                    <span class="glyphicon glyphicon-download-alt"></span>取消</button>
+                <button class="btn-default">
+                    <span class="glyphicon glyphicon-duplicate"></span>退出</button>
+            </div>
+        </div>
+        <div class="row">
+            @*新增/修改会员年龄信息信息 模态窗体*@
+            <div class="modal bs-example-modal-sm" id="modBaseInfor">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title"><span class="glyphicon glyphicon-th-list"></span>新增会员年龄信息</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label class="control-label">名称</label>
+                                <input id="TJMemberAgeA" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">起始年龄</label>
+                                <input id="TJMemberAgeB" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">终止年龄</label>
+                                <input id="TJMemberAgeC" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group btn-group">
+                                <button id="BtnAdd" type="button" class="btn btn-primary" style="display:block" onclick="baocun()">保存</button>
+                                <button id="BtnEdit" type="button" class="btn btn-warning" style="display:none" onclick="doEdit()">修改</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+                            </div>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+        </div>
+      </div>
+   
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <script>
+        var MemberAge;//表
+        var MemberId;//ID
+        $(document).ready(function () {
+            //初始化表格
+            MemberAge = $.fn.bsgrid.init('MemberAge', {
+                url: '/HuiYuanKaJiChuXinXi/HuiYuanNianLingDuang/SelectAge',
+                autoLoad: true,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                displayBlankRows: false,//是否显示空白行，默认值false
+                pageSize: 10,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条               
+                event: {
+                    customRowEvents: {
+                        click: function (record, rowIndex, trObj, options) {
+                            if (record != null) {
+                                MemberId = record.MemberID;
+                            }
+                        }
+                    }
+                }
+            });
+        });
+        //点击按钮弹出新增窗体
+        function Tianjian() {
+            document.getElementById("BtnAdd").style.display = "block";//控制按钮显示
+            document.getElementById("BtnEdit").style.display = "none";
+            document.getElementById("TJMemberAgeA").value = "";//清空文本数据
+            document.getElementById("TJMemberAgeB").value = "";
+            document.getElementById("TJMemberAgeC").value = "";
+            $("#modBaseInfor").modal("show");//弹出新增窗体
+        }
+        //新增保存按钮
+        function baocun() {
+            encodeURI();//不过滤￥%
+            var A = encodeURI(document.getElementById("TJMemberAgeA").value.trim());//
+            var B = document.getElementById("TJMemberAgeB").value.trim();
+            var C = document.getElementById("TJMemberAgeC").value.trim();
+            $.getJSON("/HuiYuanKaJiChuXinXi/HuiYuanNianLingDuang/InsertAGe?MemberName=" + A + "&OriginationAge=" + B + "&EndAge=" + C, function (data) {
+                if (data == "ok") {
+                    location.reload();//刷新页面
+                }
+            });
+        }
+        //删除
+        $("#doDelete").click(function () {
+            var selectRowIndex = MemberAge.getSelectedRowIndex();//获取选中行的索引值
+            if (selectRowIndex >= 0) {
+                layer.confirm("您确定到删除该信息？", {
+                    icon: 3,
+                    btn: ['确定', '取消']
+                    //按钮
+                }, function (layerIndex) {
+                    layer.close(layerIndex);//关闭提示框
+                    var MemberAgeId = MemberAge.getColumnValue(selectRowIndex, "MemberID");//获取选中行的id
+                    //删除年龄表
+                    $.post("/HuiYuanKaJiChuXinXi/HuiYuanNianLingDuang/DeleteMemberAge",
+                        { MemberAgeId: MemberAgeId }, function (msg) {
+                            if (msg == "success") {
+                                layer.alert("删除成功！", { icon: 1, title: '提示' });
+                                //刷新table
+                                MemberAge.refreshPage();
+                            }
+                            else {
+                                layer.alert("删除失败", { icon: 2, title: '提示' });
+                            }
+                        });
+                });
+            }
+            else {
+                layer.alert("请选择需要删除的数据", { icon: 0, title: '提示' });
+            }
+        });
+    </script>
+</body>
+</html>

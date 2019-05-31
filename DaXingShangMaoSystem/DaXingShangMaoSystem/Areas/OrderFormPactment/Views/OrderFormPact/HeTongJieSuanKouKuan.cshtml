@@ -1,0 +1,189 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>备选供货商综合评审项目定义</title>
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    @*CSS样式(包含默认皮肤样式)*@
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    @*CSS皮肤(需引用于bsgrid.all.min.css之后)*@
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css">
+        .container {
+            width: 900px;
+            padding: 0;
+        }
+
+        .panel-heading {
+            font-size: 16px;
+        }
+
+        .panel-body {
+            padding-top: 0;
+        }
+
+            .panel-body label {
+                font-weight: normal;
+                font-size: 16px;
+            }
+
+        .setPadding {
+            border: 1px solid #eee;
+            padding: 5px 0 5px 10px;
+        }
+
+            .setPadding button {
+                padding: 4px 6px;
+                font-size: 12px;
+            }
+
+        .form-horizontal label {
+            font-size: 12px;
+        }
+
+        .form-horizontal select, .form-horizontal input {
+            height: 26px;
+            padding: 0;
+        }
+
+        .reset {
+            padding: 0;
+        }
+
+        .examineeInfor {
+            border: 1px solid #eee;
+            padding: 0;
+        }
+
+        .h5 {
+            margin: 0;
+            background: #eef;
+            padding: 6px 10px;
+        }
+
+        .examineeInfor th, .examineeInfor td {
+            font-weight: normal;
+            text-align: center;
+        }
+
+        #examineeInfor th {
+            padding: 4px 8px;
+        }
+
+        .modal-header {
+            padding: 6px 5px;
+            border-bottom: none;
+            background: #337ab7;
+            text-align: center;
+            color: #fff;
+        }
+
+        .modal-content {
+            padding: 6px;
+        }
+
+        .modal-body {
+            border: 1px solid #ddd;
+            padding: 0 25px;
+        }
+
+        .modal-content label {
+            font-weight: normal;
+            font-size: 12px;
+        }
+
+        .img-box {
+            border: 1px solid #eee;
+            padding: 10px;
+        }
+
+        .modal-dialog {
+            width: 400px;
+        }
+
+        .modal .form-group {
+            margin-bottom: 0;
+            margin-top: 2px;
+        }
+
+        .form-group input {
+            height: 26px;
+        }
+
+        .setSex {
+            position: relative;
+            top: -10px;
+            left: 2px;
+        }
+    </style>
+</head>
+<body style="background:#f0edf1;">
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">定义合同扣款项目</div>
+            <div class="panel-body" style="background:#f0edf1;">
+                <div class="row examineeInfor col-md-12">
+                    <div class="col-md-12">
+                        <table id="taAlternativeProject" style="width:100%;" class="table table-hover table-bordered table-responsive table-striped">
+                            <tr>
+                                <th w_num="total_line">序号</th>
+                                <th w_index="AgreementWithholdID" w_hidden="true">结算扣款项目ID</th>
+                                <th w_index="AgreementWithholdName">结算扣款项目</th>
+                                <th w_index="MethodOfSettling">记成本/费用</th>
+                                <th w_index="SettlementDebiID" w_hidden="true">SettlementDebiID</th>
+                                <th w_index="SettlementDebi">扣款方式</th>
+                                <th w_index="UseNo">使用标记</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <button class="btn " id="insertNoticeType"style="width:80px;margin-bottom:5px">添加</button>
+                            <button class="btn " id="updateNoticeType"style="width:80px;margin-bottom:5px">修改</button>
+                            <button class="btn " id="deleteNoticeType"style="width:80px;margin-bottom:5px">删除</button>
+                            <button class="btn " type="button" onclick="SetUpdate()"style="width:80px;margin-bottom:5px"disabled="disabled">保存</button>
+                            <button class="btn " type="button" onclick="doDelete()"style="width:80px;margin-bottom:5px"disabled="disabled">退出</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    @*jquery.bsgrid*@
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>@*对话框*@
+    <script src="~/Content/js/customfunction.js"></script>@*封装js*@
+    <script src="~/Content/js/jquery.form.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap-table.js"></script>
+    <script type="text/javascript">
+        var taAlternativeProject;
+        ///查询经销合同数据
+        $(function () {
+            taAlternativeProject = $.fn.bsgrid.init('taAlternativeProject', {
+                url: '/OrderFormPactment/OrderFormPact/selectAgreementWithhold',
+                autoLoad: false,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                rowSelectedColor: true,//是否显示选中行背景色
+                pageSize: 10,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left"//分页工具条的显示位置
+
+            });
+            taAlternativeProject.refreshPage();
+        });
+
+
+    </script>
+</body>
+</html>

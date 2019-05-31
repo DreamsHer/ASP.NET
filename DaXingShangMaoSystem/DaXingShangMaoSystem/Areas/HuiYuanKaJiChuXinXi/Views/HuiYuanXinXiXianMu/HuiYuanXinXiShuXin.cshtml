@@ -1,0 +1,621 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" />
+    <title>HuiYuanXinXiShuXin</title>
+    <style>
+        .container {
+            width: 100%;
+            padding: 0;
+            margin-left:22px;
+            background-color:#f0edf1;
+        }
+
+        .page-header {
+            width: 100%;
+            background-color: white;
+            margin-left: 2px;
+            margin-top: -9px;
+            background-color:#f0edf1;
+        }
+
+        .nav-pills {
+            background-color:#f0edf1;
+            margin-left:20px;
+            width:80%;
+            border:1px solid gainsboro;
+        }
+
+        .biaoge {
+            border: 1px solid darkgray;
+            background-color:white;
+            width: 80%;
+            height: 250px;
+            margin-left: 20px;
+            margin-top: -8px;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class=" pager panel-primary">
+            <div class="panel-heading">会员信息属性内容定义</div>
+        </div>
+        <div class=" page-header">
+            <ul class="nav nav-pills">
+                <li class=" active"><a href=" #tab1" data-toggle="tab">证件类型</a></li>
+                <li><a href=" #tab2" data-toggle="tab">会员职业</a></li>
+                <li><a href=" #tab3" data-toggle="tab">会员家庭收入</a></li>
+                <li><a href=" #tab4" data-toggle="tab">会员学历</a></li>
+                <li><a href=" #tab5" data-toggle="tab">至商场时间</a></li>
+                <li><a href=" #tab6" data-toggle="tab">交通工具</a></li>
+                <li><a href=" #tab7" data-toggle="tab">家庭成员</a></li>
+                <li><a href=" #tab8" data-toggle="tab">兴趣爱好</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab1">
+                    <p>
+                        <div class=" biaoge">
+                            <table class="table table-bordered table-hover table-striped table-condensed"id="zhengjianleixing">
+                                <tr>
+                                    <th w_index="CredentialsType">内容</th>
+                                    <th w_index="MemberID" w_hidden="true">MemberID</th>
+                                    <th w_num="total_line">显示顺序</th>
+                                </tr>
+                            </table>
+                        </div>
+                    </p>
+                </div>
+                <div class="tab-pane" id="tab2">
+                    <p>
+                        <div class=" biaoge">
+                            <table id="huiyuanzhiye" class="table table-hover table-bordered table-striped table-condensed">
+                                <tr>
+                                    <th w_index="Profession">内容</th>
+                                    <th w_index="MemberID" w_hidden="true">MemberID</th>
+                                    <th w_num="total_line">显示顺序</th>
+                                </tr>
+                            </table>
+                        </div>
+                    </p>
+                </div>
+                <div class="tab-pane" id="tab3">
+                    <p>
+                        <div class=" biaoge">
+                            <table id="huiyuanjiatingshouru" class="table table-hover table-bordered table-striped table-condensed">
+                                <tr>
+                                    <th w_index="MemberFamilyIncome">内容</th>
+                                    <th w_index="MemberID" w_hidden="true">MemberID</th>
+                                    <th w_num="total_line">显示顺序</th>
+                                </tr>
+                             </table>
+                        </div>
+                    </p>
+                </div>
+                <div class="tab-pane" id="tab4">
+                    <p>
+                        <div class=" biaoge">
+                            <table id="huiyuanxueli" class="table table-hover table-bordered table-striped table-condensed">
+                                <tr>
+                                    <th w_index="MemberEd">内容</th>
+                                    <th w_index="MemberID" w_hidden="true">MemberID</th>
+                                    <th w_num="total_line">显示顺序</th>
+                                </tr>
+                             </table>
+                        </div>
+                    </p>
+                </div>
+                <div class="tab-pane" id="tab5">
+                    <p>
+                        <div class=" biaoge">
+                            <table id="Zhishangchangshijian" class="table table-hover table-bordered table-striped table-condensed">
+                                <tr>
+                                    <th w_index="TimeToMall">内容</th>
+                                    <th w_index="MemberID" w_hidden="true">MemberID</th>
+                                    <th w_num="total_line">显示顺序</th>
+                                </tr>
+                            </table>
+                        </div>
+                    </p>
+                </div>
+                <div class="tab-pane" id="tab6">
+                    <p>
+                        <div class=" biaoge">
+                            <table id="jiaotonggonju" class="table table-hover table-bordered table-striped table-condensed">
+                                <tr>
+                                    <th w_index="Vehicle">内容</th>
+                                    <th w_index="MemberID" w_hidden="true">MemberID</th>
+                                    <th w_num="total_line">显示顺序</th>
+                                </tr>
+                            </table>
+                        </div>
+                    </p>
+                </div>
+                <div class="tab-pane" id="tab7">
+                    <p>
+                        <div class=" biaoge">
+                            <table id="jiatingchengyuang" class="table table-hover table-bordered table-striped table-condensed">
+                                <tr>
+                                    <th w_index="FamilyMember">内容</th>
+                                    <th w_index="MemberID" w_hidden="true">MemberID</th>
+                                    <th w_num="total_line">显示顺序</th>
+                                </tr>
+                             </table>
+                        </div>
+                    </p>
+                </div>
+                <div class="tab-pane" id="tab8">
+                    <p>
+                        <div class=" biaoge">
+                            <table id="xingquaihao" class="table table-hover table-bordered table-striped table-condensed">
+                                <tr>
+                                    <th w_index="HobbiesInterests">内容</th>
+                                    <th w_index="MemberID" w_hidden="true">MemberID</th>
+                                    <th w_num="total_line">显示顺序</th>
+                                </tr>
+                            </table>
+                        </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-9 col-md-offset-4 col-sm-offset-4 col-xs-offset-2">
+                <button class="btn btn-group"style="color:gainsboro">
+                    <span class="glyphicon glyphicon-step-backward"></span>
+                </button>
+                <button class="btn btn-group"style="color:gainsboro">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </button>
+                <button class="btn btn-group">
+                    <span class="glyphicon glyphicon-chevron-right "></span>
+                </button>
+                <button class="btn btn-group">
+                    <span class="glyphicon glyphicon-step-forward"></span>
+                </button>
+                <button class="btn btn-primary" onclick="Tianjian()">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </button>
+                <button class="btn btn-danger" id="doDelete">
+                    <span class="glyphicon glyphicon-minus"></span>
+                </button>
+                <button class="btn btn-toolbar ">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                </button>
+                <button class="btn btn-group"style="color:gainsboro">
+                    <span class="glyphicon glyphicon-ok"></span>
+                </button>
+                <button class="btn btn-group"style="color:gainsboro">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </button>
+                <button class="btn btn-success"id="tuichu">
+                    <span class="glyphicon glyphicon-share-alt"></span>
+                </button>
+            </div>
+        </div>
+            <div class="row">
+            @*新增/修改会员年龄信息信息 模态窗体*@
+            <div class="modal bs-example-modal-sm" id="modBaseInfor">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title"><span class="glyphicon glyphicon-th-list"></span>新增会员信息</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label class="control-label">证件类型</label>
+                                <input id="TJMemberAgeA" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">会员职业</label>
+                                <input id="TJMemberAgeB" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">会员家庭收入</label>
+                                <input id="TJMemberAgeC" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">会员学历</label>
+                                <input id="TJMemberAgeD" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">至商场时间</label>
+                                <input id="TJMemberAgeE" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">交通工具</label>
+                                <input id="TJMemberAgeF" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">家庭成员</label>
+                                <input id="TJMemberAgeG" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">兴趣爱好</label>
+                                <input id="TJMemberAgeH" type="text" class="form-control" />
+                            </div>
+                            
+                            <div class="form-group btn-group">
+                                <button id="BtnAdd" type="button" class="btn btn-primary" style="display:block" onclick="baocun()">保存</button>
+                                <button id="BtnEdit" type="button" class="btn btn-warning" style="display:none" onclick="doEdit()">修改</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+                            </div>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+        </div><!-- /.modal -->
+       
+    </div>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap-table.js"></script>
+    <script>
+        var zhengjianleixing;//证件类型
+        var huiyuanzhiye;//会员职业
+        var huiyuanjiatingshouru;//会员家庭收入 
+        var huiyuanxueli;//会员学历
+        var Zhishangchangshijian//至商场时间
+        var jiaotonggonju//交通工具
+        var jiatingchengyuang//家庭成员
+        var xingquaihao//兴趣爱好
+        var MemberId;//ID
+        var ProfessionId;
+
+        //查询证件类型信息
+        $(document).ready(function () {
+            //初始化表格
+            MemberAge = $.fn.bsgrid.init('zhengjianleixing', {
+                url: '/HuiYuanKaJiChuXinXi/HuiYuanXinXiXianMu/SelectInfo',
+                autoLoad: true,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                displayBlankRows: false,//是否显示空白行，默认值false
+                pageSize: 10,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条               
+                event: {
+                    customRowEvents: {
+                        click: function (record, rowIndex, trObj, options) {
+                            if (record != null) {
+                                MemberId = record.MemberID;
+                            }
+                        }
+                    }
+                }
+            });
+        });
+        //查询会员职业信息
+        $(document).ready(function () {
+            //初始化表格
+            MemberAge = $.fn.bsgrid.init('huiyuanzhiye', {
+                url: '/HuiYuanKaJiChuXinXi/HuiYuanXinXiXianMu/SelectProfession',
+                autoLoad: true,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                displayBlankRows: false,//是否显示空白行，默认值false
+                pageSize: 10,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条               
+                event: {
+                    customRowEvents: {
+                        click: function (record, rowIndex, trObj, options) {
+                            if (record != null) {
+                                MemberId = record.MemberID;
+                            }
+                        }
+                    }
+                }
+            });
+        });
+        //查询会员家庭收入信息
+        $(document).ready(function () {
+            //初始化表格
+            MemberAge = $.fn.bsgrid.init('huiyuanjiatingshouru', {
+                url: '/HuiYuanKaJiChuXinXi/HuiYuanXinXiXianMu/SelectMemberFamilyIncome',
+                autoLoad: true,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                displayBlankRows: false,//是否显示空白行，默认值false
+                pageSize: 10,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条               
+                event: {
+                    customRowEvents: {
+                        click: function (record, rowIndex, trObj, options) {
+                            if (record != null) {
+                                MemberId = record.MemberID;
+                            }
+                        }
+                    }
+                }
+            });
+        });
+        //查询会员学历信息
+        $(document).ready(function () {
+            //初始化表格
+            MemberAge = $.fn.bsgrid.init('huiyuanxueli', {
+                url: '/HuiYuanKaJiChuXinXi/HuiYuanXinXiXianMu/SelectMemberEd',
+                autoLoad: true,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                displayBlankRows: false,//是否显示空白行，默认值false
+                pageSize: 10,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条               
+                event: {
+                    customRowEvents: {
+                        click: function (record, rowIndex, trObj, options) {
+                            if (record != null) {
+                                MemberId = record.MemberID;
+                            }
+                        }
+                    }
+                }
+            });
+        });
+        //查询至商场时间信息
+        $(document).ready(function () {
+            //初始化表格
+            MemberAge = $.fn.bsgrid.init('Zhishangchangshijian', {
+                url: '/HuiYuanKaJiChuXinXi/HuiYuanXinXiXianMu/SelectTimeToMall',
+                autoLoad: true,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                displayBlankRows: false,//是否显示空白行，默认值false
+                pageSize: 10,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条               
+                event: {
+                    customRowEvents: {
+                        click: function (record, rowIndex, trObj, options) {
+                            if (record != null) {
+                                MemberId = record.MemberID;
+                            }
+                        }
+                    }
+                }
+            });
+        });
+        //查询交通工具信息
+        $(document).ready(function () {
+            //初始化表格
+            MemberAge = $.fn.bsgrid.init('jiaotonggonju', {
+                url: '/HuiYuanKaJiChuXinXi/HuiYuanXinXiXianMu/SelectVehicle',
+                autoLoad: true,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                displayBlankRows: false,//是否显示空白行，默认值false
+                pageSize: 10,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条               
+                event: {
+                    customRowEvents: {
+                        click: function (record, rowIndex, trObj, options) {
+                            if (record != null) {
+                                MemberId = record.MemberID;
+                            }
+                        }
+                    }
+                }
+            });
+        });
+        //查询家庭成员信息
+        $(document).ready(function () {
+            //初始化表格
+            MemberAge = $.fn.bsgrid.init('jiatingchengyuang', {
+                url: '/HuiYuanKaJiChuXinXi/HuiYuanXinXiXianMu/SelectFamilyMember',
+                autoLoad: true,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                displayBlankRows: false,//是否显示空白行，默认值false
+                pageSize: 10,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条               
+                event: {
+                    customRowEvents: {
+                        click: function (record, rowIndex, trObj, options) {
+                            if (record != null) {
+                                MemberId = record.MemberID;
+                            }
+                        }
+                    }
+                }
+            });
+        });
+        //查询兴趣爱好信息
+        $(document).ready(function () {
+            //初始化表格
+            MemberAge = $.fn.bsgrid.init('xingquaihao', {
+                url: '/HuiYuanKaJiChuXinXi/HuiYuanXinXiXianMu/SelectHobbiesInterests',
+                autoLoad: true,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                displayBlankRows: false,//是否显示空白行，默认值false
+                pageSize: 10,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条               
+                event: {
+                    customRowEvents: {
+                        click: function (record, rowIndex, trObj, options) {
+                            if (record != null) {
+                                MemberId = record.MemberID;
+                            }
+                        }
+                    }
+                }
+            });
+        });
+        //新增信息
+        //点击按钮弹出新增窗体
+        function Tianjian() {
+            document.getElementById("BtnAdd").style.display = "block";//控制按钮显示
+            document.getElementById("BtnEdit").style.display = "none";
+            document.getElementById("TJMemberAgeA").value = "";//清空文本数据
+            document.getElementById("TJMemberAgeB").value = "";
+            document.getElementById("TJMemberAgeC").value = "";
+            document.getElementById("TJMemberAgeD").value = "";
+            document.getElementById("TJMemberAgeE").value = "";
+            document.getElementById("TJMemberAgeF").value = "";
+            document.getElementById("TJMemberAgeG").value = "";
+            document.getElementById("TJMemberAgeH").value = "";
+            $("#modBaseInfor").modal("show");//弹出新增窗体
+        }
+        //新增保存按钮
+        function baocun() {
+            encodeURI();//不过滤￥%
+            var A = encodeURI(document.getElementById("TJMemberAgeA").value.trim());
+            var B = document.getElementById("TJMemberAgeB").value.trim();
+            var C = document.getElementById("TJMemberAgeC").value.trim();
+            var D = document.getElementById("TJMemberAgeD").value.trim();
+            var E = document.getElementById("TJMemberAgeE").value.trim();
+            var F = document.getElementById("TJMemberAgeF").value.trim();
+            var G = document.getElementById("TJMemberAgeG").value.trim();
+            var H = document.getElementById("TJMemberAgeH").value.trim();
+            $.getJSON("/HuiYuanKaJiChuXinXi/HuiYuanXinXiXianMu/InsertCredentialsType?CredentialsType=" + A, function (data) {
+                if (data == "ok") {
+                    location.reload();//刷新页面
+                }
+            });
+            $.getJSON("/HuiYuanKaJiChuXinXi/HuiYuanXinXiXianMu/InsertProfessione?Profession=" + B, function (data) {
+                if (data == "ok") {
+                    location.reload();//刷新页面
+                }
+            });
+            $.getJSON("/HuiYuanKaJiChuXinXi/HuiYuanXinXiXianMu/InsertMemberFamilyIncome?MemberFamilyIncome=" + C, function (data) {
+                if (data == "ok") {
+                    location.reload();//刷新页面
+                }
+            });
+            $.getJSON("/HuiYuanKaJiChuXinXi/HuiYuanXinXiXianMu/InsertMemberEd?MemberEd=" + D, function (data) {
+                if (data == "ok") {
+                    location.reload();//刷新页面
+                }
+            });
+            $.getJSON("/HuiYuanKaJiChuXinXi/HuiYuanXinXiXianMu/InsertTimeToMall?TimeToMall=" + E, function (data) {
+                if (data == "ok") {
+                    location.reload();//刷新页面
+                }
+            });
+            $.getJSON("/HuiYuanKaJiChuXinXi/HuiYuanXinXiXianMu/InsertVehicle?Vehicle=" + F, function (data) {
+                if (data == "ok") {
+                    location.reload();//刷新页面
+                }
+            });
+            $.getJSON("/HuiYuanKaJiChuXinXi/HuiYuanXinXiXianMu/InsertFamilyMember?FamilyMember=" + G, function (data) {
+                if (data == "ok") {
+                    location.reload();//刷新页面
+                }
+            });
+            $.getJSON("/HuiYuanKaJiChuXinXi/HuiYuanXinXiXianMu/InsertHobbiesInterests?HobbiesInterests=" + H, function (data) {
+                if (data == "ok") {
+                    location.reload();//刷新页面
+                }
+            });
+        }
+        //删除
+        $("#doDelete").click(function () {
+                //alert(MemberId);
+                if (MemberId > 0) {
+                    if (confirm("确认要删除该信息吗？")) {
+                        //删除证件信息
+                        $.getJSON("/HuiYuanKaJiChuXinXi/HuiYuanXinXiXianMu/DeleteMemberid?MemberId=" + MemberId, function (message) {
+                            if (message == "success") {
+                                alert("删除成功");
+                                RefreshTable();//删除成功之后刷新table的数据
+                            } else {
+                               
+                            }
+                        });
+                        //删除会员职业信息
+                        $.getJSON("/HuiYuanKaJiChuXinXi/HuiYuanXinXiXianMu/DeleteProfession?MemberId=" + MemberId, function (message) {
+                            if (message == "success") {
+                                alert("删除成功");
+                                RefreshTable();//删除成功之后刷新table的数据
+                            } else {
+                              
+                            }
+                        });
+                        //删除会员家庭收入信息
+                        $.getJSON("/HuiYuanKaJiChuXinXi/HuiYuanXinXiXianMu/DeleteMemberMemberFamilyIncome?MemberId=" + MemberId, function (message) {
+                            if (message == "success") {
+                                alert("删除成功");
+                                RefreshTable();//删除成功之后刷新table的数据
+                            } else {
+
+                            }
+                        });
+                        //删除会员学历信息
+                        $.getJSON("/HuiYuanKaJiChuXinXi/HuiYuanXinXiXianMu/DeleteMemberEd?MemberId=" + MemberId, function (message) {
+                            if (message == "success") {
+                                alert("删除成功");
+                                RefreshTable();//删除成功之后刷新table的数据
+                            } else {
+
+                            }
+                        });
+                        //删除至商场时间信息
+                        $.getJSON("/HuiYuanKaJiChuXinXi/HuiYuanXinXiXianMu/DeleteTimeToMall?MemberId=" + MemberId, function (message) {
+                            if (message == "success") {
+                                alert("删除成功");
+                                RefreshTable();//删除成功之后刷新table的数据
+                            } else {
+
+                            }
+                        });
+                        //删除交通工具信息
+                        $.getJSON("/HuiYuanKaJiChuXinXi/HuiYuanXinXiXianMu/DeleteVehicle?MemberId=" + MemberId, function (message) {
+                            if (message == "success") {
+                                alert("删除成功");
+                                RefreshTable();//删除成功之后刷新table的数据
+                            } else {
+
+                            }
+                        });
+                        //删除家庭成员信息
+                        $.getJSON("/HuiYuanKaJiChuXinXi/HuiYuanXinXiXianMu/DeleteFamilyMember?MemberId=" + MemberId, function (message) {
+                            if (message == "success") {
+                                alert("删除成功");
+                                RefreshTable();//删除成功之后刷新table的数据
+                            } else {
+
+                            }
+                        });
+                        //删除兴趣爱好信息
+                        $.getJSON("/HuiYuanKaJiChuXinXi/HuiYuanXinXiXianMu/DeleteHobbiesInterests?MemberId=" + MemberId, function (message) {
+                            if (message == "success") {
+                                alert("删除成功");
+                                RefreshTable();//删除成功之后刷新table的数据
+                            } else {
+
+                            }
+                        });
+                    }
+                } else {
+                    alert("请选择需要删除的信息");
+                }
+                location.reload();//刷新页面
+        });
+
+        
+    </script>
+</body>
+</html>

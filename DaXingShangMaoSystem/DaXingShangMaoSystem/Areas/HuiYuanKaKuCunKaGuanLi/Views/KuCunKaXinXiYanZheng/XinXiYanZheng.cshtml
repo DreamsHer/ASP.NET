@@ -1,0 +1,125 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <title>XinXiYanZheng</title>
+    <style>
+        .container {
+            width: 100%;
+            height: 450px;
+            margin-top: 10px;
+            background-color:#f0edf1;
+        }
+
+        .ZK {
+            background-color:#f0edf1;
+        }
+
+        .SB {
+            width: 597px;
+            height: 65px;
+            border: 1px solid #f0edf1;
+        }
+
+        .qsk {
+            margin-left: 65px;
+            margin-top: 20px;
+        }
+
+        .XB {
+            width: 100%;
+            height: 250px;
+            margin-left: 1px;
+            background-color: white;
+            border:1px solid #b5aaaa;
+        }
+
+        .tc {
+            margin-left: 555px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                库 存 卡 信 息 验 证
+            </div>
+        </div>
+        <div class="ZK">
+            <div class="SB">
+                <div class="qsk">
+                    请 刷 卡 . . . .
+                    <input style="width:300px;background-color:azure" />
+                    <label>
+                        <input name="form-flield-checkbox" type="checkbox" />
+                        <span>检验第三轨数据</span>
+                    </label>
+                </div>
+            </div>
+            <div class="XB"style=" overflow:scroll">
+                <table id="TabKC" class="table table-hover table-condensed  table-bordered  table-striped">
+                    <tr>
+                        <th w_index="StoreCardID"></th>
+                        <th w_index="StoreCardID" w_hidden="true">StoreCardID</th>
+                        <th w_index="OrderNumber">序号</th>
+                        <th w_index="CardTypeCode">卡类代码</th>
+                        <th w_index="Safekeeping">保管地点</th>
+                        <th w_index="Faceamount">面值金额</th>
+                        <th w_index="EctMoney">铺底金额</th>
+                        <th w_index="Status">状态</th>
+                        <th w_index="DeleteCause">有效期</th>
+                        <th w_index="Tab">标记</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="tc">
+            <button> 退 出 </button>
+        </div>
+    </div>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <script>
+        var TabKC;//库存卡表
+        var StoreCardId;//ID
+        $(document).ready(function () {
+            //初始化表格
+            TabKC = $.fn.bsgrid.init('TabKC', {
+                url: '/HuiYuanKaKuCunKaGuanLi/KuCunKaXinXiYanZheng/SelectCard',
+                autoLoad: true,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                displayBlankRows: false,//是否显示空白行，默认值false
+                pageSize: 10,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条               
+                event: {
+                    customRowEvents: {
+                        click: function (record, rowIndex, trObj, options) {
+                            if (record != null) {
+                                StoreCardId = record.StoreCardID;
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

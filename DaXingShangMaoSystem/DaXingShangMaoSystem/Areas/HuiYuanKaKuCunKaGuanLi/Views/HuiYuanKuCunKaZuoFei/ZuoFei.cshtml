@@ -1,0 +1,563 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <title>ZuoFei</title>
+    <style>
+        .container {
+            width: 100%;
+            height: 550px;
+            margin-top: 10px;
+            background-color:#f0edf1;
+            border:1px solid gainsboro;
+        }
+
+        .JLBH {
+            margin-top: 10px;
+            margin-left:20px;
+        }
+
+        .HYKLX {
+            float: left;
+            width: 250px;
+            height: 45px;
+            border: 1px solid #f0edf1;
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+
+        .HSH {
+            float: left;
+            width: 270px;
+            height: 60px;
+            border: 1px solid #f0edf1;
+        }
+
+        .Hone {
+            float: left;
+        }
+
+        .Htwo {
+            float: left;
+        }
+
+        .BGDD {
+            float: left;
+            width: 250px;
+            height: 45px;
+            border: 1px solid #f0edf1;
+            margin-top: 10px;
+            margin-left: 60px;
+        }
+
+        .BS {
+            float: left;
+            width: 270px;
+            height: 60px;
+            border: 1px solid #f0edf1;
+        }
+
+        .Bone {
+            float: left;
+        }
+
+        .Btwo {
+            float: left;
+        }
+
+        .SHUH {
+            width: 98%;
+            height: 70px;
+            border: 1px solid #f0edf1;
+        }
+
+        .SZF {
+            width: 98%;
+            height: 36px;
+            border: 1px solid #f0edf1;
+            margin-left:20px;
+        }
+
+        .ZFJE {
+            float: left;
+        }
+
+        .JFSL {
+            float: left;
+            margin-left: 80px;
+        }
+
+        .ER {
+            width: 98%;
+            height: 36px;
+            border: 1px solid #f0edf1;
+            margin-left:20px;
+        }
+
+        .Shuangan {
+            float: left;
+        }
+
+        .ZFYY {
+            float: left;
+            margin-left: 130px;
+        }
+
+        .HYKB {
+            width: 98%;
+            height: 200px;
+            margin-left: 13px;
+            border:1px solid gainsboro;
+        }
+
+        .djr {
+            float: left;
+            margin-left: 230px;
+        }
+
+        .djsj {
+            float: left;
+            margin-left: 230px;
+        }
+
+        .shr {
+            margin-left: 650px;
+        }
+
+        .shsj {
+            float: left;
+            margin-left: 200px;
+        }
+
+        .XS {
+            width: 100%;
+            height: 70px;
+            border: 1px solid #f0edf1;
+            margin-top: 5px;
+            background-color:#f0edf1;
+        }
+
+        .AN {
+            margin-top: 5px;
+            margin-left: 75px;
+            background-color:#f0edf1;
+        }
+
+        .XG {
+            color: darkgrey;
+        }
+
+        .SC {
+            color: darkgrey;
+        }
+
+        .BC {
+            color: darkgrey;
+        }
+
+        .FQ {
+            color: darkgrey;
+        }
+
+        .SH {
+            color: darkgrey;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                会 员 库 存 卡 作 废
+            </div>
+        </div>
+        <div class="SK"style=" background-color:#f0edf1;">
+            <div class="JLBH">
+                <button id="btnXuanZeHeTong">记 录 编 号</button>
+                <input id="JiLuBianHao"name="JiLuBianHao"/>
+            </div>
+            <div class="SHUH">
+                <div class="HYKLX">
+                    <div>
+                        会员卡类型
+                    </div>
+                    <div class="HSH">
+                        <div class="Hone">
+                            <select data-rule-required="true" style="width:120px"id="KaFengLei"name="KaFengLei">
+                                <option></option>
+                            </select>
+                        </div>
+                        <div class="Htwo">
+                            <select data-rule-required="true" style="width:120px"id="KaZhongLei"name="KaZhongLei">
+                                <option></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="BGDD">
+                    <div>
+                        保 管 地 点
+                    </div>
+                    <div class="BS">
+                        <div class="Bone">
+                            <select data-rule-required="true" style="width:120px"id="ZhiKaBuMeng"name="ZhiKaBuMeng">
+                                <option></option>
+                            </select>
+                        </div>
+                        <div class="Btwo">
+                            <select data-rule-required="true" style="width:120px"id="ZhiKaMingCheng"name="ZhiKaMingCheng">
+                                <option></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="SZF">
+                <div class="ZFJE">
+                    作 废 金 额
+                    <input id="ZuoFeiJinE"name="ZuoFeiJinE"/>
+                </div>
+                <div class="JFSL">
+                    作 废 数 量
+                    <input id="ZuoFeiShuLiang"name="ZuoFeiShuLiang"/>
+                </div>
+            </div>
+            <div class="ER">
+                <div class="Shuangan">
+                    <button onclick="Tianjian()"class="btn-info"> 添 加 卡 片 </button>
+                    <button id="doDelete"class="btn-danger"> 删 除 卡 片 </button>
+                </div>
+                <div class="ZFYY">
+                    作 废 原 因
+                    <input style="width:181px" id="ZuoFeiYuanYing"name="ZuoFeiYuanYing"/>
+                </div>
+            </div>
+        </div>
+        <div class="ZK"style="background-color:#f0edf1;">
+            <div class="HYKB"style="background-color:white;">
+                <table id="KJ" class="table table-hover table-condensed  table-bordered  table-striped">
+                    <tr>
+                        <th w_index="OrderNumber"style="width:100px">会员卡号</th>
+                        <th w_index="Faceamount"style="width:100px">面值金额</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="XS">
+            <div class="djr">
+                登记人
+                <a class="btn btn-link" href="#">
+                    <i class="icon-plus-sign bigger-120 green"></i>
+                    林永好
+                </a>
+            </div>
+            <div class="shr">
+                审核人
+                <a class="btn btn-link" href="#">
+                    <i class="icon-plus-sign bigger-120 green"></i>
+                    林永好
+                </a>
+            </div>
+            <div class="djsj">
+                登记时间
+                <a class="btn btn-link" href="#">
+                    <i class="icon-plus-sign bigger-120 green"></i>
+                    2016.05.17 17:07:28
+                </a>
+            </div>
+            <div class="shsj">
+                审核时间
+                <a class="btn btn-link" href="#">
+                    <i class="icon-plus-sign bigger-120 green"></i>
+                    2016.05.17
+                </a>
+            </div>
+        </div>
+        <div class="AN">
+            <div class="col-lg-9 col-md-8 col-sm-8 pull-right">
+                <button class="Tj btn-primary"id="BtnInser">
+                    <span class="glyphicon glyphicon-align-left"></span> 添 加 </button>
+                <button class="XG">
+                    <span class="glyphicon glyphicon-bitcoin"></span> 修 改 </button>
+                <button class="SC">
+                    <span class="glyphicon glyphicon-chevron-left"></span> 删 除 </button>
+                <button class="BC">
+                    <span class="glyphicon glyphicon-chevron-down"></span> 保 存 </button>
+                <button class="FQ">
+                    <span class="glyphicon glyphicon-education"></span> 放 弃 </button>
+                <button class="SH">
+                    <span class="glyphicon glyphicon-film"></span> 审 核 </button>
+                <button class="TC">
+                    <span class="glyphicon glyphicon-globe"></span> 退 出 </button>
+                <button class="DY">
+                    <span class="glyphicon glyphicon-hand-up"></span> 打 印 </button>
+            </div>
+        </div>
+        <div class="row">
+            @*新增/修改会员信息信息 模态窗体*@
+            <div class="modal bs-example-modal-sm" id="modBaseInfor">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title"><span class="glyphicon glyphicon-th-list"></span>卡片信息</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label class="control-label">会员卡号</label>
+                                <input id="TJMemberAgeA" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">面值金额</label>
+                                <input id="TJMemberAgeB" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group btn-group">
+                                <button id="BtnAdd" type="button" class="btn btn-primary" style="display:block" onclick="BaoCun()">保存</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+                            </div>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+        </div>
+    </div>
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="tianxiehetongxinxi">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:760px;height:350px;">
+                <div class="modal-header" style="background:#a8d7ef;">
+                    <span>会员信息</span>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body" style="background:#eddddd;">
+                    <div class="" style="width:100%;height:330px; background:#f0edf1;">
+                        <div class="" style="width:100%;height:280px;overflow:auto;">
+                            <table id="tabHeTongXinXi" style="margin-top:2px;width:100%;" class="table">
+                                <tr>
+                                    <th w_index="JiLuBianHao">记录编号</th>
+                                    <th w_index="ZuoFeiJinE">作废金额</th>
+                                    <th w_index="ZuoFeiShuLiang">作废数量</th>
+                                    <th w_index="ZuoFeiYuanYing">作废原因</th>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="text-align:center">
+                            <button type="button" class="btn btn-danger" id="btnHeTongXuanZe">
+                                选择信息
+                            </button>
+                            <button type="button" class="btn btn-primary" id="btnDetlete">
+                                删 除
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <script>
+        var KJ;//表
+        var StoreCardID;//ID
+        $(document).ready(function () {
+            //初始化表格
+            KJ = $.fn.bsgrid.init('KJ', {
+                url: '/HuiYuanKaKuCunKaGuanLi/HuiYuanKuCunKaZuoFei/InserStoreInfoard',
+                autoLoad: true,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                displayBlankRows: false,//是否显示空白行，默认值false
+                pageSize: 10,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条               
+                event: {
+                    customRowEvents: {
+                        click: function (record, rowIndex, trObj, options) {
+                            if (record != null) {
+                                StoreCardID = record.StoreCardID;
+                            }
+                        }
+                    }
+                }
+            });
+        });
+        $(function () {
+            $.post("/HuiYuanKaKuCunKaGuanLi/HuiYuanKuCunKaZuoFei/SelectHuiLeiXi", function (data) {
+                selectLoadData("KaFengLei", data)
+            });
+            $.post("/HuiYuanKaKuCunKaGuanLi/HuiYuanKuCunKaZuoFei/SelectHuiKaZhong", function (data) {
+                selectLoadData("KaZhongLei", data)
+            });
+            $.post("/HuiYuanKaKuCunKaGuanLi/HuiYuanKuCunKaZuoFei/SelectZhiKaBuMeng", function (data) {
+                selectLoadData("ZhiKaBuMeng", data)
+            });
+            $.post("/HuiYuanKaKuCunKaGuanLi/HuiYuanKuCunKaZuoFei/SelectZhiKaMingCheng", function (data) {
+                selectLoadData("ZhiKaMingCheng", data)
+            });
+        });
+        //点击按钮弹出新增窗体
+        function Tianjian() {
+            document.getElementById("BtnAdd").style.display = "block";//控制按钮显示
+            document.getElementById("TJMemberAgeA").value = "";//清空文本数据
+            document.getElementById("TJMemberAgeB").value = "";
+            $("#modBaseInfor").modal("show");//弹出新增窗体
+        }
+        //新增保存按钮
+        function BaoCun() {
+            encodeURI();//不过滤￥%
+            var A = encodeURI(document.getElementById("TJMemberAgeA").value.trim());//
+            var B = document.getElementById("TJMemberAgeB").value.trim();
+            $.getJSON("/HuiYuanKaKuCunKaGuanLi/HuiYuanKuCunKaZuoFei/InsertStore?OrderNumber=" + A + "&Faceamount=" + B, function (data) {
+                if (data == "ok") {
+                    location.reload();//刷新页面
+                }
+            });
+        }
+        $(function () {
+            //信息的选择
+            $("#btnXuanZeHeTong").click(function () {
+                tabHeTongXinXi = $.fn.bsgrid.init('tabHeTongXinXi', {
+                    url: '/HuiYuanKaKuCunKaGuanLi/HuiYuanKuCunKaZuoFei/SelectCXSummary',
+                    autoLoad: false,
+                    stripeRows: true,//隔行变色
+                    rowHoverColor: true,//划过行变色
+                    pageSize: 20,
+                    pageSizeSelect: false,//是否选择分页页数下拉框
+                    pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                    pagingToolbarAlign: "left",//分页工具条的显示位置
+                    displayPagingToolbarOnlyMultiPages: true,//仅当多页时才显示分页工具条
+                    event: {
+                        customRowEvents: { //record 记录记载  options 选项
+                            click: function (record, rowIndex, trObj, options) {
+                                if (record != null) {
+                                    CXSummaryID = record.CXSummaryID;
+                                }
+                            }
+                        }
+                    }
+                });
+                tabHeTongXinXi.refreshPage();
+                $("#tianxiehetongxinxi").modal('show');
+            });
+            //获取信息
+            $("#btnHeTongXuanZe").click(function () {
+                var rowIndex = tabHeTongXinXi.getSelectedRowIndex();
+                if (rowIndex > -1) {
+                    var CXSummaryID = tabHeTongXinXi.getColumnValue(rowIndex, "CXSummaryID");
+                    $.getJSON("/HuiYuanKaKuCunKaGuanLi/HuiYuanKuCunKaZuoFei/SelectHuoQuKaXinXi?HTID=" + CXSummaryID, function (data) {
+                        if (data == "失败") {
+                            alert("你没有选择信息");
+                        }
+                        else {
+                            $("#CXSummaryID").val(data.CXSummaryID);//隐藏域
+                            $("#JiLuBianHao").val(data.JiLuBianHao);
+                            $("#ZuoFeiJinE").val(data.ZuoFeiJinE);
+                            $("#ZuoFeiShuLiang").val(data.ZuoFeiShuLiang);
+                            $("#ZuoFeiYuanYing").val(data.ZuoFeiYuanYing);
+                        }
+                        $("#tianxiehetongxinxi").modal('hide');
+                    });
+                }
+                else {
+                    alert("请选择一条的信息");
+                }
+            });
+        });
+        $("#BtnInser").click(function () {
+            var JiLuBianHao = $("#JiLuBianHao").val();
+            var ZuoFeiJinE = $("#ZuoFeiJinE").val();
+            var ZuoFeiShuLiang = $("#ZuoFeiShuLiang").val();
+            var ZuoFeiYuanYing = $("#ZuoFeiYuanYing").val();
+            if (JiLuBianHao != '' && ZuoFeiJinE != '' && ZuoFeiShuLiang != '' && ZuoFeiYuanYing != '') {
+                $.post("/HuiYuanKaKuCunKaGuanLi/HuiYuanKuCunKaZuoFei/BtnInser", {
+                    JiLuBianHao: JiLuBianHao,
+                    ZuoFeiJinE: ZuoFeiJinE,
+                    ZuoFeiShuLiang: ZuoFeiShuLiang,
+                    ZuoFeiYuanYing: ZuoFeiYuanYing
+                }, function (data) {
+                    if (data == "success") {
+                        layer.alert('新增成功'), { icon: 1, title: '提示' };
+                    }
+                    else {
+                        layer.alert('新增失败'), { icon: 1, title: '提示' };
+                    }
+                });
+            } else {
+                layer.alert('请输入数据', { icon: 3, title: '提示' });
+            }
+        });
+        //删除
+        $("#doDelete").click(function () {
+            var selectRowIndex = KJ.getSelectedRowIndex();//获取选中行的索引值
+            if (selectRowIndex >= 0) {
+                layer.confirm("您确定到删除该信息？", {
+                    icon: 3,
+                    btn: ['确定', '取消']
+                    //按钮
+                }, function (layerIndex) {
+                    layer.close(layerIndex);//关闭提示框
+                    var StoreCardId = KJ.getColumnValue(selectRowIndex, "StoreCardID");//获取选中行的id
+                    //删除年龄表
+                    $.post("/HuiYuanKaKuCunKaGuanLi/HuiYuanKuCunKaZuoFei/DeletStoreCard",
+                        { StoreCardId: StoreCardId }, function (msg) {
+                            if (msg == "success") {
+                                layer.alert("删除成功！", { icon: 1, title: '提示' });
+                                //刷新table
+                                KJ.refreshPage();
+                            }
+                            else {
+                                layer.alert("删除失败", { icon: 2, title: '提示' });
+                            }
+                        });
+                });
+            }
+            else {
+                layer.alert("请选择需要删除的数据", { icon: 0, title: '提示' });
+            }
+        });
+
+        //删除信息
+        $("#btnDetlete").click(function () {
+            var selectRowIndex = tabHeTongXinXi.getSelectedRowIndex();//获取选中行的索引值
+            if (selectRowIndex >= 0) {
+                layer.confirm("您确定到删除该信息？", {
+                    icon: 3,
+                    btn: ['确定', '取消']
+                    //按钮
+                }, function (layerIndex) {
+                    layer.close(layerIndex);//关闭提示框
+                    var CXSummaryId = tabHeTongXinXi.getColumnValue(selectRowIndex, "CXSummaryID");//获取选中行的id
+                    //删除年龄表
+                    $.post("/HuiYuanKaKuCunKaGuanLi/HuiYuanKuCunKaZuoFei/DeleteCXSummar",
+                        { CXSummaryId: CXSummaryId }, function (msg) {
+                            if (msg == "success") {
+                                layer.alert("删除成功！", { icon: 1, title: '提示' });
+                                //刷新table
+                                tabHeTongXinXi.refreshPage();
+                            }
+                            else {
+                                layer.alert("删除失败", { icon: 2, title: '提示' });
+                            }
+                        });
+                });
+            }
+            else {
+                layer.alert("请选择需要删除的数据", { icon: 0, title: '提示' });
+            }
+        });
+    </script>
+</body>
+</html>

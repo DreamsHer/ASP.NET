@@ -1,0 +1,626 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShenHePanl</title>
+
+
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+
+    <style>
+        .container {
+            width: 100%;
+            padding-top: 4px;
+            background: #e0f6f5;
+        }
+
+        label {
+            font-weight: normal;
+        }
+      
+        .left-titles {
+            border: 1px solid #aaa;
+            border-radius: 2px;
+        }
+
+        .left-titles {
+            height: 300px;
+        }
+    </style>
+
+
+</head>
+<body>
+   
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="form-group">
+
+                        <span class="h4">审核盘点报告</span>
+                        <div class="pull-right">
+                            <button class="form-control btn-sm btn btn-info" id="Colse"><span class="glyphicon glyphicon-remove">关闭</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-body">
+                    <form class="form-horizontal">
+                        <div class="container" style="background:#f0edf1;">
+
+                            <div class="row" style="margin-top:30px;">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <div class="col-md-3">
+                                            <label class="control-label">盘点编号</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div style="border-bottom: #000 1px solid; width: 170px;">
+                                                <input readonly="readonly" id="Reterm" style="width: 170px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <div class="col-md-3" style="padding-left: 25px;">
+                                            <label class="control-label">盘点日期</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div style="border-bottom: #000 1px solid; width: 170px;">
+                                                <input readonly="readonly" id="Paly" style="width: 170px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <div class="col-md-3">
+                                            <label class="control-label"  style="margin-left: 35px;">部门</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div style="border-bottom: #000 1px solid; width: 170px;margin-left:10px;">
+                                                <input readonly="readonly" id="BuMen" style="width: 170px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <div class="col-md-5" style="margin-left: 35px;">
+                                            <button type="button" class="btn btn-block" id="DianJiShouHuoRenbu">报损不合格商品</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4"></div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <div class="col-md-3" style="margin-left: 25px;">
+                                            <label class="control-label">盈亏金额</label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div style="border-bottom: #000 1px solid; width: 100px;">
+                                                <input readonly="readonly" id="YingKuiJinE" style="width: 100px; border: none; color: #0000FF;background:#f0edf1; font-size: 16px;" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="row" style="margin:5px;padding:2px;margin-left:10px;overflow:auto;width:100%;height:260px;">
+                                <table id="YiaoZhengTableLeft">
+                                    <tr>
+                                        <th w_index="" w_render="ShenHeBiaoZhi">审核标记</th>
+                                        <th w_index="" w_hidden="true">计划盘点ID</th>
+                                        <th w_index="GoodsIDs" w_hidden="true">商品ID</th>
+                                        <th w_index="GoodsCodes">商品代码</th>
+                                        <th w_index="GoodsTiaoMas">商品条码</th>
+                                        <th w_index="Subdivision">帐面数量</th>
+                                        <th w_index="PackInfos">包装含量</th>
+                                        <th w_index="" w_render="YingKuiShuLiang">盈亏数量</th>
+                                        <th w_index="GoodsNames">商品名称</th>
+                                        <th w_index="EstimateUnitNames">计量单位</th>
+                                        <th w_index="ArtNos">货号</th>
+                                        <th w_index="SpecificationsModels">规格</th>
+                                        <th w_index="TaxBids">含税进价</th>
+                                        <th w_index="RetailMonovalents">零售单价</th>
+
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="row" style="margin-top:5px;">
+                                <div class="col-lg-3">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-4" style="padding-left: 35px;">
+                                                <button class="btn btn-block" type="button" id="ShenH">审核人</button>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" id="ShenHeName" class="form-control"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-5"></div>
+                                <div class="col-lg-4">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-3">
+                                                <button class="btn btn-block btn-primary" type="button" id="XuanZe"><span class="glyphicon glyphicon-search">选 择</span></button>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <button class="btn btn-block btn-success" type="button" id="ShenHeOk" onclick="saveShenHeBtnhg(true)"><span class="glyphicon glyphicon-ok">审 核</span></button>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <button class="btn btn-block btn-info" type="button" id="TuiChu"><span class="glyphicon glyphicon-eye-close">退 出</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row" style="margin-top:10px;"></div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div><!--大row-->
+    </div>
+
+
+
+    <!--员工查询窗口-->
+    <div class="modal bs-example-modal-sm" id="modYuanGong">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background:#74a4e8;">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">员工查询窗口</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row examineeInfor" style="overflow:auto;height:200px;width:590px;">
+                        <table id="YuanGongTable">
+                            <tr>
+                                <th w_num="total_line" width="10%">序号</th>
+                                <th w_index="StaffID" w_hidden="true"></th>
+                                <th w_index="StaffCode">编码</th>
+                                <th w_index="StaffName">员工姓名</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row" style="margin-top:10px;">
+                        <div class="form-group">
+                            <div class="col-md-2 col-lg-offset-4">
+                                <button class="form-control btn btn-primary" type="button" id="btnQueDing">确 定</button>
+                            </div>
+                            <div class="col-md-2">
+                                <button class="form-control btn btn-primary" type="button" id="btnQuXiao">返 回</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--盘点单查询窗口-->
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modPanl">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background:#74a4e8;">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">盘点单查询窗口</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row table-responsive" style="overflow:auto;height:400px;">
+                        <table id="PanlTable" style="margin-top:2px;width:1000px;">
+                            <tr>
+                                <th w_num="total_line" width="10%">序号</th>
+                                <th w_index="CheckRermeberID" w_hidden="true">盘点计划ID</th>
+                                <th w_index="DrugType" w_hidden="true">部门</th>
+                                <th w_index="StockPlaceID" w_hidden="true">库存ID</th>
+                                <th w_index="OrderFormPactID" w_hidden="true">合同</th>
+                                <th w_index="GoodsClassifyID" w_hidden="true">商品分类</th>
+                                <th w_index="GoodsChopID" w_hidden="true">商标</th>
+                                <th w_index="ExamineName" w_hidden="true">登记人</th>
+                                <th w_index="ExamineTime" w_hidden="true">登记时间</th>
+
+                                <th w_index="YingKuiMoney" w_hidden="true">盈亏数</th>
+                                <th w_index="StaffID" w_hidden="true">员工</th>
+
+                                <th w_index="Remember">编号</th>
+                                <th w_index="PablData">盘点日期</th>
+                                <th w_index="CommodityType">部门类型</th>
+                                <th w_index="StockPlaceName">库存地点</th>
+                                <th w_render="bsgridSetCreh">状态</th>
+                                <th w_index="Entering" w_hidden="true">状态</th>
+                                <th w_index="EnteringTime">录入完成时间</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row" style="margin-top:10px;">
+                        <div class="form-group">
+                            <div class="col-md-2 col-lg-offset-4">
+                                <button class="form-control btn btn-success" type="button" id="btnQueDingJp"><span class="glyphicon glyphicon-ok">确 定</span></button>
+                            </div>
+
+                            <div class="col-md-2">
+                                <button class="form-control btn btn-primary" type="button" id="btnQuXiaodJ">返 回</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--报益不合法商品-->
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modSunYi">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background:#74a4e8;">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">损益不合法商品列表</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row" style="margin-top:10px;">
+                        <div class="form-group">
+                            <div class="col-md-2" style="padding-left: 35px;">
+                                <button class="btn btn-block" type="button" id="ShangPinDingWeo">商品代码</button>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" id="ShenHeNameDai" class="form-control" />
+                            </div>
+                            <div class="col-md-3" style="padding-left: 35px;">
+                                <button class="btn btn-block" type="button" id="ShangPinTiaoDingWeo">商品条码定位</button>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" id="ShenHeNameTiao" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row table-responsive" style="overflow:auto;height:380px;margin-top:10px;">
+                        <table id="SunYiTable" style="margin-top:2px;width:1000px;">
+                            <tr>
+                                <th w_num="total_line" width="10%">序号</th>
+                                <th w_index="" w_hidden="true">计划盘点ID</th>
+                                <th w_index="GoodsIDs" w_hidden="true">商品ID</th>
+                                <th w_index="GoodsCodes">商品代码</th>
+                                <th w_index="GoodsNames">商品名称</th>
+                                <th w_index="GoodsTiaoMas">商品条码</th>
+                                <th w_index="SpecificationsModels">规格</th>
+                                <th w_index="ArtNos">货号</th>
+                                <th w_index="EstimateUnitNames">计量单位</th>
+                                <th w_index="Subdivision">帐面数量</th>
+                                <th w_index="TaxBids">含税进价</th>
+                                <th w_index="RetailMonovalents">零售单价</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row" style="margin-top:10px;">
+                        <div class="form-group">
+                            <div class="col-md-2 col-lg-offset-4">
+                                <button class="form-control btn btn-success" type="button" id="btnQueDingJpkj"><span class="glyphicon glyphicon-ok">确 定</span></button>
+                            </div>
+
+                            <div class="col-md-2">
+                                <button class="form-control btn btn-primary" type="button" id="btnQuXiaodJ">返 回</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-1.11.2.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <script src="~/Content/js/jquery.form.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+
+
+   <script>
+       var CheckRermeberIDQuan;
+       var YiaoZhengTableLeftta;
+     
+       var JieShuZhiShuZu = new Array();
+       var YingKuiZhi = 0;
+       var YingKuiZhiXi;
+       var StaffID;
+
+       var Remember;
+       var PablData;
+       var CommodityType;
+       var DrugType;
+       var StockPlaceID;
+       var OrderFormPactID;
+       var GoodsClassifyID;
+       var GoodsChopID;
+       var ExamineName;
+       var ExamineTime;
+       var EnteringTime;
+       var YingKuiMoney;
+       var StaffID;
+
+       $(document).ready(function () {
+           //左
+           YiaoZhengTableLeft = $.fn.bsgrid.init('YiaoZhengTableLeft', {
+               // url: '/P_PeiHuo/PeiHuoDan/PiPeiGoodel',
+               autoLoad: false,
+               stripeRows: true,
+               rowHoverColor: true,
+               pageSize: 5,
+               pageSizeSelect: false,
+               pagingLittleToolbar: true,
+               pagingToolbarAlign: "left",
+           });
+
+           //查询员工table
+           YuanGongTable = $.fn.bsgrid.init('YuanGongTable', {
+               url: '/ShangPinJinCang/JingCang/SelectYuanGong',
+               autoLoad: false,//自动加载数据
+               stripeRows: true,//隔行变色
+               rowHoverColor: true,//划过行变色
+               rowSelectedColor: true,//是否显示选中行背景色
+               pageSize: 4,//默认页面大小
+               pageSizeSelect: true,//是否选择分页页数下拉框
+               pagingLittleToolbar: true,//精简的图标按钮分页工具条
+               pagingToolbarAlign: "left"//分页工具条的显示位置
+           });
+           YuanGongTable.search();
+
+
+           //查询盘点table
+           PanlTable = $.fn.bsgrid.init('PanlTable', {
+               url: '/PanDianShuYiChuLi/PanlYuShen/YuSelectCheckgh',
+               autoLoad: false,//自动加载数据
+               stripeRows: true,//隔行变色
+               rowHoverColor: true,//划过行变色
+               rowSelectedColor: true,//是否显示选中行背景色
+               pageSize: 6,//默认页面大小
+               pageSizeSelect: true,//是否选择分页页数下拉框
+               pagingLittleToolbar: true,//精简的图标按钮分页工具条
+               pagingToolbarAlign: "left"//分页工具条的显示位置
+           });
+           PanlTable.search();
+
+       });
+
+
+       //审核人点击(查看)
+       $("#ShenH").click(function () {
+           YuanGongTable.refreshPage();
+           $("#modYuanGong").modal('show');
+       });
+
+       //点击确定关闭model（收货人窗口）
+       $("#btnQueDing").click(function () {
+           var rowIndex = YuanGongTable.getSelectedRowIndex();//获取选中的行  注：修改模态窗 一定要加 <intpt id=OrderFormID ,hihe>
+           if (rowIndex > -1) {
+               StaffID = YuanGongTable.getColumnValue(rowIndex, "StaffID");//获取ID
+               $.post("/ShangPinJinCang/JingCang/XuanZeYuanGong", { StaffID: StaffID }, function (data) {
+
+                   $("#ShenHeName").val(data.StaffName);//员工姓名
+                   $("#modYuanGong").modal('hide');
+               });
+           }
+           else {
+               layer.alert("请选择数据", { icon: 6, title: '温馨小提示：' });
+           }
+       });
+
+       //盘点单点击(查看)
+       $("#XuanZe").click(function () {
+           $("#modPanl").modal('show');
+       });
+       //选择盘点
+       YiaoZhengTableLeftta = $.fn.bsgrid.init('YiaoZhengTableLeft', {
+           url: '/PanDianShuYiChuLi/PanlYuShen/SelectCheckewsffGoodsj',
+           autoLoad: false,
+           stripeRows: true,
+           rowHoverColor: true,
+           pageSize: 5,
+           pageSizeSelect: false,
+           pagingLittleToolbar: true,
+           pagingToolbarAlign: "left"
+
+       });
+     
+       $("#btnQueDingJp").click(function () {
+           var rowIndex = PanlTable.getSelectedRowIndex();
+           if (rowIndex > -1) {
+               for (var i = 0; i < JieShuZhiShuZu.length; i++) {
+                   JieShuZhiShuZu.splice(i, 1);
+               }
+               if (JieShuZhiShuZu.length > 0) {
+                   for (var i = 0; i < JieShuZhiShuZu.length; i++) {
+                       JieShuZhiShuZu.splice(i, 1);
+                   }
+               }
+               YingKuiZhiXi = 0;
+               YingKuiZhi = 0;
+               $("#YingKuiJinE").val("");
+
+               CheckRermeberIDQuan = PanlTable.getColumnValue(rowIndex, "CheckRermeberID");//获取ID
+               Remember = PanlTable.getColumnValue(rowIndex, "Remember");
+               PablData = PanlTable.getColumnValue(rowIndex, "PablData");
+               CommodityType = PanlTable.getColumnValue(rowIndex, "CommodityType");
+               DrugType = PanlTable.getColumnValue(rowIndex, "DrugType");
+               StockPlaceID = PanlTable.getColumnValue(rowIndex, "StockPlaceID");
+               OrderFormPactID = PanlTable.getColumnValue(rowIndex, "OrderFormPactID");
+               GoodsClassifyID = PanlTable.getColumnValue(rowIndex, "GoodsClassifyID");
+               GoodsChopID = PanlTable.getColumnValue(rowIndex, "GoodsChopID");
+               ExamineName = PanlTable.getColumnValue(rowIndex, "ExamineName");
+               ExamineTime = PanlTable.getColumnValue(rowIndex, "ExamineTime");
+               EnteringTime = PanlTable.getColumnValue(rowIndex, "EnteringTime");
+               YingKuiMoney = PanlTable.getColumnValue(rowIndex, "YingKuiMoney");
+               StaffID = PanlTable.getColumnValue(rowIndex, "StaffID");
+
+               $.post("/PanDianShuYiChuLi/PanlYuShen/BangDingCheckgh", { checkRermeberID: CheckRermeberIDQuan }, function (data) {
+
+                   $("#Reterm").val(data[0].Remember);//
+                   $("#Paly").val(data[0].PablData);//
+                   $("#BuMen").val(data[0].DrugType);//
+
+                   $("#YingKuiJinE").val("￥"+data[0].YingKuiMoney);//
+                   $("#modPanl").modal('hide');
+               });
+               YiaoZhengTableLeftta.search({ checkRermeberID: CheckRermeberIDQuan });
+           }
+           else {
+               layer.alert("请选择数据", { icon: 6, title: '温馨小提示：' });
+           }
+       });
+
+
+       //损益不合法点击(查看)
+       SunYiTable = $.fn.bsgrid.init('SunYiTable', {
+           url: '/PanDianShuYiChuLi/PanlYuShen/SunYintCheckewsffGoodsj',
+           autoLoad: false,//自动加载数据
+           stripeRows: true,//隔行变色
+           rowHoverColor: true,//划过行变色
+           rowSelectedColor: true,//是否显示选中行背景色
+           pageSize: 8,//默认页面大小
+           pageSizeSelect: true,//是否选择分页页数下拉框
+           pagingLittleToolbar: true,//精简的图标按钮分页工具条
+           pagingToolbarAlign: "left"//分页工具条的显示位置
+       });
+       $("#DianJiShouHuoRenbu").click(function () {
+           if (CheckRermeberIDQuan>0) {
+               
+               SunYiTable.search({ checkRermeberIDQuan: CheckRermeberIDQuan });
+               $("#modSunYi").modal('show');
+           }
+           else {
+               layer.alert("请先选择数据信息", { icon: 6, title: '温馨小提示：' });
+           }
+          
+       });
+
+
+       //审 核
+       function saveShenHeBtnhg(state) {
+         
+           var ShenHeName = $("#ShenHeName").val();
+           if (CheckRermeberIDQuan > 0) {
+               if (ShenHeName != '') {
+                   layer.confirm("是否审核？", {
+                       icon: 3,
+                       btn: ['确定', '取消']
+                       //按钮
+                   }, function (layerIndex) {
+                       layer.close(layerIndex);//关闭提示框
+                       $.post("/PanDianShuYiChuLi/PanlYuShen/SheDingPanl?state=" + state, {
+                           CheckRermeberID: CheckRermeberIDQuan,
+                           Remter: Remember,
+                           PablData: PablData,
+                           CommodityType: CommodityType,
+                           DrugType: DrugType,
+                           StockPlaceID: StockPlaceID,
+                           OrderFormPactID: OrderFormPactID,
+                           GoodsClassifyID: GoodsClassifyID,
+                           GoodsChopID: GoodsChopID,
+                           ExamineName: ExamineName,
+                           ExamineTime: ExamineTime,
+                           EnteringTime: EnteringTime,
+                           YingKuiMoney: YingKuiMoney,
+                           StaffID: StaffID,
+                           ShenHeName: ShenHeName
+
+                       }, function (mess) {
+                           layer.alert("审核成功！。。。", { icon: 6, title: '温馨小提示：' });
+                           if (mess == "succsee") {
+                               if (mess.returnJson) {
+                                   if (data.State == true || data.State == "true") {
+                                   }
+                               }
+                           }
+                           document.location.href = "/PanDianShuYiChuLi/PanlYuShen/ShenHePanl";
+                       });
+
+                   });
+               }
+               else {
+                   layer.alert("请填写审核人", { icon: 5, title: '温馨小提示：' });
+               }
+
+           }
+           else {
+               layer.alert("请先查询选择数据预审", { icon: 5, title: '温馨小提示：' });
+           }
+
+
+       };
+
+
+       //设置生效状态
+       function bsgridSetCreh(record, rowIndex, colIndex, options) {//自定义列的代码（二）
+           var toVoidNow = PanlTable.getRecordIndexValue(record, "Entering");
+           toVoidNow = record.Entering;
+           if (toVoidNow == true || toVoidNow == "true") {
+               return '<span style="color:blue">录入完成</span>';
+           } else {
+               return '<span style="color:red">未审核</span>';
+           }
+       }
+
+       //损益数量
+       function YingKuiShuLiang(record, rowIndex, colIndex, options) {
+           var BaoZhuan = record.PackInfos;
+           var shuzhi = record.MumberOfPackages;
+           JieShuZhiShuZu.push([shuzhi, BaoZhuan]);
+
+           return ' <input class="easyui-combotree" value="' + record.MumberOfPackages + '" style="width: 100px;" id="YingKuiXiShu' + record.GoodsIDs + '" data-options="onChange:onConsignmentDepartmentCodeSelect;" disabled/>';
+
+       }
+    
+       //损益数量
+       function ShenHeBiaoZhi(record, rowIndex, colIndex, options) {
+           return ' <input class="easyui-combotree" value="' + "  √" + '" style="width: 100px;" id="YingKuiXiShu' + record.GoodsIDs + '" data-options="onChange:onConsignmentDepartmentCodeSelect;" disabled/>';
+
+       }
+
+
+       $("#TuiChu").click(function () {
+           $('body').remove();
+       });
+
+       $("#Colse").click(function () {
+           $('body').remove();
+       });
+
+   </script>
+
+</body>
+</html>

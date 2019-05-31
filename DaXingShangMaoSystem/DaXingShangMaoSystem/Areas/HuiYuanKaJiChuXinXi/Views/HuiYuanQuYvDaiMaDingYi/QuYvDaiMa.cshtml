@@ -1,0 +1,279 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/easyui/themes/default/easyui.css" rel="stylesheet" />
+    <link href="~/Content/easyui/themes/icon.css" rel="stylesheet" />
+    <script src="~/Content/easyui/jquery.min.js"></script>
+    <script src="~/Content/easyui/jquery.easyui.min.js"></script>
+    <script src="~/Scripts/jquery.form.js"></script>
+    <title>QuYvDaiMa</title>
+    <style>
+        .container {
+        width:800px;
+        padding:0;
+        border:1px solid blue;
+        margin-top:20px;
+        background-color:#f0edf1;
+        }
+
+        .zongchuangti {
+        width:100%;
+        height:380px;
+        border:1px solid white;
+        background-color:#f0edf1;
+        }
+        .youkuan {
+        width:38%;
+        height:345px;
+        border:2px solid gainsboro;
+        float:left;
+        margin-top:20px;
+        margin-left:10px;
+        }
+        .BMGZ {
+        margin-top:20px;
+        margin-left:12px;
+        }
+        .DM {
+        margin-top:50px;
+        margin-left:12px;
+        }
+        .MC {
+        margin-top:10px;
+        margin-left:12px;
+        }
+        .YZBM {
+        margin-top:10px;
+        margin-left:14px;
+        }
+        .AnJian {
+            width:100%;
+            height:35px;
+            border:1px solid white;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"> 
+        <div class="panel panel-primary">
+            <div class="panel-heading">区域代码定义</div>
+        </div> 
+        <div class="zongchuangti">
+            <div class="zuokuan">
+                <div class="panel-body" style="width:60%;float:left">
+                    <div class="col-md-12 col-sm-12 col-xs-12"style="border:1px solid white">
+                        <div class="col-md-5 col-sm-5 col-xs-5" style="margin-top:10px;">
+                            <div>
+                                <div class="easyui-panel" title="" style="width:100%;height:350px;padding:10px;">
+                                    <ul id="treeQvYv" class="easyui-tree" data-options="url:'/HuiYuanKaJiChuXinXi/HuiYuanQuYvDaiMaDingYi/ChaXunShuXinger',method:'get',dnd:true"></ul>
+                                </div>
+                            </div>
+                            <div id="treeShuXin" class="easyui-menu" style="width:120px;">
+                                <div onclick="expandAll()" data-options="iconCls:'icon-add'">展开所有节点</div>
+                                <div onclick="collapseAll()" data-options="iconCls:'icon-remove'">缩起所有节点</div>
+                                <div class="menu-sep"></div>
+                                <div onclick="append()" data-options="iconCls:'icon-add'">添加子节点</div>
+                                <div onclick="removeit()" data-options="iconCls:'icon-remove'">删除该节点</div>
+                                <div class="menu-sep"></div>
+                                <div onclick="expand()" data-options="iconCls:'icon-add'">展开该节点</div>
+                                <div onclick="collapse()" data-options="iconCls:'icon-remove'">缩起该节点</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="youkuan">
+                <div class="BMGZ">
+                    <div class="bianmaguizhe">
+                        编码规则
+                        <input style="background-color:azure"id="CodeRule"name="CodeRule"/>
+                    </div>
+                </div>
+                <div class="DM">
+                    <div class="daima">
+                        代码
+                        <input style="width:185px"id="DaiMa"name="DaiMa"/>
+                    </div>
+                </div>
+                <div class="MC">
+                    <div class="mingcheng">
+                      名称
+                        <input style="width:185px"id="AreaMC"name="AreaMC"/>
+                    </div>
+                </div>
+                <div class="YZBM">
+                    <div class="youzhengbianma">
+                        邮政编码
+                        <input id="Postalcode"name="Postalcode">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="AnJian">
+            <button id="BtnInsert"class="btn-danger"> 
+            <span class="glyphicon glyphicon-gift"></span>A 加下级</button>
+            <button id="btnXuanZeHeTong"class="btn-info">
+            <span class="glyphicon glyphicon-heart"></span> B 加同级</button>
+            <button class="btn-link">
+            <span class="glyphicon glyphicon-sd-video"></span> M 修改</button>
+            <button class="btn-primary">
+            <span class="glyphicon glyphicon-alert"></span> D 删除</button>
+            <button style="color:gainsboro"class="btn-success">
+            <span class="glyphicon glyphicon-jpy"></span> S 保存</button>
+            <button class="btn-xs">
+            <span class="glyphicon glyphicon-yen"></span> C 放弃</button>
+            <button class="btn-warning">
+            <span class="glyphicon glyphicon-link"></span> E 退出</button>
+        </div>
+    </div>
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="tianxiehetongxinxi">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:760px;height:350px;">
+                <div class="modal-header" style="background:#a8d7ef;">
+                    <span>会员信息</span>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body" style="background:#eddddd;">
+                    <div class="" style="width:100%;height:330px; background:#f0edf1;">
+                        <div class="" style="width:100%;height:280px;overflow:auto;">
+                            <table id="tabHeTongXinXi" style="margin-top:2px;width:100%;" class="table">
+                                <tr>
+                                    <th w_index="AreaMC">区域名称</th>
+                                    <th w_index="Postalcode">邮政编码</th>
+                                    <th w_index="CodeRule">邮政规则</th>
+                                    <th w_index="DaiMa">代码</th>
+                                </tr>
+                            </table>
+                        </div>
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group" style="margin-top:15px;">
+                                <div class="col-sm-2 col-sm-offset-5">
+                                    <button type="button" class="btn btn-success form-control" id="btnHeTongXuanZe">
+                                        选择信息
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/js/customfunction.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <script type="text/javascript">
+
+        //右键触发事件
+        $("#treeQvYv").tree({
+            formatter: function (node) {
+                var childlength = node.children ? node.children.length : 0;
+                return node.text + "<span style='color:white'>(" + childlength + ")</span>";
+            },
+            onContextMenu: function (e, node) {
+                e.preventDefault();//右键禁止浏览器弹出的菜单
+                $(this).tree('select', node.target);
+                $("#treeShuXin").menu("show", {
+                    top: e.pageY,
+                    left:e.pageX
+                });
+            },
+
+        });
+
+    </script>
+    <script type="text/javascript">
+        var AreaID;
+        $("#BtnInsert").click(function () {
+            var AreaMC = $("#AreaMC").val();
+            var Postalcode = $("#Postalcode").val();
+            var CodeRule = $("#CodeRule").val();
+            var DaiMa = $("#DaiMa").val();
+            if (AreaMC != '' && Postalcode != '' && CodeRule != '' && DaiMa != '') {
+                $.post("/HuiYuanKaJiChuXinXi/HuiYuanQuYvDaiMaDingYi/BtnInsert", {
+                    AreaMC: AreaMC,
+                    Postalcode: Postalcode,
+                    CodeRule: CodeRule,
+                    DaiMa: DaiMa
+                }, function (data) {
+                    if (data == "success") {
+                        layer.alert('成功'), { icon: 1, title: '提示' };
+                    }
+                    else {
+                        layer.alert('失败'), { icon: 1, title: '提示' };
+                    }
+                });
+            } else {
+                layer.alert('请输入数据', { icon: 3, title: '提示' });
+            }
+        });
+        $(function () {
+            //信息的选择
+            $("#btnXuanZeHeTong").click(function () {
+                tabHeTongXinXi = $.fn.bsgrid.init('tabHeTongXinXi', {
+                    url: '/HuiYuanKaJiChuXinXi/HuiYuanQuYvDaiMaDingYi/SelectAreaCode',
+                    autoLoad: false,
+                    stripeRows: true,//隔行变色
+                    rowHoverColor: true,//划过行变色
+                    pageSize: 20,
+                    pageSizeSelect: false,//是否选择分页页数下拉框
+                    pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                    pagingToolbarAlign: "left",//分页工具条的显示位置
+                    displayPagingToolbarOnlyMultiPages: true,//仅当多页时才显示分页工具条
+                    event: {
+                        customRowEvents: { //record 记录记载  options 选项
+                            click: function (record, rowIndex, trObj, options) {
+                                if (record != null) {
+                                    AreaID = record.AreaID;
+                                }
+                            }
+                        }
+                    }
+                });
+                tabHeTongXinXi.refreshPage();
+                $("#tianxiehetongxinxi").modal('show');
+            });
+            //获取信息
+            $("#btnHeTongXuanZe").click(function () {
+                var rowIndex = tabHeTongXinXi.getSelectedRowIndex();
+                if (rowIndex > -1) {
+                    var AreaID = tabHeTongXinXi.getColumnValue(rowIndex, "AreaID");
+                    $.getJSON("/HuiYuanKaJiChuXinXi/HuiYuanQuYvDaiMaDingYi/SelectHuoQuKaXinXi?HTID=" + AreaID, function (data) {
+                        if (data == "失败") {
+                            alert("你没有选择信息");
+                        }
+                        else {
+                            $("#AreaID").val(data.AreaID);//隐藏域
+                            $("#AreaMC").val(data.AreaMC);
+                            $("#Postalcode").val(data.Postalcode);
+                            $("#CodeRule").val(data.CodeRule);
+                            $("#DaiMa").val(data.DaiMa);
+                        }
+                        $("#tianxiehetongxinxi").modal('hide');
+                    });
+                }
+                else {
+                    alert("请选择一条的信息");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

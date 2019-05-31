@@ -1,0 +1,259 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_blue.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/easyui/themes/default/easyui.css" rel="stylesheet" />
+    <link href="~/Content/easyui/themes/icon.css" rel="stylesheet" />   
+    <title>定义商品分类经营数据</title>
+    <style type="text/css">
+        .container {
+            width: 98%;
+            padding-top: 4px;
+        }
+
+        .panel-heading {
+            font-size: 16px;
+        }
+
+        .panel-body {
+            padding: 0;
+            border-left: 3px solid #377ab7;
+            border-bottom: 3px solid #377ab7;
+            border-right: 3px solid #377ab7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="ShangPinFenLeiJieMian">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <span style="padding-left:14px;">定义商品分类经营数据</span>                       
+                    </div>
+                </div>
+                <div class="panel-body" style="width:100%;height:580px;background:#f0edf1;">
+                    <div class="col-md-5 col-sm-5 col-xs-5" style="margin-top:10px;">
+                        <div>
+                            <div class="easyui-panel" title="无分类商品" style="width:100%;height:560px;padding:10px;">
+                                <ul id="treeGoodsClassify" class="easyui-tree" data-options="url:'/ShangPinGuanLi/JiChuXinXi/GetAllGoodsClassify',method:'get',dnd:true"></ul> @*dnd:true允许节点拖动*@
+                            </div>
+                        </div>
+                        <div id="treeContextMenu" class="easyui-menu" style="width:120px;">
+                            <div onclick="expandAll()" data-options="iconCls:'icon-add'">展开所有节点</div>
+                            <div onclick="collapseAll()" data-options="iconCls:'icon-remove'">缩起所有节点</div>
+                            <div class="menu-sep"></div>
+                            <div onclick="append()" data-options="iconCls:'icon-add'">添加子节点</div>
+                            <div onclick="removeit()" data-options="iconCls:'icon-remove'">删除该节点</div>
+                            <div class="menu-sep"></div>
+                            <div onclick="expand()" data-options="iconCls:'icon-add'">展开该节点</div>
+                            <div onclick="collapse()" data-options="iconCls:'icon-remove'">缩起该节点</div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-5" style="margin-top:10px;left:100px;">
+                        <div class="easyui-panel" data-options="title:'相关信息',inline:true,collapsible:false,minimizable:false,maximizable:false,closable:false,resizable:false" style="height:560px;position:relative">
+                            @using (Html.BeginForm("", "", FormMethod.Post, new { id = "formSave" }))
+                            {
+                                @Html.Hidden("GoodsClassifyID")
+                                <div style="margin-left:100px;margin-top:10px;">分类名称：@Html.TextBox("Code", "", new { style = "width:50%;" })</div>
+                                    <div style="margin-left:100px;margin-top:10px;">分类名称：@Html.TextBox("GoodsClassifyName", "", new { style = "width:50%;" })</div>
+                                    <div style="margin-left:100px;margin-top:10px;">
+                                        上级分类：
+                                        <input id="cboGoodsClassify" name="F_GoodsClassifyID" class="easyui-combotree" data-options="url:'/ShangPinGuanLi/JiChuXinXi/GetAllGoodsClassify',method:'get',required:true" style="width:50%;">
+                                    </div>
+                                    <div style="margin-left:100px;margin-top:10px;">进项税率：@Html.TextBox("AdvanceCess", "", new { style = "width:50%;" })</div>
+                                    <div style="margin-left:100px;margin-top:10px;">加价率(%)：@Html.TextBox("PriceMarkupRate", "", new { style = "width:50%;" })</div>
+                                    <div style="margin-left:100px;margin-top:10px;">毛税率(%)：@Html.TextBox("GrossProfitRate", "", new { style = "width:50%;" })</div>
+                                    <div style="margin-left:100px;margin-top:10px;">销项税率：@Html.TextBox("SellRate", "", new { style = "width:50%;" })</div>
+                                    <div style="margin-left:100px;margin-top:10px;">会员扣率：@Html.TextBox("MemberDiscountRate", "", new { style = "width:50%;" })</div>
+                                    <div style="margin-left:100px;margin-top:10px;">消费税率：@Html.TextBox("ConsumeCess", "", new { style = "width:50%;" })</div>
+                                    <div style="margin-left:100px;margin-top:10px;">周转天数：@Html.TextBox("Code", "", new { style = "width:50%;" })</div>
+                                    <div style="margin-left:100px;margin-top:10px;">采购部门：@Html.TextBox("Code", "", new { style = "width:50%;" })</div>
+                                    <div>
+                                        <input type="reset" value="重置" style="width:15%;margin-top:10px;margin-left:200px;" />
+                                    </div>
+                                    <div>
+                                        <input type="submit" value="保存" style="width:15%;margin-top:10px;margin-left:200px;" />
+                                    </div>
+                                    <div>
+                                        <input type="button" id="TuiChu" value="退出" style="width:15%;margin-top:10px;margin-left:200px;" />
+                                    </div>
+                            }
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/easyui/jquery.min.js"></script>
+    <script src="~/Content/easyui/jquery.easyui.min.js"></script>
+    <script src="~/scripts/jquery.form.js"></script>
+    @*树形节点设计*@
+    <script type="text/javascript">
+        //右键触发事件
+        $("#treeGoodsClassify").tree({
+            formatter: function (node) {
+                var childlength = node.children ? node.children.length : 0;
+                return node.text + "<span style='color:blue'>(" + childlength + ")</span>";
+            },
+            onContextMenu: function (e, node) {
+                e.preventDefault();//右键禁止浏览器弹出的菜单
+                $(this).tree('select', node.target);
+                $("#treeContextMenu").menu("show", {
+                    top: e.pageY,
+                    left:e.pageX
+                });
+            },
+
+            //鼠标拖动事件
+            onDrop: function (target, source, point) {
+                var targetNode = $("#treeGoodsClassify").tree("getNode", target);
+                console.log(source);
+                if (point == "append") {
+                    //获取的f父ID=target
+                    var targetNode = $("#treeGoodsClassify").tree("getNode", target);
+                    var intTargetId = targetNode.id;
+                    //当前ID==source.id
+                    var intSourceId = source.id;
+                    $.getJSON("/ShangPinGuanLi/JiChuXinXi/UpdateFather?intTargetId=" + intTargetId + "&intSourceId=" + intSourceId);
+
+                } else {
+                    //获取target的父节点，作为source的新的父节点
+                    var targetNode = $("#treeGoodsClassify").tree("getNode", target);
+                    var targetFather = $("#treeGoodsClassify").tree("getParent", targetNode.target);
+                   var intTargetFatherId = targetFather.id;
+                   var intSourceId = source.id;
+                   $.getJSON("/ShangPinGuanLi/JiChuXinXi/UpdateFather?intTargetId=" + intTargetFatherId + "&intSourceId=" + intSourceId);
+                }
+            }
+
+        });
+
+        //缩起所有节点
+        function collapseAll() {
+            $('#treeGoodsClassify').tree('collapseAll');
+        }
+        //展开所有节点
+        function expandAll() {
+            $('#treeGoodsClassify').tree('expandAll');
+        }
+        //展开该节点
+        function expand() {
+            var node = $("#treeGoodsClassify").tree("getSelected");
+            $('#treeGoodsClassify').tree('expand', node.target);
+        }
+        //缩起该节点
+        function collapse() {
+            var node = $("#treeGoodsClassify").tree("getSelected");
+            $('#treeGoodsClassify').tree('collapse', node.target);
+        }
+
+        //修改
+        $(function () {
+            $('#treeGoodsClassify').tree({
+                onClick: function (node) {
+                    if ($('#treeGoodsClassify').tree("getParent", node.target)) {
+                        var nodeId = node.id;
+                        $("#GoodsClassifyID").val(nodeId);
+                        //$("#Code").val(node.text.trim());
+                        $("#GoodsClassifyName").val(node.text.trim());
+                        var fid = $('#treeGoodsClassify').tree("getParent", node.target).id;
+                        $("#cboGoodsClassify").combotree("setValue", fid);
+                       
+                        //$("#AdvanceCess").val(node.text.trim());
+                        //$("#PriceMarkupRate").val(node.text.trim());
+                        //$("#GrossProfitRate").val(node.text.trim());                        
+                        //$("#SellRate").val(node.text.trim());
+                        //$("#MemberDiscountRate").val(node.text.trim());
+                        //$("#TurnoverData").val(node.text.trim());
+                        //$("#ConsumeCess").val(node.text.trim());
+                        //$("#Code").val(node.text.trim());
+                        //$("#Code").val(node.text.trim());                        
+                    } else {
+                        $("#GoodsClassifyID").val("");
+                        //$("#Code").val("");
+                        $("#GoodsClassifyName").val("");
+                        $("#cboGoodsClassify").combotree("reset");
+                        
+                        //$("#AdvanceCess").val("");
+                        //$("#PriceMarkupRate").val("");
+                        //$("#GrossProfitRate").val("");
+                        //$("#SellRate").val("");
+                        //$("#MemberDiscountRate").val("");
+                        //$("#TurnoverData").val("");
+                        //$("#ConsumeCess").val("");
+                        //$("#Code").val("");
+                        //$("#Code").val("");                        
+                    }
+                }
+            });
+
+            //修改保存          
+            $("#formSave").submit(function () {
+                //拦截表单提交，并且接收返回的数据，进行对应操作。目标：有回调函数
+                var options = {
+                    url: "/ShangPinGuanLi/JiChuXinXi/UpdateDrug",
+                    success: function (data) {
+                        document.location.href = "/ShangPinGuanLi/JiChuXinXi/ShangPinFeiLei";
+                    },  //处理完成
+                    resetForm: true,
+                    dataType: 'text'
+                };
+                $(this).ajaxSubmit(options);//提交
+                return false;
+
+            });
+        });
+
+        //新增
+        function append() {
+            var node = $("#treeGoodsClassify").tree("getSelected");
+            //在节点后面追加子节点时，必须在数据库先新增一条数据
+            var fid = node.id
+            var strType = "新类型";
+            $.getJSON("/ShangPinGuanLi/JiChuXinXi/InsertClassify?GoodsClassifyName=" + strType + "&F_GoodsClassifyID=" + fid, function (data) {
+                $("#treeGoodsClassify").tree("append", {
+                    parent: node.target,
+                    data: [
+                        {
+                            id: data,
+                            text: strType
+                        }
+                    ]
+                })
+            })
+        }
+
+        //删除节点
+        function removeit() {
+            var node = $('#treeGoodsClassify').tree('getSelected');
+            var text = node.text;
+            $.get("/ShangPinGuanLi/JiChuXinXi/RemoveRoute", { intClassifyId: node.id }, function (data) {
+                if (data == "Ok") {
+                    $('#treeGoodsClassify').tree('remove', node.target);
+                    layer.alert('你已删除' + text, { icon: 1, title: '提示' });
+                }
+            })
+        }
+
+        //关闭按钮
+        $(function () {
+            $("#TuiChu").click(function () {
+                $("#ShangPinFenLeiJieMian").hide();
+            });
+        });
+
+    </script>
+</body>
+</html>

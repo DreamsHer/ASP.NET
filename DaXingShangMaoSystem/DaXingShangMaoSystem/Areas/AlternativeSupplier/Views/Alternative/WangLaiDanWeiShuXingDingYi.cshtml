@@ -1,0 +1,146 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>往来单位属性定义</title>
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    @*CSS样式(包含默认皮肤样式)*@
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    @*CSS皮肤(需引用于bsgrid.all.min.css之后)*@
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">往来单位属性内容定义</div>
+            <div class="panel-body">
+                <div class="table">
+                    <ul class="nav nav-tabs tab-color-blue background-blue" id="myTab4">
+                        <li class="active">
+                            <a id="tbnavB" href="#tpB" data-toggle="tab" aria-expanded="true">级别</a>
+                        </li>
+                        <li class="">
+                            <a id="tbnavZ" href="#tpZ" data-toggle="tab" aria-expanded="false">性质</a>
+                        </li>
+                        <li class="">
+                            <a id="tbnavZ" href="#tpL" data-toggle="tab" aria-expanded="false">类型</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content  padding-0" id="InEmployeeForm">
+                        <div class="tab-pane active" id="tpB">
+                            <div id="chartL" style="width: 100%; height: 500px; float: left;">
+                                <table id="tabAchievementAll1" style="width: 100%; min-width: 446px;" class="bsgrid">
+                                    <thead>
+                                        <tr>
+                                            <th w_num="total_line">序号</th>
+                                            <th w_index="SupplierRankID" w_hidden="true">AlternativeID</th>
+                                            <th w_index="SupplierRankName">内容</th>
+
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tpZ">
+
+                            <div id="chartL" style="width: 100%; height: 500px; float: left;">
+                                <table id="tabAchievementAll2" style="width: 100%; min-width: 446px;" class="bsgrid">
+                                    <thead>
+                                        <tr>
+                                            <th w_num="total_line">序号</th>
+                                            <th w_index="UnitCharacterID" w_hidden="true">AlternativeID</th>
+                                            <th w_index="UnitCharacterName">内容</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+
+                        </div>
+
+                        <div class="tab-pane" id="tpL">
+                            <div id="chartL" style="width: 100%; height: 500px; float: left;">
+                                <table id="tabAchievementAll3" style="width: 100%; min-width: 446px;" class="bsgrid">
+                                    <thead>
+                                        <tr>
+                                            <th w_num="total_line">序号</th>
+                                            <th w_index="AgreementTypeID" w_hidden="true">AlternativeID</th>
+                                            <th w_index="AgreementTypeName">内容</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="tpG">
+                            <div id="chartG" style="width: 100%; height: 313px; float: left;">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    @*jquery.bsgrid*@
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>@*对话框*@
+    <script src="~/Content/js/customfunction.js"></script>@*封装js*@
+    <script src="~/Content/js/jquery.form.js"></script>
+    <script>
+        var tabAchievementAll1;
+        $(document).ready(function () {
+            //初始化类型表格
+            tabAchievementAll1 = $.fn.bsgrid.init('tabAchievementAll1', {
+                url: '/AlternativeSupplier/Alternative/Select',
+                autoLoad: true,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                pageSize: 5,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置
+
+            });
+        });
+        var tabAchievementAll2;
+        $(document).ready(function () {
+            //初始化类型表格
+            tabAchievementAll2 = $.fn.bsgrid.init('tabAchievementAll2', {
+                url: '/AlternativeSupplier/Alternative/Select1',
+                autoLoad: true,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                pageSize: 5,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置
+
+            });
+        });
+        var tabAchievementAll3;
+        $(document).ready(function () {
+            //初始化类型表格
+            tabAchievementAll3 = $.fn.bsgrid.init('tabAchievementAll3', {
+                url: '/AlternativeSupplier/Alternative/Select3',
+                autoLoad: true,
+                stripeRows: true,//隔行变色
+                rowHoverColor: true,//划过行变色
+                pageSize: 5,
+                pageSizeSelect: false,//是否选择分页页数下拉框
+                pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                pagingToolbarAlign: "left",//分页工具条的显示位置
+
+            });
+        });
+    </script>
+</body>
+</html>

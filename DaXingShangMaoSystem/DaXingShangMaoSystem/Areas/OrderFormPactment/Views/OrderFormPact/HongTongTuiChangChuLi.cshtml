@@ -1,0 +1,314 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>合同退场处理</title>
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    @*CSS样式(包含默认皮肤样式)*@
+    <link href="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.css" rel="stylesheet" />
+    @*CSS皮肤(需引用于bsgrid.all.min.css之后)*@
+    <link href="~/Content/jquery.bsgrid-1.37/css/skins/grid_bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css">
+        .container {
+            width: 100%;
+            padding: 0;
+        }
+
+        .panel-heading {
+            font-size: 16px;
+        }
+
+        .panel-body {
+            padding-top: 0;
+        }
+
+            .panel-body label {
+                font-weight: normal;
+                font-size: 16px;
+            }
+
+        #MethodOfSettlingAccounts {
+            width: 550px;
+            border: 1px solid #999;
+            height: 50px;
+        }
+    </style>
+</head>
+<body style="background:#f0edf1;">
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">合同退场处理</div>
+            <div class="panel-body" style="background:#f0edf1;">
+                <div class="table">
+                    <ul class="nav nav-tabs tab-color-blue background-blue" id="myTab4">
+                        <li class="active">
+                            <a id="tbnavB" href="#tpB" data-toggle="tab" aria-expanded="true">查询条件</a>
+                        </li>
+                        <li class="">
+                            <a id="tbnavZ" href="#tpZ" data-toggle="tab" aria-expanded="false">进退处理</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content  padding-0" id="InEmployeeForm">
+                        <div class="tab-pane active" id="tpB">
+                            <div id="chartL" style="width: 100%; height: 500px; float: left;">
+                                
+
+                                <div class="panel" style="width: 100%; height: 250px; float: left;margin:0;">
+                                    <div class="row examineeInfor" style="padding: 1px 15px;">
+                                        <table id="tabShangBiaoXinXi1" style="width: 100%; min-width: 446px;" class="bsgrid">
+                                            <thead>
+                                                <tr>
+                                                    <th w_num="total_line">序号</th>
+                                                    <th w_index="OrderFormPactID" w_hidden="true"></th>
+                                                    <th w_index="SpouseBRanchID" w_hidden="true"></th>
+                                                    <th w_index="ReleaseTimeStrrr">合同有效期（止）</th>
+                                                    <th w_index="SpouseBRanchName">采购部门</th>
+                                                    <th w_index="AgreementTypeID" w_hidden="true"></th>
+                                                    <th w_index="AgreementTypeName">供货单位</th>
+                                                    <th w_index="ContractNumber">合同号</th>
+                                                    <th w_index="SupplierID" w_hidden="true"></th>
+                                                    <th w_index="ReleaseTimejinchangtime">进场日期</th>
+                                                    <th w_index="ReleaseTimetuichangchangtime">退场日期</th>
+
+                                                    <th w_render="bsgridSetSate">状态</th>
+                                                    <th w_index="UseOf" w_hidden="true">状态</th>
+
+
+
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                           
+                        </div>
+                        <div class="tab-pane" id="tpZ">
+                            <div id="tbnavZ" style="width: 100%; height: 500px; float: left;">
+                                <div style="padding:100px 220px;">
+                                    <div class="checkbox" id="MethodOfSettlingAccounts" style="padding:12px 2px">
+                                        <label style="padding:0px 50px;">
+                                            <input type="checkbox" value="" />
+                                            经销
+                                        </label>
+                                        <label style="padding:0px 50px;">
+                                            <input type="checkbox" value="" />
+                                            代销
+                                        </label>
+                                        <label style="padding:0px 50px;">
+                                            <input type="checkbox" value="" />
+                                            联营
+                                        </label>
+                                        <label style="padding:0px 50px;">
+                                            <input type="checkbox" value="" />
+                                            租赁
+                                        </label>
+                                    </div>
+                                    <div class="form-inline col-md-12" style="padding:20px 20px; margin:0;">
+                                        <div class="form-group col-md-12">
+                                            <label for="supplierCHName">采购部门</label>
+                                            <input type="text" class="form-control" id="SpouseBRanchID" name="SpouseBRanchID">
+                                            <input type="text" class="form-control" id="SpouseBRanchName" name="SpouseBRanchName" style="width:250px;">
+                                        </div>
+                                    </div>
+                                    <div class="form-inline col-md-12" style="padding:20px 20px; margin:0;">
+                                        <div class="form-group col-md-12">
+                                            <label for="supplierCHName">供货单位</label>
+                                            <input type="text" class="form-control" id="SupplierID" name="SupplierID">
+                                            <input type="text" class="form-control" id="AgreementTypeName" name="AgreementTypeName" style="width:250px;">
+                                        </div>
+                                    </div>
+                                    <div class="form-inline col-md-12" style="padding:20px 20px; margin:0;">
+                                        <div class="form-group col-md-12">
+                                            <label for="supplierCHName">合 同 号 :</label>
+                                            <input type="text" class="form-control" id="ContractNumber" name="ContractNumber">
+
+                                        </div>
+                                    </div>
+
+                                    <div style="padding:0px 150px;">
+                                        <button class="btn" style="margin-bottom:5px" id="btnXuanZeShenHe" name="btnXuanZeShenHe">
+                                            <i class="glyphicon glyphicon-file"></i>
+                                            查询
+                                        </button>
+                                        <button class="btn" style="margin-bottom:5px" id="btnXuanZeShenHe1" name="btnXuanZeShenHe1">
+                                            <i class="glyphicon glyphicon-pencil"></i>
+                                            清空查询条件
+                                        </button>
+                                        <button class="btn" style="margin-bottom:5px" id="btn2">
+                                            <i class="glyphicon glyphicon-pencil"></i>
+                                            退出
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="ShangBiaoLaiYuan1">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:100%;height:250px;">
+                <div class="modal-header" style="background:#a8d7ef;">
+                    <span>合同详细信息</span>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body" style="background:#eddddd;">
+                    <div class="" style="width:100%;height:300px; background:#f0edf1;">
+                        <div class="row" style="width:100%;height:240px;overflow:auto;margin-left:2px;">
+                            <table id="tabShangBiaoXinXi2" style="width:100%;" class="table">
+                                <tr>
+                                    <th w_num="total_line">序号</th>
+                                    <th w_index="OrderFormPactID" w_hidden="true"></th>
+                                    <th w_index="SpouseBRanchID" w_hidden="true"></th>
+                                    <th w_index="ReleaseTimeStrrr">合同有效期（止）</th>
+                                    <th w_index="SpouseBRanchName">采购部门</th>
+                                    <th w_index="AgreementTypeID" w_hidden="true"></th>
+                                    <th w_index="AgreementTypeName">供货单位</th>
+                                    <th w_index="ContractNumber">合同号</th>
+                                    <th w_index="SupplierID" w_hidden="true"></th>
+                                    <th w_index="ReleaseTimejinchangtime">进场日期</th>
+                                    <th w_index="ReleaseTimetuichangchangtime">退场日期</th>
+                                    <th w_render="bsgridSetSate">状态</th>
+                                    <th w_index="UseOf" w_hidden="true">状态</th>
+
+                                </tr>
+                            </table>
+                        </div>
+                        <form class="form-horizontal" role="form">
+
+                            <div class="col-md-12" tyle="padding:0px 170px;">
+                                <button type="button" class="btn btn-success col-md-3" id="PinPaiXuanZe1" onclick="openUpdateTitle()">
+                                    请选择员工
+                                </button>
+                                <button type="button" class="btn btn-primary col-md-3" id="enable" onclick="saveTitleState(true)">修改</button>
+                                <button type="button" class="btn btn-primary col-md-3 " id="toVoid" onclick="saveTitleState(false)">取消修改</button>
+                                <button type="button" class="btn btn-primary col-md-3" id="btnShangChu">删除</button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/jquery-2.0.3.min.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    @*jquery.bsgrid*@
+    <script src="~/Content/jquery.bsgrid-1.37/js/lang/grid.zh-CN.min.js"></script>
+    <script src="~/Content/jquery.bsgrid-1.37/merged/bsgrid.all.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>@*对话框*@
+    <script src="~/Content/js/customfunction.js"></script>@*封装js*@
+    <script src="~/Content/js/jquery.form.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap-table.js"></script>
+    <script type="text/javascript">
+       var tabShangBiaoXinXi1;
+       var tabShangBiaoXinXi2;
+       $.post("/OrderFormPactment/OrderFormPact/selectMethodOfSettlingAccount", function (data) {
+           selectLoadData("MethodOfSettlingAccountsID", data)
+       });
+       //设置状态
+       function bsgridSetSate(record, rowIndex, colIndex, options) {
+           var UseOf = tabShangBiaoXinXi1.getRecordIndexValue(record, "UseOf");
+           UseOf = record.UseOf;
+           if (UseOf == true || UseOf == "true") {
+               return '<span style="color:cornflowerblue">允许修改</span>';
+           } else {
+               return '<span style="color:red">不允许修改</span>';
+           }
+       }
+       //修改审核状态
+       function saveTitleState(state) {
+           var rowIndex = tabShangBiaoXinXi2.getSelectedRowIndex();
+           if (rowIndex > -1) {
+               var titleId = tabShangBiaoXinXi2.getColumnValue(rowIndex, "OrderFormPactID");
+               var oldState = tabShangBiaoXinXi2.getColumnValue(rowIndex, "UseOf");
+               if (oldState == state.toString() && state == false) {
+                   layer.msg("该经销合同已经清退，无需重复操作", { icon: 0, skin: "layui-layer-molv" });
+               }
+               else if (oldState == state.toString() && state == false) {
+                   layer.msg("该经销合同未清退，无需重复操作", { icon: 0, skin: "layui-layer-molv" });
+               } else {
+                   $.getJSON("/OrderFormPactment/OrderFormPact/UpdateTitleState",
+                       { titleId: titleId, state: state },
+                       function (message) {
+                           if (message.State == true || message.State == "true") {
+                               tabShangBiaoXinXi2.refreshPage();
+                           }
+                       });
+               }
+           } else {
+               layer.msg("请选择需要操作的合同", { icon: 0, skin: "layui-layer-molv" });
+           }
+       }
+       ///选择当前行数据绑定text
+       $("#PinPaiXuanZe1").click(function () {
+           var rowIndex = tabShangBiaoXinXi2.getSelectedRowIndex();
+           if (rowIndex > -1) {
+               var goodsChopID = tabShangBiaoXinXi2.getColumnValue(rowIndex, "OrderFormPactID");
+
+               $.getJSON("/OrderFormPactment/OrderFormPact/SelectHeTongChuLiID?ID=" + goodsChopID, function (data) {
+                   if (data == "失败") {
+                       layer.alert('你没有选择信息！', { icon: 2, title: '提示' });
+                   }
+                   else {
+                       $("#SpouseBRanchID").val(data.SpouseBRanchID);//隐藏域
+                       $("#SpouseBRanchName").val(data.SpouseBRanchName);
+                       $("#SupplierID").val(data.SupplierID);//隐藏域
+                       $("#AgreementTypeName").val(data.AgreementTypeName);
+                       $("#ContractNumber").val(data.ContractNumber);//隐藏域
+
+                   }
+                   $("#ShangBiaoLaiYuan1").modal('hide'); //选择后自动关闭
+               });
+           }
+           else {
+               layer.alert('你没有选择信息！', { icon: 2, title: '提示' });
+           }
+       });
+       $(function () {
+           tabShangBiaoXinXi1 = $.fn.bsgrid.init('tabShangBiaoXinXi1', {
+               url: '/OrderFormPactment/OrderFormPact/SelectHeTongChuLi',
+               autoLoad: false,
+               stripeRows: true,//隔行变色
+               rowHoverColor: true,//划过行变色
+               rowSelectedColor: true,//是否显示选中行背景色
+               pageSize: 10,
+               pageSizeSelect: false,//是否选择分页页数下拉框
+               pagingLittleToolbar: true,//精简的图标按钮分页工具条
+               pagingToolbarAlign: "left"//分页工具条的显示位置
+
+           });
+           tabShangBiaoXinXi1.refreshPage();
+           ///查询经销合同数据
+           $("#btnXuanZeShenHe").click(function () {
+               tabShangBiaoXinXi2 = $.fn.bsgrid.init('tabShangBiaoXinXi2', {
+                   url: '/OrderFormPactment/OrderFormPact/SelectHeTongChuLi1',
+                   autoLoad: false,
+                   stripeRows: true,//隔行变色
+                   rowHoverColor: true,//划过行变色
+                   rowSelectedColor: true,//是否显示选中行背景色
+                   pageSize: 10,
+                   pageSizeSelect: false,//是否选择分页页数下拉框
+                   pagingLittleToolbar: true,//精简的图标按钮分页工具条
+                   pagingToolbarAlign: "left"//分页工具条的显示位置
+
+               });
+               tabShangBiaoXinXi2.refreshPage();
+               $("#ShangBiaoLaiYuan1").modal('show');
+           });
+       });
+
+
+    </script>
+</body>
+</html>
